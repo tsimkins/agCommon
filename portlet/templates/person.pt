@@ -1,0 +1,56 @@
+<tal:block condition="view/available"
+           i18n:domain="people">
+
+<h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
+    
+<dl class="portlet people">
+
+    <dd class="portletItem"
+        tal:repeat="person view/people"
+        tal:attributes="id string:person-${person/id}">
+        
+        <tal:person tal:define="context person/getObject">
+
+            <a tal:condition="python:view.data.show_image and context.getWrappedField('image').get_size(context)" 
+                   tal:attributes="href person/getURL;
+                                   class string:image${image_size} person-image"
+                   tal:define="image_scale view/image_scale;
+                               image_size view/image_size">
+                <img tal:replace="structure python:context.getWrappedField('image').tag(context, scale=image_scale,  css_class='photo')" />
+            </a>
+
+            <h2 class="fn n">
+                <a tal:attributes="href person/getURL">
+                <span class="given-name" tal:content="context/getFirstName">[First Name]</span>
+                <span class="additional-name" tal:content="context/getMiddleName | nothing">[Middle Name]</span>
+                <span class="family-name" tal:content="context/getLastName">[Last Name]</span><span tal:condition="context/getSuffix">,</span>
+                <span class="honorific-suffix" tal:content="context/getSuffix">[ suffix i.e. Dr]</span>
+                </a>
+            </h2>
+            
+            <div tal:condition="context/getJobTitles" class="title" tal:repeat="jobTitle context/getJobTitles" tal:content="jobTitle">[job title]</div>
+            
+            <div class="adr" tal:condition="python: view.data.show_address and (context.getOfficeAddress() or context.getOfficeCity() or context.getOfficeState())">
+                <span class="street-address" tal:content="structure python:context.getOfficeAddress().replace('\n', '<br />')" /><br />
+                <span class="locality" tal:content="context/getOfficeCity">[office city]</span><tal:block tal:condition="context/getOfficeState">, </tal:block><span class="region" tal:content="context/getOfficeState">[office state]</span>
+                <span class="postal-code" tal:content="context/getOfficePostalCode">[postal zip code]</span>
+            </div>
+
+            <div tal:condition="context/getEmail">
+                <span i18n:translate="FacultyStaffDirectory_label_email">Email</span>:
+                <span tal:attributes="class string:email" tal:content="structure python:context.spamProtectFSD(context.getEmail())" />
+            </div>
+
+            <div tal:condition="context/getOfficePhone" class="tel officePhone">
+                <span class="type" i18n:translate="FacultyStaffDirectory_label_officePhone">Phone</span>:
+                <span class="value" tal:content="context/getOfficePhone">[office phone number]</span>
+            </div>
+
+        </tal:person>
+
+           
+    </dd>
+
+
+</dl>
+</tal:block>

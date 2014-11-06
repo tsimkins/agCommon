@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="TalkEvent"
+   meta_type="Factory-based Type Information with dynamic views"
+   i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n" purge="False">
+ <property name="default_view">event_view</property>
+ <property name="view_methods" purge="False">
+  <element value="event_view"/>
+ </property>
+</object>

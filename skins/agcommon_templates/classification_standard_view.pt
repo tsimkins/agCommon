@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+	  lang="en"
+      metal:use-macro="here/main_template/macros/master"
+	  i18n:domain="FacultyStaffDirectory">
+	<body>
+        <metal:block fill-slot="content-core">
+            <div class="facultyStaffDirectory classification">
+
+                <a href=""
+                   class="link-parent"
+                   tal:define="template_id template/getId; parent_url python:here.navigationParent(here, template_id)"
+                   tal:condition="parent_url"
+                   tal:attributes="href parent_url"
+                   i18n:translate="go_to_parent_url">
+                    Up one level
+                </a>
+
+                <div tal:define="classificationExists nocall:classification | nothing;
+                                 classificationContext python:classificationExists and context.contextualClassification(classification) or context;
+                                 people classificationContext/getSortedPeople;
+                                 fsdtool python:modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool');
+                                 directory fsdtool/getDirectoryRoot;
+                                 width directory/getClassificationViewThumbnailWidth;
+                                 view nocall:context/@@folder_listing_z3;
+                                 test nocall:view/test;"
+                           metal:define-macro="list_people"
+                           class="standardView">
+
+                    <metal:block define-slot="classification_header" tal:condition="nocall:classificationExists">
+                        <h2>
+                        <metal:block define-macro="classification_header_link">
+                            <a tal:define="normalizeString nocall:context/@@plone/normalizeString" tal:attributes="name python:normalizeString(classificationContext.Title()); href python:'%s?classification=%s' % (here.absolute_url(), classification.id)" tal:content="classificationContext/Title"><tal:comment replace="nothing">[classification]</tal:comment></a>
+                        </metal:block>
+                        </h2>
+                    </metal:block>
+
+
+                    <div class="classificationListing" tal:condition="people">
+
+                        <div class="tileItem tileItemLeadImage" tal:repeat="person people">
+                            <div class="contentLeadImageContainer">
+                                <metal:block define-slot="person_headshot">
+                                    <a href=""
+                                       tal:attributes="href person/absolute_url">
+                                        <tal:block condition="person/image_thumb|nothing">
+                                            <img src="" alt=""
+                                                 tal:replace="structure python:person.getScaledImageByWidth(width)" />
+                                        </tal:block>
+                                    </a>
+                                </metal:block>
+                            </div>
+
+                            <metal:block define-slot="person_caption">
+                                <h2 class="personName tileHeadline">
+                                
+                                    <a tal:attributes="href person/absolute_url"
+                                        tal:content="person/Title">
+                                    </a>
+                                
+                                </h2>
+                                <div class="facultyStaffDirectory">
+                                    <metal:fsd_summary use-macro="context/@@folder_summary_view_z3/macros/fsd_summary" />
+                                    <metal:additional_info define-slot="person_additional_info" />
+                                </div>
+                            </metal:block>
+
+
+                            <div class="visualClear"><!-- --></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</metal:block>
+	</body>
+</html>

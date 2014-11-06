@@ -1,0 +1,44 @@
+<tal:block tal:define="userHasReplyPermission view/can_reply;
+                       isDiscussionAllowed view/is_discussion_allowed;
+                       isAnonymousDiscussionAllowed view/anonymous_discussion_allowed;
+                       isAnon view/is_anonymous;
+                       canReview view/can_review;
+                       replies python:view.get_replies(canReview);
+                       has_replies python:view.has_replies(canReview);
+                       showCommenterImage view/show_commenter_image;
+                       errors options/state/getErrors|nothing;
+                       wtool context/@@plone_tools/workflow;"
+           tal:condition="python:isDiscussionAllowed or has_replies"
+           i18n:domain="plone">
+
+    <div id="commenting" class="reply" tal:condition="python:isDiscussionAllowed and isAnon">
+
+        <fieldset>
+
+            <legend i18n:translate="label_add_comment">Comments</legend>
+
+            <fb:comments 
+                tal:attributes="href context/absolute_url;
+                                url context/absolute_url;
+                                returnurl context/absolute_url;
+                                xid view/xid" 
+                canpost="true" 
+                publish_feed="true" 
+                numposts="20" />
+
+        </fieldset>
+    </div>
+
+    <div id="commenting" class="reply" tal:condition="not:isAnon">
+
+        <fieldset>
+
+            <legend i18n:translate="label_add_comment">Comments</legend>
+            <p class="discreet">Comments are not permitted when logged in.</p>
+
+        </fieldset>
+    </div>
+
+    <!-- http://developers.facebook.com/tools/comments -->
+
+</tal:block>

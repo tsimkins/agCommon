@@ -1,0 +1,29 @@
+<div id="portal-footer" i18n:domain="plone">
+	<p>
+		&copy;
+		<span tal:omit-tag=""
+			tal:define="now modules/DateTime/DateTime" 
+			tal:content="now/year">[date last modified]</span>
+		
+	      <a tal:attributes="href view/footer_copyright_link" tal:content="view/footer_copyright" />
+          <tal:partner condition="python: view.footer_copyright_2 and view.footer_copyright_link_2">
+          /
+    	      <a tal:attributes="href view/footer_copyright_link_2" tal:content="view/footer_copyright_2" />
+    	  </tal:partner>
+		
+	</p>
+
+    <p class="footerLinks" tal:condition="view/footerlinks">
+        <tal:links repeat="saction view/footerlinks">
+        <a 
+           tal:define="description saction/description|saction/title"
+           tal:content="saction/title"
+           tal:attributes="id saction/id;
+                           href saction/url;
+                           title description;">[Footer Link]</a>
+        <tal:mdash condition="not:repeat/saction/end"><span class="footerSeparator">&mdash;</span></tal:mdash>
+        </tal:links>
+    </p>
+
+</div>
+

@@ -1,0 +1,291 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<metal:content fill-slot="content-text">
+
+    <div metal:define-macro="text-field-view"
+        tal:define="has_text exists:context/aq_explicit/getText;
+                    text python:has_text and here.getText() or '';
+                    test nocall:view/test"
+        tal:condition="text"
+        tal:content="structure text">
+        [ Body Text ]
+    </div>
+
+</metal:content>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core"
+                    tal:define="standalone_view python:True;
+                                test nocall:view/test">
+
+    <metal:listingmacro define-macro="listing">
+
+    <tal:foldercontents define="contentFilter contentFilter|request/contentFilter|nothing;
+                        contentFilter python:contentFilter and dict(contentFilter) or {};
+                        limit_display limit_display|request/limit_display|nothing;
+                        limit_display python:limit_display and int(limit_display) or None;
+                        more_url more_url|request/more_url|string:folder_contents;
+                        is_a_topic python:context.portal_type=='Topic';
+                        folderContents folderContents|nothing; folderContents python:folderContents or is_a_topic and context.queryCatalog(batch=True, **contentFilter) or context.getFolderContents(contentFilter, batch=True, b_size=limit_display or 100);
+                        order_by_id here/order_by_id|nothing;
+                        order_by_title here/order_by_title|nothing;
+                        zip_code_input request/zip_code_input|nothing;
+                        agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');
+                        folderContents python: (is_a_topic and (order_by_id or order_by_title or zip_code_input)) and agcommon_utilities.reorderTopicContents(folderContents, order_by_id=order_by_id, order_by_title=order_by_title, zip_code_input=zip_code_input) or folderContents;
+                        site_properties context/portal_properties/site_properties;
+                        use_view_action site_properties/typesUseViewActionInListings|python:();
+                        Batch python:modules['Products.CMFPlone'].Batch;
+                        b_start python:request.get('b_start', 0);
+                        batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, limit_display or 100, int(b_start), orphan=1);
+                        isAnon context/@@plone_portal_state/anonymous;
+                        normalizeString nocall: context/plone_utils/normalizeString;
+                        toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                        show_about python:not isAnon or site_properties.allowAnonymousViewAbout;
+                        navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                        pas_member context/@@pas_member;
+                        show_event_location context/show_event_location|nothing;
+                        show_description context/show_description|nothing;
+                        show_image show_image|view/show_image|nothing;
+                        show_date show_date|view/show_date|nothing;
+                        layout context/getLayout;
+                        ezt context/extension_zipcode_tool|nothing;
+                        getDistance nocall: ezt/getDistance|nothing;
+                        toZIP5 nocall: ezt/toZIP5|nothing;
+                        validateZIP nocall:ezt/validateZIP|nothing;">
+
+    <tal:listing condition="batch">
+
+        <tal:dl metal:define-slot="entries">
+            <tal:entry tal:repeat="item batch" metal:define-macro="entries">
+            <tal:block tal:define="item_url item/getURL|item/absolute_url;
+                                   item_id item/getId|item/id;
+                                   item_title_or_id item/pretty_title_or_id;
+                                   item_event_location_title python: agcommon_utilities.substituteEventLocation(item);
+                                   item_title_or_id python: agcommon_utilities.substituteTitle(item, context);
+                                   item_title_or_id python: item_event_location_title or item_title_or_id;
+                                   item_description item/Description;
+                                   item_type item/portal_type;
+                                   item_type_title item/Type/lower;
+                                   item_modified item/ModificationDate;
+                                   item_created item/CreationDate;
+                                   item_icon python:plone_view.getIcon(item);
+                                   item_type_class python:'contenttype-' + normalizeString(item_type);
+                                   item_wf_state item/review_state|python: context.portal_workflow.getInfoFor(item, 'review_state', '');
+                                   item_wf_state_class python:'state-' + normalizeString(item_wf_state);
+                                   item_creator item/Creator;
+                                   item_tags item/Subject|nothing;
+                                   item_start item/start|item/StartDate|nothing;
+                                   item_end item/end|item/EndDate|nothing;
+                                   item_sametime python: item_start == item_end;
+                                   item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False;
+                                   item_has_leadimage item/hasContentLeadImage;
+                                   item_effective item/EffectiveDate;">
+                <metal:block define-slot="entry">
+                    <div tal:attributes="class python: view.getItemClass(item, layout)">
+                    <tal:dt metal:define-macro="listitem">
+
+                        <div class="contentLeadImageContainer"
+                                tal:condition="show_image">
+
+                            <metal:leadimage define-macro="leadimage">
+
+                                <tal:leadimage
+                                        tal:condition="item_has_leadimage"
+                                        tal:define="item_object item/getObject|nothing;">
+
+                                        <img tal:replace="structure python:view.tag(item_object, css_class='tileImage')" />
+
+                                </tal:leadimage>
+
+                            </metal:leadimage>
+
+                        </div>
+
+                        <div tal:define="dt_class python:test(item_description, 'tileTitle', 'tileTitle no-description');"
+                            tal:attributes="class dt_class">
+
+                            <img tal:replace="structure item_icon/html_tag" />
+                            <a href="#"
+                               tal:attributes="href python:test(item_type in use_view_action, item_url+'/view', item_url);
+                                              class string: $item_wf_state_class url"
+                               tal:content="item_title_or_id">
+                                Item Title
+                           </a>
+                        </div>
+
+                        <tal:taglisting
+                             define="show_tags context/show_tags|nothing;
+                                   tag_prefix context/tag_prefix|nothing;
+                                   tag_prefix python: tag_prefix and tag_prefix + '-' or ''"
+                             condition="python: item_tags and show_tags and not isAnon">
+                            <p class="description discreet">
+                               <strong>Tags:</strong>
+                               <tal:tags tal:repeat="tag item_tags" >
+                               <span tal:replace="python:tag.replace(tag_prefix, '')" /><tal:separator condition="not: repeat/tag/end">,</tal:separator>
+                               </tal:tags>
+                            </p>
+                       </tal:taglisting>
+
+
+                       <tal:byline condition="show_about">
+
+                           <div class="documentByLine">
+
+                               &mdash;
+
+                               <tal:name tal:condition="item_creator"
+                                   tal:define="author python:pas_member.info(item_creator);
+                                               creator_short_form author/username;
+                                               creator_long_form string:?author=${author/username};
+                                               creator_is_openid python:'/' in creator_short_form;
+                                               creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];">
+                                 <span i18n:translate="label_by_author">
+                                   by
+                                 <a href="#"
+                                    tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
+                                    tal:content="author/name_or_id"
+                                    tal:omit-tag="not:author"
+                                    i18n:name="author">
+                                   Bob Dobalina
+                                 </a>
+                                 </span>
+
+                               </tal:name>
+
+                               <tal:modified condition="python: item_type != 'Event'">
+                                   &mdash;
+                                   <tal:mod i18n:translate="box_last_modified">
+                                     last modified
+                                   </tal:mod>
+                                   <span tal:replace="python:toLocalizedTime(item_modified,long_format=1)">
+                                     August 16, 2001 at 23:35:59
+                                   </span>
+                               </tal:modified>
+
+                               <metal:description define-slot="description_slot">
+                                   <tal:comment replace="nothing">
+                                       Place custom listing info for custom types here
+                                   </tal:comment>
+                               </metal:description>
+                           </div>
+                       </tal:byline>
+                   </tal:dt>
+
+                    <metal:show-date define-macro="show-date">
+                        <div class="documentByLine effectiveDate"
+                             tal:condition="show_date"
+                             tal:content="python:toLocalizedTime(item_effective,long_format=0)" />
+                    </metal:show-date>
+
+                    <div tal:define="dt_class python:test(item_description or item_type == 'Event', 'tileDescription', 'tileDescription no-description');"
+                           tal:attributes="class dt_class">
+                        <metal:event-date define-macro="event_date">
+                            <tal:event-date condition="python: item_type == 'Event'"
+                                            define="isCanceled item/eventCanceled|nothing;
+                                                    canceled python:isCanceled and 'canceled' or ''">
+
+                                <div tal:condition="isCanceled" class="listingWarning">
+                                    Event Canceled
+                                </div>
+                                <div tal:attributes="class string:eventDateLocation ${canceled}">
+                                    <strong tal:condition="python: item_type == 'Event'">When:</strong>
+                                    <metal:shortdate define-macro="short_event_date">
+                                        <span tal:replace="python:toLocalizedTime(item_start, end_time=item_end, long_format=1)" />
+                                    </metal:shortdate>
+                                </div>
+                                <div tal:define="show_event_location show_event_location|nothing"
+                                     tal:condition="python: item_type == 'Event' and item.location and not show_event_location"
+                                     tal:attributes="class string:eventDateLocation ${canceled}">
+
+                                    <strong>Where:</strong>
+
+                                    <metal:location metal:define-macro="event_location">
+                                        <tal:location
+                                            define="map_link item/map_link|nothing;
+                                                    long_location item/location|nothing;
+                                                    short_location item/short_location|nothing;
+                                                    location python: short_location or long_location or None;">
+
+                                            <a tal:attributes="href map_link" tal:omit-tag="not: map_link">
+                                                <span tal:content="location"
+                                                        tal:condition="location"
+                                                        class="location">Oslo</span>
+                                            </a>
+
+                                            <metal:zip define-macro="zip-distance">
+                                            <tal:zip
+                                                define="zip_code_input zip_code_input|nothing;
+                                                        item_zip item/zip_code|nothing;"
+                                                condition="python: zip_code_input and item_zip and getDistance and toZIP5 and validateZIP and validateZIP(zip_code_input) and validateZIP(item_zip)">
+                                                <div class="zip_distance" tal:define="distance python: '%0d' % round(getDistance(zip_code_input, item_zip))">
+                                                    <span tal:replace="distance" /> miles from <span tal:replace="python:toZIP5(zip_code_input)" />
+                                                </div>
+                                            </tal:zip>
+                                            </metal:zip>
+
+                                        </tal:location>
+                                    </metal:location>
+                                </div>
+                           </tal:event-date>
+                        </metal:event-date>
+
+                        <tal:show_description condition="subfolder/show_description|show_description|nothing">
+
+                           <tal:dd tal:condition="item_description|nothing">
+                               <p tal:condition="item/render_description_as_markdown|nothing"
+                                  tal:define="markdown python: agcommon_utilities.toMarkdown(item_description)"
+                                  tal:content="structure markdown">
+                                      description
+                               </p>
+                               <p tal:condition="not: item/render_description_as_markdown|nothing"
+                                  tal:content="item_description">
+                                      description
+                               </p>
+                           </tal:dd>
+                        </tal:show_description>
+
+                   </div>
+                    <div class="visualClear"
+                         tal:condition="show_image"><!-- --></div>
+                </div>
+
+
+            </metal:block>
+            </tal:block>
+            </tal:entry>
+        </tal:dl>
+
+        <!-- Navigation -->
+        <tal:batch condition="standalone_view">
+            <div metal:use-macro="context/batch_macros/macros/navigation" />
+        </tal:batch>
+
+    </tal:listing>
+    <metal:empty metal:define-slot="no_items_in_listing">
+        <p class="discreet"
+           tal:condition="python: not folderContents and not isAnon"
+           i18n:translate="description_no_items_in_folder">
+            There are currently no items in this folder.
+        </p>
+        <tal:noresults condition="python: not folderContents and contentFilter">
+            <h2> No Results</h2>
+            <p> No results matching your search criteria were found. </p>
+        </tal:noresults>
+    </metal:empty>
+
+    </tal:foldercontents>
+    </metal:listingmacro>
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<tal:notHomepage 
+     condition="not: view/isHomePage">
+
+    <div id="portlets-below"
+         class="row tilePortletContainer"
+         i18n:domain="Products.ContentWellPortlets">
+        <tal:block tal:condition="view/showPortlets">
+            <tal:portletmanagers tal:repeat="manager view/portletManagersToShow">
+                <div tal:attributes="class python:manager[1] + ' agCommonPortlet tilePortletManager'"
+                     tal:define="mgr python:manager[0]"
+                     tal:content="structure provider:${mgr}" /> 
+    
+            </tal:portletmanagers>
+        </tal:block>
+    </div>
+    
+    <div class="managePortletsBelowLink"
+         i18n:domain="Products.ContentWellPortlets"
+         tal:condition="view/showManagePortlets">
+            <a href="" 
+               class="managePortletsFallback"
+               tal:attributes="href view/manageUrl"
+               i18n:translate="manage_portlets_below_link">Add, edit or remove a portlet below the content</a>
+    </div>
+    
+</tal:notHomepage>

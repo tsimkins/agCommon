@@ -1,0 +1,220 @@
+/*
+  <dtml-with base_properties> (do not remove this)
+  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+*/
+
+/* YOUR CSS RULES START HERE */
+
+/* This is site-level customizations in CSS */
+
+h1 {
+    font-size: 1.9375em;
+    color: #00246b;
+}
+
+#content a:hover, #portal-column-one a:hover {
+    color:#FF8500;
+}
+
+#portal-column-one-visualPadding.visualPadding {
+    margin-bottom:0;
+    padding: 0;
+}
+
+
+#homepageimage .overlay {
+    background-color: #EEEEEE;
+    width:220px;
+}
+
+#homepageimage .text {
+    color: #000000;
+    padding: 0px 10px;
+    width:200px;
+    font-size: 0.9375em;
+}
+
+#homepageimage p {
+    margin: 0.5em 0;
+}
+
+#centercolumn p.description {
+    color: #333333;
+    margin: 0 0 0.1875em;
+    font-weight: normal;
+}
+
+#centercolumn p.links {
+    font-size: 0.75em;
+}
+
+#centercolumn .portletStaticText {
+    margin: 0.5em;
+}
+
+#centercolumn h2:first-child {
+    margin: 0.875em 0 0.625em 0;
+    color: #FF5500;
+    border-width: 0;
+}
+
+body.template-document_homepage_view #portal-column-one {
+    background: &dtml-leftNavBackgroundColor; url(&dtml-portal_url;/leftnavbg.jpg) no-repeat scroll center top;
+    padding: 110px 0 0 0;
+}
+
+#marqueecontainer{
+    position: relative;
+    width: 150px; /*marquee width */
+    height: 200px; /*marquee height */
+    overflow: hidden;
+    padding: 2px;
+    padding-left: 1px;
+    color: &dtml-insideRightPortletLinkColor;;
+}
+
+body.template-document_homepage_view {
+    color: #FFFFFF;
+}
+
+#vmarquee{
+    position: absolute;
+    width: 98%;
+    padding-bottom: 10px;
+}
+
+#centercolumnright{
+    float:right;
+    width: 235px;
+    background-color: #dbdbdb;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+#centercolumnleft{
+    margin-right: 5px;
+    width: 240px;
+}
+
+ul.navTree,ul.navTreeLevel1 li.navTreeItem {
+    background-color: transparent;
+}
+
+ul.navTreeLevel1 {
+    padding-left: 0px;
+}
+
+.documentDescription {
+    font-family:Georgia,"Times New Roman",Times,serif;
+    font-size: 1.4em;
+    margin-bottom: 1.5em;
+    line-height: 1.3em;
+}
+
+
+#portal-column-one {
+    border-width: 1px;
+    width: 187px;
+    background-color: &dtml-leftNavBackgroundColor;;
+    background-position: bottom center; 
+    padding-bottom: 80px;
+}
+
+#portal-column-one .portletNavigationTree .portletItem ul.navTreeLevel0 > li.navTreeTitle:first-child {
+    margin: 0 -5px;
+    border: none;
+    padding-bottom:5px;
+}
+
+#portal-column-one .portletNavigationTree a.state-published {
+    color: &dtml-leftNavTextColor; !important;
+}
+
+#portal-column-one .portletNavigationTree a.state-published:hover {
+    color: &dtml-leftNavTextHoverColor; !important;
+}
+
+#portal-column-one .portletNavigationTree {
+    padding: 0px 5px 18px 5px;
+    background-color: &dtml-topnavigationButtonBackgroundColor;;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+#portal-column-one .portletNavigationTree .portletItem li.navTreeTitle {
+    padding-left: 0px;
+}
+
+#portal-column-one .portletNavigationTree .portletItem li {
+    border-bottom-width: 0px;
+}
+
+#portal-column-one .portletNavigationTree a.navTreeCurrentItem {
+    color: &dtml-leftNavTextCurrentItem; !important;
+}
+
+#portal-column-one .portletNavigationTree .portletItem li.navTreeTitle a:hover {
+    background-color: &dtml-leftNavTitleBackground;;
+    color: &dtml-leftNavTitleHoverColor; !important;
+}
+
+#portal-column-one .portletNavigationTree .portletItem li {
+    margin: 0 5px 0 15px;
+    padding-bottom: 0;
+}
+
+#portal-column-one .portletNavigationTree .portletItem li.navTreeTitle {
+    padding-bottom: 0px;
+}
+
+#portal-column-one .portletNavigationTree .portletItem li a {
+    padding:0.35em 0 0.4em;
+}
+
+/* Added for changes in agCommon v2.0 */
+#portal-columns {
+    background-image: none;
+}
+
+#portal-column-content.sl {
+    margin-left: 0;
+}
+
+#portal-column-content.sl {
+    border-left-width: 0;
+    margin-left: 0;
+}
+
+#vmarquee dd.portletItem p {
+    padding:0;
+}
+
+/* IE6 "Fixes" */
+
+* html body.template-document_homepage_view #centercolumnleft, 
+* html body.template-document_homepage_view .portletfeedmixer,
+* html body.template-document_homepage_view #centercolumn .portletfeedmixer .portletItem {
+    width: 490px;
+}
+
+* html body.template-document_homepage_view #portal-column-content {
+    width: 713px;
+}
+
+* html body.template-document_homepage_view #centercolumnright {
+    display: none; 
+}
+
+#centercolumnright {
+    margin-left: 10px;
+}
+
+
+/* YOUR CSS RULES STOP HERE */
+
+/* </dtml-with> */
+
+
+

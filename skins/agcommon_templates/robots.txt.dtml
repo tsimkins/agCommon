@@ -1,0 +1,52 @@
+<dtml-with base_properties>
+<dtml-call "REQUEST.set('portal_url', portal_url())">
+
+# Define access-restrictions for robots/spiders
+# http://www.robotstxt.org/wc/norobots.html
+
+# By default we allow robots to access all areas of our site 
+# already accessible to anonymous users
+
+# Yandex bot
+User-agent: Yandex
+Disallow: /
+
+# Dicoveryengine.com
+User-agent: discobot
+Disallow: / 
+
+# Blekkobot
+User-agent: Blekkobot
+Disallow: /
+
+# SEOkicks
+User-agent: SEOkicks
+Disallow: /
+
+# Exabot
+User-agent: Exabot
+Disallow: /
+
+User-agent: *
+Disallow: /nonmobile
+Disallow: /search
+Disallow: /search_rss
+Disallow: /m/
+Disallow: /nonmobile
+Disallow: /sandbox
+Disallow: /intranet
+Disallow: /private
+&dtml-getDisallowedPaths;
+Disallow: /*ics_view$
+Disallow: /*vcs_view$
+Disallow: /*sendto_form$
+Disallow: /*folder_factories$
+Disallow: /*folder_contents$
+Disallow: /*?searchterm=*
+Disallow: /*image$
+Disallow: /*image_*
+Disallow: /*image_view_fullscreen$
+Disallow: /*newsletter_print
+Crawl-delay: 5
+
+</dtml-with>

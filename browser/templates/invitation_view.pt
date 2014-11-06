@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/newsletter_view/macros/master"
+      i18n:domain="plone"
+      tal:define="notEditor not:view/canEdit">
+
+<body>
+
+<metal:summary fill-slot="content-listing">
+    <metal:event use-macro="context/event_view/macros/content-core">
+        [Event Text]
+        <metal:event_add_calendar fill-slot="event_add_calendar">
+            No calendar
+        </metal:event_add_calendar>
+    </metal:event>
+</metal:summary>
+
+<metal:footer fill-slot="about">
+
+<!-- Footer About Text -->
+
+<p>&nbsp;</p>
+
+</metal:footer>
+</body>
+</html>
+

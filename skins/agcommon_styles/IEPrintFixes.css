@@ -1,0 +1,11 @@
+/* Print fixes for IE */
+body {
+    font-size: 69%;
+}
+#logo-site {
+    left: 200px;
+    top: 25px;
+}
+h1.documentFirstHeading {
+    margin-top: 0.5em;
+}

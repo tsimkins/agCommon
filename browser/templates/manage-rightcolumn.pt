@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<head>
+    <div metal:fill-slot="javascript_head_slot" tal:omit-tag="">
+        <link type="text/css" rel="kinetic-stylesheet"
+            tal:attributes="href string:${context/absolute_url}/++resource++manage-portlets.kss"/>
+    </div>
+</head>
+<body>
+
+<div metal:fill-slot="column_one_slot">
+    <!-- Hiding Column One -->
+</div>
+
+<div metal:fill-slot="column_two_slot">
+    <!-- Hiding Column Two -->
+</div>
+
+<div metal:fill-slot="main">
+  
+  <h2 class="documentFirstHeading">Manage Right Column Portlets</h2>
+  
+  <span tal:replace="structure provider:agcommon.rightcolumn" />
+   
+</div>
+</body>
+</html>

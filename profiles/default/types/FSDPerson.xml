@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object name="Person" meta_type="Factory-based Type Information"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+    <property name="view_methods" purge="True">
+        <element value="person_view"/>
+        <element value="person_redirect_view"/>
+    </property>
+
+    <property name="allowed_content_types" purge="False">
+        <element value="Document" />
+        <element value="File" />
+        <element value="FSDCourse" />
+    </property>
+
+    <alias from="(Default)" to="(dynamic view)"/>
+
+</object>

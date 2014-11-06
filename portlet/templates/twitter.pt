@@ -1,0 +1,21 @@
+<h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
+
+<dl class="portlet portletTwitter">
+
+    <dd class="portletItem"
+        tal:define="widget_height view/data/widget_height|nothing;
+                    widget_height python: widget_height or 600;"
+        tal:attributes="style python: 'height: %dpx' % (widget_height+12);">
+    
+    
+        <a class="twitter-timeline"  
+           data-chrome="nofooter"
+
+           tal:attributes="href view/data/twitter_url|nothing;
+                           data-widget-id view/data/widget_id|nothing;
+                           height python: str(widget_height);"
+           tal:content="view/data/header" />
+
+
+    </dd>
+</dl>

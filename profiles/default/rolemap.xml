@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<rolemap>
+  <roles>
+    <role name="Collection Manager"/>
+    <role name="Portlet Manager"/>
+    <role name="Restricted Content Manager"/>
+  </roles>
+  <permissions>
+    <permission name="ATContentTypes Topic: Add ATBooleanCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATCurrentAuthorCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATDateCriteria"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATDateRangeCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATListCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATPathCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATPortalTypeCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATReferenceCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATRelativePathCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATSelectionCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATSimpleIntCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATSimpleStringCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="ATContentTypes Topic: Add ATSortCriterion"
+                acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="Add portal topics" acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="Change portal topics" acquire="True">
+      <role name="Collection Manager"/>
+    </permission>
+    <permission name="Portlets: Manage portlets"
+                acquire="True">
+      <role name="Portlet Manager"/>
+    </permission>
+    <permission name="plone.portlet.collection: Add collection portlet"
+                acquire="True">
+      <role name="Portlet Manager"/>
+    </permission>
+    <permission name="plone.portlet.static: Add static portlet"
+                acquire="True">
+      <role name="Portlet Manager"/>
+    </permission>
+    <permission name="Manage portal"
+                acquire="True">
+      <role name="Portlet Manager"/>
+    </permission>
+  </permissions>
+</rolemap>

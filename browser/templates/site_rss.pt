@@ -1,0 +1,4 @@
+<link rel="alternate" type="application/rss+xml"
+      tal:condition="view/show_site_rss"
+      tal:attributes="title view/site_rss_title;
+                      href view/site_rss_link" />

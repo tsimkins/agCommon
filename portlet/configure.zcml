@@ -1,0 +1,74 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:plone="http://namespaces.plone.org/plone">
+
+    <!-- Portlets -->
+  
+    <plone:portlet
+        name="agcommon.Image"
+        interface=".image.IImage"
+        assignment=".image.Assignment"
+        renderer=".image.Renderer"
+        addview=".image.AddForm"
+        editview=".image.EditForm"
+        />
+
+    <plone:portlet
+        name="agcommon.LinkIcon"
+        interface=".linkicon.ILinkIcon"
+        assignment=".linkicon.Assignment"
+        renderer=".linkicon.Renderer"
+        addview=".linkicon.AddForm"
+        editview=".linkicon.EditForm"
+        />
+
+    <plone:portlet
+        name="agcommon.LinkButton"
+        interface=".linkbutton.ILinkButton"
+        assignment=".linkbutton.Assignment"
+        renderer=".linkbutton.Renderer"
+        addview=".linkbutton.AddForm"
+        editview=".linkbutton.EditForm"
+        />
+
+    <plone:portlet
+        name="agcommon.RelatedItems"
+        interface=".relateditems.IRelatedItems"
+        assignment=".relateditems.Assignment"
+        renderer=".relateditems.Renderer"
+        addview=".relateditems.AddForm"
+        editview=".relateditems.EditForm"
+        />
+
+    <plone:portlet
+        name="agcommon.Person"
+        interface=".person.IPerson"
+        assignment=".person.Assignment"
+        renderer=".person.Renderer"
+        addview=".person.AddForm"
+        editview=".person.EditForm"
+        />
+
+    <plone:portlet
+        name="agcommon.Contact"
+        interface=".contact.IContact"
+        assignment=".contact.Assignment"
+        renderer=".contact.Renderer"
+        addview=".contact.AddForm"
+        editview=".contact.EditForm"
+        />
+
+    <plone:portlet
+        name="agcommon.Twitter"
+        interface=".twitter.ITwitter"
+        assignment=".twitter.Assignment"
+        renderer=".twitter.Renderer"
+        addview=".twitter.AddForm"
+        editview=".twitter.EditForm"
+        />
+
+    <utility
+      component=".vocabulary.PortalActionsVocabularyFactory"
+      name="agcommon.portlet.portal_actions"
+      />
+
+</configure>

@@ -1,0 +1,27 @@
+<div id="homepageimage" tal:condition="python: view.isLayout(views=['document_homepage_view']) and view.image_format == 'standard' and not view.slider_has_contents" tal:attributes="class python: view.hide_breadcrumbs and 'nobreadcrumbs' or ''">
+
+	<tal:homePageOverlay tal:condition="python: view.homepage_h1 or view.homepage_h2">
+		<div class="text">
+			<h1 tal:condition="view/homepage_h1" tal:content="view/homepage_h1">[Homepage h1 Text]</h1>
+			<h2 tal:condition="view/homepage_h2" tal:content="view/homepage_h2">[Homepage h2 Text]</h2>
+		</div>
+		<div class="overlay"><!-- --></div>
+	</tal:homePageOverlay>
+
+</div>
+
+
+<tal:tile_homepage_slider
+     condition="python: view.isLayout(views=['tile_homepage_view']) and not view.slider_has_contents">
+
+
+    <!-- Panorama Homepage JavaScript -->
+    <script async
+            tal:define="acquire_background_images context/acquire_background_images|nothing"
+            tal:condition="python: acquire_background_images or 'background-images' in context.keys()" 
+            type="text/javascript" 
+            src="background-images/@@tile_homepage.js"></script>
+
+
+
+</tal:tile_homepage_slider>

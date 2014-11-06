@@ -1,0 +1,17 @@
+<div class="publication">
+
+    <metal:publication use-macro="context/order/macros/publication-information">
+        <metal:heading fill-slot="heading">
+            <h2>Publication Details</h2>
+        </metal:heading>
+    </metal:publication>
+
+    <div tal:condition="view/downloadPDF">
+        <a tal:attributes="href view/pdf_url">Download PDF</a>
+    </div>
+
+    <div tal:condition="view/orderPublication">
+        <a tal:attributes="href view/order_url">Order Publication</a>
+    </div>
+
+</div>

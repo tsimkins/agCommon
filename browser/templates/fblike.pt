@@ -1,0 +1,17 @@
+<tal:fblike
+    tal:define="hide_fblike context/hide_fblike|nothing;
+                isAnon view/anonymous"
+    tal:condition="not:view/isHomePage">
+    
+    <fb:like 
+        id="fblike" 
+        title="Recommend this on Facebook"
+        tal:condition="python: not hide_fblike and isAnon"
+        tal:attributes="href view/likeurl"
+        send="false" 
+        show_faces="true" 
+        action="recommend"
+        width="100%">
+    </fb:like>
+
+</tal:fblike>

@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!-- This file holds the setup configuration of the viewlet managers
+for the "agCommon" skin.
+
+Viewlets keep the same ordering than the default skin ('Plone Default'
+out of the box).
+You can specify skinname="*" if you want changes apply for all skins.
+The 'based-on' attribute lets you inherit the viewlets ordering from an
+existing skin.
+Using "True"" for the 'make-default' parameter will make the 'skinname'
+value set as default skinname. Means the name of the skin that would be
+used in case the viewlets ordering was not specified for the currently
+used skin.
+
+The definition of a viewlet accepts these parameters:
+- name: quite self explanatory, the name of the viewlet.
+- insert-before: name of the viewlet before which it must be added or
+moved.
+- insert-after: name of the viewlet after which it must be added
+or moved.
+Note: insert-before and -after accept the value "*" which means
+"all".
+-->
+
+<object>
+
+    <!-- Display Viewlets -->
+    
+    <order manager="plone.htmlhead" skinname="agCommon">
+        <viewlet name="agcommon.htmlhead.title" insert-after="*"/>
+        <viewlet name="agcommon.htmlhead.fbmetadata" insert-after="agcommon.htmlhead.title"/>
+    </order>
+
+    <order manager="plone.htmlhead.links" skinname="agCommon">
+        <viewlet name="agcommon.links.RSS" />
+        <viewlet name="agcommon.links.site_rss" insert-after="agcommon.links.RSS" />
+    </order>
+
+    <order manager="plone.portaltop" skinname="agCommon">
+        <viewlet name="plone.header" insert-before="*"/>
+        <viewlet name="plone.personal_bar" insert-after="plone.header"/>
+        <viewlet name="agcommon.topnavigation" insert-after="plone.personal_bar" />
+    </order>
+
+    <order manager="plone.portalheader" skinname="agCommon">
+        <viewlet name="plone.skip_links" insert-before="*"/>
+        <viewlet name="plone.logo" insert-after="plone.skip_links"/>
+        <viewlet name="plone.searchbox" insert-after="plone.logo"/>
+    </order>
+
+    <order manager="plone.abovecontent" skinname="agCommon">
+        <viewlet name="plone.path_bar" insert-before="*"/>
+        <viewlet name="agcommon.homepageimage" insert-after="plone.path_bar" />
+        <viewlet name="collective.contentleadimage.header" insert-after="agcommon.homepageimage" />
+    </order>
+    
+    <order manager="plone.abovecontenttitle" skinname="agCommon">
+        <viewlet name="agcommon.addthis" insert-before="*" />
+    </order>
+
+    <order manager="plone.contentviews" skinname="agCommon">
+        <viewlet name="plone.contentviews" insert-after="contentwellportlets.portletsabovecontent"/>
+        <viewlet name="plone.contentactions" insert-after="plone.contentviews"/>
+    </order>
+
+    <order manager="plone.belowcontenttitle" skinname="agCommon">
+        <viewlet name="plone.belowcontenttitle.keywords" insert-after="plone.belowcontenttitle.documentbyline"/>
+    </order>
+    
+    <order manager="plone.abovecontentbody" skinname="agCommon">
+        <viewlet name="collective.contentleadimage.full" insert-after="contentwellportlets.portletsabovecontent"/>
+        <viewlet name="agcommon.homepage_text" insert-after="collective.contentleadimage.full" />
+        <viewlet name="agcommon.localsearchbox" insert-after="agcommon.homepage_text" />
+        <viewlet name="agcommon.centercolumn" insert-after="agcommon.localsearchbox" />
+        <viewlet name="agcommon.rightcolumn" insert-after="agcommon.centercolumn" />
+
+    </order>
+
+    <order manager="plone.belowcontentbody" skinname="agCommon">
+        <viewlet name="contentwellportlets.portletsabovecontent" insert-before="*" />
+        <viewlet name="plone.nextprevious" insert-after="contentwellportlets.portletsabovecontent"/>
+        <viewlet name="plone.belowcontentbody.relateditems" insert-after="plone.nextprevious"/>
+        <viewlet name="agcommon.contributors" insert-after="plone.belowcontentbody.relateditems"/>
+        <viewlet name="agcommon.fblike" insert-after="agcommon.contributors"/>
+        <viewlet name="plone.comments" insert-after="agcommon.fblike"/>
+        <viewlet name="plone.abovecontenttitle.documentactions" insert-after="plone.comments"/>
+    </order>
+    
+    <order manager="plone.portalfooter" skinname="agCommon">
+        <viewlet name="plone.footer" insert-before="*" />
+        <viewlet name="contentwellportlets.portletsbelowcontent" insert-after="plone.footer" />
+        <viewlet name="agcommon.analytics" insert-after="plone.analytics" />        
+    </order>
+    
+    <!-- Hidden Viewlets -->
+
+    <hidden manager="plone.portaltop" skinname="agCommon">
+        <viewlet name="plone.app.i18n.locales.languageselector"/>
+        <viewlet name="plone.path_bar"/>
+    </hidden>
+
+    <hidden manager="plone.htmlhead.links" skinname="agCommon">
+        <viewlet name="plone.links.RSS" />
+    </hidden>
+    
+    <hidden manager="plone.portalheader" skinname="agCommon">
+        <viewlet name="plone.global_sections" />
+        <viewlet name="plone.site_actions" />
+        <viewlet name="plone.personal_bar" />
+        <viewlet name="plone.app.i18n.locales.languageselector" />
+    </hidden>
+
+    <hidden manager="plone.abovecontent" skinname="agCommon">
+        <viewlet name="plone.app.i18n.locales.languageselector" />
+    </hidden>
+
+    <hidden manager="plone.abovecontent" skinname="agCommon">
+        <viewlet name="plone.abovecontenttitle.documentactions" />
+    </hidden>
+
+    <hidden manager="plone.abovecontenttitle" skinname="agCommon">
+        <viewlet name="plone.abovecontenttitle.documentactions" />
+    </hidden>
+
+    <hidden manager="plone.portalfooter" skinname="agCommon">
+        <viewlet name="plone.colophon" />
+        <viewlet name="plone.site_actions" />
+    </hidden>
+    
+    <hidden manager="plone.contentviews" skinname="agCommon">
+        <viewlet name="contentwellportlets.portletsabovecontent" />
+    </hidden>
+
+    <hidden manager="plone.belowcontenttitle" skinname="agCommon">
+        <viewlet name="collective.contentleadimage.thumbnail" />
+    </hidden>
+    
+    <hidden manager="plone.belowcontent" skinname="agCommon">
+        <viewlet name="plone.belowcontenttitle.keywords" />
+        <viewlet name="contentwellportlets.portletsbelowcontent" />
+        <viewlet name="plone.nextprevious" />
+    </hidden>
+
+    <hidden manager="plone.htmlhead" skinname="agCommon">
+        <viewlet name="plone.htmlhead.title" />
+    </hidden>
+
+    <hidden manager="plone.abovecontentbody" skinname="agCommon">
+        <viewlet name="agcommon.tableofcontents" />
+        <viewlet name="contentwellportlets.portletsabovecontent" />
+    </hidden>
+
+    <hidden manager="plone.belowcontentbody" skinname="agCommon">
+        <viewlet name="contentwellportlets.portletsabovecontent" />
+        <viewlet name="plone.comments" />
+    </hidden>
+	
+    <hidden manager="plone.portalfooter" skinname="agCommon">
+        <viewlet name="contentwellportlets.footerportlets" />
+    </hidden>
+
+</object>
+

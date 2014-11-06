@@ -1,0 +1,32 @@
+<div id="homepage-text" tal:condition="view/showHomepageText|nothing"
+     tal:define="plone_view context/@@plone;
+                 hsr python:plone_view.have_portlets('agcommon.rightcolumn', view);
+                 hsc python:plone_view.have_portlets('agcommon.centercolumn', view);"
+     tal:attributes="class python:(hsc and hsr and 'sc sr') or (hsc and 'sc') or (hsr and 'sr') or ''">
+
+    <tal:addthis tal:define="homepage_text python:True">
+
+        <div tal:replace="structure provider:agcommon.addthis" />
+
+    </tal:addthis>
+
+
+    <h1 class="documentFirstHeading"> 
+        <metal:field use-macro="python:here.widget('title', mode='view')">
+        Title
+        </metal:field>
+    </h1>
+
+    <p class="documentDescription" tal:condition="here/Description">
+        <metal:field use-macro="python:here.widget('description', mode='view')">
+            Description
+        </metal:field>
+    </p>
+    
+    <div class="documentText" tal:condition="context/getText|nothing">
+        <metal:field use-macro="python:here.widget('text', mode='view')">
+            Body text
+        </metal:field>
+    </div>
+
+</div>

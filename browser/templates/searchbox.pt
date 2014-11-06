@@ -1,0 +1,83 @@
+<div id="portal-searchbox"
+     i18n:domain="plone"
+     tal:define="navigation_root_url view/navigation_root_url;
+                 search_input_id view/search_input_id;">
+    <form name="searchform"
+          action="search"
+          id="plonesearchform"
+          tal:attributes="action string:${navigation_root_url}/search">
+
+        <div class="LSBox">
+
+        <label for="SearchableText" class="hiddenStructure"
+                    i18n:translate="text_search">Search Text</label>
+
+        <input id="SearchableText"
+               name="SearchableText"
+               type="text"
+               size="18"
+               value=""
+               title="Search..."
+               accesskey="4"
+               i18n:attributes="title title_search_site;"
+               tal:attributes="value request/form/SearchableText|nothing;"
+               class="inputLabel"
+               autocomplete="off"/>
+
+        <label for="searchSource" class="hiddenStructure">Search Type</label>
+        
+		<select id="searchSource"
+		      tal:define="showCollegeSearch context/show_college_search|nothing">
+			<option value = "section">Search This Section</option>
+			<option value = "site" tal:attributes="selected python:showCollegeSearch and '' or 'selected'">Search Site</option>
+			<option value = "college" tal:attributes="selected python:showCollegeSearch and 'selected' or ''">Search College</option>
+			<option value = "psu">Search Penn State</option>
+		</select>
+
+        <input class="searchButton"
+               alt="Search"
+               type="image"
+               tal:attributes="src string:${navigation_root_url}/go.png"
+               id="goSearch"
+               value="Search"
+               i18n:attributes="value label_search;" />
+
+        <div class="searchSection">
+            <input id="searchbox_currentfolder_only"
+                   class="noborder"
+                   type="checkbox"
+                   name="path"
+                   tal:attributes="value view/folder_path"
+                   />
+            <label for="searchbox_currentfolder_only"
+                   i18n:translate="label_searchbox_currentfolder_only"
+                   style="cursor: pointer">
+                only in current section
+            </label>
+        </div>
+
+        <div class="LSResult" id="LSResult" style=""><div class="LSShadow" id="LSShadow"></div></div>
+        </div>
+    </form>
+
+	<!--
+		These are the alternate search forms.
+	-->
+
+	<div style = "display: none">
+		<form id = "GoogleSearch" action="http://www.google.com/search" method="get" target="_blank">
+			<input type="hidden" id="searchbox" name="q"/>
+			<input type="hidden" name="sitesearch" value="psu.edu"/>
+			<input type="submit" value="Search" />
+		</form>
+        <form action="http://www.google.com/cse" id="GoogleCustomSearch" target="_blank">
+          <div>
+            <input type="hidden" name="cx" value="009987215249396987893:cmobqlykeyk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="hidden" name="q" size="31" />
+			<input type="submit" value="Search" />
+          </div>
+        </form>
+
+	</div>
+</div>

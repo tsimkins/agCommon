@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<portlets>
+ 
+    <portletmanager
+        name="agcommon.contact"
+        type="Products.agCommon.browser.interfaces.IContact"
+        remove="True"
+    /> 
+
+	<portletmanager
+		name="agcommon.rightcolumn"
+		type="Products.agCommon.browser.interfaces.IRightColumn"
+        remove="True"
+	/>
+
+	<portletmanager
+		name="agcommon.homepageimage"
+		type="Products.agCommon.browser.interfaces.IHomepageImage"
+        remove="True"
+	/>
+
+	<portletmanager
+		name="agcommon.centercolumn"
+		type="Products.agCommon.browser.interfaces.ICenterColumn"
+        remove="True"
+	/>
+	
+    <portlet
+        addview="agcommon.LinkIcon"
+        title="Link and Icon Portlet"
+        remove="True"
+    />
+
+    <portlet
+        addview="agcommon.LinkButton"
+        title="Link Button Portlet"
+        remove="True"
+    />
+
+    <portlet
+        addview="agcommon.RelatedItems"
+        title="Related Items Portlet"
+        remove="True"
+    />
+    
+    <portlet
+        addview="agcommon.Person"
+        title="Person Portlet"
+        remove="True"
+    />
+
+    <portlet
+        addview="agcommon.Contact"
+        title="Contact Portlet"
+        remove="True"
+    />
+    
+</portlets>

@@ -1,0 +1,135 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+
+      xml:lang="en" lang="en"
+      metal:use-macro="here/@@standard_macros/page"
+      i18n:domain="simplealias">
+
+  <tal:comment replace="nothing">
+    ###############
+    Alias view main
+    ###############
+    $Id: alias_view.pt 60216 2008-03-07 13:28:43Z wichert $
+  </tal:comment>
+
+  <metal:fillbase fill-slot="base">
+    <base href=""
+          tal:condition="python: alias is not None"
+          tal:define="alias here/getAlias"
+          tal:attributes="href alias/renderBase" />
+  </metal:fillbase>
+
+  <body>
+    <div metal:fill-slot="body">
+
+    <tal:main-macro metal:define-macro="main"
+                    tal:define="hasPermission python:here.hasPermission()">
+      <tal:viewpermission tal:condition="python:hasPermission==1">
+        <tal:target tal:define="targetObject here/getAlias;"
+                    tal:condition="nocall:targetObject">
+
+          <tal:block tal:define="target_type python:targetObject.portal_type;
+				 target_view_macro here/targetMainMacro;
+				 showTarget python:here.getShowTarget and target_view_macro;
+                                 showHint here/getShowHint">
+
+            <tal:check tal:condition="not: showTarget">
+              <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+              <h1 class="documentFirstHeading"> 
+                  <metal:field use-macro="python:here.widget('title', mode='view')">
+                  Title
+                  </metal:field>
+              </h1>
+
+              <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+              <p class="documentDescription">
+                  <metal:field use-macro="python:here.widget('description', mode='view')">
+                  Description
+                  </metal:field>
+              </p>
+            </tal:check>
+
+            <tal:check tal:condition="showHint">
+              <div tal:condition="nocall:targetObject"
+                   style="background-color: lavender">
+
+                <p>
+                  <img tal:attributes="src string:${portal_url}/alias_icon.gif" alt="Alias" />
+                  <span i18n:translate="is_an_alias">
+                    This is an alias for
+                  </span>
+                  <img tal:attributes="src targetObject/getIcon" />
+                  <a href="#"
+                     tal:attributes="href targetObject/absolute_url"
+                     tal:content="targetObject/title_or_id">
+                    Title or id
+                  </a>.
+                </p>
+
+                <p class="discreet">
+                  <span i18n:translate="to_view">
+                    To view, comment or edit this object, click
+                  </span>
+                  <a i18n:translate="here" href="#"
+                     tal:attributes="href targetObject/absolute_url">
+                    here
+                  </a>.
+                </p>
+
+              </div>
+            </tal:check>
+
+            <tal:check
+	       tal:condition="showTarget">
+              <tal:block tal:define="alias nocall:here;
+				     here python:targetObject;
+				     context nocall:here">
+				<div id="content">
+                <metal:macro metal:use-macro="target_view_macro"/>
+                </div>
+              </tal:block>
+            </tal:check>
+
+
+            <tal:discussions tal:condition="python: targetObject.portal_discussion.isDiscussionAllowedFor(targetObject)">
+              <p tal:define="count python:targetObject.portal_discussion.getDiscussionFor(targetObject).replyCount(targetObject)" tal:condition="python:count>0">
+                <a href="" tal:attributes="href targetObject/absolute_url"><span i18n:translate="view_comments">View comments</span> (<span tal:replace="count"/>)</a>
+              </p>
+            </tal:discussions>
+
+          </tal:block>
+        </tal:target>
+      </tal:viewpermission>
+
+      <tal:nopermission tal:condition="python:hasPermission &lt; 1">
+          <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+          <h1 class="documentFirstHeading"> 
+              <metal:field use-macro="python:here.widget('title', mode='view')">
+              Title
+              </metal:field>
+          </h1>
+
+          <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+          <p class="documentDescription">
+              <metal:field use-macro="python:here.widget('description', mode='view')">
+              Description
+              </metal:field>
+          </p>
+
+        <div class="comment" tal:condition="python:hasPermission==0">
+          <p>
+            <img src="alias_icon.gif" />&nbsp;<strong>Note:</strong><br />
+            <span i18n:translate="no_view_permission">You have no permission to view the alias' target object.</span>
+          </p>
+        </div>
+      </tal:nopermission>
+    </tal:main-macro>
+    </div>
+  </body>
+</html>

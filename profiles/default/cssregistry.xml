@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!-- This file holds the setup configuration for the portal_css tool. -->
+
+<object name="portal_css">
+ <!-- Stylesheets that will be registered with the portal_css tool are defined
+      here. You can also specify values for existing resources if you need to
+      modify some of their properties.
+      Stylesheet elements accept these parameters:
+      - 'id' (required): it must respect the name of the css or DTML file
+        (case sensitive). '.dtml' suffixes must be ignored.
+      - 'expression' (optional - default: ''): a tal condition.
+      - 'media' (optional - default: ''): possible values: 'screen', 'print',
+        'projection', 'handheld'...
+      - 'rel' (optional - default: 'stylesheet')
+      - 'title' (optional - default: '')
+      - 'rendering' (optional - default: 'import'): 'import', 'link' or 'inline'.
+      - 'enabled' (optional - default: True): boolean
+      - 'cookable' (optional - default: True): boolean (aka 'merging allowed')
+      See registerStylesheet() arguments in
+      ResourceRegistries/tools/CSSRegistry.py for the latest list of all
+      available keys and default values.
+      -->
+ <stylesheet id="ag_common.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="all"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="contentwellportlets.css" insert-after="ag_common.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="all"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="fsdfixes.css" insert-after="contentwellportlets.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="all"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="futurestudents.css" insert-after="fsdfixes.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" media="all"
+    expression="python:portal.id == 'thinkagain.psu.edu'"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="extension.css" insert-after="futurestudents.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1"     expression="python:portal.id == 'extension.psu.edu'"  media="all"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="site.css" insert-after="medium_screen.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="all"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="print.css" insert-after="site.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="print"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="site_print.css" insert-after="print.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="print"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="handheld.css"  insert-after="site_print.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="handheld"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="IE6Fixes.css"  insert-after="handheld.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="all"
+    conditionalcomment="IE 6"
+    rel="stylesheet" rendering="import"/>
+
+ <stylesheet id="IE7Fixes.css"  insert-after="IE6Fixes.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="all"
+    conditionalcomment="IE 7"
+    rel="stylesheet" rendering="import"/>
+    
+ <stylesheet id="IE8Fixes.css"  insert-after="IE7Fixes.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="all"
+    conditionalcomment="IE 8"
+    rel="stylesheet" rendering="import"/>
+    
+ <stylesheet id="IEPrintFixes.css"  insert-after="IE8Fixes.css"
+    title="" cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""  media="print"
+    conditionalcomment="IE"
+    rel="stylesheet" rendering="import"/>    
+
+ <!-- Common homepage: all homepages -->
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" id="common-homepage.css" insert-after="*"
+    expression="python: context.getLayout() in ['document_homepage_view', 'document_subsite_view', 'panorama_homepage_view', 'portlet_homepage_view']" 
+    rel="stylesheet"
+    rendering="import"/>
+
+ <!-- Subsite homepage: subsite homepages -->    
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" id="subsite.css" insert-after="common-homepage.css"
+    expression="python: context.getLayout() in ['document_subsite_view', 'panorama_homepage_view', 'portlet_homepage_view']" 
+    rel="stylesheet"
+    rendering="import"/>
+
+ <!-- Homepage: standard homepages -->  
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" id="homepage.css" insert-after="subsite.css"
+    expression="python: context.getLayout() in ['document_homepage_view', ]" 
+    rel="stylesheet"
+    rendering="import"/>
+
+ <!-- Panorama homepage: panorama and portlet homepages -->
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" id="panorama_homepage.css" insert-after="homepage.css"
+    expression="python: context.getLayout() in ['panorama_homepage_view', 'portlet_homepage_view']" 
+    rel="stylesheet"
+    rendering="import"/>
+
+ <!-- Portlet homepage: portlet homepages -->
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" id="portlet_homepage.css" insert-after="panorama_homepage.css"
+    expression="python: context.getLayout() in ['portlet_homepage_view']" 
+    rel="stylesheet"
+    rendering="import"/>
+
+ <!-- Flex slider -->
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" id="flexslider.css" insert-after="panorama_homepage.css"
+    expression="python: context.getLayout() in ['document_homepage_view', ]" 
+    rel="stylesheet"
+    rendering="import"/>
+
+
+
+<!-- iPhone portrait mode -->
+
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="on" expression="" id="resolution-520-portrait.css" insert-after="resolution-520.css"
+    media="handheld, screen and (max-width: 520px) and (orientation: portrait)" rel="stylesheet"
+    rendering="import"/>
+    
+<!-- iPhone landscape mode -->
+
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="on" expression="" id="resolution-520-landscape.css" insert-after="resolution-520-portrait.css"
+    media="handheld, screen and (max-width: 520px) and (orientation: landscape)" rel="stylesheet"
+    rendering="import"/>
+
+<!-- Responsive Styles -->
+
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="on" expression="" id="responsive.css" insert-after="*"
+    media="all" rel="stylesheet"
+    rendering="import"/>
+
+
+</object>

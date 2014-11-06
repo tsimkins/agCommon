@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="header">
+    <metal:content-core define-macro="printheader">
+        <div id="printheader" align="center" class="extension">
+            <img alt="Penn State Extension Logo" tal:attributes="src string:${portal_url}/extension-factsheet.png" />
+        </div>
+    </metal:content-core>
+</metal:content-core>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+        <metal:field use-macro="python:context.widget('text', mode='view')">
+            Body text
+        </metal:field>
+    </metal:content-core>
+</metal:content-core>
+
+<metal:footer fill-slot="footer">
+
+    <tal:disclaimer define="disclaimer_title context/factsheet_disclaimer_title|nothing;
+                            disclaimer_text context/factsheet_disclaimer|nothing"
+                    condition="disclaimer_text">
+    <h2 tal:condition="not: disclaimer_text">Disclaimer</h2>
+    <h2 tal:condition="disclaimer_title" tal:content="disclaimer_title" />
+    
+    <p tal:replace="structure disclaimer_text" />
+    </tal:disclaimer>
+
+<div id="disclaimer">
+
+<p>Penn State College of Agricultural Sciences research, extension, and resident education programs are funded in part by Pennsylvania counties, the Commonwealth of Pennsylvania, and the U.S. Department of Agriculture.</p>
+<p>Visit Penn State Extension on the web: <a href="http://extension.psu.edu">http://extension.psu.edu</a></p><p>
+Where trade names appear, no discrimination is intended, and no endorsement by Penn State Cooperative Extension is implied.</p>
+<p><strong>This publication is available in alternative media on request.</strong></p>
+<p>Penn State is an equal opportunity, affirmative action employer, and is committed to providing employment opportunities to minorities, women, veterans, individuals with disabilities, and other protected groups. <a href="http://guru.psu.edu/policies/AD85.html">Nondiscrimination</a>.</p>
+	<p>
+		&copy; The Pennsylvania State University 
+		<span tal:omit-tag=""
+			tal:define="now modules/DateTime/DateTime" 
+			tal:content="now/year">[date last modified]</span>
+	</p>
+    <tal:hide condition="python:False">
+	<p tal:condition="context/effective_date|nothing">
+		Updated <span tal:replace="python: context.effective_date.strftime('%B, %Y')" />
+	</p>
+	</tal:hide>
+</div>  
+
+</metal:footer>
+
+
+</body>
+</html>
+

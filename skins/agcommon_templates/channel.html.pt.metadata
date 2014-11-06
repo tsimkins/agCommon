@@ -1,0 +1,4 @@
+[default]
+title=channel.html
+cache=HTTPCache
+

@@ -1,0 +1,68 @@
+<tal:flexslider condition="view/slider_has_contents|nothing">
+    <h2 class="flexslider-title" tal:content="view/slider_title|nothing" />
+    
+    <div class="flexslider" 
+        tal:attributes="data-random view/slider_random;"
+        tal:define="folderContents view/folderContents|nothing;
+                    plone_view context/@@plone;
+                    test nocall:view/test;
+                    standalone_view python:True;
+                    show_image python:True;">
+        <ul class="slides">
+            <metal:block use-macro="context/@@folder_listing_z3/macros/content-core">
+                <metal:entries fill-slot="entries">
+                    <metal:block use-macro="context/@@folder_listing_z3/macros/entries">
+                        <metal:entry fill-slot="entry">
+                            <li class="tileItem">
+            
+                                <div class="contentLeadImageContainer"
+                                    tal:condition="item_has_leadimage">
+                                    <tal:leadimage
+                                            tal:define="item_object item/getObject|nothing;">
+
+                                        <a href="#"
+                                           tal:attributes="class string: summary url ${item_wf_state_class};
+                                                           href python:test(item_type in use_view_action, item_url+'/view', item_url);">
+
+                                            <img tal:replace="structure python:view.tag(item_object, css_class='tileImage', scale='large')" />
+                                        </a>
+
+                                    </tal:leadimage>
+                                </div>
+                                <div class="flexslider-text">
+                                    <div class="tileHeadline"
+                                        metal:define-macro="listitem">
+                
+                                        <a href="#"
+                                            tal:attributes="class string: summary url ${item_wf_state_class};
+                                                            href python:test(item_type in use_view_action, item_url+'/view', item_url);"
+                                            tal:content="item_title_or_id">
+                                            Item Title
+                                        </a>
+                                    </div>
+                
+                                    <div class="tileBody" tal:condition="python: item_type != 'FSDPerson'">
+                                        <p tal:content="item_description"
+                                                tal:condition="item_description">
+                                            description
+                                        </p>
+                                    </div>
+                
+                                    <div class="tileFooter">
+                                        <p>
+                                            <a tal:attributes="href python:test(item_type in use_view_action, item_url+'/view', item_url);"
+                                                i18n:translate="read_more">
+                                            Read More<span class="hiddenStructure"> about <span tal:replace="item_title_or_id" /></span>&hellip;
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+            
+                            </li>
+                        </metal:entry>
+                    </metal:block>
+                </metal:entries>
+            </metal:block>
+        </ul>
+    </div>
+</tal:flexslider>

@@ -1,0 +1,58 @@
+<tal:block i18n:domain="plone"
+    tal:define="include_top view/include_top;
+                root view/navigation_root;">
+
+<tal:header
+    tal:define="portal_url context/portal_url|nothing;
+                subsite_title context/subsite_title|nothing;
+                subsite_url context/subsite_url|nothing;
+                subsite_url python:subsite_url and subsite_url.replace('${portal_url}', portal_url) or None;
+                navigation_title python: view.title().lower() != 'navigation' and view.title() or root.Title();
+                enable_subsite_nav view/isSubsite|nothing;
+                isLeftColumn view/isLeftColumn|nothing;
+                show_subsite_nav python: (include_top and enable_subsite_nav and isLeftColumn and subsite_title and subsite_url and navigation_title != subsite_title) or False 
+                ">
+
+    <h2 class="hiddenStructure"
+        tal:condition="not: include_top">
+    
+        <a href="#"
+            tal:attributes="href root/absolute_url">Navigation</a>
+    </h2>
+    <tal:show_title condition="include_top">
+        <tal:subsite condition="show_subsite_nav">
+ 
+            <h2 class="portletHeader portletNavigationHeader">
+                <a tal:attributes="href subsite_url;
+                                   title subsite_title;"
+                                   tal:content="subsite_title" />
+            </h2>
+            <h3 class="portletNavigationSubHeader">
+                <a tal:attributes="href root/absolute_url;
+                                   title root/Description;"
+                                   tal:content="navigation_title" />
+            </h3>
+        </tal:subsite>
+        <tal:notsubsite condition="not:show_subsite_nav">
+            
+            <h2 class="portletHeader portletNavigationHeader">
+                <a tal:attributes="href root/absolute_url;
+                                   title root/Description;"
+                                   tal:content="navigation_title" />
+            </h2>
+        </tal:notsubsite>
+    </tal:show_title>
+</tal:header>
+
+<dl tal:define="nav_class python:include_top and 'headerNavigationTree' or 'standaloneNavigationTree';"
+    tal:attributes="class string:portlet portletNavigationTree ${nav_class}">
+
+    <dd class="portletItem lastItem">
+        <ul class="navTree navTreeLevel0">
+            <li tal:replace="structure view/createNavTree">
+                SUBTREE
+            </li>
+        </ul>
+    </dd>
+</dl>
+</tal:block>

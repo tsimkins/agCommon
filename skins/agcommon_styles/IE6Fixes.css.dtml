@@ -1,0 +1,111 @@
+/*
+** Stylesheet with Internet Explorer 6.0 workarounds.
+*/
+
+/* <dtml-with base_properties> */
+
+#visual-portal-wrapper, #portal-header {
+    margin: 0 auto;
+    width: 908px;
+}
+
+#homepageimage {
+    background-color: #FFFFFF;
+}
+
+div.no-description {
+    display: block;
+}
+
+
+#portal-columns, #portal-column-one, #portal-column-two, #portal-column-content {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+#portal-columns {
+    width: 908px;
+}
+
+#portal-column-one {
+    width: 200px;
+}
+
+#portal-column-two {
+    width: 700px;
+    float: right;
+}
+
+
+#portal-column-content {
+    width: 908px;
+}
+
+#portal-column-content.sl {
+    width: 700px;
+}
+
+#portal-column-one-visualPadding {
+    width: 179px;
+    padding: 0 10px;
+}
+
+#portal-column-two .portletFooter,
+#rightcolumn .portletFooter,
+.portletFooter {
+    border: none !important;
+}
+
+#portal-breadcrumbs span {
+    font-size: 0.625em;
+}
+
+/* Since IE 6 doesn't support > selector, expand what it shrunk */
+#portal-breadcrumbs #breadcrumbs-current {
+    font-size: 1em;
+}
+
+.fancybox-close {
+    right: 0;
+    top: 0;
+}
+
+body.icons-on #content form {
+    width: 665px;
+}
+
+#addthis {
+    display: none;
+}
+
+.tileItem .contentLeadImageContainer {
+    display: none; 
+}
+
+#portal-column-one .portletNavigationHeader {
+	margin: 0px !important;
+	padding: 10px 0;
+	background-color: transparent !important;
+}
+
+#portal-column-one .portletNavigationHeader a {
+    color: #000033 !important;
+    font-weight: bold !important;
+}
+
+#logo-psu img {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&dtml-portal_url;/two-tone-psu-logo.png);
+}
+
+#logo-college img {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&dtml-portal_url;/college-text.png);
+}
+
+#logo-extension img {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&dtml-portal_url;/extension-header.png);
+}
+
+
+/* </dtml-with> */

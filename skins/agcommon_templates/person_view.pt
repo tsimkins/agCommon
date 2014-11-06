@@ -1,0 +1,230 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="FacultyStaffDirectory">
+
+  <head></head>
+
+  <body>
+
+  <metal:title fill-slot="content-title">                              
+
+  </metal:title>
+
+  <metal:main fill-slot="content-core">
+
+        <div id="hcard" class="vcard facultyStaffDirectory personView"
+             tal:define="isExpired python:context.contentExpired();
+             isEditor python:checkPermission('Modify portal content', context);
+             showExpired python: not isExpired or (isExpired and isEditor)" >
+      <h1 class="fn n documentFirstHeading">
+        <span class="given-name" tal:content="context/getFirstName"><tal:comment replace="nothing">[First Name]</tal:comment></span>
+        <span class="additional-name" tal:content="context/getMiddleName | nothing"><tal:comment replace="nothing">[Middle Name]</tal:comment></span>
+        <span class="family-name" tal:content="context/getLastName"><tal:comment replace="nothing">[Last Name]</tal:comment></span><tal:comma condition="context/getSuffix">,</tal:comma>
+        <span class="honorific-suffix" tal:content="context/getSuffix"><tal:comment replace="nothing">[ suffix i.e. Dr]</tal:comment></span>
+      </h1>
+      
+
+            <tal:redirect define="layout here/layout|nothing;
+                                  primary_profile context/primary_profile|nothing;
+                                  isAnon context/@@plone_portal_state/anonymous;">
+
+                <dl class="portalMessage"
+                     tal:condition="python: not isAnon and primary_profile and layout=='person_redirect_view'">
+                     <dt>Info</dt>
+                     <dd>This profile is redirected to <a tal:attributes="href primary_profile" tal:content="primary_profile" /></dd>
+                </dl>
+
+            </tal:redirect>
+
+            <tal:expired>
+                <dl class="portalMessage info"
+                    tal:condition="python: isExpired and isEditor">
+                    <dt i18n:translate="FacultyStaffDirectory_expired_notice_editor_label">Note</dt>
+                    <dd i18n:translate="FacultyStaffDirectory_expired_notice_editor">
+                      This person is no longer associated with this organization.
+                      You are seeing all their information because you have editing rights.
+                      Regular site visitors will only see the person's name.
+                    </dd>
+                </dl>
+                <dl class="portalMessage info"
+                    tal:condition="python: isExpired and not isEditor">
+                    <dt i18n:translate="FacultyStaffDirectory_expired_notice_editor_label">Note</dt>
+                    <dd i18n:translate="FacultyStaffDirectory_expired_notice_editor">
+                      <span tal:replace="title_string|context/title_or_id"/> is no longer associated with this organization.
+                    </dd>
+                </dl>
+
+                <div tal:condition="python: isExpired and context.getTerminationDetails()">
+                  <h2 i18n:translate="FacultyStaffDirectory_label_termination_details_heading"
+                      tal:condition="isEditor">Termination details</h2>
+                  <span tal:content="structure context/getTerminationDetails" />
+                </div>
+        
+            </tal:expired>
+
+            <tal:info condition="showExpired">
+
+            <div class="caption">
+
+                <ul tal:condition="context/getJobTitles" class="title jobTitle">
+                    <li tal:repeat="jobTitle context/getJobTitles"
+                        tal:content="jobTitle" />
+                </ul>
+
+                <div class="headshot"
+                     tal:condition="context/image_normal|nothing">
+                    <img src="" alt=""
+                         tal:replace="structure python:context.getWrappedField('image').tag(context, scale='normal',  css_class='photo')" />
+                </div>
+
+                <div class="adr" tal:condition="python: context.getOfficeAddress() or context.getOfficeCity()">
+                    <span class="street-address" tal:content="structure python:context.getOfficeAddress().replace('\n', '<br />')" /><br />
+                    <span class="locality" tal:content="context/getOfficeCity" /><tal:block tal:condition="context/getOfficeState">, </tal:block>
+                    <span class="region" tal:content="context/getOfficeState" />
+                    <span class="postal-code" tal:content="context/getOfficePostalCode" />
+                </div>
+                <div tal:condition="context/getEmail">
+                    <span i18n:translate="FacultyStaffDirectory_label_email">Email</span>:
+                    <span tal:content="structure python:context.spamProtectFSD(context.getEmail())" />
+                </div>
+                <div tal:condition="context/getOfficePhone"
+                     class="tel officePhone">
+                    <span class="type" i18n:translate="FacultyStaffDirectory_label_officePhone">Work</span> Phone:
+                    <span class="value" tal:content="context/getOfficePhone" />
+                </div>
+                <div tal:condition="context/faxNumber|nothing"
+                     class="tel officeFax">
+                    <span class="type">Fax</span>:
+                    <span class="value" tal:content="context/faxNumber" />
+                </div>
+
+                <tal:areas define="areas context/extension_areas|nothing" condition="areas">
+                <h2>Areas of Expertise</h2>
+                <ul>
+                    <li tal:repeat="area areas"
+                        tal:content="area" />
+                </ul>
+                </tal:areas>
+
+                <div tal:condition="context/getWebsites"
+                     class="websites">
+                    <h2 i18n:translate="FacultyStaffDirectory_label_websites_heading">Websites</h2>
+                    <ul>
+                        <li tal:repeat="website context/getWebsites">
+                            <a class='url' href=""
+                               tal:attributes="href website"
+                               tal:content="website"
+                               tal:condition="python: '|' not in website" />
+                            <a class='url' href=""
+                               tal:attributes="href python:website.split('|')[0]"
+                               tal:content="python:website.split('|')[1]"
+                               tal:condition="python: '|' in website" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <tal:socialmedia define="person_name title_string|context/title_or_id;
+                                     twitter_url here/twitter_url|nothing;
+                                     facebook_url here/facebook_url|nothing;
+                                     linkedin_url here/linkedin_url|nothing;"
+                             condition="python: twitter_url or facebook_url or linkedin_url">
+
+            <h2>Connect with <span tal:replace="person_name" /></h2>
+            <dl class="person-connect">
+
+                <dd tal:condition="twitter_url">
+                    <a tal:attributes="href twitter_url"><img tal:attributes="src string:${portal_url}/icons/twitter.png" 
+                    alt="" /><span tal:content="string:Twitter" /></a>
+                </dd>
+                <dd tal:condition="facebook_url">
+                    <a tal:attributes="href facebook_url"><img tal:attributes="src string:${portal_url}/icons/facebook.png" 
+                    alt="" /><span tal:content="string:Facebook" /></a>
+                </dd>
+                <dd tal:condition="linkedin_url">
+                    <a tal:attributes="href linkedin_url"><img tal:attributes="src string:${portal_url}/icons/linkedin.png" 
+                    alt="" /><span tal:content="string:LinkedIn" /></a>
+                </dd>
+            </dl>
+            </tal:socialmedia>
+
+            <div tal:condition="context/getEducation" class="education">
+                <h2 i18n:translate="FacultyStaffDirectory_label_education_heading">Education</h2>
+                <ol>
+                    <li tal:repeat="degree context/getEducation">
+                        <span tal:content="degree" />
+                    </li>
+                </ol>
+            </div>
+
+            <tal:bio define="bio context/getBiography|nothing"
+                     condition="bio">
+                <div class="biography" tal:content="structure bio" />
+            </tal:bio>
+
+            <div class="specialties"
+                 tal:define="specialtyTuples context/getSpecialties"
+                 tal:condition="specialtyTuples">
+                <h2 i18n:translate="FacultyStaffDirectory_label_researchInterests">Research Interests</h2>
+                <dl>
+                    <tal:block tal:repeat="eachSpecialtyTuple specialtyTuples">
+                        <tal:block tal:define="specialtyBrain python:eachSpecialtyTuple[0];
+                                               personSpecialtyData python:eachSpecialtyTuple[1].getContentObject();">
+                            <dt>
+                                <a tal:attributes="href specialtyBrain/getURL">
+                                  <span tal:content="specialtyBrain/Title" />
+                                </a>
+                            </dt>
+                            <dd tal:define="researchTopic personSpecialtyData/getResearchTopic">
+                                <tal:block tal:condition="researchTopic"
+                                           tal:replace="structure researchTopic">
+                                </tal:block>
+                                <span tal:condition="python:checkPermission('Modify portal content', context)"
+                                      class="discreet">[
+                                    <a tal:attributes="href python:'%s/edit' % personSpecialtyData.absolute_url()">
+                                        <tal:block tal:condition="researchTopic"
+                                                    i18n:translate="FacultyStaffDirectory_editResearchTopic">Edit research topic</tal:block>
+                                        <tal:block tal:condition="not:researchTopic"
+                                                    i18n:translate="FacultyStaffDirectory_assignResearchTopic">Assign a research topic</tal:block>
+                                    </a>
+                                ]</span>
+                            </dd>
+                        </tal:block>
+                    </tal:block>
+                </dl>
+            </div>
+
+        <div class="courselisting"
+             tal:define="courses context/getCourses"
+             tal:condition="courses">
+          <h2 i18n:translate="FacultyStaffDirectory_label_courses">Courses</h2>
+          <dl tal:repeat="course courses">
+            <dt>
+              <a tal:attributes="href course/getRemoteUrl"
+                 tal:content="course/Title"
+                 tal:condition="course/getRemoteUrl" />
+              <span tal:replace="course/Title"
+                    tal:condition="not: course/getRemoteUrl" />
+            </dt>
+            <dd tal:content="structure course/Description" />
+          </dl>
+        </div>
+      </tal:info>
+      
+      </div>
+
+        <metal:metadata use-macro="context/event_view/macros/custom-metadata">
+            <metal:title fill-slot="metadata-title">
+                <h2>Person Metadata</h2>
+            </metal:title>
+        </metal:metadata>
+
+  </metal:main>
+
+  </body>
+</html>

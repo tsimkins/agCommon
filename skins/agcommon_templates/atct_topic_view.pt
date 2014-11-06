@@ -1,0 +1,114 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+ 
+<metal:content-core fill-slot="content-core">
+    <metal:body define-macro="body_macro"
+                tal:define="kssClassesView context/@@kss_field_decorator_view;
+                            getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                            templateId template/getId;
+                            view nocall:context/@@folder_listing_z3;
+                            test nocall:view/test;
+                            standalone_view python:True;
+                            plone_view context/@@plone">
+
+        <metal:listingmacro define-macro="listing">
+            <tal:topiccontents define="contentFilter contentFilter|request/contentFilter|nothing;
+                                       contentFilter python:contentFilter and dict(contentFilter) or {};
+                                       topicContents python:here.queryCatalog(batch=True, **contentFilter);
+                                       order_by_id here/order_by_id|nothing;
+                                       order_by_title here/order_by_title|nothing;
+                                       zip_code_input request/zip_code_input|nothing;
+                                       agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');
+                                       topicContents python: (order_by_title or order_by_id or zip_code_input) and agcommon_utilities.reorderTopicContents(topicContents, order_by_id=order_by_id, order_by_title=order_by_title, zip_code_input=zip_code_input) or topicContents;
+                                       use_view_action site_properties/typesUseViewActionInListings|python:();
+                                       batch topicContents;
+                                       isAnon context/@@plone_portal_state/anonymous;
+                                       no_results_message context/no_results_message|nothing;
+                                       isCourse python:'courses' in context.Subject() or 'courses' in context.aq_parent.Subject();
+                                       noEventsCourse python:'courses-online-ondemand' in context.Subject() or 'courses-online-ondemand' in context.aq_parent.Subject();
+                                       annualCourse python: context.getLayout() == 'course_annual_redirect' and len(topicContents) <= 1;
+                                       
+                                       ">
+    
+                <metal:results-heading define-slot="results-heading" />
+        
+                <tal:noresults 
+                    condition="python: no_results_message and not topicContents">
+                    <p tal:content="no_results_message" />
+                </tal:noresults>
+        
+                <metal:annual-course define-slot="annual-course" />
+        
+                <metal:folder-listing define-slot="folder-listing">
+        
+                    <tal:listing condition="python: topicContents and not noEventsCourse">
+                        <tal:default
+                             define="folderContents topicContents;
+                                     view nocall:context/@@folder_listing_z3;">
+            
+                            <metal:listing metal:use-macro="here/@@folder_listing_z3/macros/listing">
+                                <metal:empty metal:fill-slot="no_items_in_listing"></metal:empty>
+                            </metal:listing>
+            
+                        </tal:default>
+                    </tal:listing>
+        
+                </metal:folder-listing>
+                    
+                <metal:no-results define-slot="no-results">
+                
+                    
+                    <p class="discreet"
+                        tal:condition="python: not topicContents and here.listCriteria() and not isAnon and not no_results_message"
+                        i18n:domain="atcontenttypes"
+                        i18n:translate="description_no_items_in_topic">
+                        There are currently no results for this search.
+                    </p>
+        
+                    <tal:noresults condition="python: not topicContents and here.listCriteria() and contentFilter">
+                        <h2> No Results</h2>
+                        <p> No results matching your search criteria were found. </p>
+                    </tal:noresults>
+        
+                    <p class="discreet"
+                        tal:condition="not: here/listCriteria"
+                        i18n:domain="atcontenttypes"
+                        i18n:translate="description_no_criteria_in_topic">
+                        There are currently no criteria on which to search.
+                        Please add them using the 'criteria' tab.
+                    </p>
+                    
+                </metal:no-results>
+    
+            </tal:topiccontents>
+        </metal:listingmacro>
+    </metal:body>
+
+    <metal:body define-macro="folderlisting_macro">
+        <tal:subtopics condition="here/hasSubtopics|nothing"
+                       define="folderContents here/listSubtopics|nothing;
+                               standalone_view python:True">
+            <h2 i18n:domain="atcontenttypes"
+                i18n:translate="heading_contained_collections">
+                Also in this section
+            </h2>
+            <metal:list metal:use-macro="here/base/macros/folderlisting"/>
+        </tal:subtopics>
+    </metal:body>
+</metal:content-core>
+
+<metal:content fill-slot="content-text">
+    <div metal:define-macro="text-field-view"
+        class="documentText" 
+        tal:define ="text text|context/getText|nothing"
+        tal:condition="text"
+        tal:content="structure text">
+    </div>
+</metal:content>
+
+</body>
+</html>

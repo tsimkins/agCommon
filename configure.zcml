@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+ <include package=".browser" />
+ <include package=".portlet" />
+ <include file="profiles.zcml" />
+
+ <utility name="Portlet Manager" factory=".sharing.PortletManagerRole"/>
+ <utility name="Collection Manager" factory=".sharing.CollectionManagerRole"/>
+ <utility name="Restricted Content Manager" factory=".sharing.RestrictedContentManagerRole"/>
+ 
+</configure>

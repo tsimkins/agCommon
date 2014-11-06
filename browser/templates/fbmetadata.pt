@@ -1,0 +1,40 @@
+
+<tal:antiframe condition="not: context/frameok|nothing">
+
+<script type="text/javascript">
+    // Anti-framing script
+    if (top.location != self.location) {
+        top.location = self.location.href
+    }
+</script>
+
+</tal:antiframe>
+
+<tal:fbmetadata condition="view/showFBMetadata">
+    <!-- Open Graph Protocol info for Facebook -->    
+    <meta property="og:title" tal:attributes="content string:${view/fb_title} &mdash; ${view/fb_site_name}"/>
+    <meta property="og:site_name" tal:attributes="content view/fb_site_name"/>
+    <meta property="og:image" tal:attributes="content view/fb_image"/>
+    <meta property="og:image" tal:attributes="content string:${context/portal_url}/social-media-site-graphic.png"/>
+    <meta property="og:url" tal:attributes="content view/fb_url"/>
+    <meta property="og:fbadmins" tal:attributes="content view/fbadmins"/>
+    <meta tal:condition="context/Description" property="og:description" tal:attributes="content context/Description"/>    
+
+    <link rel="image_src" 
+          tal:condition="view/link_metadata_image"
+          tal:attributes="title view/fb_title;
+                          href view/link_metadata_image;
+                          type view/link_mime_type" />
+
+    <meta property="fb:admins" tal:attributes="content view/fbadmins"/>
+    <meta property="fb:page_id" tal:attributes="content view/fbpageid" />
+    <meta property="fb:app_id" tal:attributes="content view/fbappid" />
+
+    <!-- Twitter Metadata -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" tal:attributes="content view/fb_url"/>
+    <meta name="twitter:title" tal:attributes="content string:${view/fb_title} &mdash; ${view/fb_site_name}"/>
+    <meta name="twitter:description" tal:condition="context/Description" tal:attributes="content context/Description"/>    
+    <meta name="twitter:image" tal:attributes="content view/fb_image"/>
+
+</tal:fbmetadata>

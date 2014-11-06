@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="portal-columns">
+<div id="content" style="margin-top:20px" 
+     tal:define="site_url python:context.absolute_url().replace('agplonesrv.ag.psu.edu/', '').replace('http://', '').replace('https://', '');
+                 site_domain python:site_url.split('/')[0];
+                 page_filter python:'/' in site_url and '/%s' % site_url.split('/', 1)[1] or '';">
+<h1 class="documentFirstHeading">Facebook Activity for <span tal:replace="context/site_title|context/title|nothing" /></h1>
+<div><strong>URL:</strong> <span tal:replace="site_url" /></div>
+<div><strong>Domain:</strong> <span tal:replace="site_domain" /></div>
+<div tal:condition="page_filter"><strong>Filter:</strong> <span tal:replace="page_filter" /><br />
+<p class="discreet">Note: Filter only uses the first two segments of the URL structure, and always displays recommendations for the whole site.</p></div>
+<div style="padding: 1em;">
+<fb:activity 
+tal:attributes="site site_domain;
+                filter page_filter;"
+width="825px"
+height="1200px">
+</fb:activity>
+</div>
+
+</div>
+
+</metal:content-core>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/*
+  <dtml-with base_properties> (do not remove this)
+  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+*/
+
+/* YOUR CSS RULES START HERE */
+
+#edit_county_tags, #edit_main_tags {
+    width: 120px;
+    display: block;
+    border: 1px solid #FF981F;
+    background-color: #EF9C3B;
+    margin-top: 3px;
+    padding: 3px;
+    font-size: 0.88em;
+    text-align: center;
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+
+/* IE 6 No backgrounds */
+* html body.section-front-page #portlets-above {
+    background-image: none !important;
+}
+
+/* Remove lead image from sections with a custom tag of 'no-leadimage' */
+
+body.custom-no-leadimage .contentLeadImageContainer {
+    display: none;
+}
+
+body.section-front-page #portal-column-one {
+    border: none;
+}
+
+/* YOUR CSS RULES STOP HERE */
+
+/* </dtml-with> */
+
+
+
+

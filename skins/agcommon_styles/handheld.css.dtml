@@ -1,0 +1,16 @@
+/*
+  <dtml-with base_properties> (do not remove this)
+  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+*/
+
+/* YOUR CSS RULES START HERE */
+
+/* This is site-level customizations in CSS */
+
+
+/* YOUR CSS RULES STOP HERE */
+
+/* </dtml-with> */
+
+
+

@@ -1,0 +1,382 @@
+<metal:z3 define-macro="main">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<head>
+    <metal:block metal:fill-slot="head_slot">
+        <link rel="alternate" title="RSS 1.0" type="application/rss+xml"
+              tal:define="here_url context/@@plone_context_state/object_url"
+              tal:condition="request/SearchableText|nothing"
+              tal:attributes="href string:$here_url/search_rss?${request/QUERY_STRING}"/>
+    </metal:block>
+
+    <metal:block fill-slot="top_slot"
+                 tal:define="dummy python:request.set('disable_border',1);
+                             disable_column_one python:request.set('disable_plone.leftcolumn',1);
+                             disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+</head>
+
+<body>
+<metal:main fill-slot="main"
+     tal:define="sort_on request/sort_on|view/sort_on|nothing;
+                 sort_order request/sort_order|view/sort_order|nothing;
+                 dummy python:request.form.update({'sort_order': sort_order, 'sort_on' : sort_on});
+                 results view/getResults;
+                 Batch python:modules['Products.CMFPlone'].Batch;
+                 b_size python:30; b_size request/b_size | b_size;
+                 b_start python:0;b_start request/b_start | b_start;
+                 site_properties context/portal_properties/site_properties;
+                 desc_length site_properties/search_results_description_length;
+                 desc_ellipsis site_properties/ellipsis;
+                 use_view_action site_properties/typesUseViewActionInListings|python:();
+                 portal_url context/portal_url;
+                 is_advanced_search request/form/advanced_search|nothing;
+                 advanced_search_url string:${context/@@plone_portal_state/navigation_root_url}/search_form;
+                 searchterm request/SearchableText|nothing;
+                 isAnon context/@@plone_portal_state/anonymous;
+                 ezt context/extension_zipcode_tool|nothing;
+                 getDistance nocall: ezt/getDistance|nothing;
+                 toZIP5 nocall: ezt/toZIP5|nothing;
+                 validateZIP nocall: ezt/validateZIP|nothing;
+                 zip_code_input python: request.form.get('zip_code_input');">
+
+    <div id="content-core">
+        <h1 class="documentFirstHeading">
+            <span i18n:translate="heading_search_results">
+                <span tal:replace="view/page_title" />
+            </span>
+        </h1>
+
+        <form name="searchform"
+              action="search"
+              class="searchPage"
+              tal:define="portal_types python: request.form.get('portal_type');
+                          subjects python: request.form.get('Subject');
+                          review_states python: request.form.get('review_state');
+                          folder_path python: request.form.get('path');
+                          counties python: request.form.get('Counties');
+                          programs python: request.form.get('Topics');
+                          collection_filter python: request.form.get('collection_filter');
+                          show_publication python: request.form.get('show_publication');"
+              tal:condition="not:is_advanced_search">
+            <label for="SearchableText">Keywords</label>
+            <input class="searchPage"
+                   id="SearchableText"
+                   name="SearchableText"
+                   type="text"
+                   size="25"
+                   title="Search Site"
+                   i18n:attributes="title title_search_title;"
+                   tal:attributes="value searchterm;"
+                   />
+
+<tal:zip-input tal:condition="zip_code_input">
+    <metal:zip_code define-macro="zip_code">
+        <tal:zip 
+             define="basic_default_zip_code_radius string:50;
+                     custom_default_zip_code_radius context/localsearch_zip_code_default_radius|nothing;
+                     default_zip_code_radius python: custom_default_zip_code_radius or basic_default_zip_code_radius;
+                     zip_code_radius request/zip_code_radius|default_zip_code_radius|nothing;">
+            <div id="zip_code_search"  class="search_criteria">
+
+                <label for="zip_code_input"
+                        i18n:translate="zip_code_input">ZIP Code</label>
+
+                <input id="zip_code_input" name="zip_code_input" type="text" size="5" tal:attributes="value request/zip_code_input|nothing" />
+
+                <label for="zip_code_radius"
+                       tal:condition="python: zip_code_radius and zip_code_radius.replace('9', '')"
+                       i18n:translate="zip_code_radius_search">Radius</label>
+
+                <select id="zip_code_radius"
+                    name="zip_code_radius"
+                    tal:define="radius python: ['10', '25', '50', '100'];"
+                    tal:condition="python: zip_code_radius and zip_code_radius.replace('9', '')">
+                    <tal:options repeat="r radius">
+                        <option tal:attributes="value r;
+                                                selected python: r == zip_code_radius and 'selected' or '';"
+                                tal:content="string: ${r} miles" />
+                    </tal:options>
+                </select>
+                <input type="hidden" name="zip_code_radius"
+                        tal:attributes="value zip_code_radius"
+                        tal:condition="python: zip_code_radius and not zip_code_radius.replace('9', '')" />
+
+            </div>
+        </tal:zip>
+    </metal:zip_code>
+</tal:zip-input>
+
+
+
+            <input class="searchPage searchButton"
+                   type="submit"
+                   value="Search"
+                   i18n:attributes="value label_search;"/>
+
+            <metal:show_publication define-macro="show_publication">
+                <input type="hidden" tal:condition="show_publication" tal:attributes="value string:True" name="showPublication:boolean" />
+            </metal:show_publication>
+
+            <metal:portal_type define-macro="portal_type">
+
+                <tal:portal_type condition="portal_types"
+                                 repeat="t portal_types">
+
+                    <input type="hidden" tal:attributes="value t" name="portal_type:list" />
+
+                </tal:portal_type>
+            </metal:portal_type>
+
+            <metal:subject define-macro="subject">
+
+                <tal:subject condition="subjects"
+                                 repeat="s subjects">
+
+                    <input type="hidden" tal:attributes="value s" name="Subject:list" />
+
+                </tal:subject>
+            </metal:subject>
+
+            <metal:review_state define-macro="review_state">
+
+                <tal:review_state condition="review_states"
+                                 repeat="t review_states">
+
+                    <input type="hidden" tal:attributes="value t" name="review_state:list" />
+
+                </tal:review_state>
+            </metal:review_state>
+
+            <metal:folder_path define-macro="localsearch" tal:condition="folder_path">
+
+                <tal:folder_path condition="folder_path"
+                                 repeat="t folder_path">
+
+                    <input type="hidden" tal:attributes="value t" name="path:list" />
+
+                </tal:folder_path>
+            </metal:folder_path>
+
+            <metal:counties define-macro="counties" tal:condition="counties">
+
+                <tal:counties condition="counties"
+                                 repeat="t counties">
+
+                    <input type="hidden" tal:attributes="value t" name="Counties:list" />
+
+                </tal:counties>
+            </metal:counties>
+
+            <metal:programs define-macro="programs" tal:condition="programs">
+
+                <tal:programs condition="programs"
+                                 repeat="t programs">
+
+                    <input type="hidden" tal:attributes="value t" name="Topics:list" />
+
+                </tal:programs>
+            </metal:programs>
+
+            <metal:collection_filter define-macro="collection_filter" tal:condition="collection_filter">
+
+                    <input type="hidden" value="True" name="collection_filter" />
+
+            </metal:collection_filter>
+
+            <p class="discreet"
+               i18n:translate="search_results_advanced"
+               tal:condition="not:isAnon">
+            Did you not find what you were looking for? Try the
+            <span i18n:name="advanced_search">
+            <a href=""
+               i18n:translate="search_results_advanced_link"
+               tal:attributes="href string:${advanced_search_url}?${request/QUERY_STRING}">Advanced Search</a>
+            </span>
+            to refine your search.
+            </p>
+        </form>
+
+        <div class="search-advanced"
+             tal:condition="is_advanced_search">
+            <div id="hide-form" style="display:none;">
+            <p>
+                <a href=""
+                   i18n:translate="hide_the_search_form"
+                   tal:attributes="href string:${advanced_search_url}?${request/QUERY_STRING}">
+                    Hide the search form
+                </a>
+          </p>
+                <metal:use use-macro="context/search_form/macros/form" />
+            </div>
+            <p id="show-form">
+                <a href=""
+                   i18n:translate="edit_your_search_options"
+                   tal:attributes="href string:${advanced_search_url}?${request/QUERY_STRING}">
+                    Edit your search options
+                </a>
+            </p>
+        </div>
+        <script type="text/javascript">
+
+            jq(document).ready(function(){
+              jq('#show-form a').click(function(event) {
+                 event.preventDefault();
+                 jq('#hide-form').show('slow');
+                 jq('#show-form').hide('slow');
+              });
+            });
+            jq(document).ready(function(){
+              jq('#hide-form a').click(function(event) {
+                 event.preventDefault();
+                 jq('#show-form').show('slow');
+                 jq('#hide-form').hide('slow');
+              });
+            });
+
+
+        </script>
+
+        <p>
+            <strong>Results:</strong>
+            <span i18n:translate="batch_x_items_matching_your_criteria"
+            ><span i18n:name="number"
+            tal:omit-tag=""
+            tal:content="python:len(results)">234</span> items matching your search terms</span>
+        </p>
+
+        <tal:rss tal:condition="not:isAnon">
+        <p class="discreet"
+           tal:condition="context/portal_syndication/isSiteSyndicationAllowed">
+            <a href=""
+               class="link-feed"
+               i18n:translate="title_rss_feed"
+               tal:define="here_url context/@@plone_context_state/object_url"
+               tal:attributes="href string:$here_url/search_rss?${request/QUERY_STRING}">
+                 Subscribe to an always-updated feed of these search terms</a>
+        </p>
+        </tal:rss>
+
+        <div tal:condition="not: results">
+            <p><strong i18n:translate="description_no_results_found">No results were found.</strong></p>
+        </div>
+
+        <div tal:condition="results"
+              tal:define="normalizeString nocall: context/plone_utils/normalizeString;
+                          toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                          batch python:Batch(results, b_size, int(b_start), orphan=1);
+                          now modules/DateTime/DateTime">
+
+            <dl class="searchResults">
+            <tal:results repeat="result batch">
+            <tal:entry define="result_url result/getURL;
+                               result_type result/portal_type;
+                               item_icon python:plone_view.getIcon(result);
+                               url python:result_url+'/view' if result_type in use_view_action else result_url;
+                               item_type result_type;
+                               item result;
+                               item_object result/getObject;
+                               item_start item/start|item/StartDate|nothing;
+                               item_end item/end|item/EndDate|nothing;
+                               item_effective item/EffectiveDate|nothing;
+                               item_sametime python: item_start == item_end;
+                               item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False;">
+                <dt tal:define="item_wf_state_class string:state-${result/review_state};"
+                    tal:attributes="class python:'contenttype-' + normalizeString(result.portal_type)">
+                    <img tal:replace="structure item_icon/html_tag" />
+                    <a href="#"
+                        tal:condition="exists:item_object/image_thumb"
+                        tal:attributes="href url"
+                        class="searchLeadImageContainer">
+                        <img src="" alt=""
+                                tal:replace="structure python: path('nocall:item_object/tag')(scale='thumb', css_class='tileImage')" />
+                    </a>
+                    <a href="#"
+                       tal:attributes="href url;
+                                       class string:tileTitle ${item_wf_state_class}"
+                tal:content="result/pretty_title_or_id" />
+                </dt>
+
+                <dd tal:attributes="class python:'contenttype-' + normalizeString(result.portal_type)">
+
+                <div class="documentByLine effectiveDate" tal:condition="python: result_type == 'News Item'"> <span tal:replace="python:toLocalizedTime(item_effective,long_format=0)" /> </div>
+
+                    <tal:event
+                         condition="python: result_type == 'Event'">
+                         <div metal:use-macro="context/@@folder_listing_z3/macros/event_date" />
+                    </tal:event>
+
+                    <tal:person
+                        condition="python: result_type == 'FSDPerson'"
+                        tal:define="person nocall:item_object">
+                        <div metal:use-macro="context/@@folder_summary_view_z3/macros/fsd_summary" />
+                    </tal:person>
+
+                    <p tal:content="python:plone_view.cropText(result.Description, desc_length, desc_ellipsis)">
+                        Cropped description
+                    </p>
+
+                <span class="documentByLine"
+                      tal:condition="python:not isAnon or site_properties.allowAnonymousViewAbout">
+                    <span class="documentAuthor"
+                        i18n:translate="label_by_author">
+                    by
+                        <tal:block tal:condition="result/Creator"
+                            tal:define="author python:context.portal_membership.getMemberInfo(result.Creator)">
+                          <a href="#"
+                             tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${result/Creator}"
+                             tal:content="python:author and author['fullname'] or result.Creator"
+                             tal:omit-tag="not:result/Creator"
+                             i18n:name="author">
+                            Bob Dobalina
+                          </a>
+                        </tal:block>
+                    </span>
+
+                    <span class="documentModified">
+                      &mdash;
+                        <span i18n:translate="box_last_modified">
+                        last modified
+                        </span>
+                        <span tal:replace="python:toLocalizedTime(result.ModificationDate, long_format=1)">
+                        August 16, 2001 at 23:35:59
+                        </span>
+                    </span>
+
+
+                    <span tal:define="tags result/Subject|nothing"
+                          tal:condition="tags">
+                        &mdash;
+                        <tal:filedunder i18n:translate="label_filed_under">Filed under:</tal:filedunder>
+                            <span tal:repeat="tag tags">
+                                <a href=""
+                                   class="link-tag"
+                                   rel="tag"
+                                   tal:content="tag"
+                                   tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/search?Subject%3Alist=${tag}">
+                                   Tag
+                                </a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
+                            </span>
+                    </span>
+                </span>
+                <div class="visualClear"><!-- --></div>
+                </dd>
+
+            </tal:entry>
+            </tal:results>
+            </dl>
+
+            <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+        </div>
+    </div>
+
+</metal:main>
+</body>
+</html>
+
+</metal:z3>

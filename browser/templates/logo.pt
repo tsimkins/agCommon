@@ -1,0 +1,59 @@
+<tal:logo metal:define-macro="portal_logo"
+    tal:define="portal_title context/portal_title|context/@@plone_portal_state/portal_title|view/portal_title;
+    navigation_root_url context/navigation_root_url|view/navigation_root_url;
+    portal_url view/portal_url;
+    subsite not: context/main_site|nothing">
+
+    <a href="http://www.psu.edu"
+       id="logo-psu"
+       tal:condition="not: subsite"><img tal:attributes="src string:${view/navigation_root_url}/two-tone-psu-logo.png" alt="Penn State University" /></a>
+
+    <a href="http://www.psu.edu"
+       id="logo-psu"
+       class="subsite"
+       tal:condition="subsite"><img tal:attributes="src string:${view/navigation_root_url}/two-tone-psu-logo-department.png" alt="Penn State University" /></a>
+    
+    <a href="http://agsci.psu.edu"
+       id="logo-college"
+       tal:condition="subsite"><img tal:attributes="src string:${view/navigation_root_url}/college-text.png" alt="College of Agricultural Sciences" /></a>
+
+    <tal:printlogo condition="python: portal_title != 'Penn State Extension'">    
+
+        <img class="subsite"
+            id="logo-print"
+            tal:attributes="src string:${view/navigation_root_url}/college_black_stacked.png" 
+            alt="" 
+            width="192"
+            height="71"
+            tal:condition="subsite" />
+
+        <img 
+            id="logo-print"
+            tal:attributes="src string:${view/navigation_root_url}/psu_black_short.png" 
+            alt=""
+            width="121"
+            height="58"
+            tal:condition="not:subsite" />
+
+    </tal:printlogo>
+
+
+    <tal:printlogo condition="python: portal_title == 'Penn State Extension'">    
+        <img class="extension"
+            id="logo-print"
+            tal:attributes="src string:${view/navigation_root_url}/extension-factsheet.png" 
+            alt="" 
+            width="412"
+            height="30" />
+    </tal:printlogo>
+    
+
+    <a id="logo-site" tal:condition="python: portal_title != 'Penn State Extension'" 
+        tal:content="portal_title"
+        accesskey="1" 
+        tal:attributes="href navigation_root_url;
+                        class python: subsite and 'subsite' or ''" />
+    <a id="logo-site" tal:condition="python: portal_title == 'Penn State Extension'" 
+        accesskey="1"  class="extension"
+        tal:attributes="href navigation_root_url;"><img tal:attributes="src string:${portal_url}/extension-header.png; alt portal_title" /></a>
+</tal:logo>

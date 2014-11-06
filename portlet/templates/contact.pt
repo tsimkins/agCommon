@@ -1,0 +1,60 @@
+<tal:block condition="view/available"
+           i18n:domain="Products.agCommon">
+
+<h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
+
+<dl class="portlet portletContact"
+    tal:define="agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');">
+
+    <dd class="portletItem">
+        
+        <tal:contactportlet>
+
+            <tal:address condition="view/data/address|nothing">
+                <h2>Address</h2>
+                <p>
+                    <tal:item repeat="x python:view.data.address.split('\n')">
+                        <span tal:replace="x" /><br />
+                    </tal:item>
+                </p>
+                
+                <tal:item condition="python: view.data.directions_text and view.data.directions_link">
+                    <p><a tal:attributes="href view/data/directions_link;
+                                        title view/data/directions_text"
+                        tal:content="view/data/directions_text" /></p>
+                </tal:item>
+            
+            </tal:address>
+
+            <tal:contact condition="python: view.data.phone or view.data.fax or view.data.email">
+                <h2 tal:condition="view/data/address|nothing">Contact</h2>
+                <p>
+                <tal:item condition="view/data/phone">
+                    <strong>Phone:</strong>
+                    <span tal:content="view/data/phone" /><br />
+                </tal:item>
+                
+                <tal:item condition="view/data/fax">
+                    <strong>Fax:</strong>
+                    <span tal:content="view/data/fax" /><br />
+                </tal:item>
+                
+                <tal:item condition="view/data/email">
+                    <a tal:attributes="href string:mailto:${view/data/email}" tal:content="view/data/email" /><br />
+                </tal:item>
+                </p>
+            </tal:contact>
+            
+            <tal:office_hours condition="view/data/office_hours">
+                <h2>Office Hours</h2>
+
+                <tal:item tal:replace="structure python:agcommon_utilities.toMarkdown(view.data.office_hours)" />
+
+            </tal:office_hours>
+
+        </tal:contactportlet>
+           
+    </dd>
+
+</dl>
+</tal:block>

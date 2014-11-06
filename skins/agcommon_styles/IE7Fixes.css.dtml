@@ -1,0 +1,124 @@
+/*
+** Stylesheet with Internet Explorer 7.0 workarounds.
+*/
+
+/* <dtml-with base_properties> */
+
+#portal-top-navigation {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+#portal-top-navigation ul {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+#portal-top-navigation li {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+#portal-top-navigation div.visualClear {
+    height: 1px;
+}
+
+#clear-space-before-footer { 
+	height: 0;
+}
+
+body.template-document_homepage_view #rightcolumn {
+    position: relative;
+}
+
+#portal-column-two .portletFooter,
+#rightcolumn .portletFooter,
+.portletFooter {
+    border: none !important;
+}
+
+.listingBar {
+    padding: 0 1em;
+}
+
+#portal-columns {
+    border-collapse: collapse;
+}
+
+#content {
+    min-height: 0;
+}
+
+#relatedItemBox dt {
+    display: inline;
+}
+
+.fancybox-close {
+    right: 0;
+    top: 0;
+}
+
+/* Make all the dynamic stuff fixed width */
+#visual-portal-wrapper {
+    width: 908px;
+}
+
+#portal-columns {
+    background-color: #FFFFFF;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#portal-column-one {
+    margin: 0;
+    padding: 0;
+    width: 203px;
+    float: left;
+    background-image: none;
+    border-right: none;
+}
+
+#portal-column-one .portletWrapper {
+    width: 185px !important;
+}
+
+#portal-column-one-visualPadding.visualPadding {
+    margin-bottom: 1em;
+}
+
+#portal-column-two {
+    padding: 12px;
+    vertical-align: top;
+    width: 178px;
+    float: left;
+}
+
+#portal-column-content {
+    width: auto;
+    float: left;
+}
+
+#portal-column-content.sl {
+    margin-left: 0;
+}
+
+#portal-column-content.sr {
+    margin-right: 0;
+}
+
+#portal-column-one, #portal-column-content, #portal-column-two, #portal-columns {
+    display: block;
+}
+
+body.icons-on #content form {
+    width: 665px !important;
+}
+
+#content.hasToc h2,
+#content.hasToc h3 {
+    clear: none;
+}
+
+/* </dtml-with> */

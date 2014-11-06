@@ -1,0 +1,36 @@
+<tal:homepage
+     define="plone_view context/@@plone;
+             mp view/can_manage_portlets;
+             hsr python:plone_view.have_portlets('agcommon.rightcolumn', view);
+             hsc python:plone_view.have_portlets('agcommon.centercolumn', view);
+             showLegacyHomePagePortlets view/showLegacyHomePagePortlets"
+    >
+    
+    <div id="centercolumn" class="agCommonPortlet" 
+         tal:condition="python: showLegacyHomePagePortlets and (mp or hsc)"
+         tal:attributes="class python:hsr and 'sr agCommonPortlet' or 'agCommonPortlet'">
+    
+    	<tal:block replace="structure provider:agcommon.centercolumn" />
+    
+        <div class="managePortletsLink customManagePortletsLink" tal:condition="mp">
+            <a title="Center Column portlet management screen"
+                tal:attributes="href string:${context/absolute_url}/@@manage-centercolumn"
+                >Manage Center Column</a>
+        </div>
+    
+    </div>
+    
+    <div id="rightcolumn" class="agCommonPortlet" 
+         tal:condition="python: view.showLegacyHomePagePortlets and (mp or hsr)">
+    
+    	<tal:block replace="structure provider:agcommon.rightcolumn" />
+    
+        <div class="managePortletsLink customManagePortletsLink" tal:condition="view/can_manage_portlets">
+            <a title="Right Column portlet management screen"
+                tal:attributes="href string:${context/absolute_url}/@@manage-rightcolumn"
+                >Manage Right Column</a>
+        </div>
+        
+    </div>
+
+</tal:homepage>

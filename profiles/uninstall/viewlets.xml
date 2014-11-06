@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<object>
+  <hidden manager="plone.portalfooter" skinname="*" purge="True" />
+  <order manager="plone.belowcontenttitle" skinname="agCommon" purge="True" >
+    <viewlet name="agcommon.rightcolumn"/>
+    <viewlet name="agcommon.center"/>
+  </order>
+  <order manager="plone.abovecontentbody" skinname="agCommon" purge="True" >
+    <viewlet name="agcommon.rightcolumn"/>
+    <viewlet name="agcommon.center"/>
+  </order>
+</object>

@@ -1,0 +1,60 @@
+<div class="documentContributors"
+    tal:define="contributors view/people;
+                is_printed_newsletter view/is_printed_newsletter"
+    tal:condition="contributors">
+    <h2 tal:content="view/title|nothing">Contact Information</h2>
+    
+    <div class="documentContributorsItems">
+        
+        <tal:contributors repeat="item contributors">
+        
+            <tal:person define="item_url item/url;
+                                item_name item/name;
+                                item_job_title item/title;
+                                item_phone item/phone;
+                                item_email item/email;">
+    
+                <div class="tileItem visualIEFloatFix">
+
+                    <tal:leadImage tal:condition="item/image|nothing">
+    
+                    <div class="contentLeadImageContainer" tal:condition="not:is_printed_newsletter">
+        
+                        <img tal:replace="structure python: path('nocall:item/tag')(scale='thumb', css_class='')" />
+        
+                    </div>
+                    
+                    </tal:leadImage>
+    
+                                
+                    <div class="tileHeadline">
+        
+                        <a href="#"
+                            class="summary url"
+                            tal:attributes="href item_url"
+                            tal:content="item_name"
+                            tal:omit-tag="not:item_url">
+                            Item Title
+                        </a>
+                    </div>
+                    <div class="facultyStaffDirectory">
+                        <ul tal:condition="item_job_title" class="jobTitle">
+                            <li tal:content="item_job_title" />
+                        </ul>
+                        <div tal:condition="item_email">
+                            <span tal:condition="is_printed_newsletter">/ </span>
+                            Email: <span tal:replace="item_email" tal:condition="is_printed_newsletter" />
+                                   <span tal:replace="structure python:context.spamProtectFSD(item_email)" tal:condition="not: is_printed_newsletter" />
+                        </div>
+                        <div tal:condition="item_phone">
+                            <span tal:condition="is_printed_newsletter">/ </span>
+                            Phone: <span tal:content="item_phone" />
+                        </div>
+                    </div>
+                    <div class="visualClear"><!-- --></div>
+                </div>
+            </tal:person>
+        </tal:contributors>
+    </div>
+</div>
+<div class="visualClear"><!-- --></div>

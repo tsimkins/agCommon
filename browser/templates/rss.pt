@@ -1,0 +1,49 @@
+<h2 class="portletHeader">
+    <a href=""
+        tal:attributes="href view/siteurl"
+        tal:content="view/title"
+        class="tile">
+        Tags
+    </a>
+</h2>
+
+<dl class="portlet portletRss"
+    i18n:domain="plone"
+    tal:condition="view/enabled">
+
+    <tal:rss tal:condition="view/feedAvailable"
+                tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
+                tal:repeat="item view/items">
+
+        <dd class="portletItem oddrow" 
+            tal:define="oddrow repeat/item/odd"
+            tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
+
+            <a href="#"
+                tal:attributes="href string:${item/url}"
+                class="title">
+                <span tal:replace="item/title">
+                    Title
+                </span>
+            </a>
+                <span class="portletItemDetails date" 
+                      tal:condition="exists:item/updated">
+                      <span tal:omit-tag="" tal:content="python:toLocalizedTime(item['updated'])">19.02.2007</span>
+                </span>
+                <span class="portletItemDetails summary" 
+                      tal:condition="exists:item/summary">
+                      <span tal:omit-tag="" tal:content="item/summary">[Summary Text Goes Here]</span>
+                </span>
+		        <a href=""
+		        	class = "more"
+		           tal:attributes="href string:${item/url}"
+		           i18n:translate="box_morelink">
+		                More &raquo;
+		        </a>
+
+        </dd>
+    </tal:rss>
+    <dd class="portletFooter" tal:condition="view/feedAvailable">
+
+    </dd>
+</dl>

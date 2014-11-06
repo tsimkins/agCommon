@@ -1,0 +1,188 @@
+/*
+  <dtml-with base_properties> (do not remove this)
+  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+*/
+
+/* YOUR CSS RULES START HERE */
+
+/* Missing table border */
+
+#content .facultyStaffDirectory table.listing {
+	border: 1px solid &dtml-globalBorderColor;;
+	font-size: 1em;
+}
+
+#content .facultyStaffDirectory table.listing tbody {
+    border: none;
+}
+
+#content .facultyStaffDirectory .atozView .alphabetLinks {
+    font-size: 0.75em;
+    text-align: left;
+}
+
+#content .facultyStaffDirectory .atozView .alphabetLinks ol{
+    margin-left: 1.5em;
+}
+
+#content .facultyStaffDirectory .atozView .alphabetLinks ol li {
+    color: #CCCCCC;
+}
+
+.facultyStaffDirectory.personView .headshot {
+    margin: 0 0 1em 1em !important;
+    padding-right: 0;
+    text-align: right;
+    float: right;
+    clear: right;
+}
+
+.facultyStaffDirectory.personView .headshot img {
+    margin-right: 0;
+    border: none !important;
+}
+
+.facultyStaffDirectory.personView #addthis {
+    clear: right;
+    margin-top: 4px;
+    padding-right: 0;
+}
+
+#content .facultyStaffDirectory.personView .adr {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+body.template-department_standard_view #portal-column-content .visualClear {
+    display: block;
+}
+
+body.template-department_standard_view #portal-column-content .classificationListing .headshot {
+    float: right;
+}
+
+body.template-classification_standard_view #portal-column-content .classificationListing .headshot {
+    float: right;
+}
+
+.facultyStaffDirectory .standardView .headshot {
+    float: right;
+    padding-right: 0;
+    margin-right: 0;
+    text-align: right;
+    margin-left: 8px;
+}
+
+.facultyStaffDirectory .standardView .headshot img {
+    border: none !important;
+}
+
+.facultyStaffDirectory .standardView .caption {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.facultyStaffDirectory.personView .biography {
+    margin-top: 0.5em;
+}
+
+body.template-fsd_atoz_view .facultyStaffDirectory h2 {
+    border-width: 0;
+}
+
+body.template-fsd_atoz_view #portal-localsearchbox {
+    margin-top: 1em;
+}
+
+#content .facultyStaffDirectory ul.jobTitle {
+    margin: 0.5em 0;
+}
+
+#content .searchResults dd.contenttype-fsdperson ul.jobTitle li {
+    margin-bottom: 0;
+}
+
+#content .searchResults dt.contenttype-fsdperson {
+    margin: 0.125em 0 0.125em 0;
+    padding: 0.5em 0 0 0;
+    border-top: 1px solid #DDDDDD;
+}
+
+#content .searchResults dt.contenttype-fsdperson:first-child {
+    border-top: none;
+}
+
+#content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer {
+    float: left;
+    margin: 0 0 0 -18.852459016393443%;
+    text-align: center;
+    width: 17.486338797814208%;
+    border: none;
+    padding-top: 0.25em;
+}
+
+#content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer .tileImage {
+    float: none;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#content .searchResults dt.contenttype-fsdperson,
+#content .searchResults dd.contenttype-fsdperson {
+    padding-left: 18.852459016393443%;
+}
+
+#content .searchResults ul.jobTitle {
+    list-style-type: none;
+    margin: 0.125em 0;
+    list-style-image: none;
+}
+
+#content .tileItem .facultyStaffDirectory ul.jobTitle {
+    margin: 0;
+    line-height: 1.25em;
+    font-size: 1.0625em;
+}
+
+#content .tileItem .facultyStaffDirectory ul.jobTitle li {
+    margin-bottom: 0.125em;
+}
+
+#content .tileItem .facultyStaffDirectory ul.areasExpertise {
+    margin: 0 0 0 2em;
+}
+
+#content .tileItem .facultyStaffDirectory ul.areasExpertise li {
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+#content .tileSummary .facultyStaffDirectory p {
+    margin-bottom: 0.5em;
+}
+
+#content .tileSummary .facultyStaffDirectory p {
+    margin-bottom: 0.5em;
+}
+
+#content #hcard.personView h2 {
+    clear: none;
+}
+
+#content .personView .websites ul {
+    list-style-image: url(&dtml-portal_url;/bullet.png);
+    list-style-type: square;
+    margin: 0.375em 0 1.125em 2.5em;
+}
+
+#content .personView .websites h3 {
+    margin: 1.125em 0 0;
+}
+
+/* YOUR CSS RULES STOP HERE */
+
+/* </dtml-with> */
+
+
+

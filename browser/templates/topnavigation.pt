@@ -1,0 +1,33 @@
+<div tal:condition="view/topnavigation" id="portal-top-navigation">
+
+    <h2 class="hiddenStructure">Site Navigation</h2>
+
+    <ul>
+        <tal:li repeat="saction view/topnavigation">
+            <li tal:define="title saction/title;
+                        id saction/id;
+                        url saction/url;
+                        description saction/description|saction/title;
+                        className python:view.getClassName(saction);"
+            tal:attributes="id string:topnav-${saction/id};
+                            class className"><a
+               href=""
+               i18n:attributes="title"
+               i18n:translate=""
+               tal:content="title"
+               tal:attributes="href saction/url;
+                               title description;"
+               >Site action</a></li>
+        </tal:li>
+    
+    </ul>
+
+    <div class="visualClear"><!-- --></div>
+
+</div>
+
+<div tal:condition="not:view/topnavigation" id="portal-top-navigation" class="empty">
+
+    <!-- -->
+
+</div>

@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+
+<metal:header fill-slot="header">
+
+<div id = "printheader">
+    <img tal:attributes="src string:${portal_url}/psu_logo_print.gif" alt = "Penn State College of Agricultural Sciences" />
+    <h1><span class = "small">Department of Entomology</span><br />
+    <span class = "big">Entomological Notes</span></h1>
+    <div class = "clearboth">&nbsp;</div>
+</div>
+
+</metal:header>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+        <metal:field use-macro="python:context.widget('text', mode='view')">
+            Body text
+        </metal:field>
+    </metal:content-core>
+</metal:content-core>
+
+<metal:footer fill-slot="footer">
+
+    <tal:disclaimer define="disclaimer_title_es context/factsheet_disclaimer_title_es|nothing;
+                            disclaimer_text_es context/factsheet_disclaimer_es|nothing"
+                    condition="disclaimer_text_es">
+    <h2 tal:condition="not: disclaimer_text_es">Disclaimer</h2>
+    <h2 tal:condition="disclaimer_title_es" tal:content="disclaimer_title_es" />
+    
+    <p tal:replace="structure disclaimer_text_es" />
+    </tal:disclaimer>
+
+    <div id = "disclaimer"> 
+    
+        <p> Los programas de investigaci&oacute;n y extensi&oacute;n del Colegio de Ciencias Agr&iacute;colas de Penn State son financiados en parte por los condados de Pensilvania, el Gobierno de Pensilvania y el Departamento de Agricultura de EE. UU. </p> 
+        
+        <p> Visita Extensi&oacute;n de Penn State en la web: <a href="http://extension.psu.edu">http://extension.psu.edu</a> </p> 
+        
+        <p> Donde aparecen marcas comerciales, no hay intento de discriminaci&oacute;n o endoso impl&iacute;cito por parte de la Extensi&oacute;n Cooperativa de Penn State. </p> 
+        
+        <p> Esta publicaci&oacute;n est&aacute; disponible en medios alternativos si se solicita. </p> 
+        
+        <p> Penn State se suscribe a la acci&oacute;n afirmativa, la igualdad de oportunidad y a la diversidad de sus empleados. </p> 
+        
+        <p>
+        	&copy; Universidad Estatal de Pennsylvania 
+        	<span tal:omit-tag=""
+        		tal:define="now modules/DateTime/DateTime" 
+        		tal:content="now/year">[date last modified]</span>
+        </p>
+        
+    
+    
+    </div>
+
+</metal:footer>
+
+</body>
+</html>
+

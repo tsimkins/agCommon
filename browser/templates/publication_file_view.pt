@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+    <metal:content-core fill-slot="content-core">
+        <metal:block define-macro="content-core"
+                     tal:define="content_type context/get_content_type|context/Format;">
+
+            <h2>Download Publication</h2>
+            <p>
+                <metal:field use-macro="python:context.widget('file', mode='view')">
+                File
+                </metal:field>
+            </p>
+
+            <h2>Publication Details</h2>
+
+            <div class="publication">
+            
+                <metal:publication use-macro="context/order/macros/publication-information" />
+            
+                <div tal:condition="view/orderPublication">
+                    <a tal:attributes="href view/order_url">Order Publication</a>
+                </div>
+            
+            </div>
+
+        </metal:block>
+    </metal:content-core>
+
+    <metal:footer fill-slot="footer">
+        <div id="disclaimer">
+            <p>
+                This publication is available in alternative media on 
+                request.
+            </p>
+        </div>
+
+    </metal:footer>
+</body>
+
+</html>
+

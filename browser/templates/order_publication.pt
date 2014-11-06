@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+    <metal:content-core fill-slot="main">
+
+            <h1 class="documentFirstHeading"> Order Publication </h1>
+
+            <h2>Publication Details</h2>
+
+            <div class="publication-details">
+
+                <metal:publication define-macro="publication-information">
+
+                    <metal:heading define-slot="heading" />
+
+    
+                    <div>
+                        <h3 class="inline">Title</h3> <span tal:replace="context/Title" />
+                    </div>
+    
+                    <div tal:condition="view/publication_series|nothing">
+                        <h3 class="inline">Series</h3> <span tal:replace="view/publication_series" />
+                    </div>
+                    
+                    <div tal:condition="view/publication_code|nothing">
+                        <h3 class="inline">Publication Code</h3> <span tal:replace="view/publication_code" />
+                    </div>
+    
+                    <div tal:condition="view/getNumPages|nothing">
+                        <h3 class="inline">Number of Pages</h3> <span tal:replace="view/getNumPages" />
+                    </div>
+                    
+                    <div tal:condition="python: view.publication_for_sale and view.publication_cost">
+                        <h3 class="inline">Cost</h3> $<span tal:replace="view/publication_cost" />
+                    </div>
+
+                    <div tal:condition="python: view.contact_pdc and not view.publication_for_sale">
+                        <h3 class="inline">Cost</h3> Free
+                    </div>
+    
+                </metal:publication>
+            </div>            
+
+            <h2>Ordering Instructions</h2>
+
+            <tal:for-sale condition="view/publication_for_sale">
+                <p>Call toll-free <strong>877-345-0691</strong> from 8:00 a.m. to 4:30 p.m., Monday through Friday.</p>
+                <p> We accept all major credit cards, including MasterCard, VISA, Discover, and American Express. Checks and money orders payable in U.S. currency are also accepted.</p>
+
+                <p>For assistance with pricing, contact:</p>
+            
+            </tal:for-sale>
+
+            <tal:free condition="not: view/publication_for_sale">
+                <p>A single printed copy of free college publications is available as requested by an individual, group, or business within Pennsylvania.</p>
+                <p>Costs will be applied on all in-state requests for more than a single printed copy and all out-of-state requests for printed publications.</p>
+                <p>To order printed copies of free publications, or for assistance with pricing, contact:</p>
+
+            </tal:free>
+        
+            <p> <strong>Publications Distribution Center</strong><br />College of Agricultural Sciences<br />The 
+            Pennsylvania State University<br />112 Agricultural Administration Building<br />University Park, PA 16802-2602</p>
+            <p>Phone: 877-345-0691<br />E-mail: <a href="mailto:AgPubsDist@psu.edu">AgPubsDist@psu.edu</a> <br />Hours: 8:00 a.m. to 4:30 p.m.</p>
+            
+
+
+
+
+    </metal:content-core>
+    
+</body>
+
+</html>

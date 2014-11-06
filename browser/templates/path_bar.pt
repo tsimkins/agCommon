@@ -1,0 +1,61 @@
+<div id="portal-breadcrumbs"
+     i18n:domain="plone"
+     tal:condition="not:view/hide_breadcrumbs|nothing"
+     tal:define="breadcrumbs view/breadcrumbs;
+                 is_rtl view/is_rtl">
+
+    <tal:agsci tal:condition="python:view.site not in ['extension.psu.edu', 'agsci.psu.edu']">
+        <span id="breadcrumbs-agsci">
+            <a href="http://agsci.psu.edu">AgSci</a>
+        </span>    
+        <span class="breadcrumbSeparator">
+            <tal:ltr condition="not: is_rtl">&raquo;</tal:ltr>
+            <tal:rtl condition="is_rtl">&laquo;</tal:rtl>
+        </span>
+    </tal:agsci>
+
+    <span id="breadcrumbs-parent"
+        tal:define="parent_url context/custom_parent_url|nothing;
+                    parent_breadcrumb context/custom_parent_breadcrumb|nothing;"
+        tal:condition="python: parent_url and parent_breadcrumb">
+        <a tal:content="parent_breadcrumb"
+           tal:attributes="href parent_url">[Custom Parent Title]</a>
+        <span class="breadcrumbSeparator">
+            <tal:ltr condition="not: is_rtl">&raquo;</tal:ltr>
+            <tal:rtl condition="is_rtl">&laquo;</tal:rtl>
+        </span>
+    </span>
+
+    <span id="breadcrumbs-home"
+        tal:define="breadcrumb_title context/custom_breadcrumb|context/@@plone_portal_state/portal_title">
+        <a tal:content="breadcrumb_title"
+           tal:attributes="href view/navigation_root_url">Home</a>
+        <span tal:condition="breadcrumbs" class="breadcrumbSeparator">
+            <tal:ltr condition="not: is_rtl">&raquo;</tal:ltr>
+            <tal:rtl condition="is_rtl">&laquo;</tal:rtl>
+        </span>
+    </span>
+    <span tal:repeat="crumb breadcrumbs"
+          tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';
+                          id string:breadcrumbs-${repeat/crumb/number}">
+        <tal:item tal:define="is_last repeat/crumb/end;
+                              url crumb/absolute_url;
+                              title crumb/Title">
+            <a href="#"
+               tal:omit-tag="not: url"
+               tal:condition="python:not is_last"
+               tal:attributes="href url"
+               tal:content="title">
+                crumb
+            </a>
+            <span class="breadcrumbSeparator" tal:condition="not: is_last">
+                <tal:ltr condition="not: is_rtl">&raquo;</tal:ltr>
+                <tal:rtl condition="is_rtl">&laquo;</tal:rtl>
+            </span>
+            <span id="breadcrumbs-current"
+                  tal:condition="is_last"
+                  tal:content="title">crumb</span>
+         </tal:item>
+    </span>
+
+</div>

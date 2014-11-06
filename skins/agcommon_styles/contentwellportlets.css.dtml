@@ -1,0 +1,169 @@
+/*
+  <dtml-with base_properties> (do not remove this)
+  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+*/
+
+/* YOUR CSS RULES START HERE */
+
+/* Content Well Portlets for Sitemap */
+
+#portlets-footer {
+	background-color: &dtml-sitemapBackgroundColor;;
+	font-size: 0.625em;
+	margin: 0;
+    border-width: 0;
+    border-style: solid;
+    border-color:  &dtml-sitemapBackgroundColor;;
+    width: 100%;
+	padding: 0.375em 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    display: table;
+}
+
+div.FooterPortletManager1,
+div.FooterPortletManager2,
+div.FooterPortletManager3,
+div.FooterPortletManager4,
+div.FooterPortletManager5 {
+	width: 18.642533936651584%; /* ((884 - 60)/5)/884 */
+	float: left;
+	padding: 0.5em 0.678733031674208%;  /* 6/884 */
+}
+
+#portlets-footer .portlet, #portlets-footer .even, #portlets-footer .portletFooter,
+#portlets-footer .portletItem, #portlets-footer .portletHeader {
+	background-color: transparent;
+	border: none;
+}
+
+#portlets-footer .portletWrapper {
+    padding: 0;
+    margin: 0.5em;
+}
+
+#portlets-footer .portletHeader {
+    color: &dtml-sitemapHeaderColor; !important;
+	font-size: 1.25em;
+	font-weight: bold;
+	padding: 0.5em 0em 0.0625em 0;
+	margin-top: 0;
+	margin-left: 3.061225114535738%;
+	font-family: Arial, Helvetica, Helv, sans-serif;
+	border-bottom: 1px solid <dtml-var expr="gradientEnd(startColor=sitemapHeaderColor, count=5)">;
+	line-height: 1.25em;
+}
+
+#portlets-footer dd.portletItem
+{
+	padding: 0;
+    margin: 0;
+}
+
+#portlets-footer .portletNavigationTree dd.portletItem
+{
+    padding: 0;
+}
+
+#portlets-footer .navTree li
+{
+	padding: 0;
+    margin: 0;
+}
+
+#portlets-footer .portletHeader a, #portlets-footer .portletHeader span {
+	color: &dtml-sitemapHeaderColor; !important;
+	padding: 0;
+}
+
+#portlets-footer .portletFooter {
+	text-align: left;
+	padding: 0.25em 0;
+}
+
+#portlets-footer .portletFooter a {
+	color: &dtml-sitemapLinkColor;;
+	display: block;
+	background-color: transparent;
+}
+
+#portlets-footer a, #portlets-footer .state-published
+{
+	color: &dtml-sitemapLinkColor; !important;
+	padding: 0.25em 3.061225114535738%;
+	display: block;
+}
+
+#portlets-footer .portletItem .state-published:hover,
+#portlets-footer .portletItem a:hover {
+	color: &dtml-sitemapBackgroundColor; !important;
+	background-color: &dtml-sitemapLinkColor; !important;
+}
+
+
+/* Navigation Portlet */
+
+#portlets-footer dd.portletItem .navTreeItem a, 
+#portlets-footer .navTreeItem a,
+#portlets-footer .navTreeCurrentItem
+{
+    background-color: transparent;
+    border: none !important;
+    font-weight: normal;
+}
+
+/* Link Icon Portlet */
+
+#portlets-footer dl.linkIcon dd {
+    margin: 0;
+    padding: 0;
+}
+
+#portlets-footer dl.linkIcon dd.icon,
+#portlets-footer dl.linkIcon dd.sprite {
+    margin: 0.75em 0;
+}
+
+#portlets-footer dl.linkIcon a {
+    padding: 0.25em 3.061225114535738%;
+}
+
+#portlets-footer dl.linkIcon img {
+    padding-right: 0.5em;
+}
+
+/* Sprites */
+
+#portlets-footer dl.linkIcon dd.sprite,
+#portlets-footer dl.linkIcon dd.icon {
+    min-height: 24px;
+}
+
+#portlets-footer dl.linkIcon dd.sprite a,
+#portlets-footer dl.linkIcon dd.icon a {
+    padding: 0;
+	color: &dtml-sitemapLinkColor; !important;
+	background-color: transparent !important;
+    vertical-align: middle;
+}
+
+#portlets-footer dl.linkIcon dd.sprite a:hover,
+#portlets-footer dl.linkIcon dd.icon a:hover {
+	color: &dtml-sitemapLinkColor; !important;
+	text-decoration: underline;
+}
+
+#portlets-footer dl.linkIcon dd.sprite a {
+    margin-left: 2.875em;
+    padding-top: 0.25em
+}
+
+#portlets-footer dl.linkIcon dd.icon,
+#portlets-footer dl.linkIcon dd.sprite {
+	margin: 0.75em 3.061225114535738%;
+}
+
+
+/* YOUR CSS RULES STOP HERE */
+
+/* </dtml-with> */

@@ -1,0 +1,248 @@
+<metal:page define-macro="master">
+<metal:block define-slot="top_slot" />
+
+<tal:doctype tal:replace="structure string:&lt;!DOCTYPE html PUBLIC
+  &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+  &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;" />
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:define="portal_state context/@@plone_portal_state;
+                  context_state context/@@plone_context_state;
+                  plone_view context/@@plone;
+                  lang portal_state/language;
+                  view nocall:view | nocall: plone_view;
+                  dummy python: plone_view.mark_view(view);
+                  isAnon context/@@plone_portal_state/anonymous;
+                  portal_url portal_state/portal_url;
+                  checkPermission nocall: context/portal_membership/checkPermission;
+                  site_properties context/portal_properties/site_properties;
+                  ajax_load request/ajax_load | nothing;
+                  is_extension python: 'extension' in context.absolute_url();
+                  agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');
+                  leadimage_full_width context/leadimage_full_width|nothing;"
+      tal:attributes="lang lang;
+                      xml:lang lang">
+
+  <metal:cache use-macro="context/global_cache_settings/macros/cacheheaders">
+    Get the global cache headers located in global_cache_settings.
+  </metal:cache>
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <tal:comment tal:condition="nothing">
+      Internet Explorer fix, forces IE8 into newest possible rendering
+      engine even if it's on an intranet. This has to be defined before any
+      script/style tags.
+    </tal:comment>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <metal:baseslot define-slot="base">
+      <base tal:attributes="href plone_view/renderBase" />
+    </metal:baseslot>
+
+    <tal:notajax tal:condition="not:ajax_load">
+
+        <!-- Disable IE6 image toolbar -->
+        <meta http-equiv="imagetoolbar" content="no" />
+
+        <tal:comment replace="nothing"> A slot where you can insert elements in the header from a template </tal:comment>
+        <metal:headslot define-slot="head_slot" />
+
+        <tal:comment replace="nothing"> This is deprecated, please use style_slot instead. </tal:comment>
+        <metal:cssslot define-slot="css_slot" />
+
+        <tal:comment replace="nothing"> A slot where you can insert javascript in the header from a template </tal:comment>
+        <metal:javascriptslot define-slot="javascript_head_slot" />
+    </tal:notajax>
+
+    <metal:title define-slot="page-title">
+        <title tal:content="context/Title" />
+    </metal:title>
+
+  </head>
+
+<body tal:define="isRTL portal_state/is_rtl;
+                    sl python:plone_view.have_portlets('plone.leftcolumn', view);
+                    sr python:plone_view.have_portlets('plone.rightcolumn', view);
+                    body_class python:plone_view.bodyClass(template, view);"
+        tal:attributes="dir python: isRTL and 'rtl' or 'ltr';
+                        class python: isAnon and 'logged-out' or 'logged-in'">
+
+    <tal:comment replace="nothing"> A slot where you can insert CSS in the header from a template </tal:comment>
+    <metal:styleslot define-slot="style_slot" />
+
+
+
+    <metal:block define-slot="content">
+
+        <tal:main-content metal:define-macro="content">
+
+            <table id="portal-columns" cellspacing="0" cellpadding="15" width="600"
+                   align="left"
+                   tal:attributes="class python: sr and 'two-column' or 'one-column'">
+                <tbody>
+                <tal:warning condition="not: isAnon">
+                    <tr>
+                        <td tal:attributes="colspan python: sr and '2' or None" align="left" valign="top" bgcolor="#FFF500">
+                            <strong>Warning:</strong> This is the logged-in view of the newsletter.  Go to the <a tal:attributes="href python:context.absolute_url().replace('https://', 'http://')">logged out view</a> before emailing.  Do not attempt to email this newsletter, or users will be asked to log in before viewing articles.
+                        </td>
+                    </tr>
+                </tal:warning>
+                <metal:block define-slot="content-header">
+                    <tr>
+                        <td colspan="2"
+                            class="graphic-header"
+                            align="left" width="600">
+                            <metal:header-graphic define-slot="content-header-graphic" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header" colspan="2"
+                            align="left" width="600"
+                            tal:define="has_leadimage view/bodyTag|nothing">
+                            <table class="leadimage" 
+                                width="600"
+                                tal:omit-tag="not: has_leadimage">
+                                <tr tal:omit-tag="not: has_leadimage">
+                                    <td tal:omit-tag="not: has_leadimage"
+                                         width="340" align="left" id="leadimage-left" valign="top">
+                                        <metal:title define-slot="content-title">
+                                            <metal:comment tal:content="nothing">
+                                                If you write a custom title always use
+                                                <h1 class="documentFirstHeading"></h1> for it.
+                                            </metal:comment>
+                                            <h1 metal:use-macro="context/kss_generic_macros/macros/generic_title_view">
+                                                Generic KSS Title. Is rendered with class="documentFirstHeading".
+                                            </h1>
+                                        </metal:title>
+            
+                                        <metal:description define-slot="content-description">
+                                            <metal:comment tal:content="nothing">
+                                                If you write a custom description always use
+                                                <div class="documentDescription"></div> for it.
+                                            </metal:comment>
+                                            <div metal:use-macro="context/kss_generic_macros/macros/generic_description_view">
+                                                Generic KSS Description. Is rendered with class="documentDescription".
+                                            </div>
+                                        </metal:description>
+
+                                        <metal:subheader define-slot="content-date" />
+
+                                    </td>
+                                    <td tal:omit-tag="not: has_leadimage" width="260" align="right" valign="top" id="leadimage-right">
+                                        <tal:block condition="has_leadimage">
+                                            <metal:leadimage define-slot="content-leadimage" />
+                                        </tal:block>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <metal:subheader define-slot="content-subheader" />
+
+                            <hr size="1" />
+
+                        </td>
+                    </tr>
+                </metal:block>
+                <tr>
+                    <td id="portal-column-content" 
+                        valign="top" 
+                        tal:define="newsletter_full_text context/newsletter_full_text|nothing;
+                                    klass python: leadimage_full_width and 'large' or '';
+                                    klass python: newsletter_full_text and ('%s newsletter_full_text' % klass).strip() or klass;"
+                        tal:attributes="width python:sr and '390' or '570';
+                                        class klass"
+                        cellspacing="0" cellpadding="15" bgcolor="#ffffff" align="left">
+        
+                        <metal:slot define-slot="body">
+
+                            <metal:additional define-slot="content-before-spotlight" />
+
+                            <metal:additional define-slot="content-spotlight" />            
+
+                            <metal:additional define-slot="content-listing" />
+
+                            <metal:bodytext define-slot="main">
+                    
+                                <metal:main define-macro="main">
+        
+                                    <div id="content-core">
+                                        <metal:text define-slot="content-core" tal:content="nothing">
+                                            Page body text
+                                        </metal:text>
+                                    </div>
+                        <metal:portlets define-slot="portlets_bottom_slot">
+
+                        </metal:portlets>                    
+                                    <metal:footer define-slot="footer" tal:content="nothing">
+                                        Visual Footer
+                                    </metal:footer>
+                        
+                                </metal:main>
+                    
+                            </metal:bodytext>
+
+                        </metal:slot>
+                    </td>
+                    <td tal:condition="sr"
+                        id="portal-column-two" valign="top" width="165" bgcolor="#f5f5f5" align="left" cellspacing="0" cellpadding="15" >
+                        <metal:portlets define-slot="portlets_two_slot">
+                            
+                        </metal:portlets>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="footer" tal:attributes="colspan python: sr and '2' or None" align="center" bgcolor="#ffffff">
+
+                        <hr size="1" />
+
+                    	<p>
+                    		&copy;
+                            <span tal:omit-tag=""
+                                tal:define="now modules/DateTime/DateTime" 
+                                tal:content="now/year">[date last modified]</span>
+                    		
+                    	      <a href="http://agsci.psu.edu">Penn State College of Agricultural Sciences</a>
+                    		
+                    	</p>
+
+                        <p class="legal">
+                            
+                            <a title="" id="copyright" href="http://www.psu.edu/copyright.html">Copyright</a>
+                            &mdash;
+                            
+                            
+                            <a title="" id="privacy" href="http://www.psu.edu/ur/legal.html">Privacy and Legal Statements</a>
+                            &mdash;
+                            
+                            
+                            <a title="" id="accessibility" href="http://agsci.psu.edu/accessibility">Accessibility</a>
+                            
+                        </p>
+
+                        <metal:footer define-slot="email-footer" />
+
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <br style="clear: both" />
+
+            <metal:analytics define-slot="analytics_viewlet">
+            
+            </metal:analytics>
+
+        </tal:main-content>
+
+    </metal:block>
+</body>
+</html>
+</metal:page>

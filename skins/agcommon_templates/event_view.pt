@@ -1,0 +1,274 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+<metal:event-body define-macro="event-body">
+
+<metal:header fill-slot="header">
+    <dl class="portalMessage info"
+            tal:define="layout here/layout|nothing;
+                        eventUrl context/eventUrl|nothing;
+                        isAnon context/@@plone_portal_state/anonymous;"
+            tal:condition="python: not isAnon and eventUrl and layout=='event_redirect_view'"><dt>Info</dt><dd>This event is redirected to
+            <a tal:attributes="href eventUrl" tal:content="eventUrl" /></dd></dl>
+
+</metal:header>
+
+<metal:canceled fill-slot="content-additional">
+       <dl tal:attributes="class string:portalMessage info portalMessageOneColumn ${leadImageClass}"
+               tal:define="layout here/layout|nothing;
+                           eventCanceled context/eventCanceled|nothing;
+                           eventCanceledInfo context/eventCanceledInfo|nothing;
+                           isAnon context/@@plone_portal_state/anonymous;
+                           hasLeadImage item/hasLeadImage|nothing;
+                           leadImageClass python:hasLeadImage and 'leadimage' or ''"
+               tal:condition="eventCanceled">
+                   <dt>Event Canceled</dt>
+                   <dd tal:condition="eventCanceledInfo" tal:content="structure eventCanceledInfo" />
+       </dl>
+</metal:canceled>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core"
+                        tal:define="kssClassesView context/@@kss_field_decorator_view;
+                                    getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                                    templateId template/getId;
+                                    toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                                    map_link context/map_link|nothing;
+                                    contact_email context/contact_email;
+                                    contact_name python:context.contact_name() or None;
+                                    contact_phone context/contact_phone;
+                                    location context/location;
+                                    here_url context/@@plone_context_state/object_url;">
+
+        <tal:wherewhen>
+            <div tal:define="isCanceled context/eventCanceled|nothing;
+                             canceled python:isCanceled and 'canceled' or ''"
+                 tal:attributes="class string:eventSummary vcard eventDateLocation ${canceled}">
+                <h2 class="hiddenStructure">Date and Location</h2>
+                <metal:wherewhen define-macro="wherewhen">
+                <div class="event_when">
+                    <h3>When<span class="hiddenStructure"> (Date/Time)</span></h3>
+
+                    <metal:when define-macro="event_when">
+                        <metal:date define-slot="formatted_date">
+                            <span tal:replace="python:toLocalizedTime(here.start(), end_time=here.end(), long_format=1)" />
+                        </metal:date>
+                    </metal:when>
+
+                </div>
+                <div tal:condition="location" class="event_where">
+                    <h3>Where</h3>
+                    <metal:where define-macro="event_where">
+
+                        <a tal:omit-tag="not: map_link"
+                            tal:attributes="href map_link;
+                                            title string:Directions to ${location}">
+                            <span tal:content="location" />
+                        </a>
+
+                    </metal:where>
+
+                </div>
+                </metal:wherewhen>
+                <div class="event_add_calendar" metal:define-slot="event_add_calendar">
+                    <h3>Add to calendar</h3>
+                    <metal:add_to_calendar define-macro="event_add_calendar">
+                    <a class="img"
+                        href="#"
+                        tal:attributes="href string:$here_url/ics_view"
+                        title="Download this event in iCal format"
+                        i18n:attributes="title title_add_to_ical;">
+                        <img tal:replace="structure context/icon_export_ical.png"
+                                src=""
+                                alt="" /><span i18n:translate="label_add_to_ical">iCal</span></a>
+                    </metal:add_to_calendar>
+
+                </div>
+            </div>
+            <metal:moreinfo define-macro="moreinfo" tal:condition="context/event_url|nothing">
+            <div class="eventWebsite">
+                <strong>
+                <a class="url"
+                    href="event_url"
+                    i18n:translate="event_more_information"
+                    tal:define="field python:context.getField('eventUrl');"
+                            tal:attributes="href context/event_url">
+                    <span tal:replace="context/more_information|string:Go To Event Website" /></a>
+                </strong>
+            </div>
+            </metal:moreinfo>
+
+        </tal:wherewhen>
+
+        <div metal:define-macro="text-field-view"
+             class="eventBodyText">
+            <metal:field use-macro="python:here.widget('text', mode='view')">
+                Body text
+            </metal:field>
+        </div>
+
+        <metal:register define-macro="register"
+            tal:condition="context/free_registration|nothing"
+            tal:define="registration_view python: context.restrictedTraverse('@@event_registration_view');
+                        canViewRegistrations nocall: registration_view/canViewRegistrations;
+                        allowRegistration nocall: registration_view/allowRegistration;
+                        can_view_registrations python: canViewRegistrations(context);
+                        registration_allowed python: allowRegistration(context);
+                        registration_deadline context/free_registration_deadline|nothing;
+                        attendee_limit context/free_registration_attendee_limit|nothing;
+                        attendee_count registration_view/getAttendeeCount|nothing;
+                        registration_url registration_view/registrationURL">
+
+            <h2>Registration</h2>
+
+            <metal:cost define-macro="registration_cost">
+            <div class="event-registration" tal:condition="registration_allowed"><h3>Cost</h3>
+            There is no fee to attend this event.  However, pre-registration is
+                <span tal:condition="not: attendee_limit">requested.</span>
+                <span tal:condition="attendee_limit">required.</span>
+            </div>
+            </metal:cost>
+
+            <metal:deadline define-macro="registration_deadline">
+            <div class="event-registration" tal:condition="registration_deadline">
+                <tal:open condition="registration_allowed">
+                    <h3>Registration deadline</h3>
+                    <span tal:replace="python:toLocalizedTime(registration_deadline, long_format=1)" />
+                </tal:open>
+            </div>
+            </metal:deadline>
+
+            <metal:closed define-macro="registration_closed">
+            <div class="event-registration" tal:condition="not: registration_allowed">
+                Registration for this event is closed.
+            </div>
+            </metal:closed>
+
+            <div class="event-registration" metal:define-macro="registration_count" tal:condition="can_view_registrations">
+            <h3>Registration Count</h3>
+            <span tal:condition="attendee_limit" tal:content="string:${attendee_count}/${attendee_limit} attendees." />
+            <span tal:condition="not: attendee_limit" tal:content="string:${attendee_count} attendees." />
+            </div>
+
+            <form tal:condition="python: (registration_allowed) or (not isAnon and not registration_allowed)"
+                class="event-registration event-registration-public"
+                tal:attributes="action registration_url"
+                method="post">
+                <input type="hidden" name="uid" tal:attributes="value context/UID" />
+                <input type="submit" value="Register for this event" />
+            </form>
+
+            <form tal:condition="can_view_registrations"
+                class="event-registration"
+                tal:attributes="action string:${registration_url}/download_csv"
+                method="post">
+                <input type="hidden" name="uid" tal:attributes="value context/UID" />
+                <input type="submit" value="Download Registration Information" />
+            </form>
+
+        </metal:register>
+
+        <tal:contact>
+            <div class="eventSummary vcard">
+                <h2 tal:condition="python:contact_phone or contact_name or contact_email">Contact Information</h2>
+
+                <div tal:condition="python:contact_name or contact_email" class="event_contact">
+                    <h3>Contact</h3>
+
+                    <metal:contact_name define-macro="event_contact_name">
+                    <a tal:condition="contact_email"
+                       tal:replace="structure python: context.spamProtect(mailaddress=contact_email, mailname=contact_name, cssclass='email fn')"
+                        />
+                    <span class="fn"
+                            tal:condition="not: contact_email"
+                            tal:content="contact_name" />
+                    </metal:contact_name>
+
+                </div>
+                <div tal:condition="contact_phone" class="event_phone">
+                    <h3>Phone</h3> <metal:when metal:use-macro="python:context.widget('contactPhone', mode='view')" />
+                </div>
+            </div>
+        </tal:contact>
+
+        <metal:metadata define-macro="custom-metadata">
+
+            <tal:metadata define="isAnon context/@@plone_portal_state/anonymous;
+                                  member context/@@plone_portal_state/member;
+                                  extension_counties context/extension_counties|nothing;
+                                  extension_programs context/extension_programs|nothing;
+                                  extension_topics context/extension_topics|nothing;
+                                  extension_courses context/extension_courses|nothing;
+                                  extension_subtopics context/extension_subtopics|nothing;
+                                  department_research_areas context/department_research_areas|nothing;"
+                                  condition="python: (not isAnon) and (extension_counties or extension_programs or extension_topics or extension_subtopics or department_research_areas or extension_courses)">
+                    <metal:title define-slot="metadata-title">
+                        <h2>Event Metadata</h2>
+                    </metal:title>
+                    <p class="discreet">This metadata section is only viewable by logged in users, and does not appear on the public view of the site.  It lists the custom metadata associated with this item.</p>
+                    <tal:areas condition="extension_courses">
+                        <h3>Course</h3>
+                        <ul>
+                            <li tal:repeat="x extension_courses"
+                                tal:content="x" />
+                        </ul>
+                    </tal:areas>
+    
+                    <tal:areas condition="extension_counties">
+                        <h3>Counties</h3>
+                        <ul>
+                            <li tal:repeat="x extension_counties"
+                                tal:content="x" />
+                        </ul>
+                    </tal:areas>
+    
+                    <tal:areas condition="extension_topics">
+                        <h3>Programs</h3>
+                        <ul>
+                            <li tal:repeat="x extension_topics"
+                                tal:content="x" />
+                        </ul>
+                    </tal:areas>
+    
+                    <tal:areas condition="extension_subtopics">
+                        <h3>Topics</h3>
+                        <ul>
+                            <li tal:repeat="x extension_subtopics"
+                                tal:content="x" />
+                        </ul>
+                    </tal:areas>
+    
+                    <tal:areas condition="extension_programs">
+                        <h3>Legacy Programs</h3>
+                        <ul>
+                            <li tal:repeat="x extension_programs"
+                                tal:content="x" />
+                        </ul>
+                    </tal:areas>
+
+                    <tal:areas condition="department_research_areas">
+                        <h3>Research Areas</h3>
+                        <ul>
+                            <li tal:repeat="x department_research_areas"
+                                tal:content="x" />
+                        </ul>
+                    </tal:areas>
+    
+            </tal:metadata>
+    
+            <span class="visualClear"><!-- --></span>
+
+        </metal:metadata>
+
+    </metal:content-core>
+</metal:content-core>
+
+</metal:event-body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<tal:block condition="view/available"
+           i18n:domain="image">
+
+    <h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
+    
+    <dl class="portlet imagePortlet" tal:condition="view/images">
+
+        <tal:image repeat="limage view/images">
+    
+            <dd class="portletItem"
+                tal:attributes="class python: icon and 'icon portletItem' or 'portletItem'"
+                tal:define="title limage/title;
+                                    description limage/description|limage/title;
+                                    icon limage/icon|nothing">
+                        <a tal:define="shadow limage/shadow|nothing"
+                           tal:condition="icon"
+                           tal:attributes="href limage/url;
+                                           title title;
+                                           class python:shadow and 'icon shadow' or 'icon'"
+                            ><img 
+                                  tal:attributes="src icon;
+                                                  alt title" />
+                        <tal:caption tal:condition="view/data/show_caption">
+                            <span tal:content="structure description">Link</span>
+                        </tal:caption>
+                        </a>
+            </dd>
+        </tal:image>       
+    </dl>
+
+</tal:block>

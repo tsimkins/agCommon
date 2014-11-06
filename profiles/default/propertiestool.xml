@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<object name="portal_properties">
+  <object name="agcommon_properties" meta_type="Plone Property Sheet">
+    <property name="title">agCommon Properties</property>
+    <property name="footer_copyright" type="string" purge="False">College of Agricultural Sciences</property>
+    <property name="footer_copyright_link" type="string">http://agsci.psu.edu</property>
+    <property name="enable_addthis" type="boolean">True</property>
+    <property name="enable_fblike" type="boolean">True</property>
+    <property name="site_rss_title" type="string">Penn State College of Agricultural Sciences News</property>
+    <property name="site_rss_link" type="string">http://live.psu.edu/tagrss/Agricultural_Sciences</property>
+  </object>
+</object>

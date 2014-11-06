@@ -1,0 +1,957 @@
+<metal:page define-macro="master">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/plain_template/macros/master"
+      i18n:domain="plone"
+      tal:define="notEditor not:view/canEdit">
+
+<body>
+<metal:style fill-slot="style_slot">
+
+<style type="text/css">
+
+body {
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+body, p, li, h1, h2, h3, div, span {
+    font-family: "Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif;
+    text-align: left;
+}
+
+body, li, p {
+    font-size: 10pt;
+    line-height: 12pt;
+}
+
+#portal-columns {
+    border-collapse: collapse;
+    background: #FFFFFF;
+    padding: 0;
+    margin: 18pt 12pt 6pt 12pt;
+}
+
+h1, h2, h3, .portletHeader, .documentDescription {
+    display: block;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+}
+
+h1 {
+    font-size: 18pt;
+    margin: 0 0 3pt 0;
+}
+
+h2 a, dt.portletHeader a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.portletHeader, h2 {
+    font-size: 13pt;
+    margin: 10pt 0 0 0;
+}
+
+h2 {
+    font-size: 13pt;
+    margin: 10pt 0 10pt 0;
+    line-height: 17pt;
+}
+
+#portal-column-two h2 {
+     font-size: 11pt;
+}
+
+#portal-column-two .portletItem,
+#portal-column-two .portlet dd {
+    margin: 6pt 0 10pt 0;
+    font-size: 9.5pt;
+}
+
+#portal-column-two .portletItem p {
+    font-size: 9.5pt;
+}
+
+#portal-column-two .portletItem .date,
+#portal-column-two .portletItem .location {
+    display: block;
+    font-size: 8.5pt;
+    padding-left: 0;
+    color: #333333;
+    margin-bottom: 6pt;
+}
+
+#portal-column-two .portletfeedmixer .portletItem .date,
+#portal-column-two .portletfeedmixer .portletItem .location {
+    margin-bottom: 0;
+    margin-top: 1pt;
+}
+
+#portal-column-two .imagePortlet .portletItem {
+    padding: 8pt 0 0 0;
+    margin: 0;
+    text-align: center;
+}
+
+.portletFooter {
+    margin-top: 6pt;
+}
+
+.portletFooter a {
+    font-size: 8.5pt;
+}
+
+h3 {
+    font-size: 12pt;
+    margin: 0 0 3pt 0;
+    font-weight: normal;
+    clear: both;
+    line-height: 15pt;
+}
+
+a {
+    color: #265FCF;
+}
+
+br.separator {
+    clear: both;
+    font-size: 1pt;
+    height: 1pt;
+}
+
+.effectiveDate {
+    font-size: 8.5pt;
+    font-family: "Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif;
+    color: #666666;
+}
+
+div.subheader {
+    margin: 4pt 0 8pt 0;
+}
+
+.documentByLine {
+    margin: 0 0 4pt 0;
+}
+
+div.documentDescription {
+    font-size: 11pt;
+    margin: 0 0 6pt 0;
+}
+
+p {
+    margin: 0 0 14pt 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 13pt;
+}
+
+#portal-column-two p {
+    margin: 0 0 24pt 0;
+}
+
+.view-online {
+    font-size: 8.5pt;
+}
+
+#portal-column-two {
+    background: #f5f5f5;
+}
+
+#portal-column-two div.portletWrapper {
+    margin-bottom: 20pt;
+}
+
+body.logged-in {
+    background-image: url(caution.png);
+    background-repeat: repeat;
+}
+
+body.logged-in #portal-columns {
+    border: 20px solid #FFFFFF;
+}
+
+table.leadimage td,
+table td.graphic-header {
+    padding: 0;
+    margin: 0;
+}
+
+table td {
+    padding: 5px 15px;
+}
+
+table td.footer,
+table td.footer-address {
+    text-align: center;
+    padding: 0 0 4pt 0;
+}
+
+table td.footer-address {
+    text-align: left;
+}
+
+table td.footer-address h2 {
+    font-size: 9pt !important;
+    margin: 5pt 0 0 0;
+}
+
+table td.footer-address p {
+    font-size: 8pt !important;
+    margin: 0;
+}
+
+table td.header {
+    padding: 5px 0 0 0;
+}
+
+table td.header div,
+table td.header h1,
+table td.header hr {
+    width: 600px;
+}
+
+table.leadimage td div,
+table.leadimage td h1,
+table.leadimage td hr {
+    width: auto;
+}
+
+table.leadimage td div.contentLeadImageContainer {
+    text-align: right;
+}
+
+table td.footer p {
+    font-size: 9pt;
+    text-align: center;
+    margin: 6pt 0 0 0;
+}
+
+.graphic-header-agsci {
+    margin: 0;
+}
+
+.graphic-header-extension {
+    margin: 0;
+}
+
+.this-issue {
+    padding-left: 14pt;
+    margin-left: 14pt;
+    margin-bottom: 22pt;
+}
+
+.this-issue li {
+    font-size: 8.5pt;
+    margin-bottom: 4pt;
+    text-indent: 0;
+}
+
+table td#portal-column-content {
+    padding: 8pt 15px 5px 0;
+}
+
+table.one-column td#portal-column-content {
+    padding: 8pt 0 0 0;
+}
+
+.eventDateLocationBlock {
+    margin-bottom: 6pt;
+    font-size: 10pt;
+}
+
+hr {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    color: #333333;
+    background-color: #333333;
+    border-color: #333333;
+}
+
+img.leadimage, img.leadimage_full {
+    background-color: #EEEEEE;
+    border: 1px solid #DDDDDD;
+    color: #666666;
+    float: right;
+    font-size: 8pt;
+    margin: 6pt 0 12pt 12pt;
+    text-align: right;
+}
+
+img.leadimage_full {
+    float: none;
+    text-align: initial;
+    margin: 6pt 0 8pt 0;
+    display: block;
+    clear: both;
+}
+
+p.leadimage {
+    padding: 0;
+    margin: 0;
+    width: 400px;
+    clear: both;
+}
+
+#portal-column-content.large hr.separator {
+    background-color: #DDDDDD;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    color: #DDDDDD;
+    margin-bottom: 10pt;
+    height: 1px;
+}
+
+li.nobullet, ul.nobullet li {
+    list-style-type: none;
+}
+
+ul.inline {
+    margin: 10pt 0;
+    padding: 0;
+}
+
+ul.inline li {
+    display: inline;
+    margin: 0 10pt;
+    padding: 0;
+}
+
+u {
+    text-decoration: none !important;
+}
+
+div.about {
+    margin: 10pt 0;
+}
+
+div.about p, div.about li {
+    font-size: 9pt !important;
+}
+
+div.about h2 {
+    font-size: 12pt !important;
+}
+
+div.about h3 {
+    font-size: 10pt !important;
+}
+
+div.about hr {
+    margin: 6pt 0;
+}
+
+.managePortletsLink {
+    display: none;
+}
+
+#newsletter-config {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+#newsletter-config th {
+    background-color: #E6D59F;
+}
+
+#newsletter-config tr.even {
+    background-color: #FFFAE6;
+}
+
+#newsletter-config td, #newsletter-config th {
+    border: 1px solid #4F3900;
+    font-size: 0.75em;
+    margin: 0;
+    padding: 0.25em 0.375em;
+    text-align: center;
+    vertical-align: top;
+    margin: 0;
+}
+
+#newsletter-config tr td:first-child,
+#newsletter-config tr th:first-child {
+    text-align: left;
+}
+
+.extension-footer {
+    font-size: 10pt;
+    padding-top: 6pt;
+}
+
+div.extension-footer hr {
+    margin: 3pt 0 8pt 0;
+}
+
+.extension-footer p {
+    margin: 0 0 3pt;
+}
+
+table td.footer .email-footer {
+    text-align: left;
+    margin-top: 12pt;
+}
+
+table td.footer .email-footer p, 
+.discreet {
+    font-size: 8pt;
+    color: #76797c;
+    text-align: left;
+}
+
+table td.footer .email-footer h2 {
+    font-size: 10pt;
+    color: #333333;
+    margin: 8pt 0 0 0;
+    line-height: 12pt;
+}
+
+td#portal-column-content.newsletter_full_text {
+    font-size: 10pt;
+}
+
+td#portal-column-content.newsletter_full_text .documentDescription {
+    font-size: 12pt;
+    line-height: 13.5pt;
+    margin-top: 6pt;
+    font-weight: normal;
+}
+
+td#portal-column-content.newsletter_full_text h3.tileHeadline {
+    font-size: 14pt;
+    line-height: 17pt;
+}
+
+</style>
+
+<metal:local_style_slot define-slot="local_style_slot">
+    <style type="text/css">
+        /* No local Styles */
+    </style>
+</metal:local_style_slot>
+
+</metal:style>
+
+<metal:javascriptslot fill-slot="javascript_head_slot">
+
+    <metal:javascriptslot define-slot="javascript_head_slot" />
+
+</metal:javascriptslot>
+
+<metal:title fill-slot="page-title">
+
+    <title
+        tal:content="view/newsletter_title" />
+
+</metal:title>
+
+<metal:graphic fill-slot="content-header-graphic"
+    define-slot="content-header-graphic">
+
+    <tal:header-graphic condition="not: hide_header_graphic"
+        tal:define="hide_header_graphic context/hide_header_graphic|nothing">
+
+    	<div tal:condition="is_extension"
+            class="graphic-header-extension">
+            <a href="http://extension.psu.edu">
+            <img tal:attributes="src string:${portal_url}/extension-newsletter-header.png"
+                                 alt="Penn State Extension" width="600"
+                                 border="0"
+                                 height="85" /></a>
+        </div>
+
+
+    	<div tal:condition="not: is_extension"
+            class="graphic-header-agsci">
+            <a href="http://agsci.psu.edu">
+            <img tal:attributes="src string:${portal_url}/college-newsletter-header.png"
+                                 alt="Penn State College of Agricultural Sciences" width="600"
+                                 border="0"
+                                 height="85" /></a>
+        </div>
+
+    </tal:header-graphic>
+
+</metal:graphic>
+
+<metal:title fill-slot="content-title"
+    tal:define="site_title context/site_title|context/org_title|nothing;">
+
+    <h1 class="documentFirstHeading"
+        tal:content="view/newsletter_title" />
+
+</metal:title>
+
+<metal:date fill-slot="content-date"
+                 tal:define="show_date context/show_date|nothing;
+                             toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
+
+        <tal:date condition="not: show_date">
+            <p class="effectiveDate">
+                  <span tal:replace="python:toLocalizedTime(view.currentDate).replace(' 0', ' ')" />
+            </p>
+        </tal:date>
+
+</metal:date>
+
+<metal:subheader fill-slot="content-subheader"
+                 tal:define="templateId template/getId;">
+
+    <div class="subheader">
+
+        <metal:view-online define-slot="view-online">
+            <a class="view-online utm_newsletter_view_online"
+                tal:define="more_url view/getViewOnline|nothing;
+                            more_url context/more_url|more_url"
+                tal:attributes="href more_url">View
+                    <span tal:replace="context/newsletter_title|context/Title" /> online</a>
+            <tal:print condition="context/show_print_newsletter|nothing">
+                <span class="discreet"> | </span>
+                <a class="view-online utm_newsletter_print"
+                    tal:define="more_url python:'%s/newsletter_print' % context.absolute_url().replace('/' + templateId, '');"
+                    tal:attributes="href more_url">Print
+                        this newsletter</a>
+            </tal:print>
+        </metal:view-online>
+    </div>
+
+</metal:subheader>
+
+<metal:leadimage fill-slot="content-leadimage">
+
+    <div class="contentLeadImageContainer" i18n:domain="collective.contentleadimage"
+            tal:define="tag python: view.bodyTag();
+                        show_leadimage_context context/show_leadimage_context|nothing"
+            tal:condition="python: show_leadimage_context and tag">
+
+            <img tal:replace="structure tag" src="" alt="" />
+
+    </div>
+
+</metal:leadimage>
+
+<metal:description fill-slot="content-description"
+    tal:define="toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
+
+    <div class="documentDescription" tal:content="context/Description" />
+
+</metal:description>
+
+<metal:content-before-spotlight
+    define-slot="content-before-spotlight"
+    fill-slot="content-before-spotlight">
+
+    <!-- Empty -->
+
+</metal:content-before-spotlight>
+
+<metal:summary fill-slot="content-listing" define-slot="content-listing"
+    tal:define="notEditor not:view/canEdit;">
+
+    <h2 tal:condition="python: notEditor and (view.showSummary or ( len(view.getEnabledItems()) and len(view.getSpotlightItems())))">In This Issue</h2>
+
+    <form id="enable-items-form" tal:omit-tag="notEditor" method="POST" action="@@newsletter_modify">
+
+    <tal:config condition="not: notEditor">
+        <h2>Newsletter Configuration</h2>
+
+        <tal:manager condition="python:checkPermission('Manage portal', context)">
+            <h3>Edit Newsletter attributes in Plone</h3>
+        <div class="discreet">These options are only available to Administrators.</div>
+            <ul class="inline nobullet">
+                <li><a tal:attributes="href string:${context/absolute_url}/edit">Title, Description, Body Text</a></li>
+                <li><a tal:attributes="href string:${context/absolute_url}/criterion_edit_form">Criteria</a></li>
+                <li><a tal:attributes="href string:${context/absolute_url}/content_status_history">Workflow state</a></li>
+                <li><a tal:attributes="href string:${context/absolute_url}/@@manage-portlets">Manage Portlets</a></li>
+            </ul>
+        </tal:manager>
+        <h3>Show "In This Issue"?</h3>
+        <div class="discreet"><strong>Automatic</strong> will show the "In This Issue" section if there are 5+ non-Spotlight items.</div>
+        <ul class="inline nobullet">
+         <li><input type="radio"
+                    id="summary_auto"
+                    name="show_summary"
+                    value="auto"
+                    tal:attributes="checked python:view.getConfig('show_summary') == 'auto' and 'checked' or ''" />
+             <label for="summary_auto">Automatic</label></li>
+         <li><input type="radio"
+                    id="summary_yes"
+                    name="show_summary"
+                    value="yes"
+                    tal:attributes="checked python:view.getConfig('show_summary') == 'yes' and 'checked' or ''" />
+             <label for="summary_yes">Yes</label></li>
+         <li><input type="radio"
+                    id="summary_no"
+                    name="show_summary"
+                    value="no"
+                    tal:attributes="checked python:view.getConfig('show_summary') == 'no' and 'checked' or ''" />
+              <label for="summary_no">No</label></li>
+        </ul>
+
+
+        <h3>Article/Spotlight Configuration</h3>
+
+        <div class="discreet"><strong>Enabled</strong> items will show up in the newsletter.  <strong>Spotlight </strong> items are implicitly enabled, and will show up at the top of the newsletter. If no items are enabled, the newsletter assumes you are not using this functionality, and will display all items.</div>
+        <ul class="nobullet inline">
+            <li>
+                <input type="button" id="enable-all" value="Enable All" />
+            </li>
+            <li>
+                <input type="button" id="disable-all" value="Disable All" />
+            </li>
+        </ul>
+
+        <script type="text/javascript">
+            function toggleInput(isChecked)
+            {
+                input_items = document.getElementById("enable-items-form").getElementsByTagName("input");
+
+                var i = input_items.length;
+
+                while (i--)
+                {
+                    var item = input_items[i];
+
+                    if (item['type'] == 'checkbox')
+                    {
+                        if (item['name'] == 'enabled_items')
+                        {
+                            item.checked=isChecked;
+                        }
+
+                        if (item['name'] == 'spotlight_items')
+                        {
+                            if (!isChecked)
+                            {
+                                item.checked=isChecked;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            document.getElementById("enable-all").onclick = function() {toggleInput(true)};
+            document.getElementById("disable-all").onclick = function() {toggleInput(false)};
+        </script>
+    </tal:config>
+
+    <tal:listing
+        tal:condition="python: view.showSummary or not notEditor"
+        tal:define="contentFilter contentFilter|request/contentFilter|nothing;
+                    contentFilter python:contentFilter and dict(contentFilter) or {};
+                    limit_display limit_display|request/limit_display|nothing;
+                    limit_display python:limit_display and int(limit_display) or None;
+                    more_url more_url|request/more_url|string:folder_contents;
+                    is_a_topic python:context.portal_type=='Topic';
+                    folderContents folderContents|nothing;
+                    folderContents python:view.folderContents(folderContents=folderContents, contentFilter=contentFilter);
+                    site_properties context/portal_properties/site_properties;
+                    use_view_action site_properties/typesUseViewActionInListings|python:();
+                    Batch python:modules['Products.CMFPlone'].Batch;
+                    b_start python:request.get('b_start', 0);
+                    batch python:notEditor and view.getEnabledItems() or view.getAllItems();
+                    normalizeString nocall: context/plone_utils/normalizeString;
+                    toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                    show_about python:not notEditor or site_properties.allowAnonymousViewAbout;
+                    navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                    pas_member context/@@pas_member;">
+
+        <table id="newsletter-config" tal:omit-tag="notEditor">
+            <tr tal:condition="not:notEditor">
+                <th>Article Title</th>
+                <th>Enabled</th>
+                <th>Spotlight</th>
+
+            </tr>
+        <ol class="this-issue" tal:omit-tag="not:notEditor">
+            <metal:this-issue define-macro="this-issue">
+            <tal:entry tal:repeat="item batch">
+                <tr tal:omit-tag="notEditor" tal:define="even repeat/item/even"
+                    tal:attributes="class python: even and 'even' or 'odd'">
+                <li tal:attributes="class python:not notEditor and 'nobullet' or ''"
+                    tal:condition="python:view.showItem(item) or (view.showItem(item, 'spotlight') and not notEditor)"
+                    tal:omit-tag="not:notEditor">
+
+                    <td tal:omit-tag="notEditor">
+                        <a tal:attributes="href item/getURL|item/absolute_url" tal:omit-tag="notEditor">
+                            <span tal:content="item/pretty_title_or_id" />
+                        </a>
+                    </td>
+                    <td tal:condition="not:notEditor">
+                        <input tal:attributes="value item/UID;
+                               checked python:view.isEnabled(item) and 'checked' or ''"
+                               name="enabled_items"
+                               type="checkbox" />
+                    </td>
+
+                    <td tal:condition="not:notEditor">
+                        <input tal:attributes="value item/UID;
+                               checked python:view.isSpotlight(item) and 'checked' or ''"
+                               name="spotlight_items"
+                               type="checkbox" />
+                    </td>
+                </li>
+                </tr>
+            </tal:entry>
+            </metal:this-issue>
+
+        </ol>
+        <br class="separator" tal:condition="not: context/leadimage_full_width|nothing" >
+        <hr class="separator" tal:condition="context/leadimage_full_width|nothing" >
+        </table>
+
+        <ul tal:condition="not:notEditor" class="nobullet inline">
+            <li><input type="submit" value="Save"></li>
+        </ul>
+
+    </tal:listing>
+    </form>
+</metal:summary>
+
+
+<metal:footer fill-slot="footer">
+
+    <div class="about" metal:define-slot="about">
+
+        <hr size="1" />
+
+        <tal:about
+            define="newsletter_text view/getText;"
+            condition="newsletter_text"
+            tal:replace="structure newsletter_text" />
+
+    </div>
+
+    <tal:extension condition="is_extension">
+    <div class="extension-footer">
+
+        <hr size="1" />
+        
+        <p class="discreet"><a href="http://extension.psu.edu"><strong>extension.psu.edu</strong></p>
+
+        <p class="discreet">Penn State College of Agricultural Sciences research and extension programs are funded in part by Pennsylvania counties, the Commonwealth of Pennsylvania, and the U.S. Department of Agriculture.</p>
+
+        <p class="discreet">Where trade names appear, no discrimination is intended, and no endorsement by Penn State Cooperative Extension is implied.</p>
+
+        <p class="discreet">This publication is available in alternative media on request. </p>
+
+        <p class="discreet">Penn State is an equal opportunity, affirmative action employer, and is committed to providing employment opportunities to minorities, women, veterans, individuals with disabilities, and other protected groups. Nondiscrimination: <a href="http://guru.psu.edu/policies/AD85.html">http://guru.psu.edu/policies/AD85.html</a>.</p>
+    </div>
+    </tal:extension>
+</metal:footer>
+
+<metal:spotlight tal:define="batch view/getSpotlightItems" fill-slot="content-spotlight">
+    <metal:slot define-slot="content-spotlight">
+        <metal:listing use-macro="here/newsletter_view/macros/listing">
+            <metal:featured-articles fill-slot="featured-articles">
+                <h2>Spotlight</h2>
+            </metal:featured-articles>
+        </metal:listing>
+    </metal:slot>
+</metal:spotlight>
+
+<metal:content-core fill-slot="content-core">
+    <metal:block define-macro="content-core"
+                        tal:define="kssClassesView context/@@kss_field_decorator_view;
+                                    getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                                    standalone_view python:True;
+                                    templateId template/getId;">
+
+        <metal:featured tal:define="batch view/getEnabledItems">
+            <metal:listingmacro define-macro="listing">
+                <tal:foldercontents define="notEditor not:view/canEdit;
+                                    contentFilter contentFilter|request/contentFilter|nothing;
+                                    contentFilter python:contentFilter and dict(contentFilter) or {};
+                                    limit_display limit_display|request/limit_display|nothing;
+                                    limit_display python:limit_display and int(limit_display) or None;
+                                    more_url more_url|request/more_url|string:folder_contents;
+                                    is_a_topic python:context.portal_type=='Topic';
+                                    folderContents folderContents|nothing;
+                                    folderContents python:view.folderContents(folderContents=folderContents, contentFilter=contentFilter);
+                                    site_properties context/portal_properties/site_properties;
+                                    use_view_action site_properties/typesUseViewActionInListings|python:();
+                                    Batch python:modules['Products.CMFPlone'].Batch;
+                                    b_start python:request.get('b_start', 0);
+                                    isAnon context/@@plone_portal_state/anonymous;
+                                    normalizeString nocall: context/plone_utils/normalizeString;
+                                    toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                                    show_about python:not notEditor or site_properties.allowAnonymousViewAbout;
+                                    show_date context/show_date|nothing;
+                                    navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                                    pas_member context/@@pas_member;
+                                    leadimage_full_width context/leadimage_full_width|nothing;
+                                    newsletter_full_text context/newsletter_full_text|nothing"
+                                    condition="notEditor">
+                    <tal:listing condition="batch">
+
+                        <metal:featured-articles define-slot="featured-articles">
+                            <!-- empty -->
+                        </metal:featured-articles>
+                        <tal:list metal:define-slot="entries">
+                            <tal:entry tal:repeat="item batch" metal:define-macro="entries">
+                            <tal:block tal:define="item_object item/getObject;
+                                                   item_has_leadimage item/hasContentLeadImage;
+                                                   item_url item/getURL|item/absolute_url;
+                                                   item_id item/getId|item/id;
+                                                   item_title_or_id item/pretty_title_or_id;
+                                                   item_description item/Description;
+                                                   item_type item/portal_type;
+                                                   item_type_title item/Type;
+                                                   item_modified item/ModificationDate;
+                                                   item_effective item/EffectiveDate;
+                                                   item_created item/CreationDate;
+                                                   item_icon python:plone_view.getIcon(item);
+                                                   item_type_class python:'contenttype-' + normalizeString(item_type);
+                                                   item_wf_state item/review_state|python: context.portal_workflow.getInfoFor(item, 'review_state', '');
+                                                   item_wf_state_class python:'state-' + normalizeString(item_wf_state);
+                                                   item_creator item/Creator;
+                                                   item_tags item/Subject|nothing;
+                                                   item_start item/start|item/StartDate|nothing;
+                                                   item_end item/end|item/EndDate|nothing;
+                                                   item_sametime python: item_start == item_end;
+                                                   item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">
+                                <metal:block define-slot="entry">
+                                <tal:item metal:define-macro="listitem">
+                                    <tal:image tal:condition="leadimage_full_width">
+                                        <p class="leadimage" tal:condition="exists:item_has_leadimage">
+                                            <a tal:attributes="href item_url">
+                                                <img tal:replace="structure python:view.tag(item_object, scale='preview', css_class='leadimage_full')" border="0"/>
+                                            </a>
+                                        </p>
+                                    </tal:image>
+
+                                    <h3 class="tileHeadline">
+
+                                    <tal:image
+                                         tal:define="scale python: newsletter_full_text and 'mini' or 'micro'"
+                                         tal:condition="not:leadimage_full_width">
+                                            <img align="right"
+                                                 tal:condition="exists:item_has_leadimage"
+                                                 tal:replace="structure python:view.tag(item_object, scale=scale, css_class='leadimage')" />
+                                    </tal:image>
+
+                                    <span tal:condition="python: not view.isSpotlight(item) and view.showSummary" tal:content="string:${repeat/item/number}." />
+
+                                        <a href="#"
+                                           tal:attributes="href item_url;
+                                                           class string:$item_type_class $item_wf_state_class url utm_newsletter_title"
+                                           tal:content="item_title_or_id">
+                                            Item Title
+                                        </a>
+
+                                    </h3>
+
+                                <div tal:condition="python: item_type in ['Event', 'TalkEventType']" class="eventDateLocationBlock">
+                                    <metal:event use-macro="context/folder_listing_z3/macros/event_date" />
+                                </div>
+
+                                <p class="documentDescription" tal:condition="item_description|nothing">
+
+                                    <span tal:replace="item_description" />
+                                    <tal:more condition="not: newsletter_full_text">
+                                    [<a href="#"
+                                        tal:attributes="href item_url;
+                                                        class string:$item_type_class $item_wf_state_class url utm_newsletter_more"
+                                        >more</a>]
+                                    </tal:more>
+                                </p>
+
+                                <tal:fulltext condition="newsletter_full_text">
+                                    <div class="documentText" 
+                                         tal:condition="item_object/getText|nothing">
+                                        <metal:field 
+                                               use-macro="python:item_object.widget('text', mode='view')">
+                                            Body text
+                                        </metal:field>
+                                    </div>
+                                </tal:fulltext>
+
+                                <br class="separator"
+                                    tal:condition="not: context/leadimage_full_width|nothing" >
+
+                                <hr class="separator"
+                                    tal:condition="context/leadimage_full_width|nothing" >
+
+                                </tal:item>
+                            </metal:block>
+                            </tal:block>
+                            </tal:entry>
+                        </tal:list>
+                    </tal:listing>
+
+                </tal:foldercontents>
+            </metal:listingmacro>
+        </metal:featured>
+    </metal:block>
+</metal:content-core>
+
+<metal:email-footer fill-slot="email-footer">
+
+    <metal:email-footer define-slot="email-footer">
+
+        <div class="email-footer"
+            tal:define="show_newsletter_footer context/show_newsletter_footer|nothing;"
+            tal:condition="show_newsletter_footer"
+            bgcolor="#ffffff" align="left">
+    
+        <hr size="1">
+        
+        <tal:listserv 
+            define="listserv view/listserv|nothing;
+                    listserv_subscribe_email view/listserv_subscribe_email|nothing;
+                    listserv_unsubscribe_email view/listserv_unsubscribe_email|nothing;"
+            condition="listserv">
+                <h2>List Information</h2>
+                <p>You received this email because you are subscribed to the <strong tal:content="listserv" /> mailing list. If you would like to unsubscribe from this list, simply send an email to 
+                    <a class="no_utm"
+                       tal:attributes="href string: mailto:${listserv_unsubscribe_email}"
+                       tal:content="listserv_unsubscribe_email" />.
+                    
+                    No subject or message is necessary in the email.</p>
+                
+                <p>To subscribe to this list, simply send an email to  <a class="no_utm"
+                       tal:attributes="href string: mailto:${listserv_subscribe_email}"
+                       tal:content="listserv_subscribe_email" />.</p>
+                
+                <p>For any questions or problems, contact the 
+                    <a class="no_utm" 
+                       tal:attributes="href string: mailto:${view/listserv_contact_email}">list administrator</a>.</p>
+        </tal:listserv>
+            
+        <h2>Mailing Address</h2>
+        <p>
+            <span tal:condition="is_extension" tal:replace="string: Penn State Extension" />
+            <span tal:condition="not:is_extension" tal:replace="string: Penn State College of Agricultural Sciences" />
+            <br />
+            Agricultural Administration Building<br />
+            University Park, PA  16802
+        </p>
+        </div>
+                    
+    </metal:email-footer>           
+
+</metal:email-footer>
+
+<metal:portlets define-slot="portlets_two_slot" fill-slot="portlets_two_slot">
+    <tal:block replace="structure provider:plone.rightcolumn" />
+</metal:portlets>
+
+<metal:portlets define-slot="portlets_bottom_slot" fill-slot="portlets_bottom_slot">
+
+</metal:portlets>
+
+<metal:analytics define-slot="analytics_viewlet" fill-slot="analytics_viewlet">
+
+</metal:analytics>
+
+</body>
+</html>
+</metal:page>

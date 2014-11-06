@@ -1,0 +1,168 @@
+<tal:block metal:define-macro="master"
+           define="errors options/state/getErrors | python:{};
+                   schematas nothing;
+                   allow_tabbing python:False;
+                   fieldsets python:['default'];
+                   default_fieldset string:default;
+                   fieldset default_fieldset;
+                   fields python:here.fgFields(request);
+                   portal_type python:here.getPortalTypeName().lower().replace(' ', '_');
+                   type_name here/getPortalTypeName|here/archetype_name;
+                   base_macros here/fg_edit_macros_p3/macros;
+                   edit_template python:'%s_edit' % portal_type;
+                   edit_macros python:path('here/%s/macros | nothing' % edit_template);
+                   header_macro edit_macros/header | header_macro | base_macros/header;
+                   typedescription_macro edit_macros/typedescription | typedescription_macro | base_macros/typedescription;
+                   body_macro edit_macros/body | body_macro | base_macros/body;
+                   footer_macro edit_macros/footer | footer_macro | base_macros/footer;
+                   css python:here.getUniqueWidgetAttr(fields, 'helper_css');
+                   js python:here.getUniqueWidgetAttr(fields, 'helper_js');
+                   portal portal | context/@@plone_portal_state/portal;">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+  <metal:head fill-slot="top_slot">
+    <tal:block define="macro edit_macros/topslot | nothing"
+                    condition="macro">
+      <metal:block use-macro="macro" />
+    </tal:block>
+  </metal:head>
+
+  <metal:javascript_head fill-slot="javascript_head_slot">
+    <tal:block define="macro here/archetypes_custom_js/macros/javascript_head | nothing"
+               condition="macro">
+      <metal:block use-macro="macro" />
+    </tal:block>
+    <tal:js condition="js"
+            repeat="item js">
+      <script type="text/javascript"
+              charset="iso-8859-1"
+              tal:condition="python:exists('portal/%s' % item)"
+              tal:attributes="src string:$portal_url/$item">
+      </script>
+    </tal:js>
+
+    <tal:block define="macro edit_macros/javascript_head | nothing"
+                    condition="macro">
+      <metal:block use-macro="macro" />
+    </tal:block>
+
+    <tal:expr replace="structure here/getHeaderInjection | nothing" />
+
+  </metal:javascript_head>
+
+  <metal:css fill-slot="style_slot">
+    <tal:css condition="css"
+             repeat="item css">
+      <style type="text/css"
+             media="all"
+             tal:condition="python:exists('portal/%s' % item)"
+             tal:content="structure string:&lt;!-- @import url($portal_url/$item); --&gt;">
+      </style>
+    </tal:css>
+  </metal:css>
+
+
+  <body>
+
+    <metal:fill fill-slot="main">
+      <metal:main define-macro="main"
+            tal:define="registration_view python: context.restrictedTraverse('@@event_registration_view');
+                        getEventByUID nocall: registration_view/getEventByUID;
+                        toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                        allowRegistration nocall: registration_view/allowRegistration;
+                        canViewRegistrations nocall: registration_view/canViewRegistrations;
+                        item python: getEventByUID();
+                        item_type item/portal_type|nothing;
+                        toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                        item_start item/start|item/StartDate|nothing;
+                        item_end item/end|item/EndDate|nothing;
+                        location item/location|nothing;
+                        map_link item/map_link|nothing;
+                        show_event_location python:False;
+                        registration_allowed python: allowRegistration(item);
+                        can_view_registrations python: canViewRegistrations(item);
+                        registration_deadline item/free_registration_deadline|nothing;
+                        attendee_limit item/free_registration_attendee_limit|nothing;
+                        attendee_count registration_view/getAttendeeCount;
+                        isAnon context/@@plone_portal_state/anonymous;">
+
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <tal:register
+            tal:condition="nocall: item">
+    
+    
+            <h1 class="documentFirstHeading">
+              <span class="register-header">Register for Event</span> <span tal:content="item/Title" />
+            </h1>
+    
+            <p class="documentDescription"
+               tal:content="item/Description"
+               tal:condition="item/Description">
+                Description
+            </p>
+    
+            <h2>Event Information</h2>
+
+            <metal:event
+               use-macro="context/event_view/macros/wherewhen">
+                <metal:date fill-slot="formatted_date">
+                    <span tal:replace="python:toLocalizedTime(item_start, end_time=item_end, long_format=1)" />
+                </metal:date>
+            </metal:event>
+
+            <metal:deadline metal:use-macro="context/event_view/macros/registration_cost" />
+
+            <metal:deadline metal:use-macro="context/event_view/macros/registration_deadline" />
+
+            <tal:status condition="can_view_registrations">
+
+                <h2>Event Registration Status</h2>
+
+                <metal:deadline metal:use-macro="context/event_view/macros/registration_closed" />
+
+                <metal:deadline metal:use-macro="context/event_view/macros/registration_count" />
+
+            </tal:status>
+            
+            <tal:form condition="python: registration_allowed or not isAnon">
+
+            <h2>Registrant's Information</h2>
+   
+            <div tal:replace="structure provider:plone.abovecontentbody" />
+                
+                <tal:if tal:condition="here/getFormPrologue | nothing">
+                  <metal:field use-macro="python:context.widget('formPrologue', mode='view')">
+                      Body text
+                  </metal:field>
+                </tal:if>
+    
+                <metal:use_body use-macro="body_macro" />
+                
+                <tal:if tal:condition="here/getFormEpilogue | nothing">
+                  <metal:field use-macro="python:context.widget('formEpilogue', mode='view')">
+                      Body text
+                  </metal:field>
+                </tal:if>
+            </tal:form>
+        </tal:register>
+        <tal:register condition="not: nocall: item">
+            <h1 class="documentFirstHeading">Event not found</h1>
+        </tal:register>                
+
+      </metal:main>
+    </metal:fill>
+
+  </body>
+
+</html>
+
+</tal:block>

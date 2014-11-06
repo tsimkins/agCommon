@@ -1,0 +1,1 @@
+<tal:z3 define="view context/@@folder_listing_z3" replace="structure view" />

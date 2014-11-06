@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<metal:title fill-slot="content-title">
+
+    <tal:heading
+        tal:condition="view/newsletter_title|nothing">
+
+        <h1 class="documentFirstHeading" 
+            tal:content="view/newsletter_title" />
+    
+        <p class="documentDescription">Subscribe or unsubscribe to <span tal:replace="view/newsletter_title" /></p>
+
+    </tal:heading>
+
+</metal:title>
+
+<metal:content fill-slot="content-text">
+
+    <tal:email 
+        define="listserv view/listserv|nothing;
+                listserv_subscribe_email view/listserv_subscribe_email|nothing;
+                listserv_unsubscribe_email view/listserv_unsubscribe_email|nothing;"
+        condition="listserv">
+
+        <h2>Subscribe by email</h2>
+        
+        <p>Send a blank email to 
+            <a tal:attributes="href string:mailto:${listserv_subscribe_email}?subject=Subscribe"
+                tal:content="listserv_subscribe_email" />
+        </p>
+
+        <h2>Unsubscribe by email</h2>
+        
+        <p>Send a blank email to 
+            <a tal:attributes="href string:mailto:${listserv_unsubscribe_email}?subject=Unubscribe"
+                tal:content="listserv_unsubscribe_email" />
+        </p>
+        
+        <h2>Contact list administrator</h2>
+
+        <p>
+            For any questions or problems, contact the 
+            <a tal:attributes="href string: mailto:${view/listserv_contact_email}">list administrator</a>.
+        </p>
+
+    
+
+    </tal:email>
+
+</metal:content>
+
+</body>
+</html>

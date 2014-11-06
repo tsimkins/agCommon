@@ -1,0 +1,16 @@
+<tal:breadcrumbs define="div_class python: (view.hide_breadcrumbs or not view.anonymous) and 'nobreadcrumbs' or ''">
+    <tal:multipleImages
+        tal:define="tag python: view.showHeader;
+                    backgroundImages python:'background-images' in context.keys()"
+        tal:condition="python: backgroundImages and tag">
+        <div id="image-header"
+             tal:attributes="class div_class">
+            <!-- -->
+            <!-- Subsite JavaScript -->
+            <script type="text/javascript" 
+                    src="background-images/getSubsiteHomepageImage.js"></script>
+
+        </div>
+
+    </tal:multipleImages>
+</tal:breadcrumbs>

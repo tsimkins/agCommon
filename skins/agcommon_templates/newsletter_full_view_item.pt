@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/folder_full_view_item/macros/master"
+      i18n:domain="plone">
+
+    <metal:abovecontent fill-slot="abovecontent">
+        
+        <tal:posted
+            condition="python: item_type in ['News Item']"
+            tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                        effectiveDate here/EffectiveDate;">
+                        
+            <p tal:condition="python:False">
+                <a tal:attributes="href here/absolute_url" tal:content="here/absolute_url"/>
+            </p>
+            <p class="effectiveDate">Posted: <span tal:replace="python:toLocalizedTime(effectiveDate,long_format=0)" /></p>
+        
+        </tal:posted>
+
+    </metal:abovecontent>
+
+</html>

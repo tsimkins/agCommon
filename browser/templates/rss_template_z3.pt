@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metal:rss define-macro="master"
+       xmlns:tal="http://xml.zope.org/namespaces/tal"
+       xmlns:metal="http://xml.zope.org/namespaces/metal">
+    
+    <rss version="2.0"
+         xmlns:atom="http://www.w3.org/2005/Atom"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+         xmlns:agsci="http://agsci.psu.edu/namespaces/rss">
+
+    
+        <tal:block
+             define="same_type nocall:view/same_type;
+                     syn context/portal_syndication;
+                     default_max syn/getMaxItems;
+                     max max_items|python:syn.getMaxItems(here);
+                     max python:same_type(max, 1) and max or default_max;
+                     agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');
+                     order_by_id context/order_by_id|nothing;
+                     order_by_title context/order_by_title|nothing;
+                     objectList python:(True or order_by_id or order_by_title) and agcommon_utilities.reorderTopicContents(objectList, order_by_id=order_by_id, order_by_title=order_by_title) or objectList;
+                     objects python: objectList[:max];">
+
+            <metal:block tal:define="dummy python:request.RESPONSE.setHeader('Content-Type', 'text/xml;;charset=utf-8')" />
+            
+            <channel>
+            
+              <title>
+                <metal:title 
+                    define-slot="title"
+                    tal:define="org_title context/org_title|nothing;
+                                site_title context/site_title|context/@@plone_portal_state/portal_title|nothing;
+                                page_title context/pretty_title_or_id;
+                                feed_title python: (not org_title or org_title.lower() == 'none') and '%s - %s' % (page_title, site_title) or (page_title == site_title) and '%s - %s' % (site_title, org_title) or '%s - %s - %s' % (page_title, site_title, org_title)"
+                    tal:content="feed_title">
+                        The title
+                 </metal:title>
+              </title>
+            
+              <link>
+                <tal:link tal:define="parent context/getParentNode;
+                                default_page parent/getDefaultPage|nothing;
+                                link_obj python: context.id == default_page and parent or context"
+                    tal:content="link_obj/absolute_url">
+                        http://url.to.portal
+                </tal:link>
+              </link>
+            
+              <description>
+                <metal:block define-slot="description">
+                  <tal:block content="context/Description">
+                    Default rss description goes here
+                  </tal:block>
+                </metal:block>
+              </description>
+            
+            
+            <atom:link 
+                tal:attributes="href string:${context/absolute_url}/RSS"
+                rel="self" type="application/rss+xml" />            
+
+            <metal:block define-slot="syndication" />
+            
+                <tal:block repeat="brain python: objects">
+                  <item tal:define="item_has_leadimage brain/hasContentLeadImage|nothing;
+                                    item_type brain/portal_type;
+                                    obj_item brain/getObject|nocall:brain;">
+                
+                    <title tal:content="brain/Title" />
+                
+                    <link tal:content="brain/getURL" />
+            
+                    <guid tal:content="brain/getURL" />
+                
+                    <description tal:content="brain/Description">Description</description>
+                
+                    <tal:block tal:repeat="item brain/Subject">
+                      <dc:subject tal:content="item">Item</dc:subject>
+                    </tal:block>
+                
+                    <tal:isEvent tal:condition="python:item_type in ['Event', 'TalkEvent']">
+                
+                        <dc:date tal:content="brain/start/HTML4">Start date</dc:date>
+                
+                        <agsci:eventcanceled 
+                               tal:condition="brain/eventCanceled|nothing"
+                               tal:content="brain/eventCanceled|nothing" />
+                
+                        <agsci:eventlocation 
+                               tal:condition="brain/location|nothing"
+                               tal:content="brain/location" />
+                
+                        <agsci:eventshortlocation 
+                               tal:condition="brain/short_location|nothing"
+                               tal:content="brain/short_location" />
+                
+                        <agsci:eventstart 
+                               tal:content="brain/start/HTML4" />
+                
+                        <agsci:eventend 
+                               tal:content="brain/end/HTML4" />
+                
+                        <tal:contactinfo 
+                             define="obj_item brain/getObject|nocall:brain;
+                                     contact_email obj_item/contact_email|nothing;
+                                     contact_name python:obj_item.contact_name() or None;
+                                     contact_phone obj_item/contact_phone|nothing;">
+                
+                            <agsci:eventcontactname 
+                                   tal:condition="contact_name" 
+                                   tal:content="contact_name" />
+                
+                            <agsci:eventcontactemail 
+                                   tal:condition="contact_email" 
+                                   tal:content="contact_email" />
+                
+                            <agsci:eventcontactphone 
+                                   tal:condition="contact_phone" 
+                                   tal:content="contact_phone" />
+                
+                        </tal:contactinfo>
+                        
+                    </tal:isEvent>
+                    
+                    <tal:notEvent 
+                         define="has_effective brain/effective|nothing;"
+                         condition="python:item_type not in ['Event', 'TalkEvent'] and has_effective">
+                            <dc:date tal:content="brain/effective/HTML4">Effective date</dc:date>
+                    </tal:notEvent>
+                
+                    <dc:type tal:content="brain/Type" />
+                
+                    <agsci:leadimage
+                        tal:condition="item_has_leadimage"
+                        tal:define="image_field python:view.getImageFieldName(brain);"
+                        tal:attributes="url string:${brain/getURL}/${image_field};"
+                    />
+                
+                  </item>
+                </tal:block>
+            
+            </channel>
+
+        </tal:block>
+
+    
+    </rss>
+
+</metal:rss>
+
