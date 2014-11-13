@@ -1211,15 +1211,6 @@ jq(document).ready(
     }
 );
 
-jq(document).ready(
-    function () {
-        jq('#content span.required').each(
-            function () {
-                jq(this).html('&#x25a0;');
-            }  
-        );
-    }
-);
 
 /* Duplicate registration button on event */
 

@@ -1,8 +1,12 @@
 # CSS Template variables
 
-from zope.app.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
 import re
+
+try:
+    from zope.app.component.hooks import getSite
+except ImportError:
+    from zope.component.hooks import getSite
 
 # Properties
 

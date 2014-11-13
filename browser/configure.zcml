@@ -64,16 +64,6 @@
         template="templates/skip_links.pt"
         />
 
-    <!-- Navigation viewlet -->
-    <browser:viewlet
-        name="plone.links.navigation"
-        manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
-        class="plone.app.layout.links.viewlets.NavigationViewlet"
-        permission="zope2.View"
-        layer=".interfaces.IThemeSpecific"
-        template="templates/links-navigation.pt"
-        />
-
     <!-- Links to RSS feed for syndicated content -->
 
     <browser:viewlet
@@ -502,6 +492,28 @@
     />
 
     <!-- RSS Template --> 
+    <class class="Products.ATContentTypes.content.topic.ATTopic">
+        <implements interface="Products.CMFPlone.interfaces.syndication.ISyndicatable" />
+    </class>
+  
+    <browser:page
+        for="Products.CMFPlone.interfaces.syndication.ISyndicatable"
+        class=".views.RSSFeedView"
+        name="RSS"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/rss_wrapper.pt"
+    />
+
+    <browser:page
+        for="Products.CMFPlone.interfaces.syndication.ISyndicatable"
+        class=".views.FullRSSFeedView"
+        name="fullRSS"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/rss_wrapper.pt"
+    />
+
     <browser:page
         for="*"
         name="rss_template_z3"

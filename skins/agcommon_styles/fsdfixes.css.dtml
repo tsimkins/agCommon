@@ -141,12 +141,12 @@ body.template-fsd_atoz_view #portal-localsearchbox {
 
 #content .tileItem .facultyStaffDirectory ul.jobTitle {
     margin: 0;
-    line-height: 1.25em;
     font-size: 1.0625em;
 }
 
 #content .tileItem .facultyStaffDirectory ul.jobTitle li {
     margin-bottom: 0.125em;
+    line-height: 1.25em;
 }
 
 #content .tileItem .facultyStaffDirectory ul.areasExpertise {

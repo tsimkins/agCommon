@@ -31,8 +31,11 @@ div.FooterPortletManager5 {
 	padding: 0.5em 0.678733031674208%;  /* 6/884 */
 }
 
-#portlets-footer .portlet, #portlets-footer .even, #portlets-footer .portletFooter,
-#portlets-footer .portletItem, #portlets-footer .portletHeader {
+#portlets-footer .portlet, 
+#portlets-footer .even, 
+#portlets-footer .portletFooter,
+#portlets-footer .portletItem, 
+#portlets-footer .portletHeader {
 	background-color: transparent;
 	border: none;
 }
@@ -43,7 +46,7 @@ div.FooterPortletManager5 {
 }
 
 #portlets-footer .portletHeader {
-    color: &dtml-sitemapHeaderColor; !important;
+    color: &dtml-sitemapHeaderColor;;
 	font-size: 1.25em;
 	font-weight: bold;
 	padding: 0.5em 0em 0.0625em 0;
@@ -71,8 +74,9 @@ div.FooterPortletManager5 {
     margin: 0;
 }
 
-#portlets-footer .portletHeader a, #portlets-footer .portletHeader span {
-	color: &dtml-sitemapHeaderColor; !important;
+#portlets-footer .portletHeader a, 
+#portlets-footer .portletHeader span {
+	color: &dtml-sitemapHeaderColor;;
 	padding: 0;
 }
 
@@ -87,17 +91,20 @@ div.FooterPortletManager5 {
 	background-color: transparent;
 }
 
-#portlets-footer a, #portlets-footer .state-published
+#portlets-footer a, 
+#portlets-footer .state-published
 {
-	color: &dtml-sitemapLinkColor; !important;
+	color: &dtml-sitemapLinkColor;;
 	padding: 0.25em 3.061225114535738%;
 	display: block;
+	border-bottom: none;
 }
 
 #portlets-footer .portletItem .state-published:hover,
-#portlets-footer .portletItem a:hover {
-	color: &dtml-sitemapBackgroundColor; !important;
-	background-color: &dtml-sitemapLinkColor; !important;
+#portlets-footer .portletItem a:hover,
+#portlets-footer dd.portletItem .navTreeItem a:hover,
+#portlets-footer .navTreeItem a:hover {
+	text-decoration: underline;
 }
 
 
@@ -108,7 +115,7 @@ div.FooterPortletManager5 {
 #portlets-footer .navTreeCurrentItem
 {
     background-color: transparent;
-    border: none !important;
+    border: none;
     font-weight: normal;
 }
 
@@ -142,14 +149,14 @@ div.FooterPortletManager5 {
 #portlets-footer dl.linkIcon dd.sprite a,
 #portlets-footer dl.linkIcon dd.icon a {
     padding: 0;
-	color: &dtml-sitemapLinkColor; !important;
-	background-color: transparent !important;
+	color: &dtml-sitemapLinkColor;;
+	background-color: transparent;
     vertical-align: middle;
 }
 
 #portlets-footer dl.linkIcon dd.sprite a:hover,
 #portlets-footer dl.linkIcon dd.icon a:hover {
-	color: &dtml-sitemapLinkColor; !important;
+	color: &dtml-sitemapLinkColor;;
 	text-decoration: underline;
 }
 

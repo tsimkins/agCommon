@@ -11,16 +11,10 @@
 
     
         <tal:block
-             define="same_type nocall:view/same_type;
-                     syn context/portal_syndication;
-                     default_max syn/getMaxItems;
-                     max max_items|python:syn.getMaxItems(here);
-                     max python:same_type(max, 1) and max or default_max;
-                     agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');
+             define="agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');
                      order_by_id context/order_by_id|nothing;
                      order_by_title context/order_by_title|nothing;
-                     objectList python:(True or order_by_id or order_by_title) and agcommon_utilities.reorderTopicContents(objectList, order_by_id=order_by_id, order_by_title=order_by_title) or objectList;
-                     objects python: objectList[:max];">
+                     objectList python:(True or order_by_id or order_by_title) and agcommon_utilities.reorderTopicContents(objectList, order_by_id=order_by_id, order_by_title=order_by_title) or objectList;">
 
             <metal:block tal:define="dummy python:request.RESPONSE.setHeader('Content-Type', 'text/xml;;charset=utf-8')" />
             
@@ -62,7 +56,7 @@
 
             <metal:block define-slot="syndication" />
             
-                <tal:block repeat="brain python: objects">
+                <tal:block repeat="brain objectList">
                   <item tal:define="item_has_leadimage brain/hasContentLeadImage|nothing;
                                     item_type brain/portal_type;
                                     obj_item brain/getObject|nocall:brain;">

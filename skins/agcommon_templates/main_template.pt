@@ -140,8 +140,6 @@
             Visual Header
         </metal:header>
                       
-      <div class="visualClear" id="clear-space-before-wrapper-table"><!-- --></div>
-
       <div id="portal-columns" metal:define-slot="portal-columns" role="presentation">
 
             <tal:notajax tal:condition="not:ajax_load">
@@ -298,7 +296,7 @@
 
       <div class="visualClear"><!-- --></div>
     </div>
-<div id="kss-spinner" tal:condition="not:ajax_load"><img tal:attributes="src string:${portal_url}/spinner.png" alt="Page loading..." /></div>
+
 </body>
 </html>
 </metal:page>

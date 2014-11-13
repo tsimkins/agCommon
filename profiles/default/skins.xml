@@ -52,7 +52,8 @@
      insert-after="agcommon_images"/>
   <layer name="agcommon_javascript"
      insert-after="agcommon_templates"/>
-  <layer name="classic_styles"
+  <layer name="plone_styles"
      insert-after="agcommon_javascript"/>
  </skin-path>
+
 </object>

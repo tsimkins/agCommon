@@ -11,6 +11,7 @@ from Products.agCommon import getContextConfig, scrubPhone
 from Products.agCommon.browser.views import FolderView, PublicationView
 from agsci.subsite.content.interfaces import ISection, ISubsite
 from cgi import escape
+from collective.contentleadimage.utils import getImageAndCaptionFields, getImageAndCaptionFieldNames
 from collective.contentleadimage.browser.viewlets import LeadImageViewlet
 from hashlib import md5
 from plone.app.discussion.browser.comments import CommentsViewlet
@@ -162,6 +163,16 @@ class AgCommonViewlet(ViewletBase):
     def portlet_format(self):
         return getattr(self.context, 'homepage_portlet_format', 'standard')
 
+    @property
+    def isSyndicationAllowed(self):
+        try:
+            syntool = self.context.restrictedTraverse('@@syndication-util')
+            return (syntool.site_enabled() and syntool.context_enabled())
+        except AttributeError:
+            syntool = getToolByName(self.context, 'portal_syndication')
+            return syntool.isSyndicationAllowed(self.context)
+    
+
 class PortletViewlet(AgCommonViewlet):
 
     def can_manage_portlets(self):
@@ -310,11 +321,6 @@ class AddThisViewlet(PublicationCodeViewlet):
         pass
 
     @property
-    def isSyndicationAllowed(self):
-        syntool = getToolByName(self.context, 'portal_syndication')
-        return syntool.isSyndicationAllowed(self.context)
-        
-    @property
     def isPerson(self):
         portal_type = getattr(self.context, 'portal_type', None)
         return (portal_type == 'FSDPerson')
@@ -460,26 +466,15 @@ class FBMetadataViewlet(CustomTitleViewlet):
         if not context:
             context = self.context
         
+        (leadImage_fieldname, leadImageCaption_fieldname) = getImageAndCaptionFieldNames(context)
+        (leadImage_field, leadImageCaption_field) = getImageAndCaptionFields(context)
+
         try:
-            leadImage_field = context.getField('leadImage', None)
-            image_field = context.getField('image', None)
-        except AttributeError:
-            leadImage_field = None
-            image_field = None
-            
-        if leadImage_field and leadImage_field.get_size(context) > 0:
-            image_url = "%s/leadImage" % context.absolute_url()
-            image_mime_type = leadImage_field.getContentType(context)
-        elif image_field and image_field.get_size(context) > 0:
-
-            sizes = {}
-
-            if hasattr(image_field, 'sizes') and image_field.sizes:
-                sizes = image_field.sizes
-
-            image_url = "%s/image" % context.absolute_url()
-
-            image_mime_type = image_field.getContentType(context)
+            if leadImage_field and leadImage_field.get(context) and leadImage_field.get(context).get_size() > 0:
+                image_url = "%s/%s" % (context.absolute_url(), leadImage_fieldname)
+                image_mime_type = leadImage_field.getContentType(context)
+        except:
+            pass
 
         return (image_url, image_mime_type)
         
@@ -674,8 +669,8 @@ class UnitAnalyticsViewlet(AnalyticsViewlet):
 class RSSViewlet(AgCommonViewlet):
     def update(self):
         super(RSSViewlet, self).update()
-        syntool = getToolByName(self.context, 'portal_syndication')
-        if syntool.isSyndicationAllowed(self.context):
+
+        if self.isSyndicationAllowed:
             self.allowed = True
             self.url = '%s/RSS' % self.context_state.object_url()
             self.page_title = self.context_state.object_title
@@ -882,7 +877,7 @@ class PortletsAboveViewlet(_ContentWellPortletsViewlet):
 
 class FooterPortletsViewlet(_ContentWellPortletsViewlet):
     name = 'FooterPortletManager'
-    manage_view = '@@manage-footerportlets'
+    manage_view = '@@manage-portletsfooter'
     
 class LocalSearchViewlet(SearchBoxViewlet):
 

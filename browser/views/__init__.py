@@ -17,6 +17,7 @@ from plone.memoize.instance import memoize
 from zope.component import getUtility, getMultiAdapter
 from zope.component.interfaces import ComponentLookupError
 from zope.interface import implements, Interface
+from Products.CMFPlone.browser.syndication.views import FeedView
 
 try:
     from zope.app.component.hooks import getSite
@@ -86,10 +87,6 @@ class FolderView(BrowserView):
 
     implements(IFolderView)
 
-    def __init__(self, context, request):
-        self.context = context
-        self.request = request
-
     @property
     def show_date(self):
         return getContextConfig(self.context, 'show_date', False)
@@ -149,7 +146,7 @@ class FolderView(BrowserView):
         else:
             title = ''
         if field is not None:
-            if field.get_size(context) != 0:
+            if field.get(context).get_size():
                 if not scale:
                     scale = self.prefs.desc_scale_name
                 return field.tag(context, scale=scale, css_class=css_class, title=title)
@@ -494,8 +491,20 @@ class ModifiedSharingView(SharingView):
 
         return current_settings
 
-class RSSTemplateView(FolderView):
+class RSSFeedView(FeedView, FolderView):
 
+    def max(self):
+        return 25
+
+    def objectList(self):
+        return self.feed()._brains()[:self.max()]
+
+class FullRSSFeedView(RSSFeedView):
+
+    def max(self):
+        return 99999
+
+class RSSTemplateView(FolderView):
     pass
 
 class AnnualEventRedirect(FolderView):

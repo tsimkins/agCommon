@@ -1,9 +1,9 @@
-from plonetheme.classic.browser.interfaces import IThemeSpecific as IClassicTheme
+from plonetheme.sunburst.browser.interfaces import IThemeSpecific as ISunburstTheme
 from zope.viewlet.interfaces import IViewletManager
 from plone.app.portlets.interfaces import IColumn
 from zope.interface import Interface
 
-class IThemeSpecific(IClassicTheme):
+class IThemeSpecific(ISunburstTheme):
     """Marker interface that defines a Zope 3 skin layer bound to a Skin
        Selection in portal_skins.
        If you need to register a viewlet only for the "agCommon"

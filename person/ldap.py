@@ -30,21 +30,24 @@ def ldapPersonLookup(psu_id):
             table = mySoup.find("table")
     
             for row in table.findAll("tr"):
-                columns = row.findAll("td")
-                if len(columns) == 2:
+
+                th = row.findAll("th")
+                td = row.findAll("td")
+
+                if len(th) == 1 and len(td) == 1:
             
-                    label = columns[0].find("b").contents[0].strip().replace(":", "")
+                    label = th[0].contents[0].strip().replace(":", "")
             
-                    value = "".join([str(x).strip().replace("<br />", "\n") for x in columns[1].contents]).strip()
+                    value = "".join([str(x).strip().replace("<br />", "\n") for x in td[0].contents]).strip()
             
                     if label == "E-mail":
-                        value = columns[1].find("a").contents[0]
+                        value = td[0].find("a").contents[0]
                     
                     if len(value.split("\n")) > 1:
                         value = value.split("\n")
                     
                     ldap[label] = value
-            
+
             name_array = [x.title() for x in ldap['Name'].split()]
             
             if len(name_array) == 3:

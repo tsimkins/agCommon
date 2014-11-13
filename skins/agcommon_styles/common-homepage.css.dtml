@@ -139,7 +139,7 @@ body.template-atct_edit #portal-column-content .documentEditable #content {
 #content #homepage-text .documentDescription {
     margin-bottom: 0;
     font-size: 1.25em;
-    color: #3F3F3F;
+    color: #2F2F2F;
     line-height: 1.375em;
     margin-bottom: 0.75em;
 }
