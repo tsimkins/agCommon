@@ -158,8 +158,9 @@
                             </tal:location>
                     </div>
                     </span>
+                    <div class="effectiveDate"> <span tal:replace="python:toLocalizedTime(item_effective,long_format=0)" /> </div>
+
                     <span class="documentByLine">
-                        <div class="effectiveDate"> <span tal:replace="python:toLocalizedTime(item_effective,long_format=0)" /> </div>
                         <tal:byline condition="show_about">
                             &mdash;
 

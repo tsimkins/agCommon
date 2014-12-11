@@ -148,6 +148,7 @@ body.template-document_homepage_view #homepageimage {
     border-left-style: none !important;
     border-left-width: none !important;
     border-left-color: transparent !important;
+    font-family: Georgia,"Times New Roman",Times,serif;
 }
 
 #portal-column-content.sr, #portal-column-content.sl {
@@ -163,7 +164,7 @@ body.template-document_homepage_view #homepageimage {
 	margin: 1em 0 0 0;
 	width: 100%;
 	line-height: 15pt;
-	font-size: 11pt;
+	font-size: 11.5pt;
 }
 
 .contentLeadImageContainer .discreet {

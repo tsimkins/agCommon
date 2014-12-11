@@ -15,7 +15,7 @@ body {
     color: #000000;
     background-repeat: repeat-x;
     font-size: 100%;
-    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 /* = visual-portal-wrapper ================================== */
@@ -1072,7 +1072,8 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
 #portal-column-two .linkButton .portletItem a:visited,
 #rightcolumn .linkButton .portletItem a,
 #rightcolumn .linkButton .portletItem a:hover,
-#rightcolumn .linkButton .portletItem a:visited {
+#rightcolumn .linkButton .portletItem a:visited,
+#content #rightcolumn.agCommonPortlet .linkButton dd.portletItem a:visited {
     text-decoration: none;
     display: block;
     color: &dtml-leftButtonTextColor_external;;
@@ -2086,6 +2087,7 @@ div.tileDescription.no-description {
 
 /* Restyle pull quote */
 
+#content .pullquote, 
 #content .callout, 
 .portletStaticText .callout {
     border-width: 1px 1em;
@@ -2101,8 +2103,11 @@ div.tileDescription.no-description {
     font-family: Arial, Helvetica, Helv, sans-serif;
 }
 
-.pullquote {
-    width: 33.885542168674697%;
+#content .pullquote {
+    width: 46.234939759036145%;
+    float: right;
+    clear: right;
+    border-width: 1px;
 }
 
 #content .documentText .callout {
@@ -2134,7 +2139,9 @@ div.comment img.avatar {
 
 /* Tile Headline Link */
 
-.tileHeadline a, .tileTitle a {
+.tileHeadline a,
+.tileTitle a,
+#content h2.tileHeadline a:link {
     color: &dtml-linkColor;;
 }
 
@@ -2262,6 +2269,8 @@ body.template-folder_summary_view_z3 .effectiveDate {
     margin-bottom: 0.6875em;
     margin-top: 0.25em;
     font-size: 0.875em;
+    color: #76797c;
+    font-weight: normal;
 }
 
 body.template-news_listing #content dd {
@@ -2680,12 +2689,19 @@ body.template-subfolder_view div#two-column-left, body.template-subfolder_view d
 }
 
 #portal-personaltools-wrapper {
-    font-size: 0.875em;
+    font-size: 0.75em;
     margin: 0 auto;
     max-width: &dtml-maxWidth;;
     position: relative;
-    bottom: -1.142857142857143em; /* Inverse of font size! */
+    bottom: -1.333333333333333em; /* Inverse of font size! */
     z-index: 25;
+    background-color: #e3e3e3;
+    border: 1px solid #333333;
+}
+
+#portal-personaltools {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 body.icons-on #portal-header {
@@ -3927,12 +3943,26 @@ div.formControls input[type="submit"],
     display: none;
 }
 
-#content .mceFirst a.text_style_text_text {
+#content .mceFirst a.text_style_text_text,
+#content .mceFirst a#form.text_style_form.text_text,
+#content .ploneSkin table.mceListBox .mceText {
     border: 1px solid #444444;
+    background-color: #FEFEFE;
+    border-width: 1px 0 1px 1px;
+}
+
+#content .ploneSkin table.mceListBox .mceOpen {
+    border-bottom: 1px solid #444444;
 }
 
 .ploneSkin .mceToolbar .mceButtonDisabled {
     display: none;
+}
+
+.ploneSkin .mceToolbar > div#text_toolbargroup,
+.ploneSkin .mceToolbar > div#form.text_toolbargroup,
+.ploneSkin .mceToolbar > div#mce_fullscreen_toolbargroup {
+    width: 100%;
 }
 
 /* Portlet manager buttons */

@@ -853,7 +853,7 @@ td#portal-column-content.newsletter_full_text h3.tileHeadline {
                                     <metal:event use-macro="context/folder_listing_z3/macros/event_date" />
                                 </div>
 
-                                <p class="documentDescription" tal:condition="item_description|nothing">
+                                <p tal:condition="item_description|nothing">
 
                                     <span tal:replace="item_description" />
                                     <tal:more condition="not: newsletter_full_text">
