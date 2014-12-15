@@ -97,6 +97,8 @@
             </ul>
         </div>
 
+        <a name="event-listing"></a>
+
         <tal:bymonth repeat="month view_data">
             <tal:items define="folderContents python:month.get('items')">
             <a tal:condition="agenda_anchors" tal:attributes="name month/id" />
