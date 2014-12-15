@@ -99,7 +99,7 @@
 #centercolumn .portletWrapper:first-child .portletHeader:first-child,
 #rightcolumn .portletWrapper:first-child .portletHeader:first-child {
     margin-top: 0;
-    pading-top: 0;
+    padding-top: 0;
 }
 
 /* YOUR CSS RULES STOP HERE */

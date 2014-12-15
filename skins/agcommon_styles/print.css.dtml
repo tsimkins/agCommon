@@ -146,7 +146,7 @@ body.template-document_homepage_view #homepageimage {
     border-color: #666666;
     margin-top: 0.125em;
     border-left-style: none !important;
-    border-left-width: none !important;
+    border-left-width: 0 !important;
     border-left-color: transparent !important;
     font-family: Georgia,"Times New Roman",Times,serif;
 }
