@@ -1,6 +1,6 @@
 <div id="portal-footer" i18n:domain="plone">
 	<p>
-		&copy;
+		<abbr title="Copyright">&copy;</abbr>
 		<span tal:omit-tag=""
 			tal:define="now modules/DateTime/DateTime" 
 			tal:content="now/year">[date last modified]</span>
