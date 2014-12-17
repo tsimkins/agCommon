@@ -27,7 +27,7 @@ dl.portlet dt a:hover {
 dl.portlet dd.portletItem,
 dl.portlet dd.portletFooter,
 dl.portletError dd {
-    padding: 1em;
+    padding: 0;
 }
 
 .blockedPortlet .portletHeader a {
