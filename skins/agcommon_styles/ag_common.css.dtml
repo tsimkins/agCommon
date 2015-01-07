@@ -2375,6 +2375,7 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
     margin: 1em 0 1em 1em;
     clear: right;
     position: relative;
+    float: right;
 }
 
 #portal-column-content.sr #document-toc {

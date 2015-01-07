@@ -8,6 +8,7 @@ from Products.CMFCore.utils import getToolByName
 from DateTime import DateTime
 from Products.agCommon import getContextConfig
 import HTMLParser
+from Products.CMFPlone.utils import safe_unicode
 
 try:
     from zope.app.component.hooks import getSite
@@ -152,7 +153,7 @@ class RegistrationView(BrowserView):
 
     def unescapeHTML(self, e):
         h = HTMLParser.HTMLParser()
-        return h.unescape(e)
+        return h.unescape(safe_unicode(e))
         
 
 class DownloadCSVView(RegistrationView):
