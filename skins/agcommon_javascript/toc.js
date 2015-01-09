@@ -19,7 +19,7 @@ jQuery(function($) {
     }
     stack = [];
     // Get headers in document order
-    $(content).find('*').not('.comment > h3').not('.documentActions > h2').not('#addthis > h2').not('.publication > h2').filter(function() { return /^h[1234]$/.test(this.tagName.toLowerCase()) })
+    $(content).find('*').not('.comment > h3').not('.documentActions > h2').not('#addthis > h2').not('.publication > h2').not('.publication > h3').not('#relatedItems > h2').filter(function() { return /^h[1234]$/.test(this.tagName.toLowerCase()) })
         .not('.documentFirstHeading').not('.portletHeader').each(function(i) {
 
         var level, ol, li;
