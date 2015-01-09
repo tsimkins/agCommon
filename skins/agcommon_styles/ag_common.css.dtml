@@ -2471,9 +2471,8 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 
 #localSearchBox {
     width: 88.195991091314031%;
-    padding: 0.125em 0.96502%;
-    border-style: solid;
-    border-color: #999999;
+    padding: 0.1875em 0.96502%;
+    border: 1px solid #999999;
     background-image: none;
     float: left;
     margin: 0 0.96502% 0 0;
@@ -2488,7 +2487,7 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 #portal-localsearchbox .searchButton {
     background-color: #FFD35F;
     border: 1px solid #EF6500;
-    padding: 0.1875em 0.96502%;
+    padding: 0.125em 0.96502%;
     margin-top: 0;
     color: #3F1B00;
     background-image: none;
@@ -3218,6 +3217,10 @@ body.template-folder_full_view #content .documentText h3 {
     font-size: 0.875em;
 }
 
+#content .publication {
+    line-height: 1.375em;
+}
+
 #content .documentContributors h2, #content .publication h2 {
     color: &dtml-documentSubHeadingColor;;
     margin: 1.125em 0 0.375em 0;
@@ -3226,6 +3229,10 @@ body.template-folder_full_view #content .documentText h3 {
     border: none;
     font-weight: bold;
     font-family: "Lucida Grande",Tahoma,Verdana,sans-serif;
+}
+
+#content .publication h3 {
+    margin-top: 0;
 }
 
 #content .documentContributors .tileItem {
