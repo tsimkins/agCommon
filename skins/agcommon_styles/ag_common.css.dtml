@@ -2307,6 +2307,7 @@ body.template-subfolder_view #content .tileItem h2.tileHeadline,
 body.template-blog_news_view #content .tileItem h2.tileHeadline {
     font-size: 1.375em;
     margin-bottom: 0.375em;
+    font-weight: normal;
 }
 
 body.template-subfolder_view #content-core>.tileItem>h2.tileHeadline>a,
