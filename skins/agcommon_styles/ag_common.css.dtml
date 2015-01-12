@@ -2202,8 +2202,8 @@ div.comment img.avatar {
 #relatedItems {
     border: 1px solid &dtml-globalBorderColor;;
     line-height: 1.5em;
-    margin: 2.5em 0;
-    padding: 0.75em;
+    margin: 2em 0;
+    padding: 0.75em 0.5em;
     width: auto;
 }
 
@@ -3219,6 +3219,7 @@ body.template-folder_full_view #content .documentText h3 {
 
 #content .publication {
     line-height: 1.375em;
+    margin-bottom: 1.5em;
 }
 
 #content .documentContributors h2, #content .publication h2 {
