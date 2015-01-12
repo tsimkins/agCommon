@@ -170,6 +170,10 @@ body.template-fsd_atoz_view #portal-localsearchbox {
     clear: none;
 }
 
+#content #hcard.facultyStaffDirectory {
+    position: inherit;
+}
+
 #content .personView .websites ul {
     list-style-image: url(&dtml-portal_url;/bullet.png);
     list-style-type: square;

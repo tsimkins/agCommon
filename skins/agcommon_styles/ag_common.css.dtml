@@ -1778,6 +1778,10 @@ body.template-person_view #content h3 {
     vertical-align: top;
 }
 
+#content #addthis a, #content #addthis a:link {
+    border: none;
+}
+
 #addthis a:hover {
     border-bottom: none;
 }
