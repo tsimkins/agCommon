@@ -152,6 +152,91 @@ class FolderView(BrowserView):
                 return field.tag(context, scale=scale, css_class=css_class, title=title)
         return ''
 
+    @property
+    def use_view_action(self):
+        return getToolByName(self.context, 'portal_properties').get("site_properties").getProperty('typesUseViewActionInListings', ())
+
+    def isPublication(self, item):
+
+        publication_interfaces = [
+            'agsci.UniversalExtender.interfaces.IUniversalPublicationExtender',
+            'agsci.UniversalExtender.interfaces.IFilePublicationExtender',
+            'agsci.ExtensionExtender.interfaces.IExtensionPublicationExtender',
+        ]
+
+        if hasattr(item, 'object_provides'):
+            return (len(set(item.object_provides) & set(publication_interfaces)) > 0)
+
+        return False
+
+    def getItemURL(self, item):
+
+        item_type = item.portal_type
+        
+        if hasattr(item, 'getURL'):
+            item_url = item.getURL()
+        else:
+            item_url = item.absolute_url()
+
+        # Logged out
+        if self.anonymous:
+            if item_type in ['Image',] or \
+               (item_type in ['File',] and \
+                    (self.isPublication(item) or not self.getFileType(item))):
+                return item_url + '/view'
+            else:
+                return item_url
+        # Logged in
+        else:
+            if item_type in self.use_view_action:
+                return item_url + '/view'
+            else:
+                return item_url
+
+    def getIcon(self, item):
+
+        if hasattr(item, 'getIcon'):
+            if hasattr(item.getIcon, '__call__'):
+                return item.getIcon()
+            else:
+                return item.getIcon
+
+        return None
+
+    def getFileType(self, item):
+
+        icon = self.getIcon(item)
+        
+        if icon:
+            icon = icon.split('.')[0]
+
+        return {
+            'xls' : u'Microsoft Excel',            'ppt' : u'Microsoft PowerPoint',            'publisher' : u'Microsoft Publisher',            'doc' : u'Microsoft Word',            'pdf' : u'PDF',            'pdf_icon' : u'PDF',            'text' : u'Plain Text',            'txt' : u'Plain Text',            'zip' : u'ZIP Archive',
+        }.get(icon, None)
+
+    def getItemSize(self, item):
+        if hasattr(item, 'getObjSize'):
+            if hasattr(item.getObjSize, '__call__'):
+                return item.getObjSize()
+            else:
+                return item.getObjSize
+        return None
+                
+    def getItemInfo(self, item):
+        if item.portal_type in ['File',]:
+            obj_size = self.getItemSize(item)
+            file_type = self.getFileType(item)
+            
+            if file_type:
+                if obj_size:
+                    return u'%s, %s' % (file_type, obj_size)
+                else:
+                    return u'%s' % file_type
+
+        return None
+        
+        
+
     def getItemClass(self, item, layout='folder_listing'):
 
         # Default classes for all views

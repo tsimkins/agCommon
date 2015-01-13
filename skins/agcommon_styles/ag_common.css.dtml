@@ -2153,6 +2153,11 @@ div.comment img.avatar {
     border-bottom: none;
 }
 
+#content .tileFileInfo {
+    font-size: 0.875em;
+    line-height: 1.5em;
+}
+
 #content .tileHeadline a:hover,
 #content .tileTitle a:hover {
     color: &dtml-linkHoverColor;;
