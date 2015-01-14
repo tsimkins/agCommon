@@ -32,7 +32,7 @@
 
 		</script>
 
-		<script async type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=agsciences"></script>
+		<script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=agsciences"></script>
 
 		<!-- AddThis Button BEGIN -->
 		<div class="addthis_toolbox addthis_default_style">
