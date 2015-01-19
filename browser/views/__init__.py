@@ -234,8 +234,6 @@ class FolderView(BrowserView):
                     return u'%s' % file_type
 
         return None
-        
-        
 
     def getItemClass(self, item, layout='folder_listing'):
 
