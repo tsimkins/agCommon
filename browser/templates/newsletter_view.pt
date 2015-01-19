@@ -831,7 +831,7 @@ td#portal-column-content.newsletter_full_text h3.tileHeadline {
                                     <h3 class="tileHeadline">
 
                                     <tal:image
-                                         tal:define="scale python: newsletter_full_text and 'mini' or 'micro'"
+                                         tal:define="scale python: (newsletter_full_text or not sr) and 'mini' or 'micro'"
                                          tal:condition="not:leadimage_full_width">
                                             <img align="right"
                                                  tal:condition="exists:item_has_leadimage"
