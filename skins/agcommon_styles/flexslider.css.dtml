@@ -166,7 +166,8 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
     margin-left: 72.453371592539455%;
     margin-right: 0.717360114777618%;
     width: 125px;
-    margin-top: -1.3125em;
+    margin-top: -1.375em;
+    margin-bottom: 0.375em;
 }
 
 .flex-control-nav a {
