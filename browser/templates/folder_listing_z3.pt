@@ -185,6 +185,15 @@
                              tal:content="python:toLocalizedTime(item_effective,long_format=0)" />
                     </metal:show-date>
 
+                    <metal:info define-macro="item-info">
+
+                        <div class="discreet tileFileInfo"
+                            tal:define="item_info python:view.getItemInfo(item)"
+                            tal:condition="item_info"
+                            tal:content="item_info" />
+
+                    </metal:info>
+
                     <div tal:define="dt_class python:test(item_description or item_type == 'Event', 'tileDescription', 'tileDescription no-description');"
                            tal:attributes="class dt_class">
                         <metal:event-date define-macro="event_date">
@@ -236,15 +245,6 @@
                                 </div>
                            </tal:event-date>
                         </metal:event-date>
-
-                        <metal:info define-macro="item-info">
-    
-                            <div class="discreet tileFileInfo"
-                                tal:define="item_info python:view.getItemInfo(item)"
-                                tal:condition="item_info"
-                                tal:content="item_info" />
-    
-                        </metal:info>
 
                         <tal:show_description condition="subfolder/show_description|show_description|nothing">
 
