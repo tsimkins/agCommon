@@ -271,6 +271,15 @@
     />
 
     <browser:viewlet
+        name="contentwellportlets.portletsabovecontent"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".viewlets.EmptyViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        for="agsci.subsite.content.interfaces.IHomePage"
+    />
+
+    <browser:viewlet
         name="contentwellportlets.portletsbelowcontent"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
         class=".viewlets.PortletsBelowViewlet"

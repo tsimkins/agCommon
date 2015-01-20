@@ -42,6 +42,11 @@ from zope.publisher.interfaces.browser import IBrowserView,IDefaultBrowserLayer
 
 from Products.Five.browser import BrowserView
 
+class EmptyViewlet(ViewletBase):
+
+    def index(self):
+        return "<!-- This viewlet intentionally left blank. -->"
+
 class AgCommonViewlet(ViewletBase):
 
     def update(self):
