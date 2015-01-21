@@ -197,16 +197,16 @@
         </tal:contact>
 
         <metal:metadata define-macro="custom-metadata">
-
             <tal:metadata define="isAnon context/@@plone_portal_state/anonymous;
                                   member context/@@plone_portal_state/member;
+                                  public_tags context/public_tags|nothing;
                                   extension_counties context/extension_counties|nothing;
                                   extension_programs context/extension_programs|nothing;
                                   extension_topics context/extension_topics|nothing;
                                   extension_courses context/extension_courses|nothing;
                                   extension_subtopics context/extension_subtopics|nothing;
                                   department_research_areas context/department_research_areas|nothing;"
-                                  condition="python: (not isAnon) and (extension_counties or extension_programs or extension_topics or extension_subtopics or department_research_areas or extension_courses)">
+                                  condition="python: (not isAnon) and (extension_counties or extension_programs or extension_topics or extension_subtopics or department_research_areas or extension_courses or public_tags)">
                     <metal:title define-slot="metadata-title">
                         <h2>Event Metadata</h2>
                     </metal:title>
@@ -258,7 +258,15 @@
                                 tal:content="x" />
                         </ul>
                     </tal:areas>
-    
+
+                    <tal:areas condition="public_tags">
+                        <h3>Public Tags</h3>
+                        <ul>
+                            <li tal:repeat="x public_tags"
+                                tal:content="x" />
+                        </ul>
+                    </tal:areas>
+
             </tal:metadata>
     
             <span class="visualClear"><!-- --></span>
