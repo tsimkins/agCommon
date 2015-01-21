@@ -303,7 +303,7 @@ class AgCommonUtilities(BrowserView):
                             # We have a ziptool
                             zips = ziptool.getNearbyZIPs(search_zip, search_zip_radius)
                             all_zips = portal_catalog.uniqueValuesFor('zip_code')
-                            search_zip_list = list(set(zips) & set(all_zips))
+                            search_zip_list = [x for x in all_zips if ziptool.toZIP5(x) in zips]
                             search_zip_list.append('00000')
                             contentFilter['zip_code'] = search_zip_list
                 elif k == 'Counties':
