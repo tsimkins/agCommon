@@ -44,7 +44,7 @@
         <div class="photoAlbum">
 
         <tal:images tal:condition="batch" tal:repeat="image batch">
-            <div tal:define="isImage python: image.portal_type == 'Image';
+            <div tal:define="isImage python: image.portal_type in ['Image', 'FSDPerson', 'News Item'];
                              klass python: isImage and 'photoAlbumImage' or ''"
                  tal:attributes="class string:photoAlbumEntry ${klass}">
                         <a tal:define="id python:int(b_start)+int(repeat['image'].number()-1);
