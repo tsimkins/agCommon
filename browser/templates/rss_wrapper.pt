@@ -7,7 +7,5 @@
 
     <metal:block use-macro="context/@@rss_template_z3/macros/master" />
 
-<h1 tal:content="python: len(objectList)" />
-    
 </tal:block>
 
