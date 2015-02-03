@@ -276,9 +276,6 @@ hr {
 }
 
 img.leadimage, img.leadimage_full {
-    background-color: #EEEEEE;
-    border: 1px solid #DDDDDD;
-    color: #666666;
     float: right;
     font-size: 8pt;
     margin: 6pt 0 12pt 12pt;
