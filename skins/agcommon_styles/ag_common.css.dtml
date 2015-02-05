@@ -3982,6 +3982,7 @@ div.formControls input[type="submit"],
     display: none;
 }
 
+.ploneSkin.mceEditor .mceToolbar > div,
 .ploneSkin .mceToolbar > div#text_toolbargroup,
 .ploneSkin .mceToolbar > div#form.text_toolbargroup,
 .ploneSkin .mceToolbar > div#mce_fullscreen_toolbargroup {
