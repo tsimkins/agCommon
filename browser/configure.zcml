@@ -410,6 +410,17 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <!-- Tiny MCE JSON configuration -->
+
+    <browser:page
+        for="*"
+        name="tinymce-jsonconfiguration"
+        class=".views.tinymce.TinyMCEBrowserView"
+        permission="zope2.View"
+        attribute="jsonConfiguration"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <!-- Order Publication View -->
     <browser:page
         name="order"
