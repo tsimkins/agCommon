@@ -363,7 +363,9 @@
         width: 25.177025963808025% !important;
     }
     
-    
+    #portal-column-content.sl #centercolumn.agCommonPortlet .portletfeedmixerimagefull .portletItem .rssImage {
+        width: 100% !important;
+    }
     
     #two-column-left, #two-column-right,
     #portal-column-content.sr #two-column-left, #portal-column-content.sr #two-column-right {

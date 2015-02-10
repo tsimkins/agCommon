@@ -43,21 +43,30 @@ def total_width():
 
 portlet_rss_image = """
 
-#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .rssImage {
+#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixer .rssImage {
     width: 33.333333333333333%%;
     float: right;
-    margin: 0 0 0.125em 0.888888888888889%%;
+    margin: 0.125em 0 0.125em 0.888888888888889%%;
     padding: 0;
 }
 
 #content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimageleft .rssImage {
-    width: 33.333333333333333%%;
     float: left;
-    margin: 0;
-    padding: 0;
+    margin: 0.125em 0.888888888888889%% 0.125em 0;
 }
 
 #content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimagelarge .rssImage {
+    width: 50%%;
+    margin-left: 1.5%%;
+    margin-right: 0;
+}
+
+#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+    margin-left: 0;
+    margin-right: 1.5%%;
+}
+
+#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimagefull .rssImage {
     width: auto;
     float: none;
     margin: 0;
@@ -65,14 +74,14 @@ portlet_rss_image = """
     margin-bottom: 0.25em;
 }
 
-#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimageleft .title,
+#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
 #content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimageleft .portletItemDetails {
     margin-left: 35%%;
 }
 
-#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimagelarge .title,
-#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimagelarge .portletItemDetails {
-    margin-left: 0;
+#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tilePortletContainer .portlet-width-%(block_klass)s.portlet-item-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+    margin-left: 51.5%%;
 }
 
 """

@@ -213,6 +213,11 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
     text-align: right;
 }
 
+#centercolumn.agCommonPortlet .portletfeedmixerimagefull .portletItem .rssImage {
+    margin: 0 0 0.125em 0;
+    float: none;
+}
+
 #centercolumn.agCommonPortlet .portletfeedmixerimageleft .portletItem .rssImage {
     float: left;
     margin: 0.125em 1.590457256461233% 0.625em 0; /* 8/503 */
