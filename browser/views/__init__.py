@@ -580,12 +580,22 @@ class RSSFeedView(FeedView, FolderView):
         return 25
 
     def objectList(self):
-        return self.feed()._brains()[:self.max()]
+        if self.context.portal_type in ['Topic']:
+            return self.context.queryCatalog(batch=False)[:self.max()]
+        else:
+            return self.feed()._brains()[:self.max()]
+
+    def __call__(self):
+
+        self.request.response.setHeader('Content-Type',
+                                        'application/atom+xml')
+        return self.index()
 
 class FullRSSFeedView(RSSFeedView):
 
     def max(self):
         return 99999
+
 
 class RSSTemplateView(FolderView):
     pass
