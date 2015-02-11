@@ -2539,11 +2539,15 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
     font-size: 0.625em;
 }
 
-table.listing {
+table.listing,
+table.plain,
+table.grid {
     caption-side: bottom;
 }
 
-table.listing caption {
+table.listing caption,
+table.plain caption,
+table.grid caption {
     text-align: left;
     margin-top: 0.375em;
     font-size: 0.875em;
@@ -3843,8 +3847,7 @@ body.custom-no-icons .documentByLine {
 
 /* Unbold labels for checkboxes and radio buttons */
 
-div.ArchetypesMultiSelectionValue label,
-div.ArchetypesSelectionWidget label {
+div.ArchetypesMultiSelectionValue label {
     font-weight: normal;
 }
 
