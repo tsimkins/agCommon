@@ -109,7 +109,7 @@
 
     </style>
 
-    <style media="print,screen">
+    <style type="text/css" media="print,screen">
 
         h1.headline {
             font-size: 16pt;
@@ -325,7 +325,7 @@
 
 <metal:javascriptslot fill-slot="javascript_head_slot">
 
-    <script tal:attributes="src string:${portal_url}/jquery.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/jquery.js"></script>
 
     <script type="text/javascript">
 
