@@ -363,8 +363,13 @@ dl.portlet {
     color: #4B4B4B;
 }
 
-.agCommonPortlet .portletfeedmixer .portletItem .date {
+.agCommonPortlet .portletfeedmixer .portletItem .date,
+.portletItemDetails.date {
     color: #767676;
+    border: none;
+    box-shadow: none;
+    width: auto;
+    padding: 0;
 }
 
 .agCommonPortlet .portletItem a.more {
@@ -2194,16 +2199,23 @@ div.comment img.avatar {
     padding: 0;
 }
 
+#content .listingBar a {
+    border: none;
+    padding: 0;
+}
+
 .listingBar span.next, .listingNext  {
-    max-width: 48%;
+    width: 48%;
     margin-left: 2%;
     display: block;
+    float: right;
 }
 
 .listingBar span.previous, .listingPrevious {
-    max-width: 48%;
+    width: 48%;
     margin-right: 2%;
     display: block;
+    float: left;
 }
 
 /* Related items */
