@@ -56,5 +56,5 @@
             </tal:person>
         </tal:contributors>
     </div>
+    <div class="visualClear"><!-- --></div>
 </div>
-<div class="visualClear"><!-- --></div>
