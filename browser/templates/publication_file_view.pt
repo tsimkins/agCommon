@@ -12,21 +12,56 @@
         <metal:block define-macro="content-core"
                      tal:define="content_type context/get_content_type|context/Format;">
 
-            <h2>Download Publication</h2>
-            <p>
-                <metal:field use-macro="python:context.widget('file', mode='view')">
-                File
-                </metal:field>
+            <h2 class="h3">Download Publication</h2>
+            <p class="download-publication">
+
+
+
+      <tal:define define="unit context/getFile;
+                          fieldName string:file">
+        <tal:block define="size unit/get_size | python:unit and len(unit) or 0;
+                           icon unit/getBestIcon | nothing;
+                           filename unit/filename | nothing;
+                           size_kb python:size/1024;
+						   display_size_kb python:'{0:n} kB'.format(size_kb) if size_kb > 0 else '';
+						   display_size_bytes python:'' if display_size_kb else '{0:n} bytes'.format(size);
+						   display_size python:'{0}{1}'.format(display_size_kb, display_size_bytes)"
+                   condition="python:size &gt; 0">
+
+              <a tal:content="context/Title"
+                 tal:attributes="href string:${context/absolute_url}/at_download/$fieldName" />
+
+              <span class="discreet">
+                  <br />
+                  <span tal:replace="python:context.lookupMime(context.getContentType())">ContentType</span>,
+                  <tal:size content="display_size">?</tal:size>
+              </span>
+
+        </tal:block>
+      </tal:define>
+
+
+
             </p>
 
-            <h2>Publication Details</h2>
+            <h2 class="h3">
 
+                <tal:details
+                    define="orderPublication view/orderPublication">
+    
+                    <tal:h2 condition="orderPublication">Order Publication</tal:h2>
+                    <tal:h2 condition="not:orderPublication">Publication Details</tal:h2>
+                
+                </tal:details>
+                
+            </h2>
+                
             <div class="publication">
             
                 <metal:publication use-macro="context/order/macros/publication-information" />
             
                 <div tal:condition="view/orderPublication">
-                    <a tal:attributes="href view/order_url">Order Publication</a>
+                    <a class="action-button" tal:attributes="href view/order_url">Order</a>
                 </div>
             
             </div>
