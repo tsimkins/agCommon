@@ -1708,6 +1708,8 @@ body.template-agenda_view #content .tileItemLeadImage {
     float: none;
 }
 
+body.template-file_view #content h2.h3,
+body.template-file_view #content .documentContributors h2,
 #content h3,
 body.custom-h2-as-h3 #content-text.documentText h2,
 body.custom-h2-as-h3 #content-core.documentText h2,
@@ -1722,6 +1724,15 @@ body.template-by_county_listing.custom-two-column #content h2 {
     font-weight: bold;
     font-family: "Lucida Grande",Tahoma,Verdana,sans-serif;
     font-size: 1.40625em;
+}
+
+body.template-file_view #content .documentContributors h2 {
+    font-size: 1.607142857142857em;
+}
+
+body.template-file_view #content h2.h3,
+body.template-file_view #content .documentContributors h2 {
+    margin-top: 1.25em;
 }
 
 #content h4,
@@ -2492,7 +2503,7 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 }
 
 #localSearchBox {
-    width: 88.195991091314031%;
+    width: 87.555555555555556%;
     padding: 0.1875em 0.96502%;
     border: 1px solid #999999;
     background-image: none;
@@ -3274,6 +3285,7 @@ body.template-folder_full_view #content .documentText h3 {
 
 .documentContributors .contentLeadImageContainer {
     float: left;
+    clear: none;
     margin: 0.25em 1.506024096385542% 0 1.506024096385542%;
     width: 7.530120481927711%;
     max-width: 7.530120481927711%;
@@ -3678,7 +3690,8 @@ form.event-registration input[type="submit"]:hover {
 }
 
 
-form.event-registration-button input[type="submit"] {
+form.event-registration-button input[type="submit"],
+#content a.action-button {
     font-size: 1em;
     color: #FFFFFF;
     background-color: #8F2C00;
@@ -3706,6 +3719,15 @@ form.event-registration-button input[type="submit"] {
     -webkit-box-shadow: 0 2px 2px #D1D6DF;
     box-shadow: 0 2px 2px #D1D6DF;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9f3709', endColorstr='#5f250c',GradientType=0 ); /* IE6-9 */
+}
+
+#content a.action-button {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+}
+
+body.template-file_view #addthis .order {
+    display: none;
 }
 
 form.event-registration-button.leadimage input[type="submit"] {
@@ -3817,6 +3839,10 @@ body.template-register_fg_base_view_p3 #addthis {
 div.publication div,
 div.publication-details div {
     margin-bottom: 0.25em;
+}
+
+body.template-file_view div.publication {
+    margin-top: 0.75em;
 }
 
 /* Hide overlay on manage portlets pages */
@@ -4093,6 +4119,75 @@ dl.portlet ul.navTreeLevel1 .navTreeItem {
 #content ul {
     list-style-image: url("&dtml-portal_url;/bullet.png");
     list-style-type: square;
+}
+
+/* Tile folder view */
+
+body.tile-folder #content .tileitem-width-100:nth-child(1n+1),
+body.tile-folder #content .tileitem-width-50:nth-child(2n+1),
+body.tile-folder #content .tileitem-width-33:nth-child(3n+1),
+body.tile-folder #content .tileitem-width-25:nth-child(4n+1),
+body.tile-folder #content .tileitem-width-20:nth-child(5n+1) {
+    clear: left;
+}
+
+body.tile-folder #content .tileItem {
+    margin-bottom: 1em;
+}
+
+body.tile-folder #content .tileItem .tileHeadline {
+    font-weight: normal;
+}
+
+body.tile-folder #content .tileItem .tilebody.tile-folder {
+    color: #4b4b4b;
+}
+
+body.tile-folder #portal-column-content #content .tileItem .contentLeadImageContainer {
+    float: none;
+    clear: both;
+    margin-bottom: 0.125em;
+    max-width: 100%;
+}
+
+body.tile-folder #content .tileitem-width-100 .tileHeadline {
+    margin-top: 0.25em;
+    font-size: 1.375em;
+    line-height: 1.3125em;
+}
+
+body.tile-folder #content .tileItem .contentLeadImageContainer img.tileImage {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    float: none;
+    clear: both;
+    max-width: 100%;
+    display: block;
+}
+
+body.tile-folder div.listingBar {
+    clear: both;
+    margin-top: 1em;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+body.tile-folder #portal-column-content #content .tileSummaryLeadImage,
+body.tile-folder #portal-column-content #content .tileSummaryLeadImage:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+body.tile-folder #portal-column-content #content .tileitem-width-100 {
+    border-top: 1px dashed #dddddd;
+    padding-top: 1.125em;
+    padding-bottom: 0.75em;
+}
+
+body.tile-folder #portal-column-content #content .tileitem-width-100:first-child {
+    border-top: none;
+    padding-top: 0.5em;
 }
 
 /* YOUR CSS RULES STOP HERE */

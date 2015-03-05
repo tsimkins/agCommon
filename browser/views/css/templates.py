@@ -87,7 +87,8 @@ portlet_rss_image = """
 """
 
 portlet_block_css = """
-        
+
+#content .tileitem-width-%(block_klass)s,
 #content .tilePortletContainer .portlet-width-%(block_klass)s {
     width: %(block_percent)0.6f%%;
     float: left;
@@ -95,12 +96,18 @@ portlet_block_css = """
     margin: 0;
 }
 
+#content .tileitem-width-%(block_klass)s .tileHeadline,
+#content .tileitem-width-%(block_klass)s .tileBody,
+#content .tileitem-width-%(block_klass)s .effectiveDate,
+#content .tileitem-width-%(block_klass)s .documentByLine,
+#content .tileitem-width-%(block_klass)s .contentLeadImageContainer,
+#content .tileitem-width-%(block_klass)s .tileFooter,
 #content .tilePortletContainer .portlet-width-%(block_klass)s .portletHeader,
 #content .tilePortletContainer .portlet-width-%(block_klass)s .portletFooter,
 #content .tilePortletContainer .portlet-width-%(block_klass)s img.feedmixerCollectionLeadImage {
     width: %(content_width_percent)0.6f%%;
     margin-left: %(content_margin_percent)0.6f%%;
-    margin-right: %(content_margin_percent)0.6f%%;    
+    margin-right: %(content_margin_percent)0.6f%%;
     display: block;
 }
 
@@ -132,12 +139,12 @@ portlet_item_css = """
 """
 
 contentwellportlet_css = """
-#content .tilePortletContainer .navTreeItem a:hover, 
+#content .tilePortletContainer .navTreeItem a:hover,
 #content .tilePortletContainer dd.portletItem .navTreeItem a:hover {
     background-color: transparent;
 }
 
-#content .tilePortletContainer .navTreeItem a, 
+#content .tilePortletContainer .navTreeItem a,
 #content .tilePortletContainer dd.portletItem .navTreeItem a {
     padding: 0;
 }

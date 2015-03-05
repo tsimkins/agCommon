@@ -45,12 +45,18 @@ except ImportError:
         """
 
 try:
-    from agsci.UniversalExtender.interfaces import IUniversalPublicationExtender
+    from agsci.UniversalExtender.interfaces import IUniversalPublicationExtender, ITileFolder
 except ImportError:
     class IUniversalPublicationExtender(Interface):
         """
             Placeholder interface
         """
+
+    class ITileFolder(Interface):
+        """
+            Placeholder interface
+        """
+
 
 """
     Interface Definitions
@@ -148,9 +154,17 @@ class FolderView(BrowserView):
         if field is not None:
             if field.get(context).get_size():
                 if not scale:
-                    scale = self.prefs.desc_scale_name
+                    if self.hasTiledContents:
+                        scale="large"
+                    else:
+                        scale = self.prefs.desc_scale_name
                 return field.tag(context, scale=scale, css_class=css_class, title=title)
         return ''
+
+    @property
+    def hasTiledContents(self):
+        return ITileFolder.providedBy(self.context)
+
 
     @property
     def use_view_action(self):
@@ -266,9 +280,17 @@ class FolderView(BrowserView):
 
             if self.show_image:
                 item_class.append('tileItemLeadImage')
+
+        if self.hasTiledContents:
+            tile_width = int(100.0/int(self.getTileColumns))
+            item_class.append('tileitem-width-%s' % tile_width)
             
 
         return " ".join(item_class)
+
+    @property
+    def getTileColumns(self):
+        return getattr(self.context, 'tile_folder_columns', '3')
 
 class SearchView(FolderView):
 

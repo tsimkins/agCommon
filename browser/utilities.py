@@ -17,6 +17,14 @@ except ImportError:
     def getSurroundingCounties(c):
         return c
 
+try:
+    from agsci.UniversalExtender.interfaces import ITileFolder
+except ImportError:
+    class ITileFolder(Interface):
+        """
+            Placeholder interface
+        """
+
 
 class IAgCommonUtilities(Interface):
 
@@ -269,7 +277,11 @@ class AgCommonUtilities(BrowserView):
 
             portlet_format = getattr(context, "homepage_portlet_format", "standard")     
             body_classes.append('homepage-portlet-format-%s' % portlet_format)
-            
+
+        # Tile folder view
+        if ITileFolder.providedBy(context):
+            body_classes.append('tile-folder')
+
         return ' '.join(body_classes)
 
     def contentFilter(self):

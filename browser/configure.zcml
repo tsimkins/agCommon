@@ -775,6 +775,24 @@
     />
 
     <browser:page
+        for="agsci.UniversalExtender.interfaces.ITileFolder"
+        name="folder_listing"
+        class=".views.FolderView"
+        template="templates/folder_summary_view_z3.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <browser:page
+        for="agsci.UniversalExtender.interfaces.ITileFolder"
+        name="folder_summary_view"
+        class=".views.FolderView"
+        template="templates/folder_summary_view_z3.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <browser:page
         for="agsci.UniversalExtender.interfaces.IFilePublicationExtender"
         name="file_view"
         class=".views.PublicationView"
