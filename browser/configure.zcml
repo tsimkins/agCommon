@@ -776,20 +776,20 @@
 
     <browser:page
         for="agsci.UniversalExtender.interfaces.ITileFolder"
-        name="folder_listing"
+        name="folder_summary_view"
         class=".views.FolderView"
         template="templates/folder_summary_view_z3.pt"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
     />
 
-    <browser:page
+    <browser:menuItem
         for="agsci.UniversalExtender.interfaces.ITileFolder"
-        name="folder_summary_view"
-        class=".views.FolderView"
-        template="templates/folder_summary_view_z3.pt"
+        menu="plone_displayviews"
+        title="Tile Folder View"
+        action="@@folder_summary_view"
         layer=".interfaces.IThemeSpecific"
-        permission="zope2.View"
+        description="Folder similar to tiled homepage"
     />
 
     <browser:page

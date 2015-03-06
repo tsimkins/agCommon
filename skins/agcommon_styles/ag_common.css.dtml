@@ -4190,6 +4190,11 @@ body.tile-folder #portal-column-content #content .tileitem-width-100:first-child
     padding-top: 0.5em;
 }
 
+body.tile-folder #content .tileItem.excludeFromNav {
+    clear: both;
+    width: auto;
+}
+
 /* YOUR CSS RULES STOP HERE */
 
 /* </dtml-with> */

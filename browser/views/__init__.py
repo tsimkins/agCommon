@@ -163,7 +163,9 @@ class FolderView(BrowserView):
 
     @property
     def hasTiledContents(self):
-        return ITileFolder.providedBy(self.context)
+        if hasattr(self.context, 'getLayout') and self.context.getLayout() in ['folder_summary_view']:
+            return ITileFolder.providedBy(self.context)
+        return False
 
 
     @property

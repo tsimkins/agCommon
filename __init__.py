@@ -25,7 +25,7 @@ import os
 import re
 
 from Products.Five.utilities.interfaces import IMarkerInterfaces
-from agsci.UniversalExtender.interfaces import IUniversalPublicationExtender, IFilePublicationExtender
+from agsci.UniversalExtender.interfaces import IUniversalPublicationExtender, IFilePublicationExtender, ITileFolder
 
 ATTEMPTS = 100
 
@@ -976,6 +976,17 @@ def enablePublication(context):
     if not publicationInterface.providedBy(context):
         adapted = IMarkerInterfaces(context)
         adapted.update(add=[publicationInterface])
+        return True
+    else:
+        return False
+
+def enableTileFolder(context):
+    
+    context.setLayout('folder_summary_view')
+    
+    if not ITileFolder.providedBy(context):
+        adapted = IMarkerInterfaces(context)
+        adapted.update(add=[ITileFolder])
         return True
     else:
         return False

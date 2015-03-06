@@ -279,8 +279,10 @@ class AgCommonUtilities(BrowserView):
             body_classes.append('homepage-portlet-format-%s' % portlet_format)
 
         # Tile folder view
-        if ITileFolder.providedBy(context):
-            body_classes.append('tile-folder')
+        if hasattr(self.context, 'getLayout') and \
+           self.context.getLayout() in ['folder_summary_view'] and \
+           ITileFolder.providedBy(self.context):
+                body_classes.append('tile-folder')
 
         return ' '.join(body_classes)
 
