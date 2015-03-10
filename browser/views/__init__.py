@@ -255,7 +255,7 @@ class FolderView(BrowserView):
     def getLinkType(self, url):
 
         if '.' in url:
-            icon = url.strip()lower().split('.')[-1]
+            icon = url.strip().lower().split('.')[-1]
             return self.fileExtensionIcons().get(icon, None)
         
         return None
