@@ -61,7 +61,8 @@
                           counties python: request.form.get('Counties');
                           programs python: request.form.get('Topics');
                           collection_filter python: request.form.get('collection_filter');
-                          show_publication python: request.form.get('show_publication');"
+                          show_publication python: request.form.get('show_publication');
+                          sort_relevance python: request.form.get('sort_relevance', None);"
               tal:condition="not:is_advanced_search">
             <label for="SearchableText">Keywords</label>
             <input class="searchPage"
@@ -121,6 +122,12 @@
             <metal:show_publication define-macro="show_publication">
                 <input type="hidden" tal:condition="show_publication" tal:attributes="value string:True" name="showPublication:boolean" />
             </metal:show_publication>
+
+            <metal:sort_relevance define-macro="sort_relevance">
+                <input type="hidden" tal:condition="sort_relevance" 
+                       tal:attributes="value string:True" 
+                       name="sort_relevance" />
+            </metal:sort_relevance>
 
             <metal:portal_type define-macro="portal_type">
 

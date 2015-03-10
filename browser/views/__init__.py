@@ -180,8 +180,10 @@ class FolderView(BrowserView):
             'agsci.ExtensionExtender.interfaces.IExtensionPublicationExtender',
         ]
 
-        if hasattr(item, 'object_provides'):
-            return (len(set(item.object_provides) & set(publication_interfaces)) > 0)
+        object_provides = getattr(item, 'object_provides', [])
+
+        if object_provides:
+            return (len(set(object_provides) & set(publication_interfaces)) > 0)
 
         return False
 
@@ -219,6 +221,28 @@ class FolderView(BrowserView):
 
         return None
 
+    def fileExtensionIcons(self):
+        ms_data = ['xls', 'doc', 'ppt']
+    
+        data = {
+            'xls' : u'Microsoft Excel',
+            'ppt' : u'Microsoft PowerPoint',
+            'publisher' : u'Microsoft Publisher',
+            'doc' : u'Microsoft Word',
+            'pdf' : u'PDF',
+            'pdf_icon' : u'PDF',
+            'text' : u'Plain Text',
+            'txt' : u'Plain Text',
+            'zip' : u'ZIP Archive',
+        }
+        
+        for ms in ms_data:
+            ms_type = data.get(ms, '')
+            if ms_type:
+                data['%sx' % ms] = ms_type
+        
+        return data
+        
     def getFileType(self, item):
 
         icon = self.getIcon(item)
@@ -226,9 +250,15 @@ class FolderView(BrowserView):
         if icon:
             icon = icon.split('.')[0]
 
-        return {
-            'xls' : u'Microsoft Excel',            'ppt' : u'Microsoft PowerPoint',            'publisher' : u'Microsoft Publisher',            'doc' : u'Microsoft Word',            'pdf' : u'PDF',            'pdf_icon' : u'PDF',            'text' : u'Plain Text',            'txt' : u'Plain Text',            'zip' : u'ZIP Archive',
-        }.get(icon, None)
+        return self.fileExtensionIcons().get(icon, None)
+
+    def getLinkType(self, url):
+
+        if '.' in url:
+            icon = url.strip()lower().split('.')[-1]
+            return self.fileExtensionIcons().get(icon, None)
+        
+        return None
 
     def getItemSize(self, item):
         if hasattr(item, 'getObjSize'):
@@ -237,7 +267,15 @@ class FolderView(BrowserView):
             else:
                 return item.getObjSize
         return None
-                
+
+    def getRemoteUrl(self, item):
+        if hasattr(item, 'getRemoteUrl'):
+            if hasattr(item.getRemoteUrl, '__call__'):
+                return item.getRemoteUrl()
+            else:
+                return item.getRemoteUrl
+        return None
+
     def getItemInfo(self, item):
         if item.portal_type in ['File',]:
             obj_size = self.getItemSize(item)
@@ -248,6 +286,10 @@ class FolderView(BrowserView):
                     return u'%s, %s' % (file_type, obj_size)
                 else:
                     return u'%s' % file_type
+
+        elif item.portal_type in ['Link',]:
+            url = self.getRemoteUrl(item)
+            return self.getLinkType(url)
 
         return None
 

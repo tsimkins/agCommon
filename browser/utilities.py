@@ -331,6 +331,9 @@ class AgCommonUtilities(BrowserView):
                 else:
                     contentFilter[k] = self.request.form[k]
 
+        if self.request.form.get('sort_relevance', None):
+            contentFilter['sort_on'] = None
+
         return contentFilter
 
     def increaseHeadingLevel(self, text):
