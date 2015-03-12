@@ -284,6 +284,9 @@ class AgCommonUtilities(BrowserView):
            ITileFolder.providedBy(self.context):
                 body_classes.append('tile-folder')
 
+        if not getattr(self.context, 'show_description', True):
+            body_classes.append('no-description')
+
         return ' '.join(body_classes)
 
     def contentFilter(self):

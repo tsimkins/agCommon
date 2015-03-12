@@ -10,7 +10,7 @@ except ImportError:
 
 # Properties
 
-tile_homepage_padding = 15.0
+tile_homepage_padding = 20.0
 
 def total_width():
     return 899.0

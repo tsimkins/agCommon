@@ -4135,6 +4135,10 @@ body.tile-folder #content .tileItem {
     margin-bottom: 1em;
 }
 
+body.tile-folder.no-description #content .tileItem {
+    margin-bottom: 1.75em;
+}
+
 body.tile-folder #content .tileItem .tileHeadline {
     font-weight: normal;
 }
@@ -4148,6 +4152,10 @@ body.tile-folder #portal-column-content #content .tileItem .contentLeadImageCont
     clear: both;
     margin-bottom: 0.125em;
     max-width: 100%;
+}
+
+body.tile-folder #portal-column-content #content .tileItem .tileBody {
+    color: #4B4B4B;
 }
 
 body.tile-folder #content .tileitem-width-100 .tileHeadline {

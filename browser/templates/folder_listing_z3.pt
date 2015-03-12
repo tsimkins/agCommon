@@ -100,8 +100,9 @@
                                 <tal:leadimage
                                         tal:condition="item_has_leadimage"
                                         tal:define="item_object item/getObject|nothing;">
-
+                                    <a tal:attributes="href python: view.getItemURL(item);">
                                         <img tal:replace="structure python:view.tag(item_object, css_class='tileImage')" />
+                                    </a>
 
                                 </tal:leadimage>
 
