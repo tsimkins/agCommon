@@ -387,7 +387,8 @@ class SearchView(FolderView):
 
         use_types_blacklist = self.request.form.get("use_types_blacklist", True)
         use_navigation_root = self.request.form.get("use_navigation_root", True)
-        
+        sort_relevance = self.request.form.get('sort_relevance', None)
+
         # Counties
         counties = self.request.form.get('Counties')
 
@@ -412,7 +413,8 @@ class SearchView(FolderView):
         for r in results:
             if self.anonymous and r.portal_type == 'Event' and r.end < now:
                 continue
-            if r.portal_type in ['File']:
+
+            if r.portal_type in ['File'] and not sort_relevance:
                 files.append(r)
             else:
                 filtered_results.append(r)

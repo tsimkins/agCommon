@@ -47,7 +47,7 @@
                         autocomplete="off" />
     
                 <metal:show_publication use-macro="context/@@search_z3/macros/show_publication" />
-                <metal:show_publication use-macro="context/@@search_z3/macros/sort_relevance" />
+                <metal:sort_relevance use-macro="context/@@search_z3/macros/sort_relevance" />
                 <metal:portal_type use-macro="context/@@search_z3/macros/portal_type" />
                 <metal:subject use-macro="context/@@search_z3/macros/subject" />
                 <metal:programs use-macro="context/@@search_z3/macros/programs" />

@@ -61,7 +61,7 @@
                           counties python: request.form.get('Counties');
                           programs python: request.form.get('Topics');
                           collection_filter python: request.form.get('collection_filter');
-                          show_publication python: request.form.get('show_publication');
+                          show_publication python: request.form.get('showPublication');
                           sort_relevance python: request.form.get('sort_relevance', None);"
               tal:condition="not:is_advanced_search">
             <label for="SearchableText">Keywords</label>
