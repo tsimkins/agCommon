@@ -4203,6 +4203,10 @@ body.tile-folder #content .tileItem.excludeFromNav {
     width: auto;
 }
 
+body.tile-folder.listing-after-text #content #content-text {
+    clear: both;
+}
+
 /* YOUR CSS RULES STOP HERE */
 
 /* </dtml-with> */
