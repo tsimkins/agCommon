@@ -36,7 +36,34 @@
                             <metal:block define-slot="single_classification" />
                         </tal:block>
                     </metal:block>
+
+                    <metal:block define-macro="list_people"
+                                 tal:define="directory context/getDirectoryRoot;">
+                        <tal:block 
+                            tal:define="people context/getSortedPeople;
+                                        width directory/getClassificationViewThumbnailWidth;">
+
+                            <metal:person use-macro="context/classification_standard_view/macros/person_listing">
+
+                                <metal:block fill-slot="person_additional_info">
+                                       
+                                    <metal:additional-info 
+                                        use-macro="context/specialty_standard_view/macros/additional_info" />
+
+                                </metal:block>
+
+
+                            </metal:person>
+
+                        </tal:block>
+                    </metal:block>
+                    
                 </metal:block>
+
+
+
+
+
             </tal:block>
       </div>
     </metal:fill>
