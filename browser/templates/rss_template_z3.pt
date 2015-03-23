@@ -63,7 +63,7 @@
                 
                     <title tal:content="brain/Title" />
                 
-                    <link tal:content="brain/getURL" />
+                    <link tal:content="python: view.getItemURL(brain)" />
             
                     <guid tal:content="brain/getURL" />
                 
@@ -130,6 +130,13 @@
                         tal:define="image_field python:view.getImageFieldName(brain);"
                         tal:attributes="url string:${brain/getURL}/${image_field};"
                     />
+
+                    <agsci:fileinfo
+                        tal:condition="python: item_type=='File'"
+                        tal:content="python: view.getItemInfo(brain)" />
+
+                    <agsci:ispublication
+                        tal:content="python: view.isPublication(brain)" />
                 
                   </item>
                 </tal:block>

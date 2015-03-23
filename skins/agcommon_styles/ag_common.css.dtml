@@ -817,6 +817,14 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
     cursor: pointer;
 }
 
+#portal-column-one dl.portletfeedmixer dd.summary span.fileinfo,
+#portal-column-two dl.portletfeedmixer dd.summary span.fileinfo,
+#rightcolumn dl.portletfeedmixer dd.summary span.fileinfo,
+#portal-column-one dl.portletfeedmixer dd.summary div.fileinfo,
+#portal-column-two dl.portletfeedmixer dd.summary div.fileinfo,
+#rightcolumn dl.portletfeedmixer dd.summary div.fileinfo,
+#portlets-mobile dl.portletfeedmixer dd.summary span.fileinfo,
+#portlets-mobile dl.portletfeedmixer dd.summary div.fileinfo,
 #portal-column-one dl.portletfeedmixer dd.summary span.date,
 #portal-column-two dl.portletfeedmixer dd.summary span.date,
 #rightcolumn dl.portletfeedmixer dd.summary span.date,
