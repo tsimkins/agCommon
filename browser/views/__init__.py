@@ -758,7 +758,10 @@ class PublicationView(FolderView):
         pdf = self.getPDF()
         
         if pdf:
-            return pdf.getNumPages()
+            try:
+                return pdf.getNumPages()
+            except Exception:
+                pass
         
         return None
 
