@@ -1541,7 +1541,8 @@ h1, h2 {
     line-height: 1.25em;
 }
 
-#content h2 {
+#content h2,
+#pfg-fieldwrapper fieldset.PFGFieldsetWidget legend {
     color: &dtml-documentHeadingColor;;
     font-size: 1.6875em;
     margin: 1.25em 0 0.5em 0;
@@ -1550,6 +1551,20 @@ h1, h2 {
     font-weight: normal;
     border-bottom: 1px solid #DDDDDD;
     line-height: 1.25em;
+}
+
+#pfg-fieldwrapper fieldset.PFGFieldsetWidget {
+    border: none;
+    padding: 0;
+}
+
+#pfg-fieldwrapper fieldset.PFGFieldsetWidget legend {
+    display: block;
+    width: 100%;
+}
+
+#pfg-fieldwrapper fieldset.PFGFieldsetWidget div.formHelp {
+    margin-bottom: 1em;
 }
 
 #content h2 strong,
@@ -1671,7 +1686,8 @@ h1, h2 {
 #content .tileItemLeadImage .documentByLine,
 #content .tileItemLeadImage .tileDescription,
 #content .tileItemLeadImage .facultyStaffDirectory,
-#content .tileItemLeadImage .tileHeadline {
+#content .tileItemLeadImage .tileHeadline,
+#content .tileItemLeadImage .tileFileInfo {
     margin-left: 136px;
     margin-left: 8.5rem;
     clear: none;
