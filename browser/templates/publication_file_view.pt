@@ -71,6 +71,12 @@
 
     <metal:footer fill-slot="footer">
         <div id="disclaimer">
+            <p tal:condition="view/download_only">
+                This publication is only available online. It is not 
+                available in hard copy from the Publications 
+                Distribution Center. 
+            </p>
+
             <p>
                 This publication is available in alternative media on 
                 request.

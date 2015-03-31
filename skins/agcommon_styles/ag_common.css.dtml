@@ -1732,8 +1732,8 @@ body.template-agenda_view #content .tileItemLeadImage {
     float: none;
 }
 
-body.template-file_view #content h2.h3,
-body.template-file_view #content .documentContributors h2,
+body #content h2.h3,
+body #content .documentContributors h2,
 #content h3,
 body.custom-h2-as-h3 #content-text.documentText h2,
 body.custom-h2-as-h3 #content-core.documentText h2,

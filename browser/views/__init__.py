@@ -698,6 +698,14 @@ class AnnualEventRedirect(FolderView):
 class PublicationView(FolderView):
 
     @property
+    def download_only(self):
+        return (self.publication_listing and not self.orderPublication)
+
+    @property
+    def publication_listing(self):
+        return getattr(self.context, 'extension_publication_listing', None)
+        
+    @property
     def publication_code(self):
         return getattr(self.context, 'extension_publication_code', None)
 
@@ -719,12 +727,15 @@ class PublicationView(FolderView):
 
     @property
     def orderPublication(self):
-        return getattr(self.context, 'extension_publication_contact_pdc', False)
+        return self.contact_pdc
+
+    @property
+    def override_page_count(self):
+        return getattr(self.context, 'extension_override_page_count', None)
 
     @property
     def order_url(self):
         return '%s/order' % self.context.absolute_url()
-
         
     @property
     def downloadPDF(self):
@@ -755,9 +766,13 @@ class PublicationView(FolderView):
 
     def getNumPages(self):
 
+        if self.override_page_count:
+            return self.override_page_count
+
         pdf = self.getPDF()
         
         if pdf:
+        
             try:
                 return pdf.getNumPages()
             except Exception:
