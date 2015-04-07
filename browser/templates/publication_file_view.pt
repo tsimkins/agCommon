@@ -12,7 +12,7 @@
         <metal:block define-macro="content-core"
                      tal:define="content_type context/get_content_type|context/Format;">
 
-            <h2 class="h3">Download Publication</h2>
+            <h2 class="h3" tal:content="view/downloadLinkHeading" />
             <p class="download-publication">
 
 
@@ -28,10 +28,10 @@
 						   display_size python:'{0}{1}'.format(display_size_kb, display_size_bytes)"
                    condition="python:size &gt; 0">
 
-              <a tal:content="context/Title"
+              <a tal:content="view/downloadLinkTitle"
                  tal:attributes="href string:${context/absolute_url}/at_download/$fieldName" />
 
-              <span class="discreet">
+              <span class="discreet" tal:condition="not: view/isSample">
                   <br />
                   <span tal:replace="python:context.lookupMime(context.getContentType())">ContentType</span>,
                   <tal:size content="display_size">?</tal:size>
@@ -40,8 +40,11 @@
         </tal:block>
       </tal:define>
 
+            </p>
 
-
+            <p class="discreet" tal:condition="view/isSample">
+                Note: This is a small preview of the printed for-sale 
+                publication, not the publication in its entirety.
             </p>
 
             <h2 class="h3">

@@ -780,6 +780,25 @@ class PublicationView(FolderView):
         
         return None
 
+    @property
+    def isSample(self):
+        return getattr(self.context, 'extension_publication_sample', 
+False)
+
+    def downloadLinkTitle(self):
+
+        if self.isSample:
+            return 'Download Sample PDF'
+        
+        return self.context.Title()
+
+    def downloadLinkHeading(self):
+
+        if self.isSample:
+            return 'Preview'
+        
+        return 'Download Publication'
+
 class OrderPublicationView(PublicationView):
 
     def page_title(self):
