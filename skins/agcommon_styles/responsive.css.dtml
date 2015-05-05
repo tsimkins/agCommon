@@ -399,10 +399,6 @@
         display: none;
     }
     
-    .rg-image {
-        height: 240px;
-    }
-    
     /* General nomobile override */
     
     .nomobile {
@@ -509,6 +505,19 @@
     body.homepage-portlet-format-tile #portal-column-content.s0 #content #homepage-text.sc {
         margin-top: 0;
     }
+    
+    /* photogallery resize for 768px (559px image) */
+    .rg-image {
+        height: 373px;
+    }
+    
+    .rg-image-nav a {
+        background-position: 0 35.9971%;
+    }
+    
+    .rg-image-nav a.rg-image-nav-next {
+        background-position: 100% 35.9971%;
+    }
 }
 
 /*------------------------ END resolution-768.css ----------------------------*/
@@ -611,10 +620,6 @@
     }
     
     #content .rg-image-wrapper {
-        border-radius: 0;
-        box-shadow: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
         padding: 0;
         margin: 0;
         width: auto;
@@ -627,13 +632,14 @@
     
     #content .rg-caption-wrapper {
         background-color: #000000;
-        padding: 0.25em 0.5em;
+        padding: 0.25em 0.5em 0.5em 0.5em;
         margin: 0;
         bottom: 0;
         left: 0;
         right: 0;
         position: absolute;
         width: auto;
+        height: auto;
         opacity: 0.75;
     }
     
@@ -648,12 +654,14 @@
         border-bottom: none !important;
         margin-top: 0;
         background-color: transparent !important;
+        color: #ffffff !important;
     }
     
     #content .rg-caption p {
         background-color: transparent;
         font-size: 0.875em;
         font-family: Lucida Grande,Trebuchet MS,Tahoma,Verdana,sans-serif;
+        color: #f9f9f9 !important;
     }
     
     #content .rg-image {
@@ -1433,6 +1441,19 @@
         margin-left: 5px;
     }
 
+    /* photogallery resize for 520px (505px image) */
+    .rg-image {
+        height: 337px;
+    }
+    
+    .rg-image-nav a {
+        background-position: 0 34.6691%;
+    }
+    
+    .rg-image-nav a.rg-image-nav-next {
+        background-position: 100% 34.6691%;
+    }
+
 }    
 
 
@@ -1569,6 +1590,19 @@
         float: right;
     }
 
+    /* photogallery resize for 480px (431px image) */
+    .rg-image {
+        height: 287px;
+    }
+    
+    .rg-image-nav a {
+        background-position: 12.5% 32.3580%;
+        width: 55px;
+    }
+    
+    .rg-image-nav a.rg-image-nav-next {
+        background-position: 87.5% 32.3580%;
+    }
 }
 
 /*------------------------ END resolution-480.css ----------------------------*/
@@ -1607,23 +1641,6 @@
         max-height: 250px;
     }
     
-    #content .rg-image {
-        height: 155px;
-    }
-    
-    #content .rg-thumbs {
-        display: none;
-    }
-    
-    #content .rg-caption {
-        font-size: 0.875em;
-        margin-top: 12px;
-    }
-    
-    #content .rg-caption p {
-        margin: 0.1875em 0 !important;
-    }
-    
     #content .facultyStaffDirectory.personView .headshot {
         float: none;
         text-align: center;
@@ -1638,6 +1655,32 @@
 
     #viewlet-above-content .flex-direction-nav li a {
         top: 75px;
+    }
+    
+    /* photogallery resize for 320px (282px image) */
+    .rg-image {
+        height: 197px;
+    }
+    
+    .rg-image-nav a {
+        background-position: 12.5% 24.8356%;
+    }
+    
+    .rg-image-nav a.rg-image-nav-next {
+        background-position: 87.5% 24.8356%;
+    }
+
+    #content .rg-thumbs {
+        display: none;
+    }
+
+    .rg-caption-wrapper {
+        padding: 0.6875em 0.5em 0.75em;
+        height: 7.5em;
+    }
+    
+    #content .rg-caption {
+        font-size: 0.875em;
     }
 }
 
