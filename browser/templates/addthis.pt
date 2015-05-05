@@ -45,7 +45,7 @@
 		<a class="addthis_button_email" title="Share: Email"></a>
 		<a tal:condition="view/isSyndicationAllowed" 
 		   title="RSS Feed"
-           class="addthis_button_rss"
+           class="rss_button"
 		   tal:attributes="href string:RSS">
 		      <span>
 		          <span class="addthis_label">RSS Feed</span>

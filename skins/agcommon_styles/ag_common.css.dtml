@@ -1740,7 +1740,8 @@ body.custom-h2-as-h3 #content-core.documentText h2,
 body.custom-h2-as-h3 #homepage-text .documentText h2,
 body.custom-h2-as-h3 .documentText h2,
 body.template-person_view #content h2,
-body.template-by_county_listing.custom-two-column #content h2 {
+body.template-by_county_listing.custom-two-column #content h2,
+#pfg-fieldwrapper fieldset.PFGFieldsetWidget fieldset legend {
     color: &dtml-documentSubHeadingColor;;
     margin: 1.125em 0 0 0;
     padding: 0;
@@ -1748,6 +1749,10 @@ body.template-by_county_listing.custom-two-column #content h2 {
     font-weight: bold;
     font-family: "Lucida Grande",Tahoma,Verdana,sans-serif;
     font-size: 1.40625em;
+}
+
+#pfg-fieldwrapper fieldset.PFGFieldsetWidget fieldset legend {
+    margin-top: 0;
 }
 
 body.template-file_view #content .documentContributors h2 {
@@ -1868,11 +1873,13 @@ body.template-person_view #content #addthis h2,
 
 /* = Add This Replacement Sprites ========================== */
 
-#addthis .addthis_toolbox a[class^=addthis_button] > span {
+#addthis .addthis_toolbox a[class^=addthis_button] > span,
+#addthis .addthis_toolbox a[class^=rss_button] > span {
     background-image: url(&dtml-portal_url;/addthis-sprite.png);
     line-height: 16px;
     cursor: pointer;
     display: block;
+    background-color: transparent !important;
 }
 
 #addthis .addthis_toolbox a.addthis_button_email > span {
@@ -1890,7 +1897,7 @@ body.template-person_view #content #addthis h2,
     width: 16px; height: 16px;
 }
 
-#addthis .addthis_toolbox a.addthis_button_rss > span {
+#addthis .addthis_toolbox a.rss_button > span {
     background-position: 0 -330px;
     width: 16px; height: 16px;
 }
