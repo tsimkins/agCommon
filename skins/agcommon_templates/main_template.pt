@@ -89,6 +89,9 @@
                         dir python: isRTL and 'rtl' or 'ltr'">
 
     <tal:fbjs condition="isAnon">
+    
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
         <div id="fb-root"></div>
     
         <tal:block tal:replace="structure string:&lt;script type='text/javascript'&gt;" />

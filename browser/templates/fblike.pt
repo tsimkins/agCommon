@@ -14,4 +14,8 @@
         width="100%">
     </fb:like>
 
+    <g:plusone 
+        size="standard"
+        tal:attributes="href view/likeurl"></g:plusone>
+
 </tal:fblike>

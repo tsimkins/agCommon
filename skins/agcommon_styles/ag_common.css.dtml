@@ -939,20 +939,23 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
 }
 
 /* Link Icons */
-
-.linkIcon .sprite-blogger { background-position: 0 0;  }
-.linkIcon .sprite-contact { background-position: 0 -124px;  }
-.linkIcon .sprite-directory { background-position: 0 -248px;  }
-.linkIcon .sprite-facebook { background-position: 0 -372px;  }
-.linkIcon .sprite-feed { background-position: 0 -496px;  }
-.linkIcon .sprite-flickr { background-position: 0 -620px;  }
-.linkIcon .sprite-instagram { background-position: 0 -744px;  }
-.linkIcon .sprite-linkedin { background-position: 0 -868px;  }
-.linkIcon .sprite-message { background-position: 0 -992px;  }
-.linkIcon .sprite-podcast { background-position: 0 -1116px;  }
-.linkIcon .sprite-twitter { background-position: 0 -1240px;  }
-.linkIcon .sprite-typepad { background-position: 0 -1364px;  }
-.linkIcon .sprite-youtube { background-position: 0 -1488px;  }
+/* http://spritegen.website-performance.org/ */
+.linkIcon .sprite-blogger { background-position: -50px -50px; }
+.linkIcon .sprite-contact { background-position: -50px -174px; }
+.linkIcon .sprite-directory { background-position: -50px -298px; }
+.linkIcon .sprite-facebook { background-position: -50px -422px; }
+.linkIcon .sprite-feed { background-position: -50px -546px; }
+.linkIcon .sprite-flickr { background-position: -50px -670px; }
+.linkIcon .sprite-google-plus { background-position: -50px -794px; }
+.linkIcon .sprite-instagram { background-position: -50px -918px; }
+.linkIcon .sprite-linkedin { background-position: -50px -1042px; }
+.linkIcon .sprite-message { background-position: -50px -1166px; }
+.linkIcon .sprite-pinterest { background-position: -50px -1290px; }
+.linkIcon .sprite-podcast { background-position: -50px -1414px; }
+.linkIcon .sprite-twitter { background-position: -50px -1538px; }
+.linkIcon .sprite-typepad { background-position: -50px -1662px; }
+.linkIcon .sprite-youtube { background-position: -50px -1786px; }
+ 
 
 .linkIcon .sprite {
     background-image: url(&dtml-portal_url;/linkicon-sprites.png);

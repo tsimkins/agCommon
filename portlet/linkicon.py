@@ -97,6 +97,8 @@ class Renderer(base.Renderer):
             'icons/twitter.png' : 'sprite sprite-twitter',
             'icons/typepad.png' : 'sprite sprite-typepad',
             'icons/youtube.png' : 'sprite sprite-youtube',
+            'icons/pinterest.png' : 'sprite sprite-pinterest',
+            'icons/google-plus.png' : 'sprite sprite-google-plus',
         }
 
         for k in icon_classes.keys():
