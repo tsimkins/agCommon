@@ -841,7 +841,7 @@ function mobileNav() {
     }
     else
     {
-        var mobile_portlets = jq("#portal-column-content #portal-column-content #portlets-mobile");
+        var mobile_portlets = jq("#portal-column-content #portlets-mobile");
 
         if (! mobile_portlets.size() )
         {
