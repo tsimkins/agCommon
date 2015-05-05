@@ -96,7 +96,7 @@ if uid:
             if hasattr(o, 'free_registration_confirmation_message') and \
                        o.free_registration_confirmation_message:
                 confirmation_message = o.free_registration_confirmation_message
-                confirmation_message = unicode(confirmation_message).replace("\n", " ").replace("\r", " ")
+                confirmation_message = confirmation_message.getRaw().decode('utf-8').replace("\n", " ").replace("\r", " ")
 
             event_info = { 'event-name' : o.Title(),
                            'event-description' : o.Description(),
