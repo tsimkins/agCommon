@@ -32,6 +32,16 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+
+    <!-- Google Plus metadata -->
+    <browser:viewlet
+        name="agcommon.htmlhead.googleplus"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".viewlets.GooglePlusViewlet"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        />
+        
     <!-- Facebook Open Graph metadata -->
     <browser:viewlet
         name="agcommon.htmlhead.fbmetadata"

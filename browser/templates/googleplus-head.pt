@@ -1,0 +1,6 @@
+
+<link 
+    tal:define="url view/url|none"
+    tal:condition="url"
+    tal:attributes="href url"
+    rel="publisher" />

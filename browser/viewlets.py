@@ -926,6 +926,17 @@ class ContentRelatedItems(ContentRelatedItemsBase):
             return getattr(self.context, 'show_related_items', True)
         return False
 
+class GooglePlusViewlet(AgCommonViewlet):   
+    index = ViewPageTemplateFile('templates/googleplus-head.pt')
+
+    @property 
+    def url(self):
+    
+        ptool = getToolByName(self.context, "portal_properties")
+
+        return ptool.agcommon_properties.getProperty('googleplus_url', None)
+
+
 # provideAdapter for viewlets to be registered in standalone mode
 
 provideAdapter(ContributorsViewlet, adapts=(Interface,IDefaultBrowserLayer,IBrowserView), provides=IContentProvider, name='agcommon.contributors')
