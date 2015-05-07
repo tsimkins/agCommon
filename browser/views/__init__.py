@@ -17,7 +17,16 @@ from plone.memoize.instance import memoize
 from zope.component import getUtility, getMultiAdapter
 from zope.component.interfaces import ComponentLookupError
 from zope.interface import implements, Interface
-from Products.CMFPlone.browser.syndication.views import FeedView
+
+try:
+
+    from Products.CMFPlone.browser.syndication.views import FeedView
+
+except ImportError:
+
+    class FeedView(BrowserView):
+    
+        pass
 
 try:
     from zope.app.component.hooks import getSite
@@ -655,9 +664,10 @@ class RSSFeedView(FeedView, FolderView):
 
     def __call__(self):
 
-        self.request.response.setHeader('Content-Type',
-                                        'application/atom+xml')
+        self.request.response.setHeader('Content-Type', 'application/atom+xml')
+
         return self.index()
+
 
 class FullRSSFeedView(RSSFeedView):
 

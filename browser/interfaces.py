@@ -37,3 +37,12 @@ class IFSDShortBio(Interface):
        be used for half a dozen areas at most.
        
     """
+
+try:
+
+    from Products.CMFPlone.interfaces.syndication import ISyndicatable
+
+except ImportError:
+
+    class ISyndicatable(Interface):
+        pass
