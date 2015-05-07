@@ -523,11 +523,11 @@
 
     <!-- RSS Template --> 
     <class class="Products.ATContentTypes.content.topic.ATTopic">
-        <implements interface="Products.CMFPlone.interfaces.syndication.ISyndicatable" />
+        <implements interface=".interfaces.ISyndicatable" />
     </class>
   
     <browser:page
-        for="Products.CMFPlone.interfaces.syndication.ISyndicatable"
+        for=".interfaces.ISyndicatable"
         class=".views.RSSFeedView"
         name="RSS"
         permission="zope2.View"
@@ -536,7 +536,7 @@
     />
 
     <browser:page
-        for="Products.CMFPlone.interfaces.syndication.ISyndicatable"
+        for=".interfaces.ISyndicatable"
         class=".views.FullRSSFeedView"
         name="fullRSS"
         permission="zope2.View"

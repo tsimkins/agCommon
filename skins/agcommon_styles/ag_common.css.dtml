@@ -1544,7 +1544,19 @@ h1, h2 {
     line-height: 1.25em;
 }
 
-#content h2,
+html.kupu-html {
+    font-size: 0.9375em !important;
+    padding: 0 0.75em;
+    background-color: #fffff9;
+}
+
+html.kupu-html body#content {
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+#content h2, html.kupu-html h2,
 #pfg-fieldwrapper fieldset.PFGFieldsetWidget legend {
     color: &dtml-documentHeadingColor;;
     font-size: 1.6875em;
@@ -1571,7 +1583,9 @@ h1, h2 {
 }
 
 #content h2 strong,
-#content h2 b {
+html.kupu-html h2 strong,
+#content h2 b,
+html.kupu-html h2 b {
     font-weight: normal;
 }
 
@@ -1737,7 +1751,7 @@ body.template-agenda_view #content .tileItemLeadImage {
 
 body #content h2.h3,
 body #content .documentContributors h2,
-#content h3,
+#content h3, html.kupu-html h3,
 body.custom-h2-as-h3 #content-text.documentText h2,
 body.custom-h2-as-h3 #content-core.documentText h2,
 body.custom-h2-as-h3 #homepage-text .documentText h2,
@@ -1768,7 +1782,9 @@ body.template-file_view #content .documentContributors h2 {
 }
 
 #content h4,
-#content h5 {
+html.kupu-html h4,
+#content h5,
+html.kupu-html h5 {
     font-family: "Lucida Grande",Tahoma,Verdana,sans-serif;
     font-size: 1.25em;
     color: #000000;
@@ -1776,7 +1792,7 @@ body.template-file_view #content .documentContributors h2 {
     line-height: 1.3125em;
 }
 
-#content h5 {
+#content h5, html.kupu-html h5 {
     font-size: 1.0625em;
 }
 
@@ -3778,6 +3794,11 @@ form.event-registration input[type="submit"]::-moz-focus-inner {
     padding: 0;
 }
 
+#kupu-editor-eventCanceledInfo iframe#kupu-editor-iframe-eventCanceledInfo,
+#kupu-editor-free_registration_confirmation_message iframe#kupu-editor-iframe-free_registration_confirmation_message {
+    height: 200px;
+}
+
 #content h2.form-separator {
     margin: 2.5em -0.5em 0.5em -0.5em;
     background-color: #2E4676;
@@ -4153,6 +4174,10 @@ dl.portlet ul.navTreeLevel1 .navTreeItem {
 #content ul {
     list-style-image: url("&dtml-portal_url;/bullet.png");
     list-style-type: square;
+}
+
+html.kupu-html #content ul {
+    margin: 0.375em 0 1.125em 2.5em;
 }
 
 /* Tile folder view */
