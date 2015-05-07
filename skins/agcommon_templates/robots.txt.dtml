@@ -44,9 +44,16 @@ Disallow: /*folder_factories$
 Disallow: /*folder_contents$
 Disallow: /*?searchterm=*
 Disallow: /*image$
-Disallow: /*image_*
+# Removed 2015-05-05 per gra104
+# Disallow: /*image_*
 Disallow: /*image_view_fullscreen$
 Disallow: /*newsletter_print
+Disallow: /*/order$
 Crawl-delay: 5
+
+# Google Image bot
+User-agent: Googlebot-Image
+Disallow: /*image* 
+Disallow: /*leadImage* 
 
 </dtml-with>
