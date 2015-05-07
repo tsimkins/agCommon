@@ -4047,6 +4047,7 @@ input[type="submit"],
 #folderlisting-main-table input[type="submit"] {
     border: 1px solid #333333;
     margin: 0.125em;
+    cursor: pointer;
 }
 
 /* Contents table */
