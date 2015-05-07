@@ -53,6 +53,7 @@ Crawl-delay: 5
 
 # Google Image bot
 User-agent: Googlebot-Image
-Disallow: /*image_* 
+Disallow: /*image* 
+Disallow: /*leadImage* 
 
 </dtml-with>
