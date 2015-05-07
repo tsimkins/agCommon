@@ -48,6 +48,11 @@ Disallow: /*image$
 # Disallow: /*image_*
 Disallow: /*image_view_fullscreen$
 Disallow: /*newsletter_print
+Disallow: /*/order$
 Crawl-delay: 5
+
+# Google Image bot
+User-agent: Googlebot-Image
+Disallow: /*image_* 
 
 </dtml-with>
