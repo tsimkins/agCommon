@@ -3179,6 +3179,7 @@ table.events td.canceled span,
 
 #edit-bar {
     font-size: 0.6875em;
+    margin-top: 1em;
 }
 
 #content-views a, #content li.formTab a, #content-core li.formTab a {
