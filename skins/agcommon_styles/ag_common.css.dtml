@@ -3184,6 +3184,7 @@ table.events td.canceled span,
 
 #content-views a, #content li.formTab a, #content-core li.formTab a {
     line-height: 2em;
+    padding: 0 0.5em;
 }
 
 #portal-column-one .managePortletsLink,
