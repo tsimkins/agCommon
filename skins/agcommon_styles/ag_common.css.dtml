@@ -2615,6 +2615,8 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 table.listing,
 table.plain,
 table.grid {
+    font-size: 0.875em;
+    margin: 1em 0;
     caption-side: bottom;
 }
 
@@ -2627,19 +2629,36 @@ table.grid caption {
     color: #575757;
 }
 
-table.listing th {
+table.listing th,
+table.plain th {
     font-weight: bold;
-    color: #575757;
+    color: #333333;
+    background-color: #DDDDDD;
 }
 
-table.listing tr.separator td,  table.listing tr.separator {
+table.listing td,
+table.listing th,
+table.plain th, 
+table.plain td {
+    padding: 0.25em 0.375em;
+    border: 1px solid #dddddd;
+}
+
+table.listing tr.separator td,  table.listing tr.separatorm
+table.plain tr.separator td,  table.plain tr.separator {
     border-left: 1px solid #FFFFFF;
     border-right: none;
     border-top: 1px solid &dtml-globalBorderColor;;
 }
 
-table.listing tbody tr.odd td {
+table.listing tbody tr.odd td,
+table.plain tbody tr.odd td {
     background-color: #F6F6F6;
+}
+
+table.listing tbody tr.even td,
+table.plain tbody tr.even td {
+    background-color: transparent;
 }
 
 #content h2.section-title {
@@ -2994,26 +3013,6 @@ div.overlay-iframe, div.overlay-ajax {
 
 .pb-ajax .overlaycontent table.group td {
     line-height: 1.5em !important;
-}
-
-/* table header background for plain table */
-
-table.plain th {
-    background-color: #DDDDDD;
-    color: 575757;
-}
-
-table.plain {
-    font-size: 0.875em;
-    margin: 1em 0;
-}
-
-table.plain th, table.plain td {
-    padding: 0.25em 0.5em;
-}
-
-table.plain .even {
-    background-color: #F9F9F9;
 }
 
 /* Disclaimer for factsheets */
