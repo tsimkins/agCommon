@@ -1554,6 +1554,7 @@ html.kupu-html body#content {
     margin: 0;
     padding: 0;
     width: auto;
+    background-image: none;
 }
 
 #content h2, html.kupu-html h2,
@@ -2577,6 +2578,11 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
     width: 8.202653799758745%; /* Numbers don't add up because of -moz-box-sizing and equivalents. */
     display: inline-block;
     float: left;
+}
+
+#___plusone_0 {
+    /*  Using rem and !important to override inline CSS, and font size 1px */
+    margin: 0.5rem 0 1rem !important; 
 }
 
 #fblike, #commenting span {
