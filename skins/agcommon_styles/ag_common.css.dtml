@@ -665,7 +665,7 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
 
 #portal-column-one .portletNavigationSubHeader a {
     background-color: transparent;
-    font-size: 1em;
+    font-size: 1.125em;
     color: &dtml-leftNavTitleBackground;;
 }
 

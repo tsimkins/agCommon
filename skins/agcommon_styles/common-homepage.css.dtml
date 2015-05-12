@@ -381,8 +381,6 @@ body.homepage-image-format-panorama body.template-atct_edit #panorama-homepage-i
 
 body.homepage-portlet-format-tile #content #portlets-above {
     display: block;
-    margin-left: 1.66852%;
-    margin-right: 1.66852%;
 }
 
 body.homepage-portlet-format-tile #portal-column-content.s0 #content #homepage-text {

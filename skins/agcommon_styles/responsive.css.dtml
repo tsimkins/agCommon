@@ -1408,28 +1408,10 @@
         
     }
 
-    /* Show small images right aligned */
-    body.template-tile_homepage_view #portlets-above .portletfeedmixerimagesmall .portletItem .rssImage {
-        width: 40.764331210191083%;
-        float: right;
-        margin: 0.125em 0 2.547770700636943% 2.547770700636943%;
-    }
-    
-    body.template-tile_homepage_view #portlets-above .portletfeedmixerimagelarge .portletItem .rssImage {
-        width: 100%;
-        float: none;
-        margin: 0;
-    }
-
     body.template-tile_homepage_view #portlets-above .portletItem {
         border-top: 1px dashed #EEEEEE;
         padding-top: 0.5em;
         margin-bottom: 0.5em;
-    }
-
-    body.template-tile_homepage_view #portlets-above .portlet .portletItem:first-child {
-        border-top: none;
-        padding-top: 0;
     }
 
     body.template-tile_homepage_view #portlets-above .portletfeedmixer .portletItem .summary {

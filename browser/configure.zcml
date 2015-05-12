@@ -852,15 +852,6 @@
         permission="zope2.View"
     />
 
-    <!-- Tile Homepage CSS -->
-    <browser:page
-        for="*"
-        name="tile_homepage.css"
-        class=".views.css.TileHomepage"
-        layer=".interfaces.IThemeSpecific"
-        permission="zope2.View"
-    />
-
     <!-- Tile Homepage js -->
     <browser:page
         for="*"
