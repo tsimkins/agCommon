@@ -383,14 +383,6 @@ body.homepage-portlet-format-tile #content #portlets-above {
     display: block;
 }
 
-body.homepage-portlet-format-tile #portal-column-content.s0 #content #homepage-text {
-    display: block;
-    margin-left: 3.1496%;
-    margin-right: 3.1496%;
-    width: 93.700%;
-    margin-top: 1em;
-}
-
 /* YOUR CSS RULES STOP HERE */
 
 /* </dtml-with> */

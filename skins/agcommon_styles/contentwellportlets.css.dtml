@@ -160,11 +160,6 @@ div.FooterPortletManager5 {
 	text-decoration: underline;
 }
 
-#portlets-footer dl.linkIcon dd.sprite a {
-    margin-left: 2.875em;
-    padding-top: 0.25em
-}
-
 #portlets-footer dl.linkIcon dd.icon,
 #portlets-footer dl.linkIcon dd.sprite {
 	margin: 0.75em 3.061225114535738%;
