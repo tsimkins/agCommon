@@ -817,36 +817,26 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
     cursor: pointer;
 }
 
-#portal-column-one dl.portletfeedmixer dd.portletItem span.fileinfo,
-#portal-column-two dl.portletfeedmixer dd.portletItem span.fileinfo,
-#rightcolumn dl.portletfeedmixer dd.portletItem span.fileinfo,
-#portal-column-one dl.portletfeedmixer dd.portletItem div.fileinfo,
-#portal-column-two dl.portletfeedmixer dd.portletItem div.fileinfo,
-#rightcolumn dl.portletfeedmixer dd.portletItem div.fileinfo,
-#portlets-mobile dl.portletfeedmixer dd.portletItem span.fileinfo,
-#portlets-mobile dl.portletfeedmixer dd.portletItem div.fileinfo,
-#portal-column-one dl.portletfeedmixer dd.portletItem span.date,
-#portal-column-two dl.portletfeedmixer dd.portletItem span.date,
-#rightcolumn dl.portletfeedmixer dd.portletItem span.date,
-#portal-column-one dl.portletfeedmixer dd.portletItem div.date,
-#portal-column-two dl.portletfeedmixer dd.portletItem div.date,
-#rightcolumn dl.portletfeedmixer dd.portletItem div.date,
-#portlets-mobile dl.portletfeedmixer dd.portletItem span.date,
-#portlets-mobile dl.portletfeedmixer dd.portletItem div.date {
+#portlets-above dl.portletfeedmixer dd.portletItem .date,    
+#portlets-above dl.portletfeedmixer dd.portletItem .fileinfo,
+#portal-column-one dl.portletfeedmixer dd.portletItem .date,
+#portal-column-one dl.portletfeedmixer dd.portletItem .fileinfo,
+#portal-column-two dl.portletfeedmixer dd.portletItem .date,
+#portal-column-two dl.portletfeedmixer dd.portletItem .fileinfo,
+#portlets-mobile dl.portletfeedmixer dd.portletItem .date,
+#portlets-mobile dl.portletfeedmixer dd.portletItem .fileinfo,
+#rightcolumn dl.portletfeedmixer dd.portletItem .date,
+#rightcolumn dl.portletfeedmixer dd.portletItem .fileinfo {
     text-align: left;
     color: #4D4D4D;
     font-size: 0.9375em;
 }
 
 
-#portal-column-one dl.portletfeedmixer span.summary,
-#portal-column-two dl.portletfeedmixer span.summary,
-#rightcolumn dl.portletfeedmixer span.summary,
-#portal-column-one dl.portletfeedmixer div.summary,
-#portal-column-two dl.portletfeedmixer div.summary,
-#rightcolumn dl.portletfeedmixer div.summary,
-#portlets-mobile dl.portletfeedmixer span.summary,
-#portlets-mobile dl.portletfeedmixer div.summary {
+#portal-column-one dl.portletfeedmixer .summary,
+#portal-column-two dl.portletfeedmixer .summary,
+#portlets-mobile dl.portletfeedmixer .summary,
+#rightcolumn dl.portletfeedmixer .summary {
     text-align: left;
 }
 
