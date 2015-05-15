@@ -346,6 +346,7 @@ dl.portlet {
     line-height: 1.5em;
 }
 
+.agCommonPortlet .portletItem .fileinfo,
 .agCommonPortlet .portletItem .date,
 .agCommonPortlet .portletfeedmixer .portletItem.event_summary .date,
 .agCommonPortlet .portletItem .location {
@@ -817,16 +818,14 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
     cursor: pointer;
 }
 
-#portlets-above dl.portletfeedmixer dd.portletItem div.date,    
+#portlets-above dl.portletfeedmixer dd.portletItem .date,    
 #portlets-above dl.portletfeedmixer dd.portletItem .fileinfo,
-#portal-column-one dl.portletfeedmixer dd.portletItem div.date,
+#portal-column-one dl.portletfeedmixer dd.portletItem .date,
 #portal-column-one dl.portletfeedmixer dd.portletItem .fileinfo,
-#portal-column-two dl.portletfeedmixer dd.portletItem div.date,
+#portal-column-two dl.portletfeedmixer dd.portletItem .date,
 #portal-column-two dl.portletfeedmixer dd.portletItem .fileinfo,
-#portlets-mobile dl.portletfeedmixer dd.portletItem div.date,
-#portlets-mobile dl.portletfeedmixer dd.portletItem .fileinfo,
-#rightcolumn dl.portletfeedmixer dd.portletItem div.date,
-#rightcolumn dl.portletfeedmixer dd.portletItem .fileinfo {
+#portlets-mobile dl.portletfeedmixer dd.portletItem .date,
+#portlets-mobile dl.portletfeedmixer dd.portletItem .fileinfo {
     text-align: left;
     color: #4D4D4D;
     font-size: 0.9375em;
