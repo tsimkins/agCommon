@@ -27,6 +27,11 @@ Disallow: /
 User-agent: Exabot
 Disallow: /
 
+# Google Image bot
+User-agent: Googlebot-Image
+Disallow: /*image* 
+Disallow: /*leadImage* 
+
 User-agent: *
 Disallow: /nonmobile
 Disallow: /search
@@ -36,7 +41,6 @@ Disallow: /nonmobile
 Disallow: /sandbox
 Disallow: /intranet
 Disallow: /private
-&dtml-getDisallowedPaths;
 Disallow: /*ics_view$
 Disallow: /*vcs_view$
 Disallow: /*sendto_form$
@@ -49,11 +53,7 @@ Disallow: /*image$
 Disallow: /*image_view_fullscreen$
 Disallow: /*newsletter_print
 Disallow: /*/order$
+&dtml-getDisallowedPaths;
 Crawl-delay: 5
-
-# Google Image bot
-User-agent: Googlebot-Image
-Disallow: /*image* 
-Disallow: /*leadImage* 
 
 </dtml-with>
