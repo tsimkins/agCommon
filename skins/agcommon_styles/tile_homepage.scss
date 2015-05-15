@@ -244,19 +244,12 @@ div.tilePortletManager {
     
         /* Tile Item Class */
         
-        #content .tileitem-width-#{$block_klass},
         #content .tilePortletContainer .portlet-width-#{$block_klass} {
             width: 100%;
             float: none;
             display: block;
         }
         
-        #content .tileitem-width-#{$block_klass} .tileHeadline,
-        #content .tileitem-width-#{$block_klass} .tileBody,
-        #content .tileitem-width-#{$block_klass} .effectiveDate,
-        #content .tileitem-width-#{$block_klass} .documentByLine,
-        #content .tileitem-width-#{$block_klass} .contentLeadImageContainer,
-        #content .tileitem-width-#{$block_klass} .tileFooter,
         #content .tilePortletContainer .portlet-width-#{$block_klass} .portletHeader,
         #content .tilePortletContainer .portlet-width-#{$block_klass} .portletFooter,
         #content .tilePortletContainer .portlet-width-#{$block_klass} img.feedmixerCollectionLeadImage {
@@ -305,6 +298,41 @@ div.tilePortletManager {
     }
 
 }
+
+/* Mid iPad/iPhone tile item CSS */
+
+@media handheld, screen and (max-width: 520px) {
+
+    .tileItem .contentLeadImageContainer img {
+        max-height: 100%;
+    }
+        
+
+    @each $block_klass, $block_percent_width in $portlet_width_classes {
+    
+        /* Tile Item Class */
+        
+        #content .tileitem-width-#{$block_klass} {
+            width: 100%;
+            float: none;
+            display: block;
+        }
+        
+        #content .tileitem-width-#{$block_klass} .tileHeadline,
+        #content .tileitem-width-#{$block_klass} .tileBody,
+        #content .tileitem-width-#{$block_klass} .effectiveDate,
+        #content .tileitem-width-#{$block_klass} .documentByLine,
+        #content .tileitem-width-#{$block_klass} .contentLeadImageContainer,
+        #content .tileitem-width-#{$block_klass} .tileFooter{
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }        
+        
+    }
+
+}
+
 
 /* iPhone CSS */
 

@@ -1814,18 +1814,11 @@ div.tilePortletManager {
 /* iPad CSS */
 @media handheld, screen and (max-width: 768px) {
   /* Tile Item Class */
-  #content .tileitem-width-20,
   #content .tilePortletContainer .portlet-width-20 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-20 .tileHeadline,
-  #content .tileitem-width-20 .tileBody,
-  #content .tileitem-width-20 .effectiveDate,
-  #content .tileitem-width-20 .documentByLine,
-  #content .tileitem-width-20 .contentLeadImageContainer,
-  #content .tileitem-width-20 .tileFooter,
   #content .tilePortletContainer .portlet-width-20 .portletHeader,
   #content .tilePortletContainer .portlet-width-20 .portletFooter,
   #content .tilePortletContainer .portlet-width-20 img.feedmixerCollectionLeadImage {
@@ -1924,18 +1917,11 @@ div.tilePortletManager {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tileitem-width-25,
   #content .tilePortletContainer .portlet-width-25 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-25 .tileHeadline,
-  #content .tileitem-width-25 .tileBody,
-  #content .tileitem-width-25 .effectiveDate,
-  #content .tileitem-width-25 .documentByLine,
-  #content .tileitem-width-25 .contentLeadImageContainer,
-  #content .tileitem-width-25 .tileFooter,
   #content .tilePortletContainer .portlet-width-25 .portletHeader,
   #content .tilePortletContainer .portlet-width-25 .portletFooter,
   #content .tilePortletContainer .portlet-width-25 img.feedmixerCollectionLeadImage {
@@ -2034,18 +2020,11 @@ div.tilePortletManager {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tileitem-width-33,
   #content .tilePortletContainer .portlet-width-33 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-33 .tileHeadline,
-  #content .tileitem-width-33 .tileBody,
-  #content .tileitem-width-33 .effectiveDate,
-  #content .tileitem-width-33 .documentByLine,
-  #content .tileitem-width-33 .contentLeadImageContainer,
-  #content .tileitem-width-33 .tileFooter,
   #content .tilePortletContainer .portlet-width-33 .portletHeader,
   #content .tilePortletContainer .portlet-width-33 .portletFooter,
   #content .tilePortletContainer .portlet-width-33 img.feedmixerCollectionLeadImage {
@@ -2144,18 +2123,11 @@ div.tilePortletManager {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tileitem-width-40,
   #content .tilePortletContainer .portlet-width-40 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-40 .tileHeadline,
-  #content .tileitem-width-40 .tileBody,
-  #content .tileitem-width-40 .effectiveDate,
-  #content .tileitem-width-40 .documentByLine,
-  #content .tileitem-width-40 .contentLeadImageContainer,
-  #content .tileitem-width-40 .tileFooter,
   #content .tilePortletContainer .portlet-width-40 .portletHeader,
   #content .tilePortletContainer .portlet-width-40 .portletFooter,
   #content .tilePortletContainer .portlet-width-40 img.feedmixerCollectionLeadImage {
@@ -2254,18 +2226,11 @@ div.tilePortletManager {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tileitem-width-50,
   #content .tilePortletContainer .portlet-width-50 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-50 .tileHeadline,
-  #content .tileitem-width-50 .tileBody,
-  #content .tileitem-width-50 .effectiveDate,
-  #content .tileitem-width-50 .documentByLine,
-  #content .tileitem-width-50 .contentLeadImageContainer,
-  #content .tileitem-width-50 .tileFooter,
   #content .tilePortletContainer .portlet-width-50 .portletHeader,
   #content .tilePortletContainer .portlet-width-50 .portletFooter,
   #content .tilePortletContainer .portlet-width-50 img.feedmixerCollectionLeadImage {
@@ -2364,18 +2329,11 @@ div.tilePortletManager {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tileitem-width-60,
   #content .tilePortletContainer .portlet-width-60 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-60 .tileHeadline,
-  #content .tileitem-width-60 .tileBody,
-  #content .tileitem-width-60 .effectiveDate,
-  #content .tileitem-width-60 .documentByLine,
-  #content .tileitem-width-60 .contentLeadImageContainer,
-  #content .tileitem-width-60 .tileFooter,
   #content .tilePortletContainer .portlet-width-60 .portletHeader,
   #content .tilePortletContainer .portlet-width-60 .portletFooter,
   #content .tilePortletContainer .portlet-width-60 img.feedmixerCollectionLeadImage {
@@ -2474,18 +2432,11 @@ div.tilePortletManager {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tileitem-width-66,
   #content .tilePortletContainer .portlet-width-66 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-66 .tileHeadline,
-  #content .tileitem-width-66 .tileBody,
-  #content .tileitem-width-66 .effectiveDate,
-  #content .tileitem-width-66 .documentByLine,
-  #content .tileitem-width-66 .contentLeadImageContainer,
-  #content .tileitem-width-66 .tileFooter,
   #content .tilePortletContainer .portlet-width-66 .portletHeader,
   #content .tilePortletContainer .portlet-width-66 .portletFooter,
   #content .tilePortletContainer .portlet-width-66 img.feedmixerCollectionLeadImage {
@@ -2584,18 +2535,11 @@ div.tilePortletManager {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tileitem-width-75,
   #content .tilePortletContainer .portlet-width-75 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-75 .tileHeadline,
-  #content .tileitem-width-75 .tileBody,
-  #content .tileitem-width-75 .effectiveDate,
-  #content .tileitem-width-75 .documentByLine,
-  #content .tileitem-width-75 .contentLeadImageContainer,
-  #content .tileitem-width-75 .tileFooter,
   #content .tilePortletContainer .portlet-width-75 .portletHeader,
   #content .tilePortletContainer .portlet-width-75 .portletFooter,
   #content .tilePortletContainer .portlet-width-75 img.feedmixerCollectionLeadImage {
@@ -2694,18 +2638,11 @@ div.tilePortletManager {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tileitem-width-80,
   #content .tilePortletContainer .portlet-width-80 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-80 .tileHeadline,
-  #content .tileitem-width-80 .tileBody,
-  #content .tileitem-width-80 .effectiveDate,
-  #content .tileitem-width-80 .documentByLine,
-  #content .tileitem-width-80 .contentLeadImageContainer,
-  #content .tileitem-width-80 .tileFooter,
   #content .tilePortletContainer .portlet-width-80 .portletHeader,
   #content .tilePortletContainer .portlet-width-80 .portletFooter,
   #content .tilePortletContainer .portlet-width-80 img.feedmixerCollectionLeadImage {
@@ -2804,18 +2741,11 @@ div.tilePortletManager {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tileitem-width-100,
   #content .tilePortletContainer .portlet-width-100 {
     width: 100%;
     float: none;
     display: block; }
 
-  #content .tileitem-width-100 .tileHeadline,
-  #content .tileitem-width-100 .tileBody,
-  #content .tileitem-width-100 .effectiveDate,
-  #content .tileitem-width-100 .documentByLine,
-  #content .tileitem-width-100 .contentLeadImageContainer,
-  #content .tileitem-width-100 .tileFooter,
   #content .tilePortletContainer .portlet-width-100 .portletHeader,
   #content .tilePortletContainer .portlet-width-100 .portletFooter,
   #content .tilePortletContainer .portlet-width-100 img.feedmixerCollectionLeadImage {
@@ -2912,6 +2842,170 @@ div.tilePortletManager {
   .portlet-width-100.portlet-item-count-5
   .portletItem:nth-child(2n + 1) {
     clear: left; } }
+/* Mid iPad/iPhone tile item CSS */
+@media handheld, screen and (max-width: 520px) {
+  .tileItem .contentLeadImageContainer img {
+    max-height: 100%; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-20 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-20 .tileHeadline,
+  #content .tileitem-width-20 .tileBody,
+  #content .tileitem-width-20 .effectiveDate,
+  #content .tileitem-width-20 .documentByLine,
+  #content .tileitem-width-20 .contentLeadImageContainer,
+  #content .tileitem-width-20 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-25 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-25 .tileHeadline,
+  #content .tileitem-width-25 .tileBody,
+  #content .tileitem-width-25 .effectiveDate,
+  #content .tileitem-width-25 .documentByLine,
+  #content .tileitem-width-25 .contentLeadImageContainer,
+  #content .tileitem-width-25 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-33 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-33 .tileHeadline,
+  #content .tileitem-width-33 .tileBody,
+  #content .tileitem-width-33 .effectiveDate,
+  #content .tileitem-width-33 .documentByLine,
+  #content .tileitem-width-33 .contentLeadImageContainer,
+  #content .tileitem-width-33 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-40 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-40 .tileHeadline,
+  #content .tileitem-width-40 .tileBody,
+  #content .tileitem-width-40 .effectiveDate,
+  #content .tileitem-width-40 .documentByLine,
+  #content .tileitem-width-40 .contentLeadImageContainer,
+  #content .tileitem-width-40 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-50 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-50 .tileHeadline,
+  #content .tileitem-width-50 .tileBody,
+  #content .tileitem-width-50 .effectiveDate,
+  #content .tileitem-width-50 .documentByLine,
+  #content .tileitem-width-50 .contentLeadImageContainer,
+  #content .tileitem-width-50 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-60 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-60 .tileHeadline,
+  #content .tileitem-width-60 .tileBody,
+  #content .tileitem-width-60 .effectiveDate,
+  #content .tileitem-width-60 .documentByLine,
+  #content .tileitem-width-60 .contentLeadImageContainer,
+  #content .tileitem-width-60 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-66 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-66 .tileHeadline,
+  #content .tileitem-width-66 .tileBody,
+  #content .tileitem-width-66 .effectiveDate,
+  #content .tileitem-width-66 .documentByLine,
+  #content .tileitem-width-66 .contentLeadImageContainer,
+  #content .tileitem-width-66 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-75 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-75 .tileHeadline,
+  #content .tileitem-width-75 .tileBody,
+  #content .tileitem-width-75 .effectiveDate,
+  #content .tileitem-width-75 .documentByLine,
+  #content .tileitem-width-75 .contentLeadImageContainer,
+  #content .tileitem-width-75 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-80 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-80 .tileHeadline,
+  #content .tileitem-width-80 .tileBody,
+  #content .tileitem-width-80 .effectiveDate,
+  #content .tileitem-width-80 .documentByLine,
+  #content .tileitem-width-80 .contentLeadImageContainer,
+  #content .tileitem-width-80 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* Tile Item Class */
+  #content .tileitem-width-100 {
+    width: 100%;
+    float: none;
+    display: block; }
+
+  #content .tileitem-width-100 .tileHeadline,
+  #content .tileitem-width-100 .tileBody,
+  #content .tileitem-width-100 .effectiveDate,
+  #content .tileitem-width-100 .documentByLine,
+  #content .tileitem-width-100 .contentLeadImageContainer,
+  #content .tileitem-width-100 .tileFooter {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; } }
 /* iPhone CSS */
 @media handheld, screen and (max-width: 320px) {
   /* Tile Item Class */
