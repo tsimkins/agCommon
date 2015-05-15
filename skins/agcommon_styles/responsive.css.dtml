@@ -213,7 +213,8 @@
         display: none !important;
     }
     
-    body.template-panorama_homepage_view #portal-breadcrumbs {
+    body.template-panorama_homepage_view #portal-breadcrumbs,
+    body.template-tile_homepage_view #portal-breadcrumbs {
         display: none;
     }
     
