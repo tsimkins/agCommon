@@ -818,8 +818,6 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
     cursor: pointer;
 }
 
-#portlets-above dl.portletfeedmixer dd.portletItem .date,    
-#portlets-above dl.portletfeedmixer dd.portletItem .fileinfo,
 #portal-column-one dl.portletfeedmixer dd.portletItem .date,
 #portal-column-one dl.portletfeedmixer dd.portletItem .fileinfo,
 #portal-column-two dl.portletfeedmixer dd.portletItem .date,
