@@ -505,14 +505,16 @@ class FBMetadataViewlet(CustomTitleViewlet):
         org_title = safe_unicode(self.org_title)
         
         if not org_title or org_title.lower() == 'none':
-            self.fb_title = page_title
             self.fb_site_name = portal_title
         elif page_title == portal_title:
-            self.fb_title = portal_title
             self.fb_site_name = org_title
         else:
-            self.fb_title = page_title
             self.fb_site_name = "%s (%s)" % (portal_title, org_title)
+
+        self.fb_title = page_title        
+        
+        if self.fb_title != self.fb_site_name:
+            self.fb_title = u" \u2014 ".join([self.fb_title, self.fb_site_name])
                 
         self.showFBMetadata = True
 
