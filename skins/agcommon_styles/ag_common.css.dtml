@@ -2664,7 +2664,7 @@ table.listing th,
 table.plain th, 
 table.plain td {
     padding: 0.25em 0.375em;
-    border: 1px solid #dddddd;
+    border: 1px solid #999999;
 }
 
 table.listing tr.separator td,  table.listing tr.separatorm
@@ -4203,6 +4203,10 @@ dl.portlet ul.navTreeLevel1 .navTreeItem {
 
 html.kupu-html #content ul {
     margin: 0.375em 0 1.125em 2.5em;
+}
+
+#content ul.kupu-tabs li {
+    display: inline;
 }
 
 /* Tile folder view */
