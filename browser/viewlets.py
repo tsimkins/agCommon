@@ -26,7 +26,7 @@ from zope.contentprovider.interfaces import IContentProvider
 from zope.interface import Interface, implements
 from zope.viewlet.interfaces import IViewlet
 import re
- 
+
 try:
     from zope.app.component.hooks import getSite
 except ImportError:
@@ -84,7 +84,7 @@ class AgCommonViewlet(ViewletBase):
         # If we have a slider configured on a homepage
         if getattr(self.context, 'portal_type') in ['HomePage'] and self.context.getReferences(relationship = 'IsHomePageSliderFor'):
             return True
-    
+
         return getContextConfig(self.context, 'hide_breadcrumbs', False)
 
     def isLayout(self, views=[]):
@@ -92,14 +92,14 @@ class AgCommonViewlet(ViewletBase):
             layout = self.context.getLayout()
         except:
             layout = None
-            
+
         if layout in views:
             return True
         else:
             for v in views:
                 if v in self.context.absolute_url():
                     return True
-    
+
             return False
 
     @property
@@ -118,15 +118,15 @@ class AgCommonViewlet(ViewletBase):
     def showHomepageText(self):
         return getattr(self.context, 'show_homepage_text', True)
 
-    @property    
+    @property
     def isFolderFullView(self):
-        folder_views = ['folder_full_view_item', 'folder_full_view', 'newsletter_view', 'newsletter_email', 'newsletter_print'] 
+        folder_views = ['folder_full_view_item', 'folder_full_view', 'newsletter_view', 'newsletter_email', 'newsletter_print']
         parent = self.context.getParentNode()
         try:
             default_page = parent.getDefaultPage()
         except AttributeError:
             default_page = None
-        
+
         if default_page and default_page in parent.objectIds():
             try:
                 layout = parent[default_page].getLayout()
@@ -137,24 +137,24 @@ class AgCommonViewlet(ViewletBase):
                 layout = parent.getLayout()
             except:
                 layout = None
-    
+
         if layout in folder_views:
             return True
         else:
             for v in folder_views:
                 if v in self.context.absolute_url():
                     return True
-    
+
             return False
-    
+
     @property
     def showTwoColumn(self):
-    
+
         try:
             layout = self.context.getLayout()
         except:
             layout = None
-            
+
         if layout in ['factsheet_view']:
             return True
         else:
@@ -176,7 +176,7 @@ class AgCommonViewlet(ViewletBase):
         except AttributeError:
             syntool = getToolByName(self.context, 'portal_syndication')
             return syntool.isSyndicationAllowed(self.context)
-    
+
 
 class PortletViewlet(AgCommonViewlet):
 
@@ -188,7 +188,7 @@ class PortletViewlet(AgCommonViewlet):
         return mtool.checkPermission("Portlets: Manage portlets", self.context)
 
 
-class TopNavigationViewlet(AgCommonViewlet):   
+class TopNavigationViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/topnavigation.pt')
 
     def getClassName(self, saction):
@@ -212,7 +212,7 @@ class TopNavigationViewlet(AgCommonViewlet):
             context_url = self.context.absolute_url()
             menu_url = t.get('url')
             urls = [menu_url]
-            
+
             # Handle additional URLs configured in portal_actions
             if t.get('additional_urls'):
                 econtext = getExprContext(self.context)
@@ -222,7 +222,7 @@ class TopNavigationViewlet(AgCommonViewlet):
                         urls.append(url_expr.__call__(econtext))
                     except:
                         pass
-                    
+
             for t_url in urls:
                 # Remove trailing / to normalize
                 if t_url.endswith("/"):
@@ -231,7 +231,7 @@ class TopNavigationViewlet(AgCommonViewlet):
                     portal_url = portal_url[0:-1]
                 if context_url.endswith("/"):
                     context_url = context_url[0:-1]
-                    
+
                 if portal_url != t_url and context_url.startswith(t_url):
                     matches.append(menu_url) # Remove trailing slash
 
@@ -249,19 +249,19 @@ class TopNavigationViewlet(AgCommonViewlet):
         pass
 
 
-class RightColumnViewlet(PortletViewlet):   
+class RightColumnViewlet(PortletViewlet):
     index = ViewPageTemplateFile('templates/rightcolumn.pt')
 
 
-class CenterColumnViewlet(PortletViewlet):   
+class CenterColumnViewlet(PortletViewlet):
     index = ViewPageTemplateFile('templates/centercolumn.pt')
 
 
-class HomepageTextViewlet(AgCommonViewlet):   
+class HomepageTextViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/homepagetext.pt')
 
 
-class HomepageImageViewlet(AgCommonViewlet):   
+class HomepageImageViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/homepageimage.pt')
 
     @property
@@ -286,7 +286,7 @@ class HomepageImageViewlet(AgCommonViewlet):
             # Explicitly exclude expired items
 
             query = target.buildQuery()
-            
+
             query['expires'] = {'query' : DateTime(), 'range' : 'min'}
 
             results = self.portal_catalog.searchResults(query)
@@ -298,10 +298,10 @@ class HomepageImageViewlet(AgCommonViewlet):
     @property
     def slider_has_contents(self):
         return (len(self.folderContents()) > 0)
-        
-class FlexsliderViewlet(HomepageImageViewlet, FolderView):   
+
+class FlexsliderViewlet(HomepageImageViewlet, FolderView):
     index = ViewPageTemplateFile('templates/flexslider.pt')
-    
+
     def slider_title(self):
         target = self.slider_target
         if target and target.portal_type == 'Topic':
@@ -319,7 +319,7 @@ class PublicationCodeViewlet(AgCommonViewlet, PublicationView):
     def show_viewlet(self):
         return (self.publication_code or self.publication_series)
 
-class AddThisViewlet(PublicationCodeViewlet):   
+class AddThisViewlet(PublicationCodeViewlet):
     index = ViewPageTemplateFile('templates/addthis.pt')
 
     def update(self):
@@ -356,20 +356,20 @@ class AddThisViewlet(PublicationCodeViewlet):
 
         if self.isHomePage:
             if self.showHomepageText:
-                # Only show the viewlet if we're called from inside the 
-                # homepage text viewlet.  We're discovering this by the 
+                # Only show the viewlet if we're called from inside the
+                # homepage text viewlet.  We're discovering this by the
                 # lack of a manager
                 return not (self.manager)
             else:
                 return False
-        
+
         return True
 
     @property
     def translationLanguages(self):
         return dict ([
                         ('fr', u'Fran&ccedil;ais'),
-                        ('es', u'Espa&ntilde;ol'), 
+                        ('es', u'Espa&ntilde;ol'),
                     ]
                 )
 
@@ -386,15 +386,15 @@ class AddThisViewlet(PublicationCodeViewlet):
     def getTranslationLabel(self, c):
         return self.translationLanguages.get(c, '')
 
-        
-class FBLikeViewlet(AgCommonViewlet):   
+
+class FBLikeViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/fblike.pt')
 
     def update(self):
         self.likeurl = escape(safe_unicode(self.context.absolute_url()))
 
-        
-class FooterViewlet(AgCommonViewlet):   
+
+class FooterViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/footer.pt')
 
     def update(self):
@@ -408,15 +408,15 @@ class FooterViewlet(AgCommonViewlet):
         try:
             self.footer_copyright_2 = ptool.agcommon_properties.footer_copyright_2
             self.footer_copyright_link_2 = ptool.agcommon_properties.footer_copyright_link_2
-        except AttributeError:  
+        except AttributeError:
             self.footer_copyright_2 = None
             self.footer_copyright_link_2 = None
-      
+
 
         footerlinks = getContextConfig(self.context, 'footerlinks', 'footerlinks')
 
         self.footerlinks = self.context_state.actions(category=footerlinks)
-        
+
 class CustomTitleViewlet(AgCommonViewlet):
 
     def update(self):
@@ -424,22 +424,22 @@ class CustomTitleViewlet(AgCommonViewlet):
             self.page_title = self.view.page_title
         except AttributeError:
             self.page_title = self.context_state.object_title
-        
+
         self.portal_title = self.portal_state.portal_title()
 
         self.site_title = getContextConfig(self.context, 'site_title', self.portal_title)
-        
+
         if self.site_title == self.portal_title:
             self.org_title = "Penn State University"
         else:
             self.org_title = "Penn State College of Ag Sciences"
 
         self.org_title = getContextConfig(self.context, 'org_title', self.org_title)
-        
+
 class TitleViewlet(CustomTitleViewlet):
-    
+
     def index(self):
-    
+
         portal_title = escape(safe_unicode(self.site_title))
         page_title = escape(safe_unicode(self.page_title()))
         org_title = escape(safe_unicode(self.org_title))
@@ -462,15 +462,15 @@ class TitleViewlet(CustomTitleViewlet):
 
 
 class FBMetadataViewlet(CustomTitleViewlet):
-    
+
     index = ViewPageTemplateFile('templates/fbmetadata.pt')
 
     def getImageInfo(self, context=None):
         image_url = image_mime_type = ''
-        
+
         if not context:
             context = self.context
-        
+
         (leadImage_fieldname, leadImageCaption_fieldname) = getImageAndCaptionFieldNames(context)
         (leadImage_field, leadImageCaption_field) = getImageAndCaptionFields(context)
 
@@ -482,122 +482,122 @@ class FBMetadataViewlet(CustomTitleViewlet):
             pass
 
         return (image_url, image_mime_type)
-        
+
 
     def isDefaultPage(self):
         # Determine if we're the default page
-        
+
         parent = self.context.getParentNode()
-        
+
         try:
             parent_default_page_id = parent.getDefaultPage()
         except AttributeError:
             parent_default_page_id = ''
 
         return (self.context.id == parent_default_page_id)
-        
+
     def update(self):
-    
+
         super(FBMetadataViewlet, self).update()
-    
-        portal_title = safe_unicode(self.site_title)
+
+        site_title = safe_unicode(self.site_title)
         page_title = safe_unicode(self.page_title())
         org_title = safe_unicode(self.org_title)
-        
-        if not org_title or org_title.lower() == 'none':
-            self.fb_site_name = portal_title
-        elif page_title == portal_title:
-            self.fb_site_name = org_title
-        else:
-            self.fb_site_name = "%s (%s)" % (portal_title, org_title)
 
-        self.fb_title = page_title        
+        titles = [x for x in (page_title, site_title, org_title) if x and x.lower() != 'none']
+        unique_titles = list(set(titles))
+        unique_titles.sort(key=lambda x: titles.index(x))
         
-        if self.fb_title != self.fb_site_name:
-            self.fb_title = u" &mdash; ".join([self.fb_title, self.fb_site_name])
-                
+        if len(unique_titles) == 3:
+            self.fb_site_name = u'%s (%s)' % tuple(unique_titles[1:3])
+            self.fb_title = u'%s (%s)' % tuple(unique_titles[0:2])
+        elif len(unique_titles) == 2:
+            self.fb_title = self.fb_site_name = '%s (%s)' % tuple(unique_titles[0:2])
+        else:
+            self.fb_title = self.fb_site_name = unique_titles[0]
+
         self.showFBMetadata = True
 
         self.fb_url = self.context.absolute_url()
-        
+
         try:
             # Remove this page's id from the URL if it's a default page.
             if self.isDefaultPage() and self.context.absolute_url().endswith("/%s" % self.context.id) :
                 self.fb_url = self.fb_url[0:-1*(len(self.context.id)+1)]
         except:
             pass
-        
+
         # Assign image URL and mime type
         image_url = image_mime_type = ''
-        
-        # Look up through the acquisition chain until we hit a Plone site, 
+
+        # Look up through the acquisition chain until we hit a Plone site,
         # Section, or Subsite
 
         for i in aq_chain(self.context):
             if IPloneSiteRoot.providedBy(i):
                 break
-            
+
             (image_url, image_mime_type) = self.getImageInfo(i)
-            
+
             if image_url:
                 break
-            
+
         # Fallback
         if not image_url:
             image_url = "%s/social-media-site-graphic.png" % self.context.portal_url()
 
         (self.fb_image, self.link_mime_type) = (image_url, image_mime_type)
         self.link_metadata_image = self.fb_image
-        
+
         # FB config
         self.fbadmins = ['100001031380608','9370853','1485890864', '100003483428817']
 
         self.fbadmins.extend(getContextConfig(self.context, 'fbadmins', []))
-            
+
         self.fbadmins = ','.join(self.fbadmins)
 
         self.fbappid = getContextConfig(self.context, 'fbappid', '374493189244485')
 
         self.fbpageid = getContextConfig(self.context, 'fbpageid', '53789486293')
 
-            
+
 class KeywordsViewlet(AgCommonViewlet):
-    
+
     index = ViewPageTemplateFile('templates/keywords.pt')
-    
+
     def update(self):
 
         super(KeywordsViewlet, self).update()
-        
+
         tools = getMultiAdapter((self.context, self.request), name=u'plone_tools')
-        
+
         sm = getSecurityManager()
-        
+
         self.user_actions = self.context_state.actions(category='user')
-        
+
         plone_utils = getToolByName(self.context, 'plone_utils')
-        
+
         self.getIconFor = plone_utils.getIconFor
-        
+
 class NextPreviousViewlet(ViewletBase, NextPreviousView):
     render = ZopeTwoPageTemplateFile('templates/nextprevious.pt')
 
 class PathBarViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/path_bar.pt')
-        
+
     def update(self):
         super(PathBarViewlet, self).update()
 
         # Get the site id
         self.site = getSite().getId()
-                
+
         self.navigation_root_url = self.portal_state.navigation_root_url()
-    
+
         self.is_rtl = self.portal_state.is_rtl()
 
         breadcrumbs_view = getMultiAdapter((self.context, self.request),
                                            name='breadcrumbs_view')
-                                           
+
         if 'extension.psu.edu' in self.site:
             start_breadcrumbs = 2
         else:
@@ -618,7 +618,7 @@ class PathBarViewlet(AgCommonViewlet):
 class LeadImageHeader(LeadImageViewlet, AgCommonViewlet):
 
     def update(self):
-    
+
         # Only show header if we're on a subsite homepage
 
         context = aq_inner(self.context)
@@ -662,7 +662,7 @@ class AnalyticsViewlet(BrowserView):
 class UnitAnalyticsViewlet(AnalyticsViewlet):
 
     def render(self):
-        """render the unit webstats snippet"""   
+        """render the unit webstats snippet"""
 
         if self.anonymous:
             ptool = getToolByName(self.context, "portal_properties")
@@ -671,7 +671,7 @@ class UnitAnalyticsViewlet(AnalyticsViewlet):
             snippet = ""
 
         return snippet
-        
+
 
 class RSSViewlet(AgCommonViewlet):
     def update(self):
@@ -685,7 +685,7 @@ class RSSViewlet(AgCommonViewlet):
             self.allowed = False
 
     render = ViewPageTemplateFile('templates/rsslink.pt')
-    
+
 class SiteRSSViewlet(ViewletBase):
     def update(self):
         ptool = getToolByName(self.context, "portal_properties")
@@ -701,9 +701,9 @@ class SiteRSSViewlet(ViewletBase):
         except AttributeError:
             # Don't show site RSS
             pass
-            
-        
-    render = ViewPageTemplateFile('templates/site_rss.pt')    
+
+
+    render = ViewPageTemplateFile('templates/site_rss.pt')
 
 class TableOfContentsViewlet(AgCommonViewlet):
 
@@ -712,14 +712,14 @@ class TableOfContentsViewlet(AgCommonViewlet):
     @property
     def enabled(self):
         obj = aq_base(self.context)
-        getTableContents = getattr(obj, 'getTableContents', None)      
+        getTableContents = getattr(obj, 'getTableContents', None)
 
         enabled = False
 
         if getTableContents is not None:
             try:
                 enabled = getTableContents()
-            except KeyError:   
+            except KeyError:
                 # schema not updated yet
                 enabled = False
 
@@ -728,15 +728,15 @@ class TableOfContentsViewlet(AgCommonViewlet):
 
         if self.full_width:
             enabled = True
-        
+
         return enabled
 
     def getClass(self):
         klass = ['toc']
-        
+
         if self.full_width:
             klass.append('toc-full-width')
-        
+
         return " ".join(klass)
 
     @property
@@ -760,34 +760,34 @@ class ContributorsViewlet(AgCommonViewlet):
 
     @property
     def people(self):
-       
+
         psuid_re = re.compile("^[A-Za-z][A-Za-z0-9_]*$") # Using one from FSD
-        
+
         people = []
-        
+
         if self.showCreators():
             if self.context.portal_type not in self.showForContentTypes():
                 return people
             peopleList = [x.strip() for x in self.context.listCreators()]
         else:
             peopleList = [x.strip() for x in self.context.Contributors()]
-            
+
         if peopleList:
             portal_catalog = getToolByName(self.context, 'portal_catalog')
             search_results = portal_catalog.searchResults({'portal_type' : 'FSDPerson', 'id' : peopleList })
-            
+
             for id in peopleList:
                 found = False
-    
+
                 for r in search_results:
                     if r.id == id:
-    
+
                         obj = r.getObject()
                         job_titles = obj.getJobTitles()
-    
+
                         people.append({
-                                            'name' : obj.pretty_title_or_id(), 
-                                            'title' : job_titles and job_titles[0] or '', 
+                                            'name' : obj.pretty_title_or_id(),
+                                            'title' : job_titles and job_titles[0] or '',
                                             'url' : obj.absolute_url(),
                                             'phone' : obj.getOfficePhone(),
                                             'email' : obj.getEmail(),
@@ -801,7 +801,7 @@ class ContributorsViewlet(AgCommonViewlet):
                     parts.extend(['']*(5-len(parts)))
                     (name, title, f1, f2, f3) = parts
                     (url, email, phone) = ('', '', '')
-                    
+
                     for i in (f1, f2, f3):
                         if '@' in i:
                             email = i
@@ -811,9 +811,9 @@ class ContributorsViewlet(AgCommonViewlet):
                             tmp_phone = scrubPhone(i, return_original=False)
                             if tmp_phone:
                                 phone = tmp_phone
-                    
-                    people.append({'name' : name, 
-                                            'title' : title, 
+
+                    people.append({'name' : name,
+                                            'title' : title,
                                             'url' : url,
                                             'phone' : phone,
                                             'email' : email,
@@ -828,7 +828,7 @@ class ContributorsViewlet(AgCommonViewlet):
 
 class CustomCommentsViewlet(CommentsViewlet):
 
-    def update(self):       
+    def update(self):
         super(CustomCommentsViewlet, self).update()
         try:
             self.xid = md5(self.context.UID()).hexdigest()
@@ -847,7 +847,7 @@ class _ContentWellPortletsViewlet(ContentWellPortletsViewlet, AgCommonViewlet):
         for (manager_obj, manager_name) in self.portletManagers():
             if layout.have_portlets(manager_name, view=view):
                 portlets = True
-        
+
         return portlets
 
     def portletManagersToShow(self):
@@ -855,13 +855,13 @@ class _ContentWellPortletsViewlet(ContentWellPortletsViewlet, AgCommonViewlet):
         for mgr, name in self.portletManagers():
             if mgr(self.context, self.request, self).visible:
                 visibleManagers.append(name)
-        
+
         managers = []
         numManagers = len(visibleManagers)
         for counter, name in enumerate(visibleManagers):
             managers.append((name, (name.split('.')[-1])))
         return managers
-    
+
     def showManagePortlets(self):
         if self.canManagePortlets:
             if self.isHomePage:
@@ -872,7 +872,7 @@ class _ContentWellPortletsViewlet(ContentWellPortletsViewlet, AgCommonViewlet):
 
     def canManageBodyPortlets(self):
         return getattr(self.context, 'manage_body_portlets', False)
-        
+
 
 class PortletsBelowViewlet(_ContentWellPortletsViewlet):
     name = 'BelowPortletManager'
@@ -885,7 +885,7 @@ class PortletsAboveViewlet(_ContentWellPortletsViewlet):
 class FooterPortletsViewlet(_ContentWellPortletsViewlet):
     name = 'FooterPortletManager'
     manage_view = '@@manage-portletsfooter'
-    
+
 class LocalSearchViewlet(SearchBoxViewlet):
 
     def counties(self):
@@ -893,7 +893,7 @@ class LocalSearchViewlet(SearchBoxViewlet):
 
     def searchURL(self):
         anchor = ""
-        
+
         if self.context.getLayout() in ['extension_course_view'] or 'courses' in self.context.Subject():
             anchor = "#event-listing"
 
@@ -905,7 +905,7 @@ class LocalSearchViewlet(SearchBoxViewlet):
                 return default_search_url # If we override the collection filtering behavior
             else:
                 parent = self.context.getParentNode()
-                
+
                 if self.context.getId() == parent.getDefaultPage():
                     return '%s%s' % (parent.absolute_url(), anchor)
                 else:
@@ -922,18 +922,18 @@ class LocalSearchViewlet(SearchBoxViewlet):
         return default_search_url
 
 class ContentRelatedItems(ContentRelatedItemsBase):
-   
+
     def show_related_items(self):
         if self.related_items():
             return getattr(self.context, 'show_related_items', True)
         return False
 
-class GooglePlusViewlet(AgCommonViewlet):   
+class GooglePlusViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/googleplus-head.pt')
 
-    @property 
+    @property
     def url(self):
-    
+
         ptool = getToolByName(self.context, "portal_properties")
 
         return ptool.agcommon_properties.getProperty('googleplus_url', None)
