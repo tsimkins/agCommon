@@ -514,7 +514,7 @@ class FBMetadataViewlet(CustomTitleViewlet):
         self.fb_title = page_title        
         
         if self.fb_title != self.fb_site_name:
-            self.fb_title = u" \u2014 ".join([self.fb_title, self.fb_site_name])
+            self.fb_title = u" &mdash; ".join([self.fb_title, self.fb_site_name])
                 
         self.showFBMetadata = True
 
