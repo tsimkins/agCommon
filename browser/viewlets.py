@@ -392,6 +392,22 @@ class FBLikeViewlet(AgCommonViewlet):
 
     def update(self):
         self.likeurl = escape(safe_unicode(self.context.absolute_url()))
+        
+    def show_fblike(self):
+
+        hide_fblike = getattr(self.context, 'hide_fblike', False)
+        show_fblike = getattr(self.context, 'show_fblike', False)
+        is_homepage = self.isHomePage
+        is_anon = self.anonymous
+        
+        if is_anon:
+            if show_fblike:
+                return True
+            
+            if is_homepage or hide_fblike:
+                return False
+        
+        return False
 
 
 class FooterViewlet(AgCommonViewlet):
