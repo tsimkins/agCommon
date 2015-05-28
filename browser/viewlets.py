@@ -406,6 +406,8 @@ class FBLikeViewlet(AgCommonViewlet):
             
             if is_homepage or hide_fblike:
                 return False
+                
+            return True
         
         return False
 
