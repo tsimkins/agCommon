@@ -24,6 +24,13 @@ except ImportError:
         """
             Placeholder interface
         """
+try:
+    from agsci.ExtensionExtender.interfaces import IExtensionCourseExtender
+except ImportError:
+    class IExtensionCourseExtender(Interface):
+        """
+            Placeholder interface
+        """ 
 
 
 class IAgCommonUtilities(Interface):
@@ -77,7 +84,7 @@ class AgCommonUtilities(BrowserView):
 
         item_title = item.Title.strip()
 
-        if 'courses' in context.Subject():
+        if IExtensionCourseExtender.providedBy(context) or 'courses' in context.Subject():
             course_title = '%s:' % context.Title().strip()
             if item_title.startswith(course_title):
                 item_title = item_title.replace(course_title, '', 1).strip()
