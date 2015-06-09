@@ -393,23 +393,23 @@ class FBLikeViewlet(AgCommonViewlet):
 
     def update(self):
         self.likeurl = escape(safe_unicode(self.context.absolute_url()))
-        
+
     def show_fblike(self):
 
         hide_fblike = getattr(self.context, 'hide_fblike', False)
         show_fblike = getattr(self.context, 'show_fblike', False)
         is_homepage = self.isHomePage
         is_anon = self.anonymous
-        
+
         if is_anon:
             if show_fblike:
                 return True
-            
+
             if is_homepage or hide_fblike:
                 return False
-                
+
             return True
-        
+
         return False
 
 
@@ -526,7 +526,7 @@ class FBMetadataViewlet(CustomTitleViewlet):
         titles = [x for x in (page_title, site_title, org_title) if x and x.lower() != 'none']
         unique_titles = list(set(titles))
         unique_titles.sort(key=lambda x: titles.index(x))
-        
+
         if len(unique_titles) == 3:
             self.fb_site_name = u'%s (%s)' % tuple(unique_titles[1:3])
             self.fb_title = u'%s (%s)' % tuple(unique_titles[0:2])
@@ -975,18 +975,20 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
                                     'streetAddress': 'Penn State University'},
                     'logo': 'http://agsci.psu.edu/psu-agsciences-logo.png',
                     'name': 'Penn State University College of Agricultural Sciences',
-                    'sameAs': [    'http://www.facebook.com/agsciences',
-                                    'http://www.twitter.com/agsciences',
-                                    'http://plus.google.com/102569393030138856222',
-                                    'http://instagram.com/agsciences',
-                                    'http://www.linkedin.com/company/penn-state-college-of-agricultural-sciences',
-                                    'http://www.youtube.com/psuagsciences'],
-                    'telephone': '814-865-7521',
+                    'sameAs': [
+                        'http://www.facebook.com/agsciences',
+                        'http://www.twitter.com/agsciences',
+                        'http://plus.google.com/102569393030138856222',
+                        'http://instagram.com/agsciences',
+                        'http://www.linkedin.com/company/penn-state-college-of-agricultural-sciences',
+                        'http://www.youtube.com/psuagsciences',
+                        'http://en.wikipedia.org/wiki/Penn_State_University_College_of_Agricultural_Sciences'],
+                    'telephone': '+1-814-865-7521',
                     'url': 'http://agsci.psu.edu'
                     }
 
             return json.dumps(data)
-        
+
         return None
 
 
