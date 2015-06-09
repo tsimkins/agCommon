@@ -41,7 +41,16 @@
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
         />
-        
+
+    <!-- Structured Data metadata -->
+    <browser:viewlet
+        name="agcommon.htmlhead.google_structured_data"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".viewlets.GoogleStructuredDataViewlet"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <!-- Facebook Open Graph metadata -->
     <browser:viewlet
         name="agcommon.htmlhead.fbmetadata"

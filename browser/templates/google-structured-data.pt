@@ -1,0 +1,4 @@
+<script type="application/ld+json"
+    tal:condition="view/data|none"
+    tal:content="structure view/data">
+</script>
