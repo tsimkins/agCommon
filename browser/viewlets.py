@@ -978,7 +978,7 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
                     'sameAs': [
                         'http://www.facebook.com/agsciences',
                         'http://www.twitter.com/agsciences',
-                        'http://plus.google.com/102569393030138856222',
+                        'http://plus.google.com/+PennStateAgSciences',
                         'http://instagram.com/agsciences',
                         'http://www.linkedin.com/company/penn-state-college-of-agricultural-sciences',
                         'http://www.youtube.com/psuagsciences',
