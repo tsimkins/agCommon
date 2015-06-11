@@ -30,7 +30,7 @@
                     </div>
                     
                     <div tal:condition="view/publication_code|nothing">
-                        <h3 class="inline">Publication Code</h3> <span tal:replace="view/publication_code" />
+                        <h3 class="inline">Code</h3> <span tal:replace="view/publication_code" />
                     </div>
     
                     <div tal:condition="view/getNumPages|nothing">
@@ -41,7 +41,7 @@
                         <h3 class="inline">Cost</h3> $<span tal:replace="view/publication_cost" />
                     </div>
 
-                    <div tal:condition="python: view.contact_pdc and not view.publication_for_sale">
+                    <div tal:condition="python: view.orderPublication and not view.publication_for_sale">
                         <h3 class="inline">Cost</h3> Free
                     </div>
     

@@ -732,12 +732,8 @@ class PublicationView(FolderView):
         return getattr(self.context, 'extension_publication_for_sale', None)
 
     @property
-    def contact_pdc(self):
-        return getattr(self.context, 'extension_publication_contact_pdc', None)
-
-    @property
     def orderPublication(self):
-        return self.contact_pdc
+        return self.publication_listing
 
     @property
     def override_page_count(self):

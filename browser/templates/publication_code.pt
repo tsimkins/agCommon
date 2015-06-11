@@ -12,7 +12,7 @@
     <metal:publication use-macro="context/order/macros/publication-information">
         <metal:heading fill-slot="heading">
             <h2 tal:condition="orderPublication">Order Publication</h2>
-            <h2 tal:condition="not:orderPublication">Publication Details</h2>
+            <h2 tal:condition="not:orderPublication">Article Details</h2>
         </metal:heading>
     </metal:publication>
 
@@ -21,12 +21,6 @@
     </div>
 
     <div id="disclaimer">
-        <p tal:condition="view/download_only">
-            This publication is only available online. It is not 
-            available in hard copy from the Publications 
-            Distribution Center. 
-        </p>
-
         <p>
             This publication is available in alternative media on 
             request.

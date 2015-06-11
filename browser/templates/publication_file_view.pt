@@ -53,7 +53,7 @@
                     define="orderPublication view/orderPublication">
     
                     <tal:h2 condition="orderPublication">Order Publication</tal:h2>
-                    <tal:h2 condition="not:orderPublication">Publication Details</tal:h2>
+                    <tal:h2 condition="not:orderPublication">Article Details</tal:h2>
                 
                 </tal:details>
                 
@@ -74,12 +74,6 @@
 
     <metal:footer fill-slot="footer">
         <div id="disclaimer">
-            <p tal:condition="view/download_only">
-                This publication is only available online. It is not 
-                available in hard copy from the Publications 
-                Distribution Center. 
-            </p>
-
             <p>
                 This publication is available in alternative media on 
                 request.
