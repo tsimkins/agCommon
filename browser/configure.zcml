@@ -354,6 +354,7 @@
         permission="zope2.View"
         />
 
+    <!--
     <browser:viewlet
         name="agcommon.contributors"
         for="agsci.UniversalExtender.interfaces.IFilePublicationExtender"
@@ -362,7 +363,8 @@
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
         />
-
+    -->
+    
     <five:implements
         class="Products.ATContentTypes.content.document.ATDocument"
         interface=".interfaces.IContributors"
