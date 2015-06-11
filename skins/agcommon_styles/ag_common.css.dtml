@@ -1586,6 +1586,16 @@ html.kupu-html body#content {
     margin-bottom: 1em;
 }
 
+/* 
+    For Plone 4.1.x (using Archetypes 1.7.14) where the CSS red square
+    duplicates the hard-coded one.  This makes the font color for the hard-
+    coded one transparent.
+*/
+
+div.field .formQuestion span.required {
+    color: transparent !important;
+}
+
 #content h2 strong,
 html.kupu-html h2 strong,
 #content h2 b,
