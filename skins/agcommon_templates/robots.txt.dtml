@@ -33,6 +33,7 @@ Disallow: /*image*
 Disallow: /*leadImage* 
 
 User-agent: *
+Crawl-delay: 5
 Disallow: /nonmobile
 Disallow: /search
 Disallow: /search_rss
@@ -47,13 +48,9 @@ Disallow: /*sendto_form$
 Disallow: /*folder_factories$
 Disallow: /*folder_contents$
 Disallow: /*?searchterm=*
-Disallow: /*image$
-# Removed 2015-05-05 per gra104
-# Disallow: /*image_*
 Disallow: /*image_view_fullscreen$
 Disallow: /*newsletter_print
 Disallow: /*/order$
 &dtml-getDisallowedPaths;
-Crawl-delay: 5
 
 </dtml-with>
