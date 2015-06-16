@@ -15,7 +15,7 @@ class DirectoryView(BaseView):
             
             for o in people:
                 # Skip if this is an 'alias'
-                if getattr(o, 'primary_profile_url', ''):
+                if getattr(o, 'primary_profile', ''):
                     continue
 
                 api_json = o.restrictedTraverse('@@api-json')
