@@ -15,7 +15,7 @@
     
     <a href="http://agsci.psu.edu"
        id="logo-college"
-       tal:condition="subsite"><img tal:attributes="src string:${view/navigation_root_url}/college-text.png" alt="College of Agricultural Sciences" /></a>
+       tal:condition="subsite"><img tal:attributes="src string:${view/navigation_root_url}/college-text.png" alt="Penn State College of Agricultural Sciences" /></a>
 
     <tal:printlogo condition="python: portal_title != 'Penn State Extension'">    
 
