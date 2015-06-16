@@ -21,6 +21,8 @@ from plone.app.linkintegrity.exceptions import LinkIntegrityNotificationExceptio
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 import colorsys
 import os
+import json
+import urllib2
 
 import re
 
@@ -999,3 +1001,86 @@ def increaseHeadingLevel(text):
             text = text.replace("<%s" % from_header, "<%s" % to_header)
             text = text.replace("</%s" % from_header, "</%s" % to_header)
     return text
+
+def syncPerson(o, force=False):
+    # Determine profile url
+    profile_url = getattr(o, 'primary_profile', '')
+
+    # Determine if an alias
+    if o.getLayout() in ['person_redirect_view'] and profile_url:
+
+        # Grab JSON data
+        json_url = '%s/@@api-json' % profile_url
+
+        try:
+            json_data = urllib2.urlopen(json_url).read()
+        except urllib2.HTTPError:
+            print "Error accessing profile url: %s %s" % (o.getId(), profile_url)
+            return False
+
+        # Convert JSON to Python structure
+        try:
+            data = json.loads(json_data)
+        except ValueError:
+            print "Error decoding json: %s %s" % (o.getId(), profile_url)
+            return False
+
+        # Pull selected data from JSON
+        modification_date = DateTime(data.get('modified', DateTime()))
+        item_type = data.get('type', '')
+        image_url = data.get('image_url', '')
+                
+        # Skip updates if alias modification date is after, and we're not
+        # forcing the sync.
+        if modification_date <= o.modified() and not force:
+            print "Alias modification date after original: %s" % o.getId()
+            return False
+
+        # Check to make sure we're a person       
+        if item_type != 'Person':
+            print "Not a person: %s" % o.getId()
+            return False
+
+        if image_url:
+            try:
+                image_data = urllib2.urlopen(image_url).read()
+            except:
+                # Ignore errors
+                pass
+            else:
+                o.setImage(image_data)
+
+        # Basic data
+        o.setFirstName(data.get('first_name', ''))
+        o.setMiddleName(data.get('middle_name', ''))
+        o.setLastName(data.get('last_name', ''))
+        o.setSuffix(data.get('suffix_name', ''))
+        o.setJobTitles(data.get('job_titles', []))
+        o.setEmail(data.get('email', ''))
+        o.setOfficePhone(data.get('office_phone', ''))    
+        o.setOfficeAddress(data.get('office_address', ''))
+        o.setOfficeCity(data.get('office_city', ''))
+        o.setOfficeState(data.get('officestate', ''))
+        o.setOfficePostalCode(data.get('office_postal_code', ''))
+        o.department_research_areas = data.get('department_research_areas', [])
+        o.extension_areas = data.get('extension_areas', [])
+        
+        # Classifications
+        classification_names = data.get('directory_classifications', [])
+        classification_names_to_add = set(classification_names) - set(o.getClassificationNames())
+
+        if classification_names_to_add:        
+            directory = o.aq_parent
+            classifications_to_add = [x.UID for x in directory.getClassifications() if x.Title in classification_names_to_add]
+            current_classifications = o.getRawClassifications()
+            current_classifications.extend(classifications_to_add)
+            o.setClassifications(current_classifications)
+
+        o.reindexObject()
+
+        print "Updated: %s" % o.getId()
+        return True
+
+    else:
+        print "Not an alias: %s" % o.getId()
+        return False
