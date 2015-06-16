@@ -1,0 +1,40 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="agcommon">
+
+    <browser:page
+        for="*"
+        name="api-json"
+        class=".BaseView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+        
+    <browser:page
+        for="Products.FacultyStaffDirectory.interfaces.person.IPerson"
+        name="api-json"
+        class=".fsd.person.PersonView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <browser:page
+        for="Products.FacultyStaffDirectory.interfaces.classification.IClassification"
+        name="api-json"
+        class=".fsd.classification.ClassificationView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <browser:page
+        for="Products.FacultyStaffDirectory.interfaces.facultystaffdirectory.IFacultyStaffDirectory"
+        name="api-json"
+        class=".fsd.directory.DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+        
+</configure>

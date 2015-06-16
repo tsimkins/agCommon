@@ -893,4 +893,7 @@
         permission="plone.app.portlets.ManagePortlets"
         />
 
+    <!-- API Include -->
+    <include package=".api" />
+
 </configure>
