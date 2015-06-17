@@ -134,11 +134,11 @@ class BaseView(BrowserView):
 
         return data
     
-    def getData(self):
+    def getData(self, recursive=True):
         return self.getBaseData()
 
-    def getFilteredData(self):
-        data = self.getData()
+    def getFilteredData(self, recursive=True):
+        data = self.getData(recursive=recursive)
         return self.filterData(data)        
 
     def getJSON(self):

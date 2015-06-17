@@ -5,6 +5,8 @@
     xmlns:five="http://namespaces.zope.org/five"
     i18n_domain="agcommon">
 
+    <!-- Basic View -->
+
     <browser:page
         for="*"
         name="api-json"
@@ -12,7 +14,19 @@
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         />
+
+    <!-- Plone Site Root -->
+
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="api-json"
+        class=".plone.PloneSiteView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
         
+    <!-- FacultyStaffDirectory -->
+
     <browser:page
         for="Products.FacultyStaffDirectory.interfaces.person.IPerson"
         name="api-json"
@@ -33,6 +47,23 @@
         for="Products.FacultyStaffDirectory.interfaces.facultystaffdirectory.IFacultyStaffDirectory"
         name="api-json"
         class=".fsd.directory.DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- Archetypes content types -->
+    <browser:page
+        for="Products.ATContentTypes.interfaces.topic.IATTopic"
+        name="api-json"
+        class=".archetypes.topic.TopicView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <browser:page
+        for="Products.ATContentTypes.interfaces.folder.IATFolder"
+        name="api-json"
+        class=".archetypes.folder.FolderView"
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         />

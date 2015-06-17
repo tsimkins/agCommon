@@ -2,7 +2,7 @@ from .. import BaseView
 
 class PersonView(BaseView):
 
-    def getData(self):
+    def getData(self, recursive=False):
         data = self.getBaseData()
 
         data['first_name'] = self.context.getFirstName()
