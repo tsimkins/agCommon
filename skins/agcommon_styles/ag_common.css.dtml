@@ -997,18 +997,13 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
     color: &dtml-leftLinkTextHoverColor;;
 }
 
-#portlets-mobile .linkIcon a span,
-#portal-column-one .linkIcon a span,
-#portal-column-two dl.linkIcon a span,
-#rightcolumn .linkIcon a span {
-    vertical-align: middle;
-    display: block;
-}
-
 #portlets-mobile .linkIcon .sprite a span,
 #portal-column-one .linkIcon .sprite a span,
-#portal-column-two dl.linkIcon .sprite a span {
+#portal-column-two dl.linkIcon .sprite a span,
+#rightcolumn .linkIcon .sprite a span  {
     padding-top: 0.25em;
+    vertical-align: middle;
+    display: block;
 }
 
 #rightcolumn .linkIcon .sprite a span {
@@ -1020,9 +1015,11 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
 #portal-column-one .linkIcon img,
 #portal-column-two dl.linkIcon img,
 #rightcolumn .linkIcon img {
-	padding-right: 0.375em;
+    width: 24px;
+    padding-right: 6px;
     color: &dtml-leftLinkTextHoverColor;;
     margin: 0;
+    vertical-align: middle;
 }
 
 /* Link Buttons */
