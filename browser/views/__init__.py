@@ -662,6 +662,13 @@ class RSSFeedView(FeedView, FolderView):
         else:
             return self.feed()._brains()[:self.max()]
 
+    def getImageCaption(self, obj):
+
+        (image_field, image_caption_field) = getImageAndCaptionFields(obj)
+
+        return image_caption_field.get(obj)
+
+
     def __call__(self):
 
         self.request.response.setHeader('Content-Type', 'application/atom+xml')

@@ -127,8 +127,11 @@
                 
                     <agsci:leadimage
                         tal:condition="item_has_leadimage"
-                        tal:define="image_field python:view.getImageFieldName(brain);"
-                        tal:attributes="url string:${brain/getURL}/${image_field};"
+                        tal:define="image_field python:view.getImageFieldName(brain);
+                                    getImageCaption nocall:view/getImageCaption|nothing;
+                                    image_caption python:getImageCaption and getImageCaption(obj_item);"
+                        tal:attributes="url string:${brain/getURL}/${image_field};
+                                        alt image_caption"
                     />
 
                     <agsci:fileinfo
