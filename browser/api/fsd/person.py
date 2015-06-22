@@ -1,8 +1,14 @@
 from .. import BaseView
+from Products.agCommon.person import isAlias, getProfileURL
 
 class PersonView(BaseView):
 
     def getData(self, recursive=False):
+        
+        if isAlias(self.context):
+            return {'ERROR' : 
+                '%s is alias to %s' % (self.context.getId(), getProfileURL(self.context)) }
+    
         data = self.getBaseData()
 
         data['first_name'] = self.context.getFirstName()

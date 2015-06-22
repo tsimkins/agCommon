@@ -1,10 +1,9 @@
+from Products.agCommon import toISO
 from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName
 import Missing
 import json
 from DateTime import DateTime
-from datetime import datetime, tzinfo
-import pytz
 from collective.contentleadimage.utils import getImageAndCaptionFieldNames
 import re
 
@@ -94,17 +93,7 @@ class BaseView(BrowserView):
             v = data[i]
             
             if isinstance(v, DateTime):
-                try:
-                    tz = pytz.timezone(v.timezone())
-                except pytz.UnknownTimeZoneError:
-                    # Because that's where we are.
-                    tz = pytz.timezone('US/Eastern') 
-                tmp_date = datetime(v.year(), v.month(), v.day(), v.hour(), 
-                                    v.minute(), int(v.second()))
-                if tmp_date.year in [2499, 1000]:
-                    del data[i]
-                else:
-                    data[i] = tz.localize(tmp_date).isoformat()
+                data[i] = toISO(data[i])
             elif i == 'getClassificationNames':
                 data['directory_classifications'] = data[i]
                 del data[i]

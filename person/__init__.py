@@ -2,6 +2,9 @@
 
 from Products.agCommon.person.ldap import ldapPersonLookup
 from HTMLParser import HTMLParseError
+import json
+import urllib2
+from DateTime import DateTime
 
 try:
     from zope.app.component.hooks import getSite
@@ -9,7 +12,7 @@ except ImportError:
     from zope.component.hooks import getSite
 
 
-def createPerson(psu_id):
+def createPerson(psu_id, profile_url = None):
 
     site = getSite()
     
@@ -40,7 +43,7 @@ def createPerson(psu_id):
                         faxNumber=data.get('faxNumber'), 
                         biography=data.get('biography'),
                         jobTitles=data.get('job_title'), 
-                        userpref_wysiwyg_editor='Kupu'
+                        userpref_wysiwyg_editor='TinyMCE'
                         )
 
     o = context[person_id]
@@ -48,6 +51,107 @@ def createPerson(psu_id):
     o.at_post_create_script()
     o.unmarkCreationFlag()
     
+    if profile_url:
+        o.primary_profile = profile_url
+        o.setLayout('person_redirect_view')
+        syncPerson(o, force=True)
+
+    o.reindexObject()
+    
     return o
 
+def getJSONData(object_url):
+        
+    # Grab JSON data
+    json_url = '%s/@@api-json' % object_url
+
+    try:
+        json_data = urllib2.urlopen(json_url).read()
+    except urllib2.HTTPError:
+        raise ValueError("Error accessing profile url: %s %s" % (o.getId(), profile_url))
+
+    # Convert JSON to Python structure
+    try:
+        data = json.loads(json_data)
+    except ValueError:
+        raise ValueError("Error decoding json: %s %s" % (o.getId(), profile_url))
+
+    return data
+
+def getProfileURL(o):
+    return getattr(o, 'primary_profile', '')
+
+def isAlias(o):
+    # Determine if an alias by profile URL and view
+    return (getProfileURL(o) and o.getLayout() in ['person_redirect_view'])
+
+def syncPerson(o, force=False):
+
+    # Skip if we're not an alias
+    if not isAlias(o):
+        print "Not an alias: %s" % o.getId()
+        return False
+
+    profile_url = getProfileURL(o)
+
+    try:
+        data = getJSONData(profile_url)
+    except ValueError:
+        print "JSON Error: %s" % profile_url
+        return False
+
+    # Pull selected data from JSON
+    modification_date = DateTime(data.get('modified', DateTime()))
+    item_type = data.get('type', '')
+    image_url = data.get('image_url', '')
+            
+    # Skip updates if alias modification date is after, and we're not
+    # forcing the sync.
+    if modification_date <= o.modified() and not force:
+        print "Alias modification date after original: %s" % o.getId()
+        return False
+
+    # Check to make sure we're a person       
+    if item_type != 'Person':
+        print "Not a person: %s" % o.getId()
+        return False
+
+    if image_url:
+        try:
+            image_data = urllib2.urlopen(image_url).read()
+        except:
+            # Ignore errors
+            pass
+        else:
+            o.setImage(image_data)
+
+    # Basic data
+    o.setFirstName(data.get('first_name', ''))
+    o.setMiddleName(data.get('middle_name', ''))
+    o.setLastName(data.get('last_name', ''))
+    o.setSuffix(data.get('suffix_name', ''))
+    o.setJobTitles(data.get('job_titles', []))
+    o.setEmail(data.get('email', ''))
+    o.setOfficePhone(data.get('office_phone', ''))    
+    o.setOfficeAddress(data.get('office_address', ''))
+    o.setOfficeCity(data.get('office_city', ''))
+    o.setOfficeState(data.get('officestate', ''))
+    o.setOfficePostalCode(data.get('office_postal_code', ''))
+    o.department_research_areas = data.get('department_research_areas', [])
+    o.extension_areas = data.get('extension_areas', [])
     
+    # Classifications
+    classification_names = data.get('directory_classifications', [])
+    classification_names_to_add = set(classification_names) - set(o.getClassificationNames())
+
+    if classification_names_to_add:        
+        directory = o.aq_parent
+        classifications_to_add = [x.UID for x in directory.getClassifications() if x.Title in classification_names_to_add]
+        current_classifications = o.getRawClassifications()
+        current_classifications.extend(classifications_to_add)
+        o.setClassifications(current_classifications)
+
+    o.reindexObject()
+
+    print "Updated: %s" % o.getId()
+    return True
