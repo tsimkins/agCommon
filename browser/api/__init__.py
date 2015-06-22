@@ -1,11 +1,12 @@
-from Products.agCommon import toISO
-from Products.Five import BrowserView
+from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
+from Products.Five import BrowserView
+from Products.agCommon import toISO
+from collective.contentleadimage.utils import getImageAndCaptionFieldNames
 import Missing
 import json
-from DateTime import DateTime
-from collective.contentleadimage.utils import getImageAndCaptionFieldNames
 import re
+import urllib2
 
 first_cap_re = re.compile('(.)([A-Z][a-z]+)')
 all_cap_re = re.compile('([a-z0-9])([A-Z])')
@@ -137,3 +138,21 @@ class BaseView(BrowserView):
         json = self.getJSON()
         self.request.response.setHeader('Content-Type', 'application/json')
         return json
+
+def getAPIData(object_url):
+        
+    # Grab JSON data
+    json_url = '%s/@@api-json' % object_url
+
+    try:
+        json_data = urllib2.urlopen(json_url).read()
+    except urllib2.HTTPError:
+        raise ValueError("Error accessing object, url: %s" % json_url)
+
+    # Convert JSON to Python structure
+    try:
+        data = json.loads(json_data)
+    except ValueError:
+        raise ValueError("Error decoding json: %s" % json_url)
+
+    return data

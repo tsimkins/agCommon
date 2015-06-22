@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
+from Products.agCommon.browser.api import getAPIData
 from Products.agCommon.person.ldap import ldapPersonLookup
 from HTMLParser import HTMLParseError
-import json
 import urllib2
 from DateTime import DateTime
 
@@ -60,24 +60,6 @@ def createPerson(psu_id, profile_url = None):
     
     return o
 
-def getJSONData(object_url):
-        
-    # Grab JSON data
-    json_url = '%s/@@api-json' % object_url
-
-    try:
-        json_data = urllib2.urlopen(json_url).read()
-    except urllib2.HTTPError:
-        raise ValueError("Error accessing profile url: %s %s" % (o.getId(), profile_url))
-
-    # Convert JSON to Python structure
-    try:
-        data = json.loads(json_data)
-    except ValueError:
-        raise ValueError("Error decoding json: %s %s" % (o.getId(), profile_url))
-
-    return data
-
 def getProfileURL(o):
     return getattr(o, 'primary_profile', '')
 
@@ -95,9 +77,9 @@ def syncPerson(o, force=False):
     profile_url = getProfileURL(o)
 
     try:
-        data = getJSONData(profile_url)
+        data = getAPIData(profile_url)
     except ValueError:
-        print "JSON Error: %s" % profile_url
+        print "getAPIData Error: %s" % profile_url
         return False
 
     # Pull selected data from JSON
