@@ -17,6 +17,10 @@
         name="agCommon"
         />
 
+    <!-- ICollegeHomepage - Explicitly declaring -->
+    <interface
+        interface=".interfaces.ICollegeHomepage" />
+
     <!-- IFSDShortBio - Explicitly declaring -->
     <interface
         interface=".interfaces.IFSDShortBio" />

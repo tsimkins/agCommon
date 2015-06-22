@@ -38,6 +38,12 @@ class IFSDShortBio(Interface):
        
     """
 
+class ICollegeHomepage(Interface):
+    """
+        Marker interface for the college homepage in order to return structured
+        data for the college.
+    """
+
 try:
 
     from Products.CMFPlone.interfaces.syndication import ISyndicatable

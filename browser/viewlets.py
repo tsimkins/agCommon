@@ -1,6 +1,9 @@
 from AccessControl import getSecurityManager
 from Acquisition import aq_inner, aq_base, aq_chain
 from DateTime import DateTime
+from .. import toISO
+from Products.ATContentTypes.interfaces.event import IATEvent
+from Products.FacultyStaffDirectory.interfaces.person import IPerson
 from Products.CMFCore.Expression import Expression, getExprContext
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
@@ -14,6 +17,7 @@ from cgi import escape
 from collective.contentleadimage.utils import getImageAndCaptionFields, getImageAndCaptionFieldNames
 from collective.contentleadimage.browser.viewlets import LeadImageViewlet
 from hashlib import md5
+from interfaces import ICollegeHomepage
 from plone.app.discussion.browser.comments import CommentsViewlet
 from plone.app.layout.nextprevious.view import NextPreviousView
 from plone.app.layout.viewlets.common import SearchBoxViewlet, TableOfContentsViewlet, ViewletBase
@@ -962,9 +966,11 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
 
     def data(self):
 
-        homepage = getattr(self.context, 'homepage_structured_data', None)
+        context = self.context
 
-        if homepage in ['agsci']:
+        data = {}
+
+        if ICollegeHomepage.providedBy(self.context):
             data = {
                     '@context': 'http://schema.org',
                     '@type': 'EducationalOrganization',
@@ -986,9 +992,66 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
                     'telephone': '+1-814-865-7521',
                     'url': 'http://agsci.psu.edu'
                     }
+            
+        elif IATEvent.providedBy(context):
 
-            return json.dumps(data)
+            data = {
+                    '@context': 'http://schema.org',
+                    '@type': 'Event',
+                    'name': context.Title(),
+                    'description' : context.Description(),
+                    'startDate' : toISO(context.start()),
+                    'endDate' : toISO(context.end()),
+                    'url' : context.absolute_url(),
+                    'location' : {
+                        "@type" : "Place",
+                        "address" : getattr(context, 'location', ''),
+                        "name" : getattr(context, 'location', ''),
+                    }
+            }
 
+        elif IPerson.providedBy(context):
+
+            jobTitles = context.getJobTitles()
+            
+            if jobTitles:
+                job_title = jobTitles[0]
+            else:
+                job_title = ""
+
+            address = ', '.join(context.getOfficeAddress().strip().split("\n"))
+
+            data = {
+                    '@context': 'http://schema.org',
+                    '@type': 'Person',
+                    'url' : context.absolute_url(),
+                    'email' : context.getEmail(),
+                    'givenName' : context.getFirstName(),
+                    'additionalName' : context.getMiddleName(),
+                    'familyName' : context.getLastName(),
+                    'telephone' : context.getOfficePhone(),
+                    'jobTitle' : job_title,
+                    'workLocation' : {
+                        '@type' : 'PostalAddress',
+                        'addressCountry' : 'US',
+                        'addressLocality' : context.getOfficeCity(),
+                        'addressRegion' : context.getOfficeState(),
+                        'postalCode' : context.getOfficePostalCode(),
+                        'streetAddress' : address,
+                    }
+            }
+
+            # Check for person image            
+            image_field = context.getField('image')
+            
+            if image_field and \
+               image_field.get(context) and \
+               image_field.get(context).get_size():
+                data['image'] = '%s/image' % context.absolute_url()
+
+        if data:
+            return json.dumps(data, indent=4)
+            
         return None
 
 
