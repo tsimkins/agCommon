@@ -666,7 +666,10 @@ class RSSFeedView(FeedView, FolderView):
 
         (image_field, image_caption_field) = getImageAndCaptionFields(obj)
 
-        return image_caption_field.get(obj)
+        if image_caption_field:
+            return image_caption_field.get(obj)
+        else:
+            return ''
 
 
     def __call__(self):
