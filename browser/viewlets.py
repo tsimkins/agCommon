@@ -3,6 +3,7 @@ from Acquisition import aq_inner, aq_base, aq_chain
 from DateTime import DateTime
 from .. import toISO
 from Products.ATContentTypes.interfaces.event import IATEvent
+from Products.ATContentTypes.interfaces.news import IATNewsItem
 from Products.FacultyStaffDirectory.interfaces.person import IPerson
 from Products.CMFCore.Expression import Expression, getExprContext
 from Products.CMFCore.utils import getToolByName
@@ -964,6 +965,20 @@ class GooglePlusViewlet(AgCommonViewlet):
 class GoogleStructuredDataViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/google-structured-data.pt')
 
+    def getImage(self):
+        # Check for item image   
+        context = self.context
+        
+        (image_field, image_caption_field) = getImageAndCaptionFields(context)
+        (image_field_name, image_caption_field_name) = getImageAndCaptionFieldNames(context)
+                         
+        if image_field and \
+            image_field.get(context) and \
+            image_field.get(context).get_size():
+            return '%s/%s' % (context.absolute_url(), image_field_name)
+
+        return ''
+
     def data(self):
 
         context = self.context
@@ -1010,6 +1025,17 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
                     }
             }
 
+        elif IATNewsItem.providedBy(context):
+
+            data = {
+                    '@context': 'http://schema.org',
+                    '@type': 'Article',
+                    'headline': context.Title(),
+                    'description' : context.Description(),
+                    'datePublished' : toISO(context.effective()),
+                    'url' : context.absolute_url(),
+            }
+
         elif IPerson.providedBy(context):
 
             jobTitles = context.getJobTitles()
@@ -1041,13 +1067,7 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
                     }
             }
 
-            # Check for person image            
-            image_field = context.getField('image')
-            
-            if image_field and \
-               image_field.get(context) and \
-               image_field.get(context).get_size():
-                data['image'] = '%s/image' % context.absolute_url()
+        data['image'] = self.getImage()
 
         if data:
             return json.dumps(data, indent=4)
