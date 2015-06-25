@@ -54,7 +54,7 @@ def createPerson(psu_id, profile_url = None):
     if profile_url:
         o.primary_profile = profile_url
         o.setLayout('person_redirect_view')
-        syncPerson(o, force=True)
+        syncPerson(o, force=True, full=True)
 
     o.reindexObject()
     
@@ -67,7 +67,7 @@ def isAlias(o):
     # Determine if an alias by profile URL and view
     return (getProfileURL(o) and o.getLayout() in ['person_redirect_view'])
 
-def syncPerson(o, force=False):
+def syncPerson(o, force=False, full=False):
 
     # Skip if we're not an alias
     if not isAlias(o):
@@ -112,26 +112,33 @@ def syncPerson(o, force=False):
     o.setMiddleName(data.get('middle_name', ''))
     o.setLastName(data.get('last_name', ''))
     o.setSuffix(data.get('suffix_name', ''))
-    o.setJobTitles(data.get('job_titles', []))
     o.setEmail(data.get('email', ''))
     o.setOfficePhone(data.get('office_phone', ''))    
     o.setOfficeAddress(data.get('office_address', ''))
     o.setOfficeCity(data.get('office_city', ''))
     o.setOfficeState(data.get('officestate', ''))
     o.setOfficePostalCode(data.get('office_postal_code', ''))
-    o.department_research_areas = data.get('department_research_areas', [])
-    o.extension_areas = data.get('extension_areas', [])
-    
-    # Classifications
-    classification_names = data.get('directory_classifications', [])
-    classification_names_to_add = set(classification_names) - set(o.getClassificationNames())
 
-    if classification_names_to_add:        
-        directory = o.aq_parent
-        classifications_to_add = [x.UID for x in directory.getClassifications() if x.Title in classification_names_to_add]
-        current_classifications = o.getRawClassifications()
-        current_classifications.extend(classifications_to_add)
-        o.setClassifications(current_classifications)
+    # If "full" (e.g. full sync of all fields) is specified.
+    # This prevents department-specific attributes (job title, areas of 
+    # expertise, and classifications) from being overridden unless explicitly
+    # requested.
+    
+    if full:
+        o.setJobTitles(data.get('job_titles', []))
+        o.department_research_areas = data.get('department_research_areas', [])
+        o.extension_areas = data.get('extension_areas', [])
+    
+        # Classifications
+        classification_names = data.get('directory_classifications', [])
+        classification_names_to_add = set(classification_names) - set(o.getClassificationNames())
+    
+        if classification_names_to_add:        
+            directory = o.aq_parent
+            classifications_to_add = [x.UID for x in directory.getClassifications() if x.Title in classification_names_to_add]
+            current_classifications = o.getRawClassifications()
+            current_classifications.extend(classifications_to_add)
+            o.setClassifications(current_classifications)
 
     o.reindexObject()
 
