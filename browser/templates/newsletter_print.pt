@@ -361,7 +361,7 @@
                         {
                             for (var i=2; i<leadimage.size(); i++)
                             {
-                                $(leadimage[i]).hide();
+                                $(leadimage[i]).removeClass('contentLeadImageContainer');
                             }
                         }
                     }
