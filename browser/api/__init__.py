@@ -49,7 +49,6 @@ class BaseView(BrowserView):
             'Creator',
             'CreationDate',
             'Date',
-            'department_research_areas',
             'EffectiveDate',
             'effectiveRange',
             'ExpirationDate',
