@@ -2645,9 +2645,9 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 table.listing,
 table.plain,
 table.grid {
-    font-size: 0.875em;
+    font-size: 1em;
     margin: 1em 0;
-    caption-side: bottom;
+    caption-side: top;
 }
 
 table.listing caption,
