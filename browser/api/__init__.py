@@ -1,3 +1,5 @@
+from agsci.w3c.content import getText
+from BeautifulSoup import BeautifulSoup
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
@@ -7,6 +9,7 @@ import Missing
 import json
 import re
 import urllib2
+import urlparse
 
 first_cap_re = re.compile('(.)([A-Z][a-z]+)')
 all_cap_re = re.compile('([a-z0-9])([A-Z])')
@@ -21,6 +24,12 @@ class BaseView(BrowserView):
     @property
     def portal_catalog(self):
         return getToolByName(self.context, 'portal_catalog')
+
+    def html_to_text(self, html):
+        portal_transforms = getToolByName(self.context, 'portal_transforms')
+        text = portal_transforms.convert('html_to_text', html).getData()
+        return text
+        
 
     def getMetadata(self):
         m = self.portal_catalog.getMetadataForUID("/".join(self.context.getPhysicalPath()))
@@ -115,11 +124,31 @@ class BaseView(BrowserView):
         data = self.getCatalogData()
 
         # Object URL
-        data['url'] = self.context.absolute_url()
+        url = self.context.absolute_url()
+        data['url'] = url
         
         if data.get('hasContentLeadImage', False):
             img_field = getImageAndCaptionFieldNames(self.context)[0]
             data['image_url'] = '%s/%s' % (data['url'], img_field)
+
+        # Get the html and text of the content if the 'full' parameter is used
+        if self.request.form.get('full', None):
+            try:
+                html = getText(self.context)
+            except:
+                pass
+            else:    
+                if html:
+                    soup = BeautifulSoup(html)
+                    
+                    # Convert relative img src to full URL path
+                    for img in soup.findAll('img'):
+                        src = img.get('src')
+                        if src and not src.startswith('http'):
+                            img['src'] = urlparse.urljoin(url, src)
+                    
+                    data['html'] = repr(soup)
+                    data['text'] = self.html_to_text(html)
 
         return data
     
