@@ -148,7 +148,7 @@ class BaseView(BrowserView):
                             img['src'] = urlparse.urljoin(url, src)
                     
                     data['html'] = repr(soup)
-                    data['text'] = self.html_to_text(html)
+                    data['text'] = self.html_to_text(html).strip()
 
         return data
     
