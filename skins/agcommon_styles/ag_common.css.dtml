@@ -2645,7 +2645,7 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 table.listing,
 table.plain,
 table.grid {
-    font-size: 1em;
+    font-size: 0.875em;
     margin: 1em 0;
     caption-side: top;
 }
@@ -2655,7 +2655,7 @@ table.plain caption,
 table.grid caption {
     text-align: left;
     margin-top: 0.375em;
-    font-size: 0.875em;
+    font-size: 1em;
     color: #575757;
 }
 
