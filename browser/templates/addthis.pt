@@ -17,7 +17,7 @@
         var addthis_share = 
         {
             templates : {
-                twitter : '{{title}} - {{url}} via @agsciences'
+                twitter : '{{title}} - {{url}}'
             },
             url_transforms: {
                 shorten: {
