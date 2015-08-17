@@ -1074,6 +1074,30 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
             
         return None
 
+# Google Tag Manager
+# Note: This is not called from configure.zcml like a standard viewlet.  Google 
+# documentation says to include it immediately after the body tag, so that's 
+# what we're doing in this case.  This is called from main_template with:
+#
+#    <tal:googletagmanager
+#        replace="structure provider:agcommon.googletagmanager" />
+#
+# which renders the viewlet as part of the template.  This uses the
+# "provideAdapter" line at the bottom of this file.
+
+class GoogleTagManagerViewlet(AgCommonViewlet):
+    index = ViewPageTemplateFile('templates/google_tag_manager.pt')
+
+    @property
+    def gtm_account(self):
+
+        # No tag manager for logged in users.
+        if not self.anonymous:
+            return None
+
+        ptool = getToolByName(self.context, "portal_properties")
+
+        return ptool.agcommon_properties.getProperty('gtm_account', None)
 
 # provideAdapter for viewlets to be registered in standalone mode
 
@@ -1082,3 +1106,5 @@ provideAdapter(ContributorsViewlet, adapts=(Interface,IDefaultBrowserLayer,IBrow
 provideAdapter(AnalyticsViewlet, adapts=(Interface,IDefaultBrowserLayer,IBrowserView), provides=IContentProvider, name='plone.analytics')
 
 provideAdapter(AddThisViewlet, adapts=(Interface,IDefaultBrowserLayer,IBrowserView), provides=IContentProvider, name='agcommon.addthis')
+
+provideAdapter(GoogleTagManagerViewlet, adapts=(Interface,IDefaultBrowserLayer,IBrowserView), provides=IContentProvider, name='agcommon.googletagmanager')
