@@ -2372,9 +2372,10 @@ body.popup, body.atrefbrowser {
 
 body.template-news_listing .effectiveDate,
 body.template-folder_listing_z3 .effectiveDate,
-body.template-folder_summary_view_z3 .effectiveDate {
+body.template-folder_summary_view_z3 .effectiveDate,
+body.template-subfolder_view .effectiveDate {
     margin-bottom: 0.6875em;
-    margin-top: 0.25em;
+    margin-top: 0.125em;
     font-size: 0.875em;
     color: #76797c;
     font-weight: normal;
