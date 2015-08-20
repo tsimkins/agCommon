@@ -2,6 +2,7 @@ from AccessControl import getSecurityManager
 from Acquisition import aq_inner, aq_base, aq_chain
 from DateTime import DateTime
 from .. import toISO
+from Products.AD54Elements.browser.viewlets import MultiSearchViewlet
 from Products.ATContentTypes.interfaces.event import IATEvent
 from Products.ATContentTypes.interfaces.news import IATNewsItem
 from Products.FacultyStaffDirectory.interfaces.person import IPerson
@@ -79,16 +80,12 @@ class AgCommonViewlet(ViewletBase):
     @property
     def homepage_h2(self):
         return getContextConfig(self.context, 'homepage_h2')
+
     @property
     def hide_breadcrumbs(self):
         # Determine if we should hide breadcrumbs
 
-        # If we have a homepage overlay set
-        if self.homepage_h1 or self.homepage_h2:
-            return True
-
-        # If we have a slider configured on a homepage
-        if getattr(self.context, 'portal_type') in ['HomePage'] and self.context.getReferences(relationship = 'IsHomePageSliderFor'):
+        if self.isHomePage:
             return True
 
         return getContextConfig(self.context, 'hide_breadcrumbs', False)
@@ -909,6 +906,9 @@ class PortletsAboveViewlet(_ContentWellPortletsViewlet):
 class FooterPortletsViewlet(_ContentWellPortletsViewlet):
     name = 'FooterPortletManager'
     manage_view = '@@manage-portletsfooter'
+
+class SearchBoxViewlet(MultiSearchViewlet):
+    pass
 
 class LocalSearchViewlet(SearchBoxViewlet):
 

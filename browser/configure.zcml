@@ -122,7 +122,7 @@
     <browser:viewlet
         name="plone.searchbox"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-        class="plone.app.layout.viewlets.common.SearchBoxViewlet"
+        class=".viewlets.SearchBoxViewlet"
         template="templates/searchbox.pt"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
@@ -161,7 +161,7 @@
     <!-- The breadcrumbs -->
     <browser:viewlet
         name="plone.path_bar"
-        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
         class=".viewlets.PathBarViewlet"
         template="templates/path_bar.pt"
         layer=".interfaces.IThemeSpecific"

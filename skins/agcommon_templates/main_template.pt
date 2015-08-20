@@ -140,6 +140,8 @@
         <div tal:replace="structure provider:plone.portaltop" tal:condition="not:ajax_load" />
     </div>
 
+    <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
+
     <div id="visual-portal-wrapper">
 
         <metal:header define-slot="printheader" tal:content="nothing">
@@ -166,8 +168,6 @@
             <tal:comment replace="nothing"> Start of main content block </tal:comment>
             <div id="portal-column-content"
                 tal:attributes="class python:(sl and sr and 'sl sr') or (sl and 'sl') or (sr and 'sr') or 's0'">
-
-              <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
 
               <metal:block define-slot="content">
                 <div metal:define-macro="content"

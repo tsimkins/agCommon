@@ -8,10 +8,7 @@
 /* = body =================================================== */
 
 body {
-    background-color: &dtml-bodyBackgroundGradientColor;;
-    background-position: 0 -280px;
-    background-repeat: repeat-x;
-    background-image: url(&dtml-portal_url;/background-sprites.png);
+    background-color: #CFCFCF;
     color: #000000;
     background-repeat: repeat-x;
     font-size: 100%;
@@ -22,24 +19,19 @@ body {
 
 #visual-portal-wrapper {
     background-color: #FFFFFF;
-    margin: 1em auto 0 auto;
+    margin: 0 auto;
     padding: 0;
     max-width: &dtml-maxWidth;;
-    /* Drop Shadow */
-    -moz-box-shadow: 0 0 0.375em #333333;
-    -webkit-box-shadow: 0 0 0.375em #333333;
-    box-shadow: 0 0 0.375em #333333;
-    position: relative;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: #DDDDDD;
 }
 
 /* = portal-top ============================================= */
 
 #portal-top {
     margin: 0;
-    background-image:url('&dtml-portal_url;/bg-header.jpg');
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    background-color: &dtml-portalHeaderBackgroundColor;;
+    background-color: #FFFFFF;
 }
 
 /* = Adjust visual-portal-wrapper and portal-top for no top nav = */
@@ -58,10 +50,9 @@ body.icons-on.empty-top-navigation #portal-top {
 
 #portal-header {
     margin: 0 auto;
-    padding: 0 0 0.75em 0;
+    padding: 0.375em 0 0.5em 0;
     max-width: &dtml-maxWidth;;
     text-align: left;
-    position: relative;
 }
 
 #portal-header a {
@@ -72,29 +63,56 @@ body.icons-on.empty-top-navigation #portal-top {
 
 /* = portal-searchbox ====================================== */
 
-#portal-searchbox {
-    margin: 0.25em;
-    padding: 0 0.25em 0 0;
+#portal-header #portal-searchbox {
+    margin: 1.25em 0;
+    padding: 0;
     position: absolute;
     right: 0;
-    top: 1px;
+    top: 8px;
     clear: none;
     float: none;
     font-size: 1em;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    width: 27.533039647577%;
+}
+
+#portal-header #portal-searchbox form {
+    position: absolute;
+    right: 0;
+    left: 0;
 }
 
 .searchSection {
     display: none;
 }
 
-#portal-searchbox input.searchButton {
-    background-color: transparent;
-    background-image: none;
+#portal-header #portal-searchbox .searchContainer div {
+    border: 1px solid #666666;
+}
+
+#portal-header #portal-searchbox .searchform #searchString {
+    box-shadow: none;
     border: none;
-    padding: 0.125em 0 0 0;
-    margin: 0 0 0 -0.125em;
-    vertical-align: middle;
-    width: 18px;
+    border-radius: 0;
+    padding: 0.25em 2.072538860104%;
+    height: auto;
+    margin: 0;
+    font-size: 0.75em;
+    vertical-align: top;
+    width: 86.4%;
+}
+
+#portal-header #portal-searchbox .searchform .searchbutton {
+    border: none;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    text-shadow: none;
+    background: none;
+    border-radius: 0;
+    margin-right: 5px;
 }
 
 #portal-searchbox label.hiddenStructure {
@@ -108,6 +126,15 @@ body.icons-on.empty-top-navigation #portal-top {
     vertical-align: middle;
 }
 
+#portal-header #portal-searchbox #menu {
+    width: 100%;
+}
+
+#portal-header #portal-searchbox #menu li ul {
+    margin: 22px 0 0 0;
+    width: 90.526315789474%;
+}
+
 #portal-searchbox #searchSource {
     font-size: 0.6875em;
     padding: 0.125em;
@@ -119,11 +146,8 @@ body.icons-on.empty-top-navigation #portal-top {
 /* = logo-psu ============================================== */
 
 #logo-psu {
-    top: 12px;
-    left: 9px;
-    position: absolute;
     display: block;
-    width: 148px;
+    width: 320px;
 }
 
 #logo-psu.subsite {
@@ -152,36 +176,20 @@ body.icons-on.empty-top-navigation #portal-top {
     display: none;
 }
 
-
-/* = logo-site ============================================= */
-
-#logo-site {
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: &dtml-siteLogoFontSize;;
-    margin-left: 212px;
-    letter-spacing: 0.02em;
-    position: static;
-    margin-top: 45px;
-    color: #FFFFFF;
-    display: block;
-    padding-right: 1em;
-}
-
-
 /* = portal-breadcrumbs ==================================== */
 
 #portal-breadcrumbs {
     background-color: &dtml-insideBreadcrumbBackgroundColor;;
     color: &dtml-insideBreadcrumbTextColor;;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.125em;
     letter-spacing: 0.025em;
     padding-left: 0;
     padding-right: 0;
     padding-top: 0.375em;
     padding-bottom: 0.375em;
     border-bottom: 0;
-    margin: 0.25em 1.375em 0.25em 1.375em;
+    margin: 0.25em 0;
     line-height: 1.125em;
 }
 
@@ -193,12 +201,13 @@ body.icons-on.empty-top-navigation #portal-top {
     font-size: 0.625em;
 }
 
-#portal-breadcrumbs a {
+#content #portal-breadcrumbs a {
     color: &dtml-insideBreadcrumbLinkColor;;
     font-weight: normal;
+    border-bottom: none;
 }
 
-#portal-breadcrumbs a:hover {
+#content #portal-breadcrumbs a:hover {
     text-decoration: underline;
 }
 
@@ -1178,23 +1187,12 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
 
 #portal-top-navigation {
     margin: 0 auto;
-    max-width: &dtml-maxWidth;;
     padding: 0;
 
     background-color: #1f4b7b;
     background-repeat: repeat-x;
     background-image: url(&dtml-portal_url;/background-sprites.png);
     background-position: 0 -275px;
-
-    /* Fix bleed-through of image in Safari and Chrome */
-    position: relative;
-    border-width: 0;
-    text-align: center;
-    bottom: -1em;
-    /* Drop Shadow */
-    -moz-box-shadow: 0 0 0.375em #333333;
-    -webkit-box-shadow: 0 0 0.375em #333333;
-    box-shadow: 0 0 0.375em #333333;
 }
 
 #portal-top-navigation.empty {
@@ -1203,6 +1201,7 @@ body.empty-top-navigation #portal-column-one .portletNavigationHeader {
 }
 
 #portal-top-navigation ul {
+    max-width: &dtml-maxWidth;;
     display: block;
     text-align: left;
     margin: 0 auto;
@@ -1840,7 +1839,7 @@ body.template-person_view #content h3 {
     border: none;
     display: block;
     float: right;
-    margin: -0.25em 0 0 0.5em;
+    margin: 0 0 0 0.5em;
 }
 
 #addthis a {
@@ -2829,8 +2828,6 @@ body.template-subfolder_view div#two-column-left, body.template-subfolder_view d
     font-size: 0.75em;
     margin: 0 auto;
     max-width: &dtml-maxWidth;;
-    position: relative;
-    bottom: -1.333333333333333em; /* Inverse of font size! */
     z-index: 25;
     background-color: #e3e3e3;
     border: 1px solid #333333;
@@ -2843,10 +2840,6 @@ body.template-subfolder_view div#two-column-left, body.template-subfolder_view d
 
 body.icons-on #portal-header {
     padding-bottom: 1em;
-}
-
-body.icons-on #visual-portal-wrapper {
-    margin-top: 1em;
 }
 
 #portal-personaltools-wrapper .actionMenu.activated .actionMenuContent {

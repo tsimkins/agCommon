@@ -985,7 +985,7 @@ function equalizeTopNav() {
         return false;
     }
 
-    topnav = jq('#portal-top-navigation');
+    topnav = jq('#portal-top-navigation ul');
     topnavitems = jq('#portal-top-navigation li a');
     min_padding = 4;
     if (topnav && topnavitems)

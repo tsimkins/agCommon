@@ -11,16 +11,17 @@
 	background-color: transparent;
 	border: 0 none;
 	display: block;
-	margin: 0 0 0.25em 0 ; 
-	width: 100%;
+	margin: 0 auto; 
+    max-width: &dtml-maxWidth;;
 	text-align: left;
 	padding: 0;
 	background-repeat: no-repeat;
 	background-size: 100%;
+	position: relative;
 }
 
 #portal-column-content.sl #homepageimage {
-	margin: 0.25em 0.424929178470255% 0.25em 0.56657223796034%; /* L:4/706, R:3/706 */
+	margin: 0.25em 0.424929178470255% 0.42492917847025525em 0.56657223796034%; /* L:4/706, R:3/706 */
 	width: 99.008498583569405%;  /* 699/706 */
 }
 
@@ -57,6 +58,23 @@
 	color: &dtml-homepageH1TextColor;;
 	font-family: Georgia, "Times New Roman", serif;
 	letter-spacing: 0.06em;
+	position: absolute;
+	bottom: 0;
+	padding: 0.5em 1.101321585903%;
+	width: 97.797356828194%;
+	z-index: 0;
+}
+
+#homepageimage h1:after {
+    content: "";
+    background-color: #000000;
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
 }
 
 #homepageimage h2 {

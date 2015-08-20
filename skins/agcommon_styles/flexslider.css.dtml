@@ -73,9 +73,10 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 /* Custom */
 
 .flexslider {
-    border: 1px solid #B3BBBF;
-    margin: 0.25em 0.567375886524823% 0.75em 0.567375886524823%;
+    border: none;
+    margin: 0 auto;
     border-radius: 0;
+    max-width: &dtml-maxWidth;;
     background-color: #F6F6F6;
 }
 
@@ -83,6 +84,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
     border-top: none;
     margin: 0;
     padding: 0;
+    background-color: #F6F6F6;
 }
 
 .flexslider .tileImage {
