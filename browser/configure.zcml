@@ -26,7 +26,15 @@
         interface=".interfaces.IFSDShortBio" />
 
     <!-- Viewlets -->
-    
+
+    <browser:viewlet
+        name="plone.links.favicon"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+        class="plone.app.layout.links.viewlets.FaviconViewlet"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <!-- Render the browser title -->
     <browser:viewlet
         name="agcommon.htmlhead.title"

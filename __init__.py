@@ -250,11 +250,7 @@ def getHomepageImage(context):
             homepageImage.css('background-position', backgroundAlignments[randomnumber] + " top");
             homepageImage.css("height", backgroundHeights[randomnumber] + 'px');
 
-            jq("body.template-document_homepage_view #homepageimage div.overlay").each(
-                function () {
-                    jq(this).css("height", backgroundHeights[randomnumber] + 'px');
-                }
-            );
+            homepageImage.addClass("image");
 
             if (backgrounds.length && breadcrumbs.length)
             {

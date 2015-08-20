@@ -1,6 +1,7 @@
-<div id="homepageimage" tal:condition="python: view.isLayout(views=['document_homepage_view']) and view.image_format == 'standard' and not view.slider_has_contents" tal:attributes="class python: view.hide_breadcrumbs and 'nobreadcrumbs' or ''">
+<div id="homepageimage" tal:condition="not:view/slider_has_contents" tal:attributes="class python: view.hide_breadcrumbs and 'nobreadcrumbs' or ''">
 
-    <h1 tal:content="context/Title|nothing" />
+    <h1 tal:attributes="class python: view.showTitle and 'visibleStructure' or 'hiddenStructure'"
+        tal:content="context/Title|nothing" />
 
 </div>
 

@@ -44,28 +44,30 @@
 
 /* -------------- Homepage Image overlay ------------------ */
 
-#homepageimage h1, #homepageimage h2 {
+#homepageimage h1 {
 	display: block;
 	margin: 0;
 	padding: 0;
-	background-color: transparent;
+	background-color: &dtml-footerBackgroundColor;;
 	border-width: 0;
-}
-
-#homepageimage h1 {
 	font-size: 1.4375em;
 	font-weight: 500;
-	color: &dtml-homepageH1TextColor;;
+    color: #FFFFFF;
 	font-family: Georgia, "Times New Roman", serif;
 	letter-spacing: 0.06em;
-	position: absolute;
-	bottom: 0;
 	padding: 0.5em 1.101321585903%;
 	width: 97.797356828194%;
+}
+
+#homepageimage.image h1 {
+	background-color: transparent;
+	color: &dtml-homepageH1TextColor;;
+	position: absolute;
+	bottom: 0;
 	z-index: 0;
 }
 
-#homepageimage h1:after {
+#homepageimage.image h1.visibleStructure:after {
     content: "";
     background-color: #000000;
     opacity: 0.75;

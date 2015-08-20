@@ -302,6 +302,16 @@ class HomepageImageViewlet(AgCommonViewlet):
     def slider_has_contents(self):
         return (len(self.folderContents()) > 0)
 
+    # Don't show the title if we have a slider.
+    # Don't show it if we're the site root.
+    @property
+    def showTitle(self):
+        if self.slider_has_contents:
+            return False
+        
+        return not IPloneSiteRoot.providedBy(self.context.aq_parent)
+        
+
 class FlexsliderViewlet(HomepageImageViewlet, FolderView):
     index = ViewPageTemplateFile('templates/flexslider.pt')
 

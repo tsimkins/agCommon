@@ -7,10 +7,14 @@
 
 /* Content Well Portlets for Sitemap */
 
-#portlets-footer {
+#portlets-footer-wrapper {
 	background-color: &dtml-sitemapBackgroundColor;;
+}
+
+#portlets-footer {
+    max-width: &dtml-maxWidth;;
 	font-size: 0.625em;
-	margin: 0;
+	margin: 0 auto;
     border-width: 0;
     border-style: solid;
     border-color:  &dtml-sitemapBackgroundColor;;
