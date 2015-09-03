@@ -1,0 +1,10 @@
+<div 
+    id="section-title"
+    tal:define="section_title view/section_title|nothing"
+    tal:condition="section_title">
+
+    <a 
+        tal:attributes="href view/section_url|nothing" 
+        tal:content="section_title" />
+
+</div>

@@ -140,9 +140,9 @@
         <div tal:replace="structure provider:plone.portaltop" tal:condition="not:ajax_load" />
     </div>
 
-    <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
-
     <div id="visual-portal-wrapper">
+
+        <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
 
         <metal:header define-slot="printheader" tal:content="nothing">
             Visual Header

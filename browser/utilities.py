@@ -1,4 +1,4 @@
-from Acquisition import aq_base
+from Acquisition import aq_base, aq_chain
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.CMFPlone.utils import normalizeString
@@ -6,6 +6,7 @@ from Products.Five import BrowserView
 from Products.ZCatalog.CatalogBrains import AbstractCatalogBrain
 from Products.agCommon import getContextConfig
 from Products.agCommon import increaseHeadingLevel as _increaseHeadingLevel
+from agsci.subsite.content.interfaces import ISection, ISubsite
 from urllib import urlencode
 from zope.component import getMultiAdapter
 from zope.interface import implements, Interface
@@ -24,6 +25,7 @@ except ImportError:
         """
             Placeholder interface
         """
+
 try:
     from agsci.ExtensionExtender.interfaces import IExtensionCourseExtender
 except ImportError:
@@ -54,6 +56,9 @@ class IAgCommonUtilities(Interface):
         pass
 
     def contentFilter(self):
+        pass
+
+    def getSection(self):
         pass
 
 
@@ -348,3 +353,15 @@ class AgCommonUtilities(BrowserView):
 
     def increaseHeadingLevel(self, text):
         return _increaseHeadingLevel(text)
+
+    def getSection(self):
+
+        for i in aq_chain(self.context):
+
+            if ISection.providedBy(i) or ISubsite.providedBy(i):
+                return i
+
+            if IPloneSiteRoot.providedBy(i):
+                break
+
+        return None

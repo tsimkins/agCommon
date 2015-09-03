@@ -8,7 +8,8 @@
 
 /*------------------------- large-site.css ------------------------------*/
 
-@media handheld, screen and (min-width: 891px) {
+@media handheld, screen and (min-width: 960px) {
+    
     .contentLeadImageContainer {
         max-width: 52.7107%;
     }
@@ -48,12 +49,26 @@
 /*------------------------- resolution-890.css ------------------------------*/
 
 @media handheld, screen and (max-width: 890px) {
-    
+
+    #portal-header {
+        padding: 1em 0.75em 1.75em;
+    }
+
+    #section-title {
+        margin: 0.5em 0;
+    }
+
+    #portal-top-navigation ul,
     #visual-portal-wrapper {
-        padding: 0;
+        padding: 0 0.75em;
         box-shadow: none;
         min-width: 0;
         border: none;
+    }
+    
+    #portal-columns {
+        padding: 0;
+        width: 100%;
     }
     
     img, embed, object {
@@ -119,6 +134,20 @@
     body {
         background-image: none;
         background-color: #FFFFFF;
+    }
+    
+    #portal-breadcrumbs {
+        margin-top: 0;
+        padding: 0.75em 0.75em 0;
+    }
+
+    #section-title {
+        margin-left: 0.375em;
+        margin-right: 0.375em;
+    }
+    
+    #portal-header #portal-searchbox #menu li ul {
+        width: 100%;
     }
     
     #content #rightcolumn, 
@@ -213,18 +242,6 @@
         display: none !important;
     }
     
-    body.template-panorama_homepage_view #portal-breadcrumbs,
-    body.template-tile_homepage_view #portal-breadcrumbs {
-        display: none;
-    }
-    
-    #portal-column-content #portal-breadcrumbs.homepage {
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 1.624365482233503%;    
-        padding-right: 1.624365482233503%;
-    }
-    
     #homepageimage embed {
         display: none;
     }
@@ -235,14 +252,6 @@
         width: 100%;
         background-size: 100% auto;
         background-color: #FFFFFF;
-    }
-    
-    #homepageimage.nobreadcrumbs {
-        margin-top: 0.3125em !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        width: 100% !important;
-        height: 100%;
     }
     
     div.FooterPortletManager1,
@@ -258,11 +267,6 @@
     #portlets-footer > div:nth-child(2n + 1) {
         clear: left;
     }
-
-    #portal-breadcrumbs {
-        margin: 0;
-    }
-    
     
     #portal-top {
         background-position: left top;
@@ -278,11 +282,11 @@
     }
     
     #portal-columns {
-        margin-top: 0.125em;
+        padding-top: 0.25em;
     }
     
     #portal-top-navigation {
-        margin: 0.1875em 0;
+        margin: 0.1875em 0 0 0;
         padding: 0 0 0.125em 0;
         background-color: #FFFFFF;
         background-image: none;
@@ -313,9 +317,6 @@
         box-shadow: 0 0 0.125em #666666;
         border-radius: 2px;
         background-color: &dtml-topnavigationBackgroundColor;;
-        background-image:url('&dtml-portal_url;/topnav-gradientBackground.png?startColor=<dtml-var expr="topnavigationBackgroundColor.replace('#','')">&endColor=<dtml-var expr="topnavigationGradientBackground.replace('#','')">&height=20');
-        background-repeat: repeat-x;
-        background-position: bottom left;
         color:  &dtml-topnavigationTextColor; !important;
         text-align: left;
     }
@@ -377,27 +378,8 @@
         width: 100%;
     }
     
-    #logo-psu, #logo-psu.subsite {
-        width: 225px;
-    }
-    
-    #logo-psu.subsite {
-        overflow: hidden;
-    }
-    
-    #logo-psu.subsite img {
-        max-width: 128.4796573875803%;
-        width: 128.4796573875803%;
-    }
-    
-    #logo-site {
-        margin-left: 128px;
-        font-size: 1.4375em;
-        margin-top: 36px;
-    }
-    
-    #logo-college {
-        display: none;
+    #logo-psu {
+        width: 300px;
     }
     
     /* General nomobile override */
@@ -413,7 +395,7 @@
     
     #visual-portal-wrapper {
         margin-top: 0;
-        background-color: transparent;
+        padding: 0;
     }
     
     #portal-header {
@@ -438,11 +420,11 @@
     /* Flexslider */
     
     #viewlet-above-content .flexslider .contentLeadImageContainer img {
-        max-height: 303px;
+        max-height: 412px;
     }
 
     #viewlet-above-content .flex-control-nav {
-        margin-left: 0.375em;
+        margin-left: 1em;
     }
     
     #viewlet-above-content .flexslider {
@@ -461,7 +443,7 @@
     }
 
     #viewlet-above-content .flexslider .flexslider-text {
-        margin: 0 0.5em;
+        margin: 0 1em;
         padding: 0;
         width: auto;
     }
@@ -715,10 +697,6 @@
         padding: 0;
     }
     
-    #portal-breadcrumbs {
-        display: none;
-    }
-    
     #portal-columns {
         display: block;
     }
@@ -953,21 +931,6 @@
         display: none;
     }
     
-    #logo-psu, #logo-psu.subsite {
-        width: 175px;
-        margin-left: 8px;
-    }
-    
-    #logo-site {
-        font-size: 1.1875em;
-        margin-left: 100px;
-        margin-top: 30px;
-    }
-    
-    #logo-site.extension {
-        width: 230px;
-    }
-    
     #portlets-mobile .imagePortlet a {
         text-align: left;
     }
@@ -1037,14 +1000,19 @@
     
     #search-mobile #portal-searchbox {
         position: relative;
-        width: 95.384615384615385%;  /* (520-24)/520 */
-        margin: 1em 2.307692307692308%;  /* 12/520 */
+        width: 98.461538461538%;  /* (520-8)/520 */
+        margin: 1em 0.769230769231%;  /* 4/520 */
         text-decoration: none;
         top: 0;
         left: 0;
         padding: 0;
+        border-radius: 0;
     }
     
+    #search-mobile #portal-searchbox #menu {
+        width: 100%;
+        display: block;
+    }
     .LSBox {
         display: block;
         text-align: left;

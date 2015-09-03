@@ -73,7 +73,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 /* Custom */
 
 .flexslider {
-    border: none;
+    border-width: 0;
     margin: 0 auto;
     border-radius: 0;
     max-width: &dtml-maxWidth;;
@@ -102,11 +102,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flexslider .contentLeadImageContainer img {
     margin: 0;
     width: 100%;
-    max-height: 340px;
-}
-
-#portal-column-content.sl .flexslider .contentLeadImageContainer img {
-    max-height: 265px;
+    max-height: 380px;
 }
 
 .flexslider .flexslider-text {

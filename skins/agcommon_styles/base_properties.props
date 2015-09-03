@@ -48,31 +48,34 @@ globalBackgroundColor:string=#FCF2CF
 evenRowBackgroundColor:string=#FDF8E2 
 oddRowBackgroundColor:string=transparent
 
-maxWidth:string=908px
+maxWidth:string=1000px
 minWidth:string=785px
 
 siteLogoTopMargin:string=42px
 siteLogoFontSize:string=23px
+
+sectionTitleTextColor:string=#1B1D1F
 
 portalHeaderBackgroundColor:string=#1E2D4C;
 
 insideBreadcrumbBackgroundColor:string=transparent
 insideBreadcrumbTextColor:string=#333333
 insideBreadcrumbSeparatorColor:string=#715C3C
-insideBreadcrumbLinkColor:string=#265FCF
+insideBreadcrumbLinkColor:string=#1B5597
 
 breadcrumbBackgroundColor:string=#333333
 breadcrumbTextColor:string=#FFFFFF
 breadcrumbSeparatorColor:string=#EFC177
 breadcrumbLinkColor:string=#FFFFFF
 
-topnavigationBackgroundColor:string=#215996
+topnavigationBackgroundColor:string=#1F4B7B
+topnavigationBackgroundHoverColor:string=#1E407C
 topnavigationButtonBackgroundColor:string=transparent
 topnavigationTextColor:string=#F6F6F6
 topnavigationTextHoverColor:string=#FFFDF1
 topnavigationGradientBackground:string=#1F4B7B
 
-topnavigationAlternateBackgroundColor:string=#0075BD
+topnavigationAlternateBackgroundColor:string=#0A63AC
 topnavigationAlternateGradientBackground:string=#0A63AC
 topnavigationAlternateTextColor:string=#FFFFFF
 topnavigationAlternateTextHoverColor:string=#FFFFFF

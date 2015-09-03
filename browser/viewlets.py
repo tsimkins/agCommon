@@ -14,7 +14,6 @@ from Products.ContentWellPortlets.browser.viewlets import ContentWellPortletsVie
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile, ZopeTwoPageTemplateFile
 from Products.agCommon import getContextConfig, scrubPhone
 from Products.agCommon.browser.views import FolderView, PublicationView
-from agsci.subsite.content.interfaces import ISection, ISubsite
 from cgi import escape
 from collective.contentleadimage.utils import getImageAndCaptionFields, getImageAndCaptionFieldNames
 from collective.contentleadimage.browser.viewlets import LeadImageViewlet
@@ -82,10 +81,14 @@ class AgCommonViewlet(ViewletBase):
         return getContextConfig(self.context, 'homepage_h2')
 
     @property
+    def isSiteHomepage(self):
+        return (self.isHomePage and IPloneSiteRoot.providedBy(self.context.aq_parent))
+
+    @property
     def hide_breadcrumbs(self):
         # Determine if we should hide breadcrumbs
 
-        if self.isHomePage:
+        if self.isSiteHomepage:
             return True
 
         return getContextConfig(self.context, 'hide_breadcrumbs', False)
@@ -180,6 +183,12 @@ class AgCommonViewlet(ViewletBase):
             syntool = getToolByName(self.context, 'portal_syndication')
             return syntool.isSyndicationAllowed(self.context)
 
+    @memoize
+    def getSection(self):
+        v = self.context.restrictedTraverse('@@agcommon_utilities')
+        return v.getSection()
+
+
 
 class PortletViewlet(AgCommonViewlet):
 
@@ -251,7 +260,25 @@ class TopNavigationViewlet(AgCommonViewlet):
     def update(self):
         pass
 
+class SectionTitleViewlet(AgCommonViewlet):
 
+    def section_url(self):
+        section = self.getSection()
+        
+        if section:
+            return section.absolute_url()
+        
+        return None
+
+    
+    def section_title(self):
+        section = self.getSection()
+        
+        if section:
+            return section.Title()
+        
+        return None
+    
 class RightColumnViewlet(PortletViewlet):
     index = ViewPageTemplateFile('templates/rightcolumn.pt')
 

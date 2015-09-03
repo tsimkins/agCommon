@@ -28,6 +28,8 @@ import re
 from Products.Five.utilities.interfaces import IMarkerInterfaces
 from agsci.UniversalExtender.interfaces import IUniversalPublicationExtender, IFilePublicationExtender, ITileFolder
 
+MAX_HOMEPAGE_IMAGE_WIDTH = 950.0
+
 ATTEMPTS = 100
 
 GLOBALS = globals()
@@ -217,22 +219,19 @@ def bodyBackground(context, request):
     
 # Given a context, gets a list of all images and returns a JavaScript snippet
 # that randomly picks one of them.
-#
-# To set an alignment (left, right) set a property of "align" on the image object.
-# Otherwise, it defaults to center.
 
 def getHomepageImage(context):
 
-    (backgrounds, backgroundAlignments, backgroundHeights) = getBackgroundImages(context, maxHeight=265)
+    (backgrounds, backgroundHeights) = getBackgroundImages(context)
     
     if not len(backgrounds):
         backgrounds = ['homepage_placeholder.jpg']
-        backgroundAlignments = ['left']
-        backgroundHeights = ['265']
+        backgroundHeights = ['345']
     
     return """
 
     var homepageBackgroundHeight = 0;
+    var maxHomepageImageWidth = %d;
 
     function setHomepageImage() {
         homepageImage = jq("body.template-document_homepage_view #homepageimage");
@@ -240,66 +239,32 @@ def getHomepageImage(context):
         if (homepageImage.length)
         {
             var backgrounds = "%s".split(";");
-            var backgroundAlignments = "%s".split(";");
             var backgroundHeights = "%s".split(";");
             var randomnumber = Math.floor(Math.random()*backgrounds.length);
 
             homepageBackgroundHeight = backgroundHeights[randomnumber];
 
             homepageImage.css('background-image', "url(" + backgrounds[randomnumber] + ")");
-            homepageImage.css('background-position', backgroundAlignments[randomnumber] + " top");
             homepageImage.css("height", backgroundHeights[randomnumber] + 'px');
 
             homepageImage.addClass("image");
 
-            if (backgrounds.length && breadcrumbs.length)
-            {
-                breadcrumbs.addClass("homepage");
-                var outerHeight = breadcrumbs.outerHeight();
-                var outerHeightMargins = breadcrumbs.outerHeight(true);
-                var adjustment = (outerHeight+outerHeightMargins)/2; // Why does this work?
-                homepageImage.css('margin-top', (-1*adjustment) + 'px');
-            }
-
-            %s
-            
             scaleHomepageImage();
             
         }
     }
 
     function scaleHomepageImage() {
-        var homepageImage = jq("body.template-document_homepage_view #homepageimage");
-        var hasLeftColumn = jq("#portal-column-one").size() ? true : false;
+        var homepageImage = jq("#homepageimage");
 
-        if (homepageImage && hasLeftColumn)
+        if (homepageImage)
         {
-            var ratio = homepageImage.width()/700; // Homepage image height
+            var ratio = homepageImage.width()/maxHomepageImageWidth; // Homepage image ratio
             var newHeight = ratio*homepageBackgroundHeight;
             homepageImage.css("height", newHeight + 'px');
-
-            jq("body.template-document_homepage_view #homepageimage div.overlay").each(
-                function () {
-                    jq(this).css("height", newHeight + 'px');
-                }
-            );
-
-            jq("body.template-document_homepage_view #homepageimage div.text").each(
-                function () {
-                    jq(this).css("font-size", ratio + 'em');
-                }
-            );
-
-            jq("body.template-document_homepage_view #homepageimage embed").each(
-                function () {
-                    jq(this).attr("height", newHeight);
-                }
-            );
-
         }
         
     }
-        
 
     jq(document).ready(
         function () {
@@ -313,14 +278,14 @@ def getHomepageImage(context):
         }
     );
 
-    """ % (";".join(backgrounds), ";".join(backgroundAlignments), ";".join(backgroundHeights), getFlashOverlayCode(context))
+    """ % (MAX_HOMEPAGE_IMAGE_WIDTH, ";".join(backgrounds), ";".join(backgroundHeights))
 
 def getPortletHomepageImage(context, homepage_type="portlet"):
     return getPanoramaHomepageImage(context, homepage_type="portlet")
 
 def getPanoramaHomepageImage(context, homepage_type="document"):
 
-    (backgrounds, backgroundAlignments, backgroundHeights) = getBackgroundImages(context, maxHeight=250)
+    (backgrounds, backgroundHeights) = getBackgroundImages(context, maxHeight=250)
     
     if len(backgrounds):
     
@@ -334,7 +299,6 @@ def getPanoramaHomepageImage(context, homepage_type="document"):
             if (portalColumns && visualPortalWrapper)
             {
                 var backgrounds = "%(backgrounds)s".split(";");
-                var backgroundAlignments = "%(alignments)s".split(";");
                 var backgroundHeights = "%(heights)s".split(";");
                 var randomnumber = Math.floor(Math.random()*backgrounds.length) ;
 
@@ -345,7 +309,6 @@ def getPanoramaHomepageImage(context, homepage_type="document"):
                     homepageImage.insertBefore(portalColumns);
                     
                     homepageImage.css("backgroundImage", "url(" + backgrounds[randomnumber] + ")");
-                    homepageImage.css("backgroundPosition", backgroundAlignments[randomnumber] + " top");
                     homepageImage.css("paddingTop", backgroundHeights[randomnumber] + 'px');
             
                     if (breadcrumbs.length)
@@ -362,51 +325,30 @@ def getPanoramaHomepageImage(context, homepage_type="document"):
             }
         }
     );
-    """ % {'homepage_type' : homepage_type, 'backgrounds' :  ";".join(backgrounds), 'alignments' : ";".join(backgroundAlignments), 'heights' : ";".join(backgroundHeights)}
+    """ % {'homepage_type' : homepage_type, 'backgrounds' :  ";".join(backgrounds), 'heights' : ";".join(backgroundHeights)}
 
 def getSubsiteHomepageImage(context):
     return getHomepageImage(context)
 
 
-def getBackgroundImages(context, maxHeight=265):
+def getBackgroundImages(context, maxHeight=345):
     backgrounds = []
-    backgroundAlignments = []
     backgroundHeights = []
     
     for myImage in context.listFolderContents(contentFilter={"portal_type" : "Image"}):
         backgrounds.append(myImage.absolute_url())
-    
-        if myImage.hasProperty("align"):
-            backgroundAlignments.append(myImage.align)
-        else:
-            backgroundAlignments.append("left")
+
+        # Initial scale for image to fit.  Note this is opposite of the dynamic calculation    
+        ratio = MAX_HOMEPAGE_IMAGE_WIDTH/myImage.getWidth()  
         
-        imageHeight = int(myImage.getHeight())
+        imageHeight = myImage.getHeight()*ratio
         
         if imageHeight > maxHeight:
             imageHeight = maxHeight
     
-        backgroundHeights.append(str(imageHeight))
+        backgroundHeights.append('%d' % imageHeight)
         
-    return (backgrounds, backgroundAlignments, backgroundHeights)
-
-def getFlashOverlayCode(context):
-
-    swf_file = ""
-    
-    for myFile in context.listFolderContents(contentFilter={"portal_type" : "File"}):
-        if myFile.absolute_url().endswith(".swf"):
-            swf_file = myFile.absolute_url()
-            break
-
-    if swf_file:
-        return """
-		var so = new SWFObject("%s", "thinkAgain", "585", "265", "8", "transparent");
-		so.addParam("wmode","transparent");
-		so.write("homepageimage");
-        """ % swf_file
-    else:
-        return "// No Flash overlay"
+    return (backgrounds, backgroundHeights)
 
 def makePage(context):
     print context.portal_type

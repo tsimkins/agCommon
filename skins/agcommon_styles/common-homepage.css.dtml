@@ -5,34 +5,6 @@
 
 /* YOUR CSS RULES START HERE */
 
-/* ============= Breadcrumbs ================ */
-
-#portal-breadcrumbs.homepage {
-    background-color: &dtml-breadcrumbBackgroundColor;;
-    color: &dtml-breadcrumbTextColor;;
-    padding: 0 1.13314447592068% 0.1875em 1.13314447592068%; /*8/706*/
-    z-index: 20;
-    position: relative;
-    opacity: 0.80;
-    filter: alpha(opacity=80);
-    line-height: 1.5em;
-    margin: 0.1875em 0.424929178470255% 0.1875em 0.56657223796034%; /* L 4/706, R 3/706 */
-    width: 96.742209631728045%; /*(706-8-4-3-8)/706*/
-}
-
-#portal-breadcrumbs.homepage .breadcrumbSeparator {
-    color: &dtml-breadcrumbSeparatorColor;;
-}
-
-#portal-breadcrumbs.homepage a {
-    color: &dtml-breadcrumbLinkColor;;
-}
-
-#portal-column-content.sr #portal-breadcrumbs.homepage {
-    margin: 0;
-    width: 97.73371104815864%;
-}
-
 /* ============= addthis ================ */
 
 /* Don't show addthis on homepage */

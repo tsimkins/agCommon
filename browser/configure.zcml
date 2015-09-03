@@ -169,9 +169,19 @@
     <!-- The breadcrumbs -->
     <browser:viewlet
         name="plone.path_bar"
-        manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
         class=".viewlets.PathBarViewlet"
         template="templates/path_bar.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- The section title -->
+    <browser:viewlet
+        name="plone.section_title"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".viewlets.SectionTitleViewlet"
+        template="templates/section_title.pt"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
         />
