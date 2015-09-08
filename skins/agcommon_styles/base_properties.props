@@ -21,18 +21,20 @@ borderStyleAnnotations:string=dashed
 
 headingFontFamily:string=Verdana, Arial, Helvetica, sans-serif
 
-contentViewBorderColor:string=#74ae0b
-contentViewBackgroundColor:string=#cde2a7
+contentViewBorderColor:string=#74AE0B
+contentViewBackgroundColor:string=#CDE2A7
 contentViewFontColor:string=#578308
 
 inputFontColor:string=Black
 
 textTransform:string=none
 
-notifyBorderColor:string=#ffa500
-notifyBackgroundColor:string=#ffce7b
+notifyBorderColor:string=#FFA500
+notifyHeadingColor:string=#C74606
+notifyTextColor:string=#C74606
+notifyBackgroundColor:string=#FFCE7B
 
-discreetColor:string=#76797c
+discreetColor:string=#575757
 helpBackgroundColor:string=#ffffe1
 
 portalMinWidth:string=70em
@@ -41,96 +43,80 @@ columnTwoWidth:string=16em
 
 agCommonPropertiesStartHere:string=_____________________________________________________
 
-globalFontColor:string=#436976
-globalBorderColor:string=#DDDDDD
-globalBackgroundColor:string=#FCF2CF
+globalFontColor:string=#000000
+globalBorderColor:string=#E6E6E6
+globalBackgroundColor:string=#F6F6F6
 
-evenRowBackgroundColor:string=#FDF8E2 
-oddRowBackgroundColor:string=transparent
+tableHeadingTextColor:string=#333333
+tableHeadingBackgroundColor:string=#DDDDDD
+tableBorderColor:string=#999999
+tableEvenRowBackgroundColor:string=transparent
+tableOddRowBackgroundColor:string=#F6F6F6
 
 maxWidth:string=1000px
 minWidth:string=785px
 
-siteLogoTopMargin:string=42px
-siteLogoFontSize:string=23px
+siteHeaderBackgroundColor:string=#FFFFFF
 
 sectionTitleTextColor:string=#1B1D1F
+sectionTitleBorder:string=#999999
 
-portalHeaderBackgroundColor:string=#1E2D4C;
-
-insideBreadcrumbBackgroundColor:string=transparent
-insideBreadcrumbTextColor:string=#333333
-insideBreadcrumbSeparatorColor:string=#715C3C
-insideBreadcrumbLinkColor:string=#1B5597
-
-breadcrumbBackgroundColor:string=#333333
-breadcrumbTextColor:string=#FFFFFF
-breadcrumbSeparatorColor:string=#EFC177
-breadcrumbLinkColor:string=#FFFFFF
+breadcrumbTextColor:string=#333333
+breadcrumbSeparatorColor:string=#715C3C
+breadcrumbLinkColor:string=#1B5597
 
 topnavigationBackgroundColor:string=#1F4B7B
 topnavigationBackgroundHoverColor:string=#1E407C
-topnavigationButtonBackgroundColor:string=transparent
+topnavigationBorderColor:string=#45779F
 topnavigationTextColor:string=#F6F6F6
 topnavigationTextHoverColor:string=#FFFDF1
-topnavigationGradientBackground:string=#1F4B7B
 
 topnavigationAlternateBackgroundColor:string=#0A63AC
-topnavigationAlternateGradientBackground:string=#0A63AC
 topnavigationAlternateTextColor:string=#FFFFFF
-topnavigationAlternateTextHoverColor:string=#FFFFFF
 
-bottomLeftColumnBackgroundImage:string=leftnavbg.jpg
-bodyBackgroundColor:string=#8F8F8F
-bodyBackgroundGradientColor:string=#AFAFAF
-backgroundStripeOneColor:string=#0f50bc
-backgroundStripeTwoColor:string=#0c3b8d
-backgroundStripeThreeColor:string=#08265a
+bodyBackgroundColor:string=#DDDDDD
+contentBackgroundColor:string=#FFFFFF
+contentLinkBorderColor:string=#DDDDDD
 
-frontRightPortletHeaderTextColor:string=#4B4B4B
-frontRightPortletHeaderBackgroundColor:string=transparent
-frontRightPortletLinkColor:string=#2256BD
-frontRightPortletLinkHoverColor:string=#003FAC
-frontRightPortletTextColor:string=#3F3F3F
-frontRightPortletBackgroundColor:string=#F6F6F6
+rightPortletHeaderTextColor:string=#AC5209
+rightPortletLinkColor:string=#2256BD
+rightPortletLinkHoverColor:string=#003FAC
+rightPortletTextColor:string=#3F3F3F
+rightPortletHeaderBorderColor:string=#DDDDDD
+rightPortletDiscreteTextColor:string=#767676
+rightPortletSummaryColor:string=#4B4B4B
 
-insideRightPortletHeaderTextColor:string=#4B4B4B
-insideRightPortletHeaderBackgroundColor:string=transparent
-insideRightPortletBackgroundColor:string=#F9F9F9
-insideRightPortletTextColor:string=#333333
-insideRightPortletLinkColor:string=#003399
-insideRightPortletLinkHoverColor:string=#3366CC
-
-homepageH1TextColor:string=#EEEEEE
-homepageH2TextColor:string=#EEEEEE
-homepageTransparentOverlayColor:string=#000000
+leftPortletHeaderTextColor:string=#4B4B4B
 
 leftNavTitleBackground:string=#1E2D4C;
-leftNavStandaloneTitleBackground:string=#0271B9
 leftNavTitleColor:string=#FBFBFB
 leftNavBorderColor:string=#DDDDDD
 leftNavTextColor:string=#4B4D4F
 leftNavTextHoverColor:string=#003FAC
-leftNavBackgroundColor:string=#FFFFFF
+
+leftSubNavTextColor:string=#293C6F
 leftSubNavBackground:string=#F9F9F9
+
+leftButtonBackground_external:string=#133151
+leftButtonBorder_external:string=#041F3C
+leftButtonTextColor_external:string=#FFFFFF
+
+leftButtonBackground_internal:string=#EFEFEF
+leftButtonBorder_internal:string=#333333
+leftButtonTextColor_internal:string=#333333
 
 leftLinkTextColor:string=#2256BD
 leftLinkTextHoverColor:string=#003FAC
 
-leftButtonArrowBackground_internal:string=#F3A72E
-leftButtonBackground_internal:string=#4F4F4F
-leftButtonBackgroundBorder_internal:string=#00589F
-leftButtonTextColor_internal:string=#FFFFFF
-
-leftButtonArrowBackground_external:string=#487aab
-leftButtonBackground_external:string=#28496C
-leftButtonBackgroundBorder_external:string=#506e94
-leftButtonTextColor_external:string=#FFFFFF
-
 documentDescriptionColor:string=#000000
 documentTitleColor:string=#000000
 documentHeadingColor:string=#000000
+documentHeadingBorderColor:string=#DDDDDD
 documentSubHeadingColor:string=#000000
+
+pullQuoteTextColor:string=#4A4A4A
+pullQuoteBorderColor:string=#DFB97D
+pullQuoteBackgroundColor:string=#FFFBEF
 
 footerBackgroundColor:string=#13233C
 footerLinkColor:string=#9ACDFF
@@ -140,6 +126,11 @@ sitemapBackgroundColor:string=#1B1D1F
 sitemapHeaderColor:string=#FFFFFF
 sitemapLinkColor:string=#e0e0e0
 
-bodySitemapBackgroundColor:string=#FFFFFF
-bodySitemapHeaderColor:string=#0F1A2F
-bodySitemapLinkColor:string=#00015F
+kupuBackgroundColor:string=#fffff9
+
+statePrivateColor:string=#FF0000
+statePendingColor:string=#FFA500
+
+fieldRequiredColor:string=#FF0000
+fieldHelpColor:string=#333333
+fieldBorderColor:string=#999999

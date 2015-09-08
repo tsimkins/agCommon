@@ -251,7 +251,7 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
     padding: 1em 0 0 0;
     font-weight: normal;
     background-color: transparent;
-    color: &dtml-frontRightPortletTextColor;;
+    color: &dtml-rightPortletTextColor;;
     width: 24.641834%; /* (202-2*15)/698 */
     float: left;
     vertical-align: top;
@@ -310,7 +310,7 @@ body.homepage-image-format-panorama #portal-columns {
 }
 
 body.homepage-image-format-panorama #portal-column-two .portletHeader a {
-    color: &dtml-insideRightPortletHeaderTextColor;;
+    color: &dtml-rightPortletHeaderTextColor;;
 }
 
 body.homepage-image-format-panorama #portal-column-two .portlet {
