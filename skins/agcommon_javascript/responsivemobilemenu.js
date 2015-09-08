@@ -10,103 +10,66 @@ License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
 
 */
 
-function responsiveMobileMenu() {	
-		$('.rmm').each(function() {
-			
-			
-			
-			$(this).children('ul').addClass('rmm-main-list');	// mark main menu list
-			
-			
-			var $style = $(this).attr('data-menu-style');	// get menu style
-				if ( typeof $style == 'undefined' ||  $style == false )
-					{
-						$(this).addClass('graphite'); // set graphite style if style is not defined
-					}
-				else {
-						$(this).addClass($style);
-					}
-					
-					
-			/* 	width of menu list (non-toggled) */
-			
-			var $width = 0;
-				$(this).find('ul li').each(function() {
-					$width += $(this).outerWidth();
-				});
-				
-			// if modern browser
-			
-			if ($.support.leadingWhitespace) {
-				$(this).css('max-width' , $width*1.05+'px');
-			}
-			// 
-			else {
-				$(this).css('width' , $width*1.05+'px');
-			}
-		
-	 	});
-}
-function getMobileMenu() {
+/*
+    Modifications by trs22:
 
-	/* 	build toggled dropdown menu list */
-	
-	$('.rmm').each(function() {	
-				var menutitle = $(this).attr("data-menu-title");
-				if ( menutitle == "" ) {
-					menutitle = "Menu";
-				}
-				else if ( menutitle == undefined ) {
-					menutitle = "Menu";
-				}
-				var $menulist = $(this).children('.rmm-main-list').html();
-				var $menucontrols ="<div class='rmm-toggled-controls'><div class='rmm-toggled-title'>" + menutitle + "</div><div class='rmm-button'><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div></div>";
-				$(this).prepend("<div class='rmm-toggled rmm-closed'>"+$menucontrols+"<ul>"+$menulist+"</ul></div>");
+        * Replaced $ with jq for Plone
+        * Replaced show/hide with remove/add class of '.hiddenStructure' for accessibility.
+        * Removed automagic width CSS
+        * Removed adaptMenu function (handling with responsive CSS)
+        * Combined getMobileMenu into responsiveMobileMenu function
+        * Hard set 'minimal' class
+*/
 
-		});
+function responsiveMobileMenu() {    
+        jq('.rmm').each(function() {
+            
+            jq(this).children('ul').addClass('rmm-main-list');    // mark main menu list
+            
+            jq(this).addClass('minimal'); // set minimal class
+            
+            /* build toggled dropdown menu list */
+    
+            var menutitle = jq(this).attr("data-menu-title");
+
+            if ( menutitle == "" ) {
+                menutitle = "Menu";
+            }
+            else if ( menutitle == undefined ) {
+                menutitle = "Menu";
+            }
+
+            var $menulist = jq(this).children().detach();
+            console.log($menulist);
+
+            var $menucontrols ="<div class='rmm-toggled-controls'><h2 class='rmm-toggled-title'>" + menutitle + "</h2><div class='rmm-button'><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div></div>";
+
+            jq(this).prepend("<div class='rmm-toggled rmm-closed'>"+$menucontrols+"</div>")
+            jq(this).children('.rmm-toggled').append($menulist);
+
+        }
+    );
 }
 
-function adaptMenu() {
-	
-	/* 	toggle menu on resize */
-	
-	$('.rmm').each(function() {
-			var $width = $(this).css('max-width');
-			$width = $width.replace('px', ''); 
-			if ( $(this).parent().width() < $width*1.05 ) {
-				$(this).children('.rmm-main-list').hide(0);
-				$(this).children('.rmm-toggled').show(0);
-			}
-			else {
-				$(this).children('.rmm-main-list').show(0);
-				$(this).children('.rmm-toggled').hide(0);
-			}
-		});
-		
-}
+jq(document).ready(function() {
 
-$(function() {
+    // dynamically add .rmm class
+    var klass = 'rmm';
+    jq('#portal-top-navigation').addClass('rmm');
+    jq('#portal-column-one .portletNavigationTree .portletItem').addClass('rmm');
 
-	 responsiveMobileMenu();
-	 getMobileMenu();
-	 adaptMenu();
-	 
-	 /* slide down mobile menu on click */
-	 
-	 $('.rmm-toggled, .rmm-toggled .rmm-button').click(function(){
-	 	if ( $(this).is(".rmm-closed")) {
-		 	 $(this).find('ul').stop().show(300);
-		 	 $(this).removeClass("rmm-closed");
-	 	}
-	 	else {
-		 	$(this).find('ul').stop().hide(300);
-		 	 $(this).addClass("rmm-closed");
-	 	}
-		
-	});	
+     responsiveMobileMenu();
+    
+     /* slide down mobile menu on click */
+    
+     jq('.rmm-toggled, .rmm-toggled .rmm-button').click(function(){
+         if ( jq(this).is(".rmm-closed")) {
+              jq(this).removeClass("rmm-closed");
+         }
+         else {
+              jq(this).addClass("rmm-closed");
+         }
+        
+    });    
 
-});
-	/* 	hide mobile menu on resize */
-$(window).resize(function() {
- 	adaptMenu();
 });
