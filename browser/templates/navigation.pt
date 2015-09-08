@@ -1,17 +1,17 @@
 <tal:block i18n:domain="plone"
     tal:define="include_top view/include_top;
-                root view/navigation_root;">
-
-<tal:header
-    tal:define="portal_url context/portal_url|nothing;
+                root view/navigation_root;
+                portal_url context/portal_url|nothing;
                 subsite_title context/subsite_title|nothing;
                 subsite_url context/subsite_url|nothing;
                 subsite_url python:subsite_url and hasattr(subsite_url, 'replace') and subsite_url.replace('${portal_url}', portal_url) or None;
                 navigation_title python: view.title().lower() != 'navigation' and view.title() or root.Title();
                 enable_subsite_nav view/isSubsite|nothing;
                 isLeftColumn view/isLeftColumn|nothing;
-                show_subsite_nav python: (include_top and enable_subsite_nav and isLeftColumn and subsite_title and subsite_url and navigation_title != subsite_title) or False 
-                ">
+                show_subsite_nav python: (include_top and enable_subsite_nav and isLeftColumn and subsite_title and subsite_url and navigation_title != subsite_title) or False;
+                menu_title python: enable_subsite_nav and ': '.join([navigation_title, subsite_title]) or navigation_title">
+
+<tal:header>
 
     <h2 class="hiddenStructure"
         tal:condition="not: include_top">
@@ -47,7 +47,8 @@
 <dl tal:define="nav_class python:include_top and 'headerNavigationTree' or 'standaloneNavigationTree';"
     tal:attributes="class string:portlet portletNavigationTree ${nav_class}">
 
-    <dd class="portletItem lastItem">
+    <dd class="portletItem lastItem"
+        tal:attributes="data-menu-title menu_title">
         <ul class="navTree navTreeLevel0">
             <li tal:replace="structure view/createNavTree">
                 SUBTREE
