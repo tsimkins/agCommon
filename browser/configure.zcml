@@ -915,6 +915,36 @@
         permission="plone.app.portlets.ManagePortlets"
         />
 
+    <!-- Resources -->
+
+    <browser:resource
+        name="ad54elements-style.css"
+        file="resources/ad54elements-style.css" 
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+    <browser:resource
+        name="jquery.watermarkinput.js"
+        file="resources/jquery.watermarkinput.js" 
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+    <browser:resource
+        name="searchpulldown.js"
+        file="resources/searchpulldown.js" 
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+    <browser:resource
+        name="watermarksettings.js"
+        file="resources/watermarksettings.js" 
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <!-- API Include -->
     <include package=".api" />
 
