@@ -1,4 +1,4 @@
-<div tal:condition="view/topnavigation" id="portal-top-navigation">
+<div tal:condition="view/topnavigation" id="portal-top-navigation" data-menu-title="Site Navigation">
 
     <h2 class="hiddenStructure">Site Navigation</h2>
 
