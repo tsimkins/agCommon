@@ -4,6 +4,14 @@
      tal:define="breadcrumbs view/breadcrumbs;
                  is_rtl view/is_rtl">
 
+    <span id="breadcrumbs-penn-state">
+        <a href="http://www.psu.edu">Penn State</a>
+    </span>    
+    <span class="breadcrumbSeparator">
+        <tal:ltr condition="not: is_rtl">&raquo;</tal:ltr>
+        <tal:rtl condition="is_rtl">&laquo;</tal:rtl>
+    </span>
+
     <tal:agsci tal:condition="python:view.site not in ['extension.psu.edu', 'agsci.psu.edu']">
         <span id="breadcrumbs-agsci">
             <a href="http://agsci.psu.edu">AgSci</a>
