@@ -125,47 +125,47 @@ div.FooterPortletManager5 {
 
 /* Link Icon Portlet */
 
-#portlets-footer dl.linkIcon dd {
+#portlets-footer dl.portletLinkIcon dd {
     margin: 0;
     padding: 0;
 }
 
-#portlets-footer dl.linkIcon dd.icon,
-#portlets-footer dl.linkIcon dd.sprite {
+#portlets-footer dl.portletLinkIcon dd.icon,
+#portlets-footer dl.portletLinkIcon dd.sprite {
     margin: 0.75em 0;
 }
 
-#portlets-footer dl.linkIcon a {
+#portlets-footer dl.portletLinkIcon a {
     padding: 0.25em 3.061225114535738%;
 }
 
-#portlets-footer dl.linkIcon img {
+#portlets-footer dl.portletLinkIcon img {
     padding-right: 0.5em;
 }
 
 /* Sprites */
 
-#portlets-footer dl.linkIcon dd.sprite,
-#portlets-footer dl.linkIcon dd.icon {
+#portlets-footer dl.portletLinkIcon dd.sprite,
+#portlets-footer dl.portletLinkIcon dd.icon {
     min-height: 24px;
 }
 
-#portlets-footer dl.linkIcon dd.sprite a,
-#portlets-footer dl.linkIcon dd.icon a {
+#portlets-footer dl.portletLinkIcon dd.sprite a,
+#portlets-footer dl.portletLinkIcon dd.icon a {
     padding: 0;
 	color: &dtml-sitemapLinkColor;;
 	background-color: transparent;
     vertical-align: middle;
 }
 
-#portlets-footer dl.linkIcon dd.sprite a:hover,
-#portlets-footer dl.linkIcon dd.icon a:hover {
+#portlets-footer dl.portletLinkIcon dd.sprite a:hover,
+#portlets-footer dl.portletLinkIcon dd.icon a:hover {
 	color: &dtml-sitemapLinkColor;;
 	text-decoration: underline;
 }
 
-#portlets-footer dl.linkIcon dd.icon,
-#portlets-footer dl.linkIcon dd.sprite {
+#portlets-footer dl.portletLinkIcon dd.icon,
+#portlets-footer dl.portletLinkIcon dd.sprite {
 	margin: 0.75em 3.061225114535738%;
 }
 

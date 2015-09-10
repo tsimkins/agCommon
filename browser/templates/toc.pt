@@ -1,4 +1,5 @@
 <div id="document-toc" style="display: none"
+    data-menu-title="Contents"
     tal:condition="view/enabled"
     tal:attributes="class view/getClass|nothing"
     i18n:domain="plone">

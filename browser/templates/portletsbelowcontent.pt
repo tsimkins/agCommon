@@ -6,7 +6,7 @@
          i18n:domain="Products.ContentWellPortlets">
         <tal:block tal:condition="view/showPortlets">
             <tal:portletmanagers tal:repeat="manager view/portletManagersToShow">
-                <div tal:attributes="class python:manager[1] + ' agCommonPortlet tilePortletManager'"
+                <div tal:attributes="class python:manager[1] + ' tilePortletManager'"
                      tal:define="mgr python:manager[0]"
                      tal:content="structure provider:${mgr}" /> 
     

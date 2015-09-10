@@ -155,12 +155,9 @@
                 <div id="portal-column-one"
                     metal:define-slot="column_one_slot"
                     tal:condition="sl">
-                  <div id="portal-column-one-visualPadding" class="visualPadding">
                     <metal:portlets define-slot="portlets_one_slot">
                       <tal:block replace="structure provider:plone.leftcolumn" />
                     </metal:portlets>
-                    &nbsp;
-                  </div>
                 </div>
                 <tal:comment replace="nothing"> End of the left column </tal:comment>
             </tal:notajax>
@@ -278,12 +275,11 @@
                 <div id="portal-column-two"
                     metal:define-slot="column_two_slot"
                     tal:condition="sr">
-                  <div class="visualPadding">
+
                     <metal:portlets define-slot="portlets_two_slot">
                       <tal:block replace="structure provider:plone.rightcolumn" />
                     </metal:portlets>
-                    &nbsp;
-                  </div>
+
                 </div>
                 <tal:comment replace="nothing"> End of the right column </tal:comment>
             </tal:notajax>
@@ -292,16 +288,18 @@
       </div>
       <tal:comment replace="nothing"> end column wrapper </tal:comment>
 
-      <div class="visualClear" id="clear-space-before-footer"><!-- --></div>
-
-      <metal:block i18n:domain="plone" tal:condition="not:ajax_load">
-
-        <div tal:replace="structure provider:plone.portalfooter" />
-
-      </metal:block>
-
-      <div class="visualClear"><!-- --></div>
     </div>
+
+
+    <div class="visualClear" id="clear-space-before-footer"><!-- --></div>
+    
+        <metal:block i18n:domain="plone" tal:condition="not:ajax_load">
+        
+            <div tal:replace="structure provider:plone.portalfooter" />
+        
+        </metal:block>
+    
+    <div class="visualClear"><!-- --></div>
 
 </body>
 </html>

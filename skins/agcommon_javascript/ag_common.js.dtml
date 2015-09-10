@@ -850,7 +850,7 @@ jq(window).load(function() {
         );
     
         // Link Icon Tracking
-        jq('.linkIcon a').click(
+        jq('.portletLinkIcon a').click(
             function() {
                 var icon_title = getButtonTitle(this);
                 var portlet_title = getPortletTitle(this);
@@ -860,7 +860,7 @@ jq(window).load(function() {
         );
         
         // Link Button Tracking
-        jq('.linkButton a').click(
+        jq('.portletLinkButton a').click(
             function() {
                 var button_title = getButtonTitle(this);
                 var portlet_title = getPortletTitle(this);
@@ -1057,6 +1057,25 @@ jq(document).ready(
     }
 );
 
+
+/*  Add a 'Mobile Portlets' div and copy portal-column-one portlets to it */
+
+jq(document).ready(
+
+    function() {
+        var pcm = jq('<div id="portal-column-mobile"></div>');
+        
+        jq("#portal-column-one").find('.portletWrapper').each(
+            function () {
+                if ( ! (jq(this).find('.portletNavigationTree').size() || jq(this).hasClass('portlet-mobile-navigation'))) {
+                    jq(this).clone().appendTo(pcm);
+                }
+            }
+        );
+        
+        jq("#portal-columns").append(pcm);
+    }
+);
 
 
 /* YOUR JAVASCRIPT STOPS HERE */

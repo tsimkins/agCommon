@@ -24,7 +24,7 @@ License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
 function responsiveMobileMenu() {    
         jq('.rmm').each(function() {
             
-            jq(this).children('ul').addClass('rmm-main-list');    // mark main menu list
+            jq(this).children().addClass('rmm-main-list');    // mark main menu list
             
             jq(this).addClass('minimal'); // set minimal class
             
@@ -40,7 +40,6 @@ function responsiveMobileMenu() {
             }
 
             var $menulist = jq(this).children().detach();
-            console.log($menulist);
 
             var $menucontrols ="<div class='rmm-toggled-controls'><h2 class='rmm-toggled-title'>" + menutitle + "</h2><div class='rmm-button'><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div></div>";
 
@@ -56,7 +55,8 @@ jq(document).ready(function() {
     // dynamically add .rmm class
     var klass = 'rmm';
     jq('#portal-top-navigation').addClass('rmm');
-    jq('#portal-column-one .portletNavigationTree .portletItem').addClass('rmm');
+    jq('#portal-column-one .left-column-navigation').addClass('rmm');
+    jq('#document-toc').addClass('rmm');
 
      responsiveMobileMenu();
     

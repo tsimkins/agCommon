@@ -111,7 +111,7 @@ body.template-atct_edit #portal-column-content .documentEditable #content {
 #content #homepage-text .documentDescription {
     margin-bottom: 0;
     font-size: 1.25em;
-    color: #2F2F2F;
+    color: &dtml-documentDescriptionColor;;
     line-height: 1.375em;
     margin-bottom: 0.75em;
 }
@@ -122,8 +122,6 @@ body.template-atct_edit #portal-column-content .documentEditable #content {
 
 /* ================= Columns ===================== */
 #centercolumn {
-    padding-bottom: 0.25em;
-    padding-top: 1em;
     margin: 0 2.148997134670487%;
     width: 95.702005730659026%;
     display: block;
@@ -133,15 +131,13 @@ body.template-atct_edit #portal-column-content .documentEditable #content {
     float: left;
     width: 66.762178%;  /* (496-2*15)/698 */
     margin: 0 2.148997%; /* 15/698 */
-    padding: 1em 0 0 0;
 }
 
 /* ================= Portlet headers ===================== */
 
-#content #centercolumn.agCommonPortlet .portletHeader,
-#content #rightcolumn.agCommonPortlet .portletHeader {
+#content #centercolumn .portletHeader,
+#content #rightcolumn .portletHeader {
     font-size: 1.1875em !important;
-    padding-top: 0 !important;
 }
 
 /* ==================== Feedmixer ======================== */
@@ -150,19 +146,19 @@ body.template-atct_edit #portal-column-content .documentEditable #content {
 http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-hack/ - "Hack Free Approach"
 */
 
-#centercolumn.agCommonPortlet .portletfeedmixer .portletItem {
-    border-top: 1px dashed #EEEEEE;
+#centercolumn .portletfeedmixer .portletItem {
+    border-top: 1px dashed &dtml-globalBorderColor;;
     margin-top: 0.75em;
     padding-top: 0.75em;
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixer .portletItem:first-child {
+#centercolumn .portletfeedmixer .portletItem:first-child {
     border-top: none;
     margin-top: 0;
     padding-top: 0;
 }
 
-#rightcolumn.agCommonPortlet .portletfeedmixer .portletItem .rssImage {
+#rightcolumn .portletfeedmixer .portletItem .rssImage {
     float: none;
     display: block;
     margin: 0.625em 0 0.625em 0;
@@ -170,76 +166,76 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
     text-align: left;
 }
 
-#rightcolumn.agCommonPortlet .portletfeedmixerimagelarge .portletItem .rssImage {
+#rightcolumn .portletfeedmixerimagelarge .portletItem .rssImage {
     margin-bottom: 0.125em;
 }
 
-#rightcolumn.agCommonPortlet .portletfeedmixerimagelarge .portletItem .rssImage img {
+#rightcolumn .portletfeedmixerimagelarge .portletItem .rssImage img {
     width: 100%;
     max-width: 100%;
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixer .portletItem .rssImage {
+#centercolumn .portletfeedmixer .portletItem .rssImage {
     float: right;
     margin: 0 0 0.625em 0.625em;
     text-align: right;
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixerimagefull .portletItem .rssImage {
+#centercolumn .portletfeedmixerimagefull .portletItem .rssImage {
     margin: 0 0 0.125em 0;
     float: none;
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixerimageleft .portletItem .rssImage {
+#centercolumn .portletfeedmixerimageleft .portletItem .rssImage {
     float: left;
     margin: 0.125em 1.590457256461233% 0.625em 0; /* 8/503 */
     text-align: right;
     width: 18.7089%;
 }
 
-#centercolumn.sr.agCommonPortlet .portletfeedmixerimageleft .portletItem .rssImage {
+#centercolumn.sr .portletfeedmixerimageleft .portletItem .rssImage {
     width: 25.177025963808025%;
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixerimagelarge .portletItem .rssImage {
+#centercolumn .portletfeedmixerimagelarge .portletItem .rssImage {
     width: 44.731610337972167% !important; /* 225/503 */
     max-width: 44.731610337972167% !important; /* 225/503 */
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixerimageleft .portletItem .title,
-#centercolumn.agCommonPortlet .portletfeedmixerimageleft .portletItem .date,
-#centercolumn.agCommonPortlet .portletfeedmixerimageleft .portletItem .summary {
+#centercolumn .portletfeedmixerimageleft .portletItem .title,
+#centercolumn .portletfeedmixerimageleft .portletItem .date,
+#centercolumn .portletfeedmixerimageleft .portletItem .summary {
     margin-left: 20.2993%;
 }
 
-#centercolumn.sr.agCommonPortlet .portletfeedmixerimageleft .portletItem .title,
-#centercolumn.sr.agCommonPortlet .portletfeedmixerimageleft .portletItem .date,
-#centercolumn.sr.agCommonPortlet .portletfeedmixerimageleft .portletItem .summary {
+#centercolumn.sr .portletfeedmixerimageleft .portletItem .title,
+#centercolumn.sr .portletfeedmixerimageleft .portletItem .date,
+#centercolumn.sr .portletfeedmixerimageleft .portletItem .summary {
     margin-left: 27.435387673956262%; /* 138/503 */
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
-#centercolumn.agCommonPortlet .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
-#centercolumn.agCommonPortlet .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
+#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
+#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
+#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
     margin-left: 46.719681908548708%; /* 235/503 */
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixerimageleft .portletItem {
+#centercolumn .portletfeedmixerimageleft .portletItem {
     border-style: none;
     margin: 0.25em 0 0.375em 0;
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixer .portletItem .rssImage img {
+#centercolumn .portletfeedmixer .portletItem .rssImage img {
     max-width: 100%;
     width: 100%;
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixerimagelarge .portletItem .rssImage img {
+#centercolumn .portletfeedmixerimagelarge .portletItem .rssImage img {
     max-width: 100%;
     width: 100%;
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixer .portletItem .hasImage {
+#centercolumn .portletfeedmixer .portletItem .hasImage {
     width: 73.558648111332008%;
 }
 
@@ -248,7 +244,6 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 #rightcolumn {
     display: block;
     margin: 0 2.148997%; /* 15/698 */
-    padding: 1em 0 0 0;
     font-weight: normal;
     background-color: transparent;
     color: &dtml-rightPortletTextColor;;
@@ -267,18 +262,18 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
     display: none;
 }
 
-#centercolumn.agCommonPortlet .portletItem a.title {
+#centercolumn .portletItem a.title {
     font-size: 1em;
 }
 
-#rightcolumn.agCommonPortlet .portletItem a.title,
-#rightcolumn.agCommonPortlet .portletItem li.navTreeItem {
+#rightcolumn .portletItem a.title,
+#rightcolumn .portletItem li.navTreeItem {
     line-height: 1.25em;
     font-size: 0.84375em;
     padding: 0;
 }
 
-#rightcolumn.agCommonPortlet .portletItem li.navTreeItem a {
+#rightcolumn .portletItem li.navTreeItem a {
     margin: 0 0 1em 0;
     padding: 0;
 }
@@ -305,8 +300,6 @@ body.homepage-image-format-panorama #content {
 body.homepage-image-format-panorama #portal-columns {
     background-position: left top;
     background-repeat: no-repeat;
-    /* The below will put a border below the panorama image without letting it 'bleed' into the content area. */
-    /* border-top: 1px solid #666666; */
 }
 
 body.homepage-image-format-panorama #portal-column-two .portletHeader a {

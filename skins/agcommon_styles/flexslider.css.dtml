@@ -77,14 +77,14 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
     margin: 0 auto;
     border-radius: 0;
     max-width: &dtml-maxWidth;;
-    background-color: #F6F6F6;
+    background-color: &dtml-leftSubNavBackground;;
 }
 
 .flexslider .tileItem {
     border-top: none;
     margin: 0;
     padding: 0;
-    background-color: #F6F6F6;
+    background-color: &dtml-leftSubNavBackground;;
 }
 
 .flexslider .tileImage {
@@ -123,12 +123,12 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 
 .flexslider .tileHeadline a,
 .flexslider .tileHeadline a:visited {
-    color: #0075BD !important;
+    color: #0075BD !important; /* UI */
 }
 
 .flexslider .tileBody p {
     margin: 0.25em 0 0 0;
-    color: #4F4F4F;
+    color: &dtml-leftNavTextColor;;
     font-size: 0.875em;
     line-height: 1.375em;
 }
@@ -149,8 +149,8 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
     font-size: 0.6875em;
     text-decoration: none;
     padding: 0.25em 0.375em;
-    background-color: #FFE269;
-    border: 1px solid #EFCE4A;
+    background-color: #FFE269; /* UI */
+    border: 1px solid #EFCE4A; /* UI */
 }
 
 .flexslider .tileFooter a .hiddenStructure {

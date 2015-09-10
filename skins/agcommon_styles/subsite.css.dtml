@@ -49,7 +49,7 @@ body.template-atct_edit #image-header {
 	margin: 0.5em 0 0.75em 0;
 }
 
-#centercolumn.agCommonPortlet .portletfeedmixerimageleft .portletItem {
+#centercolumn .portletfeedmixerimageleft .portletItem {
     margin-left: 0;
     margin-right: 0;
 }

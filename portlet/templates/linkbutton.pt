@@ -3,7 +3,7 @@
 
 <h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
 
-<dl class="portlet linkButton" tal:condition="view/linkButtons">
+<dl class="portlet portletLinkButton" tal:condition="view/linkButtons">
         
     <dd tal:repeat="lbutton view/linkButtons"
         tal:attributes="id string:linkbutton-${lbutton/id};
@@ -16,10 +16,15 @@
 
                     <a tal:attributes="href lbutton/url;
                                         title description;"
-                    ><span tal:condition="not:icon"
-                            tal:content="title">Link</span><img tal:condition="icon" 
-                                                                tal:attributes="src icon;
-                                                                                alt title;" /></a>
+                    >
+
+                        <span tal:condition="not:icon"
+                                tal:replace="title">Link</span>
+
+                        <img tal:condition="icon" 
+                             tal:attributes="src icon;
+                                             alt title;" />
+                    </a>
 
             </tal:linkButton>
             

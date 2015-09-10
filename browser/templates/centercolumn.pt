@@ -6,9 +6,9 @@
              showLegacyHomePagePortlets view/showLegacyHomePagePortlets"
     >
     
-    <div id="centercolumn" class="agCommonPortlet" 
+    <div id="centercolumn"
          tal:condition="python: showLegacyHomePagePortlets and (mp or hsc)"
-         tal:attributes="class python:hsr and 'sr agCommonPortlet' or 'agCommonPortlet'">
+         tal:attributes="class python:hsr and 'sr' or ''">
     
     	<tal:block replace="structure provider:agcommon.centercolumn" />
     
@@ -20,7 +20,7 @@
     
     </div>
     
-    <div id="rightcolumn" class="agCommonPortlet" 
+    <div id="rightcolumn" 
          tal:condition="python: view.showLegacyHomePagePortlets and (mp or hsr)">
     
     	<tal:block replace="structure provider:agcommon.rightcolumn" />

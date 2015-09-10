@@ -84,10 +84,9 @@ class Renderer(base.Renderer):
 
     def getClass(self, licon):
         klass = ['portletItem']
-        internal = licon.get('internal')
 
-        if internal:
-            klass.append('internal-link')
+        if licon.get('alternate', None):
+            klass.append('alternate')
 
         return " ".join(klass)
 

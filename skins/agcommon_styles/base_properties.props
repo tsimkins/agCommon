@@ -58,7 +58,7 @@ minWidth:string=785px
 
 siteHeaderBackgroundColor:string=#FFFFFF
 
-sectionTitleTextColor:string=#1B1D1F
+sectionTitleTextColor:string=#2F2F2F
 sectionTitleBorder:string=#999999
 
 breadcrumbTextColor:string=#333333
@@ -71,7 +71,7 @@ topnavigationBorderColor:string=#45779F
 topnavigationTextColor:string=#F6F6F6
 topnavigationTextHoverColor:string=#FFFDF1
 
-topnavigationAlternateBackgroundColor:string=#0A63AC
+topnavigationAlternateBackgroundColor:string=#0075BD
 topnavigationAlternateTextColor:string=#FFFFFF
 
 bodyBackgroundColor:string=#DDDDDD
@@ -87,28 +87,26 @@ rightPortletDiscreteTextColor:string=#767676
 rightPortletSummaryColor:string=#4B4B4B
 
 leftPortletHeaderTextColor:string=#4B4B4B
-
-leftNavTitleBackground:string=#1E2D4C;
-leftNavTitleColor:string=#FBFBFB
+leftNavTitleColor:string=#1E2D4C
 leftNavBorderColor:string=#DDDDDD
-leftNavTextColor:string=#4B4D4F
+leftNavTextColor:string=#4D4D4D
 leftNavTextHoverColor:string=#003FAC
 
 leftSubNavTextColor:string=#293C6F
 leftSubNavBackground:string=#F9F9F9
 
-leftButtonBackground_external:string=#133151
-leftButtonBorder_external:string=#041F3C
-leftButtonTextColor_external:string=#FFFFFF
+leftButtonBackground_alternate:string=#133151
+leftButtonBorder_alternate:string=#041F3C
+leftButtonTextColor_alternate:string=#FFFFFF
 
-leftButtonBackground_internal:string=#EFEFEF
-leftButtonBorder_internal:string=#333333
-leftButtonTextColor_internal:string=#333333
+leftButtonBackground_default:string=#EFEFEF
+leftButtonBorder_default:string=#333333
+leftButtonTextColor_default:string=#333333
 
 leftLinkTextColor:string=#2256BD
 leftLinkTextHoverColor:string=#003FAC
 
-documentDescriptionColor:string=#000000
+documentDescriptionColor:string=#2F2F2F
 documentTitleColor:string=#000000
 documentHeadingColor:string=#000000
 documentHeadingBorderColor:string=#DDDDDD

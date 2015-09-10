@@ -4,7 +4,7 @@
 <h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
 
 
-<dl class="portlet linkIcon" tal:condition="view/linkIcons">
+<dl class="portlet portletLinkIcon" tal:condition="view/linkIcons">
 
     <tal:linkIcon repeat="licon view/linkIcons">
         <dd tal:attributes="class python:view.getClass(licon)"

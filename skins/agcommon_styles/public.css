@@ -301,8 +301,8 @@ body#content {
 #content p,
 #content table,
 #content dl,
-dl.portlet p,
-dl.portlet {
+.portlet p,
+.portlet {
     margin-bottom: 1em;
 }
 

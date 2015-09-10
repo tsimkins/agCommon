@@ -26,7 +26,7 @@
 }
 
 #content .facultyStaffDirectory .atozView .alphabetLinks ol li {
-    color: #CCCCCC;
+    color: &dtml-discreetColor;;
 }
 
 .facultyStaffDirectory.personView .headshot {
@@ -105,7 +105,7 @@ body.template-fsd_atoz_view #portal-localsearchbox {
 #content .searchResults dt.contenttype-fsdperson {
     margin: 0.125em 0 0.125em 0;
     padding: 0.5em 0 0 0;
-    border-top: 1px solid #DDDDDD;
+    border-top: 1px solid &dtml-globalBorderColor;;
 }
 
 #content .searchResults dt.contenttype-fsdperson:first-child {

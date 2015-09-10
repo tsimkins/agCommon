@@ -1,32 +1,24 @@
 /* @group Portlets */
 
-dl.portlet {
-    margin: 0 0 1em;
-}
-dl.portletError {
+.portletError {
     background-color: #FFA500;
 }
 
-dl.portlet dt {
-    padding: 0.42em 1em;
-    background: #ddd;
-    line-height: normal;
-}
-dl.portlet dt.hiddenStructure {
+.portlet .hiddenStructure {
     padding: 0;
 }
 
-dl.portlet dt a:link,
-dl.portlet dt a:visited,
-dl.portlet dt a:hover {
+.portlet dt a:link,
+.portlet dt a:visited,
+.portlet dt a:hover {
     color: black;
     display: block;
     border: none;
 }
 
-dl.portlet dd.portletItem,
-dl.portlet dd.portletFooter,
-dl.portletError dd {
+.portlet .portletItem,
+.portlet .portletFooter,
+.portletError dd {
     padding: 0;
 }
 
@@ -56,30 +48,26 @@ dl.portletError dd {
 
 /* @group Navigation portlet */
 
-dl.portlet ul.navTree li a {
+.portlet ul.navTree li a {
     border: none;
     display: block;
     zoom: 1;
 }
 
-dl.portlet ul.navTree li a:hover {
-
-}
-
-dl.portletNavigationTree dd.portletItem {
+.portletNavigationTree .portletItem {
     padding: 0;
 }
 
-dl.portlet ul.navTreeLevel0 > .navTreeItem {
+.portlet ul.navTreeLevel0 > .navTreeItem {
     padding: 0.25em 1em;
     border-bottom: 0.1em dotted #ddd;
 }
 
-dl.portlet ul.navTreeLevel1 .navTreeItem {
+.portlet ul.navTreeLevel1 .navTreeItem {
     padding-left: 0.5em;
 }
 
-dl.portlet ul.navTree .navTreeCurrentItem {
+.portlet ul.navTree .navTreeCurrentItem {
     background-color: #ddd;
     border-left: 1em solid #ddd;
 }
@@ -101,7 +89,7 @@ dl.portlet ul.navTree .navTreeCurrentItem {
     border-bottom: none;
 }
 
-#visual-portal-wrapper dl.portletCalendar dd {
+#visual-portal-wrapper .portletCalendar dd {
     padding: 0;
 }
 

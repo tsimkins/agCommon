@@ -3,7 +3,7 @@
 
 <h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
     
-<dl class="portlet people">
+<dl class="portlet portletPerson">
 
     <dd class="portletItem"
         tal:repeat="person view/people"

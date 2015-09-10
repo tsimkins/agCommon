@@ -37,10 +37,10 @@
   padding: 0; }
 
 /* == portlet and portletmanager Basic Rules == */
-#portal-column-content.sl #content .tilePortletContainer .agCommonPortlet .portletHeader {
+#portal-column-content.sl #content .tilePortletContainer .portletHeader {
   font-size: 1.25em; }
 
-#portal-column-content.sl #content .tilePortletContainer .agCommonPortlet .portletItem {
+#portal-column-content.sl #content .tilePortletContainer .portletItem {
   margin-bottom: 0.875em; }
 
 div.tilePortletManager {
