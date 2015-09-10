@@ -1,0 +1,46 @@
+/* ================== Image header ================ */
+#image-header {
+  margin: -1.9375em 0.1875em 0.1875em 0.1875em; }
+
+#image-header.leadimage {
+  background-repeat: no-repeat;
+  background-position: top left;
+  height: 145px; }
+
+body.template-atct_edit #image-header {
+  display: none; }
+
+#portal-column-content.sr #image-header {
+  margin: -1.6875em 0 0 0; }
+
+#image-header.nobreadcrumbs {
+  margin-top: 0.1875em; }
+
+#portal-column-content.sr #image-header.nobreadcrumbs {
+  margin-top: 0; }
+
+/* ========== Center column ========= */
+#centercolumn {
+  border: none;
+  margin: 0 1.66852%;
+  width: 96.663%; }
+
+#centercolumn.sr {
+  margin: 0 1.503759398496241%;
+  width: 96.992481203007519%; }
+
+#centercolumn .portletWrapper {
+  margin: 0.5em 0 0.75em 0; }
+
+#centercolumn .portletfeedmixerimageleft .portletItem {
+  margin-left: 0;
+  margin-right: 0; }
+
+/* ========== Right column ========= */
+#rightcolumn {
+  display: none !important; }
+
+#content #homepage-text {
+  padding-bottom: 0; }
+
+/*# sourceMappingURL=subsite.css.map */

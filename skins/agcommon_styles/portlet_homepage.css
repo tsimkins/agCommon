@@ -1,0 +1,58 @@
+#portal-localsearchbox {
+  margin: 0.5em 0;
+  width: 95.57896%; }
+
+#content #homepage-text {
+  padding: 0.375em 0;
+  margin: 0;
+  width: 100%; }
+
+#content {
+  padding: 0 2.237136465324385% 1em 2.237136465324385% !important;
+  margin-left: 0;
+  margin-right: 0;
+  width: 95.52572706935123%; }
+
+#portal-column-content .documentEditable {
+  margin: 0.875em 0; }
+
+#portal-column-content .documentEditable #content {
+  margin: 0 1em !important; }
+
+#portlets-above {
+  display: block;
+  font-size: 0.84375em; }
+
+#portlets-above .portletWrapper {
+  margin-top: 1em;
+  margin-bottom: 0; }
+
+#portlets-above .portletWrapper:first-child {
+  margin-top: 0.25em; }
+
+#portlets-above .portletWrapper .portletHeader {
+  font-size: 1.15em;
+  font-weight: bold;
+  padding: 0.5em 0 0.25em 0;
+  text-transform: none;
+  background-position: left top;
+  background-repeat: no-repeat;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+#portlets-above dl.portlet:first-child .portletHeader {
+  padding-top: 1em; }
+
+/* Fix for IE7 being dumb and putting bullets by the nav items.  */
+#portlets-above dl.portletNavigationTree li {
+  list-style-image: none; }
+
+.icons-on #portlets-above .portletItem a {
+  padding-left: 18px !important;
+  padding-top: 0.2em !important; }
+
+#centercolumn {
+  display: none; }
+
+/*# sourceMappingURL=portlet_homepage.css.map */

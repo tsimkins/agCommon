@@ -1,23 +1,20 @@
-/*
-  <dtml-with base_properties> (do not remove this)
-  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+/* 
+    Content Well Portlets for Sitemap 
 */
 
-/* YOUR CSS RULES START HERE */
-
-/* Content Well Portlets for Sitemap */
+@import 'variables';
 
 #portlets-footer-wrapper {
-	background-color: &dtml-sitemapBackgroundColor;;
+	background-color: $sitemapBackgroundColor;
 }
 
 #portlets-footer {
-    max-width: &dtml-maxWidth;;
+    max-width: $maxWidth;
 	font-size: 0.625em;
 	margin: 0 auto;
     border-width: 0;
     border-style: solid;
-    border-color:  &dtml-sitemapBackgroundColor;;
+    border-color: $sitemapBackgroundColor;
     width: 100%;
 	padding: 0.375em 0;
     border-collapse: separate;
@@ -50,14 +47,14 @@ div.FooterPortletManager5 {
 }
 
 #portlets-footer .portletHeader {
-    color: &dtml-sitemapHeaderColor;;
+    color: $sitemapHeaderColor;
 	font-size: 1.25em;
 	font-weight: bold;
 	padding: 0.5em 0em 0.0625em 0;
 	margin-top: 0;
 	margin-left: 3.061225114535738%;
 	font-family: Arial, Helvetica, Helv, sans-serif;
-	border-bottom: 1px solid <dtml-var expr="gradientEnd(startColor=sitemapHeaderColor, count=5)">;
+	border-bottom: 1px solid $sitemapHeaderColor;
 	line-height: 1.25em;
 }
 
@@ -80,7 +77,7 @@ div.FooterPortletManager5 {
 
 #portlets-footer .portletHeader a, 
 #portlets-footer .portletHeader span {
-	color: &dtml-sitemapHeaderColor;;
+	color: $sitemapHeaderColor;
 	padding: 0;
 }
 
@@ -90,7 +87,7 @@ div.FooterPortletManager5 {
 }
 
 #portlets-footer .portletFooter a {
-	color: &dtml-sitemapLinkColor;;
+	color: $sitemapLinkColor;
 	display: block;
 	background-color: transparent;
 }
@@ -98,7 +95,7 @@ div.FooterPortletManager5 {
 #portlets-footer a, 
 #portlets-footer .state-published
 {
-	color: &dtml-sitemapLinkColor;;
+	color: $sitemapLinkColor;
 	padding: 0.25em 3.061225114535738%;
 	display: block;
 	border-bottom: none;
@@ -153,14 +150,14 @@ div.FooterPortletManager5 {
 #portlets-footer dl.portletLinkIcon dd.sprite a,
 #portlets-footer dl.portletLinkIcon dd.icon a {
     padding: 0;
-	color: &dtml-sitemapLinkColor;;
+	color: $sitemapLinkColor;
 	background-color: transparent;
     vertical-align: middle;
 }
 
 #portlets-footer dl.portletLinkIcon dd.sprite a:hover,
 #portlets-footer dl.portletLinkIcon dd.icon a:hover {
-	color: &dtml-sitemapLinkColor;;
+	color: $sitemapLinkColor;
 	text-decoration: underline;
 }
 
@@ -168,8 +165,3 @@ div.FooterPortletManager5 {
 #portlets-footer dl.portletLinkIcon dd.sprite {
 	margin: 0.75em 3.061225114535738%;
 }
-
-
-/* YOUR CSS RULES STOP HERE */
-
-/* </dtml-with> */

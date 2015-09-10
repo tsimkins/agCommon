@@ -2,8 +2,6 @@
 ** Stylesheet with Internet Explorer 6.0 workarounds.
 */
 
-/* <dtml-with base_properties> */
-
 #visual-portal-wrapper, #portal-header {
     margin: 0 auto;
     width: 908px;
@@ -16,7 +14,6 @@
 div.no-description {
     display: block;
 }
-
 
 #portal-columns, #portal-column-one, #portal-column-two, #portal-column-content {
     display: block;
@@ -94,18 +91,3 @@ body.icons-on #content form {
     color: #000033 !important;
     font-weight: bold !important;
 }
-
-#logo-psu img {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&dtml-portal_url;/two-tone-psu-logo.png);
-}
-
-#logo-college img {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&dtml-portal_url;/college-text.png);
-}
-
-#logo-extension img {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&dtml-portal_url;/extension-header.png);
-}
-
-
-/* </dtml-with> */

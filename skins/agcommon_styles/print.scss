@@ -1,11 +1,3 @@
-/*
-  <dtml-with base_properties> (do not remove this)
-  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
-*/
-
-/* YOUR CSS RULES START HERE */
-
-
 /* Body width 100%, background white */
 
 body {
@@ -431,10 +423,3 @@ a[href^="http"]:link:after, a[href^="http"]:visited:after {
 .contentLeadImageContainer a:link:after, .contentLeadImageContainer a:visited:after {
     content:""; 
 }
-
-/* YOUR CSS RULES STOP HERE */
-
-/* </dtml-with> */
-
-
-

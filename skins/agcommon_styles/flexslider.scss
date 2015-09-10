@@ -1,9 +1,4 @@
-/*
-  <dtml-with base_properties> (do not remove this)
-  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
-*/
-
-/* YOUR CSS START HERE */
+@import 'variables';
 
 /*
  * jQuery FlexSlider v1.8
@@ -57,7 +52,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 
 /* Direction Nav */
 .flex-direction-nav { height: 0; }
-.flex-direction-nav li a {width: 52px; height: 52px; margin: -13px 0 0; display: block; background: url(&dtml-portal_url;/bg_direction_nav.png) no-repeat; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
+.flex-direction-nav li a {width: 52px; height: 52px; margin: -13px 0 0; display: block; background: url(bg_direction_nav.png) no-repeat; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
 .flex-direction-nav li .next {background-position: -52px 0; right: -21px;}
 .flex-direction-nav li .prev {left: -20px;}
 .flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
@@ -66,7 +61,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: center;}
 .flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
 .flex-control-nav li:first-child {margin: 0;}
-.flex-control-nav li a {width: 13px; height: 13px; display: block; background: url(&dtml-portal_url;/bg_control_nav.png) no-repeat; cursor: pointer; text-indent: -999em;}
+.flex-control-nav li a {width: 13px; height: 13px; display: block; background: url(bg_control_nav.png) no-repeat; cursor: pointer; text-indent: -999em;}
 .flex-control-nav li a:hover {background-position: 0 -13px;}
 .flex-control-nav li a.active {background-position: 0 -26px; cursor: default;}
 
@@ -76,15 +71,15 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
     border-width: 0;
     margin: 0 auto;
     border-radius: 0;
-    max-width: &dtml-maxWidth;;
-    background-color: &dtml-leftSubNavBackground;;
+    max-width: $maxWidth;
+    background-color: $leftSubNavBackground;
 }
 
 .flexslider .tileItem {
     border-top: none;
     margin: 0;
     padding: 0;
-    background-color: &dtml-leftSubNavBackground;;
+    background-color: $leftSubNavBackground;
 }
 
 .flexslider .tileImage {
@@ -128,7 +123,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 
 .flexslider .tileBody p {
     margin: 0.25em 0 0 0;
-    color: &dtml-leftNavTextColor;;
+    color: $leftNavTextColor;
     font-size: 0.875em;
     line-height: 1.375em;
 }
@@ -177,7 +172,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
     height: 37px; 
     margin: -14px 0 0; 
     display: block; 
-    background-image: url(&dtml-portal_url;/bg_slider_arrows.png);
+    background-image: url(bg_slider_arrows.png);
     background-repeat: no-repeat; 
     position: absolute; 
     top: 50%; 
@@ -206,6 +201,3 @@ h2.flexslider-title {
     width: 1px;
 }
 
-/* YOUR JAVASCRIPT STOPS HERE */
-
-/* </dtml-with> */

@@ -1,14 +1,13 @@
-/*
-  <dtml-with base_properties> (do not remove this)
-  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+/* 
+    Faculty Staff Directory CSS
 */
 
-/* YOUR CSS RULES START HERE */
+@import 'variables';
 
 /* Missing table border */
 
 #content .facultyStaffDirectory table.listing {
-	border: 1px solid &dtml-globalBorderColor;;
+	border: 1px solid $globalBorderColor;
 	font-size: 1em;
 }
 
@@ -26,7 +25,7 @@
 }
 
 #content .facultyStaffDirectory .atozView .alphabetLinks ol li {
-    color: &dtml-discreetColor;;
+    color: $discreetColor;
 }
 
 .facultyStaffDirectory.personView .headshot {
@@ -105,7 +104,7 @@ body.template-fsd_atoz_view #portal-localsearchbox {
 #content .searchResults dt.contenttype-fsdperson {
     margin: 0.125em 0 0.125em 0;
     padding: 0.5em 0 0 0;
-    border-top: 1px solid &dtml-globalBorderColor;;
+    border-top: 1px solid $globalBorderColor;
 }
 
 #content .searchResults dt.contenttype-fsdperson:first-child {
@@ -175,7 +174,7 @@ body.template-fsd_atoz_view #portal-localsearchbox {
 }
 
 #content .personView .websites ul {
-    list-style-image: url(&dtml-portal_url;/bullet.png);
+    list-style-image: url(bullet.png);
     list-style-type: square;
     margin: 0.375em 0 1.125em 2.5em;
 }
@@ -183,10 +182,3 @@ body.template-fsd_atoz_view #portal-localsearchbox {
 #content .personView .websites h3 {
     margin: 1.125em 0 0;
 }
-
-/* YOUR CSS RULES STOP HERE */
-
-/* </dtml-with> */
-
-
-

@@ -2,8 +2,6 @@
 ** Stylesheet with Internet Explorer 8.0 workarounds.
 */
 
-/* <dtml-with base_properties> */
-
 #portal-column-two .visualPadding {
     width: 90%;
 }
@@ -61,7 +59,4 @@ table.events tr td:first-child {
     width: 255px;
     height: auto;
 }
-
-/* </dtml-with> */
-
 

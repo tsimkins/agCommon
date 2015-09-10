@@ -2,8 +2,6 @@
 ** Stylesheet with Internet Explorer 7.0 workarounds.
 */
 
-/* <dtml-with base_properties> */
-
 #portal-top-navigation {
     padding-top: 0 !important;
     margin-top: 0 !important;
@@ -120,5 +118,3 @@ body.icons-on #content form {
 #content.hasToc h3 {
     clear: none;
 }
-
-/* </dtml-with> */
