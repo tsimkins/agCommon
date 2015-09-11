@@ -3,9 +3,23 @@
 */
 /*# Automagically generated multi-column grid css for Plone */
 /*# == Variables == */
+/* - Logo * -*/
+/* - Lead Image Width -*/
+/* - Pull Quote Width - */
+/* - Thumbnail Count - */
+/* - Local Search Box - */
+/* - Document Contributors - */
 /*# == Calculations == */
-/*# -- left and right columns -- */
-/*# == CSS Output == */
+/*# -- Left and Right columns -- */
+/* - Content Area - */
+/* - Lead Image *- */
+/* - Photo Album (Thumbnails) - */
+/* - Pull Quote */
+/* - Local Search Box -*/
+/* A little fudging, since sizing for buttons is odd */
+/* Border */
+/* - Document Contributors - */
+/* - Text edit boxes */
 /* = body =================================================== */
 body {
   background-color: #DDDDDD;
@@ -28,7 +42,7 @@ body {
 /* = portal-header ========================================= */
 #portal-header {
   margin: 0 auto;
-  padding: 1em 1.25em 1.75em;
+  padding: 1em 0 1.75em;
   max-width: 1000px;
   text-align: left; }
 
@@ -43,22 +57,10 @@ body {
 /* = logo-psu ============================================== */
 #logo-psu {
   display: block;
-  width: 44.052863436123%; }
+  width: 44%; }
 
-#logo-psu.subsite {
-  width: 190px; }
-
-#logo-psu img, #logo-college img {
+#logo-psu img {
   width: 100%; }
-
-/* = logo-college ========================================== */
-#logo-college {
-  display: block;
-  height: 40px;
-  left: 121px;
-  position: absolute;
-  top: 40px;
-  width: 72px; }
 
 /* = logo-print ============================================ */
 #logo-print {
@@ -113,13 +115,14 @@ body {
   background-color: #FFFFFF;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 1.25em 0.8%;
+  padding: 1.75em 0.8%;
   width: 98.4%;
   vertical-align: top;
   display: table; }
 
 /* = portal-column-one and portal-column-two ================================ */
-#portal-column-one, #portal-column-two {
+#portal-column-one,
+#portal-column-two {
   margin: 0;
   padding: 0 1.62602%;
   width: 21.74797%;
@@ -572,8 +575,7 @@ body {
   display: block; }
 
 .portletLinkIcon {
-  margin-top: 0.75em;
-  margin: 0 2.162162162162162% 1.5em;
+  margin: 0.75em 1.86916% 1.5em;
   /* 4/185 */ }
 
 .portletLinkIcon .portletItem {
@@ -822,10 +824,16 @@ h1, h2 {
   background-color: transparent;
   padding: 0 0 1.5em 0;
   font-size: 0.875em;
-  margin: 0 2.873359347286272%;
-  /* 704.75 */
-  width: 94.253281305427457%;
-  /* 664.25/704.75 */ }
+  margin: 0 1.68067%;
+  width: 96.63866%; }
+
+#portal-column-content.s2 #content {
+  margin: 0 3.47826%;
+  width: 93.04348%; }
+
+#portal-column-content.s1 #content {
+  margin: 0 2.26629%;
+  width: 95.46742%; }
 
 /* Paragraph and Unordered List readability per cmore */
 #content .documentText ul {
@@ -1284,25 +1292,21 @@ dt {
 
 .contentLeadImageContainer {
   background-color: #FFFFFF;
-  max-width: 40.210843373493976%;
+  max-width: 44.90085%;
   width: auto;
   float: right;
   clear: both;
-  margin: 0.5em 0 0.5em 0; }
+  margin: 0.5em 0 0.5em 2.26629%; }
 
 .contentLeadImageContainerFullWidth, .contentLeadImageContainerLeft {
   max-width: 100%;
   width: auto;
   float: none;
   clear: both;
-  margin: 0.5em 0 1.25em 0; }
-
-#portal-column-content.sl.sr .contentLeadImageContainer {
-  max-width: 44.279661016949153%; }
+  margin: 0.5em 0 1.25em; }
 
 .contentLeadImageContainer img {
-  margin-left: 4.5%;
-  max-width: 95.5%;
+  max-width: 100%;
   height: auto; }
 
 .contentLeadImageContainerFullWidth img,
@@ -1314,9 +1318,6 @@ dt {
 
 .contentLeadImageContainerLeft img {
   width: auto; }
-
-.contentLeadImageContainer p.discreet {
-  padding-left: 1.125em; }
 
 #portal-column-content p.discreet img {
   margin-top: 1em;
@@ -1339,8 +1340,14 @@ dt {
 /* Photo Album */
 .photoAlbumEntry {
   background-image: none;
-  padding: 0 1.807228915662651%;
-  width: 21.385542168674699%; }
+  margin: 0 1.68067%;
+  width: 16.63866%;
+  padding: 0;
+  height: 16em; }
+
+#content .photoAlbumEntry a {
+  border: none;
+  width: auto; }
 
 .photoAlbumEntryWrapper {
   display: block; }
@@ -1349,11 +1356,13 @@ dt {
   cursor: zoom-in; }
 
 .photoAlbumEntryTitle {
-  color: #265FCF; }
+  color: #265FCF;
+  width: auto; }
 
 .photoAlbumEntry img {
   max-width: 100%;
-  margin-bottom: 0.375em; }
+  margin-bottom: 0.375em;
+  border: none; }
 
 /* PloneFormGen Fields */
 /* Remove dashed underline from date abbr */
@@ -1382,25 +1391,26 @@ div.tileDescription.no-description {
   border-width: 1px 1em;
   border-style: solid;
   border-color: #DFB97D;
-  padding: 1em 1.807228915662651%;
-  margin: 0 0 1em 1.807228915662651%;
-  line-height: 1.375em;
+  padding: 1em 2.26629%;
+  margin: 0 0 1em 2.26629%;
+  line-height: 1.4375em;
   color: #4A4A4A;
   background-color: #FFFBEF;
   font-weight: normal;
-  font-family: Arial, Helvetica, Helv, sans-serif; }
+  font-family: Arial, Helvetica, Helv, sans-serif;
+  font-size: 1.125em; }
 
 #content .pullquote {
-  width: 46.234939759036145%;
+  width: 40.08499%;
   float: right;
   clear: right;
   border-width: 1px; }
 
 #content .documentText .callout {
   font-weight: normal;
-  padding: 1em 2.63671875%;
-  margin-left: 3%;
-  margin-right: 3%; }
+  padding: 1em 2.26629%;
+  margin-left: 4.53258%;
+  margin-right: 4.53258%; }
 
 .eventDetails {
   margin-top: 1.5em;
@@ -1680,12 +1690,11 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 #portal-localsearchbox {
   background-color: #F6F6F6;
   border: 1px solid #E6E6E6;
-  padding: 0.6875em 2.210516310294596%;
-  margin-top: 0;
-  margin-bottom: 1.25em;
+  padding: 1em 2.26629%;
+  margin: 0 0 1.25em 0;
   float: none;
   clear: both;
-  width: 95.13686411735189%; }
+  width: 95.18414%; }
 
 #portal-localsearchbox .LSBox {
   padding-right: 0;
@@ -1705,39 +1714,48 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 #portal-localsearchbox.extra_search_fields #counties_search,
 #portal-localsearchbox.extra_search_fields #zip_code_search {
   float: left;
-  margin-right: 0.96502%;
-  padding: 0.25em 0.125em; }
+  margin-right: 2.38095%;
+  padding: 0.25em 0; }
 
 .searchPage #zip_code_search {
   padding: 0.75em 0.125em; }
 
 #localSearchBox {
-  width: 87.555555555555556%;
-  padding: 0.1875em 0.96502%;
+  width: 88.39286%;
+  padding: 0.1875em 1.19048%;
   border: 1px solid #999999;
   background-image: none;
   float: left;
-  margin: 0 0.96502% 0 0; }
+  margin: 0 1.19048% 0 0; }
 
 #portal-localsearchbox.extra_search_fields #localSearchBox {
-  width: 97.82871%;
+  width: 97.32143%;
   float: none;
-  margin: 0 0 0.5em 0; }
+  margin: 0 0 0.875em 0; }
 
 #portal-localsearchbox .searchButton {
   background-color: #FFD35F;
   /* UI */
   border: 1px solid #EF6500;
   /* UI */
-  padding: 0.125em 0.96502%;
-  margin-top: 0;
+  padding: 0.125em 0;
+  margin: 0;
   color: #3F1B00;
   /* UI */
   background-image: none;
-  width: 8.202653799758745%;
-  /* Numbers don't add up because of -moz-box-sizing and equivalents. */
-  display: inline-block;
+  width: 7.44048%;
+  display: block;
   float: left; }
+
+#portal-localsearchbox.extra_search_fields .searchButton {
+  margin-top: 0.125em; }
+
+#portal-localsearchbox.extra_search_fields #zip_code_input {
+  border: 1px solid #999999;
+  padding: 0.1875em 0.5em; }
+
+#portal-localsearchbox.extra_search_fields #zip_code_radius {
+  vertical-align: middle; }
 
 #___plusone_0 {
   /*  Using rem and !important to override inline CSS, and font size 1px */
@@ -1819,9 +1837,6 @@ table.plain tbody tr.even td {
   background-color: transparent;
   padding-left: 0;
   padding-bottom: 5px; }
-
-table.events {
-  width: 99.849170437405732%; }
 
 table.events td {
   vertical-align: top; }
@@ -2337,36 +2352,29 @@ body.template-folder_full_view #content .documentText h3 {
 .documentContributors .contentLeadImageContainer {
   float: left;
   clear: none;
-  margin: 0.25em 1.506024096385542% 0 1.506024096385542%;
-  width: 7.530120481927711%;
-  max-width: 7.530120481927711%;
-  height: 75px;
+  margin: 0.25em 1.13314% 0;
+  width: 8.35694%;
+  max-width: 8.35694%;
+  height: 84.375px;
   overflow: hidden;
   text-align: center; }
 
-#portal-column-content.sl.sr .documentContributors .contentLeadImageContainer {
-  width: 10.593220338983051%;
-  max-width: 10.593220338983051%; }
-
 .documentContributors .contentLeadImageContainer img {
-  margin: 0 0 0 -12.5%;
+  margin: -7.5% 0 0 -15%;
   height: auto;
-  width: 125%;
-  max-width: 125%; }
+  width: 130%;
+  max-width: 130%; }
+
+.documentContributors .facultyStaffDirectory,
+#content .documentContributors .tileHeadline,
+.documentContributors .facultyStaffDirectory {
+  font-size: 0.96875em;
+  margin-left: 11.75637%; }
 
 #content .documentContributors .tileHeadline {
   font-size: 1.1875em;
-  margin-left: 10.542168674698795%;
   color: #474747;
   /* UI */ }
-
-.documentContributors .facultyStaffDirectory {
-  font-size: 0.96875em;
-  margin-left: 10.542168674698795%; }
-
-#portal-column-content.sl.sr #content .documentContributors .tileHeadline,
-#portal-column-content.sl.sr .documentContributors .facultyStaffDirectory {
-  margin-left: 14.830508474576271%; }
 
 .documentContributors .facultyStaffDirectory div {
   color: #4D4D4D;
@@ -2849,8 +2857,8 @@ fieldset, .editionComment {
 .field input[type="text"][name$=".title"],
 input#title {
   border: 1px solid #999999;
-  padding: 2px 0.339750849377123%;
-  width: 99.093997734994337%; }
+  padding: 2px 1.13314%;
+  width: 97.45042%; }
 
 #content .field input[type="text"][name$=".title"],
 #archetypes-fieldname-title input {

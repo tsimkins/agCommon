@@ -284,9 +284,6 @@ class AgCommonUtilities(BrowserView):
         
         # Panorama Image
         if getattr(context, 'portal_type', '') in ['HomePage']:
-            image_format = getattr(context, "homepage_image_format", "standard")     
-            body_classes.append('homepage-image-format-%s' % image_format)
-
             portlet_format = getattr(context, "homepage_portlet_format", "standard")     
             body_classes.append('homepage-portlet-format-%s' % portlet_format)
 

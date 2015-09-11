@@ -1,0 +1,86 @@
+/*
+    Layout calculations for homepage 
+*/
+
+/* --------- Variables ---------- */
+
+// Sizes set a little small because of rounding errors.
+$feedmixer_image_small_width: 160px; 
+$feedmixer_image_large_width: 265px;
+
+
+/* == No Left Column == */
+
+/* Margin Percent */
+$homepagecolumn_margin_percent: 100%*($column_padding/$content_column_width_full);
+
+/* Right Column */
+$rightcolumn_width_percent: 100%*($portlet_column_width/$content_column_width_full);
+
+/* For centercolumn without right column */
+$centercolumn_width: $content_column_width_full;
+$centercolumn_width_percent: 100%*($centercolumn_width/$content_column_width_full);
+
+/* For centercolumn with right column */
+$centercolumn_sr_width: $content_column_width_full - $portlet_column_width - 2*$column_padding;
+$centercolumn_sr_width_percent: 100%*($centercolumn_sr_width/$content_column_width_full);
+
+/* == Has Left Column == */
+
+/* Margin Percent */
+$homepagecolumn_margin_percent_one: 100%*($column_padding/$content_column_width_one);
+
+/* Right Column */
+$rightcolumn_width_percent_one: 100%*($portlet_column_width/$content_column_width_one);
+
+/* For centercolumn without right column */
+$centercolumn_width_one: $content_column_width_one;
+$centercolumn_width_percent_one: 100%*($centercolumn_width_one/$content_column_width_one);
+
+/* For centercolumn with right column */
+$centercolumn_sr_width_one: $content_column_width_one - $portlet_column_width - 2*$column_padding;
+$centercolumn_sr_width_percent_one: 100%*($centercolumn_sr_width_one/$content_column_width_one);
+
+
+/* == Feedmixer Images == */
+
+/* Margins */
+
+$homepage_feedmixer_image_margin: $column_padding;
+$homepage_feedmixer_image_margin_full: 100%*($homepage_feedmixer_image_margin/$centercolumn_width);
+$homepage_feedmixer_image_margin_one: 100%*($homepage_feedmixer_image_margin/$centercolumn_width_one);
+$homepage_sr_feedmixer_image_margin_full: 100%*($homepage_feedmixer_image_margin/$centercolumn_sr_width);
+$homepage_sr_feedmixer_image_margin_one: 100%*($homepage_feedmixer_image_margin/$centercolumn_sr_width_one);
+
+/* Text Margin */
+$homepage_feedmixer_image_small_margin_percent_full: 100%*(($feedmixer_image_small_width + $homepage_feedmixer_image_margin)/$centercolumn_width);
+
+$homepage_feedmixer_image_large_margin_percent_full: 100%*(($feedmixer_image_large_width + $homepage_feedmixer_image_margin)/$centercolumn_width);
+
+$homepage_feedmixer_image_small_margin_percent_one: 100%*(($feedmixer_image_small_width + $homepage_feedmixer_image_margin)/$centercolumn_width_one);
+
+$homepage_feedmixer_image_large_margin_percent_one: 100%*(($feedmixer_image_large_width + $homepage_feedmixer_image_margin)/$centercolumn_width_one);
+
+$homepage_sr_feedmixer_image_small_margin_percent_full: 100%*(($feedmixer_image_small_width + $homepage_feedmixer_image_margin)/$centercolumn_sr_width);
+
+$homepage_sr_feedmixer_image_large_margin_percent_full: 100%*(($feedmixer_image_large_width + $homepage_feedmixer_image_margin)/$centercolumn_sr_width);
+
+$homepage_sr_feedmixer_image_small_margin_percent_one: 100%*(($feedmixer_image_small_width + $homepage_feedmixer_image_margin)/$centercolumn_sr_width_one);
+
+$homepage_sr_feedmixer_image_large_margin_percent_one: 100%*(($feedmixer_image_large_width + $homepage_feedmixer_image_margin)/$centercolumn_sr_width_one);
+
+
+
+/* Image Widths */
+
+$homepage_feedmixer_image_small_width_percent_full: 100%*($feedmixer_image_small_width/$centercolumn_width);
+$homepage_feedmixer_image_large_width_percent_full: 100%*($feedmixer_image_large_width/$centercolumn_width);
+
+$homepage_feedmixer_image_small_width_percent_one: 100%*($feedmixer_image_small_width/$centercolumn_width_one);
+$homepage_feedmixer_image_large_width_percent_one: 100%*($feedmixer_image_large_width/$centercolumn_width_one);
+
+$homepage_sr_feedmixer_image_small_width_percent_full: 100%*($feedmixer_image_small_width/$centercolumn_sr_width);
+$homepage_sr_feedmixer_image_large_width_percent_full: 100%*($feedmixer_image_large_width/$centercolumn_sr_width);
+
+$homepage_sr_feedmixer_image_small_width_percent_one: 100%*($feedmixer_image_small_width/$centercolumn_sr_width_one);
+$homepage_sr_feedmixer_image_large_width_percent_one: 100%*($feedmixer_image_large_width/$centercolumn_sr_width_one);

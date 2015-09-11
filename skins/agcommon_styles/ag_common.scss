@@ -3,38 +3,7 @@
 */
 
 @import 'variables';
-
-/*# Automagically generated multi-column grid css for Plone */
-
-/*# == Variables == */
-
-$column_count: 16;
-$column_padding: 16px;
-$vertical_padding: 1.25em;
-$container_width: $maxWidth - $column_padding;
-
-/*# == Calculations == */
-$column_width: $container_width/$column_count;
-
-/*# -- left and right columns -- */
-
-$portlet_columns: 4;
-$portlet_column_width: ($portlet_columns*$column_width) - 2*$column_padding;
-
-$content_columns_full: 16; 
-$content_column_width_full: ($content_columns_full*$column_width) - 2*$column_padding;
-
-$content_columns_one: 12; 
-$content_column_width_one: ($content_columns_one*$column_width) - 2*$column_padding;
-
-$content_columns_two: 8; 
-$content_column_width_two: ($content_columns_two*$column_width) - 2*$column_padding;
-
-/*# == CSS Output == */
-
-
-
-
+@import 'layout';
 
 /* = body =================================================== */
 
@@ -65,7 +34,7 @@ body {
 
 #portal-header {
     margin: 0 auto;
-    padding: 1em 1.25em 1.75em;
+    padding: 1em 0 1.75em;
     max-width: $maxWidth;
     text-align: left;
 }
@@ -87,28 +56,12 @@ body {
 
 #logo-psu {
     display: block;
-    width: 44.052863436123%;
+    width: 100%*($logoWidth/$maxWidth);
 }
 
-#logo-psu.subsite {
-    width: 190px;
-}
-
-#logo-psu img, #logo-college img {
+#logo-psu img {
     width: 100%;
 }
-
-/* = logo-college ========================================== */
-
-#logo-college {
-    display: block;
-    height: 40px;
-    left: 121px;
-    position: absolute;
-    top: 40px;
-    width: 72px
-}
-
 
 /* = logo-print ============================================ */
 
@@ -177,7 +130,7 @@ body {
     background-color: #FFFFFF;
     max-width: $maxWidth;
     margin: 0 auto;
-    padding: $vertical_padding 100%*(($column_padding/2)/$maxWidth);
+    padding: 1.75em 100%*(($column_padding/2)/$maxWidth);
     width: 100%*(($maxWidth - ($column_padding))/$maxWidth);
     vertical-align: top;
     display: table;
@@ -185,7 +138,8 @@ body {
 
 /* = portal-column-one and portal-column-two ================================ */
 
-#portal-column-one, #portal-column-two {
+#portal-column-one, 
+#portal-column-two {
     margin: 0;
     padding: 0 100%*($column_padding/$container_width);
     width: 100%*($portlet_column_width/$container_width);
@@ -701,8 +655,7 @@ body {
 }
 
 .portletLinkIcon {
-    margin-top: 0.75em;
-    margin: 0 2.162162162162162% 1.5em; /* 4/185 */
+    margin: 0.75em 100%*(4px/$portlet_column_width) 1.5em; /* 4/185 */
 }
 
 .portletLinkIcon .portletItem {
@@ -1006,8 +959,18 @@ h1, h2 {
     background-color: transparent;
     padding: 0 0 1.5em 0;
     font-size: 0.875em;
-    margin: 0 2.873359347286272%; /* 704.75 */
-    width:   94.253281305427457%; /* 664.25/704.75 */
+    margin: 0 $content_area_margin_percent_full;
+    width: $content_area_width_percent_full;
+}
+
+#portal-column-content.s2 #content{
+    margin: 0 $content_area_margin_percent_two;
+    width: $content_area_width_percent_two;
+}
+
+#portal-column-content.s1 #content {
+    margin: 0 $content_area_margin_percent_one;
+    width: $content_area_width_percent_one;
 }
 
 /* Paragraph and Unordered List readability per cmore */
@@ -1559,11 +1522,11 @@ dt {
 
 .contentLeadImageContainer {
     background-color: $backgroundColor;
-    max-width: 40.210843373493976%;
+    max-width: $leadImage_width_percent;
     width: auto;
     float: right;
     clear: both;
-    margin: 0.5em 0 0.5em 0;
+    margin: 0.5em 0 0.5em $leadImage_margin_percent;
 }
 
 .contentLeadImageContainerFullWidth, .contentLeadImageContainerLeft {
@@ -1571,16 +1534,11 @@ dt {
     width: auto;
     float: none;
     clear: both;
-    margin: 0.5em 0 1.25em 0;
-}
-
-#portal-column-content.sl.sr .contentLeadImageContainer {
-    max-width: 44.279661016949153%;
+    margin: 0.5em 0 1.25em;
 }
 
 .contentLeadImageContainer img {
-    margin-left: 4.5%;
-    max-width: 95.5%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -1594,10 +1552,6 @@ dt {
 
 .contentLeadImageContainerLeft img {
     width: auto;
-}
-
-.contentLeadImageContainer p.discreet {
-    padding-left: 1.125em;
 }
 
 #portal-column-content p.discreet img {
@@ -1626,8 +1580,15 @@ dt {
 /* Photo Album */
 .photoAlbumEntry {
     background-image: none;
-    padding: 0 1.807228915662651%;
-    width: 21.385542168674699%;
+    margin: 0 $thumbnail_margin_percent;
+    width: $thumbnail_width_percent;
+    padding: 0;
+    height: 16em;
+}
+
+#content .photoAlbumEntry a {
+    border: none;
+    width: auto;
 }
 
 .photoAlbumEntryWrapper {
@@ -1640,11 +1601,13 @@ dt {
 
 .photoAlbumEntryTitle {
     color: $contentLinkColor;
+    width: auto;
 }
 
 .photoAlbumEntry img {
     max-width: 100%;
     margin-bottom: 0.375em;
+    border: none;
 }
 
 /* PloneFormGen Fields */
@@ -1680,17 +1643,18 @@ div.tileDescription.no-description {
     border-width: 1px 1em;
     border-style: solid;
     border-color: $pullQuoteBorderColor;
-    padding: 1em 1.807228915662651%;
-    margin: 0 0 1em 1.807228915662651%;
-    line-height: 1.375em;
+    padding: 1em $pullQuote_padding_percent;
+    margin: 0 0 1em $pullQuote_padding_percent;
+    line-height: 1.4375em;
     color: $pullQuoteTextColor;
     background-color: $pullQuoteBackgroundColor;
     font-weight: normal;
     font-family: Arial, Helvetica, Helv, sans-serif;
+    font-size: 1.125em;
 }
 
 #content .pullquote {
-    width: 46.234939759036145%;
+    width: $pullQuote_width_percent;
     float: right;
     clear: right;
     border-width: 1px;
@@ -1698,9 +1662,9 @@ div.tileDescription.no-description {
 
 #content .documentText .callout {
     font-weight: normal;
-    padding: 1em 2.63671875%;
-    margin-left: 3%;
-    margin-right: 3%;
+    padding: 1em $pullQuote_padding_percent;
+    margin-left: 2*$pullQuote_padding_percent;
+    margin-right: 2*$pullQuote_padding_percent;
 }
 
 .eventDetails {
@@ -2045,12 +2009,11 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 #portal-localsearchbox {
     background-color: $globalBackgroundColor;
     border: 1px solid $globalBorderColor;
-    padding: 0.6875em 2.210516310294596%;
-    margin-top: 0;
-    margin-bottom: 1.25em;
+    padding: 1em $localSearchBox_padding_percent;
+    margin: 0 0 1.25em 0;
     float: none;
     clear: both;
-    width: 95.13686411735189%;
+    width: $localSearchBox_width_percent;
 }
 
 #portal-localsearchbox .LSBox {
@@ -2074,8 +2037,8 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 #portal-localsearchbox.extra_search_fields #counties_search,
 #portal-localsearchbox.extra_search_fields #zip_code_search {
     float: left;
-    margin-right: 0.96502%;
-    padding: 0.25em 0.125em;
+    margin-right: 2*$localSearchBox_field_margin_percent;
+    padding: 0.25em 0;
 }
 
 .searchPage #zip_code_search {
@@ -2083,30 +2046,43 @@ body.template-subfolder_view #content .tileItem .photoAlbum {
 }
 
 #localSearchBox {
-    width: 87.555555555555556%;
-    padding: 0.1875em 0.96502%;
+    width: $localSearchBox_field_search_width_percent;
+    padding: 0.1875em $localSearchBox_field_padding_percent;
     border: 1px solid $fieldBorderColor;
     background-image: none;
     float: left;
-    margin: 0 0.96502% 0 0;
+    margin: 0 $localSearchBox_field_margin_percent 0 0;
 }
 
 #portal-localsearchbox.extra_search_fields #localSearchBox {
-    width: 97.82871%;
+    width: $localSearchBox_field_search_full_width_percent;
     float: none;
-    margin: 0 0 0.5em 0;
+    margin: 0 0 0.875em 0;
 }
 
 #portal-localsearchbox .searchButton {
     background-color: #FFD35F; /* UI */
     border: 1px solid #EF6500; /* UI */
-    padding: 0.125em 0.96502%;
-    margin-top: 0;
+    padding: 0.125em 0;
+    margin: 0;
     color: #3F1B00; /* UI */
     background-image: none;
-    width: 8.202653799758745%; /* Numbers don't add up because of -moz-box-sizing and equivalents. */
-    display: inline-block;
+    width: $localSearchBox_field_button_width_percent;
+    display: block;
     float: left;
+}
+
+#portal-localsearchbox.extra_search_fields .searchButton {
+    margin-top: 0.125em;
+}
+
+#portal-localsearchbox.extra_search_fields #zip_code_input {
+    border: 1px solid $fieldBorderColor;
+    padding: 0.1875em 0.5em;
+}
+
+#portal-localsearchbox.extra_search_fields #zip_code_radius {
+    vertical-align: middle;
 }
 
 #___plusone_0 {
@@ -2202,10 +2178,6 @@ table.plain tbody tr.even td {
     background-color: transparent;
     padding-left: 0;
     padding-bottom: 5px;
-}
-
-table.events {
-    width: 99.849170437405732%;
 }
 
 table.events td {
@@ -2852,40 +2824,31 @@ body.template-folder_full_view #content .documentText h3 {
 .documentContributors .contentLeadImageContainer {
     float: left;
     clear: none;
-    margin: 0.25em 1.506024096385542% 0 1.506024096385542%;
-    width: 7.530120481927711%;
-    max-width: 7.530120481927711%;
-    height: 75px;
+    margin: 0.25em $documentContributors_margin_percent 0;
+    width: $documentContributors_image_width_percent;
+    max-width: $documentContributors_image_width_percent;
+    height: $documentContributorsImageHeight;
     overflow: hidden;
     text-align: center;
 }
 
-#portal-column-content.sl.sr .documentContributors .contentLeadImageContainer {
-    width: 10.593220338983051%;
-    max-width: 10.593220338983051%;
+.documentContributors .contentLeadImageContainer img {
+    margin: -7.5% 0 0 -15%;
+    height: auto;
+    width: 130%;
+    max-width: 130%;
 }
 
-.documentContributors .contentLeadImageContainer img {
-    margin: 0 0 0 -12.5%;
-    height: auto;
-    width: 125%;
-    max-width: 125%;
+.documentContributors .facultyStaffDirectory,
+#content .documentContributors .tileHeadline,
+.documentContributors .facultyStaffDirectory {
+    font-size: 0.96875em;
+    margin-left: $documentContributors_info_left_margin_percent;
 }
 
 #content .documentContributors .tileHeadline {
     font-size: 1.1875em;
-    margin-left: 10.542168674698795%;
     color: #474747; /* UI */
-}
-
-.documentContributors .facultyStaffDirectory {
-    font-size: 0.96875em;
-    margin-left: 10.542168674698795%;
-}
-
-#portal-column-content.sl.sr #content .documentContributors .tileHeadline ,
-#portal-column-content.sl.sr .documentContributors .facultyStaffDirectory {
-    margin-left: 14.830508474576271%;
 }
 
 .documentContributors .facultyStaffDirectory div {
@@ -3488,8 +3451,8 @@ fieldset, .editionComment {
 .field input[type="text"][name$=".title"],
 input#title {
     border: 1px solid $fieldBorderColor;
-    padding: 2px 0.339750849377123%;
-    width: 99.093997734994337%;
+    padding: 2px $textEditBox_padding_percent;
+    width: $textEditBox_width_percent;
 }
 
 #content .field input[type="text"][name$=".title"],

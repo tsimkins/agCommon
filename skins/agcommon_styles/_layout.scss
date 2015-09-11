@@ -1,0 +1,103 @@
+/*# Automagically generated multi-column grid css for Plone */
+
+/*# == Variables == */
+
+$column_count: 16;
+$column_padding: 16px;
+$half_padding: $column_padding/2;
+
+/* - Logo * -*/
+$logoWidth: 440px;
+
+/* - Lead Image Width -*/
+$leadImageWidth: 333px;
+
+/* - Pull Quote Width - */
+$pullQuoteWidth: $leadImageWidth;
+
+/* - Thumbnail Count - */
+$thumbnailColumns: 5;
+
+/* - Local Search Box - */
+$searchButtonWidth: 50px;
+
+/* - Document Contributors - */
+$documentContributorsImageWidth: 75px;
+
+/*# == Calculations == */
+$container_width: $maxWidth - $column_padding;
+$column_width: $container_width/$column_count;
+
+/*# -- Left and Right columns -- */
+
+$portlet_columns: 4;
+$portlet_column_width: ($portlet_columns*$column_width) - 2*$column_padding;
+
+$content_columns_full: 16; 
+$content_column_width_full: ($content_columns_full*$column_width) - 2*$column_padding;
+
+$content_columns_one: 12; 
+$content_column_width_one: ($content_columns_one*$column_width) - 2*$column_padding;
+
+$content_columns_two: 8; 
+$content_column_width_two: ($content_columns_two*$column_width) - 2*$column_padding;
+
+/* - Content Area - */
+$content_area_width_full: $content_column_width_full - 2*$column_padding;
+$content_area_width_percent_full: 100%*($content_area_width_full/$content_column_width_full);
+$content_area_margin_percent_full: 100%*($column_padding/$content_column_width_full);
+
+$content_area_width_one: $content_column_width_one - 2*$column_padding;
+$content_area_width_percent_one: 100%*($content_area_width_one/$content_column_width_one);
+$content_area_margin_percent_one: 100%*($column_padding/$content_column_width_one);
+
+$content_area_width_two: $content_column_width_two - 2*$column_padding;
+$content_area_width_percent_two: 100%*($content_area_width_two/$content_column_width_two);
+$content_area_margin_percent_two: 100%*($column_padding/$content_column_width_two);
+
+
+/* - Lead Image *- */
+$leadImage_width_percent: 100%*(($leadImageWidth - $column_padding)/$content_column_width_one);
+$leadImage_margin_percent: 100%*($column_padding/$content_column_width_one);
+
+
+/* - Photo Album (Thumbnails) - */
+$thumbnail_margin_percent: 100%*($column_padding/$content_column_width_full);
+$thumbnail_width_percent: 100%*($content_column_width_full/$thumbnailColumns - 2*$column_padding)/$content_column_width_full;
+
+
+/* - Pull Quote */
+$pullQuote_width_percent: 100%*(($pullQuoteWidth - 3*$column_padding - 2px)/$content_column_width_one);
+$pullQuote_padding_percent: 100%*($column_padding/$content_column_width_one);
+
+
+/* - Local Search Box -*/
+
+/* A little fudging, since sizing for buttons is odd */
+$searchButtonWidth: $searchButtonWidth + 2px;
+$localSearchBox_width: $content_column_width_one - 2*$column_padding - 2px; /* Border */
+$localSearchBox_width_percent: 100%*($localSearchBox_width/$content_column_width_one);
+$localSearchBox_padding_percent: 100%*($column_padding/$content_column_width_one);
+
+$localSearchBox_field_search_width: $localSearchBox_width - 3*$half_padding - $searchButtonWidth - 2px;
+$localSearchBox_field_search_width_percent: 100%*($localSearchBox_field_search_width/$localSearchBox_width);
+
+$localSearchBox_field_search_full_width: $localSearchBox_width - 2*$half_padding - 2px;
+$localSearchBox_field_search_full_width_percent: 100%*($localSearchBox_field_search_full_width/$localSearchBox_width);
+
+$localSearchBox_field_button_width_percent: 100%*(($searchButtonWidth - 2px)/$localSearchBox_width);
+
+$localSearchBox_field_margin_percent: 100%*($half_padding/$localSearchBox_width);
+$localSearchBox_field_padding_percent: 100%*($half_padding/$localSearchBox_width);
+
+
+/* - Document Contributors - */
+$documentContributorsImageHeight: $documentContributorsImageWidth*1.125;
+$documentContributors_image_width_percent: 100%*(($documentContributorsImageWidth - 2*$half_padding)/$content_column_width_one);
+$documentContributors_info_left_margin_percent: 100%*(($documentContributorsImageWidth+$half_padding)/$content_column_width_one);
+$documentContributors_margin_percent: 100%*($half_padding/$content_column_width_one); 
+
+
+/* - Text edit boxes */
+$textEditBox_width_percent: 100%*(($content_column_width_one - $column_padding - 2px)/$content_column_width_one);
+$textEditBox_padding_percent: 100%*($half_padding/$content_column_width_one);

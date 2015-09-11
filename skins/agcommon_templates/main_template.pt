@@ -61,6 +61,9 @@
 
         <link tal:replace="structure provider:plone.htmlhead.links" />
 
+        <!-- Web Fonts -->
+        <link href="//fonts.googleapis.com/css?family=Open%20Sans&subset=latin" rel="stylesheet" type="text/css">
+        
         <!-- Disable IE6 image toolbar -->
         <meta http-equiv="imagetoolbar" content="no" />
 
@@ -164,7 +167,7 @@
 
             <tal:comment replace="nothing"> Start of main content block </tal:comment>
             <div id="portal-column-content"
-                tal:attributes="class python:(sl and sr and 'sl sr') or (sl and 'sl') or (sr and 'sr') or 's0'">
+                tal:attributes="class python:(sl and sr and 'sl sr s2') or (sl and 'sl s1') or (sr and 'sr s1') or 's0'">
 
               <metal:block define-slot="content">
                 <div metal:define-macro="content"

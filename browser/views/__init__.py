@@ -561,10 +561,6 @@ class HomepageView(FolderView):
     implements(IFolderView)
 
     @property
-    def image_format(self):
-        return getattr(self.context, 'homepage_image_format', 'standard')
-
-    @property
     def portlet_format(self):
         return getattr(self.context, 'homepage_portlet_format', 'standard')
         

@@ -8,10 +8,6 @@
 
 @media handheld, screen and (min-width: 960px) {
     
-    .contentLeadImageContainer {
-        max-width: 52.7107%;
-    }
-    
     body.custom-fullwidth #visual-portal-wrapper, body.custom-fullwidth #portal-header,
     body.custom-fullwidth #portal-personaltools-wrapper {
         max-width: 100%;
@@ -57,9 +53,13 @@
         min-width: 0;
         border: none;
     }
+
+    #portal-top-navigation li a {
+        font-size: 0.75em;
+    }
     
     #portal-columns {
-        padding: 0;
+        padding: 1.5em 0 0 0;
         width: 100%;
     }
     
@@ -78,17 +78,6 @@
     #homepageimage {
         background-size: 100%;
         background-repeat: no-repeat;
-    }
-    
-    .contentLeadImageContainer, .captionedImage.right {
-        max-width: 43.914473684210526%;  /* 267/608 */
-        text-align: left;
-    }
-    
-    .contentLeadImageContainer img {
-        max-width: 94.943820224719101%;
-        height: auto;
-        margin-left: 5.056179775280899%;
     }
     
     .twtr-doc {

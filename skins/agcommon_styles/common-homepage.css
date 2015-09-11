@@ -1,5 +1,41 @@
+/*# Automagically generated multi-column grid css for Plone */
+/*# == Variables == */
+/* - Logo * -*/
+/* - Lead Image Width -*/
+/* - Pull Quote Width - */
+/* - Thumbnail Count - */
+/* - Local Search Box - */
+/* - Document Contributors - */
+/*# == Calculations == */
+/*# -- Left and Right columns -- */
+/* - Content Area - */
+/* - Lead Image *- */
+/* - Photo Album (Thumbnails) - */
+/* - Pull Quote */
+/* - Local Search Box -*/
+/* A little fudging, since sizing for buttons is odd */
+/* Border */
+/* - Document Contributors - */
+/* - Text edit boxes */
+/*
+    Layout calculations for homepage 
+*/
+/* --------- Variables ---------- */
+/* == No Left Column == */
+/* Margin Percent */
+/* Right Column */
+/* For centercolumn without right column */
+/* For centercolumn with right column */
+/* == Has Left Column == */
+/* Margin Percent */
+/* Right Column */
+/* For centercolumn without right column */
+/* For centercolumn with right column */
+/* == Feedmixer Images == */
+/* Margins */
+/* Text Margin */
+/* Image Widths */
 /* ============= addthis ================ */
-/* Don't show addthis on homepage */
 #addthis {
   margin: 0.25em 0.25em 0.75em 0.75em;
   padding: 0; }
@@ -13,9 +49,10 @@
   display: none; }
 
 /*========= Content ============*/
+#portal-column-content.s1 #content,
 #content {
-  margin: 0 0.424929178470255% 0.375em 0.56657223796034%;
-  width: 99.008498583569405%;
+  width: 100%;
+  margin: 0;
   padding: 0;
   font-size: 1em;
   display: table;
@@ -23,22 +60,10 @@
   border-spacing: 0;
   border-width: 0; }
 
-#portal-localsearchbox {
-  font-size: 0.84375em;
-  padding: 0.6875em 1.668520578420467%;
-  margin: 0 1.668520578420467% 1.25em 1.668520578420467%;
-  width: 93.325917686318131%; }
-
 /*========= Editable ============*/
 #portal-column-content .documentEditable #content {
   padding: 0.1875em 0 0 0 !important;
   border-width: 0; }
-
-body.template-atct_edit #portal-column-content .documentEditable #content {
-  padding: 0.375em 2.75% 0.375em !important;
-  border-width: 0;
-  width: 94.5%;
-  margin: 0 !important; }
 
 .documentEditable {
   padding: 0 !important; }
@@ -55,23 +80,9 @@ body.template-atct_edit #portal-column-content .documentEditable #content {
 /*========= Homepage Text ============*/
 #content #homepage-text {
   display: block;
-  margin: 0 1.668520578420467%;
+  margin: 0;
   padding: 0.375em 0;
-  width: 96.662958843159066%; }
-
-#content #homepage-text.sr {
-  margin: 0 2.149%;
-  width: 66.7622%;
-  float: left;
-  padding-left: 0;
-  padding-right: 0; }
-
-/* Has center column */
-#content #homepage-text.sr.sc {
-  padding-left: 0;
-  padding-right: 0;
-  margin: 0 2.149%;
-  width: 95.702%; }
+  width: 100%; }
 
 #content #homepage-text .documentFirstHeading {
   font-size: 1.6875em;
@@ -87,18 +98,38 @@ body.template-atct_edit #portal-column-content .documentEditable #content {
 #content #homepage-text .documentText {
   font-size: 0.875em; }
 
-/* ================= Columns ===================== */
+/* ================= Center column ===================== */
 #centercolumn {
-  margin: 0 2.148997134670487%;
-  width: 95.702005730659026%;
+  width: 100%;
   display: block; }
 
 #centercolumn.sr {
   float: left;
-  width: 66.762178%;
-  /* (496-2*15)/698 */
-  margin: 0 2.148997%;
-  /* 15/698 */ }
+  width: 74.15966%;
+  margin: 0 1.68067% 0 0; }
+
+#portal-column-content.sl #centercolumn {
+  display: block; }
+
+#portal-column-content.sl #centercolumn.sr {
+  float: left;
+  margin: 0 2.26629% 0 0;
+  width: 65.15581%; }
+
+/* ================= Right Column =====================*/
+#rightcolumn {
+  display: block;
+  margin: 0 0 0 1.68067%;
+  font-weight: normal;
+  background-color: transparent;
+  color: #3F3F3F;
+  width: 22.47899%;
+  float: left;
+  vertical-align: top; }
+
+#portal-column-content.sl #rightcolumn {
+  margin: 0 0 0 2.26629%;
+  width: 30.31161%; }
 
 /* ================= Portlet headers ===================== */
 #content #centercolumn .portletHeader,
@@ -109,12 +140,12 @@ body.template-atct_edit #portal-column-content .documentEditable #content {
 /*
 http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-hack/ - "Hack Free Approach"
 */
-#centercolumn .portletfeedmixer .portletItem {
+#content .portletfeedmixer .portletItem {
   border-top: 1px dashed #E6E6E6;
   margin-top: 0.75em;
   padding-top: 0.75em; }
 
-#centercolumn .portletfeedmixer .portletItem:first-child {
+#content .portletfeedmixer .portletItem:first-child {
   border-top: none;
   margin-top: 0;
   padding-top: 0; }
@@ -133,47 +164,88 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
   width: 100%;
   max-width: 100%; }
 
-#centercolumn .portletfeedmixer .portletItem .rssImage {
-  float: right;
-  margin: 0 0 0.625em 0.625em;
-  text-align: right; }
+#centercolumn .portletfeedmixer .rssImage {
+  margin-top: 0;
+  margin-bottom: 0.625em; }
 
 #centercolumn .portletfeedmixerimagefull .portletItem .rssImage {
   margin: 0 0 0.125em 0;
   float: none; }
 
-#centercolumn .portletfeedmixerimageleft .portletItem .rssImage {
+/*###*/
+.portletfeedmixerimagefull .rssImage {
+  width: 100%; }
+
+#centercolumn .portletfeedmixerimagesmall .rssImage {
+  width: 16.80672%; }
+#centercolumn .portletfeedmixerimagelarge .rssImage {
+  width: 27.83613%; }
+#centercolumn .portletfeedmixerimageleft .rssImage {
+  margin-right: 1.68067%;
   float: left;
-  margin: 0.125em 1.590457256461233% 0.625em 0;
-  /* 8/503 */
-  text-align: right;
-  width: 18.7089%; }
-
-#centercolumn.sr .portletfeedmixerimageleft .portletItem .rssImage {
-  width: 25.177025963808025%; }
-
-#centercolumn .portletfeedmixerimagelarge .portletItem .rssImage {
-  width: 44.731610337972167% !important;
-  /* 225/503 */
-  max-width: 44.731610337972167% !important;
-  /* 225/503 */ }
-
-#centercolumn .portletfeedmixerimageleft .portletItem .title,
-#centercolumn .portletfeedmixerimageleft .portletItem .date,
-#centercolumn .portletfeedmixerimageleft .portletItem .summary {
-  margin-left: 20.2993%; }
-
-#centercolumn.sr .portletfeedmixerimageleft .portletItem .title,
-#centercolumn.sr .portletfeedmixerimageleft .portletItem .date,
-#centercolumn.sr .portletfeedmixerimageleft .portletItem .summary {
-  margin-left: 27.435387673956262%;
-  /* 138/503 */ }
-
+  text-align: left; }
+#centercolumn .portletfeedmixerimageright .rssImage {
+  margin-left: 1.68067%;
+  float: right;
+  text-align: right; }
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
-  margin-left: 46.719681908548708%;
-  /* 235/503 */ }
+  margin-left: 29.51681%; }
+#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
+#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
+#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
+  margin-left: 18.48739%; }
+
+#centercolumn.sr .portletfeedmixerimagesmall .rssImage {
+  width: 22.66289%; }
+#centercolumn.sr .portletfeedmixerimagelarge .rssImage {
+  width: 37.53541%; }
+#centercolumn.sr .portletfeedmixerimageleft .rssImage {
+  margin-right: 2.26629%; }
+#centercolumn.sr .portletfeedmixerimageright .rssImage {
+  margin-left: 2.26629%; }
+#centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
+#centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
+#centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
+  margin-left: 39.8017%; }
+#centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
+#centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
+#centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
+  margin-left: 24.92918%; }
+
+#portal-column-content.sl #centercolumn .portletfeedmixerimagesmall .rssImage {
+  width: 22.66289%; }
+#portal-column-content.sl #centercolumn .portletfeedmixerimagelarge .rssImage {
+  width: 37.53541%; }
+#portal-column-content.sl #centercolumn .portletfeedmixerimageleft .rssImage {
+  margin-right: 2.26629%; }
+#portal-column-content.sl #centercolumn .portletfeedmixerimageright .rssImage {
+  margin-left: 2.26629%; }
+#portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
+#portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
+#portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
+  margin-left: 39.8017%; }
+#portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
+#portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
+#portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
+  margin-left: 24.92918%; }
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimagesmall .rssImage {
+  width: 34.78261%; }
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimagelarge .rssImage {
+  width: 57.6087%; }
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft .rssImage {
+  margin-right: 3.47826%; }
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimageright .rssImage {
+  margin-left: 3.47826%; }
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
+  margin-left: 61.08696%; }
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
+#portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
+  margin-left: 38.26087%; }
 
 #centercolumn .portletfeedmixerimageleft .portletItem {
   border-style: none;
@@ -186,22 +258,6 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 #centercolumn .portletfeedmixerimagelarge .portletItem .rssImage img {
   max-width: 100%;
   width: 100%; }
-
-#centercolumn .portletfeedmixer .portletItem .hasImage {
-  width: 73.558648111332008%; }
-
-/* ================= Right Column =====================*/
-#rightcolumn {
-  display: block;
-  margin: 0 2.148997%;
-  /* 15/698 */
-  font-weight: normal;
-  background-color: transparent;
-  color: #3F3F3F;
-  width: 24.641834%;
-  /* (202-2*15)/698 */
-  float: left;
-  vertical-align: top; }
 
 /* =================== Portlets =================== */
 /* Hide managePortletsLink in homegrown portlets. */
@@ -230,51 +286,5 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 /* Hide Homepage Image on edit screen */
 body.template-atct_edit #homepageimage {
   display: none; }
-
-/* Panorama Homepage Image */
-body.homepage-image-format-panorama #content {
-  margin: 0;
-  padding-top: 0 !important;
-  width: 100%; }
-
-body.homepage-image-format-panorama #portal-columns {
-  background-position: left top;
-  background-repeat: no-repeat; }
-
-body.homepage-image-format-panorama #portal-column-two .portletHeader a {
-  color: #AC5209; }
-
-body.homepage-image-format-panorama #portal-column-two .portlet {
-  border-bottom: none; }
-
-body.homepage-image-format-panorama #addthis {
-  display: none; }
-
-body.homepage-image-format-panorama .documentActions {
-  display: none; }
-
-body.homepage-image-format-panorama #portal-breadcrumbs.homepage {
-  margin: 0;
-  padding-top: 0;
-  width: 97.797356828193833%; }
-
-body.homepage-image-format-panorama #panorama-homepage-image {
-  background-repeat: no-repeat;
-  margin-top: -1.6875em;
-  background-size: 100% auto; }
-
-body.homepage-image-format-panorama #panorama-homepage-image.nobreadcrumbs {
-  margin-top: 0; }
-
-body.homepage-image-format-panorama #portal-column-content.sr #content #homepage-text,
-body.homepage-image-format-panorama #portal-column-content.sr #content #centercolumn {
-  margin: 0 2.124645892351275%;
-  width: 95.75070821529745%; }
-
-body.homepage-image-format-panorama body.template-atct_edit #panorama-homepage-image {
-  display: none; }
-
-body.homepage-portlet-format-tile #content #portlets-above {
-  display: block; }
 
 /*# sourceMappingURL=common-homepage.css.map */

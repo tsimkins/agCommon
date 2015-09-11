@@ -53,16 +53,14 @@
                                        a_title python: image_description and '%s: %s' % (image_title, image_description) or image_title"
                            tal:attributes="href string:${image/absolute_url}/view;
                                            title a_title">
-                            <div class="photoAlbumEntryWrapper">
-                                <img src="" alt="" 
-                                     tal:condition="isImage" 
-                                     tal:replace="structure python:image.tag(scale='thumb', title=a_title)" />
-                                <img src="" alt="" 
-                                     tal:condition="not:isImage" 
-                                     tal:replace="structure python:leadImageTag(image, scale='thumb', )" />
-                                <div class="photoAlbumEntryTitle" tal:content="image/pretty_title_or_id">
-                                   Title
-                                </div>
+                            <img src="" alt="" 
+                                    tal:condition="isImage" 
+                                    tal:replace="structure python:image.tag(scale='thumb', title=a_title)" />
+                            <img src="" alt="" 
+                                    tal:condition="not:isImage" 
+                                    tal:replace="structure python:leadImageTag(image, scale='thumb', )" />
+                            <div class="photoAlbumEntryTitle" tal:content="image/pretty_title_or_id">
+                                Title
                             </div>
                         </a>
             </div>
