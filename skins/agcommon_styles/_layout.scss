@@ -9,6 +9,12 @@ $half_padding: $column_padding/2;
 /* - Logo * -*/
 $logoWidth: 375px;
 
+/* - Department (site) title width * -*/
+$siteTitleWidth: 280px;
+
+/* - Department (site) title width * -*/
+$searchButtonWidth: 16px;
+
 /* - Lead Image Width -*/
 $leadImageWidth: 333px;
 
@@ -19,7 +25,7 @@ $pullQuoteWidth: $leadImageWidth;
 $thumbnailColumns: 5;
 
 /* - Local Search Box - */
-$searchButtonWidth: 50px;
+$localSearchButtonWidth: 50px;
 
 /* - Document Contributors - */
 $documentContributorsImageWidth: 75px;
@@ -74,18 +80,18 @@ $pullQuote_padding_percent: 100%*($column_padding/$content_column_width_one);
 /* - Local Search Box -*/
 
 /* A little fudging, since sizing for buttons is odd */
-$searchButtonWidth: $searchButtonWidth + 2px;
+$localSearchButtonWidth: $localSearchButtonWidth + 2px;
 $localSearchBox_width: $content_column_width_one - 2*$column_padding - 2px; /* Border */
 $localSearchBox_width_percent: 100%*($localSearchBox_width/$content_column_width_one);
 $localSearchBox_padding_percent: 100%*($column_padding/$content_column_width_one);
 
-$localSearchBox_field_search_width: $localSearchBox_width - 3*$half_padding - $searchButtonWidth - 2px;
+$localSearchBox_field_search_width: $localSearchBox_width - 3*$half_padding - $localSearchButtonWidth - 2px;
 $localSearchBox_field_search_width_percent: 100%*($localSearchBox_field_search_width/$localSearchBox_width);
 
 $localSearchBox_field_search_full_width: $localSearchBox_width - 2*$half_padding - 2px;
 $localSearchBox_field_search_full_width_percent: 100%*($localSearchBox_field_search_full_width/$localSearchBox_width);
 
-$localSearchBox_field_button_width_percent: 100%*(($searchButtonWidth - 2px)/$localSearchBox_width);
+$localSearchBox_field_button_width_percent: 100%*(($localSearchButtonWidth - 2px)/$localSearchBox_width);
 
 $localSearchBox_field_margin_percent: 100%*($half_padding/$localSearchBox_width);
 $localSearchBox_field_padding_percent: 100%*($half_padding/$localSearchBox_width);

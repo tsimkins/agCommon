@@ -1132,6 +1132,21 @@ class GoogleTagManagerViewlet(AgCommonViewlet):
 
         return ptool.agcommon_properties.getProperty('gtm_account', None)
 
+class LogoViewlet(AgCommonViewlet):
+
+    def subsite(self):
+        return not (getContextConfig(self.context, 'main_site'))
+
+    def portal_title(self):
+        return self.portal_state.portal_title()
+
+    def navigation_root_url(self):
+        return self.portal_state.navigation_root_url()
+        
+    def portal_url(self):
+        return self.context.portal_url()
+
+
 # provideAdapter for viewlets to be registered in standalone mode
 
 provideAdapter(ContributorsViewlet, adapts=(Interface,IDefaultBrowserLayer,IBrowserView), provides=IContentProvider, name='agcommon.contributors')

@@ -46,34 +46,6 @@
 /* @end */
 
 
-/* @group Navigation portlet */
-
-.portlet ul.navTree li a {
-    border: none;
-    display: block;
-    zoom: 1;
-}
-
-.portletNavigationTree .portletItem {
-    padding: 0;
-}
-
-.portlet ul.navTreeLevel0 > .navTreeItem {
-    padding: 0.25em 1em;
-    border-bottom: 0.1em dotted #ddd;
-}
-
-.portlet ul.navTreeLevel1 .navTreeItem {
-    padding-left: 0.5em;
-}
-
-.portlet ul.navTree .navTreeCurrentItem {
-    background-color: #ddd;
-    border-left: 1em solid #ddd;
-}
-
-/* @end */
-
 
 /* @group Calendar portlet */
 

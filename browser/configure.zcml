@@ -150,7 +150,7 @@
     <browser:viewlet
         name="plone.logo"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-        class="plone.app.layout.viewlets.common.LogoViewlet"
+        class=".viewlets.LogoViewlet"
         template="templates/logo.pt"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"

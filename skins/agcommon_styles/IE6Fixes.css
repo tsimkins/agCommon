@@ -62,12 +62,12 @@ body.icons-on #content form {
 .tileItem .contentLeadImageContainer {
   display: none; }
 
-#portal-column-one .portletNavigationHeader {
+#portal-column-one .left-column-navigation .portletHeader {
   margin: 0px !important;
   padding: 10px 0;
   background-color: transparent !important; }
 
-#portal-column-one .portletNavigationHeader a {
+#portal-column-one .left-column-navigation .portletHeader a {
   color: #000033 !important;
   font-weight: bold !important; }
 

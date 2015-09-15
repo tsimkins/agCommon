@@ -45,22 +45,46 @@ body {
 }
 
 
-/* = portal-searchbox ====================================== */
+/* = logo-college ========================================== */
 
-/*
-    These are all in browser/resources/ad54elements-style.css
-*/
-
-
-/* = logo-psu ============================================== */
-
-#logo-psu {
+#logo-college {
     display: block;
     width: 100%*($logoWidth/$maxWidth);
 }
 
-#logo-psu img {
+#logo-college img {
     width: 100%;
+}
+
+/* = logo-site ============================================= */
+
+
+$searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth + 5*$column_padding);
+
+/*
+ asdf
+ $searchBoxWidth #{$searchBoxWidth}
+*/
+
+$siteTitleRightPadding: $searchBoxWidth + 3*$column_padding; 
+
+#logo-site {
+    display: block;
+    background-color: $subsiteHeaderBackgroundColor;
+    position: absolute;
+    left: 100%*(($logoWidth+$column_padding)/$maxWidth);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 1em 100%*($siteTitleRightPadding/$maxWidth) 0.75em 100%*($column_padding/$maxWidth);
+}
+
+#logo-site a {
+    font-weight: bold;
+    font-weight: 600;
+    color: $subsiteHeaderTextColor;
+    font-size: 1.375em;
+    line-height: 1.25em;
 }
 
 /* = logo-print ============================================ */
@@ -68,6 +92,61 @@ body {
 #logo-print {
     display: none;
 }
+
+
+/* = portal-searchbox ====================================== */
+
+#portal-searchbox {
+    right: 100%*($column_padding/$maxWidth);
+    top: 1em;
+    width: 100%*($searchBoxWidth/$maxWidth);
+    margin: 0;
+    position: absolute;
+    padding: 0;
+    clear: none;
+    float: none;
+    display: block;
+}
+
+#portal-header #portal-searchbox form {
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.searchContainer div {
+    border: 1px solid #666666;
+    background-color: #FFFFFF; 
+    display: block; 
+    padding:0; 
+    width:auto;
+}
+
+.searchform #searchString {
+    color:#555555; 
+    padding: 0.3125em 2%;
+    margin: 0;
+    font-size: 0.75em;
+    vertical-align: top;
+    width: 87%;
+    border: none;
+    display: inline;
+}
+
+.searchform .searchbutton {
+    width: 100%*($searchButtonWidth/$searchBoxWidth);
+    height: 1em;
+    padding: 0.25em 0 0 0;
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 1em;
+    vertical-align: top;
+    text-align: center;
+}
+
+/*
+    The rest of the styles are in browser/resources/ad54elements-style.css
+*/
 
 /* = portal-breadcrumbs ==================================== */
 
@@ -109,6 +188,7 @@ body {
 #section-title {
     font-size: 2em;
     font-weight: bold;
+    font-weight: 600;
     margin: 0 0 0.75em 0;
 }
 
@@ -336,11 +416,6 @@ body {
     color: $rightPortletTextColor;
 }
 
-.navTreeCurrentItem {
-    border: 0;
-    font-weight: bold;
-}
-
 .portletItem a:hover {
     color: $rightPortletLinkHoverColor;
     background-color: transparent;
@@ -456,109 +531,128 @@ body {
 
 /* Portal-column-one Navigation */
 
-#portal-column-one .portletNavigationHeader {
-    background-color: transparent;
-    color: $leftNavTitleColor;
-    margin: 0;
-    padding: 0;
-    border-width: 0 0 1px 0;
-    border-style: solid;
-    border-color: $globalBorderColor;
-    text-transform: none;
+.left-column-navigation {
+
+    .portletHeader {
+        background-color: transparent;
+        color: $leftNavTitleColor;
+        margin: 0;
+        padding: 0;
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: $globalBorderColor;
+        text-transform: none;
+
+        a {
+            background-color: transparent;
+            color: $leftNavTitleColor;
+            line-height: 1.4em;
+            padding: 0;
+            margin: 0;
+            font-family: $alternateHeadingFontFamily;
+            font-weight: normal;
+        }
+    }
+
+    .portletNavigationTree {
+
+        .portletItem {
+
+            .navTreeItem {
+                
+                margin: 0;
+                
+                a {
+                    border-width: 0;
+                    border: none;
+                    background-color: transparent;
+                    color: $leftNavTextColor;
+                }
+
+                a.state-published {
+                    color: $leftNavTextColor;
+                }
+                
+                a:hover,
+                a.state-published:hover {
+                    color: $leftNavTextHoverColor;
+                    text-decoration: none;
+                }
+
+            }
+
+            ul.navTreeLevel0 {
+                margin: 0;
+                
+                > li {
+                    border-top: 1px dashed $globalBorderColor;
+                    padding: 0.45em 0 0.5em;
+                    margin: 0;
+                    
+                    a {
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+                > li:first-child {
+                    border-top: none;
+                }
+                
+                .navTreeItem {
+
+                    line-height: 1.375em;
+                    border-bottom-width: 0;
+                    padding: 0.5em 0;
+
+                    .navTreeCurrentItem,
+                    .navTreeCurrentNode,
+                    .navTreeItemInPath {
+
+                        border: none;
+                        font-weight: bold;
+                        background-color: transparent;
+
+                        > a {
+                            font-weight: bold;
+                        }
+
+                    }
+                }
+
+            }
+
+            ul.navTreeLevel1 {
+                background-color: $leftSubNavBackground;
+                border: $leftNavBorderColor solid 1px;
+                margin: 0.25em 0 0.75em 0.5em;
+                padding: 0.375em 0.75em;
+    
+                li.navTreeItem {
+                    background-color: transparent;
+                    padding: 0 0 0.5em;
+                    border-bottom-width: 0;
+
+                    a {
+                        padding: 0;
+                        text-decoration: none;
+                        background-color: transparent;
+                        color: $leftNavTextColor;
+                    }    
+                }
+                
+                .navTreeCurrentItem {
+                    background-color: transparent;
+                }
+
+            }
+        }
+    }
 }
 
-#portal-column-one .portletNavigationHeader a {
-    background-color: transparent;
-    color: $leftNavTitleColor;
-    line-height: 1.4em;
-    padding: 0;
-    margin: 0;
-    font-family: $alternateHeadingFontFamily;
-    font-weight: bold;
-}
-
-#portal-column-one .portletNavigationTree .portletItem ul {
-    margin: 0;
-}
-
-#portal-column-one .portletNavigationTree ul.navTreeLevel1 li.navTreeItem {
-    padding: 0 0.375em 0 0.75em;
-    background-color: transparent;
-}
-
-#portal-column-one .portletNavigationTree .portletItem li li {
-    border: none;
-}
-
-#portal-column-one .portletNavigationTree .portletItem li {
-    border-top: 1px dashed $globalBorderColor;
-    margin: 0;
-    padding: 0;
-}
-
-#portal-column-one .portletNavigationTree .portletItem li:first-child {
-    border-top: none;
-}
-
-#portal-column-one .portletNavigationTree .portletItem li a {
-    padding: 0.45em 0 0.5em;
-    margin: 1px 0 0 0;
-}
 
 /* Fix the line-height */
-.icons-on #portal-column-one .portletNavigationTree span {
+.icons-on .left-column-navigation .portletNavigationTree span {
     line-height: 1.5em;
-}
-
-#portal-column-one .navTreeItem a {
-    border-width: 0;
-    border: none;
-    background-color: transparent;
-    color: $leftNavTextColor;
-}
-
-#portal-column-one .portletNavigationTree a.state-published {
-    color: $leftNavTextColor;
-}
-
-#portal-column-one .portletNavigationTree a.state-published:hover,
-#portal-column-one .navTreeItem a:hover {
-    color: $leftNavTextHoverColor;
-    text-decoration: none;
-}
-
-#portal-column-one ul.navTreeLevel1 .navTreeItem a {
-    padding-top: 0.25em;
-    padding-bottom: 0.375em;
-    text-decoration: none;
-}
-
-#portal-column-one ul.navTreeLevel1 .navTreeItem a {
-    background-color: transparent;
-    color: $leftNavTextColor;
-}
-
-#portal-column-one .portletNavigationTree .portletItem ul.navTreeLevel1 {
-    background-color: $leftSubNavBackground;
-    border: $leftNavBorderColor solid 1px;
-    margin: 0 0 0.75em 0.5em;
-}
-
-#portal-column-one .navTreeItem .navTreeCurrentItem,
-#portal-column-one .navTreeItem .navTreeCurrentNode,
-#portal-column-one .navTreeItem .navTreeItemInPath,
-#portal-column-one ul.navTreeLevel1 .navTreeItem .navTreeCurrentItem {
-    border-width: 0;
-}
-
-#portal-column-one .navTreeCurrentItem>a,
-#portal-column-one .navTreeCurrentNode>a,
-#portal-column-one .navTreeItemInPath>a {
-    font-weight: bold;
-}
-
-#portal-column-one ul.navTreeLevel1 .navTreeCurrentItem {
-    background-color: transparent;
 }
 
 #portal-column-one .portletFooter {
@@ -728,22 +822,22 @@ body {
 
 /* = portal-top-navigation ================================= */
 
-#portal-top-navigation {
+.top-navigation {
     margin: 0 auto;
     padding: 0;
     background-color: $topnavigationBackgroundColor;
 }
 
-#portal-top-navigation.empty {
+.top-navigation.empty {
     border-bottom: none;
     height: 1.25em;
 }
 
-#portal-top-navigation .rmm-toggled {
+.top-navigation .rmm-toggled {
     max-width: $maxWidth;
 }
 
-#portal-top-navigation ul {
+.top-navigation ul {
     max-width: $maxWidth;
     display: block;
     text-align: left;
@@ -753,13 +847,13 @@ body {
     list-style-type: none;
 }
 
-#portal-top-navigation li {
+.top-navigation li {
     padding: 0;
     margin: 0;
     float: left;
 }
 
-#portal-top-navigation li a {
+.top-navigation li a {
     background-color: $topnavigationBackgroundColor;
     background-color: transparent;
     border-color: $topnavigationBorderColor;
@@ -775,18 +869,18 @@ body {
     line-height: 2em;
 }
 
-#portal-top-navigation li.alternate a,
-#portal-top-navigation li.alternate a:hover {
+.top-navigation li.alternate a,
+.top-navigation li.alternate a:hover {
     background-color: $topnavigationAlternateBackgroundColor;
     color: $topnavigationAlternateTextColor;
 }
 
-#portal-top-navigation li:first-child a {
+.top-navigation li:first-child a {
     border-width: 0;
     padding-left: 0.75em;
 }
 
-#portal-top-navigation a {
+.top-navigation a {
     color:$topnavigationTextColor;
     display: inline;
     color: $topnavigationTextColor;
@@ -795,7 +889,7 @@ body {
     line-height: 1.6875em;
 }
 
-#portal-top-navigation li a:hover {
+.top-navigation li a:hover {
     background-image: none;
     background-color: $topnavigationBackgroundHoverColor;
     color: $topnavigationTextHoverColor;
@@ -858,12 +952,6 @@ body {
     padding: 0;
 }
 
-.navTreeCurrentItem,
-.navTreeItemInPath {
-    border: none;
-    font-weight: bold;
-    background-color: transparent;
-}
 
 .portlet ul.relatedItems li {
     margin-left: 2px;
@@ -2597,7 +2685,7 @@ body.template-extension_course_event_view #content .event-registration h3:after,
 h2.flexslider-title,
 #homepageimage .hiddenStructure,
 #content .hiddenStructure,
-#portal-top-navigation .hiddenStructure,
+.top-navigation .hiddenStructure,
 #portal-column-one .hiddenStructure {
     margin: -1px 0 0 -1px !important;
     padding: 0 !important;
@@ -3601,12 +3689,6 @@ input[type="submit"],
     background-color: $globalBackgroundColor;
 }
 
-
-.portlet ul.navTreeLevel0 > .navTreeItem,
-.portlet ul.navTreeLevel1 .navTreeItem {
-    line-height: 1.5em;
-    border-bottom-width: 0;
-}
 
 #content h1 a,
 #content h2 a,

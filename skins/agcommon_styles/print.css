@@ -72,7 +72,7 @@ body {
   display: none; }
 
 /* Top Navigation */
-#portal-top-navigation {
+.top-navigation {
   display: none !important; }
 
 /* Home Page Image */

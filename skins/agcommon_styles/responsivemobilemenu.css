@@ -49,6 +49,8 @@ License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
     left: 0.5em;
     position: relative;
 	color:#33333;
+	font-weight: bold;
+	font-weight: 600;
 }
 .rmm .rmm-button {
 	display:block;

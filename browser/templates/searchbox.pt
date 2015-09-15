@@ -1,7 +1,6 @@
 <div id="portal-searchbox"
-       i18n:domain="plone"
-       tal:define="titlez string:${here/portal_url}/process-search;"
-       class="position-13 width-3">
+     i18n:domain="plone"
+     tal:define="titlez string:${here/portal_url}/process-search;">
                               
 
 <form method="get" action="" tal:attributes="action titlez" class="searchform">
@@ -10,7 +9,7 @@
         <tal:comment tal:condition="nothing"><!-- Move the search options to the top. Michele says it makes more sense to her --> 
         <!-- The li's below had onkeypress="return myFunction(event);" which we don't need anymore--> </tal:comment>
          <ul id="search" class="">
-            <li  tal:repeat="option view/getSearchOptions">
+            <li tal:repeat="option view/getSearchOptions">
               <label tal:attributes="for option/key; tabindex repeat/option/number;" >
                 <input tal:attributes="id option/key;
                                        value option/key;

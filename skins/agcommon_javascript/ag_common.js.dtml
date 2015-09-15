@@ -415,9 +415,10 @@ function equalizeTopNav() {
         return false;
     }
 
-    topnav = jq('#portal-top-navigation ul');
-    topnavitems = jq('#portal-top-navigation li a');
+    topnav = jq('#portal-top > .top-navigation ul');
+    topnavitems = jq('#portal-top > .top-navigation li a');
     min_padding = 4;
+    
     if (topnav && topnavitems)
     {
         topnav_width = topnav.width();
@@ -752,7 +753,7 @@ jq(window).load(function() {
         }
 
         // Top navigation tracking
-        jq('#portal-top-navigation li a').click(
+        jq('#portal-top > .top-navigation li a').click(
             function() {
                 var button_title = getButtonTitle(this);
                 

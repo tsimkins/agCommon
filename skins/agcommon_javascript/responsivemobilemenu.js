@@ -41,7 +41,16 @@ function responsiveMobileMenu() {
 
             var $menulist = jq(this).children().detach();
 
-            var $menucontrols ="<div class='rmm-toggled-controls'><h2 class='rmm-toggled-title'>" + menutitle + "</h2><div class='rmm-button'><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div></div>";
+            var menu_icon = jq(this).attr("data-menu-icon");
+            
+            if ( menu_icon != "" && menu_icon != undefined) {
+                menubutton = "<div class='rmm-button'><img src='" + menu_icon + "' alt='Search' /></div>";
+            }
+            else {
+                menubutton = "<div class='rmm-button'><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div>";
+            }
+
+            var $menucontrols ="<div class='rmm-toggled-controls'><h2 class='rmm-toggled-title'>" + menutitle + "</h2>" + menubutton + "</div>";
 
             jq(this).prepend("<div class='rmm-toggled rmm-closed'>"+$menucontrols+"</div>")
             jq(this).children('.rmm-toggled').append($menulist);
@@ -53,16 +62,34 @@ function responsiveMobileMenu() {
 jq(document).ready(function() {
 
     // dynamically add .rmm class
-    var klass = 'rmm';
-    jq('#portal-top-navigation').addClass('rmm');
-    jq('#portal-column-one .left-column-navigation').addClass('rmm');
-    jq('#document-toc').addClass('rmm');
 
-     responsiveMobileMenu();
+    jq('.top-navigation').addClass('rmm-main');
+    jq('#portal-column-one .portlet-mobile-navigation').addClass('rmm-main');
+
+    jq('#document-toc').addClass('rmm');
     
-     /* slide down mobile menu on click */
+    // Move the 'main' navigation items into one menu area
+    var mobile_nav = jq('<div id="mobile-navigation" class="rmm"></div>');
     
-     jq('.rmm-toggled, .rmm-toggled .rmm-button').click(function(){
+    jq('.rmm-main').each(
+        function() {
+            jq(this).clone().removeClass('rmm-main').appendTo(mobile_nav);
+        }
+    );
+
+    mobile_nav.find('.left-column-navigation .hiddenStructure').each(
+        function() {
+            jq(this).removeClass('hiddenStructure');
+        }
+    );
+    
+    mobile_nav.insertAfter('#portal-header');
+
+    responsiveMobileMenu();
+    
+    /* slide down mobile menu on click */
+    
+    jq('.rmm-toggled, .rmm-toggled .rmm-button').click(function(){
          if ( jq(this).is(".rmm-closed")) {
               jq(this).removeClass("rmm-closed");
          }

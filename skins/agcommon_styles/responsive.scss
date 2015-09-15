@@ -3,6 +3,7 @@
 */
 
 @import 'variables';
+@import 'layout';
 
 /*------------------------- large-site.css ------------------------------*/
 
@@ -19,7 +20,10 @@
     }
 }
 
-@media handheld, screen and (min-width: 520px) {
+@media handheld, screen and (min-width: 769px) {
+
+    /* Table of contents adjustments 768px */
+
     #document-toc.toc-full-width,
     #portal-column-content.sr #document-toc.full-width {
         width: auto !important;
@@ -36,26 +40,234 @@
         color: $globalFontColor;
         font-size: 1.25em;
     }
+
+    /* Hide mobile menus above 768px */
+
+    .rmm .rmm-toggled-controls {
+        display: none !important;
+    }
+    
+    #portal-column-mobile, #mobile-navigation {
+        display: none !important;
+    }
+    
+}
+
+/* Show mobile menus at 768px and smaller */
+
+@media handheld, screen and (max-width: 768px) {
+
+    $maxWidth: 768px;
+
+    .rmm {
+        border: 1px solid #CCCCCC; /* UI */
+        background-color: $globalBackgroundColor;
+    }
+    
+    .rmm-main {
+        display: none;
+    }
+    
+    #portal-column-one .portlet-mobile-navigation {
+        display: block;
+    }
+
+    #mobile-navigation .portlet-mobile-navigation {
+        display: none;
+    }
+    
+    .rmm-toggled-controls  {
+        background-color: $globalBorderColor; /* Not a border, but using for darker gray */
+    }
+
+    .rmm-toggled  {
+        background-color: $leftSubNavBackground;
+    }
+    
+    .rmm-toggled.rmm-closed {
+        padding-bottom: 0;
+    }
+    
+    .rmm-closed .rmm-main-list {
+        padding: 0 !important;
+        position: absolute;
+    }
+    
+    #portal-top .rmm {
+        margin: 1em 100%*(($column_padding + 1)/$maxWidth);
+        border: 1px solid $fieldBorderColor;
+    }
+
+    #portal-top .rmm-toggled > :not(.rmm-toggled-controls) {
+        margin: 0;
+        padding: 0;
+        width: auto;
+        font-size: 0.875em;
+    }
+
+    #portal-top .rmm > .rmm-closed > :not(.rmm-toggled-controls) {
+        border: none;
+        display: block;
+        height: 0.1em !important;
+        margin: -0.1em 0 0 -0.1em !important;
+        overflow: hidden;
+        padding: 0 !important;
+        width: 1px !important;
+        border: none;
+    }
+
+    #mobile-navigation {
+        
+        .top-navigation.empty {
+            display: none;
+        }
+        
+        .portletWrapper {
+            font-size: 1em;
+        }
+    
+        .top-navigation, .left-column-navigation {
+            margin: 0;
+            padding: 0;
+            
+            li {
+                font-size: 1em;
+                margin: 0;
+                padding: 0;
+                background-color: $topnavigationBackgroundColor;
+                display: block;
+                border-top: 1px solid $topnavigationBorderColor;
+                color: $topnavigationTextColor !important;
+                text-align: left;
+                float: none;
+                
+                a {
+                    font-size: 1em;
+                    text-align: left;
+                    line-height: 1.375em;
+                    margin: 0;
+                    padding: 0.75em 1em;
+                    border: none;
+                }
+
+            }
+
+            li:first-child {
+                border-top: none;
+            }
+        }
+
+        .left-column-navigation {
+
+            .navTreeCurrentNode > a {
+                font-weight: bold;
+                font-weight: 600;
+            }
+
+            h2.portletHeader {
+                padding: 0;
+                
+                a {
+                    display: block;
+                    font-size: 1em;
+                    font-weight: bold;
+                    font-weight: 600;
+                    padding: 0.5em;
+                }
+            }
+            
+            .portletItem {
+                margin: 0;
+            
+                li {
+                    border-top-color: $leftNavBorderColor;
+                    background-color: $leftSubNavBackground;
+                    color: $leftNavTextColor !important;
+                    > a {
+                        display: block;
+                    }
+                }
+
+            }
+
+            .portletNavigationTree {
+                .portletItem {
+                    ul.navTreeLevel1 {
+                        border: none;
+                        margin: 0 1em 1em 1em;
+                        padding: 0;
+                        border: 1px solid $leftNavBorderColor;
+                        background-color: #FFFFFF; /* UI */
+                        
+                        > li {
+                            border: none;
+                            padding: 0;
+                            background-color: transparent;
+                            > a {
+                                padding: 0.5em 0.75em;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    #portal-header > #portal-searchbox {
+        display: none;
+    }
+    
+    #portal-top > #portal-searchbox {
+        color: pink;
+        position: static;
+        width: 100%*(($maxWidth - 4*$column_padding - 2px)/$maxWidth);
+        border: 1px solid $globalBorderColor;
+        padding: 1em 100%*($column_padding/$maxWidth);
+        margin: 1em 100%*($column_padding/$maxWidth);
+    }
 }
 
 /*------------------------ END large-site.css ----------------------------*/
 
-/*------------------------- resolution-890.css ------------------------------*/
+/*------------------------- resolution-#{$maxWidth + 2*$column_padding}.css ------------------------------*/
 
-@media handheld, screen and (max-width: 890px) {
+/* Full browser width */
+
+@media handheld, screen and (max-width: #{$maxWidth + 2*$column_padding}) {
+
+    #portal-header {
+        max-width: $maxWidth + $column_padding;
+    }
+    
+    #portal-header, .top-navigation {
+        padding-left: 100%*($column_padding/$maxWidth);
+    }
+
+    .top-navigation {
+        padding-right: 100%*($column_padding/$maxWidth);
+    }
+
+    #logo-college {
+        width: 100%*(($logoWidth - $column_padding)/$maxWidth);
+    }
+
+    #logo-site a {
+        font-size: 1.125em;
+    }
 
     #section-title {
         margin: 0.5em 0;
     }
 
-    #portal-top-navigation ul,
+    .top-navigation ul,
     #visual-portal-wrapper {
         min-width: 0;
         border: none;
     }
 
-    #portal-top-navigation li a {
-        font-size: 0.75em;
+    .top-navigation li a {
+        font-size: 0.8125em;
     }
     
     #portal-columns {
@@ -112,14 +324,47 @@
 
 @media handheld, screen and (max-width: 768px) {
 
+    $maxWidth: 768px;
+    
+    /*# == Calculations == */
+    $container_width: $maxWidth - 2*$column_padding;
+    $column_width: $container_width/$column_count;
+    
+    /*# -- Left and Right columns -- */
+    
+    $portlet_columns: 4;
+    $portlet_column_width: ($portlet_columns*$column_width) - 2*$column_padding;
+    
+    $content_columns_full: 16; 
+    $content_column_width_full: ($content_columns_full*$column_width) - 2*$column_padding;
+    
+    $content_columns_one: 12; 
+    $content_column_width_one: ($content_columns_one*$column_width) - 2*$column_padding;
+    
+    /* - Content Area - */
+    $content_area_width_full: $content_column_width_full - 2*$column_padding;
+    $content_area_width_percent_full: 100%*($content_area_width_full/$content_column_width_full);
+    $content_area_margin_percent_full: 100%*($column_padding/$content_column_width_full);
+    
+    $content_area_width_one: $content_column_width_one - 2*$column_padding;
+    $content_area_width_percent_one: 100%*($content_area_width_one/$content_column_width_one);
+    $content_area_margin_percent_one: 100%*($column_padding/$content_column_width_one);
+
+    /* CSS */
+
     body {
         background-image: none;
         background-color: $contentBackgroundColor;
-        padding: 0 2.083333333333%; /* 16px/768px */
     }
 
-    #portal-top-navigation.empty {
-        display: none;
+    #portal-header {
+        margin: 0;
+        padding: 1em 0 1em 100%*($column_padding/$maxWidth);
+        border-bottom: 1px solid $globalBorderColor;
+    }
+
+    #logo-site a {
+        font-size: 1em;
     }
 
     #portal-breadcrumbs {
@@ -132,7 +377,7 @@
         margin-right: 0;
     }
     
-    #portal-header #portal-searchbox #menu li ul {
+    #portal-header #portal-searchbox #search li ul {
         width: 100%;
     }
     
@@ -142,38 +387,39 @@
         background-size: 100%;
     }
     
-    #content #rightcolumn, 
-    #content #centercolumn, 
-    #content #homepage-text, 
-    #content #centercolumn.sr,
-    #portal-column-content #content #homepage-text.sr {
-        display: block;
-    	margin: 0 0 0.1875em 0;
-    	width: auto;
-    	clear: both;
-    	float: none;
-    	background-color: transparent;
-    	padding-left: 0;
-    	padding-right: 0;
+    #portal-column-content #content {
+        #rightcolumn, 
+        #centercolumn, 
+        #homepage-text, 
+        #centercolumn.sr,
+        #homepage-text.sr {
+            display: block;
+        	margin: 0 0 0.1875em 0;
+        	width: 100%;
+        	clear: both;
+        	float: none;
+        	background-color: transparent;
+        	padding-left: 0;
+        	padding-right: 0;
+        }
     }
 
     #portal-column-one {
         border: none;
         background-image: none;
-        padding-top: 1em;
     }
     
-    #portal-column-one .portletNavigationHeader a {
+    .left-column-navigation .portletHeader a {
         font-size: 1.1875em;
     }
     
-    #portal-column-one .portletNavigationHeader .icon {
+    .left-column-navigation .portletHeader .icon {
         width: 1.75em;
         float: right;
         margin-left: 0.25em;
     }
     
-    #portal-column-one .portletNavigationSubHeader .icon {
+    .left-column-navigation .portletNavigationSubHeader .icon {
         width: 1.375em;
         float: right;
         margin-left: 0.25em;
@@ -189,23 +435,22 @@
     #portal-column-content.sr,
     #portal-column-content.sl.sr {
         float: left;
-        margin: 0;
-        width: 95.932203389830508%;  /* (590-24)/590 */
-        padding-left: 2.033898305084746%;  /* 12/590 */
-        padding-right: 2.033898305084746%;  /* 12/590 */
+        margin: 0 $content_area_margin_percent_one;
+        width: $content_area_width_percent_one;
+        padding: 0;
         display: block;
         background-color: transparent;
     }
+
+
+    #portal-column-content.s0 {
+        margin: 0 $content_area_margin_percent_full;
+        width: $content_area_width_percent_full;
+    }
+
         
     #portal-column-two .portletFooter {
         background-color: transparent;
-    }
-    
-    body.portaltype-homepage #portal-column-two, 
-    body.portaltype-homepage #portal-column-content {
-        width: 96.610169491525424%;  /* (590-20)/590 */
-        padding-left: 1.694915254237288%;  /* 10/590 */
-        padding-right: 1.694915254237288%;  /* 10/590 */
     }
     
     #portal-column-content #content {
@@ -235,9 +480,9 @@
     div.FooterPortletManager3,
     div.FooterPortletManager4,
     div.FooterPortletManager5 {
-    	width: 48.4375%; /* ((768 - 24)/2)/768 */
+    	width: 50%*(($container_width - 4*$column_padding)/$maxWidth);
     	float: left;
-    	padding: 0.5em 0.78125%;  /* 6/768 */
+    	padding: 0.5em 100%*($column_padding/$maxWidth);
     }
 
     #portlets-footer > div:nth-child(2n + 1) {
@@ -265,34 +510,6 @@
     
     #portal-columns {
         padding-top: 0.25em;
-    }
-    
-    #portal-top-navigation {
-        margin: 0.1875em 0 0 0;
-        padding: 0 0 0.125em 0;
-        background-color: $contentBackgroundColor;
-        background-image: none;
-        z-index: 25;
-        bottom: 0;
-    }
-    
-    #portal-top-navigation li {
-        margin: 0;
-        padding: 0;
-        background-color: transparent;
-        width: 33.3333333333333333333333%; 
-        float: left;
-        display: block;
-    }
-    
-    #portal-top-navigation li a,
-    #portal-top-navigation li:first-child a {
-        margin: 0.25em !important;
-        padding: 0.25em 0.5em !important;
-        border: 1px solid $topnavigationBorderColor;
-        background-color: $topnavigationBackgroundColor;
-        color:  $topnavigationTextColor !important;
-        text-align: left;
     }
     
     #homepageimage .text, #homepageimage div.overlay {
@@ -352,10 +569,6 @@
         width: 100%;
     }
     
-    #logo-psu {
-        width: 325px;
-    }
-    
     /* General nomobile override */
     
     .nomobile {
@@ -368,13 +581,8 @@
     }
     
     #visual-portal-wrapper {
-        margin-top: 0;
+        margin: 0 100%*($column_padding/$maxWidth);
         padding: 0;
-    }
-    
-    #portal-header {
-        margin-bottom: 0;
-        padding: 1em 0 0.75em 0;
     }
     
     #centercolumn .portletWrapper {
@@ -642,59 +850,21 @@
 
 /*------------------------- resolution-520.css ------------------------------*/
 
-/* Hide mobile menus above 520px */
-
-@media handheld, screen and (min-width: 521px) {
-    .rmm .rmm-toggled-controls {
-        display: none !important;
-    }
-    
-    #portal-column-mobile {
-        display: none !important;
-    }
-}
-
 @media handheld, screen and (max-width: 520px) {
 
-    #portal-column-one .portletNavigationTree .portletItem ul.navTreeLevel1 {
-        background-color: $contentBackgroundColor;
-        margin: 0;
-        border: none;
-    }
-    
-    #portal-column-one .portletNavigationTree .portletItem ul.navTreeLevel1 > li {
-        border-top: 1px solid #CCCCCC;
-        padding: 0;
+    #portal-column-one .portlet-mobile-navigation {
+        display: none;
     }
 
-    #portal-column-one .portletNavigationTree .portletItem ul.navTreeLevel1 > li > a {
-        padding: 1em 1em 1em 2.5em;
+    #mobile-navigation .portlet-mobile-navigation {
+        display: block;
     }
 
-    #portal-top-navigation {
-        padding: 0;
-    }
-
-    #portal-top-navigation li a, 
-    #portal-top-navigation li:first-child a {
-        margin: 0 !important;
-        border-top: 1px solid $topnavigationBorderColor;
-    }
-    
-    #portal-top-navigation li:first-child a {
-        border-top: none;
-    }
-    
-    #portal-top-navigation li {
-        width: 100%; 
-    }
-
-
-    #logo-psu {
+    #logo-college {
         width: auto;
     }
 
-    #menu .searchContainer div {
+    #search .searchContainer div {
         display: block;
         position: relative;
         height: 1.5em;
@@ -730,7 +900,7 @@
         font-size: 0.75em !important;
     }
 
-    #portal-header #portal-searchbox #menu li ul {
+    #portal-header #portal-searchbox #search li ul {
         margin-top: 26px;
     }
 
@@ -741,29 +911,6 @@
     #section-title {
         display: none;
     }
-    
-    .rmm {
-        border: 1px solid #CCCCCC; /* UI */
-        background-color: $globalBackgroundColor;
-    }
-    
-    .rmm-toggled-controls  {
-        background-color: $globalBorderColor; /* Not a border, but using for darker gray */
-    }
-
-    .rmm-toggled  {
-        background-color: $leftSubNavBackground;
-    }
-    
-    .rmm-toggled.rmm-closed {
-        padding-bottom: 0;
-    }
-    
-    .rmm-closed .rmm-main-list {
-        padding: 0 !important;
-        position: absolute;
-    }
-    
     
     /* Document Table of Contents */
     #portal-column-content.sr #content #document-toc,
@@ -788,7 +935,7 @@
         margin-bottom: 0.25em;
     }
     
-    #portal-column-one .portletNavigationTree .portletItem .rmm-toggled>ul {
+    .left-column-navigation .portletNavigationTree .portletItem .rmm-toggled>ul {
         margin: 0;
         padding: 0;
         border: none;
@@ -842,7 +989,7 @@
         display: none;
     }
     
-    #portal-column-one .portletNavigationSubHeader {
+    .left-column-navigation .portletNavigationSubHeader {
         padding: 0.5em 0.375em;
         background-color: #f5f5f5;
         border-left: 1px solid #666666;
@@ -851,21 +998,21 @@
         line-height: 1.5em;
     }
     
-    body.navigation-subsite #portal-column-one .portletNavigationSubHeader {
+    body.navigation-subsite .left-column-navigation .portletNavigationSubHeader {
         border-top: 1px solid #666666;
         border-bottom: 1px solid #666666;
         margin-top: 0.5625em;
     }
     
-    #portal-column-one .portletNavigationSubHeader a {
+    .left-column-navigation .portletNavigationSubHeader a {
         font-size: 0.875em;
     }
     
-    #portal-column-one .portletNavigationHeader.active {
+    .left-column-navigation .portletHeader.active {
         margin: 0.25em 0 0 0;
     }
     
-    #portal-column-one .portletNavigationTree {
+    .left-column-navigation .portletNavigationTree {
         margin: 0;
         display: block;
     }
@@ -921,18 +1068,7 @@
         border: 1px solid #DDDDDD;
     }
     
-    body.mobile #portal-top>#portal-top-navigation {
-        display: none;
-    }
-    
-    body.mobile #portal-column-one .portletWrapper:first-child .portletNavigationTree {
-        display: none;
-        border: 1px solid #666666;
-        margin: 0;
-        padding: 0 0.5em;
-    }
-    
-    #portal-column-one .portletNavigationTree .portletItem li {
+    .left-column-navigation .portletNavigationTree .portletItem li {
         border-top: 1px solid $globalBorderColor;
         border-bottom: none;
         margin: 0;
@@ -940,11 +1076,11 @@
         background-color: $globalBackgroundColor;
     }
     
-    #portal-column-one .portletNavigationTree .portletItem li:first-child {
+    .left-column-navigation .portletNavigationTree .portletItem li:first-child {
         border-top: none;
     }
 
-    #portal-column-one .portletNavigationTree .portletItem li a {
+    .left-column-navigation .portletNavigationTree .portletItem li a {
         margin: 0;
         padding: 1em;
     }

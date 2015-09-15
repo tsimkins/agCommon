@@ -2,7 +2,6 @@ jQuery(document).ready(function($) {
 
     var input_searchstring_focus = function() {
         $('ul#search').addClass('show');
-        $('#portal-searchbox').addClass('topborderradius');
         $('input#searchString').unbind('focus.searchstring');  // unbind ourself to avoid looping
         $('ul#search.show li label input:checked').focus(); // allows the user to arrow through the options 
     };
@@ -42,7 +41,7 @@ jQuery(document).ready(function($) {
     
     // FUNCTIONS   
     function clear_searchString() {
-        // Clear the box if it has the default 'Type To Search' only. Don't want to erase it if there is already a search term
+        // Clear the box if it has the default 'Search' only. Don't want to erase it if there is already a search term
         var searchValue = $('input#searchString').val();
         if (searchValue == 'Search...') {
             $('input#searchString').val('');
@@ -56,7 +55,6 @@ jQuery(document).ready(function($) {
     
     function close_searchbox() {
         $('ul#search').removeClass('show');
-        $('#portal-searchbox').removeClass('topborderradius');
         $('ul#search li label input').blur();
         // rebind so the box can re-open
         $('input#searchString').bind('focus.searchstring', input_searchstring_focus);
@@ -64,10 +62,8 @@ jQuery(document).ready(function($) {
      
     function click_open_search_options() {
         //$('ul#search').addClass('show');
-        $('#portal-searchbox').addClass('topborderradius');
         clear_searchString()
         $('input#searchString').select();
     }
 
 });
-

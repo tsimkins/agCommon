@@ -9,25 +9,18 @@
                 isLeftColumn view/isLeftColumn|nothing;">
 
     <div class="left-column-navigation" 
-                tal:attributes="data-menu-title navigation_title"
                 tal:omit-tag="not:isLeftColumn">
         
-        <tal:header>
-        
-            <h2 class="hiddenStructure"
-                tal:condition="not: include_top">
+        <div class="hiddenStructure" tal:omit-tag="include_top">
             
-                <a href="#"
-                    tal:attributes="href root/absolute_url">Navigation</a>
+            <h2 class="portletHeader">
+                
+                <a tal:content="navigation_title"
+                   tal:attributes="href root/absolute_url" />
+                                    
             </h2>
-            <tal:show_title condition="include_top">
-                <h2 class="portletHeader portletNavigationHeader">
-                    <a tal:attributes="href root/absolute_url;
-                                        title root/Description;"
-                                        tal:content="navigation_title" />
-                </h2>
-            </tal:show_title>
-        </tal:header>
+
+        </div>
         
         <dl tal:define="nav_class python:include_top and 'headerNavigationTree' or 'standaloneNavigationTree';"
             tal:attributes="class string:portlet portletNavigationTree ${nav_class}">
