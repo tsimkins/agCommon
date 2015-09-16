@@ -74,7 +74,8 @@ label.obscure {
     outline: medium;
     display:none;
     margin: 25px 0 0 0;
-    width: 90%;
+    width: auto;
+    right: 24px;
 }
 
 #menu li ul#search.show {

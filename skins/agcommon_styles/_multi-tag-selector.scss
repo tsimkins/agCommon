@@ -1,0 +1,93 @@
+/*
+    Not SASS-ifying because this was copied from Plone. 
+*/
+
+/* @group jQuery Tag multiple selector  -- From sunburst public.css */
+
+.optionsBox {
+    overflow-y: auto;
+    border: solid 1px $globalBorderColor;
+    background: $contentBackgroundColor;
+    height: 14em;
+    width: 100%;
+}
+
+.optionsBox LABEL {
+    padding: 2px 0 0 0;
+    display: block;
+    line-height: 1em;
+    font-weight: normal;
+}
+
+.optionsBox input{
+    vertical-align: middle;
+    margin: 1px 4px 4px 6px;
+}
+
+.optionsBox LABEL.checked {
+    background-color: $globalBackgroundColor;
+}
+
+#archetypes-fieldname-subject .formHelp {
+    font-weight: normal;
+}
+
+#existingTagsSection {
+    position: relative;
+    margin-left: 0;
+}
+
+#existingTags {
+    float: left;
+    width: 50%;
+}
+
+#content #existingTags dd {
+    margin-bottom: 2px;
+    margin-left: 0;
+    font-size: 0.9375em;
+}
+
+#content #selectedTags, #content #newTags {
+    margin-bottom: 0;
+    margin-left: 0;
+    font-size: 0.9375em;
+}
+
+#content #selectedTagsSection {
+    margin-left: 3em;
+    float: left;
+    width: 43%;
+    margin-bottom: 0;
+}
+
+#newTagsSection {
+    width: 100%;
+    margin-left: 0;
+}
+
+#newTagsSection textarea {
+    width: 50%;
+}
+
+#content p.selectedTag {
+    margin-bottom: 0.4em;
+}
+
+#existingTagsTitle, #newTagsTitle {
+    float: left;
+}
+
+#existingTagsHelp, #newTagsHelp {
+    float: right;
+}
+
+#noTagsSelected, #oneOrMoreTagsSelected {
+    display: none;
+}
+
+#newTagsHelp {
+    display: none;
+}
+
+/* @end tags */

@@ -1,0 +1,126 @@
+/* Portal-column-one Navigation */
+
+.left-column-navigation {
+
+    .portletHeader {
+        background-color: transparent;
+        color: $leftNavTitleColor;
+        margin: 0;
+        padding: 0;
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: $globalBorderColor;
+        text-transform: none;
+
+        a {
+            background-color: transparent;
+            color: $leftNavTitleColor;
+            line-height: 1.4em;
+            padding: 0;
+            margin: 0;
+            font-family: $alternateHeadingFontFamily;
+            font-weight: normal;
+        }
+    }
+
+    .portletNavigationTree {
+
+        .portletItem {
+
+            .navTreeItem {
+                
+                margin: 0;
+                
+                a {
+                    border-width: 0;
+                    border: none;
+                    background-color: transparent;
+                    color: $leftNavTextColor;
+                }
+
+                a.state-published {
+                    color: $leftNavTextColor;
+                }
+                
+                a:hover,
+                a.state-published:hover {
+                    color: $leftNavTextHoverColor;
+                    text-decoration: none;
+                }
+
+            }
+
+            ul.navTreeLevel0 {
+                margin: 0;
+                
+                > li {
+                    border-top: 1px dashed $globalBorderColor;
+                    padding: 0.45em 0 0.5em;
+                    margin: 0;
+                    
+                    a {
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+                > li:first-child {
+                    border-top: none;
+                }
+                
+                .navTreeItem {
+
+                    line-height: 1.375em;
+                    border-bottom-width: 0;
+                    padding: 0.5em 0;
+
+                    .navTreeCurrentItem,
+                    .navTreeCurrentNode,
+                    .navTreeItemInPath {
+
+                        border: none;
+                        font-weight: bold;
+                        background-color: transparent;
+
+                        > a {
+                            font-weight: bold;
+                        }
+
+                    }
+                }
+
+            }
+
+            ul.navTreeLevel1 {
+                background-color: $leftSubNavBackground;
+                border: $leftNavBorderColor solid 1px;
+                margin: 0.25em 0 0.75em 0.5em;
+                padding: 0.375em 0.75em;
+    
+                li.navTreeItem {
+                    background-color: transparent;
+                    padding: 0 0 0.5em;
+                    border-bottom-width: 0;
+
+                    a {
+                        padding: 0;
+                        text-decoration: none;
+                        background-color: transparent;
+                        color: $leftNavTextColor;
+                    }    
+                }
+                
+                .navTreeCurrentItem {
+                    background-color: transparent;
+                }
+
+            }
+        }
+    }
+}
+
+
+/* Fix the line-height */
+.icons-on .left-column-navigation .portletNavigationTree span {
+    line-height: 1.5em;
+}
+

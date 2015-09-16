@@ -1,0 +1,659 @@
+/* ================= Portlet Styles =======================*/
+
+.portletWrapper {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5em 0;
+    font-size: 0.875em;
+}
+
+#content .portletWrapper {
+    font-size: 1em;
+}
+
+/* ================= Portlet headers ===================== */
+
+.portletHeader,
+#content h2.portletHeader {
+    background-color: transparent;
+    border-color: $rightPortletHeaderBorderColor;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    color: $rightPortletHeaderTextColor;
+    font-family: $portletHeaderFontFamily;
+    font-size: 1.375em;
+    font-weight: normal;
+    line-height: 1.375em;
+    margin: 0 0 0.375em 0;
+    padding: 0;
+    text-align: left;
+    text-transform: none;
+}
+
+#portal-column-one .portletHeader,
+#portal-column-one .portletHeader span,
+#portal-column-one .portletHeader a,
+#portal-column-one .portletHeader a:hover {
+    color: $leftPortletHeaderTextColor;
+}
+
+
+.portletHeader span,
+.portletHeader a,
+.portletHeader a:hover {
+    color: $rightPortletHeaderTextColor;
+}
+
+.portletHeader a {
+    color: $rightPortletHeaderTextColor;
+    margin: 0;
+    text-decoration: none;
+    border: none;
+}
+
+/* ================= Portlet item =====================*/
+
+.portlet .portletItem:first-child {
+    border-width: 0 0 0 0;
+}
+
+.portletItem,
+.portletItem,
+.portletFooter,
+.portletError dd {
+    background-color: transparent;
+    border-width: 0;
+    color: $rightPortletTextColor;
+    display: block;
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+
+.portletItem p {
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+.portletItem a.title {
+    line-height: 1.25em;
+    font-weight: normal;
+    margin-top: 0;
+    border: none;
+    display: block;
+}
+
+.portletItem a.title:hover {
+    text-decoration: underline;
+}
+
+.portletItem .summary {
+    color: $rightPortletSummaryColor;
+    font-size: 0.75em;
+    margin: 0.125em 0 0 0;
+    font-weight: normal;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.portletItemDetails {
+    color: $rightPortletDiscreteTextColor;
+    font-size: 0.75em;
+    font-weight: normal;
+    text-align: left;
+    line-height: 1.5em;
+    margin-bottom: 0;
+    line-height: 1.375em;
+    border: none;
+    box-shadow: none;
+    width: auto;
+    padding: 0;
+    margin-left: 0;
+}
+
+.portletfeedmixer .portletItem .summary {
+    margin-top: 0.375em;
+    color: $rightPortletSummaryColor;
+}
+
+.portletItem a.more {
+    display: block;
+    font-size: 0.875em;
+    margin: 5px;
+    text-align: left;
+    text-decoration: none;
+    border: none;
+}
+
+/* ================= Portlet Footer =====================*/
+
+.portletFooter {
+    background-color: transparent;
+    padding: 0;
+    font-size: 0.75em;
+    border: none;
+    margin: 0.25em 0;
+    text-align: left;
+}
+
+/* ================= Portlet Type =====================*/
+
+/* ----------------- Static Text --------------------- */
+
+.portletStaticText .portletItem {
+    padding: 0 0 0.75em 0;
+    font-size: 0.90625em;
+    margin: 0;
+}
+
+
+.portletStaticText .portletItem p {
+    margin-bottom: 0.375em;
+}
+
+/* Portlet */
+
+.portlet {
+    border-bottom: none;
+    background-color: transparent;
+}
+
+.portletItem ul {
+    margin: 0;
+    padding: 0;
+}
+
+.portletItem li {
+    list-style-image: none;
+    list-style-type: none;
+    margin: 0 0 0.25em;
+    padding: 0.125em 0 0.125em 0.125em;
+    color: $rightPortletTextColor;
+}
+
+.portletItem a:hover {
+    color: $rightPortletLinkHoverColor;
+    background-color: transparent;
+    text-decoration: underline;
+    border-bottom: none;
+}
+
+.portletLinkIcon .portletItem a:hover,
+.portletLinkIcon .portletItem a:hover {
+    text-decoration: none;
+}
+
+.portletItem a,
+.portletItem a:visited,
+.portlet dd a:visited {
+    color: $rightPortletLinkColor;
+    text-decoration: none;
+    border: none;
+    font-weight: normal;
+}
+
+.portletfeedmixer .summary {
+    line-height: 1.5em;
+}
+
+/* manage Custom Portlets */
+.customManagePortletsLink {
+    display: block;
+    text-align: center;
+    padding-bottom: 0.25em;
+}
+
+.portletItem {
+    margin-bottom: 0;
+}
+
+#content .portlet .portletItem a:visited {
+    color: $contentLinkColor;
+}
+
+.portletWrapper {
+    background-color: transparent;
+    border: none;
+    margin: 0 0 2em;
+    width: 100%;
+    padding: 0;
+}
+
+.portlet {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+#content .portlet a,
+#content .portlet a:link,
+#content .portlet a:hover {
+    border-bottom: none;
+}
+
+#content .portlet a:hover {
+    text-decoration: underline;
+}
+
+.portletStaticText .portletItem h2,
+.portletContact .portletItem h3 {
+    border: none;
+    font-size: 1.0625em;
+    font-weight: bold;
+    margin: 0.75em 0 0.25em;
+}
+
+.portletStaticText .portletItem h3 {
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+    margin-top: 0.375em;
+}
+
+.portletStaticText .portletItem h4 {
+    border: none;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+    margin-top: 0.375em;
+}
+
+.portletStaticText .portletItem p {
+    margin: 0;
+
+}
+
+.portletContact .portletItem div {
+    margin: 0 0 0.75em 0;
+}
+
+.portletContact .portletItem p {
+    margin: 0 0 0.125em 0;
+    font-size: 0.9375em;
+}
+
+.portletContact .portletItem {
+    padding: 0;
+}
+
+.portletStaticText img {
+    width: 100%;
+    display: block;
+    margin-top: 0.9375em;
+}
+
+
+
+/* RSS Image in right and left column */
+
+.portletfeedmixer .rssImage  {
+    display: block;
+    text-align: left;
+    margin-top: 0.5em;
+}
+
+.portletfeedmixerimagelarge .rssImage img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.rssImage img.link {
+    cursor: pointer;
+}
+
+.portletfeedmixer .summary {
+    text-align: left;
+}
+
+/* Image portlet */
+
+.imagePortlet {
+    padding: 0.5em 0 1em 0;
+}
+
+.imagePortlet dd  {
+    margin: 0.5em 0 1em 0;
+}
+
+.imagePortlet img,
+.imagePortlet span {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100%;
+}
+
+.imagePortlet a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $leftLinkTextColor;
+    display: block;
+    border-bottom: none;
+}
+
+.imagePortlet a:hover {
+    text-decoration: underline;
+    color: $leftLinkTextHoverColor;
+}
+
+.imagePortlet dd a.icon {
+    margin-bottom: 0.1875em;
+}
+
+/* Link Icons */
+/* http://spritegen.website-performance.org/ */
+.portletLinkIcon .sprite-blogger a { background-position: -50px -50px; }
+.portletLinkIcon .sprite-contact a { background-position: -50px -174px; }
+.portletLinkIcon .sprite-directory a { background-position: -50px -298px; }
+.portletLinkIcon .sprite-facebook a { background-position: -50px -422px; }
+.portletLinkIcon .sprite-feed a { background-position: -50px -546px; }
+.portletLinkIcon .sprite-flickr a { background-position: -50px -670px; }
+.portletLinkIcon .sprite-google-plus a { background-position: -50px -794px; }
+.portletLinkIcon .sprite-instagram a { background-position: -50px -918px; }
+.portletLinkIcon .sprite-linkedin a { background-position: -50px -1042px; }
+.portletLinkIcon .sprite-message a { background-position: -50px -1166px; }
+.portletLinkIcon .sprite-pinterest a { background-position: -50px -1290px; }
+.portletLinkIcon .sprite-podcast a { background-position: -50px -1414px; }
+.portletLinkIcon .sprite-twitter a { background-position: -50px -1538px; }
+.portletLinkIcon .sprite-typepad a { background-position: -50px -1662px; }
+.portletLinkIcon .sprite-youtube a { background-position: -50px -1786px; }
+
+
+.portletLinkIcon .sprite a {
+    background-image: url(linkicon-sprites.png);
+    background-repeat: no-repeat;
+    min-height: 24px;
+    display: block;
+}
+
+.portletLinkIcon .sprite a span {
+    margin-left: 30px;
+    vertical-align: middle;
+    display: block;
+}
+
+.portletLinkIcon {
+    margin: 0.75em 100%*(4px/$portlet_column_width) 1.5em; /* 4/185 */
+}
+
+.portletLinkIcon .portletItem {
+    line-height: 1.1875em;
+    margin: 0.875em 0;
+    padding: 0;
+    background-color: transparent;
+    min-height: 24px;
+}
+
+.portletLinkIcon a {
+    text-decoration: none;
+    color: $leftLinkTextColor;
+    display: block;
+    border: none;
+}
+
+.portletLinkIcon a:hover span {
+    text-decoration: underline;
+    color: $leftLinkTextHoverColor;
+}
+
+.portletLinkIcon img {
+    width: 24px;
+    padding-right: 6px;
+    color: $leftLinkTextHoverColor;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* Link Buttons */
+
+.portletLinkButton {
+    padding: 0;
+}
+
+.portletLinkButton .portletItem a,
+.portletLinkButton .portletItem a:hover {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: $leftButtonBackground_default;
+    border-radius: 4px;
+    border: 1px solid $leftButtonBorder_default;
+    border-bottom: 1px solid $leftButtonBorder_default;
+    color: $leftButtonTextColor_default;
+    display: block;
+    font-size: 0.875em;
+    font-size: 0.875rem;
+    font-weight: normal;
+    list-style-image: none;
+    list-style-type: none;
+    margin: 0 0 1em 0;
+    padding: 0.5em 5%;
+    width: 90%;
+    text-decoration: none;
+
+}
+
+.portletLinkButton dd.alternate a,
+.portletLinkButton dd.alternate a:hover {
+    border: 1px solid $leftButtonBorder_alternate;
+    background-color: $leftButtonBackground_alternate;
+    color: $leftButtonTextColor_alternate;
+}
+
+.portletLinkButton img {
+    width: 100%;
+    display: block;
+}
+
+
+/* ----- portlets ------------------------------------------ */
+
+.portletItem {
+    border: none;
+    background-color: transparent;
+    border-width: 0;
+    color: $rightPortletTextColor;
+    padding: 0;
+    margin: 0.25em 0 1.125em 0;
+}
+
+.portletItem ul {
+    margin: 0;
+    padding: 0;
+}
+
+.portletItem ul.indent {
+    margin: 0 0 1em 1em;
+}
+
+.portletItem li {
+    list-style-image: none;
+    list-style-type: none;
+    margin: 2px 0px 5px;
+    padding: 1px 0 1px 1px;
+    color: $rightPortletTextColor;
+}
+
+.portletItem a,
+.portletFooter a {
+    border-width: 0;
+    border: none;
+    color: $rightPortletLinkColor;
+    margin: 0;
+    text-align: left;
+    text-decoration: none;
+}
+
+.portletFooter a {
+    margin: 0.5em 0 1em;
+    display: block;
+}
+
+.portletItem a:hover,
+.portletFooter a:hover {
+    color: $rightPortletLinkHoverColor;
+    background-color: transparent;
+}
+
+.portlet ul li a {
+    color: $rightPortletLinkColor;
+    text-decoration: none;
+    border: none;
+    padding: 0;
+}
+
+
+.portlet ul.relatedItems li {
+    margin-left: 2px;
+}
+
+/* Person portlet */
+
+/* Container */
+
+.portletPerson .portletItem {
+    margin-bottom: 0.75em;
+    display: block;
+    color: $rightPortletSummaryColor;
+    line-height: 1.25em;
+}
+
+/* Person name */
+
+.portletPerson h2 {
+    border: none;
+    border-bottom: none;
+    font-size: 1.125em;
+    font-weight: bold;
+    margin: 0.5em 0 0.125em 0;
+}
+
+.portletPerson h2 a,
+.portletPerson h2 a:visited {
+    color: $rightPortletLinkColor;
+    font-weight: bold;    
+}
+
+.portletPerson h2 a:hover {
+    color: $rightPortletLinkHoverColor;
+}
+
+/* Job Title */
+
+.portletPerson .title {
+    font-weight: bold;
+    line-height: 1.25em;
+    margin-bottom: 0.5em;
+}
+
+/* Address */
+
+.portletPerson .adr {
+    margin-bottom: 0.9375em;
+    line-height: 1.35em;
+}
+
+/* Email */
+
+.portletPerson .portletItem a.email,
+.portletPerson .portletItem span.email a.email {
+    display: inline;
+}
+
+/* Photo */
+
+.portletPerson .portletItem img.photo {
+    margin-top: 0.5em;
+    display: block;
+}
+
+.portletPerson .portletItem .imagelarge img.photo {
+    max-width: 150px;
+    height: auto;
+}
+
+.portletPerson .portletItem .imagesmall img.photo {
+    max-width: 75px;
+    height: auto;
+}
+
+#rightcolumn .portletPerson .portletItem a.imagelarge img.photo {
+    max-width: 100%;
+}
+
+/* Collection portlet */
+
+.portletCollection .portletItem {
+    padding: 0;
+    background-color: transparent;
+    line-height: 1.375em;
+}
+
+/* Feedmixer in left column */
+
+.portletfeedmixer .portletItem {
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+.portletfeedmixer .portletItem img {
+    width: 100%;
+    margin-bottom: 0.125em;
+}
+
+.portletfeedmixer .even {
+    background-color: transparent;
+}
+
+.portletfeedmixer .date {
+    font-weight: normal;
+    color: $rightPortletDiscreteTextColor;
+}
+
+/* Portlets */
+#portal-column-one div.managedPortlet {
+    padding: 0.5em;
+}
+
+/* Portlet manager buttons */
+
+.managedPortletActions {
+    margin-right: -1em;
+    margin-left: 1em;
+}
+
+.managedPortletActions > form {
+    float: right;
+}
+
+.managedPortletActions > form button {
+    background-color: $globalBackgroundColor;
+}
+
+.portletAssignments .managedPortlet .portletHeader {
+    background-color: transparent;
+    border: 1px solid $rightPortletHeaderBorderColor;
+    border-collapse: collapse;
+}
+
+.portletAssignments .blockedPortlet div.portletHeader {
+    background-color: $globalBackgroundColor;
+}
+
+
+.portletDropdown select {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+/* For the "More" link */
+
+.portletFooter .hiddenStructure {
+    display: inline-block;
+}
+
+
+#portal-column-one .portletFooter {
+    display: none;
+}

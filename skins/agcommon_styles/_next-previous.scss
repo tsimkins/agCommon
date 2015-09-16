@@ -1,0 +1,44 @@
+/* Next/Previous Links */
+#content {
+
+    .listingBar {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        
+        a {
+            border: none;
+            padding: 0;
+        }
+
+        a:hover {
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        span.previous, 
+        .listingPrevious {
+            width: 48%;
+            margin-right: 2%;
+            display: block;
+            float: left;
+        }
+
+        span.next, 
+        .listingNext  {
+            width: 48%;
+            margin-left: 2%;
+            display: block;
+            float: right;
+            text-align: right;
+        }
+
+        .listingNext:after {
+            content: "\00BB";
+        }
+        
+        .listingPrevious:before {
+            content: "\00AB";
+        }
+    }
+}

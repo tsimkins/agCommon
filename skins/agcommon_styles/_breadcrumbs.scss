@@ -1,0 +1,34 @@
+/* = portal-breadcrumbs ==================================== */
+
+#portal-breadcrumbs {
+    background-color: transparent;
+    color: $breadcrumbTextColor;
+    font-weight: normal;
+    font-size: 1.125em;
+    letter-spacing: 0.025em;
+    padding: 0;
+    border-bottom: 0;
+    margin: 1em 0;
+    line-height: 1.125em;
+
+    .breadcrumbSeparator {
+        color: $breadcrumbSeparatorColor;
+    }
+    
+    > span {
+        font-size: 0.625em;
+    }
+
+    #breadcrumbs-current {
+        font-weight: bold;
+    }
+
+    a {
+        color: $breadcrumbLinkColor;
+        font-weight: normal;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}

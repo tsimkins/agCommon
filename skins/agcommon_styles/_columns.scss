@@ -1,0 +1,42 @@
+
+/* = portal-columns ========================================================= */
+
+#portal-columns {
+    background-color: #FFFFFF;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 1.75em 100%*(($column_padding/2)/$maxWidth);
+    width: 100%*(($maxWidth - ($column_padding))/$maxWidth);
+    vertical-align: top;
+    display: table;
+}
+
+/* = portal-column-one and portal-column-two ================================ */
+
+#portal-column-one, 
+#portal-column-two {
+    margin: 0;
+    padding: 0 100%*($column_padding/$container_width);
+    width: 100%*($portlet_column_width/$container_width);
+    vertical-align: top;
+    display: table-cell;
+}
+
+/* = portal-column-content ================================================== */
+
+#portal-column-content {
+    margin: 0;
+    padding: 0 100%*($column_padding/$container_width);
+    width: 100%*($content_column_width_full/$container_width);
+    vertical-align: top;
+    display: table-cell;
+}
+
+#portal-column-content.sl,
+#portal-column-content.sr {
+    width: 100%*($content_column_width_one/$container_width);
+}
+
+#portal-column-content.sl.sr{
+    width: 100%*($content_column_width_two/$container_width);
+}

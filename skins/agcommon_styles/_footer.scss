@@ -1,0 +1,208 @@
+/* = portal-footer ========================================= */
+
+#portal-footer {
+
+    margin: 0;
+    border-width: 0;
+    background-color: $footerBackgroundColor;
+    color: $footerTextColor;
+    font-size: 0.8125em;
+    padding: 0.5em 0;
+    width: 100%;
+    text-align: center;
+
+    p {
+        margin: 0.375em 0;
+    }
+
+    a, a:visited {
+        color: $footerLinkColor;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* 
+    Content Well Portlets for Sitemap 
+*/
+
+#portlets-footer-wrapper {
+	background-color: $sitemapBackgroundColor;
+}
+
+#portlets-footer {
+	font-size: 0.625em;
+	margin: 0 auto;
+	padding: 1.5em 0;
+    border: none;
+    display: table;
+    max-width: $maxWidth;
+    width: 100%;
+
+    .FooterPortletManager {
+    	width: $footer_portlet_width_percent;
+    	float: left;
+    	padding: 0.5em 100%*($column_padding/$maxWidth);
+    	
+        .portletWrapper {
+            padding: 0;
+            margin: 0 0 1.25em;
+            font-size: 1.125em;
+
+            .portlet, 
+            .even, 
+            .portletFooter,
+            .portletItem, 
+            .portletHeader {
+            	background-color: transparent;
+            	border: none;
+            }
+
+            .portletHeader {
+                color: $sitemapHeaderColor;
+            	font-size: 1.25em;
+            	font-weight: bold;
+            	font-weight: 600;
+            	padding: 0;
+            	margin: 0 0 0.0625em;
+            	font-family: $fontFamily;
+            	border-bottom: 1px solid $sitemapHeaderColor;
+            	line-height: 1.25em;
+            	
+                a, 
+                span {
+                	color: $sitemapHeaderColor;
+                	padding: 0;
+                }
+
+            }
+
+            .portlet {
+                margin: 0;
+            }
+
+            .portletItem {
+            	padding: 0;
+                margin: 0;
+
+                a, 
+                .state-published,
+                a:hover {
+                	color: $sitemapLinkColor;
+                	padding: 0.375em 0;
+                	display: block;
+                	border-bottom: none;
+                }
+
+                .state-published:hover,
+                a:hover {
+                	text-decoration: underline;
+                }
+
+
+            }
+
+            /* Navigation Portlet */
+            
+            .portletNavigationTree {
+            
+                .portletItem {
+                    padding: 0;
+                    
+                    .navTree {
+                        
+                        .navTreeItem,
+                        .navTreeCurrentItem {
+                            
+                            padding: 0;
+                            margin: 0;
+                            
+                            a {
+                                background-color: transparent;
+                                border: none;
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                }
+            }
+
+            /* Link Icon Portlet */
+
+            .portletLinkIcon {
+                
+                .portletItem {
+                    margin: 0;
+                    padding: 0;
+
+                    a {
+                        padding: 0.25em 0;
+                    }
+                                
+                    a, a span {
+                    	color: $sitemapLinkColor;
+                    }
+                    
+                    img {
+                        padding-right: 0.5em;
+                    }
+            
+                }
+            
+                /* Sprites and Icons */
+            
+                .icon,
+                .sprite {
+                    min-height: 24px;
+                	margin: 0.75em 3.061225114535738%;
+            
+                    a {
+                        padding: 0;
+                    	background-color: transparent;
+                        vertical-align: middle;
+                    }
+            
+                    a:hover {
+                    	text-decoration: underline;
+                    }
+                }
+            }
+
+            .portletFooter {
+            	text-align: left;
+            	padding: 0.25em 0;
+            
+                a {
+                	color: $sitemapLinkColor;
+                	display: block;
+                	background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

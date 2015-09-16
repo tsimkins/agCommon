@@ -25,59 +25,61 @@ $portlet_width_classes: (
     '100' : 1/1,
 );
 
-/* == .tilePortletContainer Basic Rules == */
+/* == Basic Rules == */
         
-#content .tilePortletContainer .portlet {
-    margin-bottom: 0.375em;
-}
+#content {
 
-#content .tilePortletContainer .portlet img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-}
-
-#content .tilePortletContainer .rssImage {
-    margin-bottom: 0.25em;
-}
-
-#content .tilePortletContainer .navTreeItem {
-    padding: 0;
-}
-
-#content .tilePortletContainer .navTreeItem a,
-#content .tilePortletContainer dd.portletItem .navTreeItem a,
-#content .tilePortletContainer .navTreeItem a:hover,
-#content .tilePortletContainer dd.portletItem .navTreeItem a:hover {
-    background-color: transparent;
-    background-image: none;
-    padding-left: 0 !important;
-}
-
-#content .tilePortletContainer .navTreeItem a img,
-#content .tilePortletContainer dd.portletItem .navTreeItem a img {
-    display: none;
-}
-
-#content .tilePortletContainer .navTreeItem a,
-#content .tilePortletContainer dd.portletItem .navTreeItem a {
-    padding: 0;
-}
-
-#content .tilePortletContainer {
     display: block;
     margin: 0;
     padding: 0;
+    
+    .portlet {
+        margin-bottom: 0.375em;
+    }
+
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    
+    .rssImage {
+        margin-bottom: 0.25em;
+    }
+
+    .portletItem {
+        .navTreeItem {
+
+            padding: 0;
+
+            a,
+            a:hover {
+                background-color: transparent;
+                background-image: none;
+                padding-left: 0 !important;
+                padding: 0;
+                
+                img {
+                    display: none;
+                }
+    
+            }
+        }
+    }
 }
 
 /* == portlet and portletmanager Basic Rules == */
 
-#portal-column-content.sl #content .tilePortletContainer .portletHeader {
-    font-size: 1.25em;
-}
+#portal-column-content.sl #content {
 
-#portal-column-content.sl #content .tilePortletContainer .portletItem {
-    margin-bottom: 0.875em;
+    .portletHeader {
+        font-size: 1.25em;
+    }
+
+    .portletItem {
+        margin-bottom: 0.875em;
+    }
+
 }
 
 div.tilePortletManager {
@@ -96,6 +98,7 @@ div.tilePortletManager {
         block_percent_width is the decimal percentage (calculated by fraction)
         block_width is the width of the block in pixels
     */
+
     $min_width: 520px;
     $block_width: $block_percent_width*$min_width;
     $container_width: $block_width - 2*($portlet_padding+$portlet_margin);
@@ -105,40 +108,42 @@ div.tilePortletManager {
 
     /* Tile Item Class */
     
-    #content .tileitem-width-#{$block_klass},
-    #content .tilePortletContainer .portlet-width-#{$block_klass} {
-        width: 100%*$block_percent_width;
-        float: left;
-        padding: 0;
-        margin: 0;
-    }
-    
-    #content .tileitem-width-#{$block_klass} .tileHeadline,
-    #content .tileitem-width-#{$block_klass} .tileBody,
-    #content .tileitem-width-#{$block_klass} .effectiveDate,
-    #content .tileitem-width-#{$block_klass} .documentByLine,
-    #content .tileitem-width-#{$block_klass} .contentLeadImageContainer,
-    #content .tileitem-width-#{$block_klass} .tileFooter,
-    #content .tilePortletContainer .portlet-width-#{$block_klass} .portletHeader,
-    #content .tilePortletContainer .portlet-width-#{$block_klass} .portletFooter,
-    #content .tilePortletContainer .portlet-width-#{$block_klass} img.feedmixerCollectionLeadImage {
-        width: $container_width_percent;
-        margin-left: ($padding_percent+$margin_percent);
-        margin-right: ($padding_percent+$margin_percent);
-        padding-left: 0;
-        padding-right: 0;
-        display: block;
-    }
-    
-    #content .tilePortletContainer .portlet-width-#{$block_klass} .portletFooter {
-        clear: both;
-    }
-    
-    #content .tilePortletContainer .portlet-width-#{$block_klass} img.feedmixerCollectionLeadImage {
-        padding: 0;
-        height: auto;
-        margin-top: 1em;
-        margin-bottom: -0.5em;
+    #content {
+        .tileitem-width-#{$block_klass} {
+            
+            width: 100%*$block_percent_width;
+            float: left;
+            padding: 0;
+            margin: 0;
+        
+            .tileHeadline,
+            .tileBody,
+            .effectiveDate,
+            .documentByLine,
+            .contentLeadImageContainer,
+            .tileFooter,
+            .portletHeader,
+            .portletFooter,
+            img.feedmixerCollectionLeadImage {
+                width: $container_width_percent;
+                margin-left: ($padding_percent+$margin_percent);
+                margin-right: ($padding_percent+$margin_percent);
+                padding-left: 0;
+                padding-right: 0;
+                display: block;
+            }
+            
+            .portletFooter {
+                clear: both;
+            }
+
+            img.feedmixerCollectionLeadImage {
+                padding: 0;
+                height: auto;
+                margin-top: 1em;
+                margin-bottom: -0.5em;
+            }
+        }
     }
 
     @for $n from 1 to $max_items {
@@ -147,87 +152,84 @@ div.tilePortletManager {
         $item_width_percent: 100%*($item_width/$container_width);
         $item_margin_percent: 100%*($portlet_margin/$container_width);
         $item_padding_percent: 100%*($portlet_padding/$container_width);
-        /* asdf */
-        #content .tilePortletContainer 
-            .portlet-width-#{$block_klass}.portlet-item-count-#{$n} .portletItem {
-            width: $item_width_percent;
-            margin-left: $item_margin_percent;
-            margin-right: $item_margin_percent;
-            padding-left: $item_padding_percent;
-            padding-right: $item_padding_percent;
-            float: left;
-            border: $item_border solid $item_border_color;
-            background-color: $item_background_color
-        }
-        
-        #content .tilePortletContainer 
-            .portlet-width-#{$block_klass}.portlet-item-count-#{$n} 
-            .portletItem:nth-child(#{$n}n + 1) {
-            clear: left;
-        }
 
+        #content .tileitem-width-#{$block_klass}.tileitem-count-#{$n} {
+
+            .portletItem, 
+            .portletItem:first-child {
+                width: $item_width_percent;
+                margin-left: $item_margin_percent;
+                margin-right: $item_margin_percent;
+                padding-left: $item_padding_percent;
+                padding-right: $item_padding_percent;
+                float: left;
+                border: $item_border solid $item_border_color;
+                background-color: $item_background_color
+            }
+
+            .portletItem:nth-child(#{$n}n + 1) {
+                clear: left;
+            }
+        }        
     }
 
     /* RSS Image CSS for $block_klass% */
     
-    #content .tilePortletContainer 
-        .portlet-width-#{$block_klass}.portlet-item-count-1 
-        .portletfeedmixer .rssImage {
-        width: 33.333%;
-        float: right;
-        margin: 0.125em 0 0.125em 0.25em;
-        padding: 0;
-    }
-    
-    #content .tilePortletContainer 
-        .portlet-width-#{$block_klass}.portlet-item-count-1 
-        .portletfeedmixerimageleft .rssImage {
-        float: left;
-        margin: 0.125em 0.25em 0.125em 0;
-    }
-    
-    #content .tilePortletContainer 
-        .portlet-width-#{$block_klass}.portlet-item-count-1 
-        .portletfeedmixerimagelarge .rssImage {
-        width: 50%;
-        margin-left: 1.5%;
-        margin-right: 0;
-    }
-    
-    #content .tilePortletContainer 
-        .portlet-width-#{$block_klass}.portlet-item-count-1 
-        .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
-        margin-left: 0;
-        margin-right: 1.5%;
-    }
-    
-    #content .tilePortletContainer 
-        .portlet-width-#{$block_klass}.portlet-item-count-1 
-        .portletfeedmixerimagefull .rssImage {
-        width: auto;
-        float: none;
-        margin: 0;
-        padding: 0;
-        margin-bottom: 0.25em;
-    }
-    
-    #content .tilePortletContainer 
-        .portlet-width-#{$block_klass}.portlet-item-count-1 
-        .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-    #content .tilePortletContainer 
-        .portlet-width-#{$block_klass}.portlet-item-count-1 
-        .portletfeedmixerimageleft .portletItemDetails {
-        margin-left: 35%;
-    }
-    
-    #content .tilePortletContainer 
-        .portlet-width-#{$block_klass}.portlet-item-count-1 
-        .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-    #content .tilePortletContainer 
-        .portlet-width-#{$block_klass}.portlet-item-count-1 
-        .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
-        margin-left: 51.5%;
-    }
+    #content {
+        .tileitem-width-#{$block_klass}.tileitem-count-1 {
+
+            .portletfeedmixer {
+                .rssImage {
+                    width: 33.333%;
+                    float: right;
+                    margin: 0.125em 0 0.125em 0.25em;
+                    padding: 0;
+                }
+            }
+            
+            .portletfeedmixerimageleft {
+                .rssImage {
+                    float: left;
+                    margin: 0.125em 0.25em 0.125em 0;
+                }
+            }
+
+           .portletfeedmixerimagelarge {
+                .rssImage {
+                    width: 50%;
+                    margin-left: 1.5%;
+                    margin-right: 0;
+                }
+            }
+            
+            .portletfeedmixerimagelarge.portletfeedmixerimageleft {
+                .rssImage {
+                    margin-left: 0;
+                    margin-right: 1.5%;
+                }
+            }
+                
+            .portletfeedmixerimagefull {
+                .rssImage {
+                    width: auto;
+                    float: none;
+                    margin: 0;
+                    padding: 0;
+                    margin-bottom: 0.25em;
+                }
+            }
+
+            .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+            .portletfeedmixerimageleft .portletItemDetails {
+                margin-left: 35%;
+            }
+
+            .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+            .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+                margin-left: 51.5%;
+            }
+        }
+    }    
 }
 
 /* iPad CSS */
@@ -246,20 +248,21 @@ div.tilePortletManager {
     
         /* Tile Item Class */
         
-        #content .tilePortletContainer .portlet-width-#{$block_klass} {
+        #content .tileitem-width-#{$block_klass} {
             width: 100%;
             float: none;
             display: block;
+
+            .portletHeader,
+            .portletFooter,
+            img.feedmixerCollectionLeadImage {
+                width: $container_width_percent;
+                margin-left: ($padding_percent+$margin_percent);
+                margin-right: ($padding_percent+$margin_percent);
+            }
+
         }
-        
-        #content .tilePortletContainer .portlet-width-#{$block_klass} .portletHeader,
-        #content .tilePortletContainer .portlet-width-#{$block_klass} .portletFooter,
-        #content .tilePortletContainer .portlet-width-#{$block_klass} img.feedmixerCollectionLeadImage {
-            width: $container_width_percent;
-            margin-left: ($padding_percent+$margin_percent);
-            margin-right: ($padding_percent+$margin_percent);
-        }
-        
+                
         @for $n from 1 to $max_items {
             
             $adj_n: 2;
@@ -273,32 +276,27 @@ div.tilePortletManager {
             $item_margin_percent: 100%*($portlet_margin/$container_width);
             $item_padding_percent: 100%*($portlet_padding/$container_width);
             
-            #content .tilePortletContainer 
-                .portlet-width-#{$block_klass}.portlet-item-count-#{$n} .portletItem {
-                width: $item_width_percent;
-                margin-left: $item_margin_percent;
-                margin-right: $item_margin_percent;
-                padding-left: $item_padding_percent;
-                padding-right: $item_padding_percent;
-            }
-    
-            #content .tilePortletContainer 
-                .portlet-width-#{$block_klass}.portlet-item-count-#{$n} 
-                .portletItem:nth-child(#{$n}n + 1) {
-                clear: none;
-            }
+            #content {
+                .tileitem-width-#{$block_klass}.tileitem-count-#{$n} {
+                    .portletItem {
+                        width: $item_width_percent;
+                        margin-left: $item_margin_percent;
+                        margin-right: $item_margin_percent;
+                        padding-left: $item_padding_percent;
+                        padding-right: $item_padding_percent;
+                    }
 
-            #content .tilePortletContainer 
-                .portlet-width-#{$block_klass}.portlet-item-count-#{$n} 
-                .portletItem:nth-child(#{$adj_n}n + 1) {
-                clear: left;
+                    .portletItem:nth-child(#{$n}n + 1) {
+                        clear: none;
+                    }
+
+                    .portletItem:nth-child(#{$adj_n}n + 1) {
+                        clear: left;
+                    }
+                }
             }
-    
         }
-        
-        
     }
-
 }
 
 /* Mid iPad/iPhone tile item CSS */
@@ -313,26 +311,24 @@ div.tilePortletManager {
     @each $block_klass, $block_percent_width in $portlet_width_classes {
     
         /* Tile Item Class */
-        
+
         #content .tileitem-width-#{$block_klass} {
             width: 100%;
             float: none;
             display: block;
-        }
-        
-        #content .tileitem-width-#{$block_klass} .tileHeadline,
-        #content .tileitem-width-#{$block_klass} .tileBody,
-        #content .tileitem-width-#{$block_klass} .effectiveDate,
-        #content .tileitem-width-#{$block_klass} .documentByLine,
-        #content .tileitem-width-#{$block_klass} .contentLeadImageContainer,
-        #content .tileitem-width-#{$block_klass} .tileFooter{
-            width: 100%;
-            margin-left: 0;
-            margin-right: 0;
+            
+            .tileHeadline,
+            .tileBody,
+            .effectiveDate,
+            .documentByLine,
+            .contentLeadImageContainer,
+            .tileFooter {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
         }        
-        
     }
-
 }
 
 
@@ -355,7 +351,7 @@ div.tilePortletManager {
         /* Tile Item Class */
         
         #content .tileitem-width-#{$block_klass},
-        #content .tilePortletContainer .portlet-width-#{$block_klass} {
+        #content .tileitem-width-#{$block_klass} {
             width: 100%;
             float: none;
             display: block;
@@ -367,9 +363,9 @@ div.tilePortletManager {
         #content .tileitem-width-#{$block_klass} .documentByLine,
         #content .tileitem-width-#{$block_klass} .contentLeadImageContainer,
         #content .tileitem-width-#{$block_klass} .tileFooter,
-        #content .tilePortletContainer .portlet-width-#{$block_klass} .portletHeader,
-        #content .tilePortletContainer .portlet-width-#{$block_klass} .portletFooter,
-        #content .tilePortletContainer .portlet-width-#{$block_klass} img.feedmixerCollectionLeadImage {
+        #content .tileitem-width-#{$block_klass} .portletHeader,
+        #content .tileitem-width-#{$block_klass} .portletFooter,
+        #content .tileitem-width-#{$block_klass} img.feedmixerCollectionLeadImage {
             width: $container_width_percent;
             margin-left: $margin_percent;
             margin-right: $margin_percent;
@@ -382,8 +378,8 @@ div.tilePortletManager {
             $item_margin_percent: 100%*($portlet_margin/$container_width);
             $item_padding_percent: 100%*($portlet_padding/$container_width);
             
-            #content .tilePortletContainer 
-                .portlet-width-#{$block_klass}.portlet-item-count-#{$n} .portletItem {
+            #content 
+                .tileitem-width-#{$block_klass}.tileitem-count-#{$n} .portletItem {
                 width: $item_width_percent;
                 margin-left: $item_margin_percent;
                 margin-right: $item_margin_percent;
@@ -391,20 +387,12 @@ div.tilePortletManager {
                 padding-right: $item_padding_percent;
                 border: none;
                 background-color: transparent;
-            }
-    
-            #content .tilePortletContainer 
-                .portlet-width-#{$block_klass}.portlet-item-count-#{$n} 
-                .portletItem {
                 clear: both;
             }
-    
         }
-        
-        
     }
 
-    #content .tilePortletContainer .rssImage {
+    #content .rssImage {
         margin: 0;
         padding: 0;
         width: 100%;

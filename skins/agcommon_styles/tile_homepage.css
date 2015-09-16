@@ -1,46 +1,34 @@
 /* Automagically generated tile homepage css */
 /* == Variables == */
-/* == .tilePortletContainer Basic Rules == */
-#content .tilePortletContainer .portlet {
-  margin-bottom: 0.375em; }
-
-#content .tilePortletContainer .portlet img {
-  max-width: 100%;
-  width: 100%;
-  height: auto; }
-
-#content .tilePortletContainer .rssImage {
-  margin-bottom: 0.25em; }
-
-#content .tilePortletContainer .navTreeItem {
-  padding: 0; }
-
-#content .tilePortletContainer .navTreeItem a,
-#content .tilePortletContainer dd.portletItem .navTreeItem a,
-#content .tilePortletContainer .navTreeItem a:hover,
-#content .tilePortletContainer dd.portletItem .navTreeItem a:hover {
-  background-color: transparent;
-  background-image: none;
-  padding-left: 0 !important; }
-
-#content .tilePortletContainer .navTreeItem a img,
-#content .tilePortletContainer dd.portletItem .navTreeItem a img {
-  display: none; }
-
-#content .tilePortletContainer .navTreeItem a,
-#content .tilePortletContainer dd.portletItem .navTreeItem a {
-  padding: 0; }
-
-#content .tilePortletContainer {
+/* == Basic Rules == */
+#content {
   display: block;
   margin: 0;
   padding: 0; }
+  #content .portlet {
+    margin-bottom: 0.375em; }
+  #content img {
+    max-width: 100%;
+    width: 100%;
+    height: auto; }
+  #content .rssImage {
+    margin-bottom: 0.25em; }
+  #content .portletItem .navTreeItem {
+    padding: 0; }
+    #content .portletItem .navTreeItem a,
+    #content .portletItem .navTreeItem a:hover {
+      background-color: transparent;
+      background-image: none;
+      padding-left: 0 !important;
+      padding: 0; }
+      #content .portletItem .navTreeItem a img,
+      #content .portletItem .navTreeItem a:hover img {
+        display: none; }
 
 /* == portlet and portletmanager Basic Rules == */
-#portal-column-content.sl #content .tilePortletContainer .portletHeader {
+#portal-column-content.sl #content .portletHeader {
   font-size: 1.25em; }
-
-#portal-column-content.sl #content .tilePortletContainer .portletItem {
+#portal-column-content.sl #content .portletItem {
   margin-bottom: 0.875em; }
 
 div.tilePortletManager {
@@ -57,41 +45,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-20,
-#content .tilePortletContainer .portlet-width-20 {
+#content .tileitem-width-20 {
   width: 20%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-20 .tileHeadline,
+  #content .tileitem-width-20 .tileBody,
+  #content .tileitem-width-20 .effectiveDate,
+  #content .tileitem-width-20 .documentByLine,
+  #content .tileitem-width-20 .contentLeadImageContainer,
+  #content .tileitem-width-20 .tileFooter,
+  #content .tileitem-width-20 .portletHeader,
+  #content .tileitem-width-20 .portletFooter,
+  #content .tileitem-width-20 img.feedmixerCollectionLeadImage {
+    width: 76.92308%;
+    margin-left: 11.53846%;
+    margin-right: 11.53846%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-20 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-20 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-20 .tileHeadline,
-#content .tileitem-width-20 .tileBody,
-#content .tileitem-width-20 .effectiveDate,
-#content .tileitem-width-20 .documentByLine,
-#content .tileitem-width-20 .contentLeadImageContainer,
-#content .tileitem-width-20 .tileFooter,
-#content .tilePortletContainer .portlet-width-20 .portletHeader,
-#content .tilePortletContainer .portlet-width-20 .portletFooter,
-#content .tilePortletContainer .portlet-width-20 img.feedmixerCollectionLeadImage {
-  width: 76.92308%;
-  margin-left: 11.53846%;
-  margin-right: 11.53846%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-20 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-20 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1 .portletItem {
+#content .tileitem-width-20.tileitem-count-1 .portletItem,
+#content .tileitem-width-20.tileitem-count-1 .portletItem:first-child {
   width: 70%;
   margin-left: 7.5%;
   margin-right: 7.5%;
@@ -100,15 +83,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-20.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-2 .portletItem {
+#content .tileitem-width-20.tileitem-count-2 .portletItem,
+#content .tileitem-width-20.tileitem-count-2 .portletItem:first-child {
   width: 20%;
   margin-left: 7.5%;
   margin-right: 7.5%;
@@ -117,15 +96,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-20.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-3 .portletItem {
+#content .tileitem-width-20.tileitem-count-3 .portletItem,
+#content .tileitem-width-20.tileitem-count-3 .portletItem:first-child {
   width: 3.33333%;
   margin-left: 7.5%;
   margin-right: 7.5%;
@@ -134,15 +109,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-20.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-4 .portletItem {
+#content .tileitem-width-20.tileitem-count-4 .portletItem,
+#content .tileitem-width-20.tileitem-count-4 .portletItem:first-child {
   width: -5%;
   margin-left: 7.5%;
   margin-right: 7.5%;
@@ -151,15 +122,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-20.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-5 .portletItem {
+#content .tileitem-width-20.tileitem-count-5 .portletItem,
+#content .tileitem-width-20.tileitem-count-5 .portletItem:first-child {
   width: -10%;
   margin-left: 7.5%;
   margin-right: 7.5%;
@@ -168,63 +135,36 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-20.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-20.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-20.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-20.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-20.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-20.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-20.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-20.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-20.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-20.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-20.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /*
@@ -233,41 +173,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-25,
-#content .tilePortletContainer .portlet-width-25 {
+#content .tileitem-width-25 {
   width: 25%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-25 .tileHeadline,
+  #content .tileitem-width-25 .tileBody,
+  #content .tileitem-width-25 .effectiveDate,
+  #content .tileitem-width-25 .documentByLine,
+  #content .tileitem-width-25 .contentLeadImageContainer,
+  #content .tileitem-width-25 .tileFooter,
+  #content .tileitem-width-25 .portletHeader,
+  #content .tileitem-width-25 .portletFooter,
+  #content .tileitem-width-25 img.feedmixerCollectionLeadImage {
+    width: 81.53846%;
+    margin-left: 9.23077%;
+    margin-right: 9.23077%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-25 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-25 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-25 .tileHeadline,
-#content .tileitem-width-25 .tileBody,
-#content .tileitem-width-25 .effectiveDate,
-#content .tileitem-width-25 .documentByLine,
-#content .tileitem-width-25 .contentLeadImageContainer,
-#content .tileitem-width-25 .tileFooter,
-#content .tilePortletContainer .portlet-width-25 .portletHeader,
-#content .tilePortletContainer .portlet-width-25 .portletFooter,
-#content .tilePortletContainer .portlet-width-25 img.feedmixerCollectionLeadImage {
-  width: 81.53846%;
-  margin-left: 9.23077%;
-  margin-right: 9.23077%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-25 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-25 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1 .portletItem {
+#content .tileitem-width-25.tileitem-count-1 .portletItem,
+#content .tileitem-width-25.tileitem-count-1 .portletItem:first-child {
   width: 77.35849%;
   margin-left: 5.66038%;
   margin-right: 5.66038%;
@@ -276,15 +211,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-25.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-2 .portletItem {
+#content .tileitem-width-25.tileitem-count-2 .portletItem,
+#content .tileitem-width-25.tileitem-count-2 .portletItem:first-child {
   width: 27.35849%;
   margin-left: 5.66038%;
   margin-right: 5.66038%;
@@ -293,15 +224,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-25.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-3 .portletItem {
+#content .tileitem-width-25.tileitem-count-3 .portletItem,
+#content .tileitem-width-25.tileitem-count-3 .portletItem:first-child {
   width: 10.69182%;
   margin-left: 5.66038%;
   margin-right: 5.66038%;
@@ -310,15 +237,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-25.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-4 .portletItem {
+#content .tileitem-width-25.tileitem-count-4 .portletItem,
+#content .tileitem-width-25.tileitem-count-4 .portletItem:first-child {
   width: 2.35849%;
   margin-left: 5.66038%;
   margin-right: 5.66038%;
@@ -327,15 +250,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-25.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-5 .portletItem {
+#content .tileitem-width-25.tileitem-count-5 .portletItem,
+#content .tileitem-width-25.tileitem-count-5 .portletItem:first-child {
   width: -2.64151%;
   margin-left: 5.66038%;
   margin-right: 5.66038%;
@@ -344,63 +263,36 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-25.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-25.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-25.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-25.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-25.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-25.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-25.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-25.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-25.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-25.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-25.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /*
@@ -409,41 +301,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-33,
-#content .tilePortletContainer .portlet-width-33 {
+#content .tileitem-width-33 {
   width: 33.33333%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-33 .tileHeadline,
+  #content .tileitem-width-33 .tileBody,
+  #content .tileitem-width-33 .effectiveDate,
+  #content .tileitem-width-33 .documentByLine,
+  #content .tileitem-width-33 .contentLeadImageContainer,
+  #content .tileitem-width-33 .tileFooter,
+  #content .tileitem-width-33 .portletHeader,
+  #content .tileitem-width-33 .portletFooter,
+  #content .tileitem-width-33 img.feedmixerCollectionLeadImage {
+    width: 86.15385%;
+    margin-left: 6.92308%;
+    margin-right: 6.92308%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-33 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-33 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-33 .tileHeadline,
-#content .tileitem-width-33 .tileBody,
-#content .tileitem-width-33 .effectiveDate,
-#content .tileitem-width-33 .documentByLine,
-#content .tileitem-width-33 .contentLeadImageContainer,
-#content .tileitem-width-33 .tileFooter,
-#content .tilePortletContainer .portlet-width-33 .portletHeader,
-#content .tilePortletContainer .portlet-width-33 .portletFooter,
-#content .tilePortletContainer .portlet-width-33 img.feedmixerCollectionLeadImage {
-  width: 86.15385%;
-  margin-left: 6.92308%;
-  margin-right: 6.92308%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-33 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-33 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1 .portletItem {
+#content .tileitem-width-33.tileitem-count-1 .portletItem,
+#content .tileitem-width-33.tileitem-count-1 .portletItem:first-child {
   width: 83.92857%;
   margin-left: 4.01786%;
   margin-right: 4.01786%;
@@ -452,15 +339,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-33.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-2 .portletItem {
+#content .tileitem-width-33.tileitem-count-2 .portletItem,
+#content .tileitem-width-33.tileitem-count-2 .portletItem:first-child {
   width: 33.92857%;
   margin-left: 4.01786%;
   margin-right: 4.01786%;
@@ -469,15 +352,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-33.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-3 .portletItem {
+#content .tileitem-width-33.tileitem-count-3 .portletItem,
+#content .tileitem-width-33.tileitem-count-3 .portletItem:first-child {
   width: 17.2619%;
   margin-left: 4.01786%;
   margin-right: 4.01786%;
@@ -486,15 +365,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-33.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-4 .portletItem {
+#content .tileitem-width-33.tileitem-count-4 .portletItem,
+#content .tileitem-width-33.tileitem-count-4 .portletItem:first-child {
   width: 8.92857%;
   margin-left: 4.01786%;
   margin-right: 4.01786%;
@@ -503,15 +378,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-33.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-5 .portletItem {
+#content .tileitem-width-33.tileitem-count-5 .portletItem,
+#content .tileitem-width-33.tileitem-count-5 .portletItem:first-child {
   width: 3.92857%;
   margin-left: 4.01786%;
   margin-right: 4.01786%;
@@ -520,63 +391,36 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-33.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-33.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-33.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-33.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-33.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-33.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-33.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-33.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-33.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-33.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-33.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /*
@@ -585,41 +429,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-40,
-#content .tilePortletContainer .portlet-width-40 {
+#content .tileitem-width-40 {
   width: 40%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-40 .tileHeadline,
+  #content .tileitem-width-40 .tileBody,
+  #content .tileitem-width-40 .effectiveDate,
+  #content .tileitem-width-40 .documentByLine,
+  #content .tileitem-width-40 .contentLeadImageContainer,
+  #content .tileitem-width-40 .tileFooter,
+  #content .tileitem-width-40 .portletHeader,
+  #content .tileitem-width-40 .portletFooter,
+  #content .tileitem-width-40 img.feedmixerCollectionLeadImage {
+    width: 88.46154%;
+    margin-left: 5.76923%;
+    margin-right: 5.76923%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-40 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-40 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-40 .tileHeadline,
-#content .tileitem-width-40 .tileBody,
-#content .tileitem-width-40 .effectiveDate,
-#content .tileitem-width-40 .documentByLine,
-#content .tileitem-width-40 .contentLeadImageContainer,
-#content .tileitem-width-40 .tileFooter,
-#content .tilePortletContainer .portlet-width-40 .portletHeader,
-#content .tilePortletContainer .portlet-width-40 .portletFooter,
-#content .tilePortletContainer .portlet-width-40 img.feedmixerCollectionLeadImage {
-  width: 88.46154%;
-  margin-left: 5.76923%;
-  margin-right: 5.76923%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-40 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-40 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1 .portletItem {
+#content .tileitem-width-40.tileitem-count-1 .portletItem,
+#content .tileitem-width-40.tileitem-count-1 .portletItem:first-child {
   width: 86.95652%;
   margin-left: 3.26087%;
   margin-right: 3.26087%;
@@ -628,15 +467,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-40.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-2 .portletItem {
+#content .tileitem-width-40.tileitem-count-2 .portletItem,
+#content .tileitem-width-40.tileitem-count-2 .portletItem:first-child {
   width: 36.95652%;
   margin-left: 3.26087%;
   margin-right: 3.26087%;
@@ -645,15 +480,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-40.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-3 .portletItem {
+#content .tileitem-width-40.tileitem-count-3 .portletItem,
+#content .tileitem-width-40.tileitem-count-3 .portletItem:first-child {
   width: 20.28986%;
   margin-left: 3.26087%;
   margin-right: 3.26087%;
@@ -662,15 +493,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-40.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-4 .portletItem {
+#content .tileitem-width-40.tileitem-count-4 .portletItem,
+#content .tileitem-width-40.tileitem-count-4 .portletItem:first-child {
   width: 11.95652%;
   margin-left: 3.26087%;
   margin-right: 3.26087%;
@@ -679,15 +506,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-40.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-5 .portletItem {
+#content .tileitem-width-40.tileitem-count-5 .portletItem,
+#content .tileitem-width-40.tileitem-count-5 .portletItem:first-child {
   width: 6.95652%;
   margin-left: 3.26087%;
   margin-right: 3.26087%;
@@ -696,63 +519,36 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-40.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-40.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-40.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-40.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-40.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-40.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-40.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-40.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-40.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-40.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-40.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /*
@@ -761,41 +557,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-50,
-#content .tilePortletContainer .portlet-width-50 {
+#content .tileitem-width-50 {
   width: 50%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-50 .tileHeadline,
+  #content .tileitem-width-50 .tileBody,
+  #content .tileitem-width-50 .effectiveDate,
+  #content .tileitem-width-50 .documentByLine,
+  #content .tileitem-width-50 .contentLeadImageContainer,
+  #content .tileitem-width-50 .tileFooter,
+  #content .tileitem-width-50 .portletHeader,
+  #content .tileitem-width-50 .portletFooter,
+  #content .tileitem-width-50 img.feedmixerCollectionLeadImage {
+    width: 90.76923%;
+    margin-left: 4.61538%;
+    margin-right: 4.61538%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-50 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-50 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-50 .tileHeadline,
-#content .tileitem-width-50 .tileBody,
-#content .tileitem-width-50 .effectiveDate,
-#content .tileitem-width-50 .documentByLine,
-#content .tileitem-width-50 .contentLeadImageContainer,
-#content .tileitem-width-50 .tileFooter,
-#content .tilePortletContainer .portlet-width-50 .portletHeader,
-#content .tilePortletContainer .portlet-width-50 .portletFooter,
-#content .tilePortletContainer .portlet-width-50 img.feedmixerCollectionLeadImage {
-  width: 90.76923%;
-  margin-left: 4.61538%;
-  margin-right: 4.61538%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-50 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-50 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1 .portletItem {
+#content .tileitem-width-50.tileitem-count-1 .portletItem,
+#content .tileitem-width-50.tileitem-count-1 .portletItem:first-child {
   width: 89.83051%;
   margin-left: 2.54237%;
   margin-right: 2.54237%;
@@ -804,15 +595,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-50.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-2 .portletItem {
+#content .tileitem-width-50.tileitem-count-2 .portletItem,
+#content .tileitem-width-50.tileitem-count-2 .portletItem:first-child {
   width: 39.83051%;
   margin-left: 2.54237%;
   margin-right: 2.54237%;
@@ -821,15 +608,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-50.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-3 .portletItem {
+#content .tileitem-width-50.tileitem-count-3 .portletItem,
+#content .tileitem-width-50.tileitem-count-3 .portletItem:first-child {
   width: 23.16384%;
   margin-left: 2.54237%;
   margin-right: 2.54237%;
@@ -838,15 +621,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-50.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-4 .portletItem {
+#content .tileitem-width-50.tileitem-count-4 .portletItem,
+#content .tileitem-width-50.tileitem-count-4 .portletItem:first-child {
   width: 14.83051%;
   margin-left: 2.54237%;
   margin-right: 2.54237%;
@@ -855,15 +634,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-50.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-5 .portletItem {
+#content .tileitem-width-50.tileitem-count-5 .portletItem,
+#content .tileitem-width-50.tileitem-count-5 .portletItem:first-child {
   width: 9.83051%;
   margin-left: 2.54237%;
   margin-right: 2.54237%;
@@ -872,63 +647,36 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-50.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-50.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-50.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-50.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-50.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-50.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-50.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-50.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-50.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-50.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-50.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /*
@@ -937,41 +685,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-60,
-#content .tilePortletContainer .portlet-width-60 {
+#content .tileitem-width-60 {
   width: 60%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-60 .tileHeadline,
+  #content .tileitem-width-60 .tileBody,
+  #content .tileitem-width-60 .effectiveDate,
+  #content .tileitem-width-60 .documentByLine,
+  #content .tileitem-width-60 .contentLeadImageContainer,
+  #content .tileitem-width-60 .tileFooter,
+  #content .tileitem-width-60 .portletHeader,
+  #content .tileitem-width-60 .portletFooter,
+  #content .tileitem-width-60 img.feedmixerCollectionLeadImage {
+    width: 92.30769%;
+    margin-left: 3.84615%;
+    margin-right: 3.84615%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-60 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-60 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-60 .tileHeadline,
-#content .tileitem-width-60 .tileBody,
-#content .tileitem-width-60 .effectiveDate,
-#content .tileitem-width-60 .documentByLine,
-#content .tileitem-width-60 .contentLeadImageContainer,
-#content .tileitem-width-60 .tileFooter,
-#content .tilePortletContainer .portlet-width-60 .portletHeader,
-#content .tilePortletContainer .portlet-width-60 .portletFooter,
-#content .tilePortletContainer .portlet-width-60 img.feedmixerCollectionLeadImage {
-  width: 92.30769%;
-  margin-left: 3.84615%;
-  margin-right: 3.84615%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-60 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-60 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1 .portletItem {
+#content .tileitem-width-60.tileitem-count-1 .portletItem,
+#content .tileitem-width-60.tileitem-count-1 .portletItem:first-child {
   width: 91.66667%;
   margin-left: 2.08333%;
   margin-right: 2.08333%;
@@ -980,15 +723,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-60.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-2 .portletItem {
+#content .tileitem-width-60.tileitem-count-2 .portletItem,
+#content .tileitem-width-60.tileitem-count-2 .portletItem:first-child {
   width: 41.66667%;
   margin-left: 2.08333%;
   margin-right: 2.08333%;
@@ -997,15 +736,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-60.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-3 .portletItem {
+#content .tileitem-width-60.tileitem-count-3 .portletItem,
+#content .tileitem-width-60.tileitem-count-3 .portletItem:first-child {
   width: 25%;
   margin-left: 2.08333%;
   margin-right: 2.08333%;
@@ -1014,15 +749,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-60.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-4 .portletItem {
+#content .tileitem-width-60.tileitem-count-4 .portletItem,
+#content .tileitem-width-60.tileitem-count-4 .portletItem:first-child {
   width: 16.66667%;
   margin-left: 2.08333%;
   margin-right: 2.08333%;
@@ -1031,15 +762,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-60.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-5 .portletItem {
+#content .tileitem-width-60.tileitem-count-5 .portletItem,
+#content .tileitem-width-60.tileitem-count-5 .portletItem:first-child {
   width: 11.66667%;
   margin-left: 2.08333%;
   margin-right: 2.08333%;
@@ -1048,63 +775,36 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-60.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-60.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-60.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-60.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-60.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-60.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-60.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-60.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-60.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-60.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-60.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /*
@@ -1113,41 +813,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-66,
-#content .tilePortletContainer .portlet-width-66 {
+#content .tileitem-width-66 {
   width: 66.66667%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-66 .tileHeadline,
+  #content .tileitem-width-66 .tileBody,
+  #content .tileitem-width-66 .effectiveDate,
+  #content .tileitem-width-66 .documentByLine,
+  #content .tileitem-width-66 .contentLeadImageContainer,
+  #content .tileitem-width-66 .tileFooter,
+  #content .tileitem-width-66 .portletHeader,
+  #content .tileitem-width-66 .portletFooter,
+  #content .tileitem-width-66 img.feedmixerCollectionLeadImage {
+    width: 93.07692%;
+    margin-left: 3.46154%;
+    margin-right: 3.46154%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-66 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-66 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-66 .tileHeadline,
-#content .tileitem-width-66 .tileBody,
-#content .tileitem-width-66 .effectiveDate,
-#content .tileitem-width-66 .documentByLine,
-#content .tileitem-width-66 .contentLeadImageContainer,
-#content .tileitem-width-66 .tileFooter,
-#content .tilePortletContainer .portlet-width-66 .portletHeader,
-#content .tilePortletContainer .portlet-width-66 .portletFooter,
-#content .tilePortletContainer .portlet-width-66 img.feedmixerCollectionLeadImage {
-  width: 93.07692%;
-  margin-left: 3.46154%;
-  margin-right: 3.46154%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-66 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-66 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1 .portletItem {
+#content .tileitem-width-66.tileitem-count-1 .portletItem,
+#content .tileitem-width-66.tileitem-count-1 .portletItem:first-child {
   width: 92.56198%;
   margin-left: 1.8595%;
   margin-right: 1.8595%;
@@ -1156,15 +851,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-66.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-2 .portletItem {
+#content .tileitem-width-66.tileitem-count-2 .portletItem,
+#content .tileitem-width-66.tileitem-count-2 .portletItem:first-child {
   width: 42.56198%;
   margin-left: 1.8595%;
   margin-right: 1.8595%;
@@ -1173,15 +864,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-66.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-3 .portletItem {
+#content .tileitem-width-66.tileitem-count-3 .portletItem,
+#content .tileitem-width-66.tileitem-count-3 .portletItem:first-child {
   width: 25.89532%;
   margin-left: 1.8595%;
   margin-right: 1.8595%;
@@ -1190,15 +877,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-66.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-4 .portletItem {
+#content .tileitem-width-66.tileitem-count-4 .portletItem,
+#content .tileitem-width-66.tileitem-count-4 .portletItem:first-child {
   width: 17.56198%;
   margin-left: 1.8595%;
   margin-right: 1.8595%;
@@ -1207,15 +890,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-66.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-5 .portletItem {
+#content .tileitem-width-66.tileitem-count-5 .portletItem,
+#content .tileitem-width-66.tileitem-count-5 .portletItem:first-child {
   width: 12.56198%;
   margin-left: 1.8595%;
   margin-right: 1.8595%;
@@ -1224,63 +903,36 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-66.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-66.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-66.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-66.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-66.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-66.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-66.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-66.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-66.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-66.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-66.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /*
@@ -1289,41 +941,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-75,
-#content .tilePortletContainer .portlet-width-75 {
+#content .tileitem-width-75 {
   width: 75%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-75 .tileHeadline,
+  #content .tileitem-width-75 .tileBody,
+  #content .tileitem-width-75 .effectiveDate,
+  #content .tileitem-width-75 .documentByLine,
+  #content .tileitem-width-75 .contentLeadImageContainer,
+  #content .tileitem-width-75 .tileFooter,
+  #content .tileitem-width-75 .portletHeader,
+  #content .tileitem-width-75 .portletFooter,
+  #content .tileitem-width-75 img.feedmixerCollectionLeadImage {
+    width: 93.84615%;
+    margin-left: 3.07692%;
+    margin-right: 3.07692%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-75 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-75 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-75 .tileHeadline,
-#content .tileitem-width-75 .tileBody,
-#content .tileitem-width-75 .effectiveDate,
-#content .tileitem-width-75 .documentByLine,
-#content .tileitem-width-75 .contentLeadImageContainer,
-#content .tileitem-width-75 .tileFooter,
-#content .tilePortletContainer .portlet-width-75 .portletHeader,
-#content .tilePortletContainer .portlet-width-75 .portletFooter,
-#content .tilePortletContainer .portlet-width-75 img.feedmixerCollectionLeadImage {
-  width: 93.84615%;
-  margin-left: 3.07692%;
-  margin-right: 3.07692%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-75 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-75 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1 .portletItem {
+#content .tileitem-width-75.tileitem-count-1 .portletItem,
+#content .tileitem-width-75.tileitem-count-1 .portletItem:first-child {
   width: 93.44262%;
   margin-left: 1.63934%;
   margin-right: 1.63934%;
@@ -1332,15 +979,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-75.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-2 .portletItem {
+#content .tileitem-width-75.tileitem-count-2 .portletItem,
+#content .tileitem-width-75.tileitem-count-2 .portletItem:first-child {
   width: 43.44262%;
   margin-left: 1.63934%;
   margin-right: 1.63934%;
@@ -1349,15 +992,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-75.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-3 .portletItem {
+#content .tileitem-width-75.tileitem-count-3 .portletItem,
+#content .tileitem-width-75.tileitem-count-3 .portletItem:first-child {
   width: 26.77596%;
   margin-left: 1.63934%;
   margin-right: 1.63934%;
@@ -1366,15 +1005,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-75.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-4 .portletItem {
+#content .tileitem-width-75.tileitem-count-4 .portletItem,
+#content .tileitem-width-75.tileitem-count-4 .portletItem:first-child {
   width: 18.44262%;
   margin-left: 1.63934%;
   margin-right: 1.63934%;
@@ -1383,15 +1018,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-75.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-5 .portletItem {
+#content .tileitem-width-75.tileitem-count-5 .portletItem,
+#content .tileitem-width-75.tileitem-count-5 .portletItem:first-child {
   width: 13.44262%;
   margin-left: 1.63934%;
   margin-right: 1.63934%;
@@ -1400,63 +1031,36 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-75.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-75.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-75.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-75.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-75.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-75.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-75.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-75.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-75.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-75.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-75.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /*
@@ -1465,41 +1069,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-80,
-#content .tilePortletContainer .portlet-width-80 {
+#content .tileitem-width-80 {
   width: 80%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-80 .tileHeadline,
+  #content .tileitem-width-80 .tileBody,
+  #content .tileitem-width-80 .effectiveDate,
+  #content .tileitem-width-80 .documentByLine,
+  #content .tileitem-width-80 .contentLeadImageContainer,
+  #content .tileitem-width-80 .tileFooter,
+  #content .tileitem-width-80 .portletHeader,
+  #content .tileitem-width-80 .portletFooter,
+  #content .tileitem-width-80 img.feedmixerCollectionLeadImage {
+    width: 94.23077%;
+    margin-left: 2.88462%;
+    margin-right: 2.88462%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-80 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-80 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-80 .tileHeadline,
-#content .tileitem-width-80 .tileBody,
-#content .tileitem-width-80 .effectiveDate,
-#content .tileitem-width-80 .documentByLine,
-#content .tileitem-width-80 .contentLeadImageContainer,
-#content .tileitem-width-80 .tileFooter,
-#content .tilePortletContainer .portlet-width-80 .portletHeader,
-#content .tilePortletContainer .portlet-width-80 .portletFooter,
-#content .tilePortletContainer .portlet-width-80 img.feedmixerCollectionLeadImage {
-  width: 94.23077%;
-  margin-left: 2.88462%;
-  margin-right: 2.88462%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-80 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-80 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1 .portletItem {
+#content .tileitem-width-80.tileitem-count-1 .portletItem,
+#content .tileitem-width-80.tileitem-count-1 .portletItem:first-child {
   width: 93.87755%;
   margin-left: 1.53061%;
   margin-right: 1.53061%;
@@ -1508,15 +1107,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-80.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-2 .portletItem {
+#content .tileitem-width-80.tileitem-count-2 .portletItem,
+#content .tileitem-width-80.tileitem-count-2 .portletItem:first-child {
   width: 43.87755%;
   margin-left: 1.53061%;
   margin-right: 1.53061%;
@@ -1525,15 +1120,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-80.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-3 .portletItem {
+#content .tileitem-width-80.tileitem-count-3 .portletItem,
+#content .tileitem-width-80.tileitem-count-3 .portletItem:first-child {
   width: 27.21088%;
   margin-left: 1.53061%;
   margin-right: 1.53061%;
@@ -1542,15 +1133,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-80.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-4 .portletItem {
+#content .tileitem-width-80.tileitem-count-4 .portletItem,
+#content .tileitem-width-80.tileitem-count-4 .portletItem:first-child {
   width: 18.87755%;
   margin-left: 1.53061%;
   margin-right: 1.53061%;
@@ -1559,15 +1146,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-80.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-5 .portletItem {
+#content .tileitem-width-80.tileitem-count-5 .portletItem,
+#content .tileitem-width-80.tileitem-count-5 .portletItem:first-child {
   width: 13.87755%;
   margin-left: 1.53061%;
   margin-right: 1.53061%;
@@ -1576,63 +1159,36 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-80.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-80.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-80.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-80.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-80.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-80.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-80.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-80.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-80.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-80.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-80.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /*
@@ -1641,41 +1197,36 @@ div.tilePortletManager {
     block_width is the width of the block in pixels
 */
 /* Tile Item Class */
-#content .tileitem-width-100,
-#content .tilePortletContainer .portlet-width-100 {
+#content .tileitem-width-100 {
   width: 100%;
   float: left;
   padding: 0;
   margin: 0; }
+  #content .tileitem-width-100 .tileHeadline,
+  #content .tileitem-width-100 .tileBody,
+  #content .tileitem-width-100 .effectiveDate,
+  #content .tileitem-width-100 .documentByLine,
+  #content .tileitem-width-100 .contentLeadImageContainer,
+  #content .tileitem-width-100 .tileFooter,
+  #content .tileitem-width-100 .portletHeader,
+  #content .tileitem-width-100 .portletFooter,
+  #content .tileitem-width-100 img.feedmixerCollectionLeadImage {
+    width: 95.38462%;
+    margin-left: 2.30769%;
+    margin-right: 2.30769%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+  #content .tileitem-width-100 .portletFooter {
+    clear: both; }
+  #content .tileitem-width-100 img.feedmixerCollectionLeadImage {
+    padding: 0;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: -0.5em; }
 
-#content .tileitem-width-100 .tileHeadline,
-#content .tileitem-width-100 .tileBody,
-#content .tileitem-width-100 .effectiveDate,
-#content .tileitem-width-100 .documentByLine,
-#content .tileitem-width-100 .contentLeadImageContainer,
-#content .tileitem-width-100 .tileFooter,
-#content .tilePortletContainer .portlet-width-100 .portletHeader,
-#content .tilePortletContainer .portlet-width-100 .portletFooter,
-#content .tilePortletContainer .portlet-width-100 img.feedmixerCollectionLeadImage {
-  width: 95.38462%;
-  margin-left: 2.30769%;
-  margin-right: 2.30769%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block; }
-
-#content .tilePortletContainer .portlet-width-100 .portletFooter {
-  clear: both; }
-
-#content .tilePortletContainer .portlet-width-100 img.feedmixerCollectionLeadImage {
-  padding: 0;
-  height: auto;
-  margin-top: 1em;
-  margin-bottom: -0.5em; }
-
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1 .portletItem {
+#content .tileitem-width-100.tileitem-count-1 .portletItem,
+#content .tileitem-width-100.tileitem-count-1 .portletItem:first-child {
   width: 95.16129%;
   margin-left: 1.20968%;
   margin-right: 1.20968%;
@@ -1684,15 +1235,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletItem:nth-child(1n + 1) {
+#content .tileitem-width-100.tileitem-count-1 .portletItem:nth-child(1n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-2 .portletItem {
+#content .tileitem-width-100.tileitem-count-2 .portletItem,
+#content .tileitem-width-100.tileitem-count-2 .portletItem:first-child {
   width: 45.16129%;
   margin-left: 1.20968%;
   margin-right: 1.20968%;
@@ -1701,15 +1248,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-2
-.portletItem:nth-child(2n + 1) {
+#content .tileitem-width-100.tileitem-count-2 .portletItem:nth-child(2n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-3 .portletItem {
+#content .tileitem-width-100.tileitem-count-3 .portletItem,
+#content .tileitem-width-100.tileitem-count-3 .portletItem:first-child {
   width: 28.49462%;
   margin-left: 1.20968%;
   margin-right: 1.20968%;
@@ -1718,15 +1261,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-3
-.portletItem:nth-child(3n + 1) {
+#content .tileitem-width-100.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-4 .portletItem {
+#content .tileitem-width-100.tileitem-count-4 .portletItem,
+#content .tileitem-width-100.tileitem-count-4 .portletItem:first-child {
   width: 20.16129%;
   margin-left: 1.20968%;
   margin-right: 1.20968%;
@@ -1735,15 +1274,11 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-4
-.portletItem:nth-child(4n + 1) {
+#content .tileitem-width-100.tileitem-count-4 .portletItem:nth-child(4n + 1) {
   clear: left; }
 
-/* asdf */
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-5 .portletItem {
+#content .tileitem-width-100.tileitem-count-5 .portletItem,
+#content .tileitem-width-100.tileitem-count-5 .portletItem:first-child {
   width: 15.16129%;
   margin-left: 1.20968%;
   margin-right: 1.20968%;
@@ -1752,1095 +1287,708 @@ div.tilePortletManager {
   float: left;
   border: 0 solid transparent;
   background-color: transparent; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-5
-.portletItem:nth-child(5n + 1) {
+#content .tileitem-width-100.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletfeedmixer .rssImage {
+#content .tileitem-width-100.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
   float: right;
   margin: 0.125em 0 0.125em 0.25em;
   padding: 0; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-100.tileitem-count-1 .portletfeedmixerimageleft .rssImage {
   float: left;
   margin: 0.125em 0.25em 0.125em 0; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletfeedmixerimagelarge .rssImage {
+#content .tileitem-width-100.tileitem-count-1 .portletfeedmixerimagelarge .rssImage {
   width: 50%;
   margin-left: 1.5%;
   margin-right: 0; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
+#content .tileitem-width-100.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .rssImage {
   margin-left: 0;
   margin-right: 1.5%; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletfeedmixerimagefull .rssImage {
+#content .tileitem-width-100.tileitem-count-1 .portletfeedmixerimagefull .rssImage {
   width: auto;
   float: none;
   margin: 0;
   padding: 0;
   margin-bottom: 0.25em; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-100.tileitem-count-1 .portletfeedmixerimagesmall.portletfeedmixerimageleft .title,
+#content .tileitem-width-100.tileitem-count-1 .portletfeedmixerimageleft .portletItemDetails {
   margin-left: 35%; }
-
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
-#content .tilePortletContainer
-.portlet-width-100.portlet-item-count-1
-.portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
+#content .tileitem-width-100.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .title,
+#content .tileitem-width-100.tileitem-count-1 .portletfeedmixerimagelarge.portletfeedmixerimageleft .portletItemDetails {
   margin-left: 51.5%; }
 
 /* iPad CSS */
 @media handheld, screen and (max-width: 768px) {
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-20 {
+  #content .tileitem-width-20 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-20 .portletHeader,
+    #content .tileitem-width-20 .portletFooter,
+    #content .tileitem-width-20 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-20 .portletHeader,
-  #content .tilePortletContainer .portlet-width-20 .portletFooter,
-  #content .tilePortletContainer .portlet-width-20 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-20.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-20.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-20.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-20.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-20.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-20.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-20.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-20.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-20.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-20.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-20.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-20.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-20.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-20.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-20.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-25 {
+  #content .tileitem-width-25 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-25 .portletHeader,
+    #content .tileitem-width-25 .portletFooter,
+    #content .tileitem-width-25 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-25 .portletHeader,
-  #content .tilePortletContainer .portlet-width-25 .portletFooter,
-  #content .tilePortletContainer .portlet-width-25 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-25.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-25.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-25.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-25.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-25.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-25.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-25.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-25.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-25.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-25.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-25.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-25.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-25.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-25.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-25.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-33 {
+  #content .tileitem-width-33 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-33 .portletHeader,
+    #content .tileitem-width-33 .portletFooter,
+    #content .tileitem-width-33 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-33 .portletHeader,
-  #content .tilePortletContainer .portlet-width-33 .portletFooter,
-  #content .tilePortletContainer .portlet-width-33 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-33.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-33.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-33.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-33.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-33.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-33.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-33.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-33.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-33.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-33.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-33.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-33.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-33.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-33.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-33.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-40 {
+  #content .tileitem-width-40 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-40 .portletHeader,
+    #content .tileitem-width-40 .portletFooter,
+    #content .tileitem-width-40 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-40 .portletHeader,
-  #content .tilePortletContainer .portlet-width-40 .portletFooter,
-  #content .tilePortletContainer .portlet-width-40 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-40.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-40.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-40.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-40.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-40.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-40.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-40.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-40.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-40.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-40.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-40.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-40.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-40.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-40.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-40.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-50 {
+  #content .tileitem-width-50 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-50 .portletHeader,
+    #content .tileitem-width-50 .portletFooter,
+    #content .tileitem-width-50 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-50 .portletHeader,
-  #content .tilePortletContainer .portlet-width-50 .portletFooter,
-  #content .tilePortletContainer .portlet-width-50 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-50.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-50.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-50.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-50.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-50.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-50.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-50.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-50.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-50.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-50.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-50.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-50.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-50.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-50.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-50.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-60 {
+  #content .tileitem-width-60 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-60 .portletHeader,
+    #content .tileitem-width-60 .portletFooter,
+    #content .tileitem-width-60 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-60 .portletHeader,
-  #content .tilePortletContainer .portlet-width-60 .portletFooter,
-  #content .tilePortletContainer .portlet-width-60 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-60.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-60.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-60.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-60.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-60.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-60.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-60.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-60.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-60.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-60.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-60.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-60.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-60.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-60.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-60.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-66 {
+  #content .tileitem-width-66 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-66 .portletHeader,
+    #content .tileitem-width-66 .portletFooter,
+    #content .tileitem-width-66 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-66 .portletHeader,
-  #content .tilePortletContainer .portlet-width-66 .portletFooter,
-  #content .tilePortletContainer .portlet-width-66 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-66.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-66.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-66.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-66.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-66.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-66.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-66.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-66.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-66.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-66.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-66.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-66.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-66.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-66.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-66.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-75 {
+  #content .tileitem-width-75 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-75 .portletHeader,
+    #content .tileitem-width-75 .portletFooter,
+    #content .tileitem-width-75 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-75 .portletHeader,
-  #content .tilePortletContainer .portlet-width-75 .portletFooter,
-  #content .tilePortletContainer .portlet-width-75 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-75.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-75.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-75.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-75.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-75.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-75.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-75.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-75.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-75.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-75.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-75.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-75.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-75.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-75.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-75.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-80 {
+  #content .tileitem-width-80 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-80 .portletHeader,
+    #content .tileitem-width-80 .portletFooter,
+    #content .tileitem-width-80 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-80 .portletHeader,
-  #content .tilePortletContainer .portlet-width-80 .portletFooter,
-  #content .tilePortletContainer .portlet-width-80 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-80.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-80.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-80.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-80.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-80.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-80.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-80.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-80.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-80.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-80.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-80.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-80.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-80.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-80.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-80.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
   /* Tile Item Class */
-  #content .tilePortletContainer .portlet-width-100 {
+  #content .tileitem-width-100 {
     width: 100%;
     float: none;
     display: block; }
+    #content .tileitem-width-100 .portletHeader,
+    #content .tileitem-width-100 .portletFooter,
+    #content .tileitem-width-100 img.feedmixerCollectionLeadImage {
+      width: 92.5%;
+      margin-left: 3.75%;
+      margin-right: 3.75%; }
 
-  #content .tilePortletContainer .portlet-width-100 .portletHeader,
-  #content .tilePortletContainer .portlet-width-100 .portletFooter,
-  #content .tilePortletContainer .portlet-width-100 img.feedmixerCollectionLeadImage {
-    width: 92.5%;
-    margin-left: 3.75%;
-    margin-right: 3.75%; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-1 .portletItem {
+  #content .tileitem-width-100.tileitem-count-1 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-100.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-1
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-100.tileitem-count-1 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-2 .portletItem {
+  #content .tileitem-width-100.tileitem-count-2 .portletItem {
     width: 91.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-2
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-100.tileitem-count-2 .portletItem:nth-child(2n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-2
-  .portletItem:nth-child(1n + 1) {
+  #content .tileitem-width-100.tileitem-count-2 .portletItem:nth-child(1n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-3 .portletItem {
+  #content .tileitem-width-100.tileitem-count-3 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-3
-  .portletItem:nth-child(3n + 1) {
+  #content .tileitem-width-100.tileitem-count-3 .portletItem:nth-child(3n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-3
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-100.tileitem-count-3 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-4 .portletItem {
+  #content .tileitem-width-100.tileitem-count-4 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-4
-  .portletItem:nth-child(4n + 1) {
+  #content .tileitem-width-100.tileitem-count-4 .portletItem:nth-child(4n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-4
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-100.tileitem-count-4 .portletItem:nth-child(2n + 1) {
     clear: left; }
 
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-5 .portletItem {
+  #content .tileitem-width-100.tileitem-count-5 .portletItem {
     width: 41.89189%;
     margin-left: 2.02703%;
     margin-right: 2.02703%;
     padding-left: 2.02703%;
     padding-right: 2.02703%; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-5
-  .portletItem:nth-child(5n + 1) {
+  #content .tileitem-width-100.tileitem-count-5 .portletItem:nth-child(5n + 1) {
     clear: none; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-5
-  .portletItem:nth-child(2n + 1) {
+  #content .tileitem-width-100.tileitem-count-5 .portletItem:nth-child(2n + 1) {
     clear: left; } }
 /* Mid iPad/iPhone tile item CSS */
 @media handheld, screen and (max-width: 520px) {
@@ -2852,165 +2000,155 @@ div.tilePortletManager {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-20 .tileHeadline,
-  #content .tileitem-width-20 .tileBody,
-  #content .tileitem-width-20 .effectiveDate,
-  #content .tileitem-width-20 .documentByLine,
-  #content .tileitem-width-20 .contentLeadImageContainer,
-  #content .tileitem-width-20 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
+    #content .tileitem-width-20 .tileHeadline,
+    #content .tileitem-width-20 .tileBody,
+    #content .tileitem-width-20 .effectiveDate,
+    #content .tileitem-width-20 .documentByLine,
+    #content .tileitem-width-20 .contentLeadImageContainer,
+    #content .tileitem-width-20 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
 
   /* Tile Item Class */
   #content .tileitem-width-25 {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-25 .tileHeadline,
-  #content .tileitem-width-25 .tileBody,
-  #content .tileitem-width-25 .effectiveDate,
-  #content .tileitem-width-25 .documentByLine,
-  #content .tileitem-width-25 .contentLeadImageContainer,
-  #content .tileitem-width-25 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
+    #content .tileitem-width-25 .tileHeadline,
+    #content .tileitem-width-25 .tileBody,
+    #content .tileitem-width-25 .effectiveDate,
+    #content .tileitem-width-25 .documentByLine,
+    #content .tileitem-width-25 .contentLeadImageContainer,
+    #content .tileitem-width-25 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
 
   /* Tile Item Class */
   #content .tileitem-width-33 {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-33 .tileHeadline,
-  #content .tileitem-width-33 .tileBody,
-  #content .tileitem-width-33 .effectiveDate,
-  #content .tileitem-width-33 .documentByLine,
-  #content .tileitem-width-33 .contentLeadImageContainer,
-  #content .tileitem-width-33 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
+    #content .tileitem-width-33 .tileHeadline,
+    #content .tileitem-width-33 .tileBody,
+    #content .tileitem-width-33 .effectiveDate,
+    #content .tileitem-width-33 .documentByLine,
+    #content .tileitem-width-33 .contentLeadImageContainer,
+    #content .tileitem-width-33 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
 
   /* Tile Item Class */
   #content .tileitem-width-40 {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-40 .tileHeadline,
-  #content .tileitem-width-40 .tileBody,
-  #content .tileitem-width-40 .effectiveDate,
-  #content .tileitem-width-40 .documentByLine,
-  #content .tileitem-width-40 .contentLeadImageContainer,
-  #content .tileitem-width-40 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
+    #content .tileitem-width-40 .tileHeadline,
+    #content .tileitem-width-40 .tileBody,
+    #content .tileitem-width-40 .effectiveDate,
+    #content .tileitem-width-40 .documentByLine,
+    #content .tileitem-width-40 .contentLeadImageContainer,
+    #content .tileitem-width-40 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
 
   /* Tile Item Class */
   #content .tileitem-width-50 {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-50 .tileHeadline,
-  #content .tileitem-width-50 .tileBody,
-  #content .tileitem-width-50 .effectiveDate,
-  #content .tileitem-width-50 .documentByLine,
-  #content .tileitem-width-50 .contentLeadImageContainer,
-  #content .tileitem-width-50 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
+    #content .tileitem-width-50 .tileHeadline,
+    #content .tileitem-width-50 .tileBody,
+    #content .tileitem-width-50 .effectiveDate,
+    #content .tileitem-width-50 .documentByLine,
+    #content .tileitem-width-50 .contentLeadImageContainer,
+    #content .tileitem-width-50 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
 
   /* Tile Item Class */
   #content .tileitem-width-60 {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-60 .tileHeadline,
-  #content .tileitem-width-60 .tileBody,
-  #content .tileitem-width-60 .effectiveDate,
-  #content .tileitem-width-60 .documentByLine,
-  #content .tileitem-width-60 .contentLeadImageContainer,
-  #content .tileitem-width-60 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
+    #content .tileitem-width-60 .tileHeadline,
+    #content .tileitem-width-60 .tileBody,
+    #content .tileitem-width-60 .effectiveDate,
+    #content .tileitem-width-60 .documentByLine,
+    #content .tileitem-width-60 .contentLeadImageContainer,
+    #content .tileitem-width-60 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
 
   /* Tile Item Class */
   #content .tileitem-width-66 {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-66 .tileHeadline,
-  #content .tileitem-width-66 .tileBody,
-  #content .tileitem-width-66 .effectiveDate,
-  #content .tileitem-width-66 .documentByLine,
-  #content .tileitem-width-66 .contentLeadImageContainer,
-  #content .tileitem-width-66 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
+    #content .tileitem-width-66 .tileHeadline,
+    #content .tileitem-width-66 .tileBody,
+    #content .tileitem-width-66 .effectiveDate,
+    #content .tileitem-width-66 .documentByLine,
+    #content .tileitem-width-66 .contentLeadImageContainer,
+    #content .tileitem-width-66 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
 
   /* Tile Item Class */
   #content .tileitem-width-75 {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-75 .tileHeadline,
-  #content .tileitem-width-75 .tileBody,
-  #content .tileitem-width-75 .effectiveDate,
-  #content .tileitem-width-75 .documentByLine,
-  #content .tileitem-width-75 .contentLeadImageContainer,
-  #content .tileitem-width-75 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
+    #content .tileitem-width-75 .tileHeadline,
+    #content .tileitem-width-75 .tileBody,
+    #content .tileitem-width-75 .effectiveDate,
+    #content .tileitem-width-75 .documentByLine,
+    #content .tileitem-width-75 .contentLeadImageContainer,
+    #content .tileitem-width-75 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
 
   /* Tile Item Class */
   #content .tileitem-width-80 {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-80 .tileHeadline,
-  #content .tileitem-width-80 .tileBody,
-  #content .tileitem-width-80 .effectiveDate,
-  #content .tileitem-width-80 .documentByLine,
-  #content .tileitem-width-80 .contentLeadImageContainer,
-  #content .tileitem-width-80 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
+    #content .tileitem-width-80 .tileHeadline,
+    #content .tileitem-width-80 .tileBody,
+    #content .tileitem-width-80 .effectiveDate,
+    #content .tileitem-width-80 .documentByLine,
+    #content .tileitem-width-80 .contentLeadImageContainer,
+    #content .tileitem-width-80 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
 
   /* Tile Item Class */
   #content .tileitem-width-100 {
     width: 100%;
     float: none;
     display: block; }
-
-  #content .tileitem-width-100 .tileHeadline,
-  #content .tileitem-width-100 .tileBody,
-  #content .tileitem-width-100 .effectiveDate,
-  #content .tileitem-width-100 .documentByLine,
-  #content .tileitem-width-100 .contentLeadImageContainer,
-  #content .tileitem-width-100 .tileFooter {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0; } }
+    #content .tileitem-width-100 .tileHeadline,
+    #content .tileitem-width-100 .tileBody,
+    #content .tileitem-width-100 .effectiveDate,
+    #content .tileitem-width-100 .documentByLine,
+    #content .tileitem-width-100 .contentLeadImageContainer,
+    #content .tileitem-width-100 .tileFooter {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; } }
 /* iPhone CSS */
 @media handheld, screen and (max-width: 320px) {
   /* Tile Item Class */
   #content .tileitem-width-20,
-  #content .tilePortletContainer .portlet-width-20 {
+  #content .tileitem-width-20 {
     width: 100%;
     float: none;
     display: block; }
@@ -3021,91 +2159,71 @@ div.tilePortletManager {
   #content .tileitem-width-20 .documentByLine,
   #content .tileitem-width-20 .contentLeadImageContainer,
   #content .tileitem-width-20 .tileFooter,
-  #content .tilePortletContainer .portlet-width-20 .portletHeader,
-  #content .tilePortletContainer .portlet-width-20 .portletFooter,
-  #content .tilePortletContainer .portlet-width-20 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-20 .portletHeader,
+  #content .tileitem-width-20 .portletFooter,
+  #content .tileitem-width-20 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-20.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-20.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-20.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-20.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-20.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-20.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
   /* Tile Item Class */
   #content .tileitem-width-25,
-  #content .tilePortletContainer .portlet-width-25 {
+  #content .tileitem-width-25 {
     width: 100%;
     float: none;
     display: block; }
@@ -3116,91 +2234,71 @@ div.tilePortletManager {
   #content .tileitem-width-25 .documentByLine,
   #content .tileitem-width-25 .contentLeadImageContainer,
   #content .tileitem-width-25 .tileFooter,
-  #content .tilePortletContainer .portlet-width-25 .portletHeader,
-  #content .tilePortletContainer .portlet-width-25 .portletFooter,
-  #content .tilePortletContainer .portlet-width-25 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-25 .portletHeader,
+  #content .tileitem-width-25 .portletFooter,
+  #content .tileitem-width-25 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-25.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-25.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-25.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-25.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-25.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-25.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
   /* Tile Item Class */
   #content .tileitem-width-33,
-  #content .tilePortletContainer .portlet-width-33 {
+  #content .tileitem-width-33 {
     width: 100%;
     float: none;
     display: block; }
@@ -3211,91 +2309,71 @@ div.tilePortletManager {
   #content .tileitem-width-33 .documentByLine,
   #content .tileitem-width-33 .contentLeadImageContainer,
   #content .tileitem-width-33 .tileFooter,
-  #content .tilePortletContainer .portlet-width-33 .portletHeader,
-  #content .tilePortletContainer .portlet-width-33 .portletFooter,
-  #content .tilePortletContainer .portlet-width-33 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-33 .portletHeader,
+  #content .tileitem-width-33 .portletFooter,
+  #content .tileitem-width-33 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-33.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-33.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-33.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-33.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-33.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-33.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
   /* Tile Item Class */
   #content .tileitem-width-40,
-  #content .tilePortletContainer .portlet-width-40 {
+  #content .tileitem-width-40 {
     width: 100%;
     float: none;
     display: block; }
@@ -3306,91 +2384,71 @@ div.tilePortletManager {
   #content .tileitem-width-40 .documentByLine,
   #content .tileitem-width-40 .contentLeadImageContainer,
   #content .tileitem-width-40 .tileFooter,
-  #content .tilePortletContainer .portlet-width-40 .portletHeader,
-  #content .tilePortletContainer .portlet-width-40 .portletFooter,
-  #content .tilePortletContainer .portlet-width-40 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-40 .portletHeader,
+  #content .tileitem-width-40 .portletFooter,
+  #content .tileitem-width-40 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-40.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-40.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-40.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-40.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-40.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-40.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
   /* Tile Item Class */
   #content .tileitem-width-50,
-  #content .tilePortletContainer .portlet-width-50 {
+  #content .tileitem-width-50 {
     width: 100%;
     float: none;
     display: block; }
@@ -3401,91 +2459,71 @@ div.tilePortletManager {
   #content .tileitem-width-50 .documentByLine,
   #content .tileitem-width-50 .contentLeadImageContainer,
   #content .tileitem-width-50 .tileFooter,
-  #content .tilePortletContainer .portlet-width-50 .portletHeader,
-  #content .tilePortletContainer .portlet-width-50 .portletFooter,
-  #content .tilePortletContainer .portlet-width-50 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-50 .portletHeader,
+  #content .tileitem-width-50 .portletFooter,
+  #content .tileitem-width-50 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-50.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-50.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-50.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-50.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-50.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-50.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
   /* Tile Item Class */
   #content .tileitem-width-60,
-  #content .tilePortletContainer .portlet-width-60 {
+  #content .tileitem-width-60 {
     width: 100%;
     float: none;
     display: block; }
@@ -3496,91 +2534,71 @@ div.tilePortletManager {
   #content .tileitem-width-60 .documentByLine,
   #content .tileitem-width-60 .contentLeadImageContainer,
   #content .tileitem-width-60 .tileFooter,
-  #content .tilePortletContainer .portlet-width-60 .portletHeader,
-  #content .tilePortletContainer .portlet-width-60 .portletFooter,
-  #content .tilePortletContainer .portlet-width-60 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-60 .portletHeader,
+  #content .tileitem-width-60 .portletFooter,
+  #content .tileitem-width-60 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-60.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-60.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-60.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-60.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-60.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-60.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
   /* Tile Item Class */
   #content .tileitem-width-66,
-  #content .tilePortletContainer .portlet-width-66 {
+  #content .tileitem-width-66 {
     width: 100%;
     float: none;
     display: block; }
@@ -3591,91 +2609,71 @@ div.tilePortletManager {
   #content .tileitem-width-66 .documentByLine,
   #content .tileitem-width-66 .contentLeadImageContainer,
   #content .tileitem-width-66 .tileFooter,
-  #content .tilePortletContainer .portlet-width-66 .portletHeader,
-  #content .tilePortletContainer .portlet-width-66 .portletFooter,
-  #content .tilePortletContainer .portlet-width-66 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-66 .portletHeader,
+  #content .tileitem-width-66 .portletFooter,
+  #content .tileitem-width-66 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-66.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-66.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-66.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-66.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-66.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-66.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
   /* Tile Item Class */
   #content .tileitem-width-75,
-  #content .tilePortletContainer .portlet-width-75 {
+  #content .tileitem-width-75 {
     width: 100%;
     float: none;
     display: block; }
@@ -3686,91 +2684,71 @@ div.tilePortletManager {
   #content .tileitem-width-75 .documentByLine,
   #content .tileitem-width-75 .contentLeadImageContainer,
   #content .tileitem-width-75 .tileFooter,
-  #content .tilePortletContainer .portlet-width-75 .portletHeader,
-  #content .tilePortletContainer .portlet-width-75 .portletFooter,
-  #content .tilePortletContainer .portlet-width-75 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-75 .portletHeader,
+  #content .tileitem-width-75 .portletFooter,
+  #content .tileitem-width-75 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-75.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-75.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-75.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-75.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-75.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-75.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
   /* Tile Item Class */
   #content .tileitem-width-80,
-  #content .tilePortletContainer .portlet-width-80 {
+  #content .tileitem-width-80 {
     width: 100%;
     float: none;
     display: block; }
@@ -3781,91 +2759,71 @@ div.tilePortletManager {
   #content .tileitem-width-80 .documentByLine,
   #content .tileitem-width-80 .contentLeadImageContainer,
   #content .tileitem-width-80 .tileFooter,
-  #content .tilePortletContainer .portlet-width-80 .portletHeader,
-  #content .tilePortletContainer .portlet-width-80 .portletFooter,
-  #content .tilePortletContainer .portlet-width-80 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-80 .portletHeader,
+  #content .tileitem-width-80 .portletFooter,
+  #content .tileitem-width-80 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-80.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-80.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-80.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-80.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-80.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-80.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
   /* Tile Item Class */
   #content .tileitem-width-100,
-  #content .tilePortletContainer .portlet-width-100 {
+  #content .tileitem-width-100 {
     width: 100%;
     float: none;
     display: block; }
@@ -3876,89 +2834,69 @@ div.tilePortletManager {
   #content .tileitem-width-100 .documentByLine,
   #content .tileitem-width-100 .contentLeadImageContainer,
   #content .tileitem-width-100 .tileFooter,
-  #content .tilePortletContainer .portlet-width-100 .portletHeader,
-  #content .tilePortletContainer .portlet-width-100 .portletFooter,
-  #content .tilePortletContainer .portlet-width-100 img.feedmixerCollectionLeadImage {
+  #content .tileitem-width-100 .portletHeader,
+  #content .tileitem-width-100 .portletFooter,
+  #content .tileitem-width-100 img.feedmixerCollectionLeadImage {
     width: 100%;
     margin-left: 1.07143%;
     margin-right: 1.07143%; }
 
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-1 .portletItem {
+  #content
+  .tileitem-width-100.tileitem-count-1 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-1
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-2 .portletItem {
+  #content
+  .tileitem-width-100.tileitem-count-2 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-2
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-3 .portletItem {
+  #content
+  .tileitem-width-100.tileitem-count-3 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-3
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-4 .portletItem {
+  #content
+  .tileitem-width-100.tileitem-count-4 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-4
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-5 .portletItem {
+  #content
+  .tileitem-width-100.tileitem-count-5 .portletItem {
     width: 95.52239%;
     margin-left: 1.1194%;
     margin-right: 1.1194%;
     padding-left: 1.1194%;
     padding-right: 1.1194%;
     border: none;
-    background-color: transparent; }
-
-  #content .tilePortletContainer
-  .portlet-width-100.portlet-item-count-5
-  .portletItem {
+    background-color: transparent;
     clear: both; }
 
-  #content .tilePortletContainer .rssImage {
+  #content .rssImage {
     margin: 0;
     padding: 0;
     width: 100%;

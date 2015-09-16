@@ -1,0 +1,30 @@
+
+#commenting.reply fieldset {
+    margin: 0 0 1.5em 0 !important;
+    
+    legend {
+        font-weight: bold;
+        font-family: $alternateHeadingFontFamily;
+    }
+
+    .discreet {
+        font-size: 0.75em;
+        margin-left: 1.25em;
+    }
+    
+    iframe {
+        width: 630px !important;
+    }
+
+}
+
+#portal-column-content.sr #commenting.reply fieldset iframe {
+    width: 450px !important;
+}
+
+.discussion {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 1.5em;
+}
+

@@ -1,0 +1,94 @@
+/* Generic table styles */
+
+table.listing,
+table.plain,
+table.grid {
+    font-size: 0.875em;
+    margin: 1em 0;
+    caption-side: top;
+
+    caption {
+        text-align: left;
+        margin-top: 0.375em;
+        color: $discreetColor;
+    }
+
+
+}
+
+
+/* Plain and Listing class tables: same styles */
+
+table.listing,
+table.plain {
+    th, td {
+        padding: 0.25em 0.375em;
+        border: 1px solid $tableBorderColor;
+    }
+    
+    th {
+        font-weight: bold;
+        color: $tableHeadingTextColor;
+        background-color: $tableHeadingBackgroundColor;
+    }
+
+    tr.separator td,  
+    tr.separator {
+        border-left: 1px solid $contentBackgroundColor;
+        border-right: none;
+        border-top: 1px solid $globalBorderColor;
+    }
+
+    tbody {
+
+        tr.odd td {
+            background-color: $tableOddRowBackgroundColor;
+        }
+
+        tr.even td {
+            background-color: $tableEvenRowBackgroundColor;
+        }
+
+    }
+    
+}
+
+/* Grid table */
+
+table.grid {
+    th {
+        border: 1px solid $globalBorderColor;
+        padding: 0.5em;
+        vertical-align: middle;
+    }
+}
+
+/* Event table */
+
+table.events {
+    tr {
+
+        td {
+            vertical-align: top;
+        }
+
+        td:nth-child(1) {
+            width: 45%;
+        }
+
+        td:nth-child(3) {
+            width: 25%;
+        }
+    }
+}
+
+/* Month title for event table */
+
+#content h2.section-title {
+    font-weight: normal;
+    font-size: 1.375em;
+    text-align: left;
+    background-color: transparent;
+    padding-left: 0;
+    padding-bottom: 5px;
+}

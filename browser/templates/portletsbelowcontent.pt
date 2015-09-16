@@ -2,7 +2,7 @@
      condition="not: view/isHomePage">
 
     <div id="portlets-below"
-         class="row tilePortletContainer"
+         class="row tileItemContainer"
          i18n:domain="Products.ContentWellPortlets">
         <tal:block tal:condition="view/showPortlets">
             <tal:portletmanagers tal:repeat="manager view/portletManagersToShow">

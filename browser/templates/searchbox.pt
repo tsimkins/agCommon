@@ -19,12 +19,12 @@
                </label>
             </li>
         </ul> 
-        <div> 
+        <div>
             <input type="text" 
-                   name="searchString" 
-                   id="searchString" 
-                   title="Enter search text" 
-                   value="" />
+                    name="searchString" 
+                    id="searchString" 
+                    title="Enter search text" 
+                    value="" />
                    
             <input type="image" 
                    alt="Submit Form" 

@@ -1,0 +1,87 @@
+
+/* 
+    Copying styles for #content-history, and making them apply to #content-core 
+    [whatever] as well.  This styles the "History" view when presented inline.
+    
+    Not SASS-ifying because it was copied from Plone.
+*/
+
+/* @group content history */
+
+#content-history #history dd,
+#content-core #history dd {
+	margin-top: 0.8em;
+}
+
+#content-history div.historyRecord,
+#content-core div.historyRecord {
+	font-size: 0.9375em;
+	margin-bottom: 0.5em;
+	border: 1px solid $globalBorderColor;
+	padding: 0.5em;
+}
+
+
+#content-history div.historyTools ul,
+#content-core div.historyTools ul {
+	float: right;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin-top: 0;
+}
+
+#content-history div.historyTools ul li,
+#content-core div.historyTools ul li {
+	display: inline;
+}
+
+#content-history div.historyTools ul li a{
+	border-bottom: none;
+}
+
+
+#content-history .historyAction,
+#content-core .historyAction {
+	color: $contentViewFontColor;
+}
+
+#content-history .historyByLine,
+#content-core .historyByLine {
+	margin-bottom: 1em;
+}
+
+#content-history div.historyComment,
+#content-core div.historyComment {
+	background-color: $globalBackgroundColor;
+	padding: 0.25em 1em;
+    margin: 0.5em 1em;
+}
+
+#content-history div.historyComment p,
+#content-core div.historyComment p {
+	color: $globalFontColor;
+	margin: 0;
+	padding-top: 1px;	
+}
+
+#content-history a.historyComparePrevious,
+#content-core a.historyComparePrevious {
+	border-bottom: medium none;
+	border-top: 1px dotted $globalBorderColor;
+	display: block;
+	margin-bottom: 0.25em;
+	margin-top: 0.5em;
+	padding-top: 0.25em;
+}
+
+#content-history dl div.historyRecord a.historyComparePrevious span,
+#content-core dl div.historyRecord a.historyComparePrevious span {
+	background-color: white;
+	left: 50%;
+	position: relative;
+	top: -1em;
+}
+
+/* @end */
+

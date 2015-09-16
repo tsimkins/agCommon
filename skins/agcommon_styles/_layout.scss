@@ -18,6 +18,9 @@ $searchButtonWidth: 16px;
 /* - Lead Image Width -*/
 $leadImageWidth: 333px;
 
+/* - Tile Image Width -*/
+$tileImageWidth: 200px;
+
 /* - Pull Quote Width - */
 $pullQuoteWidth: $leadImageWidth;
 
@@ -29,6 +32,9 @@ $localSearchButtonWidth: 50px;
 
 /* - Document Contributors - */
 $documentContributorsImageWidth: 75px;
+
+/* - Footer Portlets - */
+$footerPortletCount: 5;
 
 /*# == Calculations == */
 $container_width: $maxWidth - $column_padding;
@@ -107,3 +113,7 @@ $documentContributors_margin_percent: 100%*($half_padding/$content_column_width_
 /* - Text edit boxes */
 $textEditBox_width_percent: 100%*(($content_column_width_one - $column_padding - 2px)/$content_column_width_one);
 $textEditBox_padding_percent: 100%*($half_padding/$content_column_width_one);
+
+/* Footer Portlets */
+$footer_portlet_width: ($maxWidth - 2*($footerPortletCount*$column_padding))/$footerPortletCount;
+$footer_portlet_width_percent: 100%*($footer_portlet_width/$maxWidth);

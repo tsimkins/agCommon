@@ -2,7 +2,7 @@
     condition="view/showAboveContentPortlets">
 
     <div id="portlets-above"
-         class="row tilePortletContainer"
+         class="row tileItemContainer"
          i18n:domain="Products.ContentWellPortlets">
         <tal:block tal:condition="view/showPortlets">
             <tal:portletmanagers tal:repeat="manager view/portletManagersToShow">

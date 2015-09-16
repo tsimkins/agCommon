@@ -4,10 +4,12 @@
 /* - Department (site) title width * -*/
 /* - Department (site) title width * -*/
 /* - Lead Image Width -*/
+/* - Tile Image Width -*/
 /* - Pull Quote Width - */
 /* - Thumbnail Count - */
 /* - Local Search Box - */
 /* - Document Contributors - */
+/* - Footer Portlets - */
 /*# == Calculations == */
 /*# -- Left and Right columns -- */
 /* - Content Area - */
@@ -19,6 +21,7 @@
 /* Border */
 /* - Document Contributors - */
 /* - Text edit boxes */
+/* Footer Portlets */
 /*
     Layout calculations for homepage 
 */
@@ -142,15 +145,33 @@
 /*
 http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-hack/ - "Hack Free Approach"
 */
-#content .portletfeedmixer .portletItem {
+#centercolumn .portletfeedmixer .portletItem,
+#rightcolumn .portletfeedmixer .portletItem {
   border-top: 1px dashed #E6E6E6;
   margin-top: 0.75em;
   padding-top: 0.75em; }
-
-#content .portletfeedmixer .portletItem:first-child {
+#centercolumn .portletfeedmixer .portletItem:first-child,
+#rightcolumn .portletfeedmixer .portletItem:first-child {
   border-top: none;
   margin-top: 0;
   padding-top: 0; }
+
+#rightcolumn .portletfeedmixer .portletItem {
+  border-top: none;
+  margin-top: 0.5em;
+  padding-top: 0.5em; }
+
+#portal-column-content #centercolumn .portletfeedmixerimagefull .portletItem .rssImage,
+#portal-column-content #centercolumn.sr .portletfeedmixerimagefull .portletItem .rssImage,
+#portal-column-content.s0 #centercolumn .portletfeedmixerimagefull .portletItem .rssImage,
+#portal-column-content.s0 #centercolumn.sr .portletfeedmixerimagefull .portletItem .rssImage,
+#portal-column-content.s1 #centercolumn .portletfeedmixerimagefull .portletItem .rssImage,
+#portal-column-content.s1 #centercolumn.sr .portletfeedmixerimagefull .portletItem .rssImage,
+#portal-column-content.s2 #centercolumn .portletfeedmixerimagefull .portletItem .rssImage,
+#portal-column-content.s2 #centercolumn.sr .portletfeedmixerimagefull .portletItem .rssImage {
+  float: none;
+  margin: 0 0 0.125em 0;
+  width: 100%; }
 
 #rightcolumn .portletfeedmixer .portletItem .rssImage {
   float: none;
@@ -158,26 +179,15 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
   margin: 0.625em 0 0.625em 0;
   width: 100%;
   text-align: left; }
-
 #rightcolumn .portletfeedmixerimagelarge .portletItem .rssImage {
   margin-bottom: 0.125em; }
-
-#rightcolumn .portletfeedmixerimagelarge .portletItem .rssImage img {
-  width: 100%;
-  max-width: 100%; }
 
 #centercolumn .portletfeedmixer .rssImage {
   margin-top: 0;
   margin-bottom: 0.625em; }
-
-#centercolumn .portletfeedmixerimagefull .portletItem .rssImage {
-  margin: 0 0 0.125em 0;
-  float: none; }
-
-/*###*/
-.portletfeedmixerimagefull .rssImage {
-  width: 100%; }
-
+  #centercolumn .portletfeedmixer .rssImage img {
+    width: 100%;
+    max-width: 100%; }
 #centercolumn .portletfeedmixerimagesmall .rssImage {
   width: 16.80672%; }
 #centercolumn .portletfeedmixerimagelarge .rssImage {

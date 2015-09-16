@@ -448,14 +448,6 @@ dd.image-caption {
 
 /* @group Footer */
 
-#portal-footer {
-    font-size: 75%;
-    background: #ddd;
-    padding: 1em;
-    margin: 1em 0;
-    line-height: 2em;
-}
-
 #portal-colophon {
     font-size: 70%;
     text-align: center;

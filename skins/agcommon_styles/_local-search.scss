@@ -1,0 +1,90 @@
+/* Local search box in content area */
+
+#portal-localsearchbox {
+    background-color: $globalBackgroundColor;
+    border: 1px solid $globalBorderColor;
+    padding: 1em $localSearchBox_padding_percent;
+    margin: 0 0 1.25em 0;
+    float: none;
+    clear: both;
+    width: $localSearchBox_width_percent;
+
+    .LSBox {
+        padding-right: 0;
+        width: 100%;
+        float: none;
+        text-align: left;
+    }
+    
+    .searchTitle {
+        display: block;
+        font-size: 1.25em;
+        margin-bottom: 0.5em;
+        font-weight: normal;
+    }
+    
+    #localSearchBox {
+        width: $localSearchBox_field_search_width_percent;
+        padding: 0.1875em $localSearchBox_field_padding_percent;
+        border: 1px solid $fieldBorderColor;
+        background-image: none;
+        float: left;
+        margin: 0 $localSearchBox_field_margin_percent 0 0;
+    }
+    
+    .searchButton {
+        background-color: #FFD35F; /* UI */
+        border: 1px solid #EF6500; /* UI */
+        padding: 0.125em 0;
+        margin: 0;
+        color: #3F1B00; /* UI */
+        background-image: none;
+        width: $localSearchBox_field_button_width_percent;
+        display: block;
+        float: left;
+    }
+}
+
+
+/* Including ZIP code and/or county search */
+
+#portal-localsearchbox.extra_search_fields {
+    
+    .search_criteria {
+        margin-bottom: 0.5em;
+    }
+
+    #counties_search,
+    #zip_code_search {
+        float: left;
+        margin-right: 2*$localSearchBox_field_margin_percent;
+        padding: 0.25em 0;
+    }
+
+    #localSearchBox {
+        width: $localSearchBox_field_search_full_width_percent;
+        float: none;
+        margin: 0 0 0.875em 0;
+    }
+
+    .searchButton {
+        margin-top: 0.125em;
+    }
+    
+    #zip_code_input {
+        border: 1px solid $fieldBorderColor;
+        padding: 0.1875em 0.5em;
+    }
+
+    #zip_code_radius {
+        vertical-align: middle;
+    }
+}
+
+
+/* For search results page */
+
+.searchPage #zip_code_search {
+    padding: 0.75em 0.125em;
+}
+

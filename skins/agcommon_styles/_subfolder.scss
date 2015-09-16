@@ -1,0 +1,53 @@
+/*
+    CSS for subfolder view
+*/
+
+body.template-subfolder_view { 
+    #content {
+        .tileItem {
+            h2.tileHeadline {
+                font-size: 1.375em;
+                margin-bottom: 0.375em;
+                font-weight: normal;
+                
+                > a {
+                    text-decoration: underline;
+                }
+            }
+            
+            > .tileItem {
+
+                h2.tileHeadline {
+                    font-size: 1.125em;
+                }
+
+                .facultyStaffDirectory {
+                    font-size: 0.875em;
+
+                    .jobTitle {
+                        font-size: 0.9375em;
+                        font-weight: normal;
+                    }
+                }
+            }
+            
+            .tileSubItem {
+                margin-left: 1.5em;
+                margin-top: 0;
+                
+                .tileSummary {
+                    font-size: 0.875em;
+                    margin-top: 0.5em;
+                }
+                
+                .tileFooter  {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .photoAlbum {
+            margin-left: 0.75em;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+/* CSS for cropping image */
+.contentLeadImageContainer {
+    
+    background-color: $backgroundColor;
+    max-width: $leadImage_width_percent;
+    width: auto;
+    float: right;
+    clear: both;
+    margin: 0.5em 0 0.5em $leadImage_margin_percent;
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+   
+    .crop-image {
+        float: right;
+        
+        a:hover {
+            cursor: pointer;
+        }
+    
+    }
+}
+
+.contentLeadImageContainerFullWidth, 
+.contentLeadImageContainerLeft {
+
+    max-width: 100%;
+    width: auto;
+    float: none;
+    clear: both;
+    margin: 0.5em 0 1.25em;
+    
+    img {
+        margin-left: 0;
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+    }
+
+}
+
+.contentLeadImageContainerLeft img {
+    width: auto;
+}

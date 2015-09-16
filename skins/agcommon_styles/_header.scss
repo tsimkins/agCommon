@@ -1,0 +1,224 @@
+
+/* = body =================================================== */
+
+body {
+    background-color: $bodyBackgroundColor;
+    color: $globalFontColor;
+    background-repeat: repeat-x;
+    font-size: 100%;
+    font-family: $fontFamily;
+}
+
+/* = visual-portal-wrapper ================================== */
+
+#visual-portal-wrapper {
+    margin: 1.25em auto 3em auto;
+    padding: 0 1.25em;
+    max-width: $maxWidth;
+}
+
+/* = portal-top ============================================= */
+
+#portal-top {
+    margin: 0;
+    background-color: $siteHeaderBackgroundColor;
+}
+
+/* = portal-header ========================================= */
+
+#portal-header {
+    margin: 0 auto;
+    padding: 1em 0 1.75em;
+    max-width: $maxWidth;
+    text-align: left;
+
+    a {
+        border-width: 0;
+        text-decoration: none;
+    }
+}
+
+/* = logo-college ========================================== */
+
+#logo-college {
+    display: block;
+    width: 100%*($logoWidth/$maxWidth);
+
+    img {
+        width: 100%;
+    }
+}
+
+/* = logo-site ============================================= */
+
+$searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth + 5*$column_padding);
+
+$siteTitleRightPadding: $searchBoxWidth + 3*$column_padding; 
+
+#logo-site {
+    display: block;
+    background-color: $subsiteHeaderBackgroundColor;
+    position: absolute;
+    left: 100%*(($logoWidth+$column_padding)/$maxWidth);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 1em 100%*($siteTitleRightPadding/$maxWidth) 0.75em 100%*($column_padding/$maxWidth);
+
+    a {
+        font-weight: bold;
+        font-weight: 600;
+        color: $subsiteHeaderTextColor;
+        font-size: 1.375em;
+        line-height: 1.25em;
+    }
+}
+
+
+/* = logo-print ============================================ */
+
+#logo-print {
+    display: none;
+}
+
+
+/* = portal-searchbox ====================================== */
+
+/*
+    Additional styles are in browser/resources/ad54elements-style.css
+*/
+
+#portal-header {
+    
+    #portal-searchbox {
+        right: 100%*($column_padding/$maxWidth);
+        top: 1em;
+        width: 100%*($searchBoxWidth/$maxWidth);
+        margin: 0;
+        position: absolute;
+        padding: 0;
+        clear: none;
+        float: none;
+        display: block;
+
+        $searchButtonSize: 18px;
+    
+        form.searchform {
+            
+            .searchContainer {
+                
+                div {
+                    border: 1px solid #666666;
+                    background-color: #FFFFFF; 
+                    display: block; 
+                    padding: 0; 
+                    margin: 0;
+                    position: relative;
+                        
+                    #searchString {
+                        color: #575757; 
+                        padding: 0.25em 2%;
+                        margin: 0;
+                        border: none;
+                        background-color: #FFFFFF;
+                        width: 96%;
+                        font-size: 0.875em;
+                    }
+                    #searchString:focus {
+                        background-color: #ffffe0;
+                    }
+
+                    .searchbutton {
+                        width: $searchButtonSize;
+                        height: $searchButtonSize;
+                        padding: 3px;
+                        margin: 0;
+                        color: #FFFFFF;
+                        background-color: #FFFFFF;
+                        position: absolute;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/* = portal-top-navigation ================================= */
+
+.top-navigation {
+    margin: 0 auto;
+    padding: 0;
+    background-color: $topnavigationBackgroundColor;
+
+    .rmm-toggled {
+        max-width: $maxWidth;
+    }
+
+    ul {
+        max-width: $maxWidth;
+        display: block;
+        text-align: left;
+        margin: 0 auto;
+        padding: 0;
+        border: none;
+        list-style-type: none;
+
+        li {
+            padding: 0;
+            margin: 0;
+            float: left;
+            
+            a {
+                background-color: $topnavigationBackgroundColor;
+                border-color: $topnavigationBorderColor;
+                border-style: solid;
+                border-width: 0 0 0 1px;
+                color: $topnavigationTextColor;
+                display: block;
+                font-size: 0.875em;
+                letter-spacing: 0.01em;
+                line-height: 1.6875em;
+                line-height: 2em;
+                margin: 0;
+                padding: 1em 0.56251em;
+                text-align: center;
+                text-decoration: none;
+                white-space: nowrap;
+            }
+            
+            a:hover {
+                background-color: $topnavigationBackgroundHoverColor;
+                color: $topnavigationTextHoverColor;
+            }
+
+        }
+        
+        li.alternate {
+            a,
+            a:hover {
+                background-color: $topnavigationAlternateBackgroundColor;
+                color: $topnavigationAlternateTextColor;
+            }
+        }
+        
+        li:first-child a {
+            border-width: 0;
+            padding-left: 0.75em;
+        }
+
+
+        
+    }
+
+
+}
+
+/* Empty top nav */
+
+.top-navigation.empty {
+    border-bottom: none;
+    height: 1.25em;
+}

@@ -139,51 +139,90 @@
 http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-hack/ - "Hack Free Approach"
 */
 
-#content .portletfeedmixer .portletItem {
-    border-top: 1px dashed $globalBorderColor;
-    margin-top: 0.75em;
-    padding-top: 0.75em;
+#centercolumn,
+#rightcolumn {
+    .portletfeedmixer {
+        .portletItem {
+            border-top: 1px dashed $globalBorderColor;
+            margin-top: 0.75em;
+            padding-top: 0.75em;
+        }
+
+        .portletItem:first-child {
+            border-top: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+    }
 }
 
-#content .portletfeedmixer .portletItem:first-child {
-    border-top: none;
-    margin-top: 0;
-    padding-top: 0;
+#rightcolumn {
+    .portletfeedmixer {
+        .portletItem {
+            border-top: none;
+            margin-top: 0.5em;
+            padding-top: 0.5em;
+        }
+    }
 }
 
-#rightcolumn .portletfeedmixer .portletItem .rssImage {
-    float: none;
-    display: block;
-    margin: 0.625em 0 0.625em 0;
-    width: 100%;
-    text-align: left;
+#portal-column-content,
+#portal-column-content.s0,
+#portal-column-content.s1,
+#portal-column-content.s2 {
+    #centercolumn,
+    #centercolumn.sr {
+    
+        .portletfeedmixerimagefull{
+            .portletItem {
+                .rssImage {
+                    float: none;
+                    margin: 0 0 0.125em 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
-#rightcolumn .portletfeedmixerimagelarge .portletItem .rssImage {
-    margin-bottom: 0.125em;
-}
+#rightcolumn {
+    .portletfeedmixer {
+        .portletItem {
+            .rssImage {
+                float: none;
+                display: block;
+                margin: 0.625em 0 0.625em 0;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
 
-#rightcolumn .portletfeedmixerimagelarge .portletItem .rssImage img {
-    width: 100%;
-    max-width: 100%;
-}
+    .portletfeedmixerimagelarge {
+        .portletItem {
+            .rssImage {
+                margin-bottom: 0.125em;
+            }
+        }
+    }
 
-#centercolumn .portletfeedmixer .rssImage {
-    margin-top: 0;
-    margin-bottom: 0.625em;
-}
-
-#centercolumn .portletfeedmixerimagefull .portletItem .rssImage {
-    margin: 0 0 0.125em 0;
-    float: none;
-}
-/*###*/
-
-.portletfeedmixerimagefull .rssImage {
-    width: 100%;
 }
 
 #centercolumn {
+
+    .portletfeedmixer {
+        .rssImage {
+            
+            margin-top: 0;
+            margin-bottom: 0.625em;
+            
+            img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+    
     .portletfeedmixerimagesmall .rssImage {
         width: $homepage_feedmixer_image_small_width_percent_full;
     }

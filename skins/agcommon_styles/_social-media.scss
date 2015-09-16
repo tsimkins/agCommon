@@ -1,0 +1,187 @@
+/* = addthis =============================================== */
+
+#content #addthis {
+    font-size: 1.25em;
+    color: $leftPortletHeaderTextColor;
+    padding: 0 0.25em 0.25em 0.25em;
+    border: none;
+    display: block;
+    float: right;
+    margin: 0 0 0 0.5em;
+
+    h2 {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: $rightPortletHeaderBorderColor;
+        color: $rightPortletTextColor;
+        text-align: right;
+        font-size: 0.625em;
+        margin-top: 0;
+        margin-bottom: 3px;
+        font-weight: normal;
+        font-family: $fontFamily;
+    }
+
+    a,
+    a:link {
+        text-decoration: none;
+        color: $leftPortletHeaderTextColor;
+        float: none;
+        border: none;
+        display: inline-block;
+        padding: 0;
+        vertical-align: top;
+    }
+    
+    a:hover {
+        border-bottom: none;
+    }
+    
+    div.pdf {
+        margin: 0.5em 0 0.25em 0;
+    }
+    
+    div.order {
+        margin: 0 0 0.25em 0;
+    }
+    
+    div.pdf,
+    div.order {
+        a {
+            font-size: 0.9375em;
+            color: $contentLinkColor;
+            display: block;
+        }
+    }
+    
+    .addthis_toolbox {
+        text-align: right;
+        font-size: 0.6875em;
+        
+        /* = Add This Replacement Sprites ========================== */
+        a[class^=addthis_button] > span,
+        a[class^=rss_button] > span {
+            background-image: url(addthis-sprite.png);
+            line-height: 16px;
+            cursor: pointer;
+            display: block;
+            background-color: transparent !important;
+        }
+        
+        a.addthis_button_email > span {
+            background-position: 0 0;
+            width: 16px; height: 16px;
+        }
+        
+        a.addthis_button_facebook > span {
+            background-position: 0 -66px;
+            width: 16px; height: 16px;
+        }
+        
+        a.addthis_button_print > span {
+            background-position: 0 -264px;
+            width: 16px; height: 16px;
+        }
+        
+        a.rss_button > span {
+            background-position: 0 -330px;
+            width: 16px; height: 16px;
+        }
+        
+        a.addthis_button_twitter > span {
+            background-position: 0 -396px;
+            width: 16px; height: 16px;
+        }
+        
+        a.addthis_button_pdf > span {
+            background-position: right -198px;
+            background-repeat: no-repeat;
+            padding-right: 20px;
+        }
+        
+        a.addthis_button_order > span{
+            background-position: right -132px;
+            background-repeat: no-repeat;
+            padding-right: 20px;
+        }
+        
+        .addthis_label {
+            height: 1px !important;
+            overflow: hidden !important;
+            position: absolute !important;
+            top: auto !important;
+            width: 1px !important;
+        }
+
+    }
+}
+
+/* = translate widget ========================================= */
+
+.translate {
+    margin-top: 1em;
+
+    ul {
+        font-size: 0.6875em;
+        list-style-image: none;
+        list-style-type: none;
+    
+        li {
+            margin: 0;
+            text-align: right;
+
+            a {
+                font-size: 0.9375em;
+                color: $contentLinkColor;
+                display: block;
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+/* Google Plus One */
+
+#___plusone_0 {
+    /*  Using rem and !important to override inline CSS, and font size 1px */
+    margin: 0.5rem 0 1rem !important;
+}
+
+/* No idea what this fixes */
+.comment  {
+    display: none;
+}
+
+/* Facebook Like */
+#fblike, #commenting span {
+    border: none;
+    overflow: visible;
+    width: 100% !important;
+    margin: 1.5em 0 2em 0;
+}
+
+#fblike>span, #fblike>span>iframe {
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#fb-root iframe {
+    width: 0 !important;
+}
+
+/*
+    Workaround for Facebook bug that causes blank screen when ?fb_xd_fragment is in URL
+    Ref:  http://bugs.developers.facebook.net/show_bug.cgi?id=9777 Comment 13
+    Seems to work with !important in CSS, too.
+*/
+
+html {
+    display: block !important;
+}
+
+.twtr-doc {
+    width: auto !important;
+}

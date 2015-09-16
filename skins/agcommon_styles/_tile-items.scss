@@ -1,0 +1,181 @@
+/* TODO: Agenda View tweaks */
+
+#content {
+    
+    .tileItem.leadimage-listing {
+        margin-bottom: 0.5em;
+    }
+
+    .tileItem {
+        border-top: 0;
+        margin: 0.375em 0 0 0;
+        padding: 0.4375em 0;
+
+
+        /* Event summary in event listing */
+
+        .tileEvent {
+            margin: 0.375em 0 0.75em 0;
+            
+            .eventDateLocation {
+                font-size: 0.9375em;
+                margin-bottom: 0.25em;
+            }
+        }
+
+        .tileHeadline,
+        .tileTitle {
+
+            a {
+                color: $contentLinkColor;
+                border-bottom: 1px solid $documentHeadingBorderColor;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: none;
+                color: $contentLinkHoverColor;
+                border-bottom: 1px solid $contentLinkColor;
+            }
+
+            a.state-private,
+            a.state-private:hover {
+                color: $statePrivateColor;
+            }
+
+            a.state-pending,           
+            a.state-pending:hover {
+                color: $statePendingColor;
+            }
+        }
+
+        .tileHeadline,
+        h2.tileHeadline,
+        h3.tileHeadline {
+            font-size: 1.125em;
+            margin: 0;
+            padding: 0;
+            border-width: 0;
+            font-family: $headingFontFamily;
+            font-weight: bold;
+        }
+
+        .tileTitle,
+        h2.tileTitle,
+        h3.tileTitle {
+            font-size: 1.09375em;
+            margin: 0;
+            font-weight: normal;
+            border-width: 0;
+            font-family: $headingFontFamily;
+        }
+
+        .tileFileInfo {
+            font-size: 0.875em;
+            line-height: 1.5em;
+        }
+
+        .tileDescription {
+            margin: 0.25em 0 0.25em 0;
+            font-weight: normal;
+            font-size: 0.875em
+        
+            p {
+                margin: 0.25em 0 0.25em 0;
+                line-height: 1.375em;
+            }
+        }
+
+        .tileDescription.no-description {
+            display: none;
+        }
+
+        .contentLeadImageContainer {
+            a,
+            a:hover {
+                cursor: pointer;
+            }
+            a:hover {
+                color: $contentLinkHoverColor;
+                text-decoration: none;
+                border-bottom: 1px solid $contentLinkColor;
+            }
+        }
+
+        .tileSummaryLeadImage {
+            margin: 0.5em 0 0.5em 0;
+            border-top: 1px dashed $globalBorderColor;
+            padding-top: 1.5em;
+        }
+
+        .tileItemLeadImage {
+            border-top: 1px dashed $globalBorderColor;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            margin-top: 0.375em;
+            
+            .tileTitle,
+            .documentByLine,
+            .tileDescription,
+            .facultyStaffDirectory,
+            .tileHeadline,
+            .tileFileInfo {
+                margin-left: 136px;
+                margin-left: 8.5rem;
+                clear: none;
+            }
+            
+            .facultyStaffDirectory .short-bio {
+                margin-top: 0.25em;
+            }
+            
+            .contentLeadImageContainer {
+                float: left;
+                margin: 0 0.5em 0 0;
+                width: 128px;
+                text-align: center;
+
+                img,
+                img.tileImage {
+                    margin: 0;
+                    padding: 0;
+                    float: none;
+                }
+            }
+        }
+
+        .tileItemLeadImage:first-child,
+        .tileSummary:first-child {
+            border-top: none;
+            padding-top: 0.5em;
+        }
+
+        .tileImage {
+            border: none;
+            margin-top: 0;
+        }
+        
+        .tileBody, .tileText {
+            margin: 0 0 1em 0;
+            font-size: 0.9375em;
+            
+            p {
+                margin: 0 0 0.5em 0;
+                line-height: 1.375em;
+            }
+        }
+        
+        .tileFooter {
+            margin-top: 0;
+            font-size: 0.9375em;
+        
+            p {
+                margin: 0.25em 0;
+            }
+        }
+        
+        .tileSubItem dd {
+            margin-bottom: 1.5em;
+        }
+    }
+}

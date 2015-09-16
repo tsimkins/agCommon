@@ -1,0 +1,86 @@
+/* Two Column CSS */
+
+#two-column-left, 
+#two-column-right {
+    float: left;
+    width: 47%;
+    margin-top: 1em;
+
+    a {
+        border-bottom: none;
+        text-decoration: underline;
+    }
+
+
+    > tileItem:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+
+    > .tileItem {
+        
+        .tileHeadline {
+            margin-bottom: 0;
+            font-family: $headingFontFamily;
+
+            a {
+                text-decoration: none;
+                font-family: $headingFontFamily;
+            }
+        }
+        
+        .no-description {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            font-family: $headingFontFamily;
+        }
+        
+        >.tileSubItem {
+            margin: 0.25em 0 0.75em 0;
+            
+            .tileTitle {
+                margin-top: 0em;
+            }
+
+        }
+        
+        > .tileDescription {
+            margin-top: 0.25em;
+        }
+        
+        > span.description {
+            margin-top: 0;
+            margin-bottom: 1.5em;
+        }
+
+
+    }
+}
+
+#two-column-left {
+    padding-right: 1em;
+    border-right: 1px solid  $leftNavBorderColor;
+}
+
+#two-column-right {
+    padding-left: 1em;
+}
+
+#portal-column-content.sr {
+    #two-column-left, 
+    #two-column-right {
+        width: 46%;
+    }
+}
+
+body.template-subfolder_view {
+    #two-column-left, 
+    #two-column-right {
+        font-size: 0.9375em;
+        margin-top: 0;
+    }
+}
+
+/* --- */
+

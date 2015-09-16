@@ -1,0 +1,21 @@
+/* = section-title ========================================= */
+
+#section-title {
+    font-size: 2em;
+    font-weight: bold;
+    font-weight: 600;
+    margin: 0 0 0.75em 0;
+
+    a {
+        color: $sectionTitleTextColor;
+        padding-bottom:  0;
+        border-bottom: 1px solid $sectionTitleBorder;
+    }
+
+    a:hover {
+        color: $breadcrumbLinkColor;
+        text-decoration: none;
+        border-bottom-color: $breadcrumbLinkColor;
+    }
+}
+

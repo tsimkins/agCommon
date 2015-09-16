@@ -1,0 +1,393 @@
+@import 'ie-warning';
+@import 'multi-tag-selector';
+
+/* = Edit UI =================================================== */
+
+#portal-column-content .documentEditable {
+    padding: 0;
+    margin: 0 1em 1em;
+}
+
+#portal-column-content .documentEditable #content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+/* Hide Short Name on all screens.  Will be unhidden on the Edit screen by JS */
+#archetypes-fieldname-id {
+    display: none;
+}
+
+/* Hide folder text from form folder for editing */
+#formfolder-base-edit #archetypes-fieldname-folder_text {
+    display: none;
+}
+
+
+
+/* Resolve different treatment of icons in Add New dropdown */
+
+.actionMenu .actionMenuContent li a {
+    padding: 0;
+    display: block;
+    margin: 0.1em 0.25em;
+}
+
+.actionMenu .actionMenuContent li a:hover {
+    background-color: $contentViewBorderColor;
+}
+
+#portal-personaltools-wrapper {
+    font-size: 0.75em;
+    margin: 0 auto;
+    max-width: $maxWidth;
+    z-index: 25;
+    background-color: $globalBackgroundColor;
+    border: 1px solid $fieldBorderColor;
+}
+
+#portal-personaltools {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+body.icons-on #portal-header {
+    padding-bottom: 1em;
+}
+
+#portal-personaltools-wrapper .actionMenu.activated .actionMenuContent {
+    z-index:25;
+}
+
+#portal-personaltools .actionMenuContent ul {
+    padding-top: 0.25em;
+}
+
+#portal-personaltools .actionMenuContent li {
+    display: block;
+    margin: 0.375em 0.125em;
+}
+
+#content dl.portalMessage {
+    font-size: 0.75em;
+}
+
+dl.portalMessageOneColumn {
+    background-color: $notifyBackgroundColor;
+}
+
+#content dl.portalMessageOneColumn dt,
+#content dl.portalMessageOneColumn dd {
+    float: none;
+    font-size: 1.25em;
+    padding: 0.5em 0.75em;
+}
+
+#content dl.portalMessageOneColumn dt {
+    margin: 0;
+    background-color: $notifyHeadingColor;
+}
+
+dl.portalMessageOneColumn dd {
+    margin: 0 0.25em;
+    font-size: 1.125em;
+}
+
+/* Fix the lineheight set to 2em */
+.icons-on #portal-column-one a[class *= 'contenttype-'],
+.icons-on #portal-column-one .contenttype-document,
+.icons-on #portal-column-one .contenttype-event,
+.icons-on #portal-column-one .contenttype-folder,
+.icons-on #portal-column-one .contenttype-link,
+.icons-on #portal-column-one .contenttype-news-item,
+.icons-on #portal-column-one .contenttype-plone-site,
+.icons-on #portal-column-one .contenttype-topic {
+    line-height: 1.5em;
+    display: block;
+}
+
+.icons-on #content a[class *= 'contenttype-'],
+.icons-on #content .contenttype-document,
+.icons-on #content .contenttype-event,
+.icons-on #content .contenttype-folder,
+.icons-on #content .contenttype-link,
+.icons-on #content .contenttype-news-item,
+.icons-on #content .contenttype-plone-site,
+.icons-on #content .contenttype-topic {
+    line-height: 1.5em;
+    display: block;
+}
+
+/* Folder Items table needs 2em */
+
+.icons-on #content #listing-table a[class *= 'contenttype-'],
+.icons-on #content #listing-table .contenttype-document,
+.icons-on #content #listing-table .contenttype-event,
+.icons-on #content #listing-table .contenttype-folder,
+.icons-on #content #listing-table .contenttype-link,
+.icons-on #content #listing-table .contenttype-news-item,
+.icons-on #content #listing-table .contenttype-plone-site,
+.icons-on #content #listing-table .contenttype-topic {
+    line-height: 2em;
+    display: block;
+}
+
+.icons-on #content #listing-table a {
+    border-bottom: none;
+}
+
+.icons-on #portal-column-two a[class *= 'contenttype-'],
+.icons-on #portal-column-two .contenttype-document,
+.icons-on #portal-column-two .contenttype-event,
+.icons-on #portal-column-two .contenttype-folder,
+.icons-on #portal-column-two .contenttype-link,
+.icons-on #portal-column-two .contenttype-news-item,
+.icons-on #portal-column-two .contenttype-plone-site,
+.icons-on #portal-column-two .contenttype-topic {
+    line-height: 1.5em;
+    display: block;
+    padding-top: 3px;
+}
+
+
+#edit-bar {
+    font-size: 0.6875em;
+    margin-top: 1em;
+}
+
+#content-views a, #content li.formTab a, #content-core li.formTab a {
+    line-height: 2em;
+    padding: 0 0.5em;
+}
+
+#portal-column-one .managePortletsLink {
+    font-size: 0.5625em;
+    font-size: 0.625rem;
+}
+
+.managePortletsLink, .managePortletsFallback {
+    font-size: 0.875em;
+    font-size: 0.625rem;
+}
+
+.portletAssignments {
+    font-size: 0.6875em;
+    padding: 0 0.5em;
+}
+
+#content .portletAssignments {
+    font-size: 1em;
+}
+
+/* For deleted events */
+
+a.state-deleted {
+    text-decoration: line-through;
+}
+
+
+
+
+
+
+
+/* plone.global_sections breaks @@manage-viewlets layout */
+
+.viewletmanager dd #portal-globalnav {
+    white-space: normal;
+    font-size: 0.5em;
+}
+
+.viewletmanager dd, .viewlet dd {
+    margin-left: 0;
+}
+
+body.template-manage-viewlets #content {
+    padding: 0.25em;
+}
+
+
+
+/* Tiny MCE */
+
+#content .ploneSkin table.mceLayout td.mceToolbar {
+    background-color: $globalBackgroundColor;
+    border: 1px solid $fieldBorderColor;
+    border-bottom-width: 0;
+    padding: 8px 0;
+}
+
+#content .ploneSkin .mceIframeContainer {
+    border: 1px solid $fieldBorderColor;
+}
+
+#content .ploneSkin .mceIframeContainer iframe {
+    min-height: 500px;
+}
+
+#content .ploneSkin table.mceLayout td.mceStatusbar {
+    background-color: $globalBackgroundColor;
+}
+
+#content .ploneSkin table.mceLayout td.mceStatusbar #text_resize {
+    border-color: $fieldBorderColor;
+}
+
+#content .ploneSkin table.mceLayout {
+    border-collapse: separate;
+}
+
+.fieldTextFormat {
+    display: none;
+}
+
+#content .mceFirst a.text_style_text_text,
+#content .mceFirst a#form.text_style_form.text_text,
+#content .ploneSkin table.mceListBox .mceText {
+    border: 1px solid $fieldBorderColor;
+    background-color: $contentBackgroundColor;
+    border-width: 1px 0 1px 1px;
+}
+
+#content .ploneSkin table.mceListBox .mceOpen {
+    border-bottom: 1px solid $fieldBorderColor;
+}
+
+.ploneSkin .mceToolbar .mceButtonDisabled {
+    display: none;
+}
+
+.ploneSkin.mceEditor .mceToolbar > div,
+.ploneSkin .mceToolbar > div#text_toolbargroup,
+.ploneSkin .mceToolbar > div#form.text_toolbargroup,
+.ploneSkin .mceToolbar > div#mce_fullscreen_toolbargroup {
+    width: 100%;
+}
+
+.icons-on #listing-table td {
+    line-height: 1.5em;
+}
+
+/* Contents table */
+
+#folderlisting-main-table table {
+    width: 100%;
+    font-size: 0.875em;
+}
+
+#content a#folder_text_resize {
+    border-bottom: none;
+}
+
+/* Fieldsets */
+
+fieldset, .editionComment {
+    padding: 0 0.5em 1em 0.5em;
+}
+
+.field input[type="text"] {
+    border: 1px solid $fieldBorderColor;
+    font-size: 1em;
+    padding: 0.125em;
+    margin: 0.25em 0;
+}
+
+#content textarea,
+.field input[type="text"][name$=".title"],
+input#title {
+    border: 1px solid $fieldBorderColor;
+    padding: 2px $textEditBox_padding_percent;
+    width: $textEditBox_width_percent;
+}
+
+#content .field input[type="text"][name$=".title"],
+#archetypes-fieldname-title input {
+    font-family: $fontFamily;
+    letter-spacing: 0;
+    font-weight: normal;
+}
+
+#content .field textarea[name$=".description"],
+#archetypes-fieldname-description textarea#description {
+    color: $fieldHelpColor;
+}
+
+.formHelp {
+    font-size: 0.875em;
+    line-height: 1.375em;
+    color: $fieldHelpColor;
+}
+
+div.formControls {
+    margin: 0.5em 0;
+}
+
+
+.pfg-form div.formControls input[type="submit"] {
+    background: #458BDF; /* UI */
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    color: $contentBackgroundColor;
+    font-size: 1em;
+    padding: 0.25em 0.5em;
+    margin: 0.125em 0;
+    border: 2px solid #1f628d; /* UI */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pfg-form div.formControls input[type="submit"]:hover {
+  background: #2C658F; /* UI */
+  text-decoration: none;
+  border-color: #337ACF; /* UI */
+}
+
+input[type="submit"],
+#folderlisting-main-table input[type="submit"] {
+    border: 1px solid #333333;  /* UI */
+    margin: 0.125em;
+    cursor: pointer;
+}
+
+
+
+/* Hide byline on body.no-icons */
+
+body.custom-no-icons #plone-document-byline,
+body.custom-no-icons .documentByLine {
+    display: none;
+}
+
+
+/* Unbold labels for checkboxes and radio buttons */
+
+div.ArchetypesMultiSelectionValue label {
+    font-weight: normal;
+}
+
+div.ArchetypesMultiSelectionValue,
+div.ArchetypesSelectionWidget input,
+div.ArchetypesSelectionWidget input.noborder {
+    margin-left: 1em;
+}
+
+/* Sharing tab */
+
+body.template-sharing #portal-column-one,
+body.template-sharing #portal-column-two,
+body.template-sharing .contentLeadImageContainer {
+        display: none;
+}
+
+body.template-sharing #portal-column-content.sl,
+body.template-sharing #portal-column-content.sr,
+body.template-sharing #portal-column-content.sl.sr {
+    width: 100%;
+}
+
+body.template-sharing #user-group-sharing-container {
+    font-size: 0.875em;
+}

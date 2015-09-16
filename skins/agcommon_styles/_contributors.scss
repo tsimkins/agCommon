@@ -1,0 +1,77 @@
+/* Contact Information (contributors) */
+
+#content {
+    .documentContributors, 
+    .publication {
+        font-size: 0.875em;
+        border-top: none;
+        
+        h2 {
+            color: $documentSubHeadingColor;
+            margin: 1.125em 0 0.375em 0;
+            font-size: 1.375em;
+            padding: 0;
+            border: none;
+            font-weight: bold;
+            font-family: $alternateHeadingFontFamily;
+        }
+
+        .tileItem {
+            margin-bottom: 1em;
+            padding-top: 0.75em;
+            border-top: 1px solid $globalBorderColor;
+        }
+
+        .tileItem:first-child {
+            border-top: none;
+        }
+    }
+
+    .documentContributors {
+        
+        .facultyStaffDirectory,
+        .tileHeadline {
+            font-size: 0.96875em;
+            margin-left: $documentContributors_info_left_margin_percent;
+        }
+
+        .facultyStaffDirectory div {
+            color: #4D4D4D; /* UI */
+        }
+
+
+        .tileHeadline {
+            font-size: 1.1875em;
+            color: #474747; /* UI */
+        }
+
+        .contentLeadImageContainer {
+            float: left;
+            clear: none;
+            margin: 0.25em $documentContributors_margin_percent 0;
+            width: $documentContributors_image_width_percent;
+            max-width: $documentContributors_image_width_percent;
+            height: $documentContributorsImageHeight;
+            overflow: hidden;
+            text-align: center;
+        
+            img {
+                margin: -7.5% 0 0 -15%;
+                height: auto;
+                width: 130%;
+                max-width: 130%;
+            }
+        }
+    }
+
+    .publication {
+        line-height: 1.375em;
+        margin-bottom: 1.5em;
+        
+        h3 {
+            margin-top: 0;
+        }
+
+    }
+
+}

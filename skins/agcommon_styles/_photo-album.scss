@@ -1,0 +1,34 @@
+/* Photo Album */
+
+#content {
+    .photoAlbumEntry {
+        background-image: none;
+        margin: 0 $thumbnail_margin_percent;
+        width: $thumbnail_width_percent;
+        padding: 0;
+        height: 16em;
+
+        a {
+            border: none;
+            width: auto;
+
+            .photoAlbumEntryWrapper {
+                display: block;
+                
+                img {
+                    cursor: zoom-in;
+                    max-width: 100%;
+                    margin-bottom: 0.375em;
+                    border: none;
+                }
+            
+            }
+
+            .photoAlbumEntryTitle {
+                color: $contentLinkColor;
+                width: auto;
+            }
+        }
+    }
+}
+
