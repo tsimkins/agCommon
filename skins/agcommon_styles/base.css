@@ -44,12 +44,6 @@ dl.portlet li,
     color: #666;
 }
 
-#content img.tileImage,
-#content div.newsImageContainer {
-    float: right;
-    margin: 0 1em 0.5em 1em;
-}
-
 .eventDetails {
     float: right;
     clear: right;

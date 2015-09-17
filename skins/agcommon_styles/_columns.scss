@@ -32,11 +32,10 @@
     display: table-cell;
 }
 
-#portal-column-content.sl,
-#portal-column-content.sr {
+#portal-column-content.s1 {
     width: 100%*($content_column_width_one/$container_width);
 }
 
-#portal-column-content.sl.sr{
+#portal-column-content.s2 {
     width: 100%*($content_column_width_two/$container_width);
 }
