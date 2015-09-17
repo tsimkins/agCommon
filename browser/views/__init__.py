@@ -167,7 +167,7 @@ class FolderView(BrowserView):
                         scale="large"
                     else:
                         scale = self.prefs.desc_scale_name
-                return field.tag(context, scale=scale, css_class=css_class, title=title)
+                return field.tag(context, scale=scale, css_class=css_class, title=safe_unicode(title))
         return ''
 
     @property
