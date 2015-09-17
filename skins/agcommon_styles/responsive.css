@@ -357,11 +357,7 @@
     background-size: 100% auto;
     background-color: #FFFFFF; }
 
-  div.FooterPortletManager1,
-  div.FooterPortletManager2,
-  div.FooterPortletManager3,
-  div.FooterPortletManager4,
-  div.FooterPortletManager5 {
+  #portlets-footer .FooterPortletManager {
     width: 43.75%;
     float: left;
     padding: 0.5em 2.08333%; }
@@ -758,10 +754,12 @@
     width: auto; }
 
   #portal-footer {
-    text-align: left; }
+    text-align: left;
+    padding: 0.5em 3.07692%;
+    width: 93.84615%; }
 
   #portal-footer p {
-    padding: 0 1.5em; }
+    padding: 0; }
 
   #portal-footer .footerLinks a {
     display: block;
@@ -906,22 +904,24 @@
     padding-right: 0; }
 
   /* Flexslider */
+  /*
   #viewlet-above-content h2.flexslider-title {
-    background-color: #4D4D4D;
-    border: none !important;
-    color: #F6F6F6 !important;
-    font-family: Arial,Helvetica,Helv,sans-serif;
-    font-size: 0.8125em !important;
-    font-size: 1.4375em;
-    font-weight: bold;
-    line-height: 1.25em;
-    margin: 0.25em 0 0 0;
-    padding: 0.3125em 1.923076923076923% 0.375em 1.923076923076923% !important;
-    text-align: left;
-    text-transform: none;
-    width: 96.153846153846154%;
-    height: auto; }
-
+      background-color: #4D4D4D;
+      border: none !important;
+      color: #F6F6F6 !important;
+      font-family: Arial,Helvetica,Helv,sans-serif;
+      font-size: 0.8125em !important;
+      font-size: 1.4375em;
+      font-weight: bold;
+      line-height: 1.25em;
+      margin: 0.25em 0 0 0;
+      padding: 0.3125em 1.923076923076923% 0.375em 1.923076923076923% !important;
+      text-align: left;
+      text-transform: none;
+      width: 96.153846153846154%;
+      height: auto;
+  }
+  */
   #viewlet-above-content .flexslider {
     background-color: #F5F5F5;
     padding: 8px 1.691331923890063%;
@@ -1045,16 +1045,7 @@
 /*------------------------ END resolution-520.css ----------------------------*/
 /*------------------------- resolution-480.css ------------------------------*/
 @media handheld, screen and (max-width: 480px) {
-  div.FooterPortletManager1,
-  div.FooterPortletManager2,
-  div.FooterPortletManager3,
-  div.FooterPortletManager4,
-  div.FooterPortletManager5,
-  div.AbovePortletManager1,
-  div.AbovePortletManager2,
-  div.AbovePortletManager3,
-  div.AbovePortletManager4,
-  div.AbovePortletManager5 {
+  #portlets-footer .FooterPortletManager {
     width: 93.33333%;
     float: left;
     padding: 0.5em 3.33333%; }

@@ -278,7 +278,8 @@ div.tilePortletManager {
             
             #content {
                 .tileitem-width-#{$block_klass}.tileitem-count-#{$n} {
-                    .portletItem {
+                    .portletItem, 
+                    .portletItem:first-child {
                         width: $item_width_percent;
                         margin-left: $item_margin_percent;
                         margin-right: $item_margin_percent;
@@ -350,7 +351,6 @@ div.tilePortletManager {
     
         /* Tile Item Class */
         
-        #content .tileitem-width-#{$block_klass},
         #content .tileitem-width-#{$block_klass} {
             width: 100%;
             float: none;
@@ -379,25 +379,28 @@ div.tilePortletManager {
             $item_padding_percent: 100%*($portlet_padding/$container_width);
             
             #content 
-                .tileitem-width-#{$block_klass}.tileitem-count-#{$n} .portletItem {
-                width: $item_width_percent;
-                margin-left: $item_margin_percent;
-                margin-right: $item_margin_percent;
-                padding-left: $item_padding_percent;
-                padding-right: $item_padding_percent;
-                border: none;
-                background-color: transparent;
-                clear: both;
+                .tileitem-width-#{$block_klass}.tileitem-count-#{$n} {
+                    .portletItem,
+                    .portletItem:first-child {
+                        width: $item_width_percent;
+                        margin-left: $item_margin_percent;
+                        margin-right: $item_margin_percent;
+                        padding-left: $item_padding_percent;
+                        padding-right: $item_padding_percent;
+                        border: none;
+                        background-color: transparent;
+                        clear: both;
+                        
+                        .rssImage {
+                            margin: 0;
+                            padding: 0;
+                            width: 100%;
+                            float: none;
+                            display: block;
+                        }
+                    }
             }
         }
-    }
-
-    #content .rssImage {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        float: none;
-        display: block;
     }
 
 }

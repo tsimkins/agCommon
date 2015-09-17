@@ -485,11 +485,7 @@
         background-color: $contentBackgroundColor;
     }
     
-    div.FooterPortletManager1,
-    div.FooterPortletManager2,
-    div.FooterPortletManager3,
-    div.FooterPortletManager4,
-    div.FooterPortletManager5 {
+    #portlets-footer .FooterPortletManager {
     	width: 50%*(($container_width - 4*$column_padding)/$maxWidth);
     	float: left;
     	padding: 0.5em 100%*($column_padding/$maxWidth);
@@ -984,12 +980,13 @@
     
     #portal-footer {
         text-align: left;
+        padding: 0.5em 100%*($column_padding/$maxWidth);
+        width: 100%*(($maxWidth - 2*$column_padding)/$maxWidth);
     }
     
-    #portal-footer p{
-        padding: 0 1.5em;
+    #portal-footer p {
+        padding: 0;
     }
-    
     
     #portal-footer .footerLinks a {
         display: block;
@@ -1165,6 +1162,7 @@
 
     /* Flexslider */
 
+    /*
     #viewlet-above-content h2.flexslider-title {
         background-color: #4D4D4D;
         border: none !important;
@@ -1181,6 +1179,7 @@
         width: 96.153846153846154%;
         height: auto;
     }
+    */
 
 
     #viewlet-above-content .flexslider {
@@ -1341,16 +1340,7 @@
     
     $maxWidth: 480px;
 
-    div.FooterPortletManager1,
-    div.FooterPortletManager2,
-    div.FooterPortletManager3,
-    div.FooterPortletManager4,
-    div.FooterPortletManager5,
-    div.AbovePortletManager1,
-    div.AbovePortletManager2,
-    div.AbovePortletManager3,
-    div.AbovePortletManager4,
-    div.AbovePortletManager5 {
+    #portlets-footer .FooterPortletManager {
     	width: 100%*(($maxWidth - 2*$column_padding)/$maxWidth);
     	float: left;
     	padding: 0.5em 100%*($column_padding/$maxWidth);
