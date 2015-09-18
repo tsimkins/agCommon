@@ -106,6 +106,7 @@ body.icons-on #portal-header {
 /* Fix the lineheight set to 2em */
 .icons-on {
     #portal-column-one, 
+    #portal-column-two, 
     #content {
         a[class *= 'contenttype-'],
         .contenttype-document,
@@ -119,12 +120,6 @@ body.icons-on #portal-header {
             display: block;
         }
     }
-    
-    #portal-column-two {
-        line-height: 1.5em;
-        display: block;
-        padding-top: 3px;
-    } 
     
     /* Folder Items table needs 2em */
     

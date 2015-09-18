@@ -1,3 +1,27 @@
+/*# Automagically generated multi-column grid css for Plone */
+/*# == Variables == */
+/* - Logo * -*/
+/* - Department (site) title width * -*/
+/* - Department (site) title width * -*/
+/* - Lead Image Width -*/
+/* - Tile Image Width -*/
+/* - Pull Quote Width - */
+/* - Thumbnail Count - */
+/* - Local Search Box - */
+/* - Document Contributors - */
+/* - Footer Portlets - */
+/*# == Calculations == */
+/*# -- Left and Right columns -- */
+/* - Content Area - */
+/* - Lead Image *- */
+/* - Photo Album (Thumbnails) - */
+/* - Pull Quote */
+/* - Local Search Box -*/
+/* A little fudging, since sizing for buttons is odd */
+/* Border */
+/* - Document Contributors - */
+/* - Text edit boxes */
+/* Footer Portlets */
 /*
  * jQuery FlexSlider v1.8
  * http://www.woothemes.com/flexslider/
@@ -22,10 +46,6 @@
 
 /* FlexSlider Necessary Styles
 *********************************/
-.flexslider {
-  margin: 0;
-  padding: 0; }
-
 .flexslider .slides > li {
   display: none;
   -webkit-backface-visibility: hidden; }
@@ -63,7 +83,6 @@ html[xmlns] .slides {
 *********************************/
 .flexslider {
   background: #fff;
-  border: 4px solid #fff;
   position: relative;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -162,113 +181,128 @@ html[xmlns] .slides {
   cursor: default; }
 
 /* Custom */
+/* 
+    image sizes used for calculating proportions.  
+    Oddball sizes result of legacy homepage design. 
+    
+    Will use proportions of standard homepage image size (700x265) upsized to
+    950x360.
+*/
+/* DEBUG:
+  $actual_flexsliderImageWidth: 565px
+  $actual_flexsliderImageHeight: 303px
+
+  $flexsliderWidth: 950px
+  $upscaleRatio: 1.35714
+
+  $flexsliderImageHeight: 359.64286px
+  $flexsliderImageWidth: 670.62117px
+
+  $flexsliderImageWidth_percent: 70.5917%
+
+  $flexsliderTextWidth: 279.37883px
+
+  $flexsliderTextWidth_percent: 26.03988%
+  $flexsliderTextPadding_percent: 1.68421%
+  
+*/
+/* 
+    Flexslider has the id #homepage image, so we're using 95% as the width of 
+    the content inside. 
+*/
 .flexslider {
   border-width: 0;
   margin: 0 auto;
-  border-radius: 0;
-  max-width: 1000px;
-  background-color: #F9F9F9; }
-
-.flexslider .tileItem {
-  border-top: none;
-  margin: 0;
-  padding: 0;
-  background-color: #F9F9F9; }
-
-.flexslider .tileImage {
-  border: none; }
-
-.flexslider .contentLeadImageContainer {
-  display: block;
-  float: left;
-  width: 70.875179340028694%;
-  max-width: 70.875179340028694%;
-  margin: 0; }
-
-.flexslider .contentLeadImageContainer img {
-  margin: 0;
-  width: 100%;
-  max-height: 380px; }
-
-.flexslider .flexslider-text {
-  max-height: 265px;
-  overflow: hidden;
-  margin-left: 70.79136690647482%;
-  padding: 0 1.440922190201729%;
-  width: 26.22478386167147%; }
-
-.flexslider .tileHeadline {
-  font-family: Tahoma, Arial, Helvetica, Helv, sans-serif;
-  font-weight: normal;
-  font-size: 1.375em;
-  line-height: 1.1875em;
-  margin-top: 0.5em; }
-
-.flexslider .tileHeadline a,
-.flexslider .tileHeadline a:visited {
-  color: #0075BD !important;
-  /* UI */ }
-
-.flexslider .tileBody p {
-  margin: 0.25em 0 0 0;
-  color: #4D4D4D;
-  font-size: 0.875em;
-  line-height: 1.375em; }
-
-.flexslider .tileFooter {
-  margin: 0.25em 0 0.25em 0;
-  padding: 0; }
-
-.flexslider .tileFooter p {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  line-height: 1.5625em; }
-
-.flexslider .tileFooter a {
-  font-size: 0.6875em;
-  text-decoration: none;
-  padding: 0.25em 0.375em;
-  background-color: #FFE269;
-  /* UI */
-  border: 1px solid #EFCE4A;
-  /* UI */ }
-
-.flexslider .tileFooter a .hiddenStructure {
-  display: inline-block; }
+  border-radius: 0; }
+  .flexslider .slides {
+    background-color: #F9F9F9; }
+  .flexslider .tileItem {
+    border-top: none;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9; }
+  .flexslider .tileImage {
+    border: none; }
+  .flexslider .contentLeadImageContainer {
+    display: block;
+    float: left;
+    width: 70.5917%;
+    max-width: 70.5917%;
+    margin: 0; }
+    .flexslider .contentLeadImageContainer img {
+      margin: 0;
+      width: 100%;
+      max-height: 359.64286px; }
+  .flexslider .flexslider-text {
+    max-height: 359.64286px;
+    overflow: hidden;
+    margin-left: 70.5917%;
+    padding: 0 1.68421%;
+    width: 26.03988%; }
+  .flexslider .tileHeadline {
+    font-weight: normal;
+    font-size: 1.375em;
+    line-height: 1.1875em;
+    margin-top: 0.5em; }
+    .flexslider .tileHeadline a,
+    .flexslider .tileHeadline a:visited {
+      color: #0075BD !important;
+      /* UI */ }
+  .flexslider .tileBody p {
+    margin: 0.25em 0 0 0;
+    color: #4D4D4D;
+    font-size: 0.875em;
+    line-height: 1.375em; }
+  .flexslider .tileFooter {
+    margin: 0.25em 0 0.25em 0;
+    padding: 0; }
+    .flexslider .tileFooter p {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      line-height: 1.5625em; }
+    .flexslider .tileFooter a {
+      font-size: 0.6875em;
+      text-decoration: none;
+      padding: 0.25em 0.375em;
+      background-color: #FFE269;
+      /* UI */
+      border: 1px solid #EFCE4A;
+      /* UI */ }
+      .flexslider .tileFooter a .hiddenStructure {
+        display: inline-block; }
 
 .flex-control-nav {
   position: relative;
   bottom: auto;
   text-align: left;
-  margin-left: 72.453371592539455%;
-  margin-right: 0.717360114777618%;
+  margin-left: 72.27591%;
+  margin-right: 1.68421%;
   width: 125px;
-  margin-top: -1.25em;
-  margin-bottom: 0.4375em; }
+  margin-top: -1.5em;
+  margin-bottom: 0; }
+  .flex-control-nav a {
+    color: transparent; }
 
-.flex-control-nav a {
-  color: transparent; }
-
-.flex-direction-nav li a {
-  width: 30px;
-  height: 37px;
-  margin: -14px 0 0;
-  display: block;
-  background-image: url(bg_slider_arrows.png);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 50%;
-  cursor: pointer;
-  text-indent: -999em;
-  opacity: 0.66; }
-
-.flex-direction-nav li .next {
-  background-position: -30px 0;
-  left: 66.571018651362984%; }
-
-.flex-direction-nav li .prev {
-  left: 0; }
+.flex-direction-nav li {
+  display: block; }
+  .flex-direction-nav li a {
+    width: 30px;
+    height: 37px;
+    margin: 0;
+    display: block;
+    background-image: url(bg_slider_arrows.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -999em;
+    opacity: 0.66; }
+  .flex-direction-nav li .next {
+    background-position: -30px 0;
+    right: 31.23788%; }
+  .flex-direction-nav li .prev {
+    left: 3.3%; }
 
 h2.flexslider-title {
   background: none repeat scroll 0 0 transparent;

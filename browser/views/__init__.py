@@ -160,14 +160,20 @@ class FolderView(BrowserView):
             title = titlef.get(context)
         else:
             title = ''
+
+        title = safe_unicode(title)
+
         if field is not None:
+
             if field.get(context).get_size():
                 if not scale:
                     if self.hasTiledContents:
                         scale="large"
                     else:
                         scale = self.prefs.desc_scale_name
-                return field.tag(context, scale=scale, css_class=css_class, title=safe_unicode(title))
+
+                return field.tag(context, scale=scale, css_class=css_class, title=title, alt=title)
+
         return ''
 
     @property

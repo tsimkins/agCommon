@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'layout';
 
 /*
  * jQuery FlexSlider v1.8
@@ -20,7 +21,6 @@
 
 /* FlexSlider Necessary Styles
 *********************************/
-.flexslider {margin: 0; padding: 0;}
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {max-width: 100%; display: block;}
 .flex-pauseplay span {text-transform: capitalize;}
@@ -38,7 +38,7 @@ html[xmlns] .slides {display: block;}
 
 /* FlexSlider Default Theme
 *********************************/
-.flexslider {background: #fff; border: 4px solid #fff; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; zoom: 1;}
+.flexslider {background: #fff; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; zoom: 1;}
 .flexslider .slides {zoom: 1;}
 .flexslider .slides > li {position: relative;}
 /* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
@@ -67,127 +67,189 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 
 /* Custom */
 
+/* 
+    image sizes used for calculating proportions.  
+    Oddball sizes result of legacy homepage design. 
+    
+    Will use proportions of standard homepage image size (700x265) upsized to
+    950x360.
+*/
+
+$actual_flexsliderImageWidth: 565px;
+$actual_flexsliderImageHeight: 303px;
+
+$flexsliderWidth: 0.95*$maxWidth;
+$upscaleRatio: $flexsliderWidth/700px;
+
+$flexsliderImageHeight: 265px*$upscaleRatio;
+$flexsliderImageWidth: $actual_flexsliderImageWidth*($flexsliderImageHeight/$actual_flexsliderImageHeight);
+
+$flexsliderImageWidth_percent: 100%*($flexsliderImageWidth/$flexsliderWidth);
+
+$flexsliderTextWidth: $flexsliderWidth - $flexsliderImageWidth;
+
+$flexsliderTextWidth_percent: 100%*(($flexsliderTextWidth - 2*$column_padding)/$flexsliderWidth);
+$flexsliderTextPadding_percent: 100%*($column_padding/$flexsliderWidth);
+
+/* DEBUG:
+  $actual_flexsliderImageWidth: #{$actual_flexsliderImageWidth}
+  $actual_flexsliderImageHeight: #{$actual_flexsliderImageHeight}
+
+  $flexsliderWidth: #{$flexsliderWidth}
+  $upscaleRatio: #{$upscaleRatio}
+
+  $flexsliderImageHeight: #{$flexsliderImageHeight}
+  $flexsliderImageWidth: #{$flexsliderImageWidth}
+
+  $flexsliderImageWidth_percent: #{$flexsliderImageWidth_percent}
+
+  $flexsliderTextWidth: #{$flexsliderTextWidth}
+
+  $flexsliderTextWidth_percent: #{$flexsliderTextWidth_percent}
+  $flexsliderTextPadding_percent: #{$flexsliderTextPadding_percent}
+  
+*/
+
+/* 
+    Flexslider has the id #homepage image, so we're using 95% as the width of 
+    the content inside. 
+*/
+
 .flexslider {
     border-width: 0;
     margin: 0 auto;
     border-radius: 0;
-    max-width: $maxWidth;
-    background-color: $leftSubNavBackground;
+
+    .slides {
+        background-color: $leftSubNavBackground;
+    }
+
+    .tileItem {
+        border-top: none;
+        margin: 0;
+        padding: 0;
+        background-color: $leftSubNavBackground;
+    }
+
+    .tileImage {
+        border: none;
+    }
+
+    .contentLeadImageContainer {
+        display: block;
+        float: left;
+        width: $flexsliderImageWidth_percent;
+        max-width: $flexsliderImageWidth_percent;
+        margin: 0;
+
+        img {
+            margin: 0;
+            width: 100%;
+            max-height: $flexsliderImageHeight;
+        }
+
+
+    }
+    
+    .flexslider-text {
+        max-height: $flexsliderImageHeight;
+        overflow: hidden;
+        margin-left: $flexsliderImageWidth_percent;
+        padding: 0 $flexsliderTextPadding_percent;
+        width: $flexsliderTextWidth_percent;
+    }
+    
+    .tileHeadline {
+        font-weight: normal;
+        font-size: 1.375em;
+        line-height: 1.1875em;
+        margin-top: 0.5em;
+    
+        a,
+        a:visited {
+            color: #0075BD !important; /* UI */
+        }
+    }
+    
+    .tileBody p {
+        margin: 0.25em 0 0 0;
+        color: $leftNavTextColor;
+        font-size: 0.875em;
+        line-height: 1.375em;
+    }
+    
+    .tileFooter {
+        margin: 0.25em 0 0.25em 0;
+        padding: 0;
+    
+        p {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            line-height: 1.5625em;
+        }    
+        
+        a {
+            font-size: 0.6875em;
+            text-decoration: none;
+            padding: 0.25em 0.375em;
+            background-color: #FFE269; /* UI */
+            border: 1px solid #EFCE4A; /* UI */
+            
+            .hiddenStructure {
+                display: inline-block;
+            }
+    
+        }
+    
+    }  
 }
 
-.flexslider .tileItem {
-    border-top: none;
-    margin: 0;
-    padding: 0;
-    background-color: $leftSubNavBackground;
-}
 
-.flexslider .tileImage {
-    border: none;
-}
-
-.flexslider .contentLeadImageContainer {
-    display: block;
-    float: left;
-    width: 70.875179340028694%;
-    max-width: 70.875179340028694%;
-    margin: 0;
-}
-
-.flexslider .contentLeadImageContainer img {
-    margin: 0;
-    width: 100%;
-    max-height: 380px;
-}
-
-.flexslider .flexslider-text {
-    max-height: 265px;
-    overflow: hidden;
-    margin-left: 70.79136690647482%;
-    padding: 0 1.440922190201729%;
-    width: 26.22478386167147%;
-}
-
-.flexslider .tileHeadline {
-    font-family: Tahoma, Arial, Helvetica, Helv, sans-serif;
-    font-weight: normal;
-    font-size: 1.375em;
-    line-height: 1.1875em;
-    margin-top: 0.5em;
-}
-
-.flexslider .tileHeadline a,
-.flexslider .tileHeadline a:visited {
-    color: #0075BD !important; /* UI */
-}
-
-.flexslider .tileBody p {
-    margin: 0.25em 0 0 0;
-    color: $leftNavTextColor;
-    font-size: 0.875em;
-    line-height: 1.375em;
-}
-
-.flexslider .tileFooter {
-    margin: 0.25em 0 0.25em 0;
-    padding: 0;
-}  
-
-.flexslider .tileFooter p {
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    line-height: 1.5625em;
-}    
-
-.flexslider .tileFooter a {
-    font-size: 0.6875em;
-    text-decoration: none;
-    padding: 0.25em 0.375em;
-    background-color: #FFE269; /* UI */
-    border: 1px solid #EFCE4A; /* UI */
-}
-
-.flexslider .tileFooter a .hiddenStructure {
-    display: inline-block;
-}
 
 .flex-control-nav {
     position: relative;
     bottom: auto;
     text-align: left;
-    margin-left: 72.453371592539455%;
-    margin-right: 0.717360114777618%;
+    margin-left: $flexsliderImageWidth_percent + $flexsliderTextPadding_percent;
+    margin-right: $flexsliderTextPadding_percent;
     width: 125px;
-    margin-top: -1.25em;
-    margin-bottom: 0.4375em;
+    margin-top: -1.5em;
+    margin-bottom: 0;
+    
+    a {
+        color: transparent;
+    }
 }
 
-.flex-control-nav a {
-    color: transparent;
-}
+.flex-direction-nav {
+    li {
+        
+        display: block;
 
-.flex-direction-nav li a {
-    width: 30px; 
-    height: 37px; 
-    margin: -14px 0 0; 
-    display: block; 
-    background-image: url(bg_slider_arrows.png);
-    background-repeat: no-repeat; 
-    position: absolute; 
-    top: 50%; 
-    cursor: pointer; 
-    text-indent: -999em;
-    opacity: 0.66;
-}
-
-.flex-direction-nav li .next {
-    background-position: -30px 0; 
-    left: 66.571018651362984%;
-}
-
-.flex-direction-nav li .prev {
-    left: 0;
+        a {
+            width: 30px; 
+            height: 37px; 
+            margin: 0; 
+            display: block; 
+            background-image: url(bg_slider_arrows.png);
+            background-repeat: no-repeat; 
+            position: absolute; 
+            top: 50%; 
+            cursor: pointer; 
+            text-indent: -999em;
+            opacity: 0.66;
+        }
+    
+        .next {
+            background-position: -30px 0; 
+            right: 100%*((0.5*$column_padding + 0.025*$maxWidth + $flexsliderTextWidth)/$maxWidth);
+        }
+        
+        .prev {
+            left: 100%*((0.5*$column_padding + 0.025*$maxWidth)/$maxWidth);
+        }
+    }
 }
 
 h2.flexslider-title {
@@ -200,4 +262,3 @@ h2.flexslider-title {
     padding: 0;
     width: 1px;
 }
-

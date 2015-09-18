@@ -11,7 +11,8 @@
     </tal:addthis>
 
 
-    <h1 class="documentFirstHeading"> 
+    <h1 tal:attributes="class python:showHomepageHeading and 'hiddenStructure' or 'documentFirstHeading'"
+        tal:define="showHomepageHeading view/showHomepageHeading|nothing">
         <metal:field use-macro="python:here.widget('title', mode='view')">
         Title
         </metal:field>

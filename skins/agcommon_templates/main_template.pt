@@ -64,6 +64,8 @@
         <!-- Web Fonts -->
         <link href="//fonts.googleapis.com/css?family=Open%20Sans&subset=latin" rel="stylesheet" type="text/css" />
 
+        <link href="//fonts.googleapis.com/css?family=Open%20Sans:400&subset=latin" rel="stylesheet" type="text/css" />
+
         <link href="//fonts.googleapis.com/css?family=Open%20Sans:600&subset=latin" rel="stylesheet" type="text/css" />
 
         <link href="//fonts.googleapis.com/css?family=Open%20Sans:800&subset=latin" rel="stylesheet" type="text/css" />

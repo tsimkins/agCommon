@@ -7,7 +7,7 @@
   padding: 0; }
   #content .portlet {
     margin-bottom: 0.375em; }
-  #content img {
+  #content .tileItemContainer img {
     max-width: 100%;
     width: 100%;
     height: auto; }

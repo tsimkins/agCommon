@@ -1,25 +1,5 @@
-/* ================ Homepage Image ================ */
-#homepageimage {
-  display: block;
-  margin: 0;
-  width: 95%;
-  text-align: left;
-  padding: 1.25em 2.5% 0;
-  background-repeat: no-repeat;
-  background-size: 95%;
-  background-position: center 1.25em;
-  background-color: #FFFFFF; }
-
-#portal-column-content.sl #homepageimage.nobreadcrumbs {
-  margin-top: 0.1875em; }
-
-/* =================== Portlets =================== */
-#portal-column-two {
-  display: none; }
-
-#centercolumn .portletWrapper:first-child .portletHeader:first-child,
-#rightcolumn .portletWrapper:first-child .portletHeader:first-child {
-  margin-top: 0;
-  padding-top: 0; }
+/* 
+    This CSS intentionally left blank 
+*/
 
 /*# sourceMappingURL=homepage.css.map */

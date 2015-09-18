@@ -73,14 +73,6 @@ class AgCommonViewlet(ViewletBase):
         return self.portal_state.anonymous()
 
     @property
-    def homepage_h1(self):
-        return getContextConfig(self.context, 'homepage_h1')
-
-    @property
-    def homepage_h2(self):
-        return getContextConfig(self.context, 'homepage_h2')
-
-    @property
     def isSiteHomepage(self):
         return (self.isHomePage and IPloneSiteRoot.providedBy(self.context.aq_parent))
 
@@ -285,6 +277,14 @@ class CenterColumnViewlet(PortletViewlet):
 
 class HomepageTextViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/homepagetext.pt')
+    
+    def showHomepageHeading(self):
+        section = self.getSection()
+        
+        if section:
+            return section.Title() == self.context.Title()
+
+        return False
 
 
 class HomepageImageViewlet(AgCommonViewlet):

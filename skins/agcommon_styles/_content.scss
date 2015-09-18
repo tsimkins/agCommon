@@ -14,15 +14,10 @@
     margin: 1.25em 0 0.5em 0;
     padding: 0 0 0.0625em 0;
     border: none;
-    font-weight: normal;
+    font-weight: bold;
+    font-weight: 600;
     border-bottom: 1px solid $documentHeadingBorderColor;
     line-height: 1.25em;
-    
-    strong, 
-    b {
-        font-weight: normal;
-        color: purple;
-    }
 }
 
 @mixin h3_style() {
@@ -31,7 +26,7 @@
     padding: 0;
     border: none;
     font-weight: bold;
-    font-weight: 600;
+    font-weight: 400;
     font-family: $alternateHeadingFontFamily;
     font-size: 1.40625em;
 }

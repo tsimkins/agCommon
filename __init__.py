@@ -226,7 +226,7 @@ def getHomepageImage(context):
     
     if not len(backgrounds):
         backgrounds = ['homepage_placeholder.jpg']
-        backgroundHeights = ['345']
+        backgroundHeights = ['360']
     
     return """
 
@@ -331,7 +331,7 @@ def getSubsiteHomepageImage(context):
     return getHomepageImage(context)
 
 
-def getBackgroundImages(context, maxHeight=345):
+def getBackgroundImages(context, maxHeight=360):
     backgrounds = []
     backgroundHeights = []
     
@@ -844,8 +844,6 @@ def _getContextConfig(context):
         'custom_class', 
         'enable_subsite_nav', 
         'main_site', 
-        'homepage_h1', 
-        'homepage_h2', 
         'hide_breadcrumbs', 
         'top-menu', 
         'fbadmins', 
