@@ -39,24 +39,27 @@
 
 /*========= Editable ============*/
 
-#portal-column-content .documentEditable #content {
-    padding: 0.1875em 0 0 0!important;
-    border-width: 0;
-}
+#portal-column-content {
+    .documentEditable {
+        
+        padding: 0 !important;
 
-.documentEditable  {
-    padding: 0 !important;
-}
+        #content {
+            padding: 0.1875em 0 0 0!important;
+            border-width: 0;
 
-.documentEditable .contentActions {
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid $contentViewBorderColor;
-}
+            #homepage-base-edit {
+                font-size: 0.84375em;
+                margin: 0 0.25em;
+            }
+        }
 
-#portal-column-content .documentEditable #content #homepage-base-edit {
-    font-size: 0.84375em;
-    margin: 0 0.25em;
+        .contentActions {
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid $contentViewBorderColor;
+        }
+    }
 }
 
 /*========= Homepage Text ============*/
@@ -67,24 +70,26 @@
     padding: 0.375em 0;
     width: 100%;
 
+    .documentFirstHeading {
+        font-size: 1.6875em;
+        margin-top: 0.1875em;
+    }
+    
+    .documentDescription {
+        margin-bottom: 0;
+        font-size: 1.25em;
+        color: $documentDescriptionColor;
+        line-height: 1.375em;
+        margin-bottom: 0.75em;
+    }
+    
+    .documentText {
+        font-size: 0.875em;
+    }
+
 }
 
-#content #homepage-text .documentFirstHeading {
-    font-size: 1.6875em;
-    margin-top: 0.1875em;
-}
 
-#content #homepage-text .documentDescription {
-    margin-bottom: 0;
-    font-size: 1.25em;
-    color: $documentDescriptionColor;
-    line-height: 1.375em;
-    margin-bottom: 0.75em;
-}
-
-#content #homepage-text .documentText {
-    font-size: 0.875em;
-}
 
 /* ================= Center column ===================== */
 #centercolumn {
@@ -126,14 +131,8 @@
     width: $rightcolumn_width_percent_one;
 }
 
-/* ================= Portlet headers ===================== */
 
-#content #centercolumn .portletHeader,
-#content #rightcolumn .portletHeader {
-    font-size: 1.1875em !important;
-}
-
-/* ==================== Feedmixer ======================== */
+/* ==================== Portlets ======================== */
 
 /*
 http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-hack/ - "Hack Free Approach"
@@ -141,6 +140,13 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 
 #centercolumn,
 #rightcolumn {
+
+    /* ================= Portlet headers ===================== */
+    
+    .portletHeader {
+        font-size: 1.1875em !important;
+    }
+
     .portletfeedmixer {
         .portletItem {
             border-top: 1px dashed $globalBorderColor;

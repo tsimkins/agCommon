@@ -6,6 +6,37 @@
 @import 'tables';
 @import 'history';
 
+/* Basic Heading style */
+
+@mixin h2_style() {
+    color: $documentHeadingColor;
+    font-size: 1.6875em;
+    margin: 1.25em 0 0.5em 0;
+    padding: 0 0 0.0625em 0;
+    border: none;
+    font-weight: normal;
+    border-bottom: 1px solid $documentHeadingBorderColor;
+    line-height: 1.25em;
+    
+    strong, 
+    b {
+        font-weight: normal;
+        color: purple;
+    }
+}
+
+@mixin h3_style() {
+    color: $documentSubHeadingColor;
+    margin: 1.125em 0 0 0;
+    padding: 0;
+    border: none;
+    font-weight: bold;
+    font-weight: 600;
+    font-family: $alternateHeadingFontFamily;
+    font-size: 1.40625em;
+}
+
+
 /* = content ================================ */
 
 /* Overriding new font silliness */
@@ -38,107 +69,273 @@ h1, h2 {
 
 /* Paragraph and Unordered List readability per cmore */
 
-#content .documentText ul {
-    margin: 0.375em 0 1.125em 2.5em;
+#content {
+    
+    h1, h2, h3, h4, h5, h6 {
+        a,
+        a:link,
+        a:hover {
+            text-decoration: none;
+            color: $globalFontColor;
+            border-bottom: none;
+        }
+    }
+    
+    .documentText {
+        ul {
+            margin: 0.375em 0 1.125em 2.5em;
+            list-style-image: url(bullet.png);
+            list-style-type: square;
+        }
+
+        p {
+            margin: 0.375em 0 1.125em 0;
+        }
+
+        dd {
+            margin: 0 0 1.5em 0;
+        }
+        
+        dt {
+            font-weight: normal;
+            margin: 0.375em 0 0.5em 0;
+        }
+    }
+    
+    .contentActions {
+        
+        border-bottom: 1px solid $contentViewBorderColor;
+    
+        a {
+            padding: 0 0.5em;
+        }
+    
+    }
+    
+    /* Removing because this breaks listings with icons */
+    
+    a.link-external,
+    a.link-https {
+        background-image: none;
+        padding: 0;
+    }
+
+    a, a:link {
+        color: $contentLinkColor;
+        border-bottom: 1px solid $contentLinkBorderColor;
+        text-decoration: none;
+    }
+
+    .contentLeadImageContainer {
+        a,
+        a:hover {
+            border-bottom: none;
+            cursor: zoom-in;
+        }
+    }
+
+    h1.noBreadcrumbs {
+        margin-top: 0.75em;
+    }
+    
+    h1,
+    h1.documentFirstHeading {
+        color: $documentTitleColor;
+        font-weight: normal;
+        font-weight: 600;
+        border: none;
+        font-size: 2em;
+        margin-bottom: 0.25em;
+        line-height: 1.25em;
+    }
+
+    h2, 
+    html.kupu-html h2 {
+        @include h2_style;
+    }
+    
+    h3,
+    html.kupu-html h3,
+    h2.h3,
+    .documentContributors h2 {
+        @include h3_style;
+    }
+
+    h4,
+    h5,
+    html.kupu-html h4,
+    html.kupu-html h5 {
+        font-family: $alternateHeadingFontFamily;
+        font-size: 1.25em;
+        color: $globalFontColor;
+        margin-top: 1em;
+        line-height: 1.3125em;
+    }
+    
+    h5, 
+    html.kupu-html h5 {
+        font-size: 1.0625em;
+    }
+
+    .documentDescription,
+    #description {
+        font-weight: normal;
+        color: $documentDescriptionColor;
+        font-size: 1.25em;
+        margin: 0 0 1.5em;
+        font-family: $fontFamily;
+        line-height: 1.5em;
+    }
+    
+    .documentByLine {
+        font-size: 0.75em;
+    }
+
+    /* For image captions */
+    p.discreet {
+        margin-bottom: 2em; 
+        
+        img {
+            margin-top: 1em;
+            display: block;
+        }
+    
+        br {
+            line-height: 0.25em;
+        }
+    }
+    
+    .image-left, .image-right {
+        border: none;
+    }
+
+    /* Restyle pull quote and callout */
+    
+    .pullquote,
+    .callout {
+        border-width: 1px 1em;
+        border-style: solid;
+        border-color: $pullQuoteBorderColor;
+        padding: 1em $pullQuote_padding_percent;
+        margin: 0 0 1em $pullQuote_padding_percent;
+        line-height: 1.4375em;
+        color: $pullQuoteTextColor;
+        background-color: $pullQuoteBackgroundColor;
+        font-weight: normal;
+        font-family: $fontFamily;
+        font-size: 1.125em;
+    }
+    
+    .pullquote {
+        width: $pullQuote_width_percent;
+        float: right;
+        clear: right;
+        border-width: 1px;
+    }
+    
+    .callout {
+        padding: 1em $pullQuote_padding_percent;
+        margin-left: 2*$pullQuote_padding_percent;
+        margin-right: 2*$pullQuote_padding_percent;
+    }
+
+    /* Plone Form gen */
+    #pfg-fieldwrapper fieldset.PFGFieldsetWidget {
+        border: none;
+        padding: 0;
+        
+        legend {
+            @include h2_style;
+            display: block;
+            width: 100%;
+            margin-top: 0;
+        }
+        
+        div.formHelp {
+            margin-bottom: 1em;
+        }
+    }
+ 
+    .eventDetails {
+        margin-top: 1.5em;
+        max-width: 250px;
+        
+        table.listing a {
+            text-decoration: underline;
+        }
+    
+    }
+
+    /* Give a dt.no-description a bottom margin of 1em, since we're removing the dd if it doesn't have a description. */
+    dt.no-description {
+        margin-bottom: 1em;
+    }
+    
+    .description {
+        display: block;
+        line-height: 1.375em;
+        margin-top: 0.125em;
+        margin-bottom: 0;
+        font-weight: normal;
+        font-size: 0.9375em;
+    }
+    
+    blockquote {
+        border-left: none;
+        padding-left: 2em;
+        color: $globalFontColor;
+    }
+    
+    
+    .effectiveDate {
+        margin-bottom: 0.6875em;
+        margin-top: 0.125em;
+        font-size: 0.875em;
+        color: $rightPortletDiscreteTextColor;
+        font-weight: normal;
+    }
+
+    /* Remove the Visual Highlight Style */
+    .visualHighlight {
+        background-color:transparent;
+    }
+    
+    dd a {
+        border-bottom: none;
+    }
+    
+    q {
+        font-family: $fontFamily;
+        font-size: 0.6875em;
+        font-style: normal;
+    }
+
+    h3.speaker-institution {
+        margin: 0 0 1em;
+    }
+
+    /*###*/
+
 }
 
-#content .documentText p {
-    margin: 0.375em 0 1.125em 0;
+/* CSS for presenting an h2 styled as an h3 */
+
+body.custom-h2-as-h3 {
+    #content {
+        .documentText {
+            h2 {
+                @include h3_style;
+            }
+        }
+    }
 }
 
-#content .documentText dd {
-    margin: 0 0 1.5em 0;
+body.template-person_view #content h2,
+body.template-by_county_listing.custom-two-column #content h2,
+#pfg-fieldwrapper fieldset.PFGFieldsetWidget fieldset legend {
+    @include h3_style;
 }
 
-#content .documentText dt {
-    margin: 0.375em 0 0.5em 0;
-}
-
-/* Removing because this breaks listings with icons */
-
-#content a.link-external,
-#content a.link-https {
-    background-image: none;
-    padding: 0;
-}
-
-#content .contentActions a {
-    padding: 0 0.5em;
-}
-
-.contentActions {
-    border-bottom: 1px solid $contentViewBorderColor;
-}
-
-#content a, #content a:link {
-    color: $contentLinkColor;
-    border-bottom: 1px solid $contentLinkBorderColor;
-    text-decoration: none;
-}
-
-#content .contentLeadImageContainer a,
-#content .contentLeadImageContainer a:hover {
-    border-bottom: none;
-    cursor: zoom-in;
-}
-
-#content h1.noBreadcrumbs {
-    margin-top: 0.75em;
-}
-
-#content h1,
-#content h1.documentFirstHeading {
-    color: $documentTitleColor;
-    font-weight: normal;
-    font-weight: 600;
-    border: none;
-    font-size: 2em;
-    margin-bottom: 0.25em;
-    line-height: 1.25em;
-}
-
-html.kupu-html {
-    font-size: 0.9375em !important;
-    padding: 0 0.75em;
-    background-color: $kupuBackgroundColor;
-}
-
-.kupu-fulleditor, .kupu-toolboxes {
-    border: 1px solid $fieldBorderColor;
-}
-
-html.kupu-html body#content {
-    margin: 0;
-    padding: 0;
-    width: auto;
-    background-image: none;
-}
-
-#content h2, html.kupu-html h2,
-#pfg-fieldwrapper fieldset.PFGFieldsetWidget legend {
-    color: $documentHeadingColor;
-    font-size: 1.6875em;
-    margin: 1.25em 0 0.5em 0;
-    padding: 0 0 0.0625em 0;
-    border: none;
-    font-weight: normal;
-    border-bottom: 1px solid $documentHeadingBorderColor;
-    line-height: 1.25em;
-}
-
-#pfg-fieldwrapper fieldset.PFGFieldsetWidget {
-    border: none;
-    padding: 0;
-}
-
-#pfg-fieldwrapper fieldset.PFGFieldsetWidget legend {
-    display: block;
-    width: 100%;
-}
-
-#pfg-fieldwrapper fieldset.PFGFieldsetWidget div.formHelp {
-    margin-bottom: 1em;
-}
 
 /*
     For Plone 4.1.x (using Archetypes 1.7.14) where the CSS red square
@@ -150,196 +347,29 @@ div.field .formQuestion span.required {
     color: transparent !important;
 }
 
-#content h2 strong,
-html.kupu-html h2 strong,
-#content h2 b,
-html.kupu-html h2 b {
-    font-weight: normal;
-}
+/* File View Template Fixes */
+body.template-file_view {
+    #content {
+        .documentContributors h2 {
+            font-size: 1.607142857142857em;
+        }
 
+        h2.h3,
+        .documentContributors h2 {
+            margin-top: 1.25em;
+        }
+        
+        h3 {
+            font-weight: bold;
+            font-family: $headingFontFamily;
+        }
+        
+    }
 
-
-
-
-
-body #content h2.h3,
-body #content .documentContributors h2,
-#content h3, html.kupu-html h3,
-body.custom-h2-as-h3 #content-text.documentText h2,
-body.custom-h2-as-h3 #content-core.documentText h2,
-body.custom-h2-as-h3 #homepage-text .documentText h2,
-body.custom-h2-as-h3 .documentText h2,
-body.template-person_view #content h2,
-body.template-by_county_listing.custom-two-column #content h2,
-#pfg-fieldwrapper fieldset.PFGFieldsetWidget fieldset legend {
-    color: $documentSubHeadingColor;
-    margin: 1.125em 0 0 0;
-    padding: 0;
-    border: none;
-    font-weight: bold;
-    font-weight: 600;
-    font-family: $alternateHeadingFontFamily;
-    font-size: 1.40625em;
-}
-
-#pfg-fieldwrapper fieldset.PFGFieldsetWidget fieldset legend {
-    margin-top: 0;
-}
-
-body.template-file_view #content .documentContributors h2 {
-    font-size: 1.607142857142857em;
-}
-
-body.template-file_view #content h2.h3,
-body.template-file_view #content .documentContributors h2 {
-    margin-top: 1.25em;
-}
-
-#content h4,
-html.kupu-html h4,
-#content h5,
-html.kupu-html h5 {
-    font-family: $alternateHeadingFontFamily;
-    font-size: 1.25em;
-    color: $globalFontColor;
-    margin-top: 1em;
-    line-height: 1.3125em;
-}
-
-#content h5, html.kupu-html h5 {
-    font-size: 1.0625em;
-}
-
-body.template-person_view #content h3 {
-    font-weight: bold;
-    font-family: $headingFontFamily;
-}
-
-#content h3.speaker-institution {
-    margin: 0 0 15px;
-}
-
-#content .documentDescription,
-#content #description {
-    font-weight: normal;
-    color: $documentDescriptionColor;
-    font-size: 1.25em;
-    margin: 0 0 1.5em;
-    font-family: $fontFamily;
-    line-height: 1.5em;
-}
-
-.documentByLine {
-    font-size: 0.75em;
-}
-
-dt {
-    font-weight: normal;
-}
-
-/* For image captions */
-#portal-column-content p.discreet img {
-    margin-top: 1em;
-    display: block;
-}
-
-#portal-column-content p.discreet br {
-    line-height: 0.25em;
-}
-
-#portal-column-content p.discreet {
-    margin-bottom: 2em;
-}
-
-.image-left, .image-right {
-    border: none;
-}
-
-
-/* Restyle pull quote */
-
-#content .pullquote,
-#content .callout,
-.portletStaticText .callout {
-    border-width: 1px 1em;
-    border-style: solid;
-    border-color: $pullQuoteBorderColor;
-    padding: 1em $pullQuote_padding_percent;
-    margin: 0 0 1em $pullQuote_padding_percent;
-    line-height: 1.4375em;
-    color: $pullQuoteTextColor;
-    background-color: $pullQuoteBackgroundColor;
-    font-weight: normal;
-    font-family: $fontFamily;
-    font-size: 1.125em;
-}
-
-#content .pullquote {
-    width: $pullQuote_width_percent;
-    float: right;
-    clear: right;
-    border-width: 1px;
-}
-
-#content .documentText .callout {
-    font-weight: normal;
-    padding: 1em $pullQuote_padding_percent;
-    margin-left: 2*$pullQuote_padding_percent;
-    margin-right: 2*$pullQuote_padding_percent;
-}
-
-.eventDetails {
-    margin-top: 1.5em;
-    max-width: 250px;
-}
-
-.eventDetails table.listing a {
-    text-decoration: underline;
-}
-
-/* Give a dt.no-description a bottom margin of 1em, since we're removing the dd if it doesn't have a description. */
-dt.no-description {
-    margin-bottom: 1em;
-}
-
-.description {
-    display: block;
-    line-height: 1.375em;
-    margin-top: 0.125em;
-    margin-bottom: 0;
-    font-weight: normal;
-    font-size: 0.9375em;
-}
-
-blockquote {
-    border-left: none;
-    padding-left: 2em;
-    color: $globalFontColor;
-}
-
-
-.effectiveDate {
-    margin-bottom: 0.6875em;
-    margin-top: 0.125em;
-    font-size: 0.875em;
-    color: $rightPortletDiscreteTextColor;
-    font-weight: normal;
-}
-
-
-/* Remove the Visual Highlight Style */
-.visualHighlight {
-    background-color:transparent;
-}
-
-#content dd a {
-    border-bottom: none;
-}
-
-q {
-    font-family: $fontFamily;
-    font-size: 0.6875em;
-    font-style: normal;
+    #disclaimer {
+        margin-top: 1em;
+        border: none;
+    }
 }
 
 /* No underlining in content area */
@@ -360,40 +390,41 @@ q {
    border-color: $globalBorderColor;
 }
 
-body.template-file_view #disclaimer {
-    margin-top: 1em;
-    border: none;
-}
 
 #content .eventSummary {
     margin-bottom: 1.5em;
-}
 
-#content .eventSummary a span {
-    text-decoration: none;
-    border-bottom: 1px solid $rightPortletHeaderBorderColor;
-}
+    div {
+        padding: 0.2em 0;
+    }
 
-#content .eventSummary a:hover span {
-    border-bottom: 1px solid $contentLinkColor;
-}
+    a,
+    a:hover {
 
-#content .eventSummary a {
-    text-decoration: none;
-}
+        text-decoration: none;
 
-#content .eventSummary .event_add_calendar a,
-#content .eventSummary .event_add_calendar a:hover {
-    border-bottom: none;
-}
+        span {
+            text-decoration: none;
+            border-bottom: 1px solid $rightPortletHeaderBorderColor;
+        }
+    }
 
-#content .eventSummary a.img {
-    padding-right: 0.375em;
-    margin-left: 0.375em;
-}
+    a:hover span {
+        border-bottom: 1px solid $contentLinkColor;
+    }
 
-#content .eventSummary div {
-    padding: 0.2em 0;
+    .event_add_calendar {
+        a,
+        a:hover {
+            border-bottom: none;
+        }
+    
+        a.img {
+            padding-right: 0.375em;
+            margin-left: 0.375em;
+        }
+    
+    }
 }
 
 #content .eventSummary h3,
@@ -476,55 +507,15 @@ table.events td.canceled span,
     border-color: $globalBorderColor;
 }
 
-
 .discreet {
     color: $discreetColor;
 }
 
-
-#content h1 a,
-#content h2 a,
-#content h3 a,
-#content h4 a,
-#content h5 a,
-#content h6 a,
-#content h1 a:link,
-#content h2 a:link,
-#content h3 a:link,
-#content h4 a:link,
-#content h5 a:link,
-#content h6 a:link,
-#content h1 a:hover,
-#content h2 a:hover,
-#content h3 a:hover,
-#content h4 a:hover,
-#content h5 a:hover,
-#content h6 a:hover {
-    text-decoration: none;
-    color: $globalFontColor;
-    border-bottom: none;
-}
-
-#content ul {
-    list-style-image: url(bullet.png);
-    list-style-type: square;
-}
-
-html.kupu-html #content ul {
-    margin: 0.375em 0 1.125em 2.5em;
-}
-
-#content ul.kupu-tabs li {
-    display: inline;
-}
-
 /* Remove dashed underline from date abbr */
+
 abbr.dtstart, abbr.dtend {
     border-bottom: 0;
 }
-
-
-
 
 dl.person-connect img {
     margin: 0 0.5em;

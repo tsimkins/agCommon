@@ -613,6 +613,9 @@
 }
 
 .portletAssignments {
+    font-size: 0.6875em;
+    padding: 0 0.5em;
+
     .managedPortlet {
         .portletHeader {
             background-color: transparent;
@@ -627,6 +630,21 @@
         }
     }
 
+}
+
+#content .portletAssignments {
+    font-size: 1em;
+}
+
+#portal-column-one .managePortletsLink {
+    font-size: 0.5625em;
+    font-size: 0.625rem;
+}
+
+.managePortletsLink, 
+.managePortletsFallback {
+    font-size: 0.875em;
+    font-size: 0.625rem;
 }
 
 .portletDropdown select {
@@ -647,3 +665,4 @@
 .portlet ul.relatedItems li {
     margin-left: 2px;
 }
+

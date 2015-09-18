@@ -6,14 +6,13 @@
 #portal-column-content .documentEditable {
     padding: 0;
     margin: 0 1em 1em;
+    
+    #content {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
 }
-
-#portal-column-content .documentEditable #content {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
 
 /* Hide Short Name on all screens.  Will be unhidden on the Edit screen by JS */
 #archetypes-fieldname-id {
@@ -29,15 +28,19 @@
 
 /* Resolve different treatment of icons in Add New dropdown */
 
-.actionMenu .actionMenuContent li a {
-    padding: 0;
-    display: block;
-    margin: 0.1em 0.25em;
+.actionMenu .actionMenuContent li {
+    a {
+        padding: 0;
+        display: block;
+        margin: 0.1em 0.25em;
+    }
+
+    a:hover {
+        background-color: $contentViewBorderColor;
+    }
 }
 
-.actionMenu .actionMenuContent li a:hover {
-    background-color: $contentViewBorderColor;
-}
+/* Personal Tools */
 
 #portal-personaltools-wrapper {
     font-size: 0.75em;
@@ -46,109 +49,104 @@
     z-index: 25;
     background-color: $globalBackgroundColor;
     border: 1px solid $fieldBorderColor;
+    
+    .actionMenu.activated .actionMenuContent {
+        z-index:25;
+    }
+
 }
 
 #portal-personaltools {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    
+    .actionMenuContent ul {
+        padding-top: 0.25em;
+        
+        li {
+            display: block;
+            margin: 0.375em 0.125em;
+        }
+    }
 }
+
 
 body.icons-on #portal-header {
     padding-bottom: 1em;
-}
-
-#portal-personaltools-wrapper .actionMenu.activated .actionMenuContent {
-    z-index:25;
-}
-
-#portal-personaltools .actionMenuContent ul {
-    padding-top: 0.25em;
-}
-
-#portal-personaltools .actionMenuContent li {
-    display: block;
-    margin: 0.375em 0.125em;
 }
 
 #content dl.portalMessage {
     font-size: 0.75em;
 }
 
-dl.portalMessageOneColumn {
+#content  dl.portalMessageOneColumn {
     background-color: $notifyBackgroundColor;
+
+    dt,
+    dd {
+        float: none;
+        font-size: 1.25em;
+        padding: 0.5em 0.75em;
+    }
+
+    dt {
+        margin: 0;
+        background-color: $notifyHeadingColor;
+    }
+    
+    dd {
+        margin: 0 0.25em;
+        font-size: 1.125em;
+    }
+
 }
 
-#content dl.portalMessageOneColumn dt,
-#content dl.portalMessageOneColumn dd {
-    float: none;
-    font-size: 1.25em;
-    padding: 0.5em 0.75em;
-}
 
-#content dl.portalMessageOneColumn dt {
-    margin: 0;
-    background-color: $notifyHeadingColor;
-}
-
-dl.portalMessageOneColumn dd {
-    margin: 0 0.25em;
-    font-size: 1.125em;
-}
 
 /* Fix the lineheight set to 2em */
-.icons-on #portal-column-one a[class *= 'contenttype-'],
-.icons-on #portal-column-one .contenttype-document,
-.icons-on #portal-column-one .contenttype-event,
-.icons-on #portal-column-one .contenttype-folder,
-.icons-on #portal-column-one .contenttype-link,
-.icons-on #portal-column-one .contenttype-news-item,
-.icons-on #portal-column-one .contenttype-plone-site,
-.icons-on #portal-column-one .contenttype-topic {
-    line-height: 1.5em;
-    display: block;
-}
-
-.icons-on #content a[class *= 'contenttype-'],
-.icons-on #content .contenttype-document,
-.icons-on #content .contenttype-event,
-.icons-on #content .contenttype-folder,
-.icons-on #content .contenttype-link,
-.icons-on #content .contenttype-news-item,
-.icons-on #content .contenttype-plone-site,
-.icons-on #content .contenttype-topic {
-    line-height: 1.5em;
-    display: block;
-}
-
-/* Folder Items table needs 2em */
-
-.icons-on #content #listing-table a[class *= 'contenttype-'],
-.icons-on #content #listing-table .contenttype-document,
-.icons-on #content #listing-table .contenttype-event,
-.icons-on #content #listing-table .contenttype-folder,
-.icons-on #content #listing-table .contenttype-link,
-.icons-on #content #listing-table .contenttype-news-item,
-.icons-on #content #listing-table .contenttype-plone-site,
-.icons-on #content #listing-table .contenttype-topic {
-    line-height: 2em;
-    display: block;
+.icons-on {
+    #portal-column-one, 
+    #content {
+        a[class *= 'contenttype-'],
+        .contenttype-document,
+        .contenttype-event,
+        .contenttype-folder,
+        .contenttype-link,
+        .contenttype-news-item,
+        .contenttype-plone-site,
+        .contenttype-topic {
+            line-height: 1.5em;
+            display: block;
+        }
+    }
+    
+    #portal-column-two {
+        line-height: 1.5em;
+        display: block;
+        padding-top: 3px;
+    } 
+    
+    /* Folder Items table needs 2em */
+    
+    #content {
+        #listing-table {
+            a[class *= 'contenttype-'],
+            .contenttype-document,
+            .contenttype-event,
+            .contenttype-folder,
+            .contenttype-link,
+            .contenttype-news-item,
+            .contenttype-plone-site,
+            .contenttype-topic {
+                line-height: 2em;
+                display: block;
+            }
+        }
+    }
 }
 
 .icons-on #content #listing-table a {
     border-bottom: none;
-}
-
-.icons-on #portal-column-two a[class *= 'contenttype-'],
-.icons-on #portal-column-two .contenttype-document,
-.icons-on #portal-column-two .contenttype-event,
-.icons-on #portal-column-two .contenttype-folder,
-.icons-on #portal-column-two .contenttype-link,
-.icons-on #portal-column-two .contenttype-news-item,
-.icons-on #portal-column-two .contenttype-plone-site,
-.icons-on #portal-column-two .contenttype-topic {
-    line-height: 1.5em;
-    display: block;
-    padding-top: 3px;
 }
 
 
@@ -162,35 +160,12 @@ dl.portalMessageOneColumn dd {
     padding: 0 0.5em;
 }
 
-#portal-column-one .managePortletsLink {
-    font-size: 0.5625em;
-    font-size: 0.625rem;
-}
-
-.managePortletsLink, .managePortletsFallback {
-    font-size: 0.875em;
-    font-size: 0.625rem;
-}
-
-.portletAssignments {
-    font-size: 0.6875em;
-    padding: 0 0.5em;
-}
-
-#content .portletAssignments {
-    font-size: 1em;
-}
 
 /* For deleted events */
 
 a.state-deleted {
     text-decoration: line-through;
 }
-
-
-
-
-
 
 
 /* plone.global_sections breaks @@manage-viewlets layout */
@@ -212,31 +187,35 @@ body.template-manage-viewlets #content {
 
 /* Tiny MCE */
 
-#content .ploneSkin table.mceLayout td.mceToolbar {
-    background-color: $globalBackgroundColor;
-    border: 1px solid $fieldBorderColor;
-    border-bottom-width: 0;
-    padding: 8px 0;
-}
+#content {
+    .ploneSkin {
+       
+        .mceIframeContainer {
+            border: 1px solid $fieldBorderColor;
 
-#content .ploneSkin .mceIframeContainer {
-    border: 1px solid $fieldBorderColor;
-}
+            iframe {
+                min-height: 500px;
+            }
+        }
+        
+        table.mceLayout {
+            border-collapse: separate;
 
-#content .ploneSkin .mceIframeContainer iframe {
-    min-height: 500px;
-}
+            td.mceToolbar {
+                background-color: $globalBackgroundColor;
+                border: 1px solid $fieldBorderColor;
+                border-bottom-width: 0;
+                padding: 8px 0;
+            }
 
-#content .ploneSkin table.mceLayout td.mceStatusbar {
-    background-color: $globalBackgroundColor;
-}
-
-#content .ploneSkin table.mceLayout td.mceStatusbar #text_resize {
-    border-color: $fieldBorderColor;
-}
-
-#content .ploneSkin table.mceLayout {
-    border-collapse: separate;
+            td.mceStatusbar {
+                background-color: $globalBackgroundColor;
+                #text_resize {
+                    border-color: $fieldBorderColor;
+                }
+            }
+        }
+    }
 }
 
 .fieldTextFormat {
@@ -324,7 +303,6 @@ div.formControls {
     margin: 0.5em 0;
 }
 
-
 .pfg-form div.formControls input[type="submit"] {
     background: #458BDF; /* UI */
     -webkit-border-radius: 5;
@@ -353,14 +331,14 @@ input[type="submit"],
 }
 
 
-
 /* Hide byline on body.no-icons */
 
-body.custom-no-icons #plone-document-byline,
-body.custom-no-icons .documentByLine {
-    display: none;
+body.custom-no-icons {
+    #plone-document-byline,
+    .documentByLine {
+        display: none;
+    }
 }
-
 
 /* Unbold labels for checkboxes and radio buttons */
 
@@ -376,18 +354,47 @@ div.ArchetypesSelectionWidget input.noborder {
 
 /* Sharing tab */
 
-body.template-sharing #portal-column-one,
-body.template-sharing #portal-column-two,
-body.template-sharing .contentLeadImageContainer {
-        display: none;
+body.template-sharing {
+    #portal-column-one,
+    #portal-column-two,
+    .contentLeadImageContainer {
+            display: none;
+    }
+
+    #portal-column-content.sl,
+    #portal-column-content.sr,
+    #portal-column-content.sl.sr {
+        width: 100%;
+    }
+    
+    #user-group-sharing-container {
+        font-size: 0.875em;
+    }
 }
 
-body.template-sharing #portal-column-content.sl,
-body.template-sharing #portal-column-content.sr,
-body.template-sharing #portal-column-content.sl.sr {
-    width: 100%;
+html.kupu-html {
+    font-size: 0.9375em !important;
+    padding: 0 0.75em;
+    background-color: $kupuBackgroundColor;
+    
+    body#content {
+        margin: 0;
+        padding: 0;
+        width: auto;
+        background-image: none;
+        
+        ul {
+            margin: 0.375em 0 1.125em 2.5em;
+        }
+
+    }
+
 }
 
-body.template-sharing #user-group-sharing-container {
-    font-size: 0.875em;
+.kupu-fulleditor, .kupu-toolboxes {
+    border: 1px solid $fieldBorderColor;
+}
+
+#content ul.kupu-tabs li {
+    display: inline;
 }
