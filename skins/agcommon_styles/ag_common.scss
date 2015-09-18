@@ -94,11 +94,6 @@ div.overlay-iframe, div.overlay-ajax {
     font-size: 0.75em !important;
 }
 
-.pb-ajax .overlaycontent table.group td {
-    line-height: 1.5em !important;
-}
-
-
 /* agendaLinks anchors for agenda view */
 
 body.template-agenda_view #content .agendaLinks ul {
@@ -424,7 +419,6 @@ input {
 body.template-register_fg_base_view_p3 #content .event-registration,
 body.template-register_fg_base_view_p3 #content .event_when,
 body.template-register_fg_base_view_p3 #content .event_where {
-    line-height: 1.3125em;
     margin-bottom: 0.375em;
 }
 

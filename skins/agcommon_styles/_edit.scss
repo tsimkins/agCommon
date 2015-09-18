@@ -116,7 +116,6 @@ body.icons-on #portal-header {
         .contenttype-news-item,
         .contenttype-plone-site,
         .contenttype-topic {
-            line-height: 1.5em;
             display: block;
         }
     }
@@ -133,7 +132,6 @@ body.icons-on #portal-header {
             .contenttype-news-item,
             .contenttype-plone-site,
             .contenttype-topic {
-                line-height: 2em;
                 display: block;
             }
         }
@@ -151,7 +149,6 @@ body.icons-on #portal-header {
 }
 
 #content-views a, #content li.formTab a, #content-core li.formTab a {
-    line-height: 2em;
     padding: 0 0.5em;
 }
 
@@ -241,7 +238,6 @@ body.template-manage-viewlets #content {
 }
 
 .icons-on #listing-table td {
-    line-height: 1.5em;
 }
 
 /* Contents table */
@@ -290,7 +286,6 @@ input#title {
 
 .formHelp {
     font-size: 0.875em;
-    line-height: 1.375em;
     color: $fieldHelpColor;
 }
 

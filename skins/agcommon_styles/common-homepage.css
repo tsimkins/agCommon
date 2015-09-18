@@ -92,7 +92,6 @@
     margin-bottom: 0;
     font-size: 1.25em;
     color: #2F2F2F;
-    line-height: 1.375em;
     margin-bottom: 0.75em; }
   #content #homepage-text .documentText {
     font-size: 0.875em; }
@@ -278,7 +277,6 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 
 #rightcolumn .portletItem a.title,
 #rightcolumn .portletItem li.navTreeItem {
-  line-height: 1.25em;
   font-size: 0.84375em;
   padding: 0; }
 

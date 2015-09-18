@@ -7,6 +7,7 @@ body {
     background-repeat: repeat-x;
     font-size: 100%;
     font-family: $fontFamily;
+    line-height: 1.625;
 }
 
 /* = visual-portal-wrapper ================================== */
@@ -70,7 +71,6 @@ $siteTitleRightPadding: $searchBoxWidth + 3*$column_padding;
         font-weight: 600;
         color: $subsiteHeaderTextColor;
         font-size: 1.375em;
-        line-height: 1.25em;
     }
 }
 
@@ -180,8 +180,6 @@ $siteTitleRightPadding: $searchBoxWidth + 3*$column_padding;
                 display: block;
                 font-size: 0.875em;
                 letter-spacing: 0.01em;
-                line-height: 1.6875em;
-                line-height: 2em;
                 margin: 0;
                 padding: 1em 0.56251em;
                 text-align: center;

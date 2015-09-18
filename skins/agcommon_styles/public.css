@@ -29,7 +29,6 @@ q {
 sup,
 sub {
     height: 0;
-    line-height: 1;
     vertical-align: baseline;
     _vertical-align: bottom;
     position: relative;
@@ -280,7 +279,6 @@ dl dt span.summary a {
 /* @group Content Area */
 
 #content {
-    line-height: 1.5em;
     clear: both;
     margin: 1em 0.25em 2em 0.25em;
 }
@@ -356,7 +354,6 @@ body#content {
     overflow-x: auto;
     font-size: 90%;
     margin-bottom: 1em;
-    line-height: 1.25em;
 }
 #content pre.python,
 .portletStaticText pre.python {

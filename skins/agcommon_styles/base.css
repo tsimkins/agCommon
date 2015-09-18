@@ -18,7 +18,6 @@ dl.portlet ol,
 dl.portlet li,
 .portletStaticText li {
     margin-bottom: 0.25em;
-    line-height: 1.5em;
     display: list-item;
 }
 
@@ -125,7 +124,6 @@ table.listing td {
     border-right: 1px solid #ddd;
 }
 .icons-on #listing-table td {
-    line-height: 2em;
 }
 table.listing a {
     border: none;
@@ -239,7 +237,6 @@ div > .admonition-title {
     margin: 0 0.5em 0 0;
     padding: 0.5em 0.75em;
     color: White;
-    line-height: 1.25em;
 }
 dl.portalMessage dd,
 div.attention > .last,
@@ -253,7 +250,6 @@ div.tip > .last,
 div.warning > .last {
     padding: 0.5em 0.5em;
     margin: 0;
-    line-height: 1.25em;
 }
 
 dl.warning {
@@ -324,7 +320,6 @@ dl.collapsible dt.collapsibleHeader {
     display: block;
     float: left;
     background: White;
-    line-height: 1.2em;
     vertical-align: middle;
     font-size: 90%;
     position: relative;
@@ -363,7 +358,6 @@ dl.collapsedBlockCollapsible dt.collapsibleHeader {
     position: relative;
     margin: 0 0 0 1em;
     padding: 0 0.5em 0 2em;
-    line-height: 1.2em;
     cursor: pointer;
     background: White url(treeCollapsed.png) no-repeat 0.5em 50%;
 }
@@ -382,7 +376,6 @@ dl.collapsedInlineCollapsible dt.collapsibleHeader {
     float: none;
     margin: 0;
     padding: 0 0 0 2em;
-    line-height: 1em;
     cursor: pointer;
     display: inline;
 }
@@ -486,7 +479,6 @@ fieldset#search-field {
 
 #rss-subscription {
 	float: left;
-	line-height: 3em;
 }
 #search-results-bar .actionMenuContent {
     margin-top: 1em;
@@ -637,7 +629,6 @@ dl.toc dd ol {
 
 #portal-sitemap > li {
     border-bottom:0.1em dotted #ddd;
-    line-height:1.8em;
     padding:0.25em 1em;
     margin-bottom: 0;
 }
@@ -987,7 +978,6 @@ a.historyComparePrevious span {
 .icons-on .contenttype-topic,
 .icons-on #plone-contentmenu-factories .contenttype-file,
 .icons-on #plone-contentmenu-factories .contenttype-image {
-    line-height: 2em;
     display: inline-block;
     padding-left: 20px !important;
 }
@@ -1011,7 +1001,6 @@ a.historyComparePrevious span {
 .optionsBox LABEL {
     padding: 2px 0 0 0;
     display: block;
-    line-height: 1em;
     font-weight: normal;
 }
 .optionsBox input{

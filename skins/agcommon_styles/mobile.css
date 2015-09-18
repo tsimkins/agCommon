@@ -17,12 +17,10 @@
 }
 #content-views a {
 	font-size: 150%;
-	line-height: 2em !important;
 	padding: 0.5em;
 }
 #content li.formTab a {
 	font-size: 140%;
-	line-height: 2em !important;
 	padding: 0.25em;
 }
 #edit-bar {
@@ -31,7 +29,6 @@
 
 #contentActionMenus a {
 	width: 100%;
-	line-height: 2em !important;
 	font-size: 150%;
 }
 

@@ -64,7 +64,7 @@
   display: block;
   clear: both;
   visibility: hidden;
-  line-height: 0;
+  linexxx-height: 0;
   height: 0; }
 
 html[xmlns] .slides {
@@ -119,8 +119,7 @@ html[xmlns] .slides {
   background: rgba(0, 0, 0, 0.3);
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  font-size: 14px;
-  line-height: 18px; }
+  font-size: 14px; }
 
 /* Direction Nav */
 .flex-direction-nav {
@@ -242,29 +241,29 @@ html[xmlns] .slides {
   .flexslider .tileHeadline {
     font-weight: normal;
     font-size: 1.375em;
-    line-height: 1.1875em;
-    margin-top: 0.5em; }
+    margin-top: 0.5em;
+    line-height: 1.25; }
     .flexslider .tileHeadline a,
     .flexslider .tileHeadline a:visited {
       color: #0075BD !important;
       /* UI */ }
-  .flexslider .tileBody p {
-    margin: 0.25em 0 0 0;
-    color: #4D4D4D;
-    font-size: 0.875em;
-    line-height: 1.375em; }
+  .flexslider .tileBody {
+    margin: 0.5em 0 0.75em; }
+    .flexslider .tileBody p {
+      margin: 0.25em 0 0 0;
+      color: #4D4D4D;
+      font-size: 0.875em; }
   .flexslider .tileFooter {
-    margin: 0.25em 0 0.25em 0;
+    margin: 0.5em 0 0.25em 0;
     padding: 0; }
     .flexslider .tileFooter p {
       margin: 0;
       padding: 0;
-      text-align: left;
-      line-height: 1.5625em; }
+      text-align: left; }
     .flexslider .tileFooter a {
-      font-size: 0.6875em;
+      font-size: 0.75em;
       text-decoration: none;
-      padding: 0.25em 0.375em;
+      padding: 0.25em 0.5em;
       background-color: #FFE269;
       /* UI */
       border: 1px solid #EFCE4A;

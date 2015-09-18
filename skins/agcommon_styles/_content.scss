@@ -10,14 +10,14 @@
 
 @mixin h2_style() {
     color: $documentHeadingColor;
-    font-size: 1.6875em;
+    font-size: 1.625em;
     margin: 1.25em 0 0.5em 0;
     padding: 0 0 0.0625em 0;
     border: none;
     font-weight: bold;
     font-weight: 600;
     border-bottom: 1px solid $documentHeadingBorderColor;
-    line-height: 1.25em;
+    line-height: 1.5;
 }
 
 @mixin h3_style() {
@@ -26,9 +26,10 @@
     padding: 0;
     border: none;
     font-weight: bold;
-    font-weight: 400;
+    font-weight: 600;
     font-family: $alternateHeadingFontFamily;
-    font-size: 1.40625em;
+    font-size: 1.25em;
+    line-height: 1.5;
 }
 
 
@@ -44,10 +45,14 @@ h1, h2 {
     letter-spacing: 0;
 }
 
+b, strong {
+    font-weight: bold;
+    font-weight: 600;
+}
+
 #content {
     background-color: transparent;
     padding: 0 0 1.5em 0;
-    font-size: 0.875em;
     margin: 0 $content_area_margin_percent_full;
     width: $content_area_width_percent_full;
 }
@@ -141,7 +146,7 @@ h1, h2 {
         border: none;
         font-size: 2em;
         margin-bottom: 0.25em;
-        line-height: 1.25em;
+        line-height: 1.25;
     }
 
     h2, 
@@ -161,10 +166,10 @@ h1, h2 {
     html.kupu-html h4,
     html.kupu-html h5 {
         font-family: $alternateHeadingFontFamily;
-        font-size: 1.25em;
+        font-size: 1.125em;
         color: $globalFontColor;
         margin-top: 1em;
-        line-height: 1.3125em;
+        line-height: 1.375;
     }
     
     h5, 
@@ -179,7 +184,7 @@ h1, h2 {
         font-size: 1.25em;
         margin: 0 0 1.5em;
         font-family: $fontFamily;
-        line-height: 1.5em;
+        line-height: 1.5;
     }
     
     .documentByLine {
@@ -196,7 +201,7 @@ h1, h2 {
         }
     
         br {
-            line-height: 0.25em;
+            line-height: 0.25;
         }
     }
     
@@ -213,7 +218,6 @@ h1, h2 {
         border-color: $pullQuoteBorderColor;
         padding: 1em $pullQuote_padding_percent;
         margin: 0 0 1em $pullQuote_padding_percent;
-        line-height: 1.4375em;
         color: $pullQuoteTextColor;
         background-color: $pullQuoteBackgroundColor;
         font-weight: normal;
@@ -268,7 +272,7 @@ h1, h2 {
     
     .description {
         display: block;
-        line-height: 1.375em;
+        line-height: 1.375;
         margin-top: 0.125em;
         margin-bottom: 0;
         font-weight: normal;
@@ -453,7 +457,7 @@ h2.flexslider-title,
 
 
 #content .eventDateLocation {
-    line-height: 1.3125em;
+    line-height: 1.375;
 }
 
 #content .eventDateLocation.canceled,

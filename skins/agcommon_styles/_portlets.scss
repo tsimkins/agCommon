@@ -18,7 +18,6 @@
         font-family: $portletHeaderFontFamily;
         font-size: 1.375em;
         font-weight: normal;
-        line-height: 1.375em;
         margin: 0 0 0.375em 0;
         padding: 0;
         text-align: left;
@@ -121,11 +120,11 @@
         }
 
         a.title {
-            line-height: 1.25em;
             font-weight: normal;
             margin-top: 0;
             border: none;
             display: block;
+            line-height: 1.5;
         }
 
         a.title:hover {
@@ -138,7 +137,6 @@
             margin: 0.125em 0 0 0;
             font-weight: normal;
             text-align: left;
-            line-height: 1.5em;
         }
 
         .portletItemDetails {
@@ -146,9 +144,7 @@
             font-size: 0.75em;
             font-weight: normal;
             text-align: left;
-            line-height: 1.5em;
             margin-bottom: 0;
-            line-height: 1.375em;
             border: none;
             box-shadow: none;
             width: auto;
@@ -328,7 +324,6 @@
         .summary {
             margin-top: 0.375em;
             color: $rightPortletSummaryColor;
-            line-height: 1.5em;
             text-align: left;
         }
 
@@ -396,7 +391,6 @@
 
     .portletItem {
 
-        line-height: 1.1875em;
         margin: 0.875em 0;
         padding: 0;
         background-color: transparent;
@@ -512,7 +506,6 @@
         margin-bottom: 0.75em;
         display: block;
         color: $rightPortletSummaryColor;
-        line-height: 1.25em;
 
         /* Person name */
 
@@ -538,7 +531,6 @@
 
         .title {
             font-weight: bold;
-            line-height: 1.25em;
             margin-bottom: 0.5em;
         }
 
@@ -546,7 +538,6 @@
 
         .adr {
             margin-bottom: 0.9375em;
-            line-height: 1.35em;
         }
 
         /* Email */
@@ -586,7 +577,6 @@
 .portletCollection .portletItem {
     padding: 0;
     background-color: transparent;
-    line-height: 1.375em;
 }
 
 

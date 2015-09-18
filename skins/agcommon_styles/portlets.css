@@ -33,14 +33,12 @@
 
 .portletItemDetails {
 	padding-top: .5em;
-    line-height: 1.5em;
     margin-left: 1em;
     display: block;
 }
 
 #portlet-prefs a {
     border: none;
-    line-height: 2em;
 }
 
 /* @end */
@@ -57,7 +55,6 @@
     background-color: #eee;
     font-weight: bold;
     text-align: center;
-    line-height: 1.6em;
     border-bottom: none;
 }
 

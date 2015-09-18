@@ -15,7 +15,6 @@
         a {
             background-color: transparent;
             color: $leftNavTitleColor;
-            line-height: 1.4em;
             padding: 0;
             margin: 0;
             font-family: $alternateHeadingFontFamily;
@@ -36,6 +35,7 @@
                     border: none;
                     background-color: transparent;
                     color: $leftNavTextColor;
+                    line-height: 1.25;
                 }
 
                 a.state-published {
@@ -69,7 +69,6 @@
                 
                 .navTreeItem {
 
-                    line-height: 1.375em;
                     border-bottom-width: 0;
                     padding: 0.5em 0;
 
@@ -117,10 +116,3 @@
         }
     }
 }
-
-
-/* Fix the line-height */
-.icons-on .left-column-navigation .portletNavigationTree span {
-    line-height: 1.5em;
-}
-

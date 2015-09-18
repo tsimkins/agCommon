@@ -1,14 +1,16 @@
-$fontFamily: Open Sans, Verdana, Arial, Helvetica, sans-serif;
+$baseFont: Open Sans;
+
+$fontFamily: $baseFont, Verdana, Arial, Helvetica, sans-serif;
 
 $backgroundColor: #FFFFFF;
 
 $contentLinkColor: #265FCF;
 $contentLinkHoverColor: #003399;
 
-$headingFontFamily: Open Sans, Verdana, Arial, Helvetica, sans-serif;
+$headingFontFamily: $baseFont, Verdana, Arial, Helvetica, sans-serif;
 
-$portletHeaderFontFamily: Open Sans, Arial, Helvetica, Helv, sans-serif;
-$alternateHeadingFontFamily: Open Sans, Lucida Grande,Tahoma,Verdana,sans-serif;
+$portletHeaderFontFamily: $baseFont, Arial, Helvetica, Helv, sans-serif;
+$alternateHeadingFontFamily: $baseFont, Lucida Grande,Tahoma,Verdana,sans-serif;
 
 $contentViewBorderColor: #74AE0B;
 $contentViewFontColor: #578308;

@@ -26,7 +26,7 @@
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
-.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; linexxx-height: 0; height: 0;}
 html[xmlns] .slides {display: block;}
 * html .slides {height: 1%;}
 
@@ -48,7 +48,7 @@ html[xmlns] .slides {display: block;}
 /* IE rgba() hack */
 .flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
 filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
-.flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
+.flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px;}
 
 /* Direction Nav */
 .flex-direction-nav { height: 0; }
@@ -162,8 +162,8 @@ $flexsliderTextPadding_percent: 100%*($column_padding/$flexsliderWidth);
     .tileHeadline {
         font-weight: normal;
         font-size: 1.375em;
-        line-height: 1.1875em;
         margin-top: 0.5em;
+        line-height: 1.25;
     
         a,
         a:visited {
@@ -171,28 +171,30 @@ $flexsliderTextPadding_percent: 100%*($column_padding/$flexsliderWidth);
         }
     }
     
-    .tileBody p {
-        margin: 0.25em 0 0 0;
-        color: $leftNavTextColor;
-        font-size: 0.875em;
-        line-height: 1.375em;
+    .tileBody {
+        margin: 0.5em 0 0.75em;
+
+        p {
+            margin: 0.25em 0 0 0;
+            color: $leftNavTextColor;
+            font-size: 0.875em;
+        }
     }
-    
+        
     .tileFooter {
-        margin: 0.25em 0 0.25em 0;
+        margin: 0.5em 0 0.25em 0;
         padding: 0;
     
         p {
             margin: 0;
             padding: 0;
             text-align: left;
-            line-height: 1.5625em;
         }    
         
         a {
-            font-size: 0.6875em;
+            font-size: 0.75em;
             text-decoration: none;
-            padding: 0.25em 0.375em;
+            padding: 0.25em 0.5em;
             background-color: #FFE269; /* UI */
             border: 1px solid #EFCE4A; /* UI */
             

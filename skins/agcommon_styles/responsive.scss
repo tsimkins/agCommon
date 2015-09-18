@@ -144,7 +144,6 @@
                 a {
                     font-size: 1em;
                     text-align: left;
-                    line-height: 1.375em;
                     margin: 0;
                     padding: 0.75em 1em !important;
                     border: none;
@@ -306,12 +305,10 @@
 
     #viewlet-above-content .flexslider .tileHeadline {
         font-size: 1.25em;
-        line-height: 1.25em;
     }
     
     #viewlet-above-content .flexslider .tileBody p {
         font-size: 0.8125em;
-        line-height: 1.25em;
     }
 
     #viewlet-above-content .flexslider .tileFooter p {
@@ -730,7 +727,6 @@
         color: $contentBackgroundColor;
         background-color: $globalFontColor;
         font-size: 0.9375em;
-        line-height: 1.5em;
         padding: 0.25em 0.5em;
         margin: 0;
         top: 0;
@@ -932,7 +928,6 @@
         border-left: 1px solid #666666;
         border-right: 1px solid #666666;
         border-bottom: none;
-        line-height: 1.5em;
     }
     
     body.navigation-subsite .left-column-navigation .portletNavigationSubHeader {
@@ -1171,7 +1166,6 @@
         font-size: 0.8125em !important;
         font-size: 1.4375em;
         font-weight: bold;
-        line-height: 1.25em;
         margin: 0.25em 0 0 0;
         padding: 0.3125em 1.923076923076923% 0.375em 1.923076923076923% !important;
         text-align: left;
