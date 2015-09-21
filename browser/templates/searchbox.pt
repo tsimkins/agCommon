@@ -1,6 +1,8 @@
 <div id="portal-searchbox"
      i18n:domain="plone"
-     tal:define="titlez string:${here/portal_url}/process-search;">
+     tal:define="titlez string:${here/portal_url}/process-search;"
+     data-menu-title="Search"
+     tal:attributes="data-menu-icon string:${here/portal_url}/magnifying-glass.png">
                               
 
 <form method="get" action="" tal:attributes="action titlez" class="searchform">

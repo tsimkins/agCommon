@@ -114,21 +114,42 @@
     padding: 0 !important;
     position: absolute; }
 
-  #portal-top .rmm {
-    margin: 1em 2.21354%;
-    border: 1px solid #999999; }
+  #logo-site {
+    position: static;
+    padding: 1em 2.17391%;
+    margin: 1em -2.17391% 0; }
+
+  #portal-top {
+    padding-bottom: 0.25em;
+    background-image: none; }
+    #portal-top .rmm,
+    #portal-top #portal-searchbox.rmm {
+      margin: 1em 0 0;
+      border: 1px solid #999999;
+      width: 71.33152%; }
+    #portal-top #portal-searchbox.rmm {
+      width: 25.95109%; }
+      #portal-top #portal-searchbox.rmm .rmm-main-list {
+        padding: 1.5em 1.25em;
+        background-color: #F6F6F6;
+        border: 1px solid #999999; }
+    #portal-top .rmm-main-list {
+      position: absolute;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid #999999;
+      background-color: #F6F6F6; }
 
   #portal-top .rmm-toggled > :not(.rmm-toggled-controls) {
     margin: 0;
     padding: 0;
-    width: auto;
-    font-size: 0.875em; }
+    width: auto; }
 
   #portal-top .rmm > .rmm-closed > :not(.rmm-toggled-controls) {
     border: none;
     display: block;
     height: 0.1em !important;
-    margin: -0.1em 0 0 -0.1em !important;
+    margin: -10000em 0 0 -10000em !important;
     overflow: hidden;
     padding: 0 !important;
     width: 1px !important;
@@ -136,8 +157,11 @@
 
   #mobile-navigation .top-navigation.empty {
     display: none; }
+  #mobile-navigation .rmm-main-list {
+    font-size: 0.875em; }
   #mobile-navigation .portletWrapper {
-    font-size: 1em; }
+    font-size: 1em;
+    margin-bottom: 0; }
   #mobile-navigation .top-navigation, #mobile-navigation .left-column-navigation {
     margin: 0;
     padding: 0; }
@@ -163,7 +187,8 @@
     font-weight: bold;
     font-weight: 600; }
   #mobile-navigation .left-column-navigation h2.portletHeader {
-    padding: 0; }
+    padding: 0;
+    background-color: #E6E6E6; }
     #mobile-navigation .left-column-navigation h2.portletHeader a {
       display: block;
       font-size: 1em;
@@ -194,18 +219,8 @@
         display: block; }
 
   #portal-header > #portal-searchbox {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: auto;
-    position: relative;
-    width: 97.91667%;
-    border-style: solid;
-    border-color: #E6E6E6;
-    border-width: 0 0 1px 0;
-    padding: 1em 2.08333%;
-    margin: 1em 0 0 -2.08333%;
-    background-color: #F6F6F6; }
+    position: static;
+    float: right; }
 
   #portal-header {
     padding-bottom: 0 !important; } }
@@ -221,9 +236,6 @@
 
   .top-navigation {
     padding-right: 1.6%; }
-
-  #logo-college {
-    width: 35.9%; }
 
   #logo-site a {
     font-size: 1.125em; }
@@ -282,8 +294,14 @@
 
   #portal-header {
     margin: 0;
-    padding: 1em 0 1em 2.08333%;
-    border-bottom: 1px solid #E6E6E6; }
+    padding: 1em 2.08333%; }
+
+  #logo-college {
+    width: 100%; }
+    #logo-college img {
+      width: auto;
+      max-width: 100%;
+      height: 60px; }
 
   #logo-site {
     padding: 1em 2.08333% 0.75em; }
@@ -646,21 +664,6 @@
   #mobile-navigation .portlet-mobile-navigation {
     display: block; }
 
-  #logo-college {
-    width: auto;
-    margin: 0 3.07692%; }
-
-  #logo-site {
-    position: static;
-    margin-top: 1em;
-    padding: 1em 3.07692%; }
-
-  #portal-header > #portal-searchbox {
-    margin: 1em 1.53846%;
-    padding: 1em 1.53846%;
-    border: 1px solid #E6E6E6;
-    width: 93.46154%; }
-
   #portal-breadcrumbs {
     display: none; }
 
@@ -678,10 +681,8 @@
 
   #document-toc h2.portletHeader {
     display: none; }
-
   #document-toc .portlet {
     font-size: 1.25em; }
-
   #document-toc .portletItem li {
     margin-top: 0.75em;
     margin-bottom: 0.25em; }
@@ -691,10 +692,6 @@
     padding: 0;
     border: none;
     background-color: #FFFFFF; }
-
-  #portal-top {
-    padding-bottom: 0.25em;
-    background-image: none; }
 
   #homepageimage, #panorama-homepage-image, #image-header {
     display: none !important; }
@@ -719,8 +716,8 @@
     width: 100%; }
 
   #portal-column-one .imagePortlet img,
-  #portal-column-two .imagePortlet img,
   #portal-column-one .imagePortlet span,
+  #portal-column-two .imagePortlet img,
   #portal-column-two .imagePortlet span {
     margin: 0;
     text-align: left; }
@@ -738,21 +735,29 @@
     border-left: 1px solid #666666;
     border-right: 1px solid #666666;
     border-bottom: none; }
+    .left-column-navigation .portletNavigationSubHeader a {
+      font-size: 0.875em; }
+  .left-column-navigation .portletHeader.active {
+    margin: 0.25em 0 0 0; }
+  .left-column-navigation .portletNavigationTree {
+    margin: 0;
+    display: block; }
+    .left-column-navigation .portletNavigationTree .portletItem li {
+      border-top: 1px solid #E6E6E6;
+      border-bottom: none;
+      margin: 0;
+      padding: 0;
+      background-color: #F6F6F6; }
+      .left-column-navigation .portletNavigationTree .portletItem li a {
+        margin: 0;
+        padding: 1em; }
+    .left-column-navigation .portletNavigationTree .portletItem li:first-child {
+      border-top: none; }
 
   body.navigation-subsite .left-column-navigation .portletNavigationSubHeader {
     border-top: 1px solid #666666;
     border-bottom: 1px solid #666666;
     margin-top: 0.5625em; }
-
-  .left-column-navigation .portletNavigationSubHeader a {
-    font-size: 0.875em; }
-
-  .left-column-navigation .portletHeader.active {
-    margin: 0.25em 0 0 0; }
-
-  .left-column-navigation .portletNavigationTree {
-    margin: 0;
-    display: block; }
 
   #portal-column-content.sl.sr .contentLeadImageContainer,
   .contentLeadImageContainer,
@@ -791,27 +796,6 @@
 
   #portal-column-one .portletItem.rmm {
     border: 1px solid #DDDDDD; }
-
-  .left-column-navigation .portletNavigationTree .portletItem li {
-    border-top: 1px solid #E6E6E6;
-    border-bottom: none;
-    margin: 0;
-    padding: 0;
-    background-color: #F6F6F6; }
-
-  .left-column-navigation .portletNavigationTree .portletItem li:first-child {
-    border-top: none; }
-
-  .left-column-navigation .portletNavigationTree .portletItem li a {
-    margin: 0;
-    padding: 1em; }
-
-  body.mobile #portal-header > #portal-searchbox {
-    display: none; }
-
-  #portal-header {
-    width: 100%;
-    padding: 1em 0 0.375em; }
 
   .LSBox {
     display: block;
@@ -1077,6 +1061,31 @@
 /*------------------------ END resolution-480.css ----------------------------*/
 /*------------------------- resolution-360.css ------------------------------*/
 @media handheld, screen and (max-width: 360px) {
+  #logo-college {
+    width: 100%; }
+    #logo-college img {
+      width: 100%;
+      height: auto; }
+
+  /* Hide "Search" text for button */
+  #portal-searchbox.rmm .rmm-toggled-controls {
+    text-align: center; }
+  #portal-searchbox.rmm .rmm-toggled-title {
+    position: absolute;
+    height: 0.1em !important;
+    margin: -10000em 0 0 -10000em !important;
+    overflow: hidden;
+    padding: 0 !important;
+    width: 1px !important;
+    border: none; }
+  #portal-searchbox.rmm .rmm-button {
+    display: inline-block;
+    float: none;
+    margin-right: 0;
+    z-index: -1; }
+  #portal-searchbox.rmm img {
+    width: auto; }
+
   #viewlet-above-content .flexslider .flex-direction-nav li a {
     top: 23.714%; }
 

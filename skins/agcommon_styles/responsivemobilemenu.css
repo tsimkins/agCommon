@@ -22,7 +22,7 @@ License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
 
 .rmm-toggled {
 	width:100%;
-	position:relative;
+	/* position:relative; */
 	overflow:hidden;
 	margin:0 auto !important;
 }
@@ -41,7 +41,7 @@ License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
     font-size: 1rem;
 	color:#333333;
 	text-align:left;
-	position:relative;
+/*	position:relative; */
 	min-height: 2.25rem;
 }
 .rmm .rmm-toggled-title {
@@ -55,9 +55,9 @@ License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
 }
 .rmm .rmm-button {
 	display:block;
-	position:absolute;
-    top: 0.5em;
-    right: 0.5em;
+	float: right;
+/*	position:absolute; */
+    margin: 0.5em 0.5em 0 0;
 }
 
 .rmm .rmm-button span {

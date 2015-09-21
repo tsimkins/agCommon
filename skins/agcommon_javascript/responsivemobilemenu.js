@@ -24,7 +24,11 @@ License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
 function responsiveMobileMenu() {    
         jq('.rmm').each(function() {
             
-            jq(this).children().addClass('rmm-main-list');    // mark main menu list
+            var main_list = jq("<div class='rmm-main-list'></div>");
+            
+            jq(this).children().appendTo(main_list);    // mark main menu list
+            
+            jq(this).append(main_list);
             
             jq(this).addClass('minimal'); // set minimal class
             
@@ -50,7 +54,7 @@ function responsiveMobileMenu() {
                 menubutton = "<div class='rmm-button'><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div>";
             }
 
-            var $menucontrols ="<div class='rmm-toggled-controls'><h2 class='rmm-toggled-title'>" + menutitle + "</h2>" + menubutton + "</div>";
+            var $menucontrols ="<div class='rmm-toggled-controls'>" + menubutton + "<h2 class='rmm-toggled-title'>" + menutitle + "</h2></div>";
 
             jq(this).prepend("<div class='rmm-toggled rmm-closed'>"+$menucontrols+"</div>")
             jq(this).children('.rmm-toggled').append($menulist);
@@ -65,8 +69,13 @@ jq(document).ready(function() {
 
     jq('.top-navigation').addClass('rmm-main');
     jq('#portal-column-one .portlet-mobile-navigation').addClass('rmm-main');
-
+    jq('#portal-searchbox').addClass('rmm');
     jq('#document-toc').addClass('rmm');
+    
+    // Add 'rmm-multi-menu' class to portal-header.  This allows only one open
+    // menu per multi-menu object.
+    
+    jq('#portal-header').addClass('rmm-multi-menu');
     
     // Move the 'main' navigation items into one menu area
     var mobile_nav = jq('<div id="mobile-navigation" class="rmm"></div>');
@@ -83,20 +92,40 @@ jq(document).ready(function() {
         }
     );
     
-    mobile_nav.insertAfter('#portal-header');
+    mobile_nav.appendTo('#portal-header');
 
     responsiveMobileMenu();
     
     /* slide down mobile menu on click */
     
-    jq('.rmm-toggled, .rmm-toggled .rmm-button').click(function(){
-         if ( jq(this).is(".rmm-closed")) {
-              jq(this).removeClass("rmm-closed");
-         }
-         else {
-              jq(this).addClass("rmm-closed");
-         }
+    jq('.rmm-toggled').click(function(){
+                
+        if ( jq(this).is(".rmm-closed")) {
+
+            /* Close all open menus before opening a new one */
+
+            jq(this).parents('.rmm-multi-menu').each(
+                function () {
+                    jq(this).find('.rmm-toggled').addClass('rmm-closed');
+                }
+            );
+
+            jq(this).removeClass("rmm-closed");
+        }
+        else {
+            jq(this).addClass("rmm-closed");
+        }
         
     });    
+
+
+    /* 
+        Prevent clicks inside menu from toggling menu 
+        
+        https://api.jquery.com/event.stoppropagation/
+    */    
+    jq('.rmm-toggled .rmm-main-list').click(function(event){
+        event.stopPropagation();
+    });   
 
 });

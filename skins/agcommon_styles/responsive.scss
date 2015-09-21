@@ -93,24 +93,60 @@
         padding: 0 !important;
         position: absolute;
     }
-    
-    #portal-top .rmm {
-        margin: 1em 100%*(($column_padding + 1)/$maxWidth);
-        border: 1px solid $fieldBorderColor;
+
+    $headerWidth: $maxWidth - 2*$column_padding;
+
+    #logo-site {
+        position: static;
+        padding: 1em 100%*($column_padding/$headerWidth);
+        margin: 1em -100%*($column_padding/$headerWidth) 0;
     }
 
+    $menuWidth: 525px;
+    $searchWidth: $headerWidth - $menuWidth - 4px - $column_padding;
+
+    #portal-top {
+        padding-bottom: 0.25em;
+        background-image: none;
+        
+        .rmm, 
+        #portal-searchbox.rmm {
+            margin: 1em 0 0;
+            border: 1px solid $fieldBorderColor;
+            width: 100%*($menuWidth/$headerWidth);
+        }
+
+        #portal-searchbox.rmm {
+
+            width: 100%*($searchWidth/$headerWidth);
+            
+            .rmm-main-list {
+                padding: 1.5em 1.25em;
+                background-color: $globalBackgroundColor;
+                border: 1px solid $fieldBorderColor;
+            }   
+
+        }        
+        .rmm-main-list {
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-bottom: 1px solid $fieldBorderColor;
+            background-color: $globalBackgroundColor;
+        }        
+    }
+    
     #portal-top .rmm-toggled > :not(.rmm-toggled-controls) {
         margin: 0;
         padding: 0;
         width: auto;
-        font-size: 0.875em;
     }
 
     #portal-top .rmm > .rmm-closed > :not(.rmm-toggled-controls) {
         border: none;
         display: block;
         height: 0.1em !important;
-        margin: -0.1em 0 0 -0.1em !important;
+        margin: -10000em 0 0 -10000em !important;
         overflow: hidden;
         padding: 0 !important;
         width: 1px !important;
@@ -123,8 +159,14 @@
             display: none;
         }
         
+        .rmm-main-list {
+            font-size: 0.875em;
+        }
+                    
+        
         .portletWrapper {
             font-size: 1em;
+            margin-bottom: 0;
         }
     
         .top-navigation, .left-column-navigation {
@@ -166,6 +208,7 @@
 
             h2.portletHeader {
                 padding: 0;
+                background-color: $globalBorderColor;
                 
                 a {
                     display: block;
@@ -215,18 +258,8 @@
     }
     
     #portal-header > #portal-searchbox {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: auto;
-        position: relative;
-        width: 100%*(($maxWidth - $column_padding)/$maxWidth);
-        border-style: solid;
-        border-color: $globalBorderColor;
-        border-width: 0 0 1px 0;
-        padding: 1em 100%*($column_padding/$maxWidth);
-        margin: 1em 0 0 -100%*($column_padding/$maxWidth);
-        background-color: $globalBackgroundColor;
+        position: static;
+        float: right;
     }
     
     #portal-header {
@@ -252,10 +285,6 @@
 
     .top-navigation {
         padding-right: 100%*($column_padding/$maxWidth);
-    }
-
-    #logo-college {
-        width: 100%*(($logoWidth - $column_padding)/$maxWidth);
     }
 
     #logo-site a {
@@ -366,8 +395,17 @@
 
     #portal-header {
         margin: 0;
-        padding: 1em 0 1em 100%*($column_padding/$maxWidth);
-        border-bottom: 1px solid $globalBorderColor;
+        padding: 1em 100%*($column_padding/$maxWidth);
+    }
+
+    #logo-college {
+        width: 100%;
+        
+        img {
+            width: auto;
+            max-width: 100%;
+            height: 60px;
+        }
     }
 
     #logo-site {
@@ -855,24 +893,6 @@
         display: block;
     }
 
-    #logo-college {
-        width: auto;
-        margin: 0 100%*($column_padding/$maxWidth);
-    }
-    
-    #logo-site {
-        position: static;
-        margin-top: 1em;
-        padding: 1em 100%*($column_padding/$maxWidth);
-    }
-    
-    #portal-header > #portal-searchbox {
-        margin: 1em 50%*($column_padding/$maxWidth);
-        padding: 1em 50%*($column_padding/$maxWidth);
-        border: 1px solid $globalBorderColor;
-        width: 100%*(($maxWidth - 2*$column_padding - 2px)/$maxWidth); 
-    }
-
     #portal-breadcrumbs {
         display: none;
     }
@@ -891,17 +911,19 @@
         background-color: $leftSubNavBackground;
     }
     
-    #document-toc h2.portletHeader {
-        display: none;
-    }
-    
-    #document-toc .portlet {
-        font-size: 1.25em;
-    }
+    #document-toc {
+        h2.portletHeader {
+            display: none;
+        }
+        .portlet {
+            font-size: 1.25em;
+        }
 
-    #document-toc .portletItem li {
-        margin-top: 0.75em;
-        margin-bottom: 0.25em;
+        .portletItem li {
+            margin-top: 0.75em;
+            margin-bottom: 0.25em;
+        }
+
     }
     
     .left-column-navigation .portletNavigationTree .portletItem .rmm-toggled>ul {
@@ -909,11 +931,6 @@
         padding: 0;
         border: none;
         background-color: $contentBackgroundColor;
-    }
-    
-    #portal-top {
-        padding-bottom: 0.25em;
-        background-image: none;
     }
     
     #homepageimage, #panorama-homepage-image, #image-header {
@@ -941,14 +958,17 @@
         width: 100%;
     }
     
-    #portal-column-one .imagePortlet img, 
-    #portal-column-two .imagePortlet img, 
-    #portal-column-one .imagePortlet span, 
-    #portal-column-two .imagePortlet span {
-        margin: 0;
-        text-align: left;
+    #portal-column-one,
+    #portal-column-two {
+        .imagePortlet {
+            img, 
+            span {
+                margin: 0;
+                text-align: left;
+            }
+        }
     }
-    
+
     #portal-column-one .portletWrapper {
         margin: 0;
         width: 100%;
@@ -957,32 +977,53 @@
     #portal-column-one .portletWrapper:not(.portlet-mobile-navigation) {
         display: none;
     }
+
+    .left-column-navigation {
+
+        .portletNavigationSubHeader {
+            padding: 0.5em 0.375em;
+            background-color: #f5f5f5;
+            border-left: 1px solid #666666;
+            border-right: 1px solid #666666;
+            border-bottom: none;
+            
+            a {
+                    font-size: 0.875em;
+            }
+        }
+
+        .portletHeader.active {
+            margin: 0.25em 0 0 0;
+        }
     
-    .left-column-navigation .portletNavigationSubHeader {
-        padding: 0.5em 0.375em;
-        background-color: #f5f5f5;
-        border-left: 1px solid #666666;
-        border-right: 1px solid #666666;
-        border-bottom: none;
+        .portletNavigationTree {
+            margin: 0;
+            display: block;
+            
+            .portletItem {
+                li {
+                    border-top: 1px solid $globalBorderColor;
+                    border-bottom: none;
+                    margin: 0;
+                    padding: 0;
+                    background-color: $globalBackgroundColor;
+
+                    a {
+                        margin: 0;
+                        padding: 1em;
+                    }
+                }
+                li:first-child {
+                    border-top: none;
+                }
+            }
+        }
     }
     
     body.navigation-subsite .left-column-navigation .portletNavigationSubHeader {
         border-top: 1px solid #666666;
         border-bottom: 1px solid #666666;
         margin-top: 0.5625em;
-    }
-    
-    .left-column-navigation .portletNavigationSubHeader a {
-        font-size: 0.875em;
-    }
-    
-    .left-column-navigation .portletHeader.active {
-        margin: 0.25em 0 0 0;
-    }
-    
-    .left-column-navigation .portletNavigationTree {
-        margin: 0;
-        display: block;
     }
     
     #portal-column-content.sl.sr .contentLeadImageContainer, 
@@ -997,9 +1038,11 @@
         margin-top: 0.5em;
     }
 
-    body.template-folder_listing_z3 #content .tileItemLeadImage .contentLeadImageContainer img,         
-    body.template-folder_listing_z3 #content .tileItemLeadImage .contentLeadImageContainer img.tileImage {
-        float: left;
+    body.template-folder_listing_z3 #content .tileItemLeadImage .contentLeadImageContainer {
+        img,         
+        img.tileImage {
+            float: left;
+        }
     }
 
     .contentLeadImageContainer {
@@ -1038,32 +1081,6 @@
     
     #portal-column-one .portletItem.rmm { 
         border: 1px solid #DDDDDD;
-    }
-    
-    .left-column-navigation .portletNavigationTree .portletItem li {
-        border-top: 1px solid $globalBorderColor;
-        border-bottom: none;
-        margin: 0;
-        padding: 0;
-        background-color: $globalBackgroundColor;
-    }
-    
-    .left-column-navigation .portletNavigationTree .portletItem li:first-child {
-        border-top: none;
-    }
-
-    .left-column-navigation .portletNavigationTree .portletItem li a {
-        margin: 0;
-        padding: 1em;
-    }
-
-    body.mobile #portal-header>#portal-searchbox {
-        display: none;
-    }
-    
-    #portal-header {
-        width: 100%;
-        padding: 1em 0 0.375em;
     }
     
     .LSBox {
@@ -1427,6 +1444,45 @@
 /*------------------------- resolution-360.css ------------------------------*/
 
 @media handheld, screen and (max-width: 360px) {
+    
+    #logo-college {
+        width: 100%;
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /* Hide "Search" text for button */
+
+    #portal-searchbox.rmm {
+        
+        .rmm-toggled-controls {
+            text-align: center;
+        }
+        
+        .rmm-toggled-title {
+            position: absolute;
+            height: 0.1em !important;
+            margin: -10000em 0 0 -10000em !important;
+            overflow: hidden;
+            padding: 0 !important;
+            width: 1px !important;
+            border: none;
+        }
+
+        .rmm-button {
+            display: inline-block;
+            float: none;
+            margin-right: 0;
+            z-index: -1;
+        }
+
+        img {
+            width: auto;
+        }
+    }
 
     $flexslider_container_estimated_height: 2*$flexsliderImageHeight;
     
@@ -1450,6 +1506,7 @@
         margin: 0 $thumbnail_margin_percent;
         width: $thumbnail_width_percent;
     }
+
 }
 
 /*------------------------ END resolution-360.css ----------------------------*/
