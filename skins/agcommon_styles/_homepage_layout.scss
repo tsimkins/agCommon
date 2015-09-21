@@ -84,3 +84,34 @@ $homepage_sr_feedmixer_image_large_width_percent_full: 100%*($feedmixer_image_la
 
 $homepage_sr_feedmixer_image_small_width_percent_one: 100%*($feedmixer_image_small_width/$centercolumn_sr_width_one);
 $homepage_sr_feedmixer_image_large_width_percent_one: 100%*($feedmixer_image_large_width/$centercolumn_sr_width_one);
+
+/*
+    Flexslider
+*/
+
+
+/* 
+    image sizes used for calculating proportions.  
+    Oddball sizes result of legacy homepage design. 
+    
+    Will use proportions of standard homepage image size (700x265) upsized to
+    950x360.
+*/
+
+$actual_flexsliderImageWidth: 565px;
+$actual_flexsliderImageHeight: 303px;
+
+$flexsliderWidth: 0.95*$maxWidth;
+$scaleRatio: $flexsliderWidth/700px;
+
+$flexsliderImageHeight: 265px*$scaleRatio;
+$flexsliderImageWidth: $actual_flexsliderImageWidth*($flexsliderImageHeight/$actual_flexsliderImageHeight);
+
+$flexsliderImageWidth_percent: 100%*($flexsliderImageWidth/$flexsliderWidth);
+
+$flexsliderTextWidth: $flexsliderWidth - $flexsliderImageWidth;
+
+$flexsliderTextWidth_percent: 100%*(($flexsliderTextWidth - 2*$column_padding)/$flexsliderWidth);
+$flexsliderTextPadding_percent: 100%*($column_padding/$flexsliderWidth);
+
+$flexsliderArrowHeight: 37px;

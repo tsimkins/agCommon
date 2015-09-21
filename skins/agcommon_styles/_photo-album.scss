@@ -1,4 +1,6 @@
-/* Photo Album */
+/* - Photo Album (Thumbnails) - */
+$thumbnail_margin_percent: 100%*($column_padding/$content_column_width_full);
+$thumbnail_width_percent: 100%*($content_column_width_full/$thumbnailColumns - 2*$column_padding)/$content_column_width_full;
 
 #content {
     .photoAlbumEntry {
@@ -12,16 +14,12 @@
             border: none;
             width: auto;
 
-            .photoAlbumEntryWrapper {
-                display: block;
-                
-                img {
-                    cursor: zoom-in;
-                    max-width: 100%;
-                    margin-bottom: 0.375em;
-                    border: none;
-                }
-            
+            img {
+                cursor: zoom-in;
+                max-width: 100%;
+                margin-bottom: 0.375em;
+                border: none;
+                height: auto;
             }
 
             .photoAlbumEntryTitle {

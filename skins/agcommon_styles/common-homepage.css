@@ -14,7 +14,6 @@
 /*# -- Left and Right columns -- */
 /* - Content Area - */
 /* - Lead Image *- */
-/* - Photo Album (Thumbnails) - */
 /* - Pull Quote */
 /* - Local Search Box -*/
 /* A little fudging, since sizing for buttons is odd */
@@ -40,6 +39,16 @@
 /* Margins */
 /* Text Margin */
 /* Image Widths */
+/*
+    Flexslider
+*/
+/* 
+    image sizes used for calculating proportions.  
+    Oddball sizes result of legacy homepage design. 
+    
+    Will use proportions of standard homepage image size (700x265) upsized to
+    950x360.
+*/
 /* ============= addthis ================ */
 #addthis {
   margin: 0.25em 0.25em 0.75em 0.75em;

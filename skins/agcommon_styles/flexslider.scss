@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'layout';
+@import 'homepage_layout';
 
 /*
  * jQuery FlexSlider v1.8
@@ -68,49 +69,6 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 /* Custom */
 
 /* 
-    image sizes used for calculating proportions.  
-    Oddball sizes result of legacy homepage design. 
-    
-    Will use proportions of standard homepage image size (700x265) upsized to
-    950x360.
-*/
-
-$actual_flexsliderImageWidth: 565px;
-$actual_flexsliderImageHeight: 303px;
-
-$flexsliderWidth: 0.95*$maxWidth;
-$upscaleRatio: $flexsliderWidth/700px;
-
-$flexsliderImageHeight: 265px*$upscaleRatio;
-$flexsliderImageWidth: $actual_flexsliderImageWidth*($flexsliderImageHeight/$actual_flexsliderImageHeight);
-
-$flexsliderImageWidth_percent: 100%*($flexsliderImageWidth/$flexsliderWidth);
-
-$flexsliderTextWidth: $flexsliderWidth - $flexsliderImageWidth;
-
-$flexsliderTextWidth_percent: 100%*(($flexsliderTextWidth - 2*$column_padding)/$flexsliderWidth);
-$flexsliderTextPadding_percent: 100%*($column_padding/$flexsliderWidth);
-
-/* DEBUG:
-  $actual_flexsliderImageWidth: #{$actual_flexsliderImageWidth}
-  $actual_flexsliderImageHeight: #{$actual_flexsliderImageHeight}
-
-  $flexsliderWidth: #{$flexsliderWidth}
-  $upscaleRatio: #{$upscaleRatio}
-
-  $flexsliderImageHeight: #{$flexsliderImageHeight}
-  $flexsliderImageWidth: #{$flexsliderImageWidth}
-
-  $flexsliderImageWidth_percent: #{$flexsliderImageWidth_percent}
-
-  $flexsliderTextWidth: #{$flexsliderTextWidth}
-
-  $flexsliderTextWidth_percent: #{$flexsliderTextWidth_percent}
-  $flexsliderTextPadding_percent: #{$flexsliderTextPadding_percent}
-  
-*/
-
-/* 
     Flexslider has the id #homepage image, so we're using 95% as the width of 
     the content inside. 
 */
@@ -147,8 +105,6 @@ $flexsliderTextPadding_percent: 100%*($column_padding/$flexsliderWidth);
             width: 100%;
             max-height: $flexsliderImageHeight;
         }
-
-
     }
     
     .flexslider-text {
@@ -206,8 +162,6 @@ $flexsliderTextPadding_percent: 100%*($column_padding/$flexsliderWidth);
     
     }  
 }
-
-
 
 .flex-control-nav {
     position: relative;

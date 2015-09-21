@@ -3,7 +3,7 @@
 #two-column-left, 
 #two-column-right {
     float: left;
-    width: 47%;
+    width: 50%*(($content_column_width_full - 4*$column_padding)/$content_column_width_full);
     margin-top: 1em;
 
     a {
@@ -59,19 +59,11 @@
 }
 
 #two-column-left {
-    padding-right: 1em;
-    border-right: 1px solid  $leftNavBorderColor;
+    padding-right: 100%*(2*$column_padding/$content_column_width_full);
 }
 
 #two-column-right {
-    padding-left: 1em;
-}
-
-#portal-column-content.sr {
-    #two-column-left, 
-    #two-column-right {
-        width: 46%;
-    }
+    padding-left: 100%*(2*$column_padding/$content_column_width_full);
 }
 
 body.template-subfolder_view {

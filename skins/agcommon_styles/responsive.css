@@ -17,7 +17,6 @@
 /*# -- Left and Right columns -- */
 /* - Content Area - */
 /* - Lead Image *- */
-/* - Photo Album (Thumbnails) - */
 /* - Pull Quote */
 /* - Local Search Box -*/
 /* A little fudging, since sizing for buttons is odd */
@@ -25,6 +24,34 @@
 /* - Document Contributors - */
 /* - Text edit boxes */
 /* Footer Portlets */
+/*
+    Layout calculations for homepage 
+*/
+/* --------- Variables ---------- */
+/* == No Left Column == */
+/* Margin Percent */
+/* Right Column */
+/* For centercolumn without right column */
+/* For centercolumn with right column */
+/* == Has Left Column == */
+/* Margin Percent */
+/* Right Column */
+/* For centercolumn without right column */
+/* For centercolumn with right column */
+/* == Feedmixer Images == */
+/* Margins */
+/* Text Margin */
+/* Image Widths */
+/*
+    Flexslider
+*/
+/* 
+    image sizes used for calculating proportions.  
+    Oddball sizes result of legacy homepage design. 
+    
+    Will use proportions of standard homepage image size (700x265) upsized to
+    950x360.
+*/
 /*------------------------- large-site.css ------------------------------*/
 @media handheld, screen and (min-width: 960px) {
   body.custom-fullwidth #visual-portal-wrapper, body.custom-fullwidth #portal-header,
@@ -236,13 +263,10 @@
   /* Flexslider */
   #viewlet-above-content .flexslider .tileHeadline {
     font-size: 1.25em; }
-
   #viewlet-above-content .flexslider .tileBody p {
     font-size: 0.8125em; }
-
   #viewlet-above-content .flexslider .tileFooter p {
     text-align: right; }
-
   #viewlet-above-content .flexslider .tileFooter a {
     font-size: 0.625em; } }
 /*------------------------ END resolution-890.css ----------------------------*/
@@ -415,39 +439,38 @@
   body.empty-top-navigation #portal-top {
     padding-bottom: 0; }
 
-  /* Flexslider */
-  #viewlet-above-content .flexslider .contentLeadImageContainer img {
-    max-height: 412px; }
-
-  #viewlet-above-content .flex-control-nav {
-    margin-left: 1em; }
-
+  /* 
+      Flexslider 
+      
+        * actual width and height values from _homepage_layout.scss
+  */
   #viewlet-above-content .flexslider {
     width: 100%;
-    margin: 3px 0 10px 0; }
-
-  #viewlet-above-content .flexslider .contentLeadImageContainer {
-    float: none;
-    width: 100%;
-    max-width: 100%; }
-
-  #viewlet-above-content .flexslider .contentLeadImageContainer img {
-    float: none; }
-
-  #viewlet-above-content .flexslider .flexslider-text {
-    margin: 0 1em;
-    padding: 0;
-    width: auto; }
-
-  #viewlet-above-content .flexslider .tileHeadline {
-    margin-top: 0.5em; }
-
-  #viewlet-above-content .flex-direction-nav li a {
-    top: 35%; }
-
-  #viewlet-above-content .flex-direction-nav li .next {
-    left: auto;
-    right: 0; }
+    margin: 0;
+    padding: 0; }
+    #viewlet-above-content .flexslider .contentLeadImageContainer {
+      float: none;
+      width: 100%;
+      max-width: 100%; }
+      #viewlet-above-content .flexslider .contentLeadImageContainer img {
+        float: none;
+        max-height: 394.70442px; }
+    #viewlet-above-content .flexslider .slides {
+      padding-bottom: 0.5em; }
+    #viewlet-above-content .flexslider .flex-control-nav {
+      margin-left: 1em; }
+    #viewlet-above-content .flexslider .flexslider-text {
+      margin: 0 1em;
+      padding: 0;
+      width: auto; }
+    #viewlet-above-content .flexslider .tileHeadline {
+      margin-top: 0.5em; }
+    #viewlet-above-content .flexslider .flex-direction-nav li a {
+      top: 31.2502%; }
+    #viewlet-above-content .flexslider .flex-direction-nav li .next {
+      right: 1.04167%; }
+    #viewlet-above-content .flexslider .flex-direction-nav li .prev {
+      left: 1.04167%; }
 
   #content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer .tileImage {
     width: 100%;
@@ -475,7 +498,13 @@
     background-position: 0 35.9971%; }
 
   .rg-image-nav a.rg-image-nav-next {
-    background-position: 100% 35.9971%; } }
+    background-position: 100% 35.9971%; }
+
+  /* - Thumbnail Count - */
+  /* - Photo Album (Thumbnails) - */
+  #content .photoAlbumEntry {
+    margin: 0 2.27273%;
+    width: 28.78788%; } }
 /*------------------------ END resolution-768.css ----------------------------*/
 /*------------------------- resolution-520-portrait.css ------------------------------*/
 @media handheld, screen and (max-width: 520px) and (orientation: portrait) {
@@ -553,8 +582,7 @@
     right: 0;
     position: absolute;
     z-index: 10;
-    opacity: 0.75;
-    font-family: Lucida Grande,Trebuchet MS,Tahoma,Verdana,sans-serif; }
+    opacity: 0.75; }
 
   #content .rg-image-wrapper {
     padding: 0;
@@ -592,7 +620,6 @@
   #content .rg-caption p {
     background-color: transparent;
     font-size: 0.875em;
-    font-family: Lucida Grande,Trebuchet MS,Tahoma,Verdana,sans-serif;
     color: #f9f9f9 !important;
     /* UI */ }
 
@@ -898,51 +925,6 @@
     padding-left: 0;
     padding-right: 0; }
 
-  /* Flexslider */
-  /*
-  #viewlet-above-content h2.flexslider-title {
-      background-color: #4D4D4D;
-      border: none !important;
-      color: #F6F6F6 !important;
-      font-family: Arial,Helvetica,Helv,sans-serif;
-      font-size: 0.8125em !important;
-      font-size: 1.4375em;
-      font-weight: bold;
-      margin: 0.25em 0 0 0;
-      padding: 0.3125em 1.923076923076923% 0.375em 1.923076923076923% !important;
-      text-align: left;
-      text-transform: none;
-      width: 96.153846153846154%;
-      height: auto;
-  }
-  */
-  #viewlet-above-content .flexslider {
-    background-color: #F5F5F5;
-    padding: 8px 1.691331923890063%;
-    width: 96.194503171247357%;
-    border: 1px solid #4D4D4D;
-    border-radius: 0;
-    margin-top: 0; }
-
-  #viewlet-above-content .flexslider .tileBody p {
-    color: #4D4D4D; }
-
-  #viewlet-above-content .flexslider .tileHeadline a,
-  #viewlet-above-content .flexslider .tileHeadline a:visited {
-    color: #0068A9; }
-
-  #viewlet-above-content .flex-direction-nav li .next {
-    left: auto;
-    right: 1.720430107526882%; }
-
-  #viewlet-above-content .flex-direction-nav li .prev {
-    left: 1.720430107526882%;
-    right: auto; }
-
-  .photoAlbumEntry {
-    width: 46.7105263157895%;
-    padding: 0 1.644736842105263%; }
-
   .fancybox-wrap {
     position: absolute !important;
     top: 15px !important; }
@@ -1094,8 +1076,22 @@
     width: 55px; }
 
   .rg-image-nav a.rg-image-nav-next {
-    background-position: 87.5% 32.3580%; } }
+    background-position: 87.5% 32.3580%; }
+
+  #viewlet-above-content .flexslider .flex-direction-nav li a {
+    top: 26.89176%; } }
 /*------------------------ END resolution-480.css ----------------------------*/
+/*------------------------- resolution-360.css ------------------------------*/
+@media handheld, screen and (max-width: 360px) {
+  #viewlet-above-content .flexslider .flex-direction-nav li a {
+    top: 23.714%; }
+
+  /* - Thumbnail Count - */
+  /* - Photo Album (Thumbnails) - */
+  #content .photoAlbumEntry {
+    margin: 0 1.68067%;
+    width: 46.63866%; } }
+/*------------------------ END resolution-360.css ----------------------------*/
 /*------------------------- resolution-320.css ------------------------------*/
 @media handheld, screen and (max-width: 320px) {
   #content .portletfeedmixerimageleft .portletItem .rssImage,

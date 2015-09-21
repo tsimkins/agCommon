@@ -17,7 +17,6 @@
 /*# -- Left and Right columns -- */
 /* - Content Area - */
 /* - Lead Image *- */
-/* - Photo Album (Thumbnails) - */
 /* - Pull Quote */
 /* - Local Search Box -*/
 /* A little fudging, since sizing for buttons is odd */
@@ -451,7 +450,7 @@ body.template-subfolder_view #content .photoAlbum {
 #two-column-left,
 #two-column-right {
   float: left;
-  width: 47%;
+  width: 46.63866%;
   margin-top: 1em; }
   #two-column-left a,
   #two-column-right a {
@@ -489,15 +488,10 @@ body.template-subfolder_view #content .photoAlbum {
     margin-bottom: 1.5em; }
 
 #two-column-left {
-  padding-right: 1em;
-  border-right: 1px solid #DDDDDD; }
+  padding-right: 3.36134%; }
 
 #two-column-right {
-  padding-left: 1em; }
-
-#portal-column-content.sr #two-column-left,
-#portal-column-content.sr #two-column-right {
-  width: 46%; }
+  padding-left: 3.36134%; }
 
 body.template-subfolder_view #two-column-left,
 body.template-subfolder_view #two-column-right {
@@ -997,11 +991,17 @@ body.template-subfolder_view #two-column-right {
     .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath {
       border: none;
       font-weight: bold;
-      background-color: transparent; }
-      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentItem > a,
+      font-weight: 600;
+      background-color: transparent;
+      color: #000000; }
+      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentItem > a, .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentItem a.state-published,
       .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode > a,
-      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath > a {
-        font-weight: bold; }
+      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode a.state-published,
+      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath > a,
+      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath a.state-published {
+        font-weight: bold;
+        font-weight: 600;
+        color: #000000; }
 .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 {
   background-color: #F9F9F9;
   border: #DDDDDD solid 1px;
@@ -1820,7 +1820,7 @@ dl.person-connect img {
 .contentLeadImageContainerLeft img {
   width: auto; }
 
-/* Photo Album */
+/* - Photo Album (Thumbnails) - */
 #content .photoAlbumEntry {
   background-image: none;
   margin: 0 1.68067%;
@@ -1830,13 +1830,12 @@ dl.person-connect img {
   #content .photoAlbumEntry a {
     border: none;
     width: auto; }
-    #content .photoAlbumEntry a .photoAlbumEntryWrapper {
-      display: block; }
-      #content .photoAlbumEntry a .photoAlbumEntryWrapper img {
-        cursor: zoom-in;
-        max-width: 100%;
-        margin-bottom: 0.375em;
-        border: none; }
+    #content .photoAlbumEntry a img {
+      cursor: zoom-in;
+      max-width: 100%;
+      margin-bottom: 0.375em;
+      border: none;
+      height: auto; }
     #content .photoAlbumEntry a .photoAlbumEntryTitle {
       color: #265FCF;
       width: auto; }

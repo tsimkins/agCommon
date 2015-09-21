@@ -14,7 +14,6 @@
 /*# -- Left and Right columns -- */
 /* - Content Area - */
 /* - Lead Image *- */
-/* - Photo Album (Thumbnails) - */
 /* - Pull Quote */
 /* - Local Search Box -*/
 /* A little fudging, since sizing for buttons is odd */
@@ -22,6 +21,34 @@
 /* - Document Contributors - */
 /* - Text edit boxes */
 /* Footer Portlets */
+/*
+    Layout calculations for homepage 
+*/
+/* --------- Variables ---------- */
+/* == No Left Column == */
+/* Margin Percent */
+/* Right Column */
+/* For centercolumn without right column */
+/* For centercolumn with right column */
+/* == Has Left Column == */
+/* Margin Percent */
+/* Right Column */
+/* For centercolumn without right column */
+/* For centercolumn with right column */
+/* == Feedmixer Images == */
+/* Margins */
+/* Text Margin */
+/* Image Widths */
+/*
+    Flexslider
+*/
+/* 
+    image sizes used for calculating proportions.  
+    Oddball sizes result of legacy homepage design. 
+    
+    Will use proportions of standard homepage image size (700x265) upsized to
+    950x360.
+*/
 /*
  * jQuery FlexSlider v1.8
  * http://www.woothemes.com/flexslider/
@@ -180,31 +207,6 @@ html[xmlns] .slides {
   cursor: default; }
 
 /* Custom */
-/* 
-    image sizes used for calculating proportions.  
-    Oddball sizes result of legacy homepage design. 
-    
-    Will use proportions of standard homepage image size (700x265) upsized to
-    950x360.
-*/
-/* DEBUG:
-  $actual_flexsliderImageWidth: 565px
-  $actual_flexsliderImageHeight: 303px
-
-  $flexsliderWidth: 950px
-  $upscaleRatio: 1.35714
-
-  $flexsliderImageHeight: 359.64286px
-  $flexsliderImageWidth: 670.62117px
-
-  $flexsliderImageWidth_percent: 70.5917%
-
-  $flexsliderTextWidth: 279.37883px
-
-  $flexsliderTextWidth_percent: 26.03988%
-  $flexsliderTextPadding_percent: 1.68421%
-  
-*/
 /* 
     Flexslider has the id #homepage image, so we're using 95% as the width of 
     the content inside. 

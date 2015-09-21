@@ -72,12 +72,6 @@ $content_area_margin_percent_two: 100%*($column_padding/$content_column_width_tw
 $leadImage_width_percent: 100%*(($leadImageWidth - $column_padding)/$content_column_width_one);
 $leadImage_margin_percent: 100%*($column_padding/$content_column_width_one);
 
-
-/* - Photo Album (Thumbnails) - */
-$thumbnail_margin_percent: 100%*($column_padding/$content_column_width_full);
-$thumbnail_width_percent: 100%*($content_column_width_full/$thumbnailColumns - 2*$column_padding)/$content_column_width_full;
-
-
 /* - Pull Quote */
 $pullQuote_width_percent: 100%*(($pullQuoteWidth - 3*$column_padding - 2px)/$content_column_width_one);
 $pullQuote_padding_percent: 100%*($column_padding/$content_column_width_one);
