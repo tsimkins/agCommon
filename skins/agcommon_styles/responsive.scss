@@ -1002,30 +1002,38 @@
         float: left;
     }
 
-    .contentLeadImageContainer img,
-    .contentLeadImageContainer p.discreet {
-        margin-left: 0;
-        padding-left: 0;
-        width: auto;
+    .contentLeadImageContainer {
+        img,
+        p.discreet {
+            margin-left: 0;
+            padding-left: 0;
+            width: auto;
+        }
+        
+        img {
+            width: 100%;
+        }
     }
     
     #portal-footer {
         text-align: left;
         padding: 0.5em 100%*($column_padding/$maxWidth);
         width: 100%*(($maxWidth - 2*$column_padding)/$maxWidth);
-    }
-    
-    #portal-footer p {
-        padding: 0;
-    }
-    
-    #portal-footer .footerLinks a {
-        display: block;
-        padding: 0.375em 0;
-    }
-    
-    #portal-footer .footerLinks .footerSeparator {
-        display: none;
+
+        p {
+            padding: 0;
+        }
+        
+        .footerLinks {
+            a {
+                display: block;
+                padding: 0.375em 0;
+            }
+        
+            .footerSeparator {
+                display: none;
+            }
+        }
     }
     
     #portal-column-one .portletItem.rmm { 
@@ -1322,21 +1330,49 @@
     	padding: 0.5em 100%*($column_padding/$maxWidth);
     }
     
-    #content .tileItemLeadImage .contentLeadImageContainer {
-        width: 35%;
-    }
+    #content {
+        .tileItemLeadImage {
+            .contentLeadImageContainer {
+                width: 35%;
+            }
+            
+            .tileTitle,
+            .documentByLine,
+            .tileDescription,
+            .facultyStaffDirectory,
+            .tileHeadline {
+                /* ### */
+            }
+
+        }
+            
+        .tileSummaryLeadImage {
+            .contentLeadImageContainer img {
+                max-width: 37%;
+                margin-left: 1%;
+            }
+        }
+
+        .tileFooter {
+            display: none;
+        }
+        
+        .tileItemContainer .tilePortletManager .portletPerson .portletItem .person-image {
+            float: right;
+        }
+        
+        .searchResults {
+            dt.contenttype-fsdperson {
+                .searchLeadImageContainer {
+                    display: none;
+                }
+            }
     
-    #content .tileSummaryLeadImage .contentLeadImageContainer img {
-        max-width: 37%;
-        margin-left: 1%;
-    }
-    
-    #content .tileFooter {
-        display: none;
-    }
-    
-    #content .tileItemLeadImage .tileTitle, #content .tileItemLeadImage .documentByLine, #content .tileItemLeadImage .tileDescription, #content .tileItemLeadImage .facultyStaffDirectory, #content .tileItemLeadImage .tileHeadline {
-        /* ### */
+            dt.contenttype-fsdperson,
+            dd.contenttype-fsdperson {
+                padding-left: 0;
+            }
+        }
     }
     
     #centercolumn .portletStaticText .portletItem img {
@@ -1355,24 +1391,6 @@
         margin: 0.5em 0 1em 0;
     }
 
-    /* Flexslider */
-
-    #viewlet-above-content .flex-direction-nav li a {
-        top: 90px;
-    }
- 
-    #content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer {
-        display: none;
-    }
-
-    #content .searchResults dt.contenttype-fsdperson,
-    #content .searchResults dd.contenttype-fsdperson {
-        padding-left: 0;
-    }
-    
-    #content .tileItemContainer .tilePortletManager .portletPerson .portletItem .person-image {
-        float: right;
-    }
 
     /* photogallery resize for 480px (431px image) */
     .rg-image {
@@ -1387,7 +1405,10 @@
     .rg-image-nav a.rg-image-nav-next {
         background-position: 87.5% 32.3580%;
     }
-    
+
+
+    /* Flexslider */
+
     $flexslider_container_estimated_height: 1.75*$flexsliderImageHeight;
     
     $flexslider_control_position_v: 100%*((0.5*$flexsliderImageHeight)/$flexslider_container_estimated_height);

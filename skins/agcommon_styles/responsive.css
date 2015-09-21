@@ -774,21 +774,20 @@
     margin-left: 0;
     padding-left: 0;
     width: auto; }
+  .contentLeadImageContainer img {
+    width: 100%; }
 
   #portal-footer {
     text-align: left;
     padding: 0.5em 3.07692%;
     width: 93.84615%; }
-
-  #portal-footer p {
-    padding: 0; }
-
-  #portal-footer .footerLinks a {
-    display: block;
-    padding: 0.375em 0; }
-
-  #portal-footer .footerLinks .footerSeparator {
-    display: none; }
+    #portal-footer p {
+      padding: 0; }
+    #portal-footer .footerLinks a {
+      display: block;
+      padding: 0.375em 0; }
+    #portal-footer .footerLinks .footerSeparator {
+      display: none; }
 
   #portal-column-one .portletItem.rmm {
     border: 1px solid #DDDDDD; }
@@ -1028,16 +1027,24 @@
 
   #content .tileItemLeadImage .contentLeadImageContainer {
     width: 35%; }
-
+  #content .tileItemLeadImage .tileTitle,
+  #content .tileItemLeadImage .documentByLine,
+  #content .tileItemLeadImage .tileDescription,
+  #content .tileItemLeadImage .facultyStaffDirectory,
+  #content .tileItemLeadImage .tileHeadline {
+    /* ### */ }
   #content .tileSummaryLeadImage .contentLeadImageContainer img {
     max-width: 37%;
     margin-left: 1%; }
-
   #content .tileFooter {
     display: none; }
-
-  #content .tileItemLeadImage .tileTitle, #content .tileItemLeadImage .documentByLine, #content .tileItemLeadImage .tileDescription, #content .tileItemLeadImage .facultyStaffDirectory, #content .tileItemLeadImage .tileHeadline {
-    /* ### */ }
+  #content .tileItemContainer .tilePortletManager .portletPerson .portletItem .person-image {
+    float: right; }
+  #content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer {
+    display: none; }
+  #content .searchResults dt.contenttype-fsdperson,
+  #content .searchResults dd.contenttype-fsdperson {
+    padding-left: 0; }
 
   #centercolumn .portletStaticText .portletItem img {
     display: block;
@@ -1053,20 +1060,6 @@
     display: block;
     margin: 0.5em 0 1em 0; }
 
-  /* Flexslider */
-  #viewlet-above-content .flex-direction-nav li a {
-    top: 90px; }
-
-  #content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer {
-    display: none; }
-
-  #content .searchResults dt.contenttype-fsdperson,
-  #content .searchResults dd.contenttype-fsdperson {
-    padding-left: 0; }
-
-  #content .tileItemContainer .tilePortletManager .portletPerson .portletItem .person-image {
-    float: right; }
-
   /* photogallery resize for 480px (431px image) */
   .rg-image {
     height: 287px; }
@@ -1078,6 +1071,7 @@
   .rg-image-nav a.rg-image-nav-next {
     background-position: 87.5% 32.3580%; }
 
+  /* Flexslider */
   #viewlet-above-content .flexslider .flex-direction-nav li a {
     top: 26.89176%; } }
 /*------------------------ END resolution-480.css ----------------------------*/

@@ -2002,7 +2002,8 @@ dl.person-connect img {
         padding: 0;
         margin: 0 0 0.0625em;
         font-family: Open Sans, Verdana, Arial, Helvetica, sans-serif;
-        border-bottom: 1px solid #FFFFFF; }
+        border-bottom: 1px solid #FFFFFF;
+        line-height: 1.25; }
         #portlets-footer .FooterPortletManager .portletWrapper .portletHeader a,
         #portlets-footer .FooterPortletManager .portletWrapper .portletHeader span {
           color: #FFFFFF;
