@@ -106,7 +106,7 @@ table.listing tr.odd th {
     border-style: solid solid none none;
 }
 table.listing tbody th {
-    font-weight: bold;
+    font-weight: 600;
 }
 table.listing tbody tr {
     text-align:left;
@@ -232,7 +232,7 @@ div.warning a,
 dl.portalMessage dt,
 div > .admonition-title {
     background-color: #996;
-    font-weight: bold;
+    font-weight: 600;
     float: left;
     margin: 0 0.5em 0 0;
     padding: 0.5em 0.75em;
@@ -434,7 +434,7 @@ dl.collapsedInlineCollapsible dt.collapsibleHeader {
 }
 
 .label {
-    font-weight: bold;
+    font-weight: 600;
     display: inline;
 }
 .label .fieldErrorBox {
@@ -454,7 +454,7 @@ dl.collapsedInlineCollapsible dt.collapsibleHeader {
 }
 dl.searchResults .highlightedSearchTerm {
     background-color: transparent;
-    font-weight: bold;
+    font-weight: 600;
 }
 /* for greying out inherited roles */
 .noInheritedRoles {
@@ -499,7 +499,7 @@ fieldset#search-field {
     background: transparent;
     font-size: 1.1em;
     padding: 0.5em 0.9em;
-    font-weight: bold;
+    font-weight: 600;
 }
 #search-filter .field {
     background: #eee;
@@ -614,7 +614,7 @@ dl.toc dd ol {
     list-style: none;
     margin-left: 0;
     font-size: 130%;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 #portal-sitemap li {
@@ -820,7 +820,7 @@ div.overlay a.selected {
 }
 div.overlay .formTab {
     margin-right:1em;
-    font-weight: bold;
+    font-weight: 600;
 }
 div.overlay .formTab.lastFormTab {
     margin-right:0em;

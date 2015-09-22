@@ -14,7 +14,6 @@
     margin: 1.25em 0 0.5em 0;
     padding: 0 0 0.0625em 0;
     border: none;
-    font-weight: bold;
     font-weight: 600;
     border-bottom: 1px solid $documentHeadingBorderColor;
     line-height: 1.5;
@@ -25,7 +24,6 @@
     margin: 1.125em 0 0 0;
     padding: 0;
     border: none;
-    font-weight: bold;
     font-weight: 600;
     font-family: $alternateHeadingFontFamily;
     font-size: 1.25em;
@@ -46,7 +44,10 @@ h1, h2 {
 }
 
 b, strong {
-    font-weight: bold;
+    font-weight: 600;
+}
+
+label {
     font-weight: 600;
 }
 
@@ -359,7 +360,7 @@ body.template-file_view {
         }
         
         h3 {
-            font-weight: bold;
+            font-weight: 600;
             font-family: $headingFontFamily;
         }
         
@@ -432,7 +433,7 @@ body.template-extension_course_event_view #content .event-registration h3,
 #content h3.inline,
 #content h2.inline {
     font-size: 1em;
-    font-weight: bold;
+    font-weight: 600;
     border-bottom-width: 0;
     display: inline;
 }
@@ -477,7 +478,7 @@ table.events td.canceled span,
     color: $globalFontColor;
     font-size: 0.9375em;
     font-variant: small-caps;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0;
     padding: 0;
 }

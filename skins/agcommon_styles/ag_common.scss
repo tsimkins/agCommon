@@ -117,7 +117,7 @@ body.template-agenda_view #document-toc h3 {
     margin: 0;
     padding: 0;
     font-size: 1em;
-    font-weight: bold;
+    font-weight: 600;
     color: $leftPortletHeaderTextColor;
 }
 
@@ -154,7 +154,7 @@ body.template-search_z3 form.searchPage input {
 
 body.template-fg_thankspage_view_p3 #content blockquote dt,
 body.template-fg_register_thankspage_view_p3 #content .callout dt {
-    font-weight: bold;
+    font-weight: 600;
     color: $globalFontColor;
 }
 
@@ -301,7 +301,7 @@ form.event-registration input[type="submit"] {
     cursor: pointer;
     padding: 0;
     border-width: 0 0 1px 0;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0.75em 0 0 0;
     white-space: normal;
     text-align: left;
@@ -324,7 +324,7 @@ form.event-registration-button input[type="submit"],
     text-decoration: none;
     cursor: pointer;
     padding: 0.5em 3em;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0.5em 0 0.5em 0;
     white-space: normal;
     text-align: center;
@@ -369,7 +369,7 @@ form.event-registration input[type="submit"]::-moz-focus-inner {
     border: 1px solid $globalBorderColor;
     padding: 0.25em 0.5em;
     font-size: 1.125em;
-    font-weight: bold;
+    font-weight: 600;
     font-family: $fontFamily;
     color: $globalBackgroundColor;
 }

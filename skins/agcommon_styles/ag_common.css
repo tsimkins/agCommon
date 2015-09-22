@@ -73,7 +73,6 @@ body {
   right: 0;
   padding: 1em 31.3% 0.75em 1.6%; }
   #logo-site a {
-    font-weight: bold;
     font-weight: 600;
     color: #FFFFFF;
     font-size: 1.375em; }
@@ -187,7 +186,7 @@ body {
   #portal-breadcrumbs > span {
     font-size: 0.625em; }
   #portal-breadcrumbs #breadcrumbs-current {
-    font-weight: bold; }
+    font-weight: 600; }
   #portal-breadcrumbs a {
     color: #1B5597;
     font-weight: normal; }
@@ -197,17 +196,15 @@ body {
 /* = section-title ========================================= */
 #section-title {
   font-size: 2em;
-  font-weight: bold;
   font-weight: 600;
-  margin: 0 0 0.75em 0; }
+  margin: 0 0 0.75em 0;
+  border-bottom: 1px solid #999999; }
   #section-title a {
     color: #2F2F2F;
-    padding-bottom: 0;
-    border-bottom: 1px solid #999999; }
+    padding-bottom: 0; }
   #section-title a:hover {
     color: #1B5597;
-    text-decoration: none;
-    border-bottom-color: #1B5597; }
+    text-decoration: none; }
 
 /* = portal-columns ========================================================= */
 #portal-columns {
@@ -286,7 +283,6 @@ body {
     padding: 0;
     border-width: 0;
     font-family: Open Sans, Verdana, Arial, Helvetica, sans-serif;
-    font-weight: bold;
     font-weight: 600; }
   #content .tileItem .tileTitle,
   #content .tileItem h2.tileTitle,
@@ -669,17 +665,17 @@ body.template-subfolder_view #two-column-right {
   .portletStaticText .portletItem h4 {
     border: none;
     font-size: 1.0625em;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0.75em 0 0.25em; }
   .portletStaticText .portletItem h3 {
     border: none;
     font-size: 1em;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 0.25em;
     margin-top: 0.375em; }
   .portletStaticText .portletItem h4 {
     border: none;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 0.25em;
     margin-top: 0.375em; }
   .portletStaticText .portletItem p {
@@ -857,16 +853,16 @@ body.template-subfolder_view #two-column-right {
     border: none;
     border-bottom: none;
     font-size: 1.125em;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0.5em 0 0.125em 0; }
     .portletPerson .portletItem h2 a,
     .portletPerson .portletItem h2 a:visited {
       color: #2256BD;
-      font-weight: bold; }
+      font-weight: 600; }
     .portletPerson .portletItem h2 a:hover {
       color: #003FAC; }
   .portletPerson .portletItem .title {
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 0.5em; }
   .portletPerson .portletItem .adr {
     margin-bottom: 0.9375em; }
@@ -990,7 +986,6 @@ body.template-subfolder_view #two-column-right {
     .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode,
     .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath {
       border: none;
-      font-weight: bold;
       font-weight: 600;
       background-color: transparent;
       color: #000000; }
@@ -999,7 +994,6 @@ body.template-subfolder_view #two-column-right {
       .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode a.state-published,
       .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath > a,
       .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath a.state-published {
-        font-weight: bold;
         font-weight: 600;
         color: #000000; }
 .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 {
@@ -1182,7 +1176,7 @@ table.plain td {
   border: 1px solid #999999; }
 table.listing th,
 table.plain th {
-  font-weight: bold;
+  font-weight: 600;
   color: #333333;
   background-color: #DDDDDD; }
 table.listing tr.separator td,
@@ -1302,7 +1296,9 @@ h1, h2 {
   letter-spacing: 0; }
 
 b, strong {
-  font-weight: bold;
+  font-weight: 600; }
+
+label {
   font-weight: 600; }
 
 #content {
@@ -1389,7 +1385,6 @@ b, strong {
     margin: 1.25em 0 0.5em 0;
     padding: 0 0 0.0625em 0;
     border: none;
-    font-weight: bold;
     font-weight: 600;
     border-bottom: 1px solid #DDDDDD;
     line-height: 1.5; }
@@ -1401,7 +1396,6 @@ b, strong {
     margin: 1.125em 0 0 0;
     padding: 0;
     border: none;
-    font-weight: bold;
     font-weight: 600;
     font-family: Open Sans, Lucida Grande, Tahoma, Verdana, sans-serif;
     font-size: 1.25em;
@@ -1467,7 +1461,6 @@ b, strong {
       margin: 1.25em 0 0.5em 0;
       padding: 0 0 0.0625em 0;
       border: none;
-      font-weight: bold;
       font-weight: 600;
       border-bottom: 1px solid #DDDDDD;
       line-height: 1.5;
@@ -1517,7 +1510,6 @@ body.custom-h2-as-h3 #content .documentText h2 {
   margin: 1.125em 0 0 0;
   padding: 0;
   border: none;
-  font-weight: bold;
   font-weight: 600;
   font-family: Open Sans, Lucida Grande, Tahoma, Verdana, sans-serif;
   font-size: 1.25em;
@@ -1530,7 +1522,6 @@ body.template-by_county_listing.custom-two-column #content h2,
   margin: 1.125em 0 0 0;
   padding: 0;
   border: none;
-  font-weight: bold;
   font-weight: 600;
   font-family: Open Sans, Lucida Grande, Tahoma, Verdana, sans-serif;
   font-size: 1.25em;
@@ -1551,7 +1542,7 @@ body.template-file_view #content h2.h3,
 body.template-file_view #content .documentContributors h2 {
   margin-top: 1.25em; }
 body.template-file_view #content h3 {
-  font-weight: bold;
+  font-weight: 600;
   font-family: Open Sans, Verdana, Arial, Helvetica, sans-serif; }
 body.template-file_view #disclaimer {
   margin-top: 1em;
@@ -1599,7 +1590,7 @@ body.template-extension_course_event_view #content .event-registration h3,
 #content h3.inline,
 #content h2.inline {
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 600;
   border-bottom-width: 0;
   display: inline; }
 
@@ -1637,7 +1628,7 @@ table.events td.canceled span,
   color: #000000;
   font-size: 0.9375em;
   font-variant: small-caps;
-  font-weight: bold;
+  font-weight: 600;
   margin: 0;
   padding: 0; }
 
@@ -1695,7 +1686,7 @@ dl.person-connect img {
     background-color: transparent;
     border: none;
     padding: 0;
-    font-weight: bold;
+    font-weight: 600;
     color: #4D4D4D;
     margin: 0; }
   #document-toc .portlet {
@@ -1907,7 +1898,7 @@ dl.person-connect img {
     font-size: 1.375em;
     padding: 0;
     border: none;
-    font-weight: bold;
+    font-weight: 600;
     font-family: Open Sans, Lucida Grande, Tahoma, Verdana, sans-serif; }
   #content .documentContributors .tileItem,
   #content .publication .tileItem {
@@ -1997,7 +1988,6 @@ dl.person-connect img {
       #portlets-footer .FooterPortletManager .portletWrapper .portletHeader {
         color: #FFFFFF;
         font-size: 1.25em;
-        font-weight: bold;
         font-weight: 600;
         padding: 0;
         margin: 0 0 0.0625em;
@@ -2503,7 +2493,7 @@ body.template-agenda_view #document-toc h3 {
   margin: 0;
   padding: 0;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 600;
   color: #4B4B4B; }
 
 #printheader {
@@ -2531,7 +2521,7 @@ body.template-search_z3 form.searchPage input {
 /* Form Thanks Page */
 body.template-fg_thankspage_view_p3 #content blockquote dt,
 body.template-fg_register_thankspage_view_p3 #content .callout dt {
-  font-weight: bold;
+  font-weight: 600;
   color: #000000; }
 
 body.template-fg_thankspage_view_p3 #content blockquote dd,
@@ -2648,7 +2638,7 @@ form.event-registration input[type="submit"] {
   cursor: pointer;
   padding: 0;
   border-width: 0 0 1px 0;
-  font-weight: bold;
+  font-weight: 600;
   margin: 0.75em 0 0 0;
   white-space: normal;
   text-align: left; }
@@ -2671,7 +2661,7 @@ form.event-registration-button input[type="submit"],
   text-decoration: none;
   cursor: pointer;
   padding: 0.5em 3em;
-  font-weight: bold;
+  font-weight: 600;
   margin: 0.5em 0 0.5em 0;
   white-space: normal;
   text-align: center;
@@ -2710,7 +2700,7 @@ form.event-registration input[type="submit"]::-moz-focus-inner {
   border: 1px solid #E6E6E6;
   padding: 0.25em 0.5em;
   font-size: 1.125em;
-  font-weight: bold;
+  font-weight: 600;
   font-family: Open Sans, Verdana, Arial, Helvetica, sans-serif;
   color: #F6F6F6; }
 

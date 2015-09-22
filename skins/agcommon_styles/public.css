@@ -16,7 +16,7 @@ a:focus img {
     outline: thin dotted;
 }
 dt {
-    font-weight: bold;
+    font-weight: 600;
 }
 input {
     font-family: "Lucida Grande", Arial, FreeSans;
@@ -337,7 +337,7 @@ body#content {
 }
 
 #content dt {
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 0;
     margin-right: 0;
 }
@@ -375,7 +375,6 @@ body#content {
 #content #description {
     color: #666;
     margin-left: 0;
-    font: bold 1.25em "Helvetica Neue", Arial, FreeSans, sans-serif;
 }
 
 #content div.newsImageContainer a {
@@ -387,7 +386,7 @@ body#content {
     background-color: #666;
     background-color: rgba(40,40,40,0.7);
     color: White;
-    font-weight: bold;
+    font-weight: 600;
     position: relative;
     width: 190px;
     top: -3em;

@@ -251,21 +251,21 @@
         h4 {
             border: none;
             font-size: 1.0625em;
-            font-weight: bold;
+            font-weight: 600;
             margin: 0.75em 0 0.25em;
         }
 
         h3 {
             border: none;
             font-size: 1em;
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 0.25em;
             margin-top: 0.375em;
         }
 
         h4 {
             border: none;
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 0.25em;
             margin-top: 0.375em;
         }
@@ -513,13 +513,13 @@
             border: none;
             border-bottom: none;
             font-size: 1.125em;
-            font-weight: bold;
+            font-weight: 600;
             margin: 0.5em 0 0.125em 0;
 
             a,
             a:visited {
                 color: $rightPortletLinkColor;
-                font-weight: bold;
+                font-weight: 600;
             }
 
             a:hover {
@@ -530,7 +530,7 @@
         /* Job Title */
 
         .title {
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 0.5em;
         }
 

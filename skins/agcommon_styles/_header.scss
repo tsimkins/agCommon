@@ -67,7 +67,6 @@ $siteTitleRightPadding: $searchBoxWidth + 3*$column_padding;
     padding: 1em 100%*($siteTitleRightPadding/$maxWidth) 0.75em 100%*($column_padding/$maxWidth);
 
     a {
-        font-weight: bold;
         font-weight: 600;
         color: $subsiteHeaderTextColor;
         font-size: 1.375em;

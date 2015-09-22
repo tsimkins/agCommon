@@ -229,13 +229,14 @@ class AgCommonUtilities(BrowserView):
                 body_classes.append('custom-h2-as-h3')
 
         # If 'show_mobile_nav' property is set or
-        # we're the homepage at the root of the site,
-        # set class navigation-mobile
+        # we're the homepage
 
         try:
             # Explicitly enabled or is a homepage at the root of the site
-            if getattr(self.context, 'show_mobile_nav', False) or (self.context.portal_type == 'HomePage' and parent.portal_type == 'Plone Site'):
+            if getattr(self.context, 'show_mobile_nav', False) or \
+                self.context.portal_type == 'HomePage':
                 body_classes.append("navigation-mobile")
+
         except:
             pass
 

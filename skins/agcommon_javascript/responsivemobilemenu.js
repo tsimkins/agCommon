@@ -66,9 +66,6 @@ function responsiveMobileMenu() {
 jq(document).ready(function() {
 
     // dynamically add .rmm class
-
-    jq('.top-navigation').addClass('rmm-main');
-    jq('#portal-column-one .portlet-mobile-navigation').addClass('rmm-main');
     jq('#portal-searchbox').addClass('rmm');
     jq('#document-toc').addClass('rmm');
     
@@ -80,13 +77,14 @@ jq(document).ready(function() {
     // Move the 'main' navigation items into one menu area
     var mobile_nav = jq('<div id="mobile-navigation" class="rmm"></div>');
     
-    jq('.rmm-main').each(
-        function() {
-            jq(this).clone().removeClass('rmm-main').appendTo(mobile_nav);
-        }
-    );
+    // Add the left and top nav to the menu.  
+    // Show the left nav before the top nav
+    jq('body:not(.navigation-mobile) #portal-column-one .portlet-mobile-navigation').addClass('rmm-main').clone().removeClass('rmm-main').appendTo(mobile_nav)  
 
-    mobile_nav.find('.left-column-navigation .hiddenStructure').each(
+    jq('.top-navigation').addClass('rmm-main').clone().removeClass('rmm-main').appendTo(mobile_nav)   
+
+    
+    mobile_nav.find('.left-column-navigation .hiddenStructure, .top-navigation .hiddenStructure').each(
         function() {
             jq(this).removeClass('hiddenStructure');
         }
