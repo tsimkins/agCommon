@@ -1,15 +1,13 @@
 /* @group Content Area */
 
 /* Content list styles */
-#content ul,
-.portletStaticText ul {
+#content ul {
     list-style-type: disc;
     margin-left: 2em;
 }
 
 #content ol,
-dl.portlet ol,
-.portletStaticText ol {
+dl.portlet ol {
     list-style-type: decimal;
     margin-left: 2em;
 }

@@ -684,6 +684,11 @@ body.template-subfolder_view #two-column-right {
     width: 100%;
     display: block;
     margin-top: 0.9375em; }
+  .portletStaticText .portletItem ul {
+    margin-left: 0; }
+
+#content .portletStaticText ul {
+  margin-left: 0; }
 
 /* Contact Portlet */
 .portletContact .portletItem {

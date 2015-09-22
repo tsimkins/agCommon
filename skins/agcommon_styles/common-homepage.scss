@@ -116,18 +116,32 @@
 
 #rightcolumn {
     display: block;
-    margin: 0 0 0 $homepagecolumn_margin_percent;
     font-weight: normal;
     background-color: transparent;
     color: $rightPortletTextColor;
-    width: $rightcolumn_width_percent;
     float: left;
     vertical-align: top;
+    margin: 0;
+    width: 100%;
+
+    .portletWrapper {
+        .portletItem {
+            margin-bottom: 0;
+        }
+    }
 }
 
-#portal-column-content.sl #rightcolumn {
-    margin: 0 0 0 $homepagecolumn_margin_percent_one;
-    width: $rightcolumn_width_percent_one;
+#rightcolumn.sc {
+    width: $rightcolumn_width_percent;
+    margin: 0 0 0 $homepagecolumn_margin_percent;
+}
+
+#portal-column-content.sl {
+
+    #rightcolumn.sc {
+        margin: 0 0 0 $homepagecolumn_margin_percent_one;
+        width: $rightcolumn_width_percent_one;
+    }
 }
 
 
@@ -400,7 +414,6 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 
 #rightcolumn .portletItem a.title,
 #rightcolumn .portletItem li.navTreeItem {
-    font-size: 0.84375em;
     padding: 0;
 }
 

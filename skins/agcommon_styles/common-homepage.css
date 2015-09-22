@@ -126,15 +126,21 @@
 /* ================= Right Column =====================*/
 #rightcolumn {
   display: block;
-  margin: 0 0 0 1.68067%;
   font-weight: normal;
   background-color: transparent;
   color: #3F3F3F;
-  width: 22.47899%;
   float: left;
-  vertical-align: top; }
+  vertical-align: top;
+  margin: 0;
+  width: 100%; }
+  #rightcolumn .portletWrapper .portletItem {
+    margin-bottom: 0; }
 
-#portal-column-content.sl #rightcolumn {
+#rightcolumn.sc {
+  width: 22.47899%;
+  margin: 0 0 0 1.68067%; }
+
+#portal-column-content.sl #rightcolumn.sc {
   margin: 0 0 0 2.26629%;
   width: 30.31161%; }
 
@@ -286,7 +292,6 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 
 #rightcolumn .portletItem a.title,
 #rightcolumn .portletItem li.navTreeItem {
-  font-size: 0.84375em;
   padding: 0; }
 
 #rightcolumn .portletItem li.navTreeItem a {

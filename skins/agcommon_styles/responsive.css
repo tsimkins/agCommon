@@ -83,7 +83,10 @@
     display: none !important; }
 
   #portal-column-mobile, #mobile-navigation {
-    display: none !important; } }
+    display: none !important; }
+
+  #portal-searchbox .rmm-toggled {
+    overflow: visible; } }
 /* Show mobile menus at 768px and smaller */
 @media handheld, screen and (max-width: 768px) {
   .rmm {
@@ -705,14 +708,16 @@
     body.navigation-mobile #section-title a, body.navigation-mobile #section-title a:hover {
       border: none;
       color: #1E2D4C; }
-  body.navigation-mobile .left-column-navigation .portletNavigationTree .portletItem {
-    margin-top: 0; }
-    body.navigation-mobile .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li {
-      border: 1px solid #DDDDDD;
-      border-top: none;
-      font-size: 1.125em;
-      padding: 0.375em 2%;
-      background-color: #F6F6F6; }
+  body.navigation-mobile .left-column-navigation {
+    border-top: 1px solid #DDDDDD; }
+    body.navigation-mobile .left-column-navigation .portletNavigationTree .portletItem {
+      margin-top: 0; }
+      body.navigation-mobile .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li {
+        border: 1px solid #DDDDDD;
+        border-top: none;
+        font-size: 1.125em;
+        padding: 0.375em 2%;
+        background-color: #F6F6F6; }
   body.navigation-mobile #portal-columns {
     padding-top: 0; }
 
@@ -819,6 +824,9 @@
   body.template-folder_listing_z3 #content .tileItemLeadImage .contentLeadImageContainer img,
   body.template-folder_listing_z3 #content .tileItemLeadImage .contentLeadImageContainer img.tileImage {
     float: left; }
+
+  #content .tileItemLeadImage .contentLeadImageContainer {
+    max-width: 35%; }
 
   .contentLeadImageContainer img,
   .contentLeadImageContainer p.discreet {
@@ -1055,17 +1063,12 @@
     float: left;
     padding: 0.5em 3.33333%; }
 
-  #content .tileItemLeadImage .contentLeadImageContainer {
-    width: 35%; }
-  #content .tileItemLeadImage .tileTitle,
-  #content .tileItemLeadImage .documentByLine,
-  #content .tileItemLeadImage .tileDescription,
-  #content .tileItemLeadImage .facultyStaffDirectory,
-  #content .tileItemLeadImage .tileHeadline {
-    /* ### */ }
-  #content .tileSummaryLeadImage .contentLeadImageContainer img {
+  #content .tileItemLeadImage .contentLeadImageContainer,
+  #content .tileSummaryLeadImage .contentLeadImageContainer {
     max-width: 37%;
-    margin-left: 1%; }
+    margin-left: 1%;
+    float: right;
+    width: auto; }
   #content .tileFooter {
     display: none; }
   #content .tileItemContainer .tilePortletManager .portletPerson .portletItem .person-image {

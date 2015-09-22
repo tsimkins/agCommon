@@ -52,6 +52,10 @@
         display: none !important;
     }
     
+    #portal-searchbox .rmm-toggled {
+        overflow: visible;
+    }
+    
 }
 
 /* Show mobile menus at 768px and smaller */
@@ -956,19 +960,23 @@
             }
         }
     
-        .left-column-navigation .portletNavigationTree .portletItem {
+        .left-column-navigation {
+            border-top: 1px solid $leftNavBorderColor;
             
-            margin-top: 0;
+            .portletNavigationTree .portletItem {
             
-            ul.navTreeLevel0 > li {
-                border: 1px solid $leftNavBorderColor;
-                border-top: none;
-                font-size: 1.125em;
-                padding: 0.375em 2%;
-                background-color: $globalBackgroundColor;
+                margin-top: 0;
+                
+                ul.navTreeLevel0 > li {
+                    border: 1px solid $leftNavBorderColor;
+                    border-top: none;
+                    font-size: 1.125em;
+                    padding: 0.375em 2%;
+                    background-color: $globalBackgroundColor;
+                }
             }
         }
-                
+                        
         #portal-columns {
             padding-top: 0;
         }
@@ -1115,6 +1123,15 @@
         img,         
         img.tileImage {
             float: left;
+        }
+        
+    }
+
+    #content {
+        .tileItemLeadImage {
+            .contentLeadImageContainer {
+                max-width: 35%;
+            }
         }
     }
 
@@ -1421,25 +1438,13 @@
     }
     
     #content {
-        .tileItemLeadImage {
-            .contentLeadImageContainer {
-                width: 35%;
-            }
-            
-            .tileTitle,
-            .documentByLine,
-            .tileDescription,
-            .facultyStaffDirectory,
-            .tileHeadline {
-                /* ### */
-            }
-
-        }
-            
+        .tileItemLeadImage,
         .tileSummaryLeadImage {
-            .contentLeadImageContainer img {
+            .contentLeadImageContainer {
                 max-width: 37%;
                 margin-left: 1%;
+                float: right;
+                width: auto;
             }
         }
 
