@@ -5,7 +5,7 @@ from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.agCommon import getContextConfig
+from Products.agCommon import getContextConfig, getSearchEngineURL
 from Products.agCommon.browser.interfaces import IFSDShortBio
 from RestrictedPython.Utilities import same_type as _same_type
 from RestrictedPython.Utilities import test as _test
@@ -14,6 +14,7 @@ from collective.contentleadimage.leadimageprefs import ILeadImagePrefsForm
 from collective.contentleadimage.utils import getImageAndCaptionFields, getImageAndCaptionFieldNames
 from plone.app.workflow.browser.sharing import SharingView, AUTH_GROUP
 from plone.memoize.instance import memoize
+from urllib import quote_plus
 from zope.component import getUtility, getMultiAdapter
 from zope.component.interfaces import ComponentLookupError
 from zope.interface import implements, Interface
@@ -350,6 +351,11 @@ class FolderView(BrowserView):
     @property
     def getTileColumns(self):
         return getattr(self.context, 'tile_folder_columns', '3')
+
+    @memoize
+    def getSection(self):
+        v = self.context.restrictedTraverse('@@agcommon_utilities')
+        return v.getSection()
 
 class SearchView(FolderView):
 
@@ -821,3 +827,15 @@ class OrderPublicationView(PublicationView):
 
     def page_title(self):
         return 'Order Publication: %s' % self.context.Title()
+
+# From Products.AD54Elements
+
+class ProcessSearch(FolderView):
+
+    def __call__(self):
+
+        req = self.context.REQUEST
+        
+        search_url = getSearchEngineURL(choice=req.get('choice', ''), path=req.get('path', ''), q=quote_plus(req['searchString']))
+
+        return req.RESPONSE.redirect(search_url)

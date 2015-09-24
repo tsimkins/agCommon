@@ -11,17 +11,25 @@
         <tal:comment tal:condition="nothing"><!-- Move the search options to the top. Michele says it makes more sense to her --> 
         <!-- The li's below had onkeypress="return myFunction(event);" which we don't need anymore--> </tal:comment>
          <ul id="search" class="">
-            <li tal:repeat="option view/getSearchOptions">
-              <label tal:attributes="for option/key; tabindex repeat/option/number;" >
-                <input tal:attributes="id option/key;
-                                       value option/key;
-                                       checked option/selected;" 
-                                       type="radio" name="choice" />
-                    <span tal:content="option/description">Search This Website</span>
-               </label>
-            </li>
+            <tal:li repeat="option view/getSearchOptions">
+                <li tal:condition="not: option/disabled">
+                  <label tal:attributes="for option/key; tabindex repeat/option/number;" >
+                    <input tal:attributes="id option/key;
+                                           value option/key;
+                                           checked option/selected;" 
+                                           type="radio" name="choice" />
+                        <span tal:content="option/description">Search This Website</span>
+                   </label>
+                </li>
+            </tal:li>
         </ul> 
         <div>
+
+            <input type="hidden" 
+                    name="path" 
+                    tal:attributes="value view/section_path|nothing"
+                    tal:condition="view/section_path|nothing" />
+
             <input type="text" 
                     name="searchString" 
                     id="searchString" 

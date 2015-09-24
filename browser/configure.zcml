@@ -130,10 +130,19 @@
     <browser:viewlet
         name="plone.searchbox"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-        class=".viewlets.SearchBoxViewlet"
+        class=".viewlets.MultiSearchViewlet"
         template="templates/searchbox.pt"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
+        />
+
+    <!-- Process search after submit -->
+    <browser:page
+        name="process-search"
+        for="Products.CMFCore.PortalObject.PortalObjectBase"
+        class=".views.ProcessSearch"
+        permission="zope.Public"
+        layer=".interfaces.IThemeSpecific"
         />
 
     <!-- The local search box -->

@@ -2,6 +2,7 @@ from AccessControl import getSecurityManager
 from Acquisition import aq_inner, aq_base, aq_chain
 from DateTime import DateTime
 from .. import toISO
+from Products.agCommon import getSearchConfig
 from Products.AD54Elements.browser.viewlets import MultiSearchViewlet
 from Products.ATContentTypes.interfaces.event import IATEvent
 from Products.ATContentTypes.interfaces.news import IATNewsItem
@@ -940,10 +941,23 @@ class FooterPortletsViewlet(_ContentWellPortletsViewlet):
     name = 'FooterPortletManager'
     manage_view = '@@manage-portletsfooter'
 
-class SearchBoxViewlet(MultiSearchViewlet):
-    pass
+class MultiSearchViewlet(AgCommonViewlet):
 
-class LocalSearchViewlet(SearchBoxViewlet):
+    def getSearchOptions(self):
+
+        return getSearchConfig(context=self.context, path=self.section_path)
+
+    @property
+    def section_path(self):
+        section = self.getSection()
+    
+        if section:
+            return '/'.join(section.getPhysicalPath())
+        
+        return None
+
+
+class LocalSearchViewlet(MultiSearchViewlet):
 
     def counties(self):
         return sorted(county_data.keys())

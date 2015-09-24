@@ -35,6 +35,85 @@ ATTEMPTS = 100
 GLOBALS = globals()
 registerDirectory('skins', GLOBALS)
 
+default_search_destination='site'
+
+def getDefaultSearchDestination(context=None):
+    if context:
+        if getContextConfig(context, 'show_college_search', False):
+            default = 'college'
+    
+        elif getContextConfig(context, 'show_section_search', False):
+            default = 'section'
+
+    return default_search_destination
+
+
+def getSearchConfig(context=None, path='', q=''):
+
+    default=getDefaultSearchDestination(context)
+
+    searches = [
+                    {
+                        'key' : 'college',
+                        'url' :  'http://cse.google.com/cse?cx=009987215249396987893:cmobqlykeyk&q=%s' % q,
+                        'description' : 'Search The College'
+                    },
+                    {
+                        'key' : 'site',
+                        'url' :  'search?SearchableText=%s' % q,
+                        'description' : 'Search This Site'
+                    },
+                    {
+                        'key' : 'section',
+                        'url' :  'search?SearchableText=%s&path=%s' % (q, path),
+                        'description' : 'Search This Section'
+                    },
+                    {
+                        'key' : 'psu-web',
+                        'url' :  'http://search.psu.edu/?q=%s' % q,
+                        'description' : 'Search Penn State'
+                    },
+                    {
+                        'key' : 'psu-people',
+                        'url' :  'http://www.psu.edu/cgi-bin/ldap/ldap_query.cgi?cn=%s' % q,
+                        'description' : 'Search Penn State People'
+                    },
+                    {
+                        'key' : 'psu-email',
+                        'url' :  'http://www.psu.edu/cgi-bin/ldap/ldap_query.cgi?uid=%s' % q,
+                        'description' : 'Search Penn State Accounts'
+                    },
+                    {
+                        'key' : 'psu-dept',
+                        'url' :  'http://www.psu.edu/cgi-bin/ldap/dept_query.cgi?dept_name=%s' % q,
+                        'description' : 'Search Penn State Departments'
+                    },
+                ]
+
+    # Dynamically add attributes
+    for i in searches:
+        key = i.get('key', '')
+        
+        # If it's the default search engine, add a attribute of selected=True
+        i['selected'] = (key == default)
+        
+        # If there's no path (i.e. not a section) and it's the section search engine,
+        # add an attribute of disabled=True
+        i['disabled'] = (key == 'section' and not path)
+        
+
+    return searches
+
+def getSearchEngineURL(choice=default_search_destination, path='', q=''):
+    searches = getSearchConfig(path=path, q=q)
+    
+    search_engine_data = dict([(x.get('key', None), x) for x in searches])
+    
+    search_engine = search_engine_data.get(choice, search_engine_data.get(default_search_destination, {}))
+    
+    return search_engine.get('url', '')
+    
+
 # Allow us to use this module in scripts
 
 allow_module('Products.agCommon')
@@ -857,6 +936,8 @@ def _getContextConfig(context):
         'show_date',
         'show_image',
         'show_read_more',
+        'show_college_search',
+        'show_section_search',
         'registration_url',
         'contact_creators',
         'contact_title',
