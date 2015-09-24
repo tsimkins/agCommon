@@ -171,6 +171,9 @@
     width: 1px !important;
     border: none; }
 
+  #portal-top-navigation.empty {
+    clear: both; }
+
   #mobile-navigation .top-navigation.empty {
     display: none; }
   #mobile-navigation .rmm-main-list {
@@ -809,17 +812,6 @@
     border-top: 1px solid #666666;
     border-bottom: 1px solid #666666;
     margin-top: 0.5625em; }
-
-  #portal-column-content.sl.sr .contentLeadImageContainer,
-  .contentLeadImageContainer,
-  .captionedImage, .captionedImage.right {
-    float: none;
-    display: block;
-    max-width: 100%;
-    text-align: left;
-    width: 100%;
-    margin-left: 0;
-    margin-top: 0.5em; }
 
   body.template-folder_listing_z3 #content .tileItemLeadImage .contentLeadImageContainer img,
   body.template-folder_listing_z3 #content .tileItemLeadImage .contentLeadImageContainer img.tileImage {

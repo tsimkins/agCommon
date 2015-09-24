@@ -90,7 +90,10 @@ jq(document).ready(function() {
         }
     );
     
-    mobile_nav.appendTo('#portal-header');
+    
+    if (mobile_nav.children().size()) {
+        mobile_nav.appendTo('#portal-header');
+    }
 
     responsiveMobileMenu();
     
