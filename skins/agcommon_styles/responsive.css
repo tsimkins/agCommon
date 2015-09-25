@@ -122,21 +122,27 @@
     padding: 1em 2.17391%;
     margin: 1em -2.17391% 0; }
 
-  #portal-top {
+  #portal-top
+  #document-toc {
     padding-bottom: 0.25em;
     background-image: none; }
-    #portal-top .rmm,
-    #portal-top #portal-searchbox.rmm {
+    #portal-top
+    #document-toc .rmm,
+    #portal-top
+    #document-toc #portal-searchbox.rmm {
       margin: 1em 0 0;
       border: 1px solid #999999;
       width: 71.33152%; }
-    #portal-top #portal-searchbox.rmm {
+    #portal-top
+    #document-toc #portal-searchbox.rmm {
       width: 25.95109%; }
-      #portal-top #portal-searchbox.rmm .rmm-main-list {
+      #portal-top
+      #document-toc #portal-searchbox.rmm .rmm-main-list {
         padding: 0.25em 1.25em 1.5em;
         background-color: #F6F6F6;
         border: 1px solid #999999; }
-        #portal-top #portal-searchbox.rmm .rmm-main-list .searchform #menu li #search {
+        #portal-top
+        #document-toc #portal-searchbox.rmm .rmm-main-list .searchform #menu li #search {
           display: block;
           position: static;
           border: none;
@@ -144,11 +150,13 @@
           font-size: 1em;
           line-height: 1.625;
           margin: 0 0 1em; }
-          #portal-top #portal-searchbox.rmm .rmm-main-list .searchform #menu li #search li {
+          #portal-top
+          #document-toc #portal-searchbox.rmm .rmm-main-list .searchform #menu li #search li {
             border: none;
             margin: 0.25em 0;
             padding: 0; }
-    #portal-top .rmm-main-list {
+    #portal-top
+    #document-toc .rmm-main-list {
       position: absolute;
       left: 0;
       right: 0;
@@ -161,7 +169,7 @@
     padding: 0;
     width: auto; }
 
-  #portal-top .rmm > .rmm-closed > :not(.rmm-toggled-controls) {
+  #portal-top .rmm > .rmm-closed > :not(.rmm-toggled-controls), #document-toc .rmm > .rmm-closed > :not(.rmm-toggled-controls) {
     border: none;
     display: block;
     height: 0.1em !important;
@@ -212,13 +220,16 @@
     font-weight: 600; }
   #mobile-navigation .left-column-navigation h2.portletHeader {
     padding: 0;
-    background-color: #E6E6E6; }
+    background-color: #E6E6E6;
+    margin: 0; }
     #mobile-navigation .left-column-navigation h2.portletHeader a, #mobile-navigation .left-column-navigation h2.portletHeader a:hover {
       display: block;
       font-size: 1em;
       font-weight: 600;
       padding: 0.5em;
       color: #1E2D4C; }
+  #mobile-navigation .left-column-navigation .portlet {
+    margin: 0; }
   #mobile-navigation .left-column-navigation .portletItem {
     margin: 0; }
     #mobile-navigation .left-column-navigation .portletItem li {
@@ -447,6 +458,17 @@
 
   #portal-columns {
     padding-top: 0.25em; }
+
+  #mobile-navigation .portletWrapper {
+    padding: 1em 0; }
+    #mobile-navigation .portletWrapper .portletHeader {
+      margin: 0 0.5em; }
+    #mobile-navigation .portletWrapper .portlet {
+      margin: 0 1em; }
+    #mobile-navigation .portletWrapper .portletLinkButton .portletItem a {
+      border: 1px solid #999999; }
+  #mobile-navigation .portletWrapper:first-child {
+    padding-top: 0; }
 
   #homepageimage .text, #homepageimage div.overlay {
     display: none !important; }
@@ -713,6 +735,12 @@
       color: #1E2D4C; }
   body.navigation-mobile .left-column-navigation {
     border-top: 1px solid #DDDDDD; }
+    body.navigation-mobile .left-column-navigation .portletHeader {
+      border: 1px solid #DDDDDD;
+      border-bottom: none;
+      padding: 0.5em 2% 0.375em;
+      font-size: 1.125em;
+      background-color: #E6E6E6; }
     body.navigation-mobile .left-column-navigation .portletNavigationTree .portletItem {
       margin-top: 0; }
       body.navigation-mobile .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li {
@@ -1046,7 +1074,10 @@
     background-position: 0 34.6691%; }
 
   .rg-image-nav a.rg-image-nav-next {
-    background-position: 100% 34.6691%; } }
+    background-position: 100% 34.6691%; }
+
+  #viewlet-above-content .flexslider {
+    margin: 1em 0; } }
 /*------------------------ END resolution-520.css ----------------------------*/
 /*------------------------- resolution-480.css ------------------------------*/
 @media handheld, screen and (max-width: 480px) {

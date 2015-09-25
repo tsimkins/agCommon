@@ -955,7 +955,8 @@ body.template-subfolder_view #two-column-right {
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: #E6E6E6;
-  text-transform: none; }
+  text-transform: none;
+  line-height: 1.25; }
   .left-column-navigation .portletHeader a {
     background-color: transparent;
     color: #1E2D4C;
@@ -1021,6 +1022,9 @@ body.template-subfolder_view #two-column-right {
       color: #4D4D4D; }
   .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 .navTreeCurrentItem {
     background-color: transparent; }
+
+#portal-column-one .left-column-navigation .portletHeader a:hover {
+  color: #003FAC; }
 
 /* 
     CSS for content in '#content' area
@@ -1697,7 +1701,8 @@ dl.person-connect img {
     padding: 0;
     font-weight: 600;
     color: #4D4D4D;
-    margin: 0; }
+    margin: 0;
+    font-size: 1em; }
   #document-toc .portlet {
     background-color: transparent;
     border: none; }

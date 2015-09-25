@@ -109,7 +109,8 @@
     $menuWidth: 525px;
     $searchWidth: $headerWidth - $menuWidth - 4px - $column_padding;
 
-    #portal-top {
+    #portal-top
+    #document-toc {
         padding-bottom: 0.25em;
         background-image: none;
         
@@ -167,15 +168,17 @@
         width: auto;
     }
 
-    #portal-top .rmm > .rmm-closed > :not(.rmm-toggled-controls) {
-        border: none;
-        display: block;
-        height: 0.1em !important;
-        margin: -10000em 0 0 -10000em !important;
-        overflow: hidden;
-        padding: 0 !important;
-        width: 1px !important;
-        border: none;
+    #portal-top, #document-toc {
+         .rmm > .rmm-closed > :not(.rmm-toggled-controls) {
+            border: none;
+            display: block;
+            height: 0.1em !important;
+            margin: -10000em 0 0 -10000em !important;
+            overflow: hidden;
+            padding: 0 !important;
+            width: 1px !important;
+            border: none;
+         }
     }
 
     #portal-top-navigation.empty {
@@ -244,6 +247,7 @@
             h2.portletHeader {
                 padding: 0;
                 background-color: $globalBorderColor;
+                margin: 0;
                 
                 a, a:hover {
                     display: block;
@@ -252,6 +256,10 @@
                     padding: 0.5em;
                     color: $leftNavTitleColor;
                 }
+            }
+
+            .portlet {
+                margin: 0;
             }
             
             .portletItem {
@@ -593,6 +601,29 @@
     
     #portal-columns {
         padding-top: 0.25em;
+    }
+    
+    #mobile-navigation {
+        .portletWrapper {
+            
+            padding: 1em 0;
+            
+            .portletHeader {
+                margin: 0 0.5em;
+            }
+            .portlet {
+                margin: 0 1em;
+            }
+            
+            .portletLinkButton .portletItem a {
+                border: 1px solid $fieldBorderColor;
+            }
+            
+        }
+        
+        .portletWrapper:first-child {
+            padding-top: 0;
+        }
     }
     
     #homepageimage .text, #homepageimage div.overlay {
@@ -966,6 +997,14 @@
     
         .left-column-navigation {
             border-top: 1px solid $leftNavBorderColor;
+            
+            .portletHeader {
+                border: 1px solid $leftNavBorderColor;
+                border-bottom: none;
+                padding: 0.5em 2% 0.375em;
+                font-size: 1.125em;
+                background-color: $globalBorderColor;
+            }
             
             .portletNavigationTree .portletItem {
             
@@ -1409,6 +1448,10 @@
     
     .rg-image-nav a.rg-image-nav-next {
         background-position: 100% 34.6691%;
+    }
+
+    #viewlet-above-content .flexslider {
+        margin: 1em 0
     }
 
 }    

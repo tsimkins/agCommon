@@ -11,6 +11,7 @@
         border-style: solid;
         border-color: $globalBorderColor;
         text-transform: none;
+        line-height: 1.25;
 
         a {
             background-color: transparent;
@@ -117,4 +118,8 @@
             }
         }
     }
+}
+
+#portal-column-one .left-column-navigation .portletHeader a:hover {
+    color: $leftNavTextHoverColor;
 }

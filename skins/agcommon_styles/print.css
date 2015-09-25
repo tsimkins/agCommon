@@ -1,7 +1,8 @@
 /* Body width 100%, background white */
 body {
   background-color: #FFFFFF;
-  background-image: none; }
+  background-image: none;
+  padding: 0 0.5em; }
 
 #visual-portal-wrapper {
   max-width: 100%;
@@ -13,7 +14,8 @@ body {
   /* Remove Drop Shadow */
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
-  box-shadow: none; }
+  box-shadow: none;
+  padding: 0; }
 
 /* Remove vertical borders */
 #portal-top, #portal-columns, #portal-footer, #clear-space-before-footer {
@@ -21,47 +23,34 @@ body {
   border-right: 0;
   background-image: none;
   background-color: transparent;
-  padding-bottom: 2em;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0; }
 
 /* Portal Header and Logo */
 #portal-header {
   background-color: #FFFFFF;
   background-image: none;
-  max-width: 100%; }
+  max-width: 100%;
+  padding: 0;
+  margin: 0 0 1em 0; }
 
-#logo-psu, #logo-college {
-  display: none; }
-
-#logo-print {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 7px; }
-
-#logo-print.extension {
-  left: 0;
-  top: 0.25em; }
+#logo-college {
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #CCCCCC; }
 
 #logo-site {
-  position: relative;
-  font-size: 26pt;
-  letter-spacing: 0.02em;
-  width: auto;
-  top: 30px;
-  left: 140px;
-  margin-top: 0;
-  margin-left: 0;
-  color: #000000; }
+  position: static;
+  background-color: transparent;
+  margin: 0 0 0.25em 0;
+  padding: 0; }
+  #logo-site a {
+    color: #000000;
+    font-size: 14px; }
 
-#logo-site.subsite {
-  left: 212px; }
-
-#logo-site.extension {
+/* Mobile Menus */
+#mobile-navigation {
   display: none; }
-
-#logo-site a {
-  color: #333333; }
 
 /* Remove Search Box */
 #portal-searchbox {
@@ -75,8 +64,16 @@ body {
 .top-navigation {
   display: none !important; }
 
+/* Section Title */
+#section-title {
+  margin-bottom: 0.25em;
+  font-size: 12pt;
+  border-bottom-color: #CCCCCC; }
+  #section-title a {
+    text-decoration: none; }
+
 /* Home Page Image */
-body.template-document_homepage_view #homepageimage {
+#homepageimage {
   display: none !important; }
 
 /* Left Column */
@@ -98,10 +95,9 @@ body.template-document_homepage_view #homepageimage {
 
 /* Content */
 #portal-column-content {
-  border-width: 1px 0 0 0;
-  border-style: solid;
-  border-color: #666666;
-  margin-top: 0.125em;
+  border: none;
+  margin: 0.25em 0;
+  padding: 0;
   border-left-style: none !important;
   border-left-width: 0 !important;
   border-left-color: transparent !important;
@@ -115,7 +111,7 @@ body.template-document_homepage_view #homepageimage {
 
 #content {
   padding: 0px !important;
-  margin: 1em 0 0 0;
+  margin: 1em 0 0 0 !important;
   width: 100%;
   font-size: 11.5pt; }
 
@@ -224,7 +220,7 @@ body.custom-pullquote #region-content h2 {
   display: none !important; }
 
 /* Content Well Portlets */
-#portlets-above, #portlets-footer {
+#portlets-above, #portlets-footer, #portlets-below {
   display: none !important; }
 
 /* Table of Contents */
@@ -232,7 +228,7 @@ body.custom-pullquote #region-content h2 {
   display: none !important; }
 
 /* Remove comment Form */
-div.discussion form {
+div.discussion form, #commenting {
   display: none !important; }
 
 /* Remove image border */
@@ -240,6 +236,7 @@ img {
   border-width: 0; }
 
 #fblike,
+#googleplusone,
 #___plusone_0,
 .publication {
   display: none !important; }
@@ -270,17 +267,17 @@ table.listing td {
 
 /* Lists */
 #content ul, #content ol {
-  margin-left: 0.5em; }
-
+  margin: 0.375em 0 1.125em 1.5em;
+  padding: 0; }
+  #content ul li, #content ol li {
+    margin: 0.375em 0;
+    padding: 0; }
 #content ul {
   list-style-image: none;
-  list-style-type: square;
-  margin: 0.375em 0 1.125em 2.5em; }
-
+  list-style-type: square; }
 #content ol {
   list-style-image: none;
-  list-style-type: decimal;
-  margin: 0.375em 0 1.125em 2.5em; }
+  list-style-type: decimal; }
 
 /* Factsheet View */
 body.template-factsheet_view.two_column_print #content {
@@ -313,8 +310,19 @@ a[href^="http"]:link:after, a[href^="http"]:visited:after {
 .tileItem a[href^="http"]:link:after, .tileItem a[href^="http"]:visited:after {
   content: none; }
 
-#portal-top a:link:after, #portal-top a:visited:after,
-.contentLeadImageContainer a:link:after, .contentLeadImageContainer a:visited:after {
+#section-title a:link:after,
+#section-title a:visited:after,
+#portal-top a:link:after,
+#portal-top a:visited:after,
+.contentLeadImageContainer a:link:after,
+.contentLeadImageContainer a:visited:after,
+.contentLeadImageContainerFullWidth a:link:after,
+.contentLeadImageContainerFullWidth a:visited:after {
   content: ""; }
+#section-title a,
+#portal-top a,
+.contentLeadImageContainer a,
+.contentLeadImageContainerFullWidth a {
+  border-bottom: none !important; }
 
 /*# sourceMappingURL=print.css.map */
