@@ -297,8 +297,9 @@ body {
   #content .tileItem .tileDescription {
     margin: 0.25em 0 0.25em 0;
     font-weight: normal;
-    font-size: 0.875em p;
-      font-size-margin: 0.25em 0 0.25em 0; }
+    font-size: 0.875em; }
+    #content .tileItem .tileDescription p {
+      margin: 0.25em 0 0.25em 0; }
   #content .tileItem .tileDescription.no-description {
     display: none; }
   #content .tileItem .contentLeadImageContainer a,
@@ -380,7 +381,8 @@ body.tile-folder #content .tileitem-width-100:first-child {
   border-top: none;
   padding-top: 0.5em; }
 body.tile-folder #content .tileItem {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  border-top: none; }
   body.tile-folder #content .tileItem .tileHeadline {
     font-weight: normal; }
   body.tile-folder #content .tileItem .contentLeadImageContainer {
@@ -404,6 +406,8 @@ body.tile-folder #content .tileItem {
     color: #000000; }
   body.tile-folder #content .tileItem .tileBody {
     color: #000000; }
+body.tile-folder #content .tileItem:first-child {
+  padding-top: 0; }
 body.tile-folder #content .tileItem.excludeFromNav {
   clear: both;
   width: auto; }

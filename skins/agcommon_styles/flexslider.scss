@@ -27,7 +27,7 @@
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
-.slides:after {content: "."; display: block; clear: both; visibility: hidden; linexxx-height: 0; height: 0;}
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; height: 0;}
 html[xmlns] .slides {display: block;}
 * html .slides {height: 1%;}
 
@@ -47,8 +47,13 @@ html[xmlns] .slides {display: block;}
 
 /* Caption style */
 /* IE rgba() hack */
-.flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+.flex-caption {
+    background:none; 
+    -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); 
+    zoom: 1;
+}
+
 .flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px;}
 
 /* Direction Nav */

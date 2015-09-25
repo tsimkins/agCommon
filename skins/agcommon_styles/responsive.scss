@@ -109,7 +109,7 @@
     $menuWidth: 525px;
     $searchWidth: $headerWidth - $menuWidth - 4px - $column_padding;
 
-    #portal-top
+    #portal-top,
     #document-toc {
         padding-bottom: 0.25em;
         background-image: none;
@@ -1228,12 +1228,21 @@
         display: none;
     }
     
-    #portal-column-one .portletLinkButton,
-    #portal-column-two .portletLinkButton,
-    #rightcolumn .portletLinkButton,
-    #portal-column-one .portletLinkIcon,
-    #portal-column-two .portletLinkIcon {
-        margin: 1.25em 0;
+    #portal-column-one,
+    #portal-column-two,
+    #portal-column-mobile,
+    #rightcolumn {
+        .portletLinkButton,
+        .portletLinkIcon {
+            margin: 1.25em 0;
+        }
+        
+        .portletLinkButton {
+            .portletItem img {
+                width: auto;
+                max-width: 100%;
+            }
+        }
     }
     
     /* Bump down headings and description */
