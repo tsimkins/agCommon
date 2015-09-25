@@ -34,6 +34,7 @@
                     name="searchString" 
                     id="searchString" 
                     title="Enter search text" 
+                    autocomplete="off"
                     value="" />
                    
             <input type="image" 

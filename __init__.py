@@ -79,11 +79,6 @@ def getSearchConfig(context=None, path='', q=''):
                         'description' : 'Search Penn State People'
                     },
                     {
-                        'key' : 'psu-email',
-                        'url' :  'http://www.psu.edu/cgi-bin/ldap/ldap_query.cgi?uid=%s' % q,
-                        'description' : 'Search Penn State Accounts'
-                    },
-                    {
                         'key' : 'psu-dept',
                         'url' :  'http://www.psu.edu/cgi-bin/ldap/dept_query.cgi?dept_name=%s' % q,
                         'description' : 'Search Penn State Departments'

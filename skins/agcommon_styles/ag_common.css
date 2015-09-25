@@ -2240,7 +2240,8 @@ body.icons-on #portal-header {
   .icons-on #content .contenttype-news-item,
   .icons-on #content .contenttype-plone-site,
   .icons-on #content .contenttype-topic {
-    display: block; }
+    display: block;
+    line-height: 2; }
   .icons-on #content #listing-table a[class*='contenttype-'],
   .icons-on #content #listing-table .contenttype-document,
   .icons-on #content #listing-table .contenttype-event,
@@ -2258,8 +2259,11 @@ body.icons-on #portal-header {
   font-size: 0.6875em;
   margin-top: 1em; }
 
-#content-views a, #content li.formTab a, #content-core li.formTab a {
-  padding: 0 0.5em; }
+#content-views a,
+#content li.formTab a,
+#content-core li.formTab a {
+  padding: 0 0.5em;
+  line-height: 2em; }
 
 /* For deleted events */
 a.state-deleted {

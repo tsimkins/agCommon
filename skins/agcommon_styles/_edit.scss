@@ -117,6 +117,7 @@ body.icons-on #portal-header {
         .contenttype-plone-site,
         .contenttype-topic {
             display: block;
+            line-height: 2;
         }
     }
     
@@ -148,8 +149,11 @@ body.icons-on #portal-header {
     margin-top: 1em;
 }
 
-#content-views a, #content li.formTab a, #content-core li.formTab a {
+#content-views a, 
+#content li.formTab a, 
+#content-core li.formTab a {
     padding: 0 0.5em;
+    line-height: 2em;
 }
 
 

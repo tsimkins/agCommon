@@ -61,8 +61,8 @@ label.obscure {
     position:absolute; 
     left:-0px; 
     top:0px; 
-    line-height:16px; 
-    font-size:10px;
+    font-size: 0.75em;
+    line-height: 1.25; 
     background-color:#F0F0F0; 
     text-align: left; 
     color:#6E6E72; /* for IE */ 
@@ -85,7 +85,6 @@ label.obscure {
 #menu li ul label span {
     margin-left: 5px;
   	font-weight:normal;
-    font-size:10px;
 	font-family: Arial,FreeSans,sans-serif;
 }
 
@@ -93,7 +92,6 @@ label.obscure {
     display:block; 
     margin:5px; 
     padding: 5px 0px;  
-    border-top: dotted 1px #606060; 
     list-style-type:none;
 }
 
