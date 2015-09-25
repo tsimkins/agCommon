@@ -338,10 +338,6 @@ body {
         margin: 0;
         padding: 0;
         float: none; }
-  #content .tileItem .tileItemLeadImage:first-child,
-  #content .tileItem .tileSummary:first-child {
-    border-top: none;
-    padding-top: 0.5em; }
   #content .tileItem .tileImage {
     border: none;
     margin-top: 0; }
@@ -357,6 +353,14 @@ body {
       margin: 0.25em 0; }
   #content .tileItem .tileSubItem dd {
     margin-bottom: 1.5em; }
+#content .tileSummary {
+  border-top: 1px dashed #E6E6E6;
+  padding-top: 1em;
+  margin-top: 1em; }
+#content .tileItemLeadImage:first-child,
+#content .tileSummary:first-child {
+  border-top: none;
+  padding-top: 0.5em; }
 
 /* Tile folder view */
 body.tile-folder #content .tileitem-width-100:nth-child(1n+1),
@@ -1740,24 +1744,26 @@ dl.person-connect img {
     font-weight: normal; }
   #portal-localsearchbox #localSearchBox {
     width: 88.39286%;
-    padding: 0.1875em 1.19048%;
+    padding: 0.25em 1.19048%;
     border: 1px solid #999999;
     background-image: none;
     float: left;
+    font-size: 0.875em;
     margin: 0 1.19048% 0 0; }
   #portal-localsearchbox .searchButton {
     background-color: #FFD35F;
     /* UI */
     border: 1px solid #EF6500;
     /* UI */
-    padding: 0.125em 0;
+    padding: 0.1875em 0;
     margin: 0;
     color: #3F1B00;
     /* UI */
     background-image: none;
     width: 7.44048%;
     display: block;
-    float: left; }
+    float: left;
+    font-size: 0.875em; }
 
 /* Including ZIP code and/or county search */
 #portal-localsearchbox.extra_search_fields .search_criteria {
@@ -2508,24 +2514,36 @@ body.template-agenda_view #document-toc h3 {
 #printheader {
   display: none; }
 
-/* Search screen */
+/* ###Search screen */
 body.template-search #portal-breadcrumbs,
 body.template-search_z3 #portal-breadcrumbs {
   display: none; }
-
 body.template-search #portal-columns,
-body.template-search_z3 #portal-columns,
 body.template-search #portal-column-content,
+body.template-search_z3 #portal-columns,
 body.template-search_z3 #portal-column-content {
   display: block; }
-
-body.template-search #content,
-body.template-search_z3 #content {
-  padding-top: 2em; }
-
-body.template-search form.searchPage input,
-body.template-search_z3 form.searchPage input {
-  font-size: 1em; }
+body.template-search form.searchPage,
+body.template-search_z3 form.searchPage {
+  text-align: left;
+  margin: 0.75em 0; }
+  body.template-search form.searchPage input,
+  body.template-search_z3 form.searchPage input {
+    font-size: 1em; }
+body.template-search .searchResults,
+body.template-search_z3 .searchResults {
+  border-top: 1px solid #E6E6E6;
+  margin-top: 1.25em;
+  padding-top: 0.75em; }
+  body.template-search .searchResults .tileItem,
+  body.template-search_z3 .searchResults .tileItem {
+    border-top: 1px dashed #E6E6E6; }
+  body.template-search .searchResults .tileItem:first-child,
+  body.template-search_z3 .searchResults .tileItem:first-child {
+    border-top: none; }
+  body.template-search .searchResults .searchLeadImageContainer,
+  body.template-search_z3 .searchResults .searchLeadImageContainer {
+    float: right; }
 
 /* Form Thanks Page */
 body.template-fg_thankspage_view_p3 #content blockquote dt,
@@ -2577,18 +2595,6 @@ body.template-folder_full_view #content .documentText h3 {
 body.template-by_county_summary_view #content .tileItemLeadImage,
 body.template-by_county_summary_view #content .tileSummaryLeadImage {
   border-top: none !important; }
-
-form.searchPage {
-  text-align: left;
-  margin: 0.75em 0; }
-
-.searchResults {
-  border-top: 1px solid #E6E6E6;
-  margin-top: 1.25em;
-  padding-top: 0.75em; }
-
-.searchResults dd {
-  margin: 0 0 2.5em 0; }
 
 #content .portletFooter a:hover {
   border: none;

@@ -176,6 +176,10 @@ class AgCommonViewlet(ViewletBase):
     def getSection(self):
         v = self.context.restrictedTraverse('@@agcommon_utilities')
         return v.getSection()
+        
+    @property
+    def portal_url(self):
+        return self.context.portal_url()
 
 
 
@@ -968,7 +972,7 @@ class LocalSearchViewlet(MultiSearchViewlet):
         if self.context.getLayout() in ['extension_course_view'] or 'courses' in self.context.Subject():
             anchor = "#event-listing"
 
-        default_search_url ='%s/search' % self.site_url
+        default_search_url ='%s/search' % self.portal_url
         localsearch_collection_path = self.context.getProperty('localsearch_collection_path', '')
 
         if self.context.portal_type in ['Topic']:
@@ -1156,9 +1160,6 @@ class LogoViewlet(AgCommonViewlet):
 
     def navigation_root_url(self):
         return self.portal_state.navigation_root_url()
-        
-    def portal_url(self):
-        return self.context.portal_url()
 
 
 # provideAdapter for viewlets to be registered in standalone mode

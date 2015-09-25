@@ -357,6 +357,14 @@ class FolderView(BrowserView):
         v = self.context.restrictedTraverse('@@agcommon_utilities')
         return v.getSection()
 
+    @property
+    def portal(self):
+        return getToolByName(self.context, 'portal_url').getPortalObject()
+        
+    @property
+    def portal_url(self):
+        return self.portal.absolute_url()
+
 class SearchView(FolderView):
 
     implements(ISearchView)
@@ -555,10 +563,6 @@ class AgendaView(FolderView):
 
     def getBodyText(self):
         return self.context.getBodyText()
-
-    @property
-    def portal(self):
-        return getToolByName(self.context, 'portal_url').getPortalObject()
 
 
 class EventTableView(AgendaView):
@@ -837,5 +841,8 @@ class ProcessSearch(FolderView):
         req = self.context.REQUEST
         
         search_url = getSearchEngineURL(choice=req.get('choice', ''), path=req.get('path', ''), q=quote_plus(req['searchString']))
+
+        if not search_url.startswith('http'):
+            search_url = '%s/%s' % (self.portal_url, search_url)
 
         return req.RESPONSE.redirect(search_url)

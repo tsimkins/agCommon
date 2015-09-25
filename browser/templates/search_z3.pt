@@ -266,7 +266,7 @@
                           batch python:Batch(results, b_size, int(b_start), orphan=1);
                           now modules/DateTime/DateTime">
 
-            <dl class="searchResults">
+            <div class="searchResults">
             <tal:results repeat="result batch">
             <tal:entry define="result_url result/getURL;
                                result_type result/portal_type;
@@ -280,8 +280,8 @@
                                item_effective item/EffectiveDate|nothing;
                                item_sametime python: item_start == item_end;
                                item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False;">
-                <dt tal:define="item_wf_state_class string:state-${result/review_state};"
-                    tal:attributes="class python:'contenttype-' + normalizeString(result.portal_type)">
+                <div tal:define="item_wf_state_class string:state-${result/review_state};"
+                    tal:attributes="class python:'tileItem tileSummary contenttype-' + normalizeString(result.portal_type)">
                     <img tal:replace="structure item_icon/html_tag" />
                     <a href="#"
                         tal:condition="exists:item_object/image_thumb"
@@ -293,16 +293,59 @@
                     <a href="#"
                        tal:attributes="href url;
                                        class string:tileTitle ${item_wf_state_class}"
-                tal:content="result/pretty_title_or_id" />
-                </dt>
+                       tal:content="result/pretty_title_or_id" />
 
-                <dd tal:attributes="class python:'contenttype-' + normalizeString(result.portal_type)">
+                    <div class="effectiveDate" 
+                        tal:condition="python: result_type == 'News Item'"
+                        tal:content="python:toLocalizedTime(item_effective,long_format=0)" /> 
+    
+                    <div class="documentByLine"
+                          tal:condition="python:not isAnon or site_properties.allowAnonymousViewAbout">
 
-                <div class="documentByLine effectiveDate" tal:condition="python: result_type == 'News Item'"> <span tal:replace="python:toLocalizedTime(item_effective,long_format=0)" /> </div>
-
+                        <span class="documentAuthor"
+                            i18n:translate="label_by_author">
+                            by
+                            <tal:block tal:condition="result/Creator"
+                                tal:define="author python:context.portal_membership.getMemberInfo(result.Creator)">
+                              <a href="#"
+                                 tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${result/Creator}"
+                                 tal:content="python:author and author['fullname'] or result.Creator"
+                                 tal:omit-tag="not:result/Creator"
+                                 i18n:name="author">
+                                Bob Dobalina
+                              </a>
+                            </tal:block>
+                        </span>
+    
+                        <span class="documentModified">
+                          &mdash;
+                            <span i18n:translate="box_last_modified">
+                            last modified
+                            </span>
+                            <span tal:replace="python:toLocalizedTime(result.ModificationDate, long_format=1)">
+                            August 16, 2001 at 23:35:59
+                            </span>
+                        </span>
+    
+                        <span tal:define="tags result/Subject|nothing"
+                              tal:condition="tags">
+                            &mdash;
+                            <tal:filedunder i18n:translate="label_filed_under">Filed under:</tal:filedunder>
+                                <span tal:repeat="tag tags">
+                                    <a href=""
+                                       class="link-tag"
+                                       rel="tag"
+                                       tal:content="tag"
+                                       tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/search?Subject%3Alist=${tag}">
+                                       Tag
+                                    </a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
+                                </span>
+                        </span>
+                    </div>
+                    
                     <tal:event
-                         condition="python: result_type == 'Event'">
-                         <div metal:use-macro="context/@@folder_listing_z3/macros/event_date" />
+                            condition="python: result_type == 'Event'">
+                            <div metal:use-macro="context/@@folder_listing_z3/macros/event_date" />
                     </tal:event>
 
                     <tal:person
@@ -311,59 +354,15 @@
                         <div metal:use-macro="context/@@folder_summary_view_z3/macros/fsd_summary" />
                     </tal:person>
 
-                    <p tal:content="python:plone_view.cropText(result.Description, desc_length, desc_ellipsis)">
-                        Cropped description
-                    </p>
-
-                <span class="documentByLine"
-                      tal:condition="python:not isAnon or site_properties.allowAnonymousViewAbout">
-                    <span class="documentAuthor"
-                        i18n:translate="label_by_author">
-                    by
-                        <tal:block tal:condition="result/Creator"
-                            tal:define="author python:context.portal_membership.getMemberInfo(result.Creator)">
-                          <a href="#"
-                             tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${result/Creator}"
-                             tal:content="python:author and author['fullname'] or result.Creator"
-                             tal:omit-tag="not:result/Creator"
-                             i18n:name="author">
-                            Bob Dobalina
-                          </a>
-                        </tal:block>
-                    </span>
-
-                    <span class="documentModified">
-                      &mdash;
-                        <span i18n:translate="box_last_modified">
-                        last modified
-                        </span>
-                        <span tal:replace="python:toLocalizedTime(result.ModificationDate, long_format=1)">
-                        August 16, 2001 at 23:35:59
-                        </span>
-                    </span>
-
-
-                    <span tal:define="tags result/Subject|nothing"
-                          tal:condition="tags">
-                        &mdash;
-                        <tal:filedunder i18n:translate="label_filed_under">Filed under:</tal:filedunder>
-                            <span tal:repeat="tag tags">
-                                <a href=""
-                                   class="link-tag"
-                                   rel="tag"
-                                   tal:content="tag"
-                                   tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/search?Subject%3Alist=${tag}">
-                                   Tag
-                                </a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
-                            </span>
-                    </span>
-                </span>
-                <div class="visualClear"><!-- --></div>
-                </dd>
+                    <div class="tileDescription" 
+                         tal:content="python:plone_view.cropText(result.Description, desc_length, desc_ellipsis)" />
+                    
+                    <div class="visualClear"><!-- --></div>
+                </div>
 
             </tal:entry>
             </tal:results>
-            </dl>
+            </div>
 
             <div metal:use-macro="context/batch_macros/macros/navigation" />
 

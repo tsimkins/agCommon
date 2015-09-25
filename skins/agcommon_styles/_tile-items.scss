@@ -144,12 +144,6 @@
             }
         }
 
-        .tileItemLeadImage:first-child,
-        .tileSummary:first-child {
-            border-top: none;
-            padding-top: 0.5em;
-        }
-
         .tileImage {
             border: none;
             margin-top: 0;
@@ -177,4 +171,17 @@
             margin-bottom: 1.5em;
         }
     }
+
+    .tileSummary {
+        border-top: 1px dashed $globalBorderColor;
+        padding-top: 1em;
+        margin-top: 1em
+    }
+
+    .tileItemLeadImage:first-child,
+    .tileSummary:first-child {
+        border-top: none;
+        padding-top: 0.5em;
+    }
+
 }

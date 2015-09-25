@@ -17,8 +17,8 @@
                      programs context/localsearch_program|nothing;
                      review_states context/localsearch_state|nothing;
                      subjects context/localsearch_subject|nothing;
-                     view_folder_path python: [view.folder_path];
-                     folder_path context/localsearch_path|view_folder_path|nothing;
+                     section_path view/section_path;
+                     folder_path context/localsearch_path|section_path|nothing;
                      localsearch_entire_site context/localsearch_entire_site|is_a_topic|nothing;
                      has_extra_search_fields python: (localsearch_counties or localsearch_zip_code);
                      zip_code_input request/zip_code_input|nothing;">

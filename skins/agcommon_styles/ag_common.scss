@@ -126,29 +126,48 @@ body.template-agenda_view #document-toc h3 {
 }
 
 
-/* Search screen */
+/* ###Search screen */
 
-body.template-search #portal-breadcrumbs,
-body.template-search_z3 #portal-breadcrumbs {
-    display: none;
+body.template-search, 
+body.template-search_z3 {
+    
+    #portal-breadcrumbs {
+        display: none;
+    }
+    
+    #portal-columns,
+    #portal-column-content {
+        display: block;
+    }
+
+    form.searchPage {
+        text-align: left;
+        margin: 0.75em 0;
+        
+        input {
+            font-size: 1em;
+        }
+    }
+    
+    .searchResults {
+        border-top: 1px solid $globalBorderColor;
+        margin-top: 1.25em;
+        padding-top: 0.75em;
+
+        .tileItem {
+            border-top: 1px dashed $globalBorderColor;
+        }
+
+        .tileItem:first-child {
+            border-top: none;
+        }
+        
+        .searchLeadImageContainer {
+            float: right;
+        }
+    }
 }
 
-body.template-search #portal-columns,
-body.template-search_z3 #portal-columns,
-body.template-search #portal-column-content,
-body.template-search_z3 #portal-column-content {
-    display: block;
-}
-
-body.template-search #content,
-body.template-search_z3 #content {
-    padding-top: 2em;
-}
-
-body.template-search form.searchPage input,
-body.template-search_z3 form.searchPage input {
-    font-size: 1em;
-}
 
 /* Form Thanks Page */
 
@@ -214,20 +233,6 @@ body.template-folder_full_view #content .documentText h3 {
 body.template-by_county_summary_view #content .tileItemLeadImage,
 body.template-by_county_summary_view #content .tileSummaryLeadImage {
     border-top: none !important;
-}
-form.searchPage {
-    text-align: left;
-    margin: 0.75em 0;
-}
-
-.searchResults {
-    border-top: 1px solid $globalBorderColor;
-    margin-top: 1.25em;
-    padding-top: 0.75em;
-}
-
-.searchResults dd {
-    margin: 0 0 2.5em 0;
 }
 
 #content .portletFooter a:hover {
