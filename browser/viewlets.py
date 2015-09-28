@@ -3,7 +3,6 @@ from Acquisition import aq_inner, aq_base, aq_chain
 from DateTime import DateTime
 from .. import toISO
 from Products.agCommon import getSearchConfig
-from Products.AD54Elements.browser.viewlets import MultiSearchViewlet
 from Products.ATContentTypes.interfaces.event import IATEvent
 from Products.ATContentTypes.interfaces.news import IATNewsItem
 from Products.FacultyStaffDirectory.interfaces.person import IPerson
