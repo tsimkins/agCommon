@@ -75,7 +75,8 @@ body {
   #logo-site a {
     font-weight: 600;
     color: #FFFFFF;
-    font-size: 1.375em; }
+    font-size: 1.25em;
+    line-height: 1.25; }
 
 /* = logo-print ============================================ */
 #logo-print {
@@ -114,10 +115,10 @@ body {
       background-color: #ffffe0; }
     #portal-header #portal-searchbox form.searchform .searchContainer div .searchbutton {
       width: 18px;
-      height: 18px;
+      height: 17px;
       padding: 3px;
       margin: 0;
-      color: #FFFFFF;
+      color: #000000;
       background-color: #FFFFFF;
       position: absolute;
       right: 0; }
@@ -507,7 +508,6 @@ body.template-subfolder_view #two-column-right {
 .portletWrapper {
   background-color: transparent;
   border: none;
-  font-size: 0.875em;
   margin: 0 0 2em;
   padding: 0;
   width: 100%; }
@@ -518,7 +518,7 @@ body.template-subfolder_view #two-column-right {
     border-width: 0 0 1px 0;
     color: #AC5209;
     font-family: Open Sans, Arial, Helvetica, Helv, sans-serif;
-    font-size: 1.375em;
+    font-size: 1.25em;
     font-weight: normal;
     margin: 0 0 0.375em 0;
     padding: 0;
@@ -596,18 +596,18 @@ body.template-subfolder_view #two-column-right {
       margin-top: 0;
       border: none;
       display: block;
-      line-height: 1.5; }
+      line-height: 1.375; }
     .portletWrapper .portletItem a.title:hover {
       text-decoration: underline; }
     .portletWrapper .portletItem .summary {
       color: #4B4B4B;
-      font-size: 0.75em;
+      font-size: 0.875em;
       margin: 0.125em 0 0 0;
       font-weight: normal;
       text-align: left; }
     .portletWrapper .portletItem .portletItemDetails {
       color: #767676;
-      font-size: 0.75em;
+      font-size: 0.875em;
       font-weight: normal;
       text-align: left;
       margin-bottom: 0;
@@ -762,6 +762,7 @@ body.template-subfolder_view #two-column-right {
   /* http://spritegen.website-performance.org/ */ }
   .portletLinkIcon .portletItem {
     margin: 0.875em 0;
+    font-size: 0.875em;
     padding: 0;
     background-color: transparent;
     min-height: 24px; }
@@ -968,64 +969,70 @@ body.template-subfolder_view #two-column-right {
     margin: 0;
     font-family: Open Sans, Lucida Grande, Tahoma, Verdana, sans-serif;
     font-weight: normal; }
-.left-column-navigation .portletNavigationTree .portletItem .navTreeItem {
-  margin: 0; }
-  .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a {
-    border-width: 0;
-    border: none;
-    background-color: transparent;
-    color: #4D4D4D;
-    line-height: 1.25; }
-  .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a.state-published {
-    color: #4D4D4D; }
-  .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a:hover,
-  .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a.state-published:hover {
-    color: #003FAC;
-    text-decoration: none; }
-.left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 {
-  margin: 0; }
-  .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li {
-    border-top: 1px dashed #E6E6E6;
-    padding: 0.45em 0 0.5em;
+.left-column-navigation .portletNavigationTree .portletItem {
+  font-size: 0.875em; }
+  .left-column-navigation .portletNavigationTree .portletItem .navTreeItem {
     margin: 0; }
-    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li a {
-      padding: 0;
-      margin: 0; }
-  .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li:first-child {
-    border-top: none; }
-  .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem {
-    border-bottom-width: 0;
-    padding: 0.5em 0; }
-    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentItem,
-    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode,
-    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath {
+    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a {
+      border-width: 0;
       border: none;
-      font-weight: 600;
       background-color: transparent;
-      color: #000000; }
-      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentItem > a, .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentItem a.state-published,
-      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode > a,
-      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode a.state-published,
-      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath > a,
-      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath a.state-published {
-        font-weight: 600;
-        color: #000000; }
-.left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 {
-  background-color: #F9F9F9;
-  border: #DDDDDD solid 1px;
-  margin: 0.25em 0 0.75em 0.5em;
-  padding: 0.375em 0.75em; }
-  .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 li.navTreeItem {
-    background-color: transparent;
-    padding: 0 0 0.5em;
-    border-bottom-width: 0; }
-    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 li.navTreeItem a {
-      padding: 0;
-      text-decoration: none;
-      background-color: transparent;
+      color: #4D4D4D;
+      line-height: 1.25; }
+    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a.state-published {
       color: #4D4D4D; }
-  .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 .navTreeCurrentItem {
-    background-color: transparent; }
+    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a:hover,
+    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a.state-published:hover {
+      color: #003FAC;
+      text-decoration: none; }
+  .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 {
+    margin: 0; }
+    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li {
+      border-top: 1px dashed #E6E6E6;
+      padding: 0.45em 0 0.5em;
+      margin: 0; }
+      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li a {
+        padding: 0;
+        margin: 0; }
+    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li:first-child {
+      border-top: none; }
+    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem {
+      border-bottom-width: 0;
+      padding: 0.5em 0; }
+      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentItem,
+      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode,
+      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath {
+        border: none;
+        font-weight: 600;
+        background-color: transparent;
+        color: #000000; }
+        .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentItem > a, .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentItem a.state-published,
+        .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode > a,
+        .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeCurrentNode a.state-published,
+        .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath > a,
+        .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 .navTreeItem .navTreeItemInPath a.state-published {
+          font-weight: 600;
+          color: #000000; }
+  .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 {
+    background-color: #F9F9F9;
+    border: #DDDDDD solid 1px;
+    margin: 0.25em 0 0.75em 0.5em;
+    padding: 0.375em 0.75em; }
+    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 li.navTreeItem {
+      background-color: transparent;
+      padding: 0;
+      margin: 0.5em 0 0;
+      border-bottom-width: 0; }
+      .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 li.navTreeItem a {
+        padding: 0;
+        text-decoration: none;
+        background-color: transparent;
+        color: #4D4D4D;
+        line-height: 1.125; }
+    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 li.navTreeItem:first-child {
+      margin-top: 0; }
+    .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 .navTreeCurrentItem {
+      background-color: transparent; }
 
 #portal-column-one .left-column-navigation .portletHeader a:hover {
   color: #003FAC; }
@@ -1138,6 +1145,9 @@ body.template-subfolder_view #two-column-right {
 #___plusone_0 {
   /*  Using rem and !important to override inline CSS, and font size 1px */
   margin: 0.5rem 0 1rem !important; }
+
+#addthis #___plusone_0 {
+  margin: 0 !important; }
 
 /* No idea what this fixes */
 .comment {

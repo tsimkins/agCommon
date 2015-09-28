@@ -69,7 +69,8 @@ $siteTitleRightPadding: $searchBoxWidth + 3*$column_padding;
     a {
         font-weight: 600;
         color: $subsiteHeaderTextColor;
-        font-size: 1.375em;
+        font-size: 1.25em;
+        line-height: 1.25;
     }
 }
 
@@ -129,10 +130,10 @@ $siteTitleRightPadding: $searchBoxWidth + 3*$column_padding;
 
                     .searchbutton {
                         width: $searchButtonSize;
-                        height: $searchButtonSize;
+                        height: $searchButtonSize - 1px;
                         padding: 3px;
                         margin: 0;
-                        color: #FFFFFF;
+                        color: #000000;
                         background-color: #FFFFFF;
                         position: absolute;
                         right: 0;

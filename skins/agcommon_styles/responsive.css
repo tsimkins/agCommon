@@ -185,7 +185,7 @@
   #mobile-navigation .top-navigation.empty {
     display: none; }
   #mobile-navigation .rmm-main-list {
-    font-size: 0.875em; }
+    /* font-size: 0.875em; */ }
   #mobile-navigation .portletWrapper {
     font-size: 1em;
     margin-bottom: 0; }

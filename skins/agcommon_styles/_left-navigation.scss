@@ -27,6 +27,8 @@
 
         .portletItem {
 
+            font-size: 0.875em;
+
             .navTreeItem {
                 
                 margin: 0;
@@ -100,7 +102,8 @@
     
                 li.navTreeItem {
                     background-color: transparent;
-                    padding: 0 0 0.5em;
+                    padding: 0;
+                    margin: 0.5em 0 0;
                     border-bottom-width: 0;
 
                     a {
@@ -108,7 +111,12 @@
                         text-decoration: none;
                         background-color: transparent;
                         color: $leftNavTextColor;
+                        line-height: 1.125;
                     }    
+                }
+                
+                li.navTreeItem:first-child {
+                    margin-top: 0;
                 }
                 
                 .navTreeCurrentItem {

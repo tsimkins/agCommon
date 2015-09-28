@@ -112,32 +112,6 @@ div.tilePortletManager {
 #content .tileitem-width-20.tileitem-count-3 .portletItem:nth-child(3n + 1) {
   clear: left; }
 
-#content .tileitem-width-20.tileitem-count-4 .portletItem,
-#content .tileitem-width-20.tileitem-count-4 .portletItem:first-child {
-  width: -5%;
-  margin-left: 7.5%;
-  margin-right: 7.5%;
-  padding-left: 7.5%;
-  padding-right: 7.5%;
-  float: left;
-  border: 0 solid transparent;
-  background-color: transparent; }
-#content .tileitem-width-20.tileitem-count-4 .portletItem:nth-child(4n + 1) {
-  clear: left; }
-
-#content .tileitem-width-20.tileitem-count-5 .portletItem,
-#content .tileitem-width-20.tileitem-count-5 .portletItem:first-child {
-  width: -10%;
-  margin-left: 7.5%;
-  margin-right: 7.5%;
-  padding-left: 7.5%;
-  padding-right: 7.5%;
-  float: left;
-  border: 0 solid transparent;
-  background-color: transparent; }
-#content .tileitem-width-20.tileitem-count-5 .portletItem:nth-child(5n + 1) {
-  clear: left; }
-
 /* RSS Image CSS for $block_klass% */
 #content .tileitem-width-20.tileitem-count-1 .portletfeedmixer .rssImage {
   width: 33.333%;
@@ -251,19 +225,6 @@ div.tilePortletManager {
   border: 0 solid transparent;
   background-color: transparent; }
 #content .tileitem-width-25.tileitem-count-4 .portletItem:nth-child(4n + 1) {
-  clear: left; }
-
-#content .tileitem-width-25.tileitem-count-5 .portletItem,
-#content .tileitem-width-25.tileitem-count-5 .portletItem:first-child {
-  width: -2.64151%;
-  margin-left: 5.66038%;
-  margin-right: 5.66038%;
-  padding-left: 5.66038%;
-  padding-right: 5.66038%;
-  float: left;
-  border: 0 solid transparent;
-  background-color: transparent; }
-#content .tileitem-width-25.tileitem-count-5 .portletItem:nth-child(5n + 1) {
   clear: left; }
 
 /* RSS Image CSS for $block_klass% */

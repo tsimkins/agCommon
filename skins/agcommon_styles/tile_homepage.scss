@@ -153,24 +153,26 @@ div.tilePortletManager {
         $item_margin_percent: 100%*($portlet_margin/$container_width);
         $item_padding_percent: 100%*($portlet_padding/$container_width);
 
-        #content .tileitem-width-#{$block_klass}.tileitem-count-#{$n} {
-
-            .portletItem, 
-            .portletItem:first-child {
-                width: $item_width_percent;
-                margin-left: $item_margin_percent;
-                margin-right: $item_margin_percent;
-                padding-left: $item_padding_percent;
-                padding-right: $item_padding_percent;
-                float: left;
-                border: $item_border solid $item_border_color;
-                background-color: $item_background_color
-            }
-
-            .portletItem:nth-child(#{$n}n + 1) {
-                clear: left;
-            }
-        }        
+        @if $item_width > 0 {
+            #content .tileitem-width-#{$block_klass}.tileitem-count-#{$n} {
+    
+                .portletItem, 
+                .portletItem:first-child {
+                    width: $item_width_percent;
+                    margin-left: $item_margin_percent;
+                    margin-right: $item_margin_percent;
+                    padding-left: $item_padding_percent;
+                    padding-right: $item_padding_percent;
+                    float: left;
+                    border: $item_border solid $item_border_color;
+                    background-color: $item_background_color
+                }
+    
+                .portletItem:nth-child(#{$n}n + 1) {
+                    clear: left;
+                }
+            }        
+        }
     }
 
     /* RSS Image CSS for $block_klass% */

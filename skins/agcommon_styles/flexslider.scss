@@ -15,67 +15,167 @@
 .flex-container a:active,
 .flexslider a:active,
 .flex-container a:focus,
-.flexslider a:focus  {outline: none;}
+.flexslider a:focus  {
+    outline: none;
+}
+
 .slides,
 .flex-control-nav,
-.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+.flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
 /* FlexSlider Necessary Styles
 *********************************/
-.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img {max-width: 100%; display: block;}
-.flex-pauseplay span {text-transform: capitalize;}
+.flexslider .slides > li {
+    display: none;
+    -webkit-backface-visibility: hidden;
+} /* Hide the slides before the JS is loaded. Avoids image jumping */
+
+.flexslider .slides img {
+    max-width: 100%;
+    display: block;
+}
+
+.flex-pauseplay span {
+    text-transform: capitalize;
+}
 
 /* Clearfix for the .slides element */
-.slides:after {content: "."; display: block; clear: both; visibility: hidden; height: 0;}
-html[xmlns] .slides {display: block;}
-* html .slides {height: 1%;}
+.slides:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+
+html[xmlns] .slides {
+    display: block;
+}
+
+* html .slides {
+    height: 1%;
+}
 
 /* No JavaScript Fallback */
 /* If you are not using another script, such as Modernizr, make sure you
  * include js that eliminates this class on page load */
-.no-js .slides > li:first-child {display: block;}
+.no-js .slides > li:first-child {
+    display: block;
+}
 
 
 /* FlexSlider Default Theme
 *********************************/
-.flexslider {background: #fff; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; zoom: 1;}
-.flexslider .slides {zoom: 1;}
-.flexslider .slides > li {position: relative;}
-/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
-.flex-container {zoom: 1; position: relative;}
-
-/* Caption style */
-/* IE rgba() hack */
-.flex-caption {
-    background:none; 
-    -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); 
+.flexslider {
+    background: #FFFFFF;
+    position: relative;
     zoom: 1;
 }
 
-.flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px;}
+.flexslider .slides {
+    zoom: 1;
+}
+
+.flexslider .slides > li {
+    position: relative;
+}
+
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {
+    zoom: 1;
+    position: relative;
+}
+
+.flex-caption {
+    width: 96%;
+    padding: 2%;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.3);
+    color: #fff;
+    font-size: 14px;
+}
 
 /* Direction Nav */
-.flex-direction-nav { height: 0; }
-.flex-direction-nav li a {width: 52px; height: 52px; margin: -13px 0 0; display: block; background: url(bg_direction_nav.png) no-repeat; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
-.flex-direction-nav li .next {background-position: -52px 0; right: -21px;}
-.flex-direction-nav li .prev {left: -20px;}
-.flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+.flex-direction-nav {
+    height: 0;
+}
+
+.flex-direction-nav li a {
+    width: 52px;
+    height: 52px;
+    margin: -13px 0 0;
+    display: block;
+    background: url(bg_direction_nav.png) no-repeat;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -999em;
+}
+
+.flex-direction-nav li .next {
+    background-position: -52px 0;
+    right: -21px;
+}
+
+.flex-direction-nav li .prev {
+    left: -20px;
+}
+
+.flex-direction-nav li .disabled {
+    opacity: .3;
+    filter:alpha(opacity=30);
+    cursor: default;
+}
 
 /* Control Nav */
-.flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: center;}
-.flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
-.flex-control-nav li:first-child {margin: 0;}
-.flex-control-nav li a {width: 13px; height: 13px; display: block; background: url(bg_control_nav.png) no-repeat; cursor: pointer; text-indent: -999em;}
-.flex-control-nav li a:hover {background-position: 0 -13px;}
-.flex-control-nav li a.active {background-position: 0 -26px; cursor: default;}
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+    text-align: center;
+}
+
+.flex-control-nav li {
+    margin: 0 0 0 5px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+.flex-control-nav li:first-child {
+    margin: 0;
+}
+
+.flex-control-nav li a {
+    width: 13px;
+    height: 13px;
+    display: block;
+    background: url(bg_control_nav.png) no-repeat;
+    cursor: pointer;
+    text-indent: -999em;
+}
+
+.flex-control-nav li a:hover {
+    background-position: 0 -13px;
+}
+
+.flex-control-nav li a.active {
+    background-position: 0 -26px;
+    cursor: default;
+}
 
 /* Custom */
 
-/* 
-    Flexslider has the id #homepage image, so we're using 95% as the width of 
-    the content inside. 
+/*
+    Flexslider has the id #homepage image, so we're using 95% as the width of
+    the content inside.
 */
 
 .flexslider {
@@ -111,7 +211,7 @@ html[xmlns] .slides {display: block;}
             max-height: $flexsliderImageHeight;
         }
     }
-    
+
     .flexslider-text {
         max-height: $flexsliderImageHeight;
         overflow: hidden;
@@ -119,19 +219,19 @@ html[xmlns] .slides {display: block;}
         padding: 0 $flexsliderTextPadding_percent;
         width: $flexsliderTextWidth_percent;
     }
-    
+
     .tileHeadline {
         font-weight: normal;
         font-size: 1.375em;
         margin-top: 0.5em;
         line-height: 1.25;
-    
+
         a,
         a:visited {
             color: #0075BD !important; /* UI */
         }
     }
-    
+
     .tileBody {
         margin: 0.5em 0 0.75em;
 
@@ -141,43 +241,40 @@ html[xmlns] .slides {display: block;}
             font-size: 0.875em;
         }
     }
-        
+
     .tileFooter {
         margin: 0.5em 0 0.25em 0;
         padding: 0;
-    
+
         p {
             margin: 0;
             padding: 0;
             text-align: left;
-        }    
-        
+        }
+
         a {
+
             font-size: 0.75em;
             text-decoration: none;
             padding: 0.25em 0.5em;
             background-color: #FFE269; /* UI */
             border: 1px solid #EFCE4A; /* UI */
-            
+
             .hiddenStructure {
                 display: inline-block;
             }
-    
         }
-    
-    }  
+    }
 }
 
 .flex-control-nav {
-    position: relative;
-    bottom: auto;
+    position: absolute;
+    bottom: 2em;
     text-align: left;
-    margin-left: $flexsliderImageWidth_percent + $flexsliderTextPadding_percent;
-    margin-right: $flexsliderTextPadding_percent;
+    left: $flexsliderImageWidth_percent + 0.5*$flexsliderTextPadding_percent;
     width: 125px;
-    margin-top: -1.5em;
     margin-bottom: 0;
-    
+
     a {
         color: transparent;
     }
@@ -185,28 +282,27 @@ html[xmlns] .slides {display: block;}
 
 .flex-direction-nav {
     li {
-        
         display: block;
 
         a {
-            width: 30px; 
-            height: 37px; 
-            margin: 0; 
-            display: block; 
+            width: 30px;
+            height: 37px;
+            margin: 0;
+            display: block;
             background-image: url(bg_slider_arrows.png);
-            background-repeat: no-repeat; 
-            position: absolute; 
-            top: 50%; 
-            cursor: pointer; 
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
             text-indent: -999em;
             opacity: 0.66;
         }
-    
+
         .next {
-            background-position: -30px 0; 
+            background-position: -30px 0;
             right: 100%*((0.5*$column_padding + 0.025*$maxWidth + $flexsliderTextWidth)/$maxWidth);
         }
-        
+
         .prev {
             left: 100%*((0.5*$column_padding + 0.025*$maxWidth)/$maxWidth);
         }
@@ -222,4 +318,5 @@ h2.flexslider-title {
     overflow: hidden;
     padding: 0;
     width: 1px;
+
 }
