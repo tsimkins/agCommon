@@ -29,7 +29,7 @@ body {
 
 #portal-header {
     margin: 0 auto;
-    padding: 1em 0 1.75em;
+    padding: 1em 0 1.875em;
     max-width: $maxWidth;
     text-align: left;
 
@@ -39,9 +39,9 @@ body {
     }
 }
 
-/* = logo-college ========================================== */
+/* = logo-site ========================================== */
 
-#logo-college {
+#logo-site {
     display: block;
     width: 100%*($logoWidth/$maxWidth);
 
@@ -50,17 +50,17 @@ body {
     }
 }
 
-/* = logo-site ============================================= */
+/* = logo-department ============================================= */
 
 $searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth + 5*$column_padding);
 
 $siteTitleRightPadding: $searchBoxWidth + 3*$column_padding; 
 
-#logo-site {
+#logo-department {
     display: block;
     background-color: $subsiteHeaderBackgroundColor;
     position: absolute;
-    left: 100%*(($logoWidth+$column_padding)/$maxWidth);
+    left: $departmentLogoScale*(($logoWidth+3*$column_padding)/$maxWidth);
     top: 0;
     bottom: 0;
     right: 0;
@@ -73,7 +73,6 @@ $siteTitleRightPadding: $searchBoxWidth + 3*$column_padding;
         line-height: 1.25;
     }
 }
-
 
 /* = logo-print ============================================ */
 

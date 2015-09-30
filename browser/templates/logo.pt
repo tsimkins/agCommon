@@ -2,23 +2,36 @@
     tal:define="portal_title view/portal_title;
     navigation_root_url view/navigation_root_url;
     portal_url view/portal_url;
-    subsite view/subsite;">
+    department_header view/department_header;
+    site_header view/site_header;">
 
-    <a 
-       href="http://agsci.psu.edu"
-       id="logo-college">
+    <a tal:attributes="href view/logo_url"
+       id="logo-site">
        
-       <img tal:attributes="src string:${navigation_root_url}/penn-state-logo.png" 
+       <img tal:condition="python: site_header == 'penn_state'"
+            tal:attributes="src string:${navigation_root_url}/penn-state-logo.png" 
+            alt="Penn State University" />
+
+       <img tal:condition="python: site_header == 'college'"
+            tal:attributes="src string:${navigation_root_url}/penn-state-college-logo.png" 
             alt="Penn State University College of Agricultural Sciences" />
 
     </a>
 
-    <div id="logo-site" 
-        tal:condition="subsite">
+    <div id="logo-department" 
+        tal:condition="department_header">
         
-        <a tal:content="portal_title"
-           accesskey="1" 
-           tal:attributes="href navigation_root_url" />
+        <a accesskey="1" 
+            tal:attributes="href navigation_root_url">
+            
+            <span 
+                tal:condition="python: department_header == 'department'">
+                Department of
+            </span>
+
+            <span tal:replace="portal_title" />
+            
+        </a>
 
     </div>
 

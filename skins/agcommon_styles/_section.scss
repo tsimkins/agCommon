@@ -4,11 +4,12 @@
     font-size: 2em;
     font-weight: 600;
     margin: 0 0 0.75em 0;
-    border-bottom: 1px solid $sectionTitleBorder;
+    line-height: 1;
 
     a {
         color: $sectionTitleTextColor;
         padding-bottom:  0;
+        border-bottom: 1px solid $sectionTitleBorder;
     }
 
     a:hover {

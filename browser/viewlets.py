@@ -173,13 +173,18 @@ class AgCommonViewlet(ViewletBase):
 
     @memoize
     def getSection(self):
-        v = self.context.restrictedTraverse('@@agcommon_utilities')
-        return v.getSection()
+        return self.agcommon_utilities.getSection()
         
     @property
     def portal_url(self):
         return self.context.portal_url()
 
+    @property
+    def agcommon_utilities(self):
+        return self.context.restrictedTraverse('@@agcommon_utilities')
+
+    def get_agcommon_properties(self, property_id, property_default=None):
+        return self.agcommon_utilities.get_agcommon_properties(property_id, property_default)
 
 
 class PortletViewlet(AgCommonViewlet):
@@ -373,10 +378,8 @@ class AddThisViewlet(PublicationCodeViewlet):
     @property
     def hide_addthis(self):
 
-        ptool = getToolByName(self.context, "portal_properties")
-
         # Hide if not enabled in agCommon properties
-        if not ptool.agcommon_properties.enable_addthis:
+        if not self.get_agcommon_properties('enable_addthis', False):
             return True
 
         # If in folder_full_view_item, hide it on the individual items.
@@ -458,18 +461,12 @@ class FooterViewlet(AgCommonViewlet):
     def update(self):
 
         # Get copyright info
-        ptool = getToolByName(self.context, "portal_properties")
 
-        self.footer_copyright = ptool.agcommon_properties.footer_copyright
-        self.footer_copyright_link = ptool.agcommon_properties.footer_copyright_link
+        self.footer_copyright = self.get_agcommon_properties('footer_copyright', '')
+        self.footer_copyright_link = self.get_agcommon_properties('footer_copyright_link', '')
 
-        try:
-            self.footer_copyright_2 = ptool.agcommon_properties.footer_copyright_2
-            self.footer_copyright_link_2 = ptool.agcommon_properties.footer_copyright_link_2
-        except AttributeError:
-            self.footer_copyright_2 = None
-            self.footer_copyright_link_2 = None
-
+        self.footer_copyright_2 = self.get_agcommon_properties('footer_copyright_2', None)
+        self.footer_copyright_link_2 = self.get_agcommon_properties('footer_copyright_link_2', None)
 
         footerlinks = getContextConfig(self.context, 'footerlinks', 'footerlinks')
 
@@ -746,12 +743,12 @@ class RSSViewlet(AgCommonViewlet):
 
 class SiteRSSViewlet(ViewletBase):
     def update(self):
-        ptool = getToolByName(self.context, "portal_properties")
 
         self.show_site_rss = False
+
         try:
-            self.site_rss_title = ptool.agcommon_properties.site_rss_title
-            self.site_rss_link = ptool.agcommon_properties.site_rss_link
+            self.site_rss_title = self.get_agcommon_properties('site_rss_title', '')
+            self.site_rss_link = self.get_agcommon_properties('site_rss_link', '')
 
             if self.site_rss_title and self.site_rss_link:
                 self.show_site_rss = True
@@ -759,7 +756,6 @@ class SiteRSSViewlet(ViewletBase):
         except AttributeError:
             # Don't show site RSS
             pass
-
 
     render = ViewPageTemplateFile('templates/site_rss.pt')
 
@@ -1007,10 +1003,8 @@ class GooglePlusViewlet(AgCommonViewlet):
 
     @property
     def url(self):
+        return self.get_agcommon_properties('googleplus_url', None)
 
-        ptool = getToolByName(self.context, "portal_properties")
-
-        return ptool.agcommon_properties.getProperty('googleplus_url', None)
 
 class GoogleStructuredDataViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/google-structured-data.pt')
@@ -1145,14 +1139,22 @@ class GoogleTagManagerViewlet(AgCommonViewlet):
         if not self.anonymous:
             return None
 
-        ptool = getToolByName(self.context, "portal_properties")
+        return self.get_agcommon_properties('gtm_account', None)
 
-        return ptool.agcommon_properties.getProperty('gtm_account', None)
 
 class LogoViewlet(AgCommonViewlet):
 
-    def subsite(self):
-        return not (getContextConfig(self.context, 'main_site', False))
+    def site_header(self):
+        return self.agcommon_utilities.getSiteHeader()
+
+    def department_header(self):
+        return self.agcommon_utilities.getDepartmentHeader()
+
+    def logo_url(self):
+        if self.site_header() == 'penn_state':
+            return 'http://www.psu.edu'
+        
+        return 'http://agsci.psu.edu'
 
     def portal_title(self):
         return self.portal_state.portal_title()

@@ -1,6 +1,8 @@
 /* 
     Faculty Staff Directory CSS
 */
+/* ------------------------------------------------ */
+/* ------------------------------------------------ */
 /* Missing table border */
 #content .facultyStaffDirectory table.listing {
   border: 1px solid #E6E6E6;

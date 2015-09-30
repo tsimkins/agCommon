@@ -21,6 +21,7 @@
         padding: 0;
         text-align: left;
         text-transform: none;
+        line-height: 1.25;
 
         a {
             margin: 0;
@@ -398,7 +399,6 @@
     .portletItem {
 
         margin: 0.875em 0;
-        font-size: 0.875em;
         padding: 0;
         background-color: transparent;
         min-height: 24px;
@@ -468,7 +468,9 @@
 
     .portletItem {
         a,
-        a:hover {
+        a:hover,
+        a:link,
+        a:visited {
             -moz-border-radius: 4px;
             -webkit-border-radius: 4px;
             background-color: $leftButtonBackground_default;
@@ -497,7 +499,9 @@
 
     .alternate {
         a,
-        a:hover {
+        a:hover,
+        a:link,
+        a:visited {
             border: 1px solid $leftButtonBorder_alternate;
             background-color: $leftButtonBackground_alternate;
             color: $leftButtonTextColor_alternate;

@@ -1,11 +1,13 @@
 /*
     Main agCommon styles
 */
+/* ------------------------------------------------ */
+/* ------------------------------------------------ */
 /*# Automagically generated multi-column grid css for Plone */
 /*# == Variables == */
 /* - Logo * -*/
 /* - Department (site) title width * -*/
-/* - Department (site) title width * -*/
+/* - Search Button width * -*/
 /* - Lead Image Width -*/
 /* - Tile Image Width -*/
 /* - Pull Quote Width - */
@@ -48,31 +50,31 @@ body {
 /* = portal-header ========================================= */
 #portal-header {
   margin: 0 auto;
-  padding: 1em 0 1.75em;
+  padding: 1em 0 1.875em;
   max-width: 1000px;
   text-align: left; }
   #portal-header a {
     border-width: 0;
     text-decoration: none; }
 
-/* = logo-college ========================================== */
-#logo-college {
-  display: block;
-  width: 37.5%; }
-  #logo-college img {
-    width: 100%; }
-
-/* = logo-site ============================================= */
+/* = logo-site ========================================== */
 #logo-site {
   display: block;
-  background-color: #4977A9;
+  width: 37.5%; }
+  #logo-site img {
+    width: 100%; }
+
+/* = logo-department ============================================= */
+#logo-department {
+  display: block;
+  background-color: #1F4B7B;
   position: absolute;
-  left: 39.1%;
+  left: 31.725%;
   top: 0;
   bottom: 0;
   right: 0;
   padding: 1em 31.3% 0.75em 1.6%; }
-  #logo-site a {
+  #logo-department a {
     font-weight: 600;
     color: #FFFFFF;
     font-size: 1.25em;
@@ -199,10 +201,11 @@ body {
   font-size: 2em;
   font-weight: 600;
   margin: 0 0 0.75em 0;
-  border-bottom: 1px solid #999999; }
+  line-height: 1; }
   #section-title a {
     color: #2F2F2F;
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    border-bottom: 1px solid #999999; }
   #section-title a:hover {
     color: #1B5597;
     text-decoration: none; }
@@ -523,7 +526,8 @@ body.template-subfolder_view #two-column-right {
     margin: 0 0 0.375em 0;
     padding: 0;
     text-align: left;
-    text-transform: none; }
+    text-transform: none;
+    line-height: 1.25; }
     .portletWrapper .portletHeader a {
       margin: 0;
       text-decoration: none;
@@ -762,7 +766,6 @@ body.template-subfolder_view #two-column-right {
   /* http://spritegen.website-performance.org/ */ }
   .portletLinkIcon .portletItem {
     margin: 0.875em 0;
-    font-size: 0.875em;
     padding: 0;
     background-color: transparent;
     min-height: 24px; }
@@ -826,7 +829,9 @@ body.template-subfolder_view #two-column-right {
 .portletLinkButton {
   padding: 0; }
   .portletLinkButton .portletItem a,
-  .portletLinkButton .portletItem a:hover {
+  .portletLinkButton .portletItem a:hover,
+  .portletLinkButton .portletItem a:link,
+  .portletLinkButton .portletItem a:visited {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     background-color: #EFEFEF;
@@ -848,9 +853,11 @@ body.template-subfolder_view #two-column-right {
     width: 100%;
     display: block; }
   .portletLinkButton .alternate a,
-  .portletLinkButton .alternate a:hover {
-    border: 1px solid #041F3C;
-    background-color: #133151;
+  .portletLinkButton .alternate a:hover,
+  .portletLinkButton .alternate a:link,
+  .portletLinkButton .alternate a:visited {
+    border: 1px solid #3F1E04;
+    background-color: #AC5209;
     color: #FFFFFF; }
 
 /* Person portlet */

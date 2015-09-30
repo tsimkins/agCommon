@@ -917,7 +917,6 @@ def _getContextConfig(context):
     properties = [
         'custom_class', 
         'enable_subsite_nav', 
-        'main_site', 
         'hide_breadcrumbs', 
         'top-menu', 
         'fbadmins', 

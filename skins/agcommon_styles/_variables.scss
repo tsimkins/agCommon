@@ -34,7 +34,7 @@ $maxWidth: 1000px;
 
 $siteHeaderBackgroundColor: #FFFFFF;
 
-$subsiteHeaderBackgroundColor: #4977A9;
+$subsiteHeaderBackgroundColor: #1F4B7B;
 $subsiteHeaderTextColor: #FFFFFF;
 
 $sectionTitleTextColor: #2F2F2F;
@@ -52,6 +52,19 @@ $topnavigationTextHoverColor: #FFFDF1;
 
 $topnavigationAlternateBackgroundColor: #0075BD;
 $topnavigationAlternateTextColor: #FFFFFF;
+
+/* ------------------------------------------------ */
+
+$departmentTopnavigationBackgroundColor: #45709F;
+$departmentTopnavigationBackgroundHoverColor: #2C5C8F;
+$departmentTopnavigationBorderColor: #375A7F;
+$departmentTopnavigationTextColor: #FFFFFF;
+$departmentTopnavigationTextHoverColor: #FFFDF1;
+
+$departmentTopnavigationAlternateBackgroundColor: #4C5E6F;
+$departmentTopnavigationAlternateTextColor: #FFFFFF;
+
+/* ------------------------------------------------ */
 
 $topnavigationMobileHeaderBackgroundColor: #1E2D4C;
 
@@ -75,8 +88,8 @@ $leftNavTextHoverColor: #003FAC;
 
 $leftSubNavBackground: #F9F9F9;
 
-$leftButtonBackground_alternate: #133151;
-$leftButtonBorder_alternate: #041F3C;
+$leftButtonBackground_alternate: #AC5209;
+$leftButtonBorder_alternate: #3F1E04;
 $leftButtonTextColor_alternate: #FFFFFF;
 
 $leftButtonBackground_default: #EFEFEF;

@@ -1,8 +1,10 @@
+/* ------------------------------------------------ */
+/* ------------------------------------------------ */
 /*# Automagically generated multi-column grid css for Plone */
 /*# == Variables == */
 /* - Logo * -*/
 /* - Department (site) title width * -*/
-/* - Department (site) title width * -*/
+/* - Search Button width * -*/
 /* - Lead Image Width -*/
 /* - Tile Image Width -*/
 /* - Pull Quote Width - */
@@ -207,7 +209,10 @@ html[xmlns] .slides {
     border-top: none;
     margin: 0;
     padding: 0;
-    background-color: #F9F9F9; }
+    background-color: #F9F9F9;
+    width: 100%;
+    float: left;
+    margin-right: -100%; }
   .flexslider .tileImage {
     border: none; }
   .flexslider .contentLeadImageContainer {
@@ -222,13 +227,12 @@ html[xmlns] .slides {
       max-height: 359.64286px; }
   .flexslider .flexslider-text {
     max-height: 359.64286px;
-    overflow: hidden;
     margin-left: 70.5917%;
     padding: 0 1.68421%;
     width: 26.03988%; }
   .flexslider .tileHeadline {
     font-weight: normal;
-    font-size: 1.375em;
+    font-size: 1.75em;
     margin-top: 0.5em;
     line-height: 1.25; }
     .flexslider .tileHeadline a,
@@ -242,16 +246,14 @@ html[xmlns] .slides {
       color: #4D4D4D;
       font-size: 0.875em; }
   .flexslider .tileFooter {
-    margin: 0.5em 0 0.25em 0;
+    margin: 0;
     padding: 0; }
-    .flexslider .tileFooter p {
-      margin: 0;
-      padding: 0;
-      text-align: left; }
     .flexslider .tileFooter a {
+      margin: 0.5em 0 0.25em 0;
+      text-align: left;
       font-size: 0.75em;
       text-decoration: none;
-      padding: 0.25em 0.5em;
+      padding: 0.375em 0.75em;
       background-color: #FFE269;
       /* UI */
       border: 1px solid #EFCE4A;

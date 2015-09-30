@@ -23,6 +23,78 @@
 
 @media handheld, screen and (min-width: 769px) {
 
+    /* Shrink department logo size */
+    body.department-site {
+        #logo-site {
+            width: $departmentLogoScale*($logoWidth/$maxWidth);
+        }
+
+        #portal-top {
+            background-image: url(department-site-header-background.png);
+            background-align: top;
+            background-position: center;
+        }
+
+        /* Color updates for department sites */
+        
+        .top-navigation {
+            background-color: $departmentTopnavigationBackgroundColor;
+        
+            ul {
+        
+                li {
+                    a {
+                        background-color: $departmentTopnavigationBackgroundColor;
+                        border-color: $departmentTopnavigationBorderColor;
+                        color: $departmentTopnavigationTextColor;
+                    }
+                    
+                    a:hover {
+                        background-color: $departmentTopnavigationBackgroundHoverColor;
+                        color: $departmentTopnavigationTextHoverColor;
+                    }
+        
+                }
+                
+                li.alternate {
+                    a,
+                    a:hover {
+                        background-color: $departmentTopnavigationAlternateBackgroundColor;
+                        color: $departmentTopnavigationAlternateTextColor;
+                    }
+                }
+            }
+        }
+    }
+    
+    body.department-site-other {
+        #logo-department {
+            padding-top: 1.25em;
+            
+            a {
+                font-size: 1.5em;
+                font-weight: normal;
+            }
+        }
+    }
+    
+    body.department-site-department {
+        #logo-department {
+            padding-top: 0.75em;
+            
+            a {
+                font-size: 1.375em;
+
+                span {
+                    font-size: 0.6875em;
+                    font-weight: normal;
+                    display: block;
+                }
+            }
+        }
+    }
+
+        
     /* Table of contents adjustments 768px */
 
     #document-toc.toc-full-width,
@@ -100,7 +172,7 @@
 
     $headerWidth: $maxWidth - 2*$column_padding;
 
-    #logo-site {
+    #logo-department {
         position: static;
         padding: 1em 100%*($column_padding/$headerWidth);
         margin: 1em -100%*($column_padding/$headerWidth) 0;
@@ -330,10 +402,6 @@
         padding-right: 100%*($column_padding/$maxWidth);
     }
 
-    #logo-site a {
-        font-size: 1.125em;
-    }
-
     #section-title {
         margin: 0.5em 0;
     }
@@ -386,10 +454,7 @@
         }
     
         .tileFooter {
-            p {
-                text-align: right;
-            }
-    
+
             a {
                 font-size: 0.625em;
             }
@@ -397,7 +462,7 @@
     }
 }
 
-/*------------------------ END resolution-890.css ----------------------------*/
+/*------------------------ END resolution-#{$maxWidth + 2*$column_padding}.css ----------------------------*/
 
 /*------------------------- resolution-768.css ------------------------------*/
 
@@ -441,7 +506,7 @@
         padding: 1em 100%*($column_padding/$maxWidth);
     }
 
-    #logo-college {
+    #logo-site {
         width: 100%;
         
         img {
@@ -451,11 +516,11 @@
         }
     }
 
-    #logo-site {
+    #logo-department {
         padding: 1em 100%*($column_padding/$maxWidth) 0.75em;
     }
 
-    #logo-site a {
+    #logo-department a {
         font-size: 0.9375em;
     }
 
@@ -946,7 +1011,6 @@
     #content .rg-image-nav a.rg-image-nav-next {
         background-position: 115% 45%;
     }
-
 }
 
 /*------------------------ END resolution-520-landscape.css ----------------------------*/
@@ -1460,9 +1524,12 @@
     }
 
     #viewlet-above-content .flexslider {
-        margin: 1em 0
-    }
+        margin: 1em 0;
 
+        .flexslider-text {
+            padding: 0 0 0.5em 0;
+        }
+    }
 }    
 
 
@@ -1567,7 +1634,7 @@
 
 @media handheld, screen and (max-width: 360px) {
     
-    #logo-college {
+    #logo-site {
         width: 100%;
         
         img {
@@ -1658,7 +1725,7 @@
         margin: 0 0 1em 0 !important;
     }
     
-    #logo-site img {
+    #logo-department img {
         width: 175px;
     }
 

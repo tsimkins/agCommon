@@ -58,7 +58,16 @@ class IAgCommonUtilities(Interface):
     def contentFilter(self):
         pass
 
+    def get_agcommon_properties(self):
+        pass
+
     def getSection(self):
+        pass
+
+    def getSiteHeader(self):
+        pass
+        
+    def getDepartmentHeader(self):
         pass
 
 
@@ -259,13 +268,15 @@ class AgCommonUtilities(BrowserView):
         if getContextConfig(self.context, 'enable_subsite_nav'):
             body_classes.append("navigation-subsite")
 
-        # Use the Penn State (as opposed to the college) header if main_site is set.
-        if getContextConfig(self.context, 'main_site'):
-            body_classes.append("penn-state-header")
-
         # Append custom classes
         if getContextConfig(self.context, 'custom_class'):
             body_classes.extend(['custom-%s' % str(x) for x in getContextConfig(self.context, 'custom_class').split()])
+
+        # Append class of 'department-site' if we have a department header
+        department_header = self.getDepartmentHeader()
+        if department_header:
+            body_classes.append('department-site')
+            body_classes.append('department-site-%s' % department_header)
 
         # Set "empty-top-navigation" body class
         topMenu =  getContextConfig(self.context, 'top-menu', 'topnavigation')
@@ -363,3 +374,18 @@ class AgCommonUtilities(BrowserView):
                 break
 
         return None
+
+    def get_agcommon_properties(self, property_id, property_default=None):
+        ptool = getToolByName(self.context, "portal_properties")
+        return ptool.agcommon_properties.getProperty(property_id, property_default)
+
+    def getSiteHeader(self):
+        return self.get_agcommon_properties('site_header', 'college')
+        
+    def getDepartmentHeader(self):
+        z = self.get_agcommon_properties('department_header', None)
+        
+        if z == 'none':
+            return None
+        
+        return z

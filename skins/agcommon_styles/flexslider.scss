@@ -192,6 +192,9 @@ html[xmlns] .slides {
         margin: 0;
         padding: 0;
         background-color: $leftSubNavBackground;
+        width: 100%;
+        float: left;
+        margin-right: -100%;
     }
 
     .tileImage {
@@ -214,7 +217,6 @@ html[xmlns] .slides {
 
     .flexslider-text {
         max-height: $flexsliderImageHeight;
-        overflow: hidden;
         margin-left: $flexsliderImageWidth_percent;
         padding: 0 $flexsliderTextPadding_percent;
         width: $flexsliderTextWidth_percent;
@@ -222,7 +224,7 @@ html[xmlns] .slides {
 
     .tileHeadline {
         font-weight: normal;
-        font-size: 1.375em;
+        font-size: 1.75em;
         margin-top: 0.5em;
         line-height: 1.25;
 
@@ -243,20 +245,15 @@ html[xmlns] .slides {
     }
 
     .tileFooter {
-        margin: 0.5em 0 0.25em 0;
+        margin: 0;
         padding: 0;
 
-        p {
-            margin: 0;
-            padding: 0;
-            text-align: left;
-        }
-
         a {
-
+            margin: 0.5em 0 0.25em 0;
+            text-align: left;
             font-size: 0.75em;
             text-decoration: none;
-            padding: 0.25em 0.5em;
+            padding: 0.375em 0.75em;
             background-color: #FFE269; /* UI */
             border: 1px solid #EFCE4A; /* UI */
 
