@@ -1152,7 +1152,7 @@ class GoogleTagManagerViewlet(AgCommonViewlet):
 class LogoViewlet(AgCommonViewlet):
 
     def subsite(self):
-        return not (getContextConfig(self.context, 'main_site'))
+        return not (getContextConfig(self.context, 'main_site', False))
 
     def portal_title(self):
         return self.portal_state.portal_title()

@@ -21,78 +21,78 @@
       available keys and default values.
       -->
  <stylesheet id="ag_common.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="all"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="contentwellportlets.css" insert-after="ag_common.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="all"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="fsdfixes.css" insert-after="contentwellportlets.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="all"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="futurestudents.css" insert-after="fsdfixes.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" media="all"
     expression="python:portal.id == 'thinkagain.psu.edu'"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="extension.css" insert-after="futurestudents.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1"     expression="python:portal.id == 'extension.psu.edu'"  media="all"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="site.css" insert-after="medium_screen.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="all"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="print.css" insert-after="site.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="print"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="site_print.css" insert-after="print.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="print"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="handheld.css"  insert-after="site_print.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="handheld"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="IE6Fixes.css"  insert-after="handheld.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="all"
     conditionalcomment="IE 6"
     rel="stylesheet" rendering="import"/>
 
  <stylesheet id="IE7Fixes.css"  insert-after="IE6Fixes.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="all"
     conditionalcomment="IE 7"
     rel="stylesheet" rendering="import"/>
     
  <stylesheet id="IE8Fixes.css"  insert-after="IE7Fixes.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="all"
     conditionalcomment="IE 8"
     rel="stylesheet" rendering="import"/>
     
  <stylesheet id="IEPrintFixes.css"  insert-after="IE8Fixes.css"
-    title="" cacheable="True" compression="safe" cookable="True"
+    title="" cacheable="True" compression="none" cookable="True"
     enabled="1" expression=""  media="print"
     conditionalcomment="IE"
     rel="stylesheet" rendering="import"/>    
 
  <!-- Common homepage: all homepages -->
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="True" id="common-homepage.css" insert-after="*"
     expression="python: context.getLayout() in ['document_homepage_view', 'document_subsite_view', 'panorama_homepage_view', 'portlet_homepage_view']" 
     rel="stylesheet"
@@ -100,7 +100,7 @@
 
  <!-- Subsite homepage: subsite homepages -->    
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="True" id="subsite.css" insert-after="common-homepage.css"
     expression="python: context.getLayout() in ['document_subsite_view', 'panorama_homepage_view', 'portlet_homepage_view']" 
     rel="stylesheet"
@@ -108,7 +108,7 @@
 
  <!-- Homepage: standard homepages -->  
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="True" id="homepage.css" insert-after="subsite.css"
     expression="python: context.getLayout() in ['document_homepage_view', ]" 
     rel="stylesheet"
@@ -116,7 +116,7 @@
 
  <!-- Panorama homepage: panorama and portlet homepages -->
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="True" id="panorama_homepage.css" insert-after="homepage.css"
     expression="python: context.getLayout() in ['panorama_homepage_view', 'portlet_homepage_view']" 
     rel="stylesheet"
@@ -124,7 +124,7 @@
 
  <!-- Portlet homepage: portlet homepages -->
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="True" id="portlet_homepage.css" insert-after="panorama_homepage.css"
     expression="python: context.getLayout() in ['portlet_homepage_view']" 
     rel="stylesheet"
@@ -132,7 +132,7 @@
 
  <!-- Flex slider -->
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="True" id="flexslider.css" insert-after="panorama_homepage.css"
     expression="python: context.getLayout() in ['document_homepage_view', ]" 
     rel="stylesheet"
@@ -143,7 +143,7 @@
 <!-- iPhone portrait mode -->
 
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="on" expression="" id="resolution-520-portrait.css" insert-after="resolution-520.css"
     media="handheld, screen and (max-width: 520px) and (orientation: portrait)" rel="stylesheet"
     rendering="import"/>
@@ -151,7 +151,7 @@
 <!-- iPhone landscape mode -->
 
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="on" expression="" id="resolution-520-landscape.css" insert-after="resolution-520-portrait.css"
     media="handheld, screen and (max-width: 520px) and (orientation: landscape)" rel="stylesheet"
     rendering="import"/>
@@ -159,10 +159,24 @@
 <!-- Responsive Styles -->
 
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="on" expression="" id="responsive.css" insert-after="*"
     media="all" rel="stylesheet"
     rendering="import"/>
 
+<!-- Searchbox -->
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
+    enabled="on" expression="" id="++resource++ad54elements-style.css" insert-after="*"
+    media="all" rel="stylesheet"
+    rendering="import"/>
+    
+<!-- Responsive mobile menu -->
+
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
+    enabled="on" expression="" id="responsivemobilemenu.css" insert-after="*"
+    media="all" rel="stylesheet"
+    rendering="import"/>
 
 </object>
