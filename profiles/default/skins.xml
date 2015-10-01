@@ -52,8 +52,10 @@
      insert-after="agcommon_images"/>
   <layer name="agcommon_javascript"
      insert-after="agcommon_templates"/>
-  <layer name="plone_styles"
+  <layer name="sunburst_styles"
      insert-after="agcommon_javascript"/>
+  <layer name="plone_styles"
+     insert-after="sunburst_styles"/>
  </skin-path>
 
 </object>

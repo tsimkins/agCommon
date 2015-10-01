@@ -35,12 +35,6 @@
     enabled="1" expression=""  media="all"
     rel="stylesheet" rendering="import"/>
 
- <stylesheet id="futurestudents.css" insert-after="fsdfixes.css"
-    title="" cacheable="True" compression="none" cookable="True"
-    enabled="1" media="all"
-    expression="python:portal.id == 'thinkagain.psu.edu'"
-    rel="stylesheet" rendering="import"/>
-
  <stylesheet id="extension.css" insert-after="futurestudents.css"
     title="" cacheable="True" compression="none" cookable="True"
     enabled="1"     expression="python:portal.id == 'extension.psu.edu'"  media="all"
@@ -103,22 +97,6 @@
     cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="True" id="subsite.css" insert-after="common-homepage.css"
     expression="python: context.getLayout() in ['document_subsite_view', 'panorama_homepage_view', 'portlet_homepage_view']" 
-    rel="stylesheet"
-    rendering="import"/>
-
- <!-- Homepage: standard homepages -->  
- <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="none" conditionalcomment="" cookable="True"
-    enabled="True" id="homepage.css" insert-after="subsite.css"
-    expression="python: context.getLayout() in ['document_homepage_view', ]" 
-    rel="stylesheet"
-    rendering="import"/>
-
- <!-- Panorama homepage: panorama and portlet homepages -->
- <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="none" conditionalcomment="" cookable="True"
-    enabled="True" id="panorama_homepage.css" insert-after="homepage.css"
-    expression="python: context.getLayout() in ['panorama_homepage_view', 'portlet_homepage_view']" 
     rel="stylesheet"
     rendering="import"/>
 

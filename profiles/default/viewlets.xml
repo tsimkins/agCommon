@@ -83,7 +83,6 @@ Note: insert-before and -after accept the value "*" which means
         <viewlet name="agcommon.contributors" insert-after="plone.belowcontentbody.relateditems"/>
         <viewlet name="agcommon.fblike" insert-after="agcommon.contributors"/>
         <viewlet name="plone.comments" insert-after="agcommon.fblike"/>
-        <viewlet name="plone.abovecontenttitle.documentactions" insert-after="plone.comments"/>
     </order>
     
     <order manager="plone.portalfooter" skinname="agCommon">
@@ -153,6 +152,7 @@ Note: insert-before and -after accept the value "*" which means
     <hidden manager="plone.belowcontentbody" skinname="agCommon">
         <viewlet name="contentwellportlets.portletsabovecontent" />
         <viewlet name="plone.comments" />
+        <viewlet name="plone.abovecontenttitle.documentactions" />
     </hidden>
 	
     <hidden manager="plone.portalfooter" skinname="agCommon">

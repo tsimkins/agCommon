@@ -25,18 +25,12 @@
         </property>
         <property name="site_header" 
                   select_variable="site_header_options"
-                  type="selection">
-                    college
-        </property>
+                  type="selection">college</property>
         <property name="department_header" 
                   select_variable="department_header_options"
-                  type="selection">
-                    none
-        </property>
+                  type="selection">none</property>
         <property name="department_name_style" 
                   select_variable="department_name_style_options"
-                  type="selection">
-                    none
-        </property>
+                  type="selection">none</property>
   </object>
 </object>
