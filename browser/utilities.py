@@ -70,6 +70,8 @@ class IAgCommonUtilities(Interface):
     def getDepartmentHeader(self):
         pass
 
+    def getDepartmentNameStyle(self):
+        pass
 
 class AgCommonUtilities(BrowserView):
 
@@ -277,6 +279,11 @@ class AgCommonUtilities(BrowserView):
         if department_header:
             body_classes.append('department-site')
             body_classes.append('department-site-%s' % department_header)
+            
+            department_name_style = self.getDepartmentNameStyle()
+            
+            if department_name_style:
+                body_classes.append('department-name-style-%s' % department_name_style)
 
         # Set "empty-top-navigation" body class
         topMenu =  getContextConfig(self.context, 'top-menu', 'topnavigation')
@@ -389,3 +396,17 @@ class AgCommonUtilities(BrowserView):
             return None
         
         return z
+
+    def getDepartmentNameStyle(self):
+    
+        i = self.getDepartmentHeader()
+        
+        if i:
+            j = self.get_agcommon_properties('department_name_style', None)
+        
+            if j == 'none':
+                return None
+            
+            return j
+
+        return None

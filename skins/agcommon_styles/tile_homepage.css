@@ -29,7 +29,8 @@
 
 /* == portlet and portletmanager Basic Rules == */
 #portal-column-content.sl #content .portletHeader {
-  font-size: 1.25em; }
+  font-size: 1.25em;
+  margin-top: 0; }
 #portal-column-content.sl #content .portletItem {
   margin-bottom: 0.875em; }
 

@@ -70,6 +70,9 @@
     /* Color updates for department sites */ }
     body.department-site #logo-site {
       width: 28.125%; }
+    body.department-site #portal-header {
+      padding-top: 2em;
+      padding-bottom: 2em; }
     body.department-site #portal-top {
       background-image: url(department-site-header-background.png);
       background-align: top;
@@ -95,13 +98,22 @@
       font-weight: normal; }
 
   body.department-site-department #logo-department {
-    padding-top: 0.75em; }
+    padding-top: 1em; }
     body.department-site-department #logo-department a {
-      font-size: 1.375em; }
+      font-size: 1.5em;
+      font-weight: normal; }
       body.department-site-department #logo-department a span {
         font-size: 0.6875em;
-        font-weight: normal;
         display: block; }
+
+  body.department-site-department.department-name-style-one_line #logo-department {
+    padding-top: 1.75em; }
+
+  body.department-site-other.department-name-style-one_line #logo-department {
+    padding-top: 2em; }
+
+  body.department-site-other.department-name-style-two_line #logo-department {
+    padding-top: 1.5em; }
 
   /* Table of contents adjustments 768px */
   #document-toc.toc-full-width,
@@ -391,11 +403,6 @@
   #portal-header #portal-searchbox #search li ul {
     width: 100%; }
 
-  #viewlet-above-content #homepageimage {
-    padding: 1.25em 0 0 0;
-    width: 100%;
-    background-size: 100%; }
-
   #portal-column-content #content #rightcolumn,
   #portal-column-content #content #centercolumn,
   #portal-column-content #content #homepage-text,
@@ -419,12 +426,10 @@
 
   .left-column-navigation .portletHeader a {
     font-size: 1.1875em; }
-
   .left-column-navigation .portletHeader .icon {
     width: 1.75em;
     float: right;
     margin-left: 0.25em; }
-
   .left-column-navigation .portletNavigationSubHeader .icon {
     width: 1.375em;
     float: right;
@@ -542,6 +547,12 @@
   body.empty-top-navigation #portal-top {
     padding-bottom: 0; }
 
+  #viewlet-above-content #homepageimage {
+    padding: 0;
+    width: 100%;
+    background-size: 100%;
+    margin-bottom: 1em; }
+
   /* 
       Flexslider 
       
@@ -549,7 +560,7 @@
   */
   #viewlet-above-content .flexslider {
     width: 100%;
-    margin: 0;
+    margin: 0 0 1em 0;
     padding: 0; }
     #viewlet-above-content .flexslider .contentLeadImageContainer {
       float: none;
@@ -561,13 +572,18 @@
     #viewlet-above-content .flexslider .slides {
       padding-bottom: 0.5em; }
     #viewlet-above-content .flexslider .flex-control-nav {
-      margin-left: 1em; }
+      width: auto;
+      left: auto;
+      right: 1em;
+      bottom: 1em; }
     #viewlet-above-content .flexslider .flexslider-text {
       margin: 0 1em;
       padding: 0;
       width: auto; }
     #viewlet-above-content .flexslider .tileHeadline {
       margin-top: 0.5em; }
+    #viewlet-above-content .flexslider .tileFooter {
+      margin-bottom: 0.5em; }
     #viewlet-above-content .flexslider .flex-direction-nav li a {
       top: 31.2502%; }
     #viewlet-above-content .flexslider .flex-direction-nav li .next {
