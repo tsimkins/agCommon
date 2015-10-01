@@ -14,9 +14,29 @@
             <element value="department"/>
         </property>
         <property name="department_header_options" type="lines">
-            <element value="large"/>
-            <element value="small"/>
+            <element value="department"/>
+            <element value="other"/>
             <element value="none"/>
+        </property>
+        <property name="department_name_style_options" type="lines">
+            <element value="two_line"/>
+            <element value="one_line"/>
+            <element value="none"/>
+        </property>
+        <property name="site_header" 
+                  select_variable="site_header_options"
+                  type="selection">
+                    college
+        </property>
+        <property name="department_header" 
+                  select_variable="department_header_options"
+                  type="selection">
+                    none
+        </property>
+        <property name="department_name_style" 
+                  select_variable="department_name_style_options"
+                  type="selection">
+                    none
         </property>
   </object>
 </object>

@@ -1,11 +1,3 @@
-/*
-  <dtml-with base_properties> (do not remove this)
-  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
-*/
-
-/* YOUR JAVASCRIPT START HERE */
-
-
 function msieversion()
 {
     var ua = window.navigator.userAgent;
@@ -550,7 +542,7 @@ jq(document).ready(
         }
         else if (jq("body.icons-on").size() && jq("#portal-personaltools").size() && jq("#content form[name=edit_form]").size())
         {
-            jq('<div id="iewarning"><img src="&dtml-portal_url;/warning.png" alt="" /><h2>Browser Warning</h2><p>You are using Internet Explorer to edit content within Plone.</p><p>The AgSci Web team recommends using <strong><a href="http://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a></strong> to edit Plone content because it generally provides a smoother experience.</p><p>If you do not have permission to install Firefox, please <a href="http://agsci.psu.edu/it/help-request">submit a ticket to the IT group</a> and request that Firefox be installed on your machine.</p></div>').hide().prependTo("#portal-column-content").slideDown();
+            jq('<div id="iewarning"><img src="/warning.png" alt="" /><h2>Browser Warning</h2><p>You are using Internet Explorer to edit content within Plone.</p><p>The AgSci Web team recommends using <strong><a href="http://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a></strong> to edit Plone content because it generally provides a smoother experience.</p><p>If you do not have permission to install Firefox, please <a href="http://agsci.psu.edu/it/help-request">submit a ticket to the IT group</a> and request that Firefox be installed on your machine.</p></div>').hide().prependTo("#portal-column-content").slideDown();
         }
     }
 );
@@ -1077,9 +1069,3 @@ jq(document).ready(
         jq("#portal-columns").append(pcm);
     }
 );
-
-
-/* YOUR JAVASCRIPT STOPS HERE */
-
-/* </dtml-with> */
-

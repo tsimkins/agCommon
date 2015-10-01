@@ -1,8 +1,3 @@
-/*
-  <dtml-with base_properties> (do not remove this)
-  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
-*/
-
 // From http://unstoppablerobotninja.com/entry/fluid-images
 
 var imgSizer = {
@@ -60,7 +55,3 @@ var imgSizer = {
             }
         }
 }
-
-/* </dtml-with> */
-
-

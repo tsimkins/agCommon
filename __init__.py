@@ -251,45 +251,9 @@ def gradientBackground(request):
 
     return "".join(png.stdout.readlines())
 
-# This is our multiple stripe main background
-# Blackberries couldn't read the snazzy CSS way we did it, so it's now an ImageMagick script
-
+# Legacy method that is no longer used.
 def bodyBackground(context, request):
-    
-    portal_skins = getToolByName(context, 'portal_skins')
-
-    try:
-        width = str(int(request.form.get("width", '1')))
-    except ValueError:
-        width = '1';
-    
-    try:
-        base_properties = portal_skins.custom.base_properties
-    except AttributeError:
-        base_properties = portal_skins.agcommon_styles.base_properties
-
-    stripe_1 = base_properties.getProperty('backgroundStripeOneColor')
-    stripe_2 = base_properties.getProperty('backgroundStripeTwoColor')
-    stripe_3 = base_properties.getProperty('backgroundStripeThreeColor')
-    background = base_properties.getProperty('bodyBackgroundColor')
-
-    heights = [71,10,30,300,600]
-    colors = [stripe_1, stripe_2, stripe_3, stripe_2]
-
-    arguments = ['convert', '-size', '%sx%s' % (width, heights[-1]), 'gradient:%s-%s' % (stripe_2, background), 
-                    '-gravity', 'south', '-extent', '%sx%s' % (width, sum(heights))]
-
-    top_px = 0
-
-    for i in range(0,len(colors)):
-        arguments.extend(['-draw', 'fill %s rectangle 0,%s %s,%s' % (colors[i], top_px, width, top_px+heights[i])])
-        top_px = top_px + heights[i]
-        
-    arguments.append('png:-')
-    
-    png = Popen(arguments, stdout=PIPE)
-    return png.stdout.read()
-    
+    return None    
     
 # Given a context, gets a list of all images and returns a JavaScript snippet
 # that randomly picks one of them.
