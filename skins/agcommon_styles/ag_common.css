@@ -950,7 +950,8 @@ body.template-subfolder_view #two-column-right {
   width: 100%; }
 
 /* manage Custom Portlets */
-.customManagePortletsLink {
+#content #rightcolumn .customManagePortletsLink,
+#content #centercolumn .customManagePortletsLink {
   display: block;
   text-align: center;
   padding-bottom: 0.25em; }

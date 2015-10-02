@@ -149,7 +149,38 @@
     #portal-searchbox .rmm-toggled {
         overflow: visible;
     }
+
+    /* Make right column feedmixer images full-width in desktop view */
+
+    #content #rightcolumn {
+        .portletfeedmixer {
+            .portletItem {
+                .rssImage {
+                    float: none;
+                    display: block;
+                    margin: 0.625em 0 0.625em 0;
+                    width: 100%;
+                    text-align: left;
+                }
+                
+                .title,  
+                .date,  
+                .summary {
+                    margin-left: 0;
+                }
+            }
+        }
     
+        .portletfeedmixerimagelarge {
+            .portletItem {
+                .rssImage {
+                    margin-bottom: 0.125em;
+                }
+            }
+        }
+    
+    }
+
 }
 
 /* Show mobile menus at 768px and smaller */

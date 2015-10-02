@@ -106,6 +106,9 @@
     margin-bottom: 0.75em; }
   #content #homepage-text .documentText {
     font-size: 0.875em; }
+#content #homepage-text.sc.sr {
+  margin: 0;
+  width: 100%; }
 
 #portal-columns {
   padding-top: 0; }
@@ -115,18 +118,22 @@
   width: 100%;
   display: block; }
 
-#centercolumn.sr {
+#centercolumn.sr,
+#homepage-text.sr {
   float: left;
   width: 74.15966%;
   margin: 0 1.68067% 0 0; }
 
 #portal-column-content.sl #centercolumn {
   display: block; }
-
-#portal-column-content.sl #centercolumn.sr {
+#portal-column-content.sl #centercolumn.sr,
+#portal-column-content.sl #homepage-text.sr {
   float: left;
   margin: 0 2.26629% 0 0;
   width: 65.15581%; }
+#portal-column-content.sl #homepage-text.sc.sr {
+  margin: 0;
+  width: 100%; }
 
 /* ================= Right Column =====================*/
 #rightcolumn {
@@ -134,18 +141,14 @@
   font-weight: normal;
   background-color: transparent;
   color: #3F3F3F;
-  float: left;
+  float: right;
   vertical-align: top;
-  margin: 0;
-  width: 100%; }
+  margin: 0 0 0 1.68067%;
+  width: 22.47899%; }
   #rightcolumn .portletWrapper .portletItem {
     margin-bottom: 0; }
 
-#rightcolumn.sc {
-  width: 22.47899%;
-  margin: 0 0 0 1.68067%; }
-
-#portal-column-content.sl #rightcolumn.sc {
+#portal-column-content.sl #rightcolumn {
   margin: 0 0 0 2.26629%;
   width: 30.31161%; }
 
@@ -187,40 +190,43 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
   margin: 0 0 0.125em 0;
   width: 100%; }
 
-#rightcolumn .portletfeedmixer .portletItem .rssImage {
-  float: none;
-  display: block;
-  margin: 0.625em 0 0.625em 0;
-  width: 100%;
-  text-align: left; }
-#rightcolumn .portletfeedmixerimagelarge .portletItem .rssImage {
-  margin-bottom: 0.125em; }
-
-#centercolumn .portletfeedmixer .rssImage {
+#centercolumn .portletfeedmixer .rssImage,
+#rightcolumn .portletfeedmixer .rssImage {
   margin-top: 0;
   margin-bottom: 0.625em; }
-  #centercolumn .portletfeedmixer .rssImage img {
+  #centercolumn .portletfeedmixer .rssImage img,
+  #rightcolumn .portletfeedmixer .rssImage img {
     width: 100%;
     max-width: 100%; }
-#centercolumn .portletfeedmixerimagesmall .rssImage {
+#centercolumn .portletfeedmixerimagesmall .rssImage,
+#rightcolumn .portletfeedmixerimagesmall .rssImage {
   width: 16.80672%; }
-#centercolumn .portletfeedmixerimagelarge .rssImage {
+#centercolumn .portletfeedmixerimagelarge .rssImage,
+#rightcolumn .portletfeedmixerimagelarge .rssImage {
   width: 27.83613%; }
-#centercolumn .portletfeedmixerimageleft .rssImage {
+#centercolumn .portletfeedmixerimageleft .rssImage,
+#rightcolumn .portletfeedmixerimageleft .rssImage {
   margin-right: 1.68067%;
   float: left;
   text-align: left; }
-#centercolumn .portletfeedmixerimageright .rssImage {
+#centercolumn .portletfeedmixerimageright .rssImage,
+#rightcolumn .portletfeedmixerimageright .rssImage {
   margin-left: 1.68067%;
   float: right;
   text-align: right; }
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
-#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
+#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary,
+#rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
+#rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
+#rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
   margin-left: 29.51681%; }
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
-#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
+#centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary,
+#rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
+#rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
+#rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
   margin-left: 18.48739%; }
 
 #centercolumn.sr .portletfeedmixerimagesmall .rssImage {

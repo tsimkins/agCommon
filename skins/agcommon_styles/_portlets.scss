@@ -656,12 +656,16 @@
 
 
 /* manage Custom Portlets */
-.customManagePortletsLink {
-    display: block;
-    text-align: center;
-    padding-bottom: 0.25em;
+#content {
+    #rightcolumn, 
+    #centercolumn {
+        .customManagePortletsLink {
+            display: block;
+            text-align: center;
+            padding-bottom: 0.25em;
+        }
+    }
 }
-
 
 .portlet ul.relatedItems li {
     margin-left: 2px;

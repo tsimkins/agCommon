@@ -233,7 +233,7 @@
     <browser:viewlet
         name="agcommon.centercolumn"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
-        class=".viewlets.CenterColumnViewlet"
+        class=".viewlets.HomepageColumnsViewlet"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
         for="agsci.subsite.content.interfaces.IHomePage"

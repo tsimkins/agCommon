@@ -139,7 +139,21 @@
     display: none !important; }
 
   #portal-searchbox .rmm-toggled {
-    overflow: visible; } }
+    overflow: visible; }
+
+  /* Make right column feedmixer images full-width in desktop view */
+  #content #rightcolumn .portletfeedmixer .portletItem .rssImage {
+    float: none;
+    display: block;
+    margin: 0.625em 0 0.625em 0;
+    width: 100%;
+    text-align: left; }
+  #content #rightcolumn .portletfeedmixer .portletItem .title,
+  #content #rightcolumn .portletfeedmixer .portletItem .date,
+  #content #rightcolumn .portletfeedmixer .portletItem .summary {
+    margin-left: 0; }
+  #content #rightcolumn .portletfeedmixerimagelarge .portletItem .rssImage {
+    margin-bottom: 0.125em; } }
 /* Show mobile menus at 768px and smaller */
 @media handheld, screen and (max-width: 768px) {
   .rmm {

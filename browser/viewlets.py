@@ -275,13 +275,10 @@ class SectionTitleViewlet(AgCommonViewlet):
             return section.Title()
         
         return None
-    
-class RightColumnViewlet(PortletViewlet):
-    index = ViewPageTemplateFile('templates/rightcolumn.pt')
 
 
-class CenterColumnViewlet(PortletViewlet):
-    index = ViewPageTemplateFile('templates/centercolumn.pt')
+class HomepageColumnsViewlet(PortletViewlet):
+    index = ViewPageTemplateFile('templates/homepage-columns.pt')
 
 
 class HomepageTextViewlet(AgCommonViewlet):

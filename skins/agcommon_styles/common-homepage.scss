@@ -64,29 +64,37 @@
 
 /*========= Homepage Text ============*/
 
-#content #homepage-text {
-    display: block;
-    margin: 0;
-    padding: 0.375em 0;
-    width: 100%;
-
-    .documentFirstHeading {
-        font-size: 1.6875em;
-        margin-top: 0.1875em;
+#content {
+    #homepage-text {
+        display: block;
+        margin: 0;
+        padding: 0.375em 0;
+        width: 100%;
+    
+        .documentFirstHeading {
+            font-size: 1.6875em;
+            margin-top: 0.1875em;
+        }
+        
+        .documentDescription {
+            margin-bottom: 0;
+            font-size: 1.25em;
+            color: $documentDescriptionColor;
+            margin-bottom: 0.75em;
+        }
+        
+        .documentText {
+            font-size: 0.875em;
+        }
     }
     
-    .documentDescription {
-        margin-bottom: 0;
-        font-size: 1.25em;
-        color: $documentDescriptionColor;
-        margin-bottom: 0.75em;
+    #homepage-text.sc.sr {
+        margin: 0;
+        width: 100%;
     }
-    
-    .documentText {
-        font-size: 0.875em;
-    }
-
 }
+
+
 
 #portal-columns {
     padding-top: 0;
@@ -98,20 +106,31 @@
     display: block;
 }
 
-#centercolumn.sr {
+#centercolumn.sr, 
+#homepage-text.sr {
     float: left;
     width: $centercolumn_sr_width_percent;
     margin: 0 $homepagecolumn_margin_percent 0 0;
 }
 
-#portal-column-content.sl #centercolumn {
-    display: block;
-}
+#portal-column-content.sl {
 
-#portal-column-content.sl #centercolumn.sr {
-    float: left;
-    margin: 0 $homepagecolumn_margin_percent_one 0 0;
-    width: $centercolumn_sr_width_percent_one;
+    #centercolumn {
+        display: block;
+    }
+
+    #centercolumn.sr, 
+    #homepage-text.sr {
+        float: left;
+        margin: 0 $homepagecolumn_margin_percent_one 0 0;
+        width: $centercolumn_sr_width_percent_one;
+    }
+
+    #homepage-text.sc.sr {
+        margin: 0;
+        width: 100%;
+    }
+
 }
 
 /* ================= Right Column =====================*/
@@ -121,26 +140,22 @@
     font-weight: normal;
     background-color: transparent;
     color: $rightPortletTextColor;
-    float: left;
+    float: right;
     vertical-align: top;
-    margin: 0;
-    width: 100%;
+    margin: 0 0 0 $homepagecolumn_margin_percent;
+    width: $rightcolumn_width_percent;
 
     .portletWrapper {
         .portletItem {
             margin-bottom: 0;
         }
     }
-}
 
-#rightcolumn.sc {
-    width: $rightcolumn_width_percent;
-    margin: 0 0 0 $homepagecolumn_margin_percent;
 }
 
 #portal-column-content.sl {
 
-    #rightcolumn.sc {
+    #rightcolumn {
         margin: 0 0 0 $homepagecolumn_margin_percent_one;
         width: $rightcolumn_width_percent_one;
     }
@@ -206,30 +221,8 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
     }
 }
 
+#centercolumn, 
 #rightcolumn {
-    .portletfeedmixer {
-        .portletItem {
-            .rssImage {
-                float: none;
-                display: block;
-                margin: 0.625em 0 0.625em 0;
-                width: 100%;
-                text-align: left;
-            }
-        }
-    }
-
-    .portletfeedmixerimagelarge {
-        .portletItem {
-            .rssImage {
-                margin-bottom: 0.125em;
-            }
-        }
-    }
-
-}
-
-#centercolumn {
 
     .portletfeedmixer {
         .rssImage {
