@@ -1163,6 +1163,11 @@
     float: left;
     padding: 0.5em 3.33333%; }
 
+  #content .contentLeadImageContainer {
+    margin-left: 0;
+    max-width: 100%;
+    float: none; }
+
   #content .tileItemLeadImage .contentLeadImageContainer,
   #content .tileSummaryLeadImage .contentLeadImageContainer {
     max-width: 37%;
@@ -1254,9 +1259,6 @@
 
   #content .portletfeedmixer .portletItem .rssImage img {
     max-width: 100% !important; }
-
-  .contentLeadImageContainer img {
-    max-height: 250px; }
 
   #content .facultyStaffDirectory.personView .headshot {
     float: none;

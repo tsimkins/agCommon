@@ -1618,6 +1618,14 @@
     }
     
     #content {
+        .contentLeadImageContainer {
+            margin-left: 0;
+            max-width: 100%;
+            float: none;
+        }
+    }
+    
+    #content {
         .tileItemLeadImage,
         .tileSummaryLeadImage {
             .contentLeadImageContainer {
@@ -1782,10 +1790,6 @@
     
     #content .portletfeedmixer .portletItem .rssImage img {
         max-width: 100% !important;
-    }
-    
-    .contentLeadImageContainer img {
-        max-height: 250px;
     }
     
     #content .facultyStaffDirectory.personView .headshot {
