@@ -24,6 +24,14 @@
     }
 }
 
+@media handheld, screen and (max-width: 908px) {
+
+    #portal-header {
+        padding-left: 1em;
+    }
+
+}
+
 @media handheld, screen and (min-width: 520px) {
     #document-toc.toc-full-width,
     #portal-column-content.sr #document-toc.full-width {
@@ -376,30 +384,7 @@
         float: none;
         width: 100%;
     }
-    
-    #logo-psu, #logo-psu.subsite {
-        width: 112px;
-    }
-    
-    #logo-psu.subsite {
-        overflow: hidden;
-    }
-    
-    #logo-psu.subsite img {
-        max-width: 128.4796573875803%;
-        width: 128.4796573875803%;
-    }
-    
-    #logo-site {
-        margin-left: 128px;
-        font-size: 1.4375em;
-        margin-top: 36px;
-    }
-    
-    #logo-college {
-        display: none;
-    }
-    
+
     /* General nomobile override */
     
     .nomobile {
@@ -410,7 +395,6 @@
         max-width: 100%;
         width: auto;
     }
-    
     
     #visual-portal-wrapper {
         margin-top: 0;
@@ -691,6 +675,16 @@
 
 @media handheld, screen and (max-width: 520px) {
     
+    #portal-header {
+        padding-left: 0;
+        padding-top: 0.5em;
+    }
+    
+    #logo-extension {
+        width: 90%;
+        padding: 0 7.5% 0 2.5%;
+    }
+    
     #portal-top {
         padding-bottom: 0.25em;
         background-image: none;
@@ -951,20 +945,6 @@
     
     #portal-footer .footerLinks .footerSeparator {
         display: none;
-    }
-    
-    #logo-psu, #logo-psu.subsite {
-        width: 85px;
-    }
-    
-    #logo-site {
-        font-size: 1.1875em;
-        margin-left: 100px;
-        margin-top: 30px;
-    }
-    
-    #logo-site.extension {
-        width: 230px;
     }
     
     #portlets-mobile .imagePortlet a {
@@ -1462,13 +1442,6 @@
     	padding: 0.5em 1.25%;  /* 6/480 */
     }
     
-    
-    #logo-site {
-        text-decoration: none;
-        font-size: 1.125em;
-        margin-left: 100px;
-    }
-    
     #portal-searchbox #SearchableText {
         font-size: 0.75em;
         width: 40%;
@@ -1530,22 +1503,6 @@
     
     #portal-header {
         min-height: 45px;
-    }
-    
-    #logo-psu, #logo-psu.subsite {
-        top: 10px;
-        left: 5px;
-        width: 85px;
-    }
-    
-    #logo-site {
-        font-size: 0.5625em;
-        margin-left: 92px;
-        margin-top: 28px;
-    }
-    
-    #logo-site.extension {
-        width: 180px;
     }
     
     form.event-registration-button input[type="submit"] {
@@ -1630,10 +1587,6 @@
         margin: 0 0 1em 0 !important;
     }
     
-    #logo-site img {
-        width: 175px;
-    }
-
     /* Flexslider */
 
     #viewlet-above-content .flex-direction-nav li a {

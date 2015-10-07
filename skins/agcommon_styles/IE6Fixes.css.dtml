@@ -95,14 +95,6 @@ body.icons-on #content form {
     font-weight: bold !important;
 }
 
-#logo-psu img {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&dtml-portal_url;/two-tone-psu-logo.png);
-}
-
-#logo-college img {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&dtml-portal_url;/college-text.png);
-}
-
 #logo-extension img {
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&dtml-portal_url;/extension-header.png);
 }

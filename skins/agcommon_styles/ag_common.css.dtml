@@ -58,7 +58,7 @@ body.icons-on.empty-top-navigation #portal-top {
 
 #portal-header {
     margin: 0 auto;
-    padding: 0 0 0.75em 0;
+    padding: 1em 0 0.75em 0;
     max-width: &dtml-maxWidth;;
     text-align: left;
     position: relative;
@@ -73,7 +73,7 @@ body.icons-on.empty-top-navigation #portal-top {
 /* = portal-searchbox ====================================== */
 
 #portal-searchbox {
-    margin: 0.25em;
+    margin: 1em 0.25em 0.25em 0.25em;
     padding: 0 0.25em 0 0;
     position: absolute;
     right: 0;
@@ -116,57 +116,17 @@ body.icons-on.empty-top-navigation #portal-top {
 }
 
 
-/* = logo-psu ============================================== */
+/* = logo-extension=========================================== */
 
-#logo-psu {
-    top: 12px;
-    left: 9px;
-    position: absolute;
+#logo-extension {
+    width: 37.5%;
     display: block;
-    width: 148px;
 }
 
-#logo-psu.subsite {
-    width: 190px;
-}
-
-#logo-psu img, #logo-college img {
+#logo-extension img {
     width: 100%;
+    max-width: 100%;
 }
-
-/* = logo-college ========================================== */
-
-#logo-college {
-    display: block;
-    height: 40px;
-    left: 121px;
-    position: absolute;
-    top: 40px;
-    width: 72px
-}
-
-
-/* = logo-print ============================================ */
-
-#logo-print {
-    display: none;
-}
-
-
-/* = logo-site ============================================= */
-
-#logo-site {
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: &dtml-siteLogoFontSize;;
-    margin-left: 212px;
-    letter-spacing: 0.02em;
-    position: static;
-    margin-top: 45px;
-    color: #FFFFFF;
-    display: block;
-    padding-right: 1em;
-}
-
 
 /* = portal-breadcrumbs ==================================== */
 

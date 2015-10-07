@@ -45,46 +45,6 @@ body {
 	max-width: 100%;
 }
 
-#logo-psu, #logo-college {
-	display:none;
-}
-
-#logo-print {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 7px;
-}
-
-#logo-print.extension {
-	left: 0;
-	top: 0.25em;
-}
-
-#logo-site {
-	position: relative;
-	font-size: 26pt;
-	letter-spacing: 0.02em;
-	width: auto;
-	top: 30px;
-	left: 140px;
-	margin-top: 0;
-    margin-left: 0;
-    color: #000000;
-}
-
-#logo-site.subsite {
-    left: 212px;
-}
-
-#logo-site.extension {
-    display: none;
-}
-
-#logo-site a {
-	color: #333333;
-}
-
 /* Remove Search Box */
 
 #portal-searchbox {
