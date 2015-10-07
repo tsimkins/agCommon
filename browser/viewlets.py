@@ -995,7 +995,7 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
                                     'postalCode': '16802',
                                     'streetAddress': 'Penn State University'},
                     'logo': 'http://agsci.psu.edu/psu-agsciences-logo.png',
-                    'name': 'Penn State University College of Agricultural Sciences',
+                    'name': 'Penn State College of Agricultural Sciences',
                     'sameAs': [
                         'http://www.facebook.com/agsciences',
                         'http://www.twitter.com/agsciences',
@@ -1003,7 +1003,7 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
                         'http://instagram.com/agsciences',
                         'http://www.linkedin.com/company/penn-state-college-of-agricultural-sciences',
                         'http://www.youtube.com/psuagsciences',
-                        'http://en.wikipedia.org/wiki/Penn_State_University_College_of_Agricultural_Sciences'],
+                        'http://en.wikipedia.org/wiki/Penn_State_College_of_Agricultural_Sciences'],
                     'telephone': '+1-814-865-7521',
                     'url': 'http://agsci.psu.edu'
                     }
