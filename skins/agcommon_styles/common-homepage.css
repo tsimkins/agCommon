@@ -122,14 +122,14 @@
 #homepage-text.sr {
   float: left;
   width: 74.15966%;
-  margin: 0 1.68067% 0 0; }
+  padding: 0 1.68067% 0 0; }
 
 #portal-column-content.sl #centercolumn {
   display: block; }
 #portal-column-content.sl #centercolumn.sr,
 #portal-column-content.sl #homepage-text.sr {
   float: left;
-  margin: 0 2.26629% 0 0;
+  padding: 0 2.26629% 0 0;
   width: 65.15581%; }
 #portal-column-content.sl #homepage-text.sc.sr {
   margin: 0;
@@ -143,35 +143,29 @@
   color: #3F3F3F;
   float: right;
   vertical-align: top;
-  margin: 0 0 0 1.68067%;
+  padding: 0 0 0 1.68067%;
   width: 22.47899%; }
   #rightcolumn .portletWrapper .portletItem {
     margin-bottom: 0; }
 
 #portal-column-content.sl #rightcolumn {
-  margin: 0 0 0 2.26629%;
+  padding: 0 0 0 2.26629%;
   width: 30.31161%; }
 
 /* ==================== Portlets ======================== */
 /*
 http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-hack/ - "Hack Free Approach"
 */
-#centercolumn,
-#rightcolumn {
-  /* ================= Portlet headers ===================== */ }
-  #centercolumn .portletHeader,
-  #rightcolumn .portletHeader {
-    font-size: 1.1875em !important; }
-  #centercolumn .portletfeedmixer .portletItem,
-  #rightcolumn .portletfeedmixer .portletItem {
-    border-top: 1px dashed #E6E6E6;
-    margin-top: 0.75em;
-    padding-top: 0.75em; }
-  #centercolumn .portletfeedmixer .portletItem:first-child,
-  #rightcolumn .portletfeedmixer .portletItem:first-child {
-    border-top: none;
-    margin-top: 0;
-    padding-top: 0; }
+#centercolumn .portletfeedmixer .portletItem,
+#rightcolumn .portletfeedmixer .portletItem {
+  border-top: 1px dashed #E6E6E6;
+  margin-top: 0.75em;
+  padding-top: 0.75em; }
+#centercolumn .portletfeedmixer .portletItem:first-child,
+#rightcolumn .portletfeedmixer .portletItem:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0; }
 
 #rightcolumn .portletfeedmixer .portletItem {
   border-top: none;

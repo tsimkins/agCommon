@@ -54,18 +54,8 @@ label {
 #content {
     background-color: transparent;
     padding: 0 0 1.5em 0;
-    margin: 0 $content_area_margin_percent_full;
-    width: $content_area_width_percent_full;
-}
-
-#portal-column-content.s2 #content{
-    margin: 0 $content_area_margin_percent_two;
-    width: $content_area_width_percent_two;
-}
-
-#portal-column-content.s1 #content {
-    margin: 0 $content_area_margin_percent_one;
-    width: $content_area_width_percent_one;
+    margin: 0;
+    width: 100%;
 }
 
 /* Paragraph and Unordered List readability per cmore */

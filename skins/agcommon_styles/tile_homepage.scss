@@ -1,6 +1,7 @@
 /* Automagically generated tile homepage css */
 
 @import 'variables';
+@import 'layout';
 
 /* == Variables == */
 
@@ -70,24 +71,29 @@ $portlet_width_classes: (
 
 /* == portlet and portletmanager Basic Rules == */
 
-#portal-column-content.sl #content {
+#portal-column-content.sl,
+#portal-column-content { 
+    #content {
 
-    .portletHeader {
-        font-size: 1.25em;
-        margin-top: 0;
+        .portletHeader {
+            font-size: 1.25em;
+            margin-top: 0;
+        }
+    
+        .portletItem {
+            margin-bottom: 0.875em;
+        }
+    
     }
-
-    .portletItem {
-        margin-bottom: 0.875em;
-    }
-
 }
+
+$min_width: 520px;
 
 div.tilePortletManager {
     float: none;
     clear: both;
-    width: 100%;
-    margin: 0;
+    width: 100% + 200%*(($portlet_padding+$portlet_margin)/$min_width);
+    margin: 0 -100%*(($portlet_padding+$portlet_margin)/$min_width);
     padding: 0;
 }
 
@@ -100,7 +106,6 @@ div.tilePortletManager {
         block_width is the width of the block in pixels
     */
 
-    $min_width: 520px;
     $block_width: $block_percent_width*$min_width;
     $container_width: $block_width - 2*($portlet_padding+$portlet_margin);
     $container_width_percent: 100%*($container_width/$block_width);

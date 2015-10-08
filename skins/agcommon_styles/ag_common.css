@@ -435,7 +435,8 @@ body.template-subfolder_view #content .tileItem h2.tileHeadline {
   margin-bottom: 0.375em;
   font-weight: normal; }
   body.template-subfolder_view #content .tileItem h2.tileHeadline > a {
-    text-decoration: underline; }
+    text-decoration: underline;
+    border-bottom: none; }
 body.template-subfolder_view #content .tileItem > .tileItem h2.tileHeadline {
   font-size: 1.125em; }
 body.template-subfolder_view #content .tileItem > .tileItem .facultyStaffDirectory {
@@ -644,7 +645,8 @@ body.template-subfolder_view #two-column-right {
 #content .portletWrapper {
   font-size: 1em; }
   #content .portletWrapper .portletHeader {
-    color: #AC5209; }
+    color: #AC5209;
+    font-weight: normal; }
   #content .portletWrapper .portlet a,
   #content .portletWrapper .portlet a:link,
   #content .portletWrapper .portlet a:hover {
@@ -870,23 +872,31 @@ body.template-subfolder_view #two-column-right {
   /* Address */
   /* Email */
   /* Photo */ }
-  .portletPerson .portletItem h2 {
+  .portletPerson .portletItem div.fn {
     border: none;
     border-bottom: none;
-    font-size: 1.125em;
+    font-size: 1em;
     font-weight: 600;
-    margin: 0.5em 0 0.125em 0; }
-    .portletPerson .portletItem h2 a,
-    .portletPerson .portletItem h2 a:visited {
+    margin: 0.125em 0 0.25em;
+    line-height: 1.125; }
+    .portletPerson .portletItem div.fn a,
+    .portletPerson .portletItem div.fn a:visited {
       color: #2256BD;
       font-weight: 600; }
-    .portletPerson .portletItem h2 a:hover {
+    .portletPerson .portletItem div.fn a:hover {
       color: #003FAC; }
   .portletPerson .portletItem .title {
-    font-weight: 600;
-    margin-bottom: 0.5em; }
-  .portletPerson .portletItem .adr {
-    margin-bottom: 0.9375em; }
+    margin-bottom: 1em;
+    font-size: 0.875em; }
+    .portletPerson .portletItem .title div {
+      margin-bottom: 0.375em;
+      line-height: 1.125; }
+  .portletPerson .portletItem .adr, .portletPerson .portletItem .tel, .portletPerson .portletItem .eml {
+    font-size: 0.8125em;
+    line-height: 1.25;
+    margin-bottom: 1em; }
+  .portletPerson .portletItem .tel, .portletPerson .portletItem .eml {
+    margin-bottom: 0.25em; }
   .portletPerson .portletItem a.email,
   .portletPerson .portletItem span.email a.email {
     display: inline; }
@@ -1339,16 +1349,8 @@ label {
 #content {
   background-color: transparent;
   padding: 0 0 1.5em 0;
-  margin: 0 1.68067%;
-  width: 96.63866%; }
-
-#portal-column-content.s2 #content {
-  margin: 0 3.47826%;
-  width: 93.04348%; }
-
-#portal-column-content.s1 #content {
-  margin: 0 2.26629%;
-  width: 95.46742%; }
+  margin: 0;
+  width: 100%; }
 
 /* Paragraph and Unordered List readability per cmore */
 #content {

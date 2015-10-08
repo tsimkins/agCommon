@@ -110,7 +110,7 @@
 #homepage-text.sr {
     float: left;
     width: $centercolumn_sr_width_percent;
-    margin: 0 $homepagecolumn_margin_percent 0 0;
+    padding: 0 $homepagecolumn_margin_percent 0 0;
 }
 
 #portal-column-content.sl {
@@ -122,7 +122,7 @@
     #centercolumn.sr, 
     #homepage-text.sr {
         float: left;
-        margin: 0 $homepagecolumn_margin_percent_one 0 0;
+        padding: 0 $homepagecolumn_margin_percent_one 0 0;
         width: $centercolumn_sr_width_percent_one;
     }
 
@@ -142,7 +142,7 @@
     color: $rightPortletTextColor;
     float: right;
     vertical-align: top;
-    margin: 0 0 0 $homepagecolumn_margin_percent;
+    padding: 0 0 0 $homepagecolumn_margin_percent;
     width: $rightcolumn_width_percent;
 
     .portletWrapper {
@@ -156,7 +156,7 @@
 #portal-column-content.sl {
 
     #rightcolumn {
-        margin: 0 0 0 $homepagecolumn_margin_percent_one;
+        padding: 0 0 0 $homepagecolumn_margin_percent_one;
         width: $rightcolumn_width_percent_one;
     }
 }
@@ -170,12 +170,6 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 
 #centercolumn,
 #rightcolumn {
-
-    /* ================= Portlet headers ===================== */
-    
-    .portletHeader {
-        font-size: 1.1875em !important;
-    }
 
     .portletfeedmixer {
         .portletItem {

@@ -190,6 +190,7 @@
 
     .portletHeader {
         color: $rightPortletHeaderTextColor;
+        font-weight: normal;
     }
 
     .portlet {
@@ -520,12 +521,13 @@
 
         /* Person name */
 
-        h2 {
+        div.fn {
             border: none;
             border-bottom: none;
-            font-size: 1.125em;
+            font-size: 1em;
             font-weight: 600;
-            margin: 0.5em 0 0.125em 0;
+            margin: 0.125em 0 0.25em;
+            line-height: 1.125;
 
             a,
             a:visited {
@@ -541,14 +543,25 @@
         /* Job Title */
 
         .title {
-            font-weight: 600;
-            margin-bottom: 0.5em;
+            margin-bottom: 1em;
+            font-size: 0.875em;
+            
+            div {
+                margin-bottom: 0.375em;
+                line-height: 1.125;
+            }
         }
 
         /* Address */
 
-        .adr {
-            margin-bottom: 0.9375em;
+        .adr, .tel, .eml {
+            font-size: 0.8125em;
+            line-height: 1.25;
+            margin-bottom: 1em;
+        }
+
+        .tel, .eml {
+            margin-bottom: 0.25em;
         }
 
         /* Email */

@@ -1,6 +1,29 @@
 /* Automagically generated tile homepage css */
 /* ------------------------------------------------ */
 /* ------------------------------------------------ */
+/*# Automagically generated multi-column grid css for Plone */
+/*# == Variables == */
+/* - Logo * -*/
+/* - Department (site) title width * -*/
+/* - Search Button width * -*/
+/* - Lead Image Width -*/
+/* - Tile Image Width -*/
+/* - Pull Quote Width - */
+/* - Thumbnail Count - */
+/* - Local Search Box - */
+/* - Document Contributors - */
+/* - Footer Portlets - */
+/*# == Calculations == */
+/*# -- Left and Right columns -- */
+/* - Content Area - */
+/* - Lead Image *- */
+/* - Pull Quote */
+/* - Local Search Box -*/
+/* A little fudging, since sizing for buttons is odd */
+/* Border */
+/* - Document Contributors - */
+/* - Text edit boxes */
+/* Footer Portlets */
 /* == Variables == */
 /* == Basic Rules == */
 #content {
@@ -28,17 +51,19 @@
         display: none; }
 
 /* == portlet and portletmanager Basic Rules == */
-#portal-column-content.sl #content .portletHeader {
+#portal-column-content.sl #content .portletHeader,
+#portal-column-content #content .portletHeader {
   font-size: 1.25em;
   margin-top: 0; }
-#portal-column-content.sl #content .portletItem {
+#portal-column-content.sl #content .portletItem,
+#portal-column-content #content .portletItem {
   margin-bottom: 0.875em; }
 
 div.tilePortletManager {
   float: none;
   clear: both;
-  width: 100%;
-  margin: 0;
+  width: 104.61538%;
+  margin: 0 -2.30769%;
   padding: 0; }
 
 /* == Calculated rules == */
