@@ -19,16 +19,18 @@
                 <img tal:replace="structure python:context.getWrappedField('image').tag(context, scale=image_scale,  css_class='photo')" />
             </a>
 
-            <h2 class="fn n">
+            <div class="fn n">
                 <a tal:attributes="href person/getURL">
                 <span class="given-name" tal:content="context/getFirstName">[First Name]</span>
                 <span class="additional-name" tal:content="context/getMiddleName | nothing">[Middle Name]</span>
                 <span class="family-name" tal:content="context/getLastName">[Last Name]</span><span tal:condition="context/getSuffix">,</span>
                 <span class="honorific-suffix" tal:content="context/getSuffix">[ suffix i.e. Dr]</span>
                 </a>
-            </h2>
+            </div>
             
-            <div tal:condition="context/getJobTitles" class="title" tal:repeat="jobTitle context/getJobTitles" tal:content="jobTitle">[job title]</div>
+            <div tal:condition="context/getJobTitles" class="title">
+                <div  tal:repeat="jobTitle context/getJobTitles" tal:content="jobTitle">[job title]</div>
+            </div>
             
             <div class="adr" tal:condition="python: view.data.show_address and (context.getOfficeAddress() or context.getOfficeCity() or context.getOfficeState())">
                 <span class="street-address" tal:content="structure python:context.getOfficeAddress().replace('\n', '<br />')" /><br />
@@ -36,7 +38,7 @@
                 <span class="postal-code" tal:content="context/getOfficePostalCode">[postal zip code]</span>
             </div>
 
-            <div tal:condition="context/getEmail">
+            <div tal:condition="context/getEmail" class="eml">
                 <span i18n:translate="FacultyStaffDirectory_label_email">Email</span>:
                 <span tal:attributes="class string:email" tal:content="structure python:context.spamProtectFSD(context.getEmail())" />
             </div>
