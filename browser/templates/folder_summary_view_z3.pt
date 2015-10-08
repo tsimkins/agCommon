@@ -73,44 +73,53 @@
                             </span>
                         </tal:newsitem>
                         </div>
-                        <div tal:define="person item/getObject;"
-                            tal:condition="python:item_type =='FSDPerson'" class="facultyStaffDirectory" >
-                            <metal:fsd_summary define-macro="fsd_summary">
-                            <ul tal:condition="person/getJobTitles" class="jobTitle">
-                                <li tal:repeat="jobTitle person/getJobTitles" tal:content="jobTitle" />
-                            </ul>
 
-                            <p>
-                                <span tal:condition="person/getEmail">
-                                    <span tal:replace="structure python:context.spamProtect(person.getEmail())" />
-                                </span>
-                                <br />
-                                <span tal:condition="person/getOfficePhone" class="phone">
-                                    <span tal:replace="person/getOfficePhone" />
-                                </span>
-                            </p>
+                        <tal:person
+                            tal:condition="python:item_type =='FSDPerson'">
 
-                            <tal:shortbio condition="view/show_short_bio|nothing">
-                                <div class="short-bio" 
-                                    tal:define="short_bio person/short_bio|nothing"
-                                    tal:condition="short_bio"
-                                    tal:content="structure short_bio" />
-                            </tal:shortbio>    
-
-                            <tal:areas tal:define="areas person/extension_areas|nothing" tal:condition="areas">
-
-                                <div>Areas of Expertise:</div>
-                                <ul class="areasExpertise">
-                                    <li tal:repeat="a areas" tal:content="a" />
+                            <div tal:define="person item/getObject;"
+                                class="facultyStaffDirectory" >
+                                <metal:fsd_summary define-macro="fsd_summary">
+                                <ul tal:condition="person/getJobTitles" class="jobTitle">
+                                    <li tal:repeat="jobTitle person/getJobTitles" tal:content="jobTitle" />
                                 </ul>
+    
+                                <p>
+                                    <span tal:condition="person/getEmail">
+                                        <span tal:replace="structure python:context.spamProtect(person.getEmail())" />
+                                    </span>
+                                    <br />
+                                    <span tal:condition="person/getOfficePhone" class="phone">
+                                        <span tal:replace="person/getOfficePhone" />
+                                    </span>
+                                </p>
+    
+                                <tal:shortbio condition="view/show_short_bio|nothing">
+                                    <div class="short-bio" 
+                                        tal:define="short_bio person/short_bio|nothing"
+                                        tal:condition="short_bio"
+                                        tal:content="structure short_bio" />
+                                </tal:shortbio>    
 
-                            </tal:areas>
+                                <tal:areas 
+                                    tal:define="areas person/extension_areas|nothing;
+                                                show_person_areas view/showPersonAreas|nothing;" 
+                                    tal:condition="python: show_person_areas and areas">
+    
+                                    <div>Areas of Expertise:</div>
+                                    <ul class="areasExpertise">
+                                        <li tal:repeat="a areas" tal:content="a" />
+                                    </ul>
+    
+                                </tal:areas>
+    
+                                <metal:zip use-macro="context/@@folder_listing_z3/macros/zip-distance" />
+                                
+                                </metal:fsd_summary>
+    
+                            </div>
 
-                            <metal:zip use-macro="context/@@folder_listing_z3/macros/zip-distance" />
-                            
-                            </metal:fsd_summary>
-
-                        </div>
+                        </tal:person>
 
                         <tal:show_description condition="subfolder/show_description|show_description|nothing">
 

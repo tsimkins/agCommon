@@ -365,6 +365,9 @@ class FolderView(BrowserView):
     def portal_url(self):
         return self.portal.absolute_url()
 
+    def showPersonAreas(self):
+        return getattr(self.context, 'show_person_areas', True)
+
 class SearchView(FolderView):
 
     implements(ISearchView)
