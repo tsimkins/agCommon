@@ -697,7 +697,7 @@
   body.template-responsive_photogallery #portal-column-content #content {
     margin: 0 !important; }
 
-  body.template-responsive_photogallery #fblike {
+  body.template-responsive_photogallery .social-media {
     display: none !important; }
 
   body.template-responsive_photogallery #content a {
@@ -1008,7 +1008,7 @@
     margin: 1em auto;
     width: 75%; }
 
-  #fblike, #commenting span {
+  #commenting span {
     margin: 1.5em 0 0.5em 0; }
 
   .fancybox-close {

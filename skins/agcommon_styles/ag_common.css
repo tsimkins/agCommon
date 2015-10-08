@@ -1171,19 +1171,12 @@ body.template-subfolder_view #two-column-right {
 .comment {
   display: none; }
 
-/* Facebook Like */
-#fblike, #commenting span {
+/* Facebook comments */
+#commenting span {
   border: none;
   overflow: visible;
   width: 100% !important;
   margin: 1.5em 0 2em 0; }
-
-#fblike > span, #fblike > span > iframe {
-  width: 100% !important;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0; }
 
 #fb-root iframe {
   width: 0 !important; }

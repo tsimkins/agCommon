@@ -1,20 +1,19 @@
-<tal:fblike
+<div class="social-media"
     tal:condition="view/show_fblike|nothing">
-    
-    <fb:like 
-        id="fblike" 
-        title="Recommend this on Facebook"
-        tal:attributes="href view/likeurl"
-        send="false" 
-        show_faces="true" 
-        action="recommend"
-        width="100%">
-    </fb:like>
+
+    <div 
+        class="fb-like" 
+        data-width="auto" 
+        data-layout="button" 
+        data-action="recommend" 
+        data-show-faces="false" 
+        data-share="false"
+        tal:attributes="data-href view/likeurl"></div>
 
     <div id="googleplusone">
         <g:plusone 
             size="standard"
             tal:attributes="href view/likeurl"></g:plusone>
     </div>
-    
-</tal:fblike>
+
+</div>
