@@ -749,7 +749,7 @@ jq(window).load(function() {
             function() {
                 var button_title = getButtonTitle(this);
                 
-                _gaq.push(['_trackEvent', 'Top Navigation', button_title, 'Top Navigation']);
+                ga('send', 'event', 'Top Navigation', button_title, 'Top Navigation']);
             }
         );
 
@@ -760,7 +760,7 @@ jq(window).load(function() {
                 button_title = button_title + " (Navigation Heading)";
                 var portlet_title = getPortletTitle(this);
 
-                _gaq.push(['_trackEvent', 'Navigation Portlet', button_title, portlet_title]);
+                ga('send', 'event', 'Navigation Portlet', button_title, portlet_title]);
             }
         );
 
@@ -770,7 +770,7 @@ jq(window).load(function() {
                 button_title = button_title + " (Navigation Subheading)";
                 var portlet_title = getPortletTitle(this);
 
-                _gaq.push(['_trackEvent', 'Navigation Portlet', button_title, portlet_title]);
+                ga('send', 'event', 'Navigation Portlet', button_title, portlet_title]);
             }
         );
 
@@ -781,7 +781,7 @@ jq(window).load(function() {
                 var button_title = getButtonTitle(this);
                 var portlet_title = getPortletTitle(this);
                 
-                _gaq.push(['_trackEvent', 'Navigation Portlet', button_title, portlet_title]);
+                ga('send', 'event', 'Navigation Portlet', button_title, portlet_title]);
             }
         );
 
@@ -793,7 +793,7 @@ jq(window).load(function() {
                 var button_title = getButtonTitle(this);
                 var portlet_title = getPortletTitle(this);
                 
-                _gaq.push(['_trackEvent', 'Feedmixer Portlet', button_title, portlet_title]);
+                ga('send', 'event', 'Feedmixer Portlet', button_title, portlet_title]);
             }
         );
 
@@ -803,7 +803,7 @@ jq(window).load(function() {
                 var button_title = getButtonTitle(this);
                 var portlet_title = getPortletTitle(this);
                 
-                _gaq.push(['_trackEvent', 'Collection Portlet', button_title, portlet_title]);
+                ga('send', 'event', 'Collection Portlet', button_title, portlet_title]);
             }
         );
 
@@ -813,7 +813,7 @@ jq(window).load(function() {
                 var button_title = "More...";
                 var portlet_title = getPortletTitle(this);
                 
-                _gaq.push(['_trackEvent', 'Feedmixer Portlet', button_title, portlet_title]);
+                ga('send', 'event', 'Feedmixer Portlet', button_title, portlet_title]);
             }
         );
 
@@ -823,7 +823,7 @@ jq(window).load(function() {
                 var button_title = "More...";
                 var portlet_title = getPortletTitle(this);
                 
-                _gaq.push(['_trackEvent', 'Collection Portlet', button_title, portlet_title]);
+                ga('send', 'event', 'Collection Portlet', button_title, portlet_title]);
             }
         );
         
@@ -838,7 +838,7 @@ jq(window).load(function() {
                     button_title = getButtonTitle(this);
                 }
 
-                _gaq.push(['_trackEvent', 'Image Portlet', button_title, portlet_title]);
+                ga('send', 'event', 'Image Portlet', button_title, portlet_title]);
             }
         );
     
@@ -848,7 +848,7 @@ jq(window).load(function() {
                 var icon_title = getButtonTitle(this);
                 var portlet_title = getPortletTitle(this);
                                     
-                _gaq.push(['_trackEvent', 'Link Icon', icon_title, portlet_title]);
+                ga('send', 'event', 'Link Icon', icon_title, portlet_title]);
             }
         );
         
@@ -863,14 +863,14 @@ jq(window).load(function() {
                     button_title = jq(this).children('img').attr('alt');
                 }
                     
-                _gaq.push(['_trackEvent', 'Link Button', button_title, portlet_title]);
+                ga('send', 'event', 'Link Button', button_title, portlet_title]);
             }
         );
         
         // PDF tracking
         jq('#addthis .pdf a').click(
             function() {
-                _gaq.push(['_trackEvent', 'AddThis', 'Download PDF', 'Download PDF']);
+                ga('send', 'event', 'AddThis', 'Download PDF', 'Download PDF']);
             }
         );
     }
@@ -906,40 +906,40 @@ jq(window).load(function() {
         {
             jq('.flexslider .flex-control-nav li a').click(
                 function() {
-                    _gaq.push(['_trackEvent', 'Homepage Slider', 'Dot Navigation', 'Dot ' + jq(this).html().trim()]);
+                    ga('send', 'event', 'Homepage Slider', 'Dot Navigation', 'Dot ' + jq(this).html().trim()]);
                 }
             );
         
             jq('.flexslider .flex-direction-nav li a.next').click(
                 function() {
-                    _gaq.push(['_trackEvent', 'Homepage Slider', 'Next/Previous Navigation', 'Next']);
+                    ga('send', 'event', 'Homepage Slider', 'Next/Previous Navigation', 'Next']);
                 }
             );
         
             jq('.flexslider .flex-direction-nav li a.prev').click(
                 function() {
-                    _gaq.push(['_trackEvent', 'Homepage Slider', 'Next/Previous Navigation', 'Previous']);
+                    ga('send', 'event', 'Homepage Slider', 'Next/Previous Navigation', 'Previous']);
                 }
             );
         
             jq('.flexslider .tileHeadline a').click(
                 function() {
                     var article_title = jq(this).html().trim();
-                    _gaq.push(['_trackEvent', 'Homepage Slider', 'Headline Click', article_title]);
+                    ga('send', 'event', 'Homepage Slider', 'Headline Click', article_title]);
                 }
             );
         
             jq('.flexslider .tileFooter a').click(
                 function() {
                     var article_title = jq(this).parents('li.tileItem').find('.tileHeadline a').html().trim()
-                    _gaq.push(['_trackEvent', 'Homepage Slider', 'Footer Click', article_title]);
+                    ga('send', 'event', 'Homepage Slider', 'Footer Click', article_title]);
                 }
             );
     
             jq('.flexslider .contentLeadImageContainer a').click(
                 function() {
                     var article_title = jq(this).parents('li.tileItem').find('.tileHeadline a').html().trim()
-                    _gaq.push(['_trackEvent', 'Homepage Slider', 'Image Click', article_title]);
+                    ga('send', 'event', 'Homepage Slider', 'Image Click', article_title]);
                 }
             );
         }        
