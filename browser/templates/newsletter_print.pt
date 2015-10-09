@@ -425,8 +425,8 @@
     	<div tal:condition="not: is_extension"
             class="graphic-header-agsci">
             <a href="http://agsci.psu.edu">
-            <img tal:attributes="src string:${portal_url}/college-newsletter-header-print.png"
-                                 alt="Penn State College of Agricultural Sciences" width="765"
+            <img tal:attributes="src string:${portal_url}/college-newsletter-header.png"
+                                 alt="Penn State College of Agricultural Sciences" width="600"
                                  border="0"
                                  height="85" /></a>
         </div>
