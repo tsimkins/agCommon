@@ -447,6 +447,9 @@ body.template-subfolder_view #content .tileItem > .tileItem .facultyStaffDirecto
 body.template-subfolder_view #content .tileItem .tileSubItem {
   margin-left: 1.5em;
   margin-top: 0; }
+  body.template-subfolder_view #content .tileItem .tileSubItem .tileItem {
+    margin: 0.375em 0 1em;
+    padding: 0; }
   body.template-subfolder_view #content .tileItem .tileSubItem .tileSummary {
     font-size: 0.875em;
     margin-top: 0.5em; }
@@ -479,8 +482,7 @@ body.template-subfolder_view #content .photoAlbum {
       font-family: Open Sans, Verdana, Arial, Helvetica, sans-serif; }
   #two-column-left > .tileItem .no-description,
   #two-column-right > .tileItem .no-description {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin: 0.5em 0 0 0;
     font-family: Open Sans, Verdana, Arial, Helvetica, sans-serif; }
   #two-column-left > .tileItem > .tileSubItem,
   #two-column-right > .tileItem > .tileSubItem {
@@ -1409,7 +1411,7 @@ label {
   #content a.link-https {
     background-image: none;
     padding: 0; }
-  #content a, #content a:link {
+  #content a, #content a:link, #content a:visited {
     color: #265FCF;
     border-bottom: 1px solid #DDDDDD;
     text-decoration: none; }

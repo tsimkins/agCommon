@@ -192,10 +192,10 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
     max-width: 100%; }
 #centercolumn .portletfeedmixerimagesmall .rssImage,
 #rightcolumn .portletfeedmixerimagesmall .rssImage {
-  width: 16.80672%; }
+  width: 18.38235%; }
 #centercolumn .portletfeedmixerimagelarge .rssImage,
 #rightcolumn .portletfeedmixerimagelarge .rssImage {
-  width: 27.83613%; }
+  width: 24.15966%; }
 #centercolumn .portletfeedmixerimageleft .rssImage,
 #rightcolumn .portletfeedmixerimageleft .rssImage {
   margin-right: 1.68067%;
@@ -212,19 +212,19 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 #rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
 #rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
 #rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
-  margin-left: 29.51681%; }
+  margin-left: 25.84034%; }
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
 #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary,
 #rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
 #rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
 #rightcolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
-  margin-left: 18.48739%; }
+  margin-left: 20.06303%; }
 
 #centercolumn.sr .portletfeedmixerimagesmall .rssImage {
-  width: 22.66289%; }
+  width: 24.78754%; }
 #centercolumn.sr .portletfeedmixerimagelarge .rssImage {
-  width: 37.53541%; }
+  width: 32.5779%; }
 #centercolumn.sr .portletfeedmixerimageleft .rssImage {
   margin-right: 2.26629%; }
 #centercolumn.sr .portletfeedmixerimageright .rssImage {
@@ -232,16 +232,16 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
 #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
 #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
-  margin-left: 39.8017%; }
+  margin-left: 34.84419%; }
 #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
 #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
 #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
-  margin-left: 24.92918%; }
+  margin-left: 27.05382%; }
 
 #portal-column-content.sl #centercolumn .portletfeedmixerimagesmall .rssImage {
-  width: 22.66289%; }
+  width: 24.78754%; }
 #portal-column-content.sl #centercolumn .portletfeedmixerimagelarge .rssImage {
-  width: 37.53541%; }
+  width: 32.5779%; }
 #portal-column-content.sl #centercolumn .portletfeedmixerimageleft .rssImage {
   margin-right: 2.26629%; }
 #portal-column-content.sl #centercolumn .portletfeedmixerimageright .rssImage {
@@ -249,15 +249,15 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 #portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
 #portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
 #portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
-  margin-left: 39.8017%; }
+  margin-left: 34.84419%; }
 #portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
 #portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
 #portal-column-content.sl #centercolumn .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
-  margin-left: 24.92918%; }
+  margin-left: 27.05382%; }
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimagesmall .rssImage {
-  width: 34.78261%; }
+  width: 38.04348%; }
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimagelarge .rssImage {
-  width: 57.6087%; }
+  width: 50%; }
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft .rssImage {
   margin-right: 3.47826%; }
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimageright .rssImage {
@@ -265,11 +265,11 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .title,
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .date,
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagelarge .portletItem .summary {
-  margin-left: 61.08696%; }
+  margin-left: 53.47826%; }
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .title,
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .date,
 #portal-column-content.sl #centercolumn.sr .portletfeedmixerimageleft.portletfeedmixerimagesmall .portletItem .summary {
-  margin-left: 38.26087%; }
+  margin-left: 41.52174%; }
 
 #centercolumn .portletfeedmixerimageleft .portletItem {
   border-style: none;

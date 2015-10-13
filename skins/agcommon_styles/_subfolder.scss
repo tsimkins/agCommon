@@ -36,6 +36,11 @@ body.template-subfolder_view {
                 margin-left: 1.5em;
                 margin-top: 0;
                 
+                .tileItem {
+                    margin: 0.375em 0 1em;
+                    padding: 0;
+                }
+                
                 .tileSummary {
                     font-size: 0.875em;
                     margin-top: 0.5em;

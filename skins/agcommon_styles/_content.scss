@@ -111,7 +111,7 @@ label {
         padding: 0;
     }
 
-    a, a:link {
+    a, a:link, a:visited {
         color: $contentLinkColor;
         border-bottom: 1px solid $contentLinkBorderColor;
         text-decoration: none;
