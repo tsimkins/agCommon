@@ -69,23 +69,8 @@ $portlet_width_classes: (
     }
 }
 
+
 /* == portlet and portletmanager Basic Rules == */
-
-#portal-column-content.sl,
-#portal-column-content { 
-    #content {
-
-        .portletHeader {
-            font-size: 1.25em;
-            margin-top: 0;
-        }
-    
-        .portletItem {
-            margin-bottom: 0.875em;
-        }
-    
-    }
-}
 
 $min_width: 520px;
 

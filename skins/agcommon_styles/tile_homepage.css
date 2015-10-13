@@ -51,14 +51,6 @@
         display: none; }
 
 /* == portlet and portletmanager Basic Rules == */
-#portal-column-content.sl #content .portletHeader,
-#portal-column-content #content .portletHeader {
-  font-size: 1.25em;
-  margin-top: 0; }
-#portal-column-content.sl #content .portletItem,
-#portal-column-content #content .portletItem {
-  margin-bottom: 0.875em; }
-
 div.tilePortletManager {
   float: none;
   clear: both;

@@ -191,6 +191,10 @@
     .portletHeader {
         color: $rightPortletHeaderTextColor;
         font-weight: normal;
+        
+        a {
+            color: $rightPortletHeaderTextColor;
+        }
     }
 
     .portlet {
@@ -510,7 +514,6 @@
     }
 }
 
-
 /* Person portlet */
 
 .portletPerson {
@@ -590,11 +593,50 @@
     }
 }
 
-/* Full image width in right column */
+/* Right Column Fixes */
 
-#rightcolumn .portletPerson .portletItem a.imagelarge img.photo {
-    max-width: 100%;
+
+#content {
+    #rightcolumn {
+
+        /* Fix link button in right column of homepage */
+
+        .portletLinkButton {
+            a,
+            a:link,
+            a:hover {
+                text-decoration: none;
+                color: $leftButtonTextColor_default;
+                border-bottom: 1px solid $leftButtonBorder_default;
+            }
+        }
+
+        /* Full image width in right column */
+        
+        .portletPerson .portletItem a.imagelarge img.photo {
+            max-width: 100%;
+        }
+        
+        .portletNavigationTree {
+            ul.navTree {
+                margin-left: 0;
+            }
+        }
+
+    }
+    
+    /* Portlets inside content */
+
+    .portletHeader {
+        font-size: 1.25em;
+        margin-top: 0;
+    }
+
+    .portletItem {
+        margin-bottom: 0.875em;
+    }
 }
+
 
 /* Collection portlet */
 

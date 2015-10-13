@@ -647,6 +647,8 @@ body.template-subfolder_view #two-column-right {
   #content .portletWrapper .portletHeader {
     color: #AC5209;
     font-weight: normal; }
+    #content .portletWrapper .portletHeader a {
+      color: #AC5209; }
   #content .portletWrapper .portlet a,
   #content .portletWrapper .portlet a:link,
   #content .portletWrapper .portlet a:hover {
@@ -910,9 +912,27 @@ body.template-subfolder_view #two-column-right {
     max-width: 75px;
     height: auto; }
 
-/* Full image width in right column */
-#rightcolumn .portletPerson .portletItem a.imagelarge img.photo {
-  max-width: 100%; }
+/* Right Column Fixes */
+#content {
+  /* Portlets inside content */ }
+  #content #rightcolumn {
+    /* Fix link button in right column of homepage */
+    /* Full image width in right column */ }
+    #content #rightcolumn .portletLinkButton a,
+    #content #rightcolumn .portletLinkButton a:link,
+    #content #rightcolumn .portletLinkButton a:hover {
+      text-decoration: none;
+      color: #333333;
+      border-bottom: 1px solid #333333; }
+    #content #rightcolumn .portletPerson .portletItem a.imagelarge img.photo {
+      max-width: 100%; }
+    #content #rightcolumn .portletNavigationTree ul.navTree {
+      margin-left: 0; }
+  #content .portletHeader {
+    font-size: 1.25em;
+    margin-top: 0; }
+  #content .portletItem {
+    margin-bottom: 0.875em; }
 
 /* Collection portlet */
 .portletCollection .portletItem {
