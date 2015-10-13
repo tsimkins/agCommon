@@ -1460,7 +1460,8 @@ label {
     font-size: 1.125em;
     color: #000000;
     margin-top: 1em;
-    line-height: 1.375; }
+    line-height: 1.375;
+    font-weight: 600; }
   #content h5,
   #content html.kupu-html h5 {
     font-size: 1.0625em; }
