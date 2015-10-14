@@ -111,6 +111,8 @@
 
   body.department-site-other.department-name-style-one_line #logo-department {
     padding-top: 2em; }
+    body.department-site-other.department-name-style-one_line #logo-department a {
+      font-size: 2em; }
 
   body.department-site-other.department-name-style-two_line #logo-department {
     padding-top: 1.5em; }
