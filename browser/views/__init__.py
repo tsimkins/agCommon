@@ -170,6 +170,8 @@ class FolderView(BrowserView):
                 if not scale:
                     if self.hasTiledContents:
                         scale="large"
+                    elif context.portal_type in ['FSDPerson', ]:
+                        scale = 'normal'
                     else:
                         scale = self.prefs.desc_scale_name
 
@@ -326,7 +328,7 @@ class FolderView(BrowserView):
             
             # Special classes for person
             if item.portal_type == 'FSDPerson':
-                item_class.append('tileItemLeadImage')
+                item_class.append('tileItemLeadImage facultyStaffDirectory')
 
             # Another if we're showing images
             elif self.show_image:

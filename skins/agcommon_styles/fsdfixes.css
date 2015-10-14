@@ -97,49 +97,54 @@ body.template-fsd_atoz_view #portal-localsearchbox {
   margin: 0.125em 0;
   list-style-image: none; }
 
-#content .facultyStaffDirectory .tileItem {
+#content .facultyStaffDirectory .tileItem,
+#content .tileItem.facultyStaffDirectory {
   margin: 0.25em 0 1em;
   padding: 2em 0 1em;
   border-top: 1px dashed #E6E6E6; }
-  #content .facultyStaffDirectory .tileItem .personName.tileHeadline {
+  #content .facultyStaffDirectory .tileItem .personName.tileHeadline,
+  #content .facultyStaffDirectory .tileItem .tileHeadline,
+  #content .tileItem.facultyStaffDirectory .personName.tileHeadline,
+  #content .tileItem.facultyStaffDirectory .tileHeadline {
     font-size: 1.25em; }
-  #content .facultyStaffDirectory .tileItem .facultyStaffDirectory {
-    font-size: 0.875em; }
-    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory .headshot {
+  #content .facultyStaffDirectory .tileItem .facultyStaffDirectory,
+  #content .tileItem.facultyStaffDirectory .facultyStaffDirectory {
+    font-size: 0.9375em; }
+    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory .headshot,
+    #content .tileItem.facultyStaffDirectory .facultyStaffDirectory .headshot {
       float: right;
       padding-right: 0;
       margin-right: 0;
       text-align: right;
-      margin-left: 8px; }
-      #content .facultyStaffDirectory .tileItem .facultyStaffDirectory .headshot img {
+      margin-left: 0.5em; }
+      #content .facultyStaffDirectory .tileItem .facultyStaffDirectory .headshot img,
+      #content .tileItem.facultyStaffDirectory .facultyStaffDirectory .headshot img {
         border: none !important; }
-    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory .caption {
+    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory .caption,
+    #content .tileItem.facultyStaffDirectory .facultyStaffDirectory .caption {
       margin-left: 0;
       padding-left: 0; }
-    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory ul.jobTitle {
+    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory ul.jobTitle,
+    #content .tileItem.facultyStaffDirectory .facultyStaffDirectory ul.jobTitle {
       margin: 0.25em 0 0; }
-      #content .facultyStaffDirectory .tileItem .facultyStaffDirectory ul.jobTitle li {
+      #content .facultyStaffDirectory .tileItem .facultyStaffDirectory ul.jobTitle li,
+      #content .tileItem.facultyStaffDirectory .facultyStaffDirectory ul.jobTitle li {
         line-height: 1.25;
-        margin: 0.25em 0 0; }
-
-#content .facultyStaffDirectory .tileItem:first-child {
-  border-top: none; }
-
-#content .tileItem .facultyStaffDirectory ul.jobTitle li {
-  margin-bottom: 0.125em; }
-
-#content .tileItem .facultyStaffDirectory ul.areasExpertise {
-  margin: 0 0 0 2em; }
-
-#content .tileItem .facultyStaffDirectory ul.areasExpertise li {
-  margin-bottom: 0;
-  margin-left: 0; }
-
-#content .tileSummary .facultyStaffDirectory p {
-  margin-bottom: 0.5em; }
-
-#content .tileSummary .facultyStaffDirectory p {
-  margin-bottom: 0.5em; }
+        margin: 0.25em 0 0.125em; }
+    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory ul.areasExpertise,
+    #content .tileItem.facultyStaffDirectory .facultyStaffDirectory ul.areasExpertise {
+      margin: 0 0 0 2em; }
+      #content .facultyStaffDirectory .tileItem .facultyStaffDirectory ul.areasExpertise li,
+      #content .tileItem.facultyStaffDirectory .facultyStaffDirectory ul.areasExpertise li {
+        margin-bottom: 0;
+        margin-left: 0; }
+    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory p,
+    #content .tileItem.facultyStaffDirectory .facultyStaffDirectory p {
+      margin-bottom: 0.5em; }
+#content .facultyStaffDirectory .tileItem:first-child,
+#content .tileItem.facultyStaffDirectory:first-child {
+  border-top: none;
+  padding-top: 0; }
 
 #content #hcard.personView h2 {
   clear: none; }
