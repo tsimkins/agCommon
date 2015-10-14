@@ -368,7 +368,9 @@ html.kupu-html {
     font-size: 0.9375em !important;
     padding: 0 0.75em;
     background-color: $kupuBackgroundColor;
-    
+}
+
+html {    
     body#content {
         margin: 0;
         padding: 0;
@@ -378,9 +380,7 @@ html.kupu-html {
         ul {
             margin: 0.375em 0 1.125em 2.5em;
         }
-
     }
-
 }
 
 .kupu-fulleditor, .kupu-toolboxes {

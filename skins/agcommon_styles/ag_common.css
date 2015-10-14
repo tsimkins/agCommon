@@ -2471,13 +2471,14 @@ html.kupu-html {
   font-size: 0.9375em !important;
   padding: 0 0.75em;
   background-color: #fffff9; }
-  html.kupu-html body#content {
-    margin: 0;
-    padding: 0;
-    width: auto;
-    background-image: none; }
-    html.kupu-html body#content ul {
-      margin: 0.375em 0 1.125em 2.5em; }
+
+html body#content {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  background-image: none; }
+  html body#content ul {
+    margin: 0.375em 0 1.125em 2.5em; }
 
 .kupu-fulleditor, .kupu-toolboxes {
   border: 1px solid #999999; }
