@@ -50,20 +50,6 @@ body.template-department_standard_view #portal-column-content .classificationLis
 body.template-classification_standard_view #portal-column-content .classificationListing .headshot {
   float: right; }
 
-.facultyStaffDirectory .standardView .headshot {
-  float: right;
-  padding-right: 0;
-  margin-right: 0;
-  text-align: right;
-  margin-left: 8px; }
-
-.facultyStaffDirectory .standardView .headshot img {
-  border: none !important; }
-
-.facultyStaffDirectory .standardView .caption {
-  margin-left: 0;
-  padding-left: 0; }
-
 .facultyStaffDirectory.personView .biography {
   margin-top: 0.5em; }
 
@@ -111,9 +97,33 @@ body.template-fsd_atoz_view #portal-localsearchbox {
   margin: 0.125em 0;
   list-style-image: none; }
 
-#content .tileItem .facultyStaffDirectory ul.jobTitle {
-  margin: 0;
-  font-size: 1.0625em; }
+#content .facultyStaffDirectory .tileItem {
+  margin: 0.25em 0 1em;
+  padding: 2em 0 1em;
+  border-top: 1px dashed #E6E6E6; }
+  #content .facultyStaffDirectory .tileItem .personName.tileHeadline {
+    font-size: 1.25em; }
+  #content .facultyStaffDirectory .tileItem .facultyStaffDirectory {
+    font-size: 0.875em; }
+    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory .headshot {
+      float: right;
+      padding-right: 0;
+      margin-right: 0;
+      text-align: right;
+      margin-left: 8px; }
+      #content .facultyStaffDirectory .tileItem .facultyStaffDirectory .headshot img {
+        border: none !important; }
+    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory .caption {
+      margin-left: 0;
+      padding-left: 0; }
+    #content .facultyStaffDirectory .tileItem .facultyStaffDirectory ul.jobTitle {
+      margin: 0.25em 0 0; }
+      #content .facultyStaffDirectory .tileItem .facultyStaffDirectory ul.jobTitle li {
+        line-height: 1.25;
+        margin: 0.25em 0 0; }
+
+#content .facultyStaffDirectory .tileItem:first-child {
+  border-top: none; }
 
 #content .tileItem .facultyStaffDirectory ul.jobTitle li {
   margin-bottom: 0.125em; }
