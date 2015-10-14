@@ -4,7 +4,7 @@
     <div 
         class="fb-like" 
         data-width="auto" 
-        data-layout="button" 
+        data-layout="button_count" 
         data-action="recommend" 
         data-show-faces="false" 
         data-share="false"
