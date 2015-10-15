@@ -18,8 +18,9 @@
         font-size: 0.625em;
     }
 
-    #breadcrumbs-current {
-        font-weight: 600;
+    #breadcrumbs-current, 
+    #breadcrumbs-home.homepage {
+        font-weight: 800;
     }
 
     a {

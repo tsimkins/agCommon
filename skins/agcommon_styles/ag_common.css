@@ -188,8 +188,9 @@ body {
     color: #715C3C; }
   #portal-breadcrumbs > span {
     font-size: 0.625em; }
-  #portal-breadcrumbs #breadcrumbs-current {
-    font-weight: 600; }
+  #portal-breadcrumbs #breadcrumbs-current,
+  #portal-breadcrumbs #breadcrumbs-home.homepage {
+    font-weight: 800; }
   #portal-breadcrumbs a {
     color: #1B5597;
     font-weight: normal; }

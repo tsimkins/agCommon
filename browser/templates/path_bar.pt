@@ -14,7 +14,7 @@
 
     <tal:agsci tal:condition="python:view.site not in ['extension.psu.edu', 'agsci.psu.edu']">
         <span id="breadcrumbs-agsci">
-            <a href="http://agsci.psu.edu">AgSci</a>
+            <a href="http://agsci.psu.edu">Ag Sciences</a>
         </span>    
         <span class="breadcrumbSeparator">
             <tal:ltr condition="not: is_rtl">&raquo;</tal:ltr>
@@ -35,8 +35,11 @@
     </span>
 
     <span id="breadcrumbs-home"
-        tal:define="breadcrumb_title context/custom_breadcrumb|context/@@plone_portal_state/portal_title">
+        tal:define="breadcrumb_title context/custom_breadcrumb|context/@@plone_portal_state/portal_title;
+                    is_site_homepage view/isSiteHomepage"
+        tal:attributes="class python: is_site_homepage and 'homepage' or ''">
         <a tal:content="breadcrumb_title"
+           tal:omit-tag="is_site_homepage"
            tal:attributes="href view/navigation_root_url">Home</a>
         <span tal:condition="breadcrumbs" class="breadcrumbSeparator">
             <tal:ltr condition="not: is_rtl">&raquo;</tal:ltr>

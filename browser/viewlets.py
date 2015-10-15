@@ -79,11 +79,10 @@ class AgCommonViewlet(ViewletBase):
     @property
     def hide_breadcrumbs(self):
         # Determine if we should hide breadcrumbs
+        
+        # The answer is now 'no.'
+        return False        
 
-        if self.isSiteHomepage:
-            return True
-
-        return getContextConfig(self.context, 'hide_breadcrumbs', False)
 
     def isLayout(self, views=[]):
         try:
@@ -288,9 +287,10 @@ class HomepageTextViewlet(AgCommonViewlet):
         section = self.getSection()
         
         if section:
-            return section.Title() == self.context.Title()
+            return (section.Title() == self.context.Title())
 
-        return False
+        else:
+            return (self.portal_state.portal().Title() == self.context.Title())
 
 
 class HomepageImageViewlet(AgCommonViewlet):
