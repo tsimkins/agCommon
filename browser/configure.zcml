@@ -25,6 +25,10 @@
     <interface
         interface=".interfaces.IFSDShortBio" />
 
+    <!-- ISkipSection - Explicitly declaring -->
+    <interface
+        interface=".interfaces.ISkipSection" />
+
     <!-- Viewlets -->
 
     <browser:viewlet

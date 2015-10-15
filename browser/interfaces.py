@@ -44,6 +44,15 @@ class ICollegeHomepage(Interface):
         data for the college.
     """
 
+class ISkipSection(Interface):
+    """
+        Marker interface where we want to 'skip' this item in the traversal to
+        determine the 'section'.  This is used in cases where "section C within
+        section B within section A" needs to have a section title of A, not B.
+        
+        Apply this interface to section B, and it will be skipped in the logic.
+    """
+
 try:
 
     from Products.CMFPlone.interfaces.syndication import ISyndicatable

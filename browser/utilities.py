@@ -7,6 +7,7 @@ from Products.ZCatalog.CatalogBrains import AbstractCatalogBrain
 from Products.agCommon import getContextConfig
 from Products.agCommon import increaseHeadingLevel as _increaseHeadingLevel
 from agsci.subsite.content.interfaces import ISection, ISubsite
+from interfaces import ISkipSection
 from urllib import urlencode
 from zope.component import getMultiAdapter
 from zope.interface import implements, Interface
@@ -374,10 +375,16 @@ class AgCommonUtilities(BrowserView):
 
         for i in aq_chain(self.context):
 
-            if ISection.providedBy(i) or ISubsite.providedBy(i):
+            # If the section is marked as 'skip', then don't consider it as a
+            # section.
+
+            if ISkipSection.providedBy(i):
+                continue
+
+            elif ISection.providedBy(i) or ISubsite.providedBy(i):
                 return i
 
-            if IPloneSiteRoot.providedBy(i):
+            elif IPloneSiteRoot.providedBy(i):
                 break
 
         return None
