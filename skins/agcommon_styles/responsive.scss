@@ -322,6 +322,9 @@
         
         .rmm-main-list {
             /* font-size: 0.875em; */
+            -webkit-box-shadow: 0 75px 40px 35px #FFFFFF;
+            -moz-box-shadow: 0 75px 40px 35px #FFFFFF;
+            box-shadow: 0 75px 40px 35px #FFFFFF;
         }
         
         .portletWrapper {
@@ -348,7 +351,7 @@
                     font-size: 1em;
                     text-align: left;
                     margin: 0;
-                    padding: 0.75em 1em !important;
+                    padding: 1em 0.75em 1em 1.75em !important;
                     border: none;
                 }
 
@@ -359,14 +362,19 @@
             }
         }
 
-        .top-navigation h2 {
-            font-size: 1.375em;
-            font-weight: 600;
-            padding: 0.5em;
-            color: $topnavigationTextColor;
-            background-color: $topnavigationMobileHeaderBackgroundColor;
+        .top-navigation {
+            h2 {
+                font-size: 1.25em;
+                font-weight: 600;
+                padding: 0.5em;
+                color: $topnavigationTextColor;
+                background-color: $topnavigationMobileHeaderBackgroundColor;
+            }
+            
+            li a {
+                font-size: 0.875em;
+            }
         }
-
         .left-column-navigation {
 
             .navTreeCurrentNode > a {
@@ -1116,6 +1124,19 @@
         }
     }
 
+    body.portaltype-homepage {
+        #section-title {
+            display: none;
+        }
+        
+        #portal-column-one .left-column-navigation .hiddenStructure {
+            position: static;
+            width: auto;
+            margin: 0 !important;
+            height: auto;
+        }
+        
+    }
     body.navigation-mobile {
 
         #section-title {
@@ -1138,7 +1159,7 @@
             .portletHeader {
                 border: 1px solid $leftNavBorderColor;
                 border-bottom: none;
-                padding: 0.5em 2% 0.375em;
+                padding: 0.5em 2% 0.5em;
                 font-size: 1.125em;
                 background-color: $globalBorderColor;
             }
@@ -1151,7 +1172,7 @@
                     border: 1px solid $leftNavBorderColor;
                     border-top: none;
                     font-size: 1.125em;
-                    padding: 0.375em 2%;
+                    padding: 0.375em 2% 0.375em 1.5em;
                     background-color: $globalBackgroundColor;
                 }
             }
@@ -1194,7 +1215,7 @@
         background-color: $contentBackgroundColor;
     }
     
-    #homepageimage, #panorama-homepage-image, #image-header {
+    #panorama-homepage-image, #image-header {
         display: none !important;
     }
     
@@ -1271,7 +1292,6 @@
 
                     a {
                         margin: 0;
-                        padding: 1em;
                     }
                 }
                 li:first-child {
