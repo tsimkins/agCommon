@@ -901,6 +901,8 @@ def _getContextConfig(context):
         'contact_title',
         'person_portlet_types',
         'provide_translation_widget',
+        'hide_addthis',
+        'hide_fblike',
     ]
     
     # Convert to dict
