@@ -48,6 +48,12 @@ $portlet_width_classes: (
         margin-bottom: 0.25em;
     }
 
+    .portletNavigationTree {
+        ul.navTree {
+            margin-left: 0;
+        }
+    }
+
     .portletItem {
         .navTreeItem {
 

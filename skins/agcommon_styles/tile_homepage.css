@@ -38,6 +38,8 @@
     height: auto; }
   #content .rssImage {
     margin-bottom: 0.25em; }
+  #content .portletNavigationTree ul.navTree {
+    margin-left: 0; }
   #content .portletItem .navTreeItem {
     padding: 0; }
     #content .portletItem .navTreeItem a,
