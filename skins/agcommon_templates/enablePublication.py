@@ -1,4 +1,5 @@
-from Products.agCommon import enablePublication
+from Products.agCommon import enablePublication, unprotectRequest
+unprotectRequest(container.REQUEST)
 
 request = container.REQUEST
 response =  request.response
