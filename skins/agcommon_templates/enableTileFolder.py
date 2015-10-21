@@ -1,4 +1,6 @@
-from Products.agCommon import enableTileFolder
+from Products.agCommon import unprotectRequest, enableTileFolder
+
+unprotectRequest(container.REQUEST)
 
 request = container.REQUEST
 response =  request.response
