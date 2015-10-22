@@ -52,21 +52,24 @@ body {
 
 /* = logo-department ============================================= */
 
-$searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth + 5*$column_padding);
+$searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth);
 
-$siteTitleRightPadding: $searchBoxWidth + 3*$column_padding; 
+$bigNumber: 3000px;
 
 #logo-department {
-    display: block;
     background-color: $subsiteHeaderBackgroundColor;
     position: absolute;
     left: $departmentLogoScale*(($logoWidth+3*$column_padding)/$maxWidth);
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 1em 100%*($siteTitleRightPadding/$maxWidth) 0.75em 100%*($column_padding/$maxWidth);
+    padding: 1em 0 0.75em 100%*($column_padding/$maxWidth);
+    width: $bigNumber;
 
     a {
+        display: block;
+        width:  100%*($siteTitleWidth/$bigNumber);
+        padding: 0 0 0;
         font-weight: 600;
         color: $subsiteHeaderTextColor;
         font-size: 1.25em;
@@ -90,7 +93,7 @@ $siteTitleRightPadding: $searchBoxWidth + 3*$column_padding;
 #portal-header {
     
     #portal-searchbox {
-        right: 100%*($column_padding/$maxWidth);
+        right: 0;
         top: 1em;
         width: 100%*($searchBoxWidth/$maxWidth);
         margin: 0;

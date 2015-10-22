@@ -66,15 +66,18 @@ body {
 
 /* = logo-department ============================================= */
 #logo-department {
-  display: block;
   background-color: #1F4B7B;
   position: absolute;
   left: 31.725%;
   top: 0;
   bottom: 0;
   right: 0;
-  padding: 1em 31.3% 0.75em 1.6%; }
+  padding: 1em 0 0.75em 1.6%;
+  width: 3000px; }
   #logo-department a {
+    display: block;
+    width: 11.66667%;
+    padding: 0 0 0;
     font-weight: 600;
     color: #FFFFFF;
     font-size: 1.25em;
@@ -89,9 +92,9 @@ body {
     Additional styles are in browser/resources/ad54elements-style.css
 */
 #portal-header #portal-searchbox {
-  right: 1.6%;
+  right: 0;
   top: 1em;
-  width: 26.5%;
+  width: 27.5%;
   margin: 0;
   position: absolute;
   padding: 0;

@@ -35,7 +35,6 @@
         }
 
         #portal-top {
-            background-image: url(department-site-header-background.png);
             background-align: top;
             background-position: center;
         }
@@ -582,11 +581,12 @@
     }
 
     #logo-department {
-        padding: 1em 100%*($column_padding/$maxWidth) 0.75em;
+        width: auto;
     }
 
     #logo-department a {
         font-size: 0.9375em;
+        width: auto;
     }
 
     #portal-breadcrumbs {
