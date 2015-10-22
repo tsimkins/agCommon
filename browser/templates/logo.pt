@@ -16,6 +16,10 @@
             tal:attributes="src string:${navigation_root_url}/penn-state-college-logo.png" 
             alt="Penn State University College of Agricultural Sciences" />
 
+       <img tal:condition="python: site_header == 'extension'"
+            tal:attributes="src string:${navigation_root_url}/penn-state-extension-logo.png" 
+            alt="Penn State Extension" />
+            
     </a>
 
     <div id="logo-department" 

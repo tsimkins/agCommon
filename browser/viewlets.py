@@ -1150,8 +1150,11 @@ class LogoViewlet(AgCommonViewlet):
     def logo_url(self):
         if self.site_header() == 'penn_state':
             return 'http://www.psu.edu'
-        
-        return 'http://agsci.psu.edu'
+
+        elif self.site_header() == 'extension':
+            return '//extension.psu.edu'        
+
+        return '//agsci.psu.edu'
 
     def portal_title(self):
         return self.portal_state.portal_title()
