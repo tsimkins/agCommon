@@ -2,6 +2,14 @@
 
 body.tile-folder {
     #content {
+        
+        /* 
+            Assigning margin to content-core because it fixes the issue of the 
+            "AddThis" block pushing down the content tiles 
+        */
+        #content-core {
+            margin-top: 0.75em;
+        }
 
         .tileitem-width-100:nth-child(1n+1),
         .tileitem-width-50:nth-child(2n+1),
@@ -25,6 +33,14 @@ body.tile-folder {
         .tileitem-width-100:first-child {
             border-top: none;
             padding-top: 0.5em;
+        }
+
+        .tileSummaryLeadImage,
+        .tileSummaryLeadImage:first-child,
+        .tileSummary,
+        .tileSummary:first-child {
+            border-top: none;
+            padding-top: 0;
         }
 
         .tileItem {
@@ -53,14 +69,7 @@ body.tile-folder {
                 }
 
             }
-            
-            .tileSummaryLeadImage,
-            .tileSummaryLeadImage:first-child {
-                border-top: none;
-                padding-top: 0;
-            }
 
-            
             .tilebody.tile-folder {
                 color: $globalFontColor;
             }
@@ -68,10 +77,6 @@ body.tile-folder {
             .tileBody {
                 color: $globalFontColor;
             }
-        }
-
-        .tileItem:first-child {
-            padding-top: 0;
         }
 
         .tileItem.excludeFromNav {

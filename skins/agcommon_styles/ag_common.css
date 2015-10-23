@@ -372,58 +372,65 @@ body {
   padding-top: 0.5em; }
 
 /* Tile folder view */
-body.tile-folder #content .tileitem-width-100:nth-child(1n+1),
-body.tile-folder #content .tileitem-width-50:nth-child(2n+1),
-body.tile-folder #content .tileitem-width-33:nth-child(3n+1),
-body.tile-folder #content .tileitem-width-25:nth-child(4n+1),
-body.tile-folder #content .tileitem-width-20:nth-child(5n+1) {
-  clear: left; }
-body.tile-folder #content tileitem-width-100 {
-  border-top: 1px dashed #E6E6E6;
-  padding-top: 1.125em;
-  padding-bottom: 0.75em; }
-  body.tile-folder #content tileitem-width-100 .tileHeadline {
-    margin-top: 0.25em;
-    font-size: 1.375em; }
-body.tile-folder #content .tileitem-width-100:first-child {
-  border-top: none;
-  padding-top: 0.5em; }
-body.tile-folder #content .tileItem {
-  margin-bottom: 1em;
-  border-top: none; }
-  body.tile-folder #content .tileItem .tileHeadline {
-    font-weight: normal; }
-  body.tile-folder #content .tileItem .contentLeadImageContainer {
-    float: none;
-    clear: both;
-    margin-bottom: 0.125em;
-    max-width: 100%; }
-    body.tile-folder #content .tileItem .contentLeadImageContainer img.tileImage {
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      float: none;
-      clear: both;
-      max-width: 100%;
-      display: block; }
-  body.tile-folder #content .tileItem .tileSummaryLeadImage,
-  body.tile-folder #content .tileItem .tileSummaryLeadImage:first-child {
+body.tile-folder #content {
+  /* 
+      Assigning margin to content-core because it fixes the issue of the 
+      "AddThis" block pushing down the content tiles 
+  */ }
+  body.tile-folder #content #content-core {
+    margin-top: 0.75em; }
+  body.tile-folder #content .tileitem-width-100:nth-child(1n+1),
+  body.tile-folder #content .tileitem-width-50:nth-child(2n+1),
+  body.tile-folder #content .tileitem-width-33:nth-child(3n+1),
+  body.tile-folder #content .tileitem-width-25:nth-child(4n+1),
+  body.tile-folder #content .tileitem-width-20:nth-child(5n+1) {
+    clear: left; }
+  body.tile-folder #content tileitem-width-100 {
+    border-top: 1px dashed #E6E6E6;
+    padding-top: 1.125em;
+    padding-bottom: 0.75em; }
+    body.tile-folder #content tileitem-width-100 .tileHeadline {
+      margin-top: 0.25em;
+      font-size: 1.375em; }
+  body.tile-folder #content .tileitem-width-100:first-child {
+    border-top: none;
+    padding-top: 0.5em; }
+  body.tile-folder #content .tileSummaryLeadImage,
+  body.tile-folder #content .tileSummaryLeadImage:first-child,
+  body.tile-folder #content .tileSummary,
+  body.tile-folder #content .tileSummary:first-child {
     border-top: none;
     padding-top: 0; }
-  body.tile-folder #content .tileItem .tilebody.tile-folder {
-    color: #000000; }
-  body.tile-folder #content .tileItem .tileBody {
-    color: #000000; }
-body.tile-folder #content .tileItem:first-child {
-  padding-top: 0; }
-body.tile-folder #content .tileItem.excludeFromNav {
-  clear: both;
-  width: auto; }
-body.tile-folder #content div.listingBar {
-  clear: both;
-  margin-top: 1em;
-  padding-top: 2em;
-  padding-bottom: 1em; }
+  body.tile-folder #content .tileItem {
+    margin-bottom: 1em;
+    border-top: none; }
+    body.tile-folder #content .tileItem .tileHeadline {
+      font-weight: normal; }
+    body.tile-folder #content .tileItem .contentLeadImageContainer {
+      float: none;
+      clear: both;
+      margin-bottom: 0.125em;
+      max-width: 100%; }
+      body.tile-folder #content .tileItem .contentLeadImageContainer img.tileImage {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        float: none;
+        clear: both;
+        max-width: 100%;
+        display: block; }
+    body.tile-folder #content .tileItem .tilebody.tile-folder {
+      color: #000000; }
+    body.tile-folder #content .tileItem .tileBody {
+      color: #000000; }
+  body.tile-folder #content .tileItem.excludeFromNav {
+    clear: both;
+    width: auto; }
+  body.tile-folder #content div.listingBar {
+    clear: both;
+    margin-top: 1em;
+    padding-top: 2em;
+    padding-bottom: 1em; }
 
 body.tile-folder.no-description #content .tileItem {
   margin-bottom: 1.75em; }
@@ -1088,11 +1095,11 @@ body.template-subfolder_view #two-column-right {
 #content #addthis {
   font-size: 1.25em;
   color: #4B4B4B;
-  padding: 0 0.25em 0.25em 0.25em;
   border: none;
   display: block;
   float: right;
-  margin: 0 0 0 0.5em; }
+  margin: 0 0.25em 0.25em 0.75em;
+  padding: 0; }
   #content #addthis h2 {
     border-bottom-width: 1px;
     border-bottom-style: solid;
@@ -2489,6 +2496,20 @@ html body#content {
 
 #content ul.kupu-tabs li {
   display: inline; }
+
+.kupu-tb {
+  border: none;
+  border-bottom: 1px solid #74ae0b;
+  width: auto; }
+
+div.kupu-drawer,
+div div.kupu-panels,
+.kupu-tb,
+ul.kupu-tabs li {
+  background-color: #cde2a7; }
+
+.kupu-tb-buttons button {
+  border: 1px solid #cde2a7; }
 
 /* PloneFormGen Fields */
 .template-fg_base_view_p3 textarea {
