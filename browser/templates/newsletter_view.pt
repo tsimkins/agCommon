@@ -45,7 +45,7 @@ h1, h2, h3, .portletHeader, .documentDescription {
 
 h1 {
     font-size: 18pt;
-    margin: 0 0 3pt 0;
+    margin: 5pt 0 3pt 0;
 }
 
 h2 a, dt.portletHeader a {
@@ -208,7 +208,7 @@ table td.footer-address p {
 }
 
 table td.header {
-    padding: 5px 0 0 0;
+    padding: 12px 0;
 }
 
 table td.header div,
@@ -254,11 +254,11 @@ table td.footer p {
 }
 
 table td#portal-column-content {
-    padding: 8pt 15px 5px 0;
+    padding: 0 15px 5px 0;
 }
 
 table.one-column td#portal-column-content {
-    padding: 8pt 0 0 0;
+    padding: 0;
 }
 
 .eventDateLocationBlock {
@@ -270,9 +270,9 @@ hr {
     margin: 0;
     padding: 0;
     text-align: left;
-    color: #333333;
-    background-color: #333333;
-    border-color: #333333;
+    color: #AAAAAA;
+    background-color: #AAAAAA;
+    border-color: #AAAAAA;
 }
 
 img.leadimage, img.leadimage_full {
@@ -380,7 +380,7 @@ div.about hr {
 
 .extension-footer {
     font-size: 10pt;
-    padding-top: 6pt;
+    padding: 8pt 0;
 }
 
 div.extension-footer hr {
@@ -461,7 +461,7 @@ td#portal-column-content.newsletter_full_text h3.tileHeadline {
             <img tal:attributes="src string:${portal_url}/extension-newsletter-header.png"
                                  alt="Penn State Extension" width="600"
                                  border="0"
-                                 height="85" /></a>
+                                 height="60" /></a>
         </div>
 
 
@@ -471,7 +471,7 @@ td#portal-column-content.newsletter_full_text h3.tileHeadline {
             <img tal:attributes="src string:${portal_url}/college-newsletter-header.png"
                                  alt="Penn State College of Agricultural Sciences" width="600"
                                  border="0"
-                                 height="85" /></a>
+                                 height="60" /></a>
         </div>
 
     </tal:header-graphic>
@@ -740,7 +740,7 @@ td#portal-column-content.newsletter_full_text h3.tileHeadline {
 
         <p class="discreet">This publication is available in alternative media on request. </p>
 
-        <p class="discreet">Penn State is an equal opportunity, affirmative action employer, and is committed to providing employment opportunities to minorities, women, veterans, individuals with disabilities, and other protected groups. Nondiscrimination: <a href="http://guru.psu.edu/policies/AD85.html">http://guru.psu.edu/policies/AD85.html</a>.</p>
+        <p class="discreet">Penn State is an equal opportunity, affirmative action employer, and is committed to providing employment opportunities to all qualified applicants without regard to race, color, religion, age, sex, sexual orientation, gender identity, national origin, disability or protected veteran status.</p>
     </div>
     </tal:extension>
 </metal:footer>

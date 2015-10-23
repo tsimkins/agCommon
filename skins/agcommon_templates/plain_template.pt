@@ -105,6 +105,9 @@
                         <td class="header" colspan="2"
                             align="left" width="600"
                             tal:define="has_leadimage view/bodyTag|nothing">
+                            
+                            <hr size="1">
+
                             <table class="leadimage" 
                                 width="600"
                                 tal:omit-tag="not: has_leadimage">

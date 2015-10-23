@@ -46,7 +46,10 @@
             margin-right: 15px;
             padding-left: 0;
             padding-right: 0;
+        }
 
+        table td.header h1 {
+            margin-top: 16px;
         }
 
         table td.header div.contentLeadImageContainer {
@@ -104,7 +107,7 @@
 
         div.graphic-header-agsci,
         div.graphic-header-extension {
-            margin: 12pt 0 8pt 0;
+            margin: 12pt 0 0 0;
         }
 
     </style>
@@ -367,7 +370,7 @@
                     }
                 );
 
-                //window.print();
+                window.print();
             }
         );
 
@@ -415,10 +418,10 @@
     	<div tal:condition="is_extension"
             class="graphic-header-extension">
             <a href="http://extension.psu.edu">
-            <img tal:attributes="src string:${portal_url}/extension-newsletter-header-print.png"
-                                 alt="Penn State Extension" width="765"
+            <img tal:attributes="src string:${portal_url}/extension-newsletter-header.png"
+                                 alt="Penn State Extension" width="600"
                                  border="0"
-                                 height="85" /></a>
+                                 height="60" /></a>
         </div>
 
 
@@ -428,7 +431,7 @@
             <img tal:attributes="src string:${portal_url}/college-newsletter-header.png"
                                  alt="Penn State College of Agricultural Sciences" width="600"
                                  border="0"
-                                 height="85" /></a>
+                                 height="60" /></a>
         </div>
 
     </tal:header-graphic>
