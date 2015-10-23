@@ -390,3 +390,20 @@ html {
 #content ul.kupu-tabs li {
     display: inline;
 }
+
+.kupu-tb {
+    border: none;
+    border-bottom: 1px solid #74ae0b;
+    width: auto;
+}
+
+div.kupu-drawer,
+div div.kupu-panels,
+.kupu-tb, 
+ul.kupu-tabs li {
+    background-color: #cde2a7;
+}
+
+.kupu-tb-buttons button {
+    border: 1px solid #cde2a7;
+}
