@@ -659,7 +659,8 @@ body.template-subfolder_view #two-column-right {
   font-size: 1em; }
   #content .portletWrapper .portletHeader {
     color: #AC5209;
-    font-weight: normal; }
+    font-weight: normal;
+    margin-bottom: 0; }
     #content .portletWrapper .portletHeader a {
       color: #AC5209; }
   #content .portletWrapper .portlet a,
