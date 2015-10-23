@@ -254,10 +254,10 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
                 a['href'] = urljoin(item.getURL(), href)
 
             if not contents.startswith('http') and not href.startswith('mailto') and a.get('id') != "parent-fieldname-leadImage":
-                a.append(BeautifulSoup("( <strong>%s</strong> )" % a['href']))
+                a.append(BeautifulSoup(" ( <strong>%s</strong> ) " % a['href']))
 
             elif '@' not in contents and href.startswith('mailto'):
-                a.append(BeautifulSoup("( <strong>%s</strong> )" % a['href'].replace('mailto:', '')))
+                a.append(BeautifulSoup(" ( <strong>%s</strong> ) " % a['href'].replace('mailto:', '')))
    
             else:
                 a['class'] = 'standalone'
