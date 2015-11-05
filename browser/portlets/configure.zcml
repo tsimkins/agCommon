@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="agcommon">
+
+    <!-- Portlets -->
+    
+    <include package="plone.app.portlets" />
+
+    <plone:portletRenderer
+        portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
+        template="templates/navigation.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <plone:portletRenderer
+        portlet="plone.portlet.collection.collection.ICollectionPortlet"
+        template="templates/collection.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <plone:portletRenderer
+        portlet="plone.portlet.static.static.IStaticPortlet"
+        template="templates/static.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+</configure>
