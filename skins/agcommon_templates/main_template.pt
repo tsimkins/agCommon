@@ -102,7 +102,7 @@
         <tal:googletagmanager
             replace="structure provider:agcommon.googletagmanager" />
 
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://apis.google.com/js/platform.js" async="async" defer="defer"></script>
 
         <div id="fb-root"></div>
     
