@@ -63,18 +63,18 @@ body.template-fsd_atoz_view #portal-localsearchbox {
   margin: 0.5em 0;
   font-weight: 600; }
 
-#content .searchResults dd.contenttype-fsdperson ul.jobTitle li {
+#content .searchResults .contenttype-fsdperson ul.jobTitle li {
   margin-bottom: 0; }
 
-#content .searchResults dt.contenttype-fsdperson {
+#content .searchResults .contenttype-fsdperson {
   margin: 0.125em 0 0.125em 0;
   padding: 0.5em 0 0 0;
   border-top: 1px solid #E6E6E6; }
 
-#content .searchResults dt.contenttype-fsdperson:first-child {
+#content .searchResults .contenttype-fsdperson:first-child {
   border-top: none; }
 
-#content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer {
+#content .searchResults .contenttype-fsdperson .searchLeadImageContainer {
   float: left;
   margin: 0 0 0 -18.852459016393443%;
   text-align: center;
@@ -82,14 +82,14 @@ body.template-fsd_atoz_view #portal-localsearchbox {
   border: none;
   padding-top: 0.25em; }
 
-#content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer .tileImage {
+#content .searchResults .contenttype-fsdperson .searchLeadImageContainer .tileImage {
   float: none;
   max-width: 100%;
   margin: 0;
   padding: 0; }
 
-#content .searchResults dt.contenttype-fsdperson,
-#content .searchResults dd.contenttype-fsdperson {
+#content .searchResults .contenttype-fsdperson,
+#content .searchResults .contenttype-fsdperson {
   padding-left: 18.852459016393443%; }
 
 #content .searchResults ul.jobTitle {

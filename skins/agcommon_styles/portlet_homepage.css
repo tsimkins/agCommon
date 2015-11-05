@@ -41,11 +41,11 @@
   margin-top: 0;
   margin-bottom: 0; }
 
-#portlets-above dl.portlet:first-child .portletHeader {
+#portlets-above .portlet:first-child .portletHeader {
   padding-top: 1em; }
 
 /* Fix for IE7 being dumb and putting bullets by the nav items.  */
-#portlets-above dl.portletNavigationTree li {
+#portlets-above .portletNavigationTree li {
   list-style-image: none; }
 
 .icons-on #portlets-above .portletItem a {

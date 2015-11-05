@@ -98,6 +98,7 @@
             margin: 0 0 0.25em;
             padding: 0.125em 0 0.125em 0.125em;
             color: $rightPortletTextColor;
+            display: block;
 
             a {
                 color: $rightPortletLinkColor;
@@ -191,7 +192,6 @@
     .portletHeader {
         color: $rightPortletHeaderTextColor;
         font-weight: normal;
-        margin-bottom: 0;
         
         a {
             color: $rightPortletHeaderTextColor;

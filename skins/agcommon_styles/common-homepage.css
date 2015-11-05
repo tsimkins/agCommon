@@ -302,7 +302,7 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
   padding: 0; }
 
 #rightcolumn .navTreeItem a:hover,
-#rightcolumn dd.portletItem .navTreeItem a:hover {
+#rightcolumn .portletItem .navTreeItem a:hover {
   background-color: transparent; }
 
 /* Hide Homepage Image on edit screen */
