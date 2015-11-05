@@ -74,8 +74,7 @@
       padding-top: 2em;
       padding-bottom: 2em; }
     body.department-site #portal-top {
-      background-align: top;
-      background-position: center; }
+      background-position: center top; }
     body.department-site .top-navigation {
       background-color: #45709F; }
       body.department-site .top-navigation ul li a {
@@ -331,7 +330,18 @@
     float: right; }
 
   #portal-header {
-    padding-bottom: 0 !important; } }
+    padding-bottom: 0 !important; }
+
+  /* Removing text from video player controls */
+  #playlist-box .player-buttons a.button {
+    text-align: center; }
+    #playlist-box .player-buttons a.button span {
+      position: absolute;
+      margin-left: -10000px; }
+
+  #now-playing a span {
+    position: absolute;
+    margin-left: -10000px; } }
 /*------------------------ END large-site.css ----------------------------*/
 /*------------------------- resolution-1032px.css ------------------------------*/
 /* Full browser width */
@@ -612,7 +622,7 @@
     #viewlet-above-content .flexslider .flex-direction-nav li .prev {
       left: 1.04167%; }
 
-  #content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer .tileImage {
+  #content .searchResults .contenttype-fsdperson .searchLeadImageContainer .tileImage {
     width: 100%;
     height: auto; }
 
@@ -1192,10 +1202,10 @@
     display: none; }
   #content .tileItemContainer .tilePortletManager .portletPerson .portletItem .person-image {
     float: right; }
-  #content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer {
+  #content .searchResults .contenttype-fsdperson .searchLeadImageContainer {
     display: none; }
-  #content .searchResults dt.contenttype-fsdperson,
-  #content .searchResults dd.contenttype-fsdperson {
+  #content .searchResults .contenttype-fsdperson,
+  #content .searchResults .contenttype-fsdperson {
     padding-left: 0; }
 
   #centercolumn .portletStaticText .portletItem img {

@@ -1,0 +1,23 @@
+/*
+    This is for the single limelight video player.
+*/
+
+
+/* From https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+
+$video_aspect_ratio: 16.0/9.0;
+
+.LimelightEmbeddedPlayer {
+    width: 100%;
+    padding-bottom: 100%*(1.0/$video_aspect_ratio);
+    position: relative;
+    height: 0;
+    
+    #video_player {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

@@ -35,8 +35,7 @@
         }
 
         #portal-top {
-            background-align: top;
-            background-position: center;
+            background-position: center top;
         }
         
         /* Color updates for department sites */
@@ -443,6 +442,28 @@
     
     #portal-header {
         padding-bottom: 0 !important;
+    }
+    
+    /* Removing text from video player controls */
+    
+    #playlist-box {
+        
+        .player-buttons {
+
+            a.button {
+                text-align: center;                
+
+                span {
+                    position: absolute;
+                    margin-left: -10000px;
+                }
+            }
+        }
+    }
+
+    #now-playing a span {
+        position: absolute;
+        margin-left: -10000px;
     }
 }
 
@@ -887,7 +908,7 @@
         }
     }
         
-    #content .searchResults dt.contenttype-fsdperson .searchLeadImageContainer .tileImage {
+    #content .searchResults .contenttype-fsdperson .searchLeadImageContainer .tileImage {
         width: 100%;
         height: auto;
     }
@@ -1669,14 +1690,14 @@
         }
         
         .searchResults {
-            dt.contenttype-fsdperson {
+            .contenttype-fsdperson {
                 .searchLeadImageContainer {
                     display: none;
                 }
             }
     
-            dt.contenttype-fsdperson,
-            dd.contenttype-fsdperson {
+            .contenttype-fsdperson,
+            .contenttype-fsdperson {
                 padding-left: 0;
             }
         }

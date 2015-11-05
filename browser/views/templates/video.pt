@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+  <body>
+
+    <metal:javascript fill-slot="javascript_head_slot">
+		<script type="text/javascript" src="//video.limelight.com/player/embed.js"></script>
+    </metal:javascript>
+
+    <metal:content-core fill-slot="content-core">
+
+        <metal:player define-macro="video-player">
+
+            <div class="LimelightEmbeddedPlayer"
+                tal:condition="view/showPlayer|nothing">
+           
+                <object 
+                    id="video_player"
+                    name="video_player"
+                    class="LimelightEmbeddedPlayerFlash" 
+                    data="//video.limelight.com/player/loader.swf" 
+                    type="application/x-shockwave-flash" 
+                    tabindex="0">
+            
+                    <param name="movie" value="//video.limelight.com/player/loader.swf" />
+                    <param name="wmode" value="window" />
+                    <param name="allowScriptAccess" value="always" />
+                    <param name="allowFullScreen" value="true" />
+                    <param name="flashVars" 
+                        tal:attributes="value view/flashVars|nothing" />
+            
+                </object>
+            
+            </div>
+
+        </metal:player>
+
+        <metal:field use-macro="python:context.widget('text', mode='view')">
+            Body text
+        </metal:field>
+
+    </metal:content-core>
+
+  </body>
+</html>
