@@ -3,9 +3,9 @@
 
 <h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
 
-<dl class="portlet portletLinkButton" tal:condition="view/linkButtons">
+<div class="portlet portletLinkButton" tal:condition="view/linkButtons">
         
-    <dd tal:repeat="lbutton view/linkButtons"
+    <div tal:repeat="lbutton view/linkButtons"
         tal:attributes="id string:linkbutton-${lbutton/id};
                         class python: view.getClass(lbutton);">
         <tal:linkButton  
@@ -28,7 +28,7 @@
 
             </tal:linkButton>
             
-    </dd>
+    </div>
 
-</dl>
+</div>
 </tal:block>

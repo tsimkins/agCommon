@@ -3,10 +3,10 @@
 
 <h3 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
 
-<dl class="portlet portletContact"
+<div class="portlet portletContact"
     tal:define="agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');">
 
-    <dd class="portletItem">
+    <div class="portletItem">
         
         <tal:contactportlet>
 
@@ -62,7 +62,7 @@
 
         </tal:contactportlet>
            
-    </dd>
+    </div>
 
-</dl>
+</div>
 </tal:block>

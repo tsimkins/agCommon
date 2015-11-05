@@ -3,9 +3,9 @@
 
 <h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
     
-<dl class="portlet portletPerson">
+<div class="portlet portletPerson">
 
-    <dd class="portletItem"
+    <div class="portletItem"
         tal:repeat="person view/people"
         tal:attributes="id string:person-${person/id}">
         
@@ -51,8 +51,8 @@
         </tal:person>
 
            
-    </dd>
+    </div>
 
 
-</dl>
+</div>
 </tal:block>

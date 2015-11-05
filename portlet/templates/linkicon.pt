@@ -4,10 +4,10 @@
 <h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
 
 
-<dl class="portlet portletLinkIcon" tal:condition="view/linkIcons">
+<div class="portlet portletLinkIcon" tal:condition="view/linkIcons">
 
     <tal:linkIcon repeat="licon view/linkIcons">
-        <dd tal:attributes="class python:view.getClass(licon)"
+        <div tal:attributes="class python:view.getClass(licon)"
             tal:define="title licon/title;
                         description licon/description|licon/title;
                         icon licon/icon|nothing;
@@ -20,8 +20,8 @@
                                         alt python:''" /><span tal:content="title">
                                     >Link</span>
             </a>
-        </dd>
+        </div>
     </tal:linkIcon>        
 
-</dl>
+</div>
 </tal:block>
