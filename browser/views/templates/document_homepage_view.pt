@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+    <body>
+    
+        <metal:js fill-slot="javascript_head_slot">
+            <tal:background-images 
+                define="acquire_background_images context/acquire_background_images|nothing"
+                condition="python: acquire_background_images or 'background-images' in context.keys()">
+                
+                <!-- Homepage JavaScript -->
+                <script async="async"
+                    type="text/javascript" 
+                    src="background-images/getHomepageImage.js"></script>
+
+            </tal:background-images>
+        </metal:js>
+        
+        <metal:title fill-slot="content-title" tal:condition="not:view/hasText">
+        
+            <h1 class="documentFirstHeading hiddenStructure"> 
+                <metal:field use-macro="python:here.widget('title', mode='view')">
+                Title
+                </metal:field>
+            </h1>
+            
+        </metal:title>
+        
+        <metal:description fill-slot="content-description" tal:condition="not:view/hasText">    
+        
+            <p class="documentDescription hiddenStructure" tal:condition="here/Description">
+                <metal:field use-macro="python:here.widget('description', mode='view')">
+                    Description
+                </metal:field>
+            </p>
+        
+        </metal:description>
+     
+    </body>
+</html>
+

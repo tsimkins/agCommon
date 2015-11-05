@@ -1,0 +1,89 @@
+<tal:addthis
+	tal:define="show_addthis view/show_addthis;">
+
+	<div id="addthis"
+		tal:condition="show_addthis">
+
+        <h2>Share</h2>
+
+		<script type="text/javascript">
+		// From http://www.addthis.com/forum/viewtopic.php?f=8&amp;t=14972
+
+		var addthis_config = {
+		  data_use_flash: false,
+          data_track_linkback: true
+		}
+
+        var addthis_share = 
+        {
+            templates : {
+                twitter : '{{title}} - {{url}}'
+            },
+            url_transforms: {
+                shorten: {
+                    twitter : 'bitly',
+                    facebook : 'bitly'
+                },
+            },
+            shorteners: {
+                bitly: {}
+            }
+        }
+
+		</script>
+
+		<script async="async" type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=agsciences"></script>
+
+		<!-- AddThis Button BEGIN -->
+		<div class="addthis_toolbox addthis_default_style">
+		<a tal:condition="view/isPerson|nothing" 
+		   title="vCard"
+		   tal:attributes="href string:vCard"><img style="padding-right: 2px" width="20" height="16" alt="vCard"
+		                                         tal:attributes="src string:${context/portal_url}/icons/vcard.png" /></a>
+		<a class="addthis_button_facebook" title="Share: Facebook"></a>
+		<a class="addthis_button_twitter" title="Share: Twitter"></a>
+		<a class="addthis_button_google_plusone" title="Share: Google Plus" g:plusone:count="false"></a>
+		<a class="addthis_button_email" title="Share: Email"></a>
+		<a tal:condition="view/isSyndicationAllowed" 
+		   title="RSS Feed"
+           class="rss_button"
+		   tal:attributes="href string:RSS">
+		      <span>
+		          <span class="addthis_label">RSS Feed</span>
+		      </span>
+        </a>
+		<a class="addthis_button_print" title="Print"></a>
+
+		<div class="pdf" 
+		     tal:condition="view/downloadPDF|nothing" >
+    		<a title="Download PDF"
+               class="addthis_button_pdf"
+    		   tal:attributes="href view/pdf_url">
+		          <span>Download PDF</span>
+            </a>
+        </div>
+
+		<div class="order"
+             tal:condition="view/orderPublication|nothing">
+    		<a title="Order Publication"
+               class="addthis_button_order"
+    		   tal:attributes="href view/order_url">
+		          <span>Order Publication</span>
+            </a>
+        </div>
+
+		</div>
+		
+		<!-- AddThis Button END -->
+		<div style="font-size: 0px; clear: both"><!-- --></div>
+
+        <div class="translate" tal:condition="view/showTranslationWidget|nothing">
+        <h2>Translate</h2>
+        <ul>
+            <li tal:repeat="r view/getTranslationLanguages"><a tal:attributes="href python: view.getTranslationUrl(r)" tal:content="structure python: view.getTranslationLabel(r)"></a></li>
+        </ul>
+        </div>
+
+	</div>
+	</tal:addthis>
+

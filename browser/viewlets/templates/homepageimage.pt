@@ -1,0 +1,13 @@
+<div id="homepageimage" tal:condition="not:view/slider_has_contents" tal:attributes="class python: view.hide_breadcrumbs and 'nobreadcrumbs' or ''"></div>
+
+<tal:tile_homepage_slider
+     condition="python: view.isLayout(views=['tile_homepage_view']) and not view.slider_has_contents">
+
+    <!-- Panorama Homepage JavaScript -->
+    <script async="async"
+            tal:define="acquire_background_images context/acquire_background_images|nothing"
+            tal:condition="python: acquire_background_images or 'background-images' in context.keys()" 
+            type="text/javascript" 
+            src="background-images/@@tile_homepage.js"></script>
+
+</tal:tile_homepage_slider>
