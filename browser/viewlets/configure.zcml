@@ -1,0 +1,462 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="agcommon">
+
+    <!-- Viewlets -->
+
+    <browser:viewlet
+        name="plone.links.favicon"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+        class="plone.app.layout.links.viewlets.FaviconViewlet"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- Render the browser title -->
+    <browser:viewlet
+        name="agcommon.htmlhead.title"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".TitleViewlet"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+
+    <!-- Google Plus metadata -->
+    <browser:viewlet
+        name="agcommon.htmlhead.googleplus"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".GooglePlusViewlet"
+        permission="zope2.View"
+        template="templates/googleplus-head.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- Structured Data metadata -->
+    <browser:viewlet
+        name="agcommon.htmlhead.google_structured_data"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".GoogleStructuredDataViewlet"
+        permission="zope2.View"
+        template="templates/google-structured-data.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- Facebook Open Graph metadata -->
+    <browser:viewlet
+        name="agcommon.htmlhead.fbmetadata"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".FBMetadataViewlet"
+        permission="zope2.View"
+        template="templates/fbmetadata.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- Facebook Comments -->
+    <browser:viewlet
+        name="plone.comments"
+        for="Products.CMFCore.interfaces.IContentish"
+        layer="..interfaces.IThemeSpecific"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        view="plone.app.layout.globals.interfaces.IViewView"
+        class=".CustomCommentsViewlet"    
+        template="templates/comments.pt"
+        permission="zope2.View"
+        />
+
+    <!-- Skip to navigation Links -->
+
+    <browser:viewlet
+        name="plone.skip_links"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        permission="zope2.View" 
+        class="plone.app.layout.viewlets.common.SkipLinksViewlet"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/skip_links.pt"
+        />
+
+    <!-- Links to RSS feed for syndicated content -->
+
+    <browser:viewlet
+        name="agcommon.links.RSS"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+        permission="zope2.View" 
+        class=".RSSViewlet"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/rsslink.pt"
+        />
+
+    <!-- Links to Site RSS feed -->
+
+    <browser:viewlet
+        name="agcommon.links.site_rss"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+        permission="zope2.View" 
+        class=".SiteRSSViewlet"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/site_rss.pt"
+        />
+   
+    <!-- Render the keywords -->
+    <browser:viewlet
+        name="plone.belowcontenttitle.keywords"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class=".KeywordsViewlet"
+        permission="zope2.View"
+        template="templates/keywords.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- The search box -->
+    <browser:viewlet
+        name="plone.searchbox"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".MultiSearchViewlet"
+        template="templates/searchbox.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- The local search box -->
+    <browser:viewlet
+        name="agcommon.localsearchbox"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class="Products.agCommon.browser.viewlets.LocalSearchViewlet"
+        template="templates/localsearchbox.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- Logo -->
+    <browser:viewlet
+        name="plone.logo"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".LogoViewlet"
+        template="templates/logo.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- The personal bar -->
+    <browser:viewlet
+        name="plone.personal_bar"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+        class="plone.app.layout.viewlets.common.PersonalBarViewlet"
+        template="templates/personal_bar.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- The breadcrumbs -->
+    <browser:viewlet
+        name="plone.path_bar"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".PathBarViewlet"
+        template="templates/path_bar.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- The section title -->
+    <browser:viewlet
+        name="plone.section_title"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".SectionTitleViewlet"
+        template="templates/section_title.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- Top Navigation -->
+    <browser:viewlet
+        name="agcommon.topnavigation"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+        class=".TopNavigationViewlet"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/topnavigation.pt"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="agcommon.addthis"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+        layer="..interfaces.IThemeSpecific"
+        class=".AddThisViewlet"
+        template="templates/addthis.pt"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="agcommon.homepageimage"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".HomepageImageViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        template="templates/homepageimage.pt"
+        for="agsci.subsite.content.interfaces.IHomePage"
+        />
+
+    <browser:viewlet
+        name="agcommon.flexslider"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".FlexsliderViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        template="templates/flexslider.pt"
+        for="agsci.subsite.content.interfaces.IHomePage"
+        />
+        
+    <browser:viewlet
+        name="agcommon.centercolumn"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class=".HomepageColumnsViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        template="templates/homepage-columns.pt"
+        for="agsci.subsite.content.interfaces.IHomePage"
+        />
+
+    <browser:viewlet
+        name="agcommon.homepage_text"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class=".HomepageTextViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        template="templates/homepagetext.pt"
+        for="agsci.subsite.content.interfaces.IHomePage"
+        />
+
+    <!-- The related items --> 
+    <browser:viewlet
+        name="plone.belowcontentbody.relateditems"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".ContentRelatedItems"
+        view="plone.app.layout.globals.interfaces.IViewView"
+        template="templates/document_relateditems.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- Document actions --> 
+    <browser:viewlet
+        name="plone.abovecontenttitle.documentactions"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class="plone.app.layout.viewlets.content.DocumentActionsViewlet"
+        template="templates/document_actions.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="plone.footer"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".FooterViewlet"
+        template="templates/footer.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- Content Lead Image Header -->
+
+    <browser:viewlet
+        name="collective.contentleadimage.header"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".LeadImageHeader"
+        template="templates/leadimage-header.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        for="agsci.subsite.content.interfaces.IHomePage"
+        />
+
+    <!-- Analytics Viewlets -->
+
+    <browser:viewlet
+        name="plone.analytics"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".AnalyticsViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="agcommon.analytics"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".UnitAnalyticsViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+        
+    <!-- Content Well Portlet Relocation -->
+
+    <browser:viewlet
+        name="contentwellportlets.portletsabovecontent"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class=".PortletsAboveViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        for="agsci.subsite.content.interfaces.IHomePage"
+        template="templates/portletsabovecontent.pt"
+    />
+
+    <browser:viewlet
+        name="contentwellportlets.portletsabovecontent"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".EmptyViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        for="agsci.subsite.content.interfaces.IHomePage"
+    />
+
+    <browser:viewlet
+        name="contentwellportlets.portletsbelowcontent"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".PortletsBelowViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        template="templates/portletsbelowcontent.pt"
+        />
+
+    <browser:viewlet
+        name="contentwellportlets.footerportlets"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".FooterPortletsViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        template="templates/footerportlets.pt"
+        />
+
+    <browser:viewlet
+        name="plone.nextprevious"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".NextPreviousViewlet"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/nextprevious.pt"
+        permission="zope2.View"
+        />
+
+    <!-- Facebook "Like" icon -->
+    <browser:viewlet
+        name="agcommon.fblike"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".FBLikeViewlet"
+        permission="zope2.View"
+        template="templates/fblike.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- Document byline viewlet-->
+    <browser:viewlet
+        name="plone.belowcontenttitle.documentbyline"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class="plone.app.layout.viewlets.content.DocumentBylineViewlet"
+        permission="zope2.View"
+        template="templates/document_byline.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+
+    <!-- Contributors Viewlet -->
+    <browser:viewlet
+        name="agcommon.contributors"
+        for="..interfaces.IContributors"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".ContributorsViewlet"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/contributors.pt"
+        permission="zope2.View"
+        />
+
+    <!--
+    <browser:viewlet
+        name="agcommon.contributors"
+        for="agsci.UniversalExtender.interfaces.IFilePublicationExtender"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".ContributorsViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+    -->
+    
+    <five:implements
+        class="Products.ATContentTypes.content.document.ATDocument"
+        interface="..interfaces.IContributors"
+    /> 
+
+    <five:implements
+        class="Products.ATContentTypes.content.newsitem.ATNewsItem"
+        interface="..interfaces.IContributors"
+    /> 
+
+    <!-- Table of Contents Viewlet -->
+    <browser:viewlet
+        name="plone.tableofcontents"
+        for="..interfaces.ITableOfContents"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class=".TableOfContentsViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        template="templates/toc.pt"
+        />
+
+    <browser:viewlet       
+        name="plone.tableofcontents"
+        for="Products.ATContentTypes.interface.IATDocument"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class=".TableOfContentsViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+
+    <five:implements
+        class="Products.ATContentTypes.content.newsitem.ATNewsItem"
+        interface="..interfaces.ITableOfContents"
+    /> 
+
+    <five:implements
+        class="Products.ATContentTypes.content.event.ATEvent"
+        interface="..interfaces.ITableOfContents"
+    /> 
+
+    <five:implements
+        class="Products.ATContentTypes.content.folder.ATFolder"
+        interface="..interfaces.ITableOfContents"
+    /> 
+
+    <!-- Publication Code -->
+    <browser:viewlet
+        name="agcommon.publicationcode"
+        for="agsci.ExtensionExtender.interfaces.IExtensionPublicationExtender"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".PublicationCodeViewlet"
+        template="templates/publication_code.pt"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <browser:viewlet
+        name="agcommon.publicationcode"
+        for="agsci.UniversalExtender.interfaces.IUniversalPublicationExtender"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".PublicationCodeViewlet"
+        template="templates/publication_code.pt"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- Portlet Managers -->
+
+    <browser:viewlet
+        name="plone.manage_portlets_fallback"
+        for="plone.portlets.interfaces.ILocalPortletAssignable"
+        view="plone.app.layout.globals.interfaces.IViewView"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class="plone.app.layout.viewlets.common.ManagePortletsFallbackViewlet"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+</configure>

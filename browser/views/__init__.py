@@ -615,8 +615,6 @@ class HomepageView(FolderView):
 
 class ModifiedSharingView(SharingView):
 
-    template = ViewPageTemplateFile('../templates/sharing.pt')
-
     @memoize
     def role_settings(self):
         """Get current settings for users and groups for which settings have been made.
