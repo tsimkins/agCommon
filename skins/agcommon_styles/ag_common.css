@@ -2557,86 +2557,72 @@ ul.kupu-tabs li {
       color: #FFFFFF;
       position: absolute;
       width: 12.5%;
-      border-bottom: none; }
+      border-bottom: none;
+      cursor: pointer;
+      top: 0.5em; }
+      #playlist-box-wrapper #now-playing a .fa {
+        font-size: 2.5em;
+        font-weight: bold;
+        vertical-align: middle; }
+      #playlist-box-wrapper #now-playing a span {
+        vertical-align: middle; }
     #playlist-box-wrapper #now-playing a:hover {
-      color: #bed7e8; }
+      color: #5CB9FF; }
     #playlist-box-wrapper #now-playing a.prev {
       left: 2.5%;
       text-align: left; }
+      #playlist-box-wrapper #now-playing a.prev .fa {
+        margin: 0 5% 0 0; }
     #playlist-box-wrapper #now-playing a.next {
       right: 2.5%;
       text-align: right; }
-    #playlist-box-wrapper #now-playing a.prev:before,
-    #playlist-box-wrapper #now-playing a.next:after {
-      background-image: url("video_sprite.png");
-      background-color: transparent;
-      content: "";
-      display: inline-block;
-      height: 24px;
-      top: -2px;
-      vertical-align: middle;
-      width: 16px;
-      position: relative; }
-    #playlist-box-wrapper #now-playing .prev:before {
-      background-position: -73px -504px;
-      margin-right: 7px; }
-    #playlist-box-wrapper #now-playing .next:after {
-      background-position: -96px -504px;
-      margin-left: 7px; }
-    #playlist-box-wrapper #now-playing .prev:hover:before {
-      background-position: -73px -536px;
-      color: #96EDFF; }
-    #playlist-box-wrapper #now-playing .next:hover:after {
-      background-position: -96px -535px;
-      color: #96EDFF; }
+      #playlist-box-wrapper #now-playing a.next .fa {
+        margin: 0 0 0 5%; }
     #playlist-box-wrapper #now-playing div {
       display: inline-block;
-      margin: 0 15%; }
+      margin: 0 15%;
+      vertical-align: middle; }
 
-.player-buttons a {
-  font-size: 0.875em;
-  cursor: pointer;
-  border-bottom: none !important; }
-.player-buttons a.button:before {
-  content: "";
-  cursor: pointer;
-  display: inline-block;
-  height: 30px;
-  margin-right: 8px;
-  vertical-align: middle;
-  width: 29px;
-  background-image: url("video_sprite.png");
-  background-color: transparent;
-  color: #0196E7 !important; }
-.player-buttons a.play-button:before {
-  background-position: -57px -119px; }
-.player-buttons a.play-button:hover:before {
-  background-position: -57px -152px; }
-.player-buttons a.resume-button:before {
-  background-position: -121px -119px; }
-.player-buttons a.pause-button:before {
-  background-position: -90px -119px; }
+.player-buttons {
+  text-align: center;
+  padding: 0.5em 2.5%; }
+  .player-buttons a {
+    font-size: 0.875em;
+    cursor: pointer;
+    border-bottom: none !important;
+    text-align: center; }
+    .player-buttons a .fa {
+      color: #AAAAAA !important;
+      vertical-align: middle; }
+    .player-buttons a div {
+      vertical-align: middle;
+      text-align: center; }
+  .player-buttons a:hover .fa {
+    color: #458CC2 !important; }
 
-.player-buttons.active a.play-button:before {
-  background-position: -57px -152px;
-  color: #0196E7 !important; }
+.player-buttons.active a .fa {
+  color: #0862A7 !important; }
 
 #playlist-box {
   margin-top: 1em;
   width: 100%;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #999999;
   border-spacing: 0; }
   #playlist-box th {
     text-align: center;
-    padding: 0.25em 2.5%;
+    padding: 0.25em 1.5%;
     background-color: #DDDDDD;
-    font-weight: 600; }
+    font-weight: 600;
+    color: #333333; }
   #playlist-box th:first-child {
     text-align: left; }
   #playlist-box .playlist-row:nth-child(even) {
-    background-color: #F5F5F5; }
+    background-color: transparent; }
+  #playlist-box .playlist-row:nth-child(odd) {
+    background-color: #F6F6F6; }
   #playlist-box .playlist-row {
-    width: 100%; }
+    width: 100%;
+    border-top: 1px solid #999999; }
     #playlist-box .playlist-row .videoTitle,
     #playlist-box .playlist-row .videoTime,
     #playlist-box .playlist-row .player-buttons {
@@ -2657,10 +2643,12 @@ ul.kupu-tabs li {
         border-bottom: none; }
         #playlist-box .playlist-row .videoTitle a span {
           border-bottom: 1px solid #DDDDDD; }
+      #playlist-box .playlist-row .videoTitle a:hover {
+        color: #003399; }
+        #playlist-box .playlist-row .videoTitle a:hover span {
+          border-bottom-color: #003399; }
     #playlist-box .playlist-row .videoTime {
       text-align: center; }
-  #playlist-box .playlist-row:hover {
-    background-color: #E3EEF5; }
 
 /* PloneFormGen Fields */
 .template-fg_base_view_p3 textarea {

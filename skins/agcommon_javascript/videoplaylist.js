@@ -1,5 +1,5 @@
-function limelightPlayerCallback(playerId, eventName, data) {                
-    
+function limelightPlayerCallback(playerId, eventName, data) {
+
     if (eventName == 'onPlayerLoad' && (LimelightPlayer.getPlayers() == null || LimelightPlayer.getPlayers().length == 0)) {
         LimelightPlayer.registerPlayer(playerId);
     }
@@ -23,7 +23,7 @@ function limelightPlayerCallback(playerId, eventName, data) {
 
         case 'onPlayheadUpdate':
             doOnPlayheadUpdate(data);
-            break; 
+            break;
     }
 }
 
@@ -32,7 +32,7 @@ function doOnPlayerLoad() {
 }
 
 function doOnChannelLoad(e) {
-    
+
     // For want of a native printf...
     function pad(n) {
         return (n < 10) ? ("0" + n) : n;
@@ -42,14 +42,13 @@ function doOnChannelLoad(e) {
     jq('#channelTitle').html(e.title);
     jq('#state').html("paused");
 
-    
 
     //create a dynamic playlist of media in the channel
     if (e.mediaList && e.mediaList.length > 0) {
 
         var playlist_box_wrapper = jq('#playlist-box-wrapper');
 
-        var playlist_box = jq('<table id="playlist-box"></table>');
+        var playlist_box = jq('<table id="playlist-box" class="responsive"></table>');
         var playlist_header = jq('<tr><th>Title</th><th>Duration</th><th>Controls</th></tr>');
 
         playlist_box.append(playlist_header);
@@ -64,7 +63,7 @@ function doOnChannelLoad(e) {
                 var vid_time = (minutes + ':' + pad(seconds));
 
                 // Button: Play
-                var play_button = jq('<a class="button play-button"><span>Play</span></a>');
+                var play_button = jq('<a class="button play-button"><i class="fa fa-fw fa-play fa-2x"></i><div>Play</div></a>');
                 play_button.attr('data-media-id', media.id);
 
                 play_button.click(
@@ -76,7 +75,7 @@ function doOnChannelLoad(e) {
                 )
 
                 // Button: Resume
-                var resume_button = jq('<a class="button resume-button"><span>Resume</span></a>');
+                var resume_button = jq('<a class="button resume-button"><i class="fa fa-fw fa-play fa-2x"></i><div>Play</div></a>');
                 resume_button.click(
                     function() {
                         LimelightPlayer.doPlay();
@@ -84,22 +83,22 @@ function doOnChannelLoad(e) {
                 )
 
                 // Button: Pause
-                var pause_button = jq('<a class="button pause-button"><span>Pause</span></a>');
+                var pause_button = jq('<a class="button pause-button"><i class="fa fa-fw fa-pause fa-2x"></i><div>Pause</div></a>');
                 pause_button.click(
                     function() {
                         LimelightPlayer.doPause();
                     }
                 )
 
-                // Player buttons             
+                // Player buttons
                 var player_buttons = jq('<td class="player-buttons inactive"></td>');
                 player_buttons.attr('id', media.id);
-                
+
                 // Append the buttons
                 player_buttons.append(play_button);
                 player_buttons.append(resume_button);
-                player_buttons.append(pause_button);                
-        
+                player_buttons.append(pause_button);
+
                 // Link for video title
                 var video_span = jq('<span></span>');
                 video_span.html(media.title);
@@ -107,7 +106,7 @@ function doOnChannelLoad(e) {
                 var video_link = jq('<a class="playlist-item"></a>');
                 video_link.attr('data-media-id', media.id);
                 video_link.append(video_span);
-                
+
                 video_link.click(
                     function() {
                         var media_id = jq(this).attr('data-media-id');
@@ -123,39 +122,39 @@ function doOnChannelLoad(e) {
                 // Video time
                 var video_time = jq('<td class="videoTime"></td>');
                 video_time.html(vid_time);
-        
-                // Row for an individual playlist item                                
+
+                // Row for an individual playlist item
                 var playlist_row = jq('<tr class="playlist-row"></tr>');
-                
+
                 // Append three child rows
                 playlist_row.append(video_title);
                 playlist_row.append(video_time);
-                playlist_row.append(player_buttons);                
-    
-                // Append playlist row to the playlist box.                
+                playlist_row.append(player_buttons);
+
+                // Append playlist row to the playlist box.
                 playlist_box.append(playlist_row);
 
             }
         }
-        
+
         // Create "Previous" and "Next" links
-        
-        var previous_link = jq('<a class="prev"><span>Previous</span></a>');
-        
+
+        var previous_link = jq('<a class="prev"><i class="fa fa-angle-left"></i><span>Previous</span></a>');
+
         previous_link.click(
             function() {
                 LimelightPlayer.doPrevious();
             }
         );
-        
-        var next_link = jq('<a class="next"><span>Next</span></a>');
-        
+
+        var next_link = jq('<a class="next"><span>Next</span><i class="fa fa-angle-right"></i></a>');
+
         next_link.click(
             function() {
                 LimelightPlayer.doNext();
             }
         );
-        
+
         // Create the media title
         var media_title = jq('<div>Now Playing: <span id="mediaTitle"></span></div>');
 
@@ -173,7 +172,7 @@ function doOnChannelLoad(e) {
         // Append the playlist box to the wrapper
         playlist_box_wrapper.append(playlist_box);
 
-    } 
+    }
 
     LimelightPlayer.doSkipToIndex(0);
 
@@ -208,7 +207,7 @@ function doOnPlayStateChanged(e) {
     if (e.isBusy) {
             play_state = "buffering";
     } else if (e.isPlaying) {
-            play_state = "playing";        
+            play_state = "playing";
             jq('.player-buttons.inactive .play-button').css('display', 'block');
             jq('.player-buttons.inactive .pause-button').css('display', 'none');
             jq('.player-buttons.inactive .resume-button').css('display', 'none');

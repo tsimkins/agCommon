@@ -1,119 +1,110 @@
+// Palette URL: http://paletton.com/#uid=13x0u0kDexbm4FHsfDeF2pDJ1j+ */
+
+$color-primary-0: #0862A7;	// Main Primary color */
+$player-button-color: #AAAAAA;
+$player-button-color-active: #0862A7;
+$player-button-hover-color: #458CC2;
+$prev-next-hover-color: #5CB9FF;
+$color-primary-4: #043C66;
+$now-playing-background-color: #2F2E33;
+
 #playlist-box-wrapper {
     width: 100%;
     margin: 0 auto;
     
     #now-playing {
-        background-color: #2F2E33;
+        background-color: $now-playing-background-color;
         color: #FFFFFF;
         padding: 1em 0;
         position: relative;
         text-align: center;
-    	  font-size: 0.875em;
+    	font-size: 0.875em;
         
         a {
             color: #FFFFFF;
             position: absolute;
             width: 12.5%;
             border-bottom: none;
+            cursor: pointer;
+            top: 0.5em;
+
+            .fa {
+                font-size: 2.5em;
+                font-weight: bold;
+                vertical-align: middle;
+            }
+            
+            span {
+                vertical-align: middle;
+            }
         }
         
         a:hover {
-        	color: #bed7e8;
+        	color: $prev-next-hover-color;
         }
         
         a.prev {
             left: 2.5%;
             text-align: left;
+            
+            .fa {
+                margin: 0 5% 0 0;
+            }
         }
         
         a.next {
             right: 2.5%;
             text-align: right;
+
+            .fa {
+                margin: 0 0 0 5%;
+            }
+            
         }
 
-        a.prev:before,
-        a.next:after {
-            background-image: url("video_sprite.png");
-            background-color: transparent;
-        	content: "";
-        	display: inline-block;
-        	height: 24px;
-        	top: -2px;
-        	vertical-align: middle;
-        	width: 16px;
-        	position: relative;
-        }
-
-        .prev:before {
-            background-position: -73px -504px;
-        	margin-right: 7px;
-        }
-        
-        .next:after {
-            background-position: -96px -504px;
-        	margin-left: 7px;
-        }
-
-        .prev:hover:before {
-            background-position: -73px -536px;
-        	color: #96EDFF;
-        }
-        
-        .next:hover:after {
-            background-position: -96px -535px;
-        	color: #96EDFF;
-        }
-        
         div {
             display: inline-block;
             margin: 0 15%;
+            vertical-align: middle;
         }
     }
 }
 
 .player-buttons {
 
+    text-align: center;
+    padding: 0.5em 2.5%;
+
     a {
         font-size: 0.875em;
         cursor: pointer;
         border-bottom: none !important;
-    }
+        text-align: center;
 
-    a.button:before {
-    	content: "";
-    	cursor: pointer;
-    	display: inline-block;
-    	height: 30px;
-    	margin-right: 8px;
-    	vertical-align: middle;
-    	width: 29px;
-    	background-image: url("video_sprite.png");
-    	background-color: transparent;
-    	color: #0196E7 !important;    	
-    }
-
-    a.play-button:before {
-    	background-position: -57px -119px;
-    }
-
-    a.play-button:hover:before {
-        background-position: -57px -152px;
-    }
-
-    a.resume-button:before {
-        background-position: -121px -119px;
-    }
-
-    a.pause-button:before {
-        background-position: -90px -119px;
+        .fa {
+        	color: $player-button-color !important;
+        	vertical-align: middle;
+        }
+        
+        div {
+        	vertical-align: middle;
+        	text-align: center;
+        }
     }
     
+    a:hover {
+        
+        .fa {
+            color: $player-button-hover-color !important;
+        }
+    }
 }
 
 .player-buttons.active {
-    a.play-button:before {
-        background-position: -57px -152px;
-    	color: #0196E7 !important;
+    a {
+        .fa {
+        	color: $player-button-color-active !important;
+        }
     }
 }
 
@@ -121,14 +112,15 @@
     
     margin-top: 1em;
     width: 100%;
-    border: 1px solid #CCCCCC;
+    border: 1px solid $tableBorderColor;
     border-spacing: 0;
     
     th {
         text-align: center;
-        padding: 0.25em 2.5%;
-        background-color: #DDDDDD;
+        padding: 0.25em 1.5%;
+        background-color: $tableHeadingBackgroundColor;
         font-weight: 600;
+        color: $tableHeadingTextColor;
     }
     
     th:first-child {
@@ -136,11 +128,17 @@
     }
     
     .playlist-row:nth-child(even) {
-    	background-color: #F5F5F5;
+    	background-color: $tableEvenRowBackgroundColor;
+    }
+
+    .playlist-row:nth-child(odd) {
+    	background-color: $tableOddRowBackgroundColor;
     }
     
     .playlist-row {
         width: 100%;
+        
+        border-top: 1px solid $tableBorderColor;
         
         .videoTitle, 
         .videoTime, 
@@ -168,6 +166,14 @@
                     border-bottom: 1px solid $contentLinkBorderColor;
                 }
             }
+            
+            a:hover {
+                color: $contentLinkHoverColor;
+                
+                span {
+                    border-bottom-color: $contentLinkHoverColor;
+                }
+            }
         }
         
         .videoTime {
@@ -175,7 +181,4 @@
         }
     }
     
-    .playlist-row:hover {
-    	background-color: #E3EEF5
-    }
 }
