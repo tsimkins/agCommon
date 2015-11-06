@@ -7,17 +7,18 @@
 <div class="portlet portletLinkIcon" tal:condition="view/linkIcons">
 
     <tal:linkIcon repeat="licon view/linkIcons">
-        <div tal:attributes="class python:view.getClass(licon)"
-            tal:define="title licon/title;
-                        description licon/description|licon/title;
-                        icon licon/icon|nothing;
-                        show_icon python: view.show_icon(licon)">
-            <a class="title"
-               tal:attributes="href licon/url;
-                                title title;"
-                ><img tal:condition="show_icon" 
+        <div class="portletItem"
+             tal:define="title licon/title;
+                         description licon/description|licon/title;
+                         icon licon/icon|nothing;
+                         show_icon python: view.show_icon(licon)">
+            <a tal:attributes="href licon/url;
+                               title title;"
+                ><i 
+                    tal:attributes="class python:view.getClass(licon);"
+                    tal:condition="not:show_icon"></i><img tal:condition="show_icon" 
                         tal:attributes="src icon;
-                                        alt python:''" /><span tal:content="title">
+                                        alt python:''" /><span tal:replace="title">
                                     >Link</span>
             </a>
         </div>

@@ -981,13 +981,9 @@
     display: none; }
 
   #portal-column-one .portletLinkButton,
-  #portal-column-one .portletLinkIcon,
   #portal-column-two .portletLinkButton,
-  #portal-column-two .portletLinkIcon,
   #portal-column-mobile .portletLinkButton,
-  #portal-column-mobile .portletLinkIcon,
-  #rightcolumn .portletLinkButton,
-  #rightcolumn .portletLinkIcon {
+  #rightcolumn .portletLinkButton {
     margin: 1.25em 0; }
   #portal-column-one .portletLinkButton .portletItem img,
   #portal-column-two .portletLinkButton .portletItem img,

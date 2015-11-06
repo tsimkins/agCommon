@@ -84,31 +84,36 @@ class Renderer(base.Renderer):
 
     def getIconClass(self, icon):
         icon_classes = {
-            'icons/blogger.png' : 'sprite sprite-blogger',
-            'icons/contact.png' : 'sprite sprite-contact',
-            'icons/directory.png' : 'sprite sprite-directory',
-            'icons/facebook.png' : 'sprite sprite-facebook',
-            'icons/feed.png' : 'sprite sprite-feed',
-            'icons/flickr.png' : 'sprite sprite-flickr',
-            'icons/instagram.png' : 'sprite sprite-instagram',
-            'icons/linkedin.png' : 'sprite sprite-linkedin',
-            'icons/message.png' : 'sprite sprite-message',
-            'icons/podcast.png' : 'sprite sprite-podcast',
-            'icons/twitter.png' : 'sprite sprite-twitter',
-            'icons/typepad.png' : 'sprite sprite-typepad',
-            'icons/youtube.png' : 'sprite sprite-youtube',
-            'icons/pinterest.png' : 'sprite sprite-pinterest',
-            'icons/google-plus.png' : 'sprite sprite-google-plus',
+            'icons/blog.png' : 'fa-pencil-square',
+            'icons/blogger.png' : 'fa-pencil-square',
+            'icons/contact.png' : 'fa-question-circle',
+            'icons/directory.png' : 'fa-group',
+            'icons/facebook.png' : 'fa-facebook-square',
+            'icons/feed.png' : 'fa-rss-square',
+            'icons/flickr.png' : 'fa-flickr',
+            'icons/google-plus.png' : 'fa-google-plus-square',
+            'icons/info.png' : 'fa-info-circle',
+            'icons/instagram.png' : 'fa-instagram',
+            'icons/linkedin.png' : 'fa-linkedin-square',
+            'icons/message.png' : 'fa-envelope-o',
+            'icons/pinterest.png' : 'fa-pinterest',
+            'icons/play-button.png' : 'fa-play-circle',
+            'icons/podcast.png' : 'fa-headphones',
+            'icons/rss.png' : 'fa-rss-square',
+            'icons/twitter.png' : 'fa-twitter-square',
+            'icons/typepad.png' : 'fa-pencil-square',
+            'icons/vcard.png' : 'fa-pencil-square',
+            'icons/youtube.png' : 'fa-youtube',
         }
 
         for k in icon_classes.keys():
             if icon.endswith(k):
-                return icon_classes[k]
+                return 'fa fa-fw %s' % icon_classes[k]
 
         return 'icon'
 
     def getClass(self, licon):
-        klass = ['portletItem']
+        klass = ['title']
         icon = licon.get('icon')
         if icon:
             klass.append(self.getIconClass(icon))

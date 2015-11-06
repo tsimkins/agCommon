@@ -404,14 +404,33 @@
 
     .portletItem {
 
-        margin: 0.875em 0;
+        margin: 0.25em 0 0.5em 0.25em;
         padding: 0;
         background-color: transparent;
         min-height: 24px;
 
-        a:hover {
-            text-decoration: none;
+        /* Font Awesome fixes */
+        
+        .fa {
+            color: $iconFontColor;
+            font-size: 1.5em;
+            vertical-align: middle;
+            margin-right: 0.25em;
         }
+        
+        a .fa:hover {
+            text-decoration: none !important;
+        }
+
+        /* Per Icon styles, making smaller for non-square icons */
+        .fa-group:before, 
+        .fa-users:before,
+        .fa-pencil-square-o:before,
+        .fa-envelope-o:before, 
+        .fa-youtube-play:before {
+            font-size: 0.875em;
+        }
+
     }
 
     a {
@@ -435,7 +454,7 @@
     }
 
     .sprite a {
-        background-image: url(linkicon-sprites.png);
+        /* background-image: url(linkicon-sprites.png); */
         background-repeat: no-repeat;
         min-height: 24px;
         display: block;

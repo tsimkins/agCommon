@@ -69,4 +69,8 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+      <browser:resourceDirectory
+          name="font-awesome"
+          directory="resources/font-awesome" />
+
 </configure>

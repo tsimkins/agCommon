@@ -783,12 +783,25 @@ body.template-subfolder_view #two-column-right {
   /* Link Icons */
   /* http://spritegen.website-performance.org/ */ }
   .portletLinkIcon .portletItem {
-    margin: 0.875em 0;
+    margin: 0.25em 0 0.5em 0.25em;
     padding: 0;
     background-color: transparent;
-    min-height: 24px; }
-    .portletLinkIcon .portletItem a:hover {
-      text-decoration: none; }
+    min-height: 24px;
+    /* Font Awesome fixes */
+    /* Per Icon styles, making smaller for non-square icons */ }
+    .portletLinkIcon .portletItem .fa {
+      color: #1f4b7b;
+      font-size: 1.5em;
+      vertical-align: middle;
+      margin-right: 0.25em; }
+    .portletLinkIcon .portletItem a .fa:hover {
+      text-decoration: none !important; }
+    .portletLinkIcon .portletItem .fa-group:before,
+    .portletLinkIcon .portletItem .fa-users:before,
+    .portletLinkIcon .portletItem .fa-pencil-square-o:before,
+    .portletLinkIcon .portletItem .fa-envelope-o:before,
+    .portletLinkIcon .portletItem .fa-youtube-play:before {
+      font-size: 0.875em; }
   .portletLinkIcon a {
     text-decoration: none;
     color: #2256BD;
@@ -804,7 +817,7 @@ body.template-subfolder_view #two-column-right {
     margin: 0;
     vertical-align: middle; }
   .portletLinkIcon .sprite a {
-    background-image: url(linkicon-sprites.png);
+    /* background-image: url(linkicon-sprites.png); */
     background-repeat: no-repeat;
     min-height: 24px;
     display: block; }
@@ -2103,6 +2116,8 @@ dl.person-connect img {
             color: #e0e0e0; }
           #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .portletItem img {
             padding-right: 0.5em; }
+          #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .portletItem .fa:before {
+            color: #e0e0e0; }
         #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .icon,
         #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .sprite {
           min-height: 24px;
