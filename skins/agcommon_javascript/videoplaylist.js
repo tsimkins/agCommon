@@ -48,7 +48,7 @@ function doOnChannelLoad(e) {
 
         var playlist_box_wrapper = jq('#playlist-box-wrapper');
 
-        var playlist_box = jq('<table id="playlist-box" class="responsive"></table>');
+        var playlist_box = jq('<table id="playlist-box"></table>');
         var playlist_header = jq('<tr><th>Title</th><th>Duration</th><th>Controls</th></tr>');
 
         playlist_box.append(playlist_header);

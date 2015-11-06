@@ -335,7 +335,7 @@
   /* Removing text from video player controls */
   #playlist-box .player-buttons a.button {
     text-align: center; }
-    #playlist-box .player-buttons a.button span {
+    #playlist-box .player-buttons a.button div {
       position: absolute;
       margin-left: -10000px; }
 
