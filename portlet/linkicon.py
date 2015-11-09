@@ -83,33 +83,49 @@ class Renderer(base.Renderer):
         self.linkIcons = context_state.actions(category=self.data.items)
 
     def getIconClass(self, icon):
+
+        # Remove extension from filename
+        for i in ['jpg', 'png', 'gif']:
+            if icon.endswith(i):
+                icon = icon[:-1*(len(i)+1)]
+
+        # Translation of legacy .png files (plus other icons) to new font name    
         icon_classes = {
-            'icons/blog.png' : 'fa-pencil-square',
-            'icons/blogger.png' : 'fa-pencil-square',
-            'icons/contact.png' : 'fa-question-circle',
-            'icons/directory.png' : 'fa-group',
-            'icons/facebook.png' : 'fa-facebook-square',
-            'icons/feed.png' : 'fa-rss-square',
-            'icons/flickr.png' : 'fa-flickr',
-            'icons/google-plus.png' : 'fa-google-plus-square',
-            'icons/info.png' : 'fa-info-circle',
-            'icons/instagram.png' : 'fa-instagram',
-            'icons/linkedin.png' : 'fa-linkedin-square',
-            'icons/message.png' : 'fa-envelope-o',
-            'icons/pinterest.png' : 'fa-pinterest',
-            'icons/play-button.png' : 'fa-play-circle',
-            'icons/podcast.png' : 'fa-headphones',
-            'icons/rss.png' : 'fa-rss-square',
-            'icons/twitter.png' : 'fa-twitter-square',
-            'icons/typepad.png' : 'fa-pencil-square',
-            'icons/vcard.png' : 'fa-pencil-square',
-            'icons/youtube.png' : 'fa-youtube',
+            'icons/blog' : 'fa-pencil-square',
+            'icons/blogger' : 'fa-pencil-square',
+            'icons/contact' : 'fa-question-circle',
+            'icons/directory' : 'fa-group',
+            'icons/facebook' : 'fa-facebook-square',
+            'icons/feed' : 'fa-rss-square',
+            'icons/flickr' : 'fa-flickr',
+            'icons/google-plus' : 'fa-google-plus-square',
+            'icons/info' : 'fa-info-circle',
+            'icons/instagram' : 'fa-instagram',
+            'icons/linkedin' : 'fa-linkedin-square',
+            'icons/message' : 'fa-envelope-o',
+            'icons/pinterest' : 'fa-pinterest',
+            'icons/play-button' : 'fa-play-circle',
+            'icons/podcast' : 'fa-headphones',
+            'icons/rss' : 'fa-rss-square',
+            'icons/twitter' : 'fa-twitter-square',
+            'icons/typepad' : 'fa-pencil-square',
+            'icons/vcard' : 'fa-pencil-square',
+            'icons/youtube' : 'fa-youtube',
+            'icons/slideshare' : 'slideshare',
+            'icons/calendar' : 'calendar',
+            'icons/newspaper' : 'newspaper-o',
+            'icons/book' : 'book',
+            'icons/graduation-cap' : 'graduation-cap',
+            'icons/download' : 'download',
+            'icons/desktop' : 'desktop',
         }
 
+        # Pattern match icon name to file name
         for k in icon_classes.keys():
             if icon.endswith(k):
                 return 'fa fa-fw %s' % icon_classes[k]
 
+        # Return default
         return 'icon'
 
     def getClass(self, licon):
