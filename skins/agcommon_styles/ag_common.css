@@ -871,8 +871,8 @@ body.template-subfolder_view #two-column-right {
     border-bottom: 1px solid #333333;
     color: #333333;
     display: block;
-    font-size: 0.875em;
-    font-size: 0.875rem;
+    font-size: 1em;
+    font-size: 1rem;
     font-weight: normal;
     list-style-image: none;
     list-style-type: none;
@@ -1035,7 +1035,7 @@ body.template-subfolder_view #two-column-right {
     font-family: Open Sans, Lucida Grande, Tahoma, Verdana, sans-serif;
     font-weight: normal; }
 .left-column-navigation .portletNavigationTree .portletItem {
-  font-size: 0.875em; }
+  font-size: 1em; }
   .left-column-navigation .portletNavigationTree .portletItem .navTreeItem {
     margin: 0; }
     .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a {
