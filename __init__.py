@@ -29,7 +29,7 @@ import pytz
 import re
 
 from Products.Five.utilities.interfaces import IMarkerInterfaces
-from agsci.UniversalExtender.interfaces import IUniversalPublicationExtender, IFilePublicationExtender, ITileFolder
+from agsci.UniversalExtender.interfaces import IUniversalPublicationExtender, IFilePublicationExtender, ITileFolder, IVideoPage, IVideoPlaylist
 
 MAX_HOMEPAGE_IMAGE_WIDTH = 950.0
 
@@ -968,6 +968,24 @@ def enableTileFolder(context):
     if not ITileFolder.providedBy(context):
         adapted = IMarkerInterfaces(context)
         adapted.update(add=[ITileFolder])
+        return True
+    else:
+        return False
+
+def enableVideoPage(context):
+    
+    if not IVideoPage.providedBy(context):
+        adapted = IMarkerInterfaces(context)
+        adapted.update(add=[IVideoPage])
+        return True
+    else:
+        return False
+
+def enableVideoPlaylist(context):
+    
+    if not IVideoPlaylist.providedBy(context):
+        adapted = IMarkerInterfaces(context)
+        adapted.update(add=[IVideoPlaylist])
         return True
     else:
         return False
