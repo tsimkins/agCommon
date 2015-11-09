@@ -723,9 +723,12 @@ body.template-subfolder_view #two-column-right {
 /* Contact Portlet */
 .portletContact .portletItem {
   padding: 0; }
-  .portletContact .portletItem p {
-    margin: 0 0 0.125em 0;
-    font-size: 0.9375em; }
+  .portletContact .portletItem > p,
+  .portletContact .portletItem > div {
+    font-size: 0.875em;
+    line-height: 1.375em; }
+  .portletContact .portletItem p, .portletContact .portletItem div {
+    margin: 0 0 0.125em 0; }
   .portletContact .portletItem h3 {
     margin-top: 0.75em;
     font-weight: 600; }
