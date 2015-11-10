@@ -18,7 +18,7 @@
                     tal:attributes="class python:view.getClass(licon);"
                     tal:condition="not:show_icon"></i><img tal:condition="show_icon" 
                         tal:attributes="src icon;
-                                        alt python:''" /><span tal:replace="title">
+                                        alt python:''" /><span tal:content="title">
                                     >Link</span>
             </a>
         </div>

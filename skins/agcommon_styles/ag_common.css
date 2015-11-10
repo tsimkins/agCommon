@@ -233,6 +233,9 @@ body {
   vertical-align: top;
   display: table-cell; }
 
+#portal-column-one {
+  font-size: 0.875em; }
+
 /* = portal-column-content ================================================== */
 #portal-column-content {
   margin: 0;
@@ -799,7 +802,10 @@ body.template-subfolder_view #two-column-right {
       color: #1f4b7b;
       font-size: 1.5em;
       vertical-align: middle;
-      margin-right: 0.25em; }
+      float: left;
+      display: block; }
+    .portletLinkIcon .portletItem .fa-fw {
+      width: 1.375em; }
     .portletLinkIcon .portletItem a .fa:hover {
       text-decoration: none !important; }
     .portletLinkIcon .portletItem .fa-group:before,
@@ -816,6 +822,9 @@ body.template-subfolder_view #two-column-right {
   .portletLinkIcon a:hover span {
     text-decoration: underline;
     color: #003FAC; }
+  .portletLinkIcon span {
+    display: block;
+    margin-left: 2.25em; }
   .portletLinkIcon img {
     width: 24px;
     padding-right: 6px;
@@ -877,8 +886,8 @@ body.template-subfolder_view #two-column-right {
     border-bottom: 1px solid #333333;
     color: #333333;
     display: block;
-    font-size: 1em;
-    font-size: 1rem;
+    font-size: 0.875em;
+    font-size: 0.875rem;
     font-weight: normal;
     list-style-image: none;
     list-style-type: none;

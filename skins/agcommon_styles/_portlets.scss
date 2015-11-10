@@ -425,7 +425,12 @@
             color: $iconFontColor;
             font-size: 1.5em;
             vertical-align: middle;
-            margin-right: 0.25em;
+            float: left;
+            display: block;
+        }
+        
+        .fa-fw {
+            width: 1.375em;
         }
         
         a .fa:hover {
@@ -453,6 +458,11 @@
     a:hover span {
         text-decoration: underline;
         color: $leftLinkTextHoverColor;
+    }
+
+    span {
+        display: block;
+        margin-left: 2.25em;
     }
 
     img {
@@ -514,8 +524,8 @@
             border-bottom: 1px solid $leftButtonBorder_default;
             color: $leftButtonTextColor_default;
             display: block;
-            font-size: 1em;
-            font-size: 1rem;
+            font-size: 0.875em;
+            font-size: 0.875rem;
             font-weight: normal;
             list-style-image: none;
             list-style-type: none;
