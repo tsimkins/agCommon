@@ -4,7 +4,7 @@ jQuery(function($) {
     var dest, content, location, stack, oltoc, numdigits, wlh, target,
         targetOffset;
 
-    dest = $('.toc dd.portletItem');
+    dest = $('.toc .portletItem');
     content = $('#region-content,#content');
 
     if (!content || !dest.length) {return;}
