@@ -103,6 +103,19 @@ class AgCommonViewlet(ViewletBase):
         return self.isLayout(views=['document_homepage_view', 'document_subsite_view', 'portlet_homepage_view', 'panorama_homepage_view', 'tile_homepage_view'])
 
     @property
+    def isDefaultPage(self):
+        # Determine if we're the default page
+
+        parent = self.context.aq_parent
+
+        try:
+            parent_default_page_id = parent.getDefaultPage()
+        except AttributeError:
+            parent_default_page_id = ''
+
+        return (self.context.id == parent_default_page_id)
+
+    @property
     def showLegacyHomePagePortlets(self):
         return (self.isHomePage and self.portlet_format == 'standard')
 
@@ -534,19 +547,6 @@ class FBMetadataViewlet(CustomTitleViewlet):
 
         return (image_url, image_mime_type)
 
-
-    def isDefaultPage(self):
-        # Determine if we're the default page
-
-        parent = self.context.getParentNode()
-
-        try:
-            parent_default_page_id = parent.getDefaultPage()
-        except AttributeError:
-            parent_default_page_id = ''
-
-        return (self.context.id == parent_default_page_id)
-
     def update(self):
 
         super(FBMetadataViewlet, self).update()
@@ -573,7 +573,7 @@ class FBMetadataViewlet(CustomTitleViewlet):
 
         try:
             # Remove this page's id from the URL if it's a default page.
-            if self.isDefaultPage() and self.context.absolute_url().endswith("/%s" % self.context.id) :
+            if self.isDefaultPage and self.context.absolute_url().endswith("/%s" % self.context.id) :
                 self.fb_url = self.fb_url[0:-1*(len(self.context.id)+1)]
         except:
             pass
@@ -986,6 +986,15 @@ class LocalSearchViewlet(MultiSearchViewlet):
                     pass
 
         return default_search_url
+
+    @property
+    def section_path(self):
+        section = self.context
+        
+        if self.isDefaultPage:
+            section = self.context.aq_parent
+    
+        return ['/'.join(section.getPhysicalPath()), ]
 
 class ContentRelatedItems(ContentRelatedItemsBase):
 
