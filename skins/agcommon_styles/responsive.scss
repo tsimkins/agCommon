@@ -35,10 +35,19 @@
         }
 
         #portal-top {
+            /* Hack for IE and older browsers using a 1px image */
+            background: url(header-background.png);
+            background-position: top center;
+            background-repeat: repeat-y;
+            background-color: #FFFFFF;
+
+            /* CSS Gradient */
             background-image: -webkit-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, $subsiteHeaderBackgroundColor 51%, $subsiteHeaderBackgroundColor 100%);
             background-image: -o-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, $subsiteHeaderBackgroundColor 51%, $subsiteHeaderBackgroundColor 100%);
             background-image: -moz-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, $subsiteHeaderBackgroundColor 51%, $subsiteHeaderBackgroundColor 100%);
+            background-image: -ms-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, $subsiteHeaderBackgroundColor 51%, $subsiteHeaderBackgroundColor 100%);
             background-image: linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, $subsiteHeaderBackgroundColor 51%, $subsiteHeaderBackgroundColor 100%);
+
         }
         
         /* Color updates for department sites */
