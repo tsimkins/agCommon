@@ -74,7 +74,10 @@
       padding-top: 2em;
       padding-bottom: 2em; }
     body.department-site #portal-top {
-      background-position: center top; }
+      background-image: -webkit-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, #1F4B7B 51%, #1F4B7B 100%);
+      background-image: -o-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, #1F4B7B 51%, #1F4B7B 100%);
+      background-image: -moz-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, #1F4B7B 51%, #1F4B7B 100%);
+      background-image: linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, #1F4B7B 51%, #1F4B7B 100%); }
     body.department-site .top-navigation {
       background-color: #45709F; }
       body.department-site .top-navigation ul li a {

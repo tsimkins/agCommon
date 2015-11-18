@@ -54,8 +54,6 @@ body {
 
 $searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth);
 
-$bigNumber: 3000px;
-
 #logo-department {
     background-color: $subsiteHeaderBackgroundColor;
     position: absolute;
@@ -63,12 +61,11 @@ $bigNumber: 3000px;
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 1em 0 0.75em 100%*($column_padding/$maxWidth);
-    width: $bigNumber;
+    padding: 1em 100%*(($searchBoxWidth + $column_padding)/$maxWidth) 0.75em 100%*($column_padding/$maxWidth);
 
     a {
         display: block;
-        width:  100%*($siteTitleWidth/$bigNumber);
+        width:  100%;
         padding: 0 0 0;
         font-weight: 600;
         color: $subsiteHeaderTextColor;

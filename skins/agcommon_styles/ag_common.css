@@ -72,11 +72,10 @@ body {
   top: 0;
   bottom: 0;
   right: 0;
-  padding: 1em 0 0.75em 1.6%;
-  width: 3000px; }
+  padding: 1em 29.1% 0.75em 1.6%; }
   #logo-department a {
     display: block;
-    width: 11.66667%;
+    width: 100%;
     padding: 0 0 0;
     font-weight: 600;
     color: #FFFFFF;

@@ -35,7 +35,10 @@
         }
 
         #portal-top {
-            background-position: center top;
+            background-image: -webkit-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, $subsiteHeaderBackgroundColor 51%, $subsiteHeaderBackgroundColor 100%);
+            background-image: -o-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, $subsiteHeaderBackgroundColor 51%, $subsiteHeaderBackgroundColor 100%);
+            background-image: -moz-linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, $subsiteHeaderBackgroundColor 51%, $subsiteHeaderBackgroundColor 100%);
+            background-image: linear-gradient(left, #FFFFFF 0%, #FFFFFF 50%, $subsiteHeaderBackgroundColor 51%, $subsiteHeaderBackgroundColor 100%);
         }
         
         /* Color updates for department sites */
