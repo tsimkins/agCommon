@@ -83,9 +83,11 @@ label.obscure {
 }
 
 #menu li ul label span {
-    margin-left: 5px;
+    margin: 0 5px;
   	font-weight:normal;
-	font-family: Arial,FreeSans,sans-serif;
+    white-space: normal;
+    display: inline-block;
+    vertical-align: top;
 }
 
 #menu li ul li {

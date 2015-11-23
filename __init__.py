@@ -51,7 +51,7 @@ def getDefaultSearchDestination(context=None):
     return default_search_destination
 
 
-def getSearchConfig(context=None, path='', q=''):
+def getSearchConfig(context=None, path='', q='', section_title=None, site_title=None):
 
     default=getDefaultSearchDestination(context)
 
@@ -99,7 +99,12 @@ def getSearchConfig(context=None, path='', q=''):
         # add an attribute of disabled=True
         i['disabled'] = (key == 'section' and not path)
         
-
+        # Override site and section title if provided.
+        if key == 'site' and site_title:
+            i['description'] = 'Search %s' % site_title
+        elif key == 'section' and section_title:
+            i['description'] = 'Search %s' % section_title
+        
     return searches
 
 def getSearchEngineURL(choice=default_search_destination, path='', q=''):

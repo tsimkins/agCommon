@@ -940,7 +940,27 @@ class MultiSearchViewlet(AgCommonViewlet):
 
     def getSearchOptions(self):
 
-        return getSearchConfig(context=self.context, path=self.section_path)
+        return getSearchConfig(context=self.context, path=self.section_path, 
+                               section_title=self.section_title,
+                               site_title=self.site_title)
+
+    @property
+    def site_title(self):
+        site = getSite()
+    
+        if site:
+            return site.Title()
+        
+        return None
+
+    @property
+    def section_title(self):
+        section = self.getSection()
+    
+        if section:
+            return section.Title()
+        
+        return None
 
     @property
     def section_path(self):
