@@ -18,6 +18,12 @@ from urllib import quote_plus
 from zope.component import getUtility, getMultiAdapter
 from zope.component.interfaces import ComponentLookupError
 from zope.interface import implements, Interface
+import urlparse
+
+try:
+    from agsci.w3c.site import translation
+except ImportError:
+    translation = {}
 
 try:
 
@@ -369,6 +375,13 @@ class FolderView(BrowserView):
 
     def showPersonAreas(self):
         return getattr(self.context, 'show_person_areas', True)
+
+    @property
+    def portal_membership(self):
+        return getToolByName(self.context, 'portal_membership')
+
+    def getCurrentUser(self):
+        return self.portal_membership.getAuthenticatedMember()
 
 class SearchView(FolderView):
 
@@ -849,3 +862,52 @@ class ProcessSearch(FolderView):
             search_url = '%s/%s' % (self.portal_url, search_url)
 
         return req.RESPONSE.redirect(search_url)
+
+# This overrides the Personal Tools -> Username -> Preferences -> Personal Information
+# view, and instead redirects to the FSDPerson screen, including traversing aliases
+# if available.
+
+class PersonalInformationView(FolderView):
+
+    def __call__(self):
+
+        # Get the current user, and figure out the profile URL if we have a user.
+        current_user = self.getCurrentUser()
+        
+        if current_user:
+            user_id = current_user.getId()
+            
+            # Look for FSD people with that id
+            results = self.portal_catalog.searchResults({'portal_type' : 'FSDPerson', 'getId' : user_id})
+            
+            # If we found one, get the person object
+            if results:
+                o = results[0].getObject()
+                
+                # Look for the primary profile URL (alias)
+                profile_url = getattr(o, 'primary_profile', None)
+                
+                # If we don't have one, this object is the real person.
+                # Or, if we have a profile_url, but we're not set to the
+                # redirect view, just use the real object
+                if not profile_url or o.getLayout() != 'person_redirect_view':
+                    profile_url = o.absolute_url()
+
+                # If we do have an alias, make sure we send them to the https://
+                # version *if* its one of ours (as determined by the translation
+                # data from agsci.w3c.site)
+                else:
+                    parts = urlparse.urlparse(profile_url)
+
+                    if parts.scheme == 'http':
+                        # If our profile URl starts with one of our site URLs,
+                        # make it https
+                        if profile_url.startswith(tuple(translation.values())):
+                            profile_url = urlparse.urlunparse(('https', ) + parts[1:])
+
+                # Redirect to the profile URL
+                RESPONSE =  self.request.RESPONSE
+                return RESPONSE.redirect(profile_url)
+        
+        # Otherwise, return the 'fallback' original view.
+        return self.context.restrictedTraverse('@@personal-information-fallback').__call__()

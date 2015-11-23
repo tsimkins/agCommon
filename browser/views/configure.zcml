@@ -470,4 +470,23 @@
         permission="plone.app.portlets.ManagePortlets"
         />
 
+    <!-- Personal Information  -->
+    
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        class=".PersonalInformationView"
+        name="personal-information"
+        layer="..interfaces.IThemeSpecific"
+        permission="cmf.SetOwnProperties"
+        />
+
+    <!-- Personal Information (Fallback under a different name) -->
+    <browser:page    
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="personal-information-fallback"       
+        class="plone.app.users.browser.personalpreferences.UserDataPanel"
+        layer="..interfaces.IThemeSpecific"
+        permission="cmf.SetOwnProperties"
+      />
+
 </configure>
