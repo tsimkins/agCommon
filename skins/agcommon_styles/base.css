@@ -8,7 +8,6 @@
 
 #content ol,
 dl.portlet ol {
-    list-style-type: decimal;
     margin-left: 2em;
 }
 
