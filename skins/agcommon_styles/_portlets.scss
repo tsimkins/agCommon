@@ -521,7 +521,7 @@
             background-color: $leftButtonBackground_default;
             border-radius: 4px;
             border: 1px solid $leftButtonBorder_default;
-            border-bottom: 1px solid $leftButtonBorder_default;
+            border-bottom: 1px solid $leftButtonBorder_default !important;
             color: $leftButtonTextColor_default;
             display: block;
             font-size: 0.875em;
