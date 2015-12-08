@@ -111,13 +111,13 @@ class Renderer(base.Renderer):
             'icons/typepad' : 'fa-pencil-square',
             'icons/vcard' : 'fa-pencil-square',
             'icons/youtube' : 'fa-youtube',
-            'icons/slideshare' : 'slideshare',
-            'icons/calendar' : 'calendar',
-            'icons/newspaper' : 'newspaper-o',
-            'icons/book' : 'book',
-            'icons/graduation-cap' : 'graduation-cap',
-            'icons/download' : 'download',
-            'icons/desktop' : 'desktop',
+            'icons/slideshare' : 'fa-slideshare',
+            'icons/calendar' : 'fa-calendar',
+            'icons/newspaper' : 'fa-newspaper-o',
+            'icons/book' : 'fa-book',
+            'icons/graduation-cap' : 'fa-graduation-cap',
+            'icons/download' : 'fa-download',
+            'icons/desktop' : 'fa-desktop',
         }
 
         # Pattern match icon name to file name
