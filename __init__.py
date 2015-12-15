@@ -20,7 +20,6 @@ from DateTime import DateTime
 from datetime import datetime, tzinfo
 from plone.app.linkintegrity.exceptions import LinkIntegrityNotificationException
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
-from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides
 
 import colorsys
@@ -1022,4 +1021,9 @@ def toISO(v):
     return None
 
 def unprotectRequest(request):
+    try:
+        from plone.protect.interfaces import IDisableCSRFProtection
+    except ImportError:
+        return False
+
     alsoProvides(request, IDisableCSRFProtection)
