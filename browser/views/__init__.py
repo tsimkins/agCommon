@@ -628,6 +628,8 @@ class HomepageView(FolderView):
 
 class ModifiedSharingView(SharingView):
 
+    template = ViewPageTemplateFile('templates/sharing.pt')
+
     @memoize
     def role_settings(self):
         """Get current settings for users and groups for which settings have been made.
@@ -911,3 +913,4 @@ class PersonalInformationView(FolderView):
         
         # Otherwise, return the 'fallback' original view.
         return self.context.restrictedTraverse('@@personal-information-fallback').__call__()
+
