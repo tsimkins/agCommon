@@ -1314,7 +1314,7 @@ table.grid {
   table.grid caption {
     text-align: left;
     margin-top: 0.375em;
-    color: #575757; }
+    color: #333333; }
 
 /* Plain and Listing class tables: same styles */
 table.listing th, table.listing td,

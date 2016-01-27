@@ -967,28 +967,33 @@ jq(document).ready(
 
     function() {
 
-        var column_headers = [];
-
-        jq('#content table.responsive th').each(
+        jq('#content table.responsive').each(
+        
             function() {
-                column_headers.push(jq(this).html());
-            }
-        )
-
-        jq('#content table.responsive tr').each(
-            function() {
-
-                var children = jq(this).children('td');
-                if (children.size())
-                {
-                    for (var i=0; (i<column_headers.length && i < children.size()); i++)
-                    {
-                        jq(children[i]).attr('data-title', column_headers[i]);
+        
+                var column_headers = [];
+        
+                jq(this).find('th').each(
+                    function() {
+                        column_headers.push(jq(this).html());
                     }
-                }
+                )
+        
+                jq(this).find('tr').each(
+                    function() {
+        
+                        var children = jq(this).children('td');
+                        if (children.size())
+                        {
+                            for (var i=0; (i<column_headers.length && i < children.size()); i++)
+                            {
+                                jq(children[i]).attr('data-title', column_headers[i]);
+                            }
+                        }
+                    }
+                )
             }
         )
-
     }
 
 );

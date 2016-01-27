@@ -1108,6 +1108,11 @@
     font-size: 85%;
     margin: 1em 0;
     padding: 0; }
+    table.responsive caption {
+      display: block; }
+
+  #content table.responsive tr.odd {
+    background-color: #F6F6F6; }
 
   #content table.responsive th {
     text-align: left;
