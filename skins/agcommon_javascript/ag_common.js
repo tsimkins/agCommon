@@ -131,8 +131,8 @@ jq(document).ready(
 
                 first_column_items = Math.ceil(summary_items.length/2)
 
-                two_column_left = jq('<div id="two-column-left"></div>');
-                two_column_right = jq('<div id="two-column-right"></div>');
+                two_column_left = jq('<div class="two-column-left"></div>');
+                two_column_right = jq('<div class="two-column-right"></div>');
 
                 insert_after.after('<div class="visualClear">&nbsp;</div>');
                 insert_after.after(two_column_right);
@@ -164,8 +164,8 @@ jq(document).ready(
             {
                 first_column_items = Math.ceil(listing_items.length/2)
 
-                two_column_left = jq('<dl id="two-column-left"></dl>');
-                two_column_right = jq('<dl id="two-column-right"></dl>');
+                two_column_left = jq('<dl class="two-column-left"></dl>');
+                two_column_right = jq('<dl class="two-column-right"></dl>');
 
                 theList = jq('body.custom-two-column #content dl:not(#history)');
 

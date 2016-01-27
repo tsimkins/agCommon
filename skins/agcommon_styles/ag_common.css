@@ -498,52 +498,76 @@ body.template-subfolder_view #content .photoAlbum {
 
 /* Two Column CSS */
 #two-column-left,
-#two-column-right {
+#two-column-right,
+.two-column-left,
+.two-column-right {
   float: left;
   width: 46.63866%;
   margin-top: 1em; }
   #two-column-left a,
-  #two-column-right a {
+  #two-column-right a,
+  .two-column-left a,
+  .two-column-right a {
     border-bottom: none;
     text-decoration: underline; }
   #two-column-left > tileItem:first-child,
-  #two-column-right > tileItem:first-child {
+  #two-column-right > tileItem:first-child,
+  .two-column-left > tileItem:first-child,
+  .two-column-right > tileItem:first-child {
     margin-top: 0;
     padding-top: 0; }
   #two-column-left > .tileItem .tileHeadline,
-  #two-column-right > .tileItem .tileHeadline {
+  #two-column-right > .tileItem .tileHeadline,
+  .two-column-left > .tileItem .tileHeadline,
+  .two-column-right > .tileItem .tileHeadline {
     margin-bottom: 0;
     font-family: Open Sans, Verdana, Arial, Helvetica, sans-serif; }
     #two-column-left > .tileItem .tileHeadline a,
-    #two-column-right > .tileItem .tileHeadline a {
+    #two-column-right > .tileItem .tileHeadline a,
+    .two-column-left > .tileItem .tileHeadline a,
+    .two-column-right > .tileItem .tileHeadline a {
       text-decoration: none;
       font-family: Open Sans, Verdana, Arial, Helvetica, sans-serif; }
   #two-column-left > .tileItem .no-description,
-  #two-column-right > .tileItem .no-description {
+  #two-column-right > .tileItem .no-description,
+  .two-column-left > .tileItem .no-description,
+  .two-column-right > .tileItem .no-description {
     margin: 0.5em 0 0 0;
     font-family: Open Sans, Verdana, Arial, Helvetica, sans-serif; }
   #two-column-left > .tileItem > .tileSubItem,
-  #two-column-right > .tileItem > .tileSubItem {
+  #two-column-right > .tileItem > .tileSubItem,
+  .two-column-left > .tileItem > .tileSubItem,
+  .two-column-right > .tileItem > .tileSubItem {
     margin: 0.25em 0 0.75em 0; }
     #two-column-left > .tileItem > .tileSubItem .tileTitle,
-    #two-column-right > .tileItem > .tileSubItem .tileTitle {
+    #two-column-right > .tileItem > .tileSubItem .tileTitle,
+    .two-column-left > .tileItem > .tileSubItem .tileTitle,
+    .two-column-right > .tileItem > .tileSubItem .tileTitle {
       margin-top: 0em; }
   #two-column-left > .tileItem > .tileDescription,
-  #two-column-right > .tileItem > .tileDescription {
+  #two-column-right > .tileItem > .tileDescription,
+  .two-column-left > .tileItem > .tileDescription,
+  .two-column-right > .tileItem > .tileDescription {
     margin-top: 0.25em; }
   #two-column-left > .tileItem > span.description,
-  #two-column-right > .tileItem > span.description {
+  #two-column-right > .tileItem > span.description,
+  .two-column-left > .tileItem > span.description,
+  .two-column-right > .tileItem > span.description {
     margin-top: 0;
     margin-bottom: 1.5em; }
 
-#two-column-left {
+#two-column-left,
+.two-column-left {
   padding-right: 3.36134%; }
 
-#two-column-right {
+#two-column-right,
+.two-column-right {
   padding-left: 3.36134%; }
 
 body.template-subfolder_view #two-column-left,
-body.template-subfolder_view #two-column-right {
+body.template-subfolder_view #two-column-right,
+body.template-subfolder_view .two-column-left,
+body.template-subfolder_view .two-column-right {
   font-size: 0.9375em;
   margin-top: 0; }
 

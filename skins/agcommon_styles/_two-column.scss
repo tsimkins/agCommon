@@ -1,7 +1,9 @@
 /* Two Column CSS */
 
 #two-column-left, 
-#two-column-right {
+#two-column-right,
+.two-column-left, 
+.two-column-right {
     float: left;
     width: 50%*(($content_column_width_full - 4*$column_padding)/$content_column_width_full);
     margin-top: 1em;
@@ -57,17 +59,21 @@
     }
 }
 
-#two-column-left {
+#two-column-left,
+.two-column-left {
     padding-right: 100%*(2*$column_padding/$content_column_width_full);
 }
 
-#two-column-right {
+#two-column-right,
+.two-column-right {
     padding-left: 100%*(2*$column_padding/$content_column_width_full);
 }
 
 body.template-subfolder_view {
     #two-column-left, 
-    #two-column-right {
+    #two-column-right,
+    .two-column-left, 
+    .two-column-right {
         font-size: 0.9375em;
         margin-top: 0;
     }
