@@ -246,7 +246,7 @@
     padding: 0;
     width: auto; }
 
-  #portal-top .rmm > .rmm-closed > :not(.rmm-toggled-controls), #document-toc .rmm > .rmm-closed > :not(.rmm-toggled-controls) {
+  #portal-top .rmm > .rmm-closed > :not(.rmm-toggled-controls), #document-toc.rmm > .rmm-closed > :not(.rmm-toggled-controls) {
     border: none;
     display: block;
     height: 0.1em !important;

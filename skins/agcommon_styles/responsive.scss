@@ -307,8 +307,8 @@
         width: auto;
     }
 
-    #portal-top, #document-toc {
-         .rmm > .rmm-closed > :not(.rmm-toggled-controls) {
+    #portal-top .rmm, #document-toc.rmm {
+         > .rmm-closed > :not(.rmm-toggled-controls) {
             border: none;
             display: block;
             height: 0.1em !important;
