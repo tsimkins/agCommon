@@ -193,10 +193,11 @@ body.icons-on {
     #content {
         a.state-atlas-archive:after,
         a.state-atlas-enhance:after,
+        a.state-atlas-web-team-review:after,
         a.state-atlas-feedback:after,
         a.state-atlas-pending:after,
         a.state-atlas-ready:after {
-            background-color: #9561AE;
+            background-color: $atlasBackgroundColor;
             color: #FFFFFF !important;
             display: inline-block;
             padding: 0.125em 0.5em;
@@ -212,6 +213,10 @@ body.icons-on {
         
         a.state-atlas-enhance:after {
             content: "Atlas Enhance";
+        }
+        
+        a.state-atlas-web-team-review:after {
+            content: "Atlas Web Team Review";
         }
         
         a.state-atlas-feedback:after {
