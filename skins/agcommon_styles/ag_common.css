@@ -375,7 +375,7 @@ body {
 
 /* Show Statuses for Atlas Reviewed Content */
 body.icons-on #content a.state-atlas-archive:after,
-body.icons-on #content a.state-atlas-enhance:after,
+body.icons-on #content a.state-atlas-web-team-review:after,
 body.icons-on #content a.state-atlas-feedback:after,
 body.icons-on #content a.state-atlas-pending:after,
 body.icons-on #content a.state-atlas-ready:after {
@@ -389,8 +389,8 @@ body.icons-on #content a.state-atlas-ready:after {
   font-weight: 600; }
 body.icons-on #content a.state-atlas-archive:after {
   content: "Atlas Archive"; }
-body.icons-on #content a.state-atlas-enhance:after {
-  content: "Atlas Enhance"; }
+body.icons-on #content a.state-atlas-web-team-review:after {
+  content: "Atlas Web Team Review"; }
 body.icons-on #content a.state-atlas-feedback:after {
   content: "Atlas Feedback"; }
 body.icons-on #content a.state-atlas-pending:after {
@@ -2305,6 +2305,17 @@ dl.person-connect img {
 /* Hide folder text from form folder for editing */
 #formfolder-base-edit #archetypes-fieldname-folder_text {
   display: none; }
+
+/* Add colors for Atlas states */
+#plone-contentmenu-workflow .state-atlas-archive,
+#plone-contentmenu-workflow .state-atlas-web-team-review,
+#plone-contentmenu-workflow .state-atlas-feedback,
+#plone-contentmenu-workflow .state-atlas-pending,
+#plone-contentmenu-workflow .state-atlas-ready {
+  background-color: #9561AE;
+  border: 1px solid #9561AE;
+  border-radius: 0.375em;
+  padding: 0.125em 0.5em; }
 
 /* Resolve different treatment of icons in Add New dropdown */
 .actionMenu .actionMenuContent li a {
