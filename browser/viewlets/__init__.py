@@ -910,6 +910,7 @@ class _ContentWellPortletsViewlet(ContentWellPortletsViewlet, AgCommonViewlet):
         numManagers = len(visibleManagers)
         for counter, name in enumerate(visibleManagers):
             managers.append((name, (name.split('.')[-1])))
+
         return managers
 
     def showManagePortlets(self):
@@ -923,6 +924,9 @@ class _ContentWellPortletsViewlet(ContentWellPortletsViewlet, AgCommonViewlet):
     def canManageBodyPortlets(self):
         return getattr(self.context, 'manage_body_portlets', False)
 
+class PortletsHeaderViewlet(_ContentWellPortletsViewlet):
+    name = 'InHeaderPortletManager'
+    manage_view = '@@manage-portletsinheader'
 
 class PortletsBelowViewlet(_ContentWellPortletsViewlet):
     name = 'BelowPortletManager'

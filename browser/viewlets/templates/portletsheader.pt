@@ -1,0 +1,25 @@
+<tal:portlets>
+
+    <div id="portlets-header"
+         class="row tileItemContainer"
+         i18n:domain="Products.ContentWellPortlets">
+        <tal:block tal:condition="view/showPortlets">
+            <tal:portletmanagers tal:repeat="manager view/portletManagersToShow">
+                <div tal:attributes="class python:manager[1] + ' tilePortletManager'"
+                     tal:define="mgr python:manager[0]"
+                     tal:content="structure provider:${mgr}" /> 
+    
+            </tal:portletmanagers>
+        </tal:block>
+    </div>
+    
+    <div class="managePortletsHeaderLink"
+         i18n:domain="Products.ContentWellPortlets"
+         tal:condition="view/canManagePortlets">
+            <a href="" 
+               class="managePortletsFallback"
+               tal:attributes="href view/manageUrl"
+               i18n:translate="manage_portlets_header_link">Add, edit or remove a portlet in the header</a>
+    </div>
+    
+</tal:portlets>

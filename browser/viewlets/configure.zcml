@@ -292,6 +292,15 @@
     <!-- Content Well Portlet Relocation -->
 
     <browser:viewlet
+        name="contentwellportlets.inheaderportlets"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".PortletsHeaderViewlet"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        template="templates/portletsheader.pt"
+        />
+
+    <browser:viewlet
         name="contentwellportlets.portletsabovecontent"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
         class=".PortletsAboveViewlet"
