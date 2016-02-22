@@ -683,6 +683,27 @@ class ModifiedSharingView(SharingView):
 
 class RSSFeedView(FeedView, FolderView):
 
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def showFullText(self):
+        return not not self.request.form.get('full', False)
+
+    # Stolen from Products.CMFPlone.browser.syndication.adapters.BaseItem.body
+    def getBodyText(self, item):
+        if hasattr(item, 'getText'):
+            value = item.getText()
+        elif hasattr(item, 'text'):
+            value = item.text
+        else:
+            value = self.description
+        if not isinstance(value, basestring):
+            if hasattr(value, 'output'):
+                # could be RichTextValue object, needs transform
+                value = value.output
+        return value
+
     def max(self):
         return 25
 
@@ -702,9 +723,11 @@ class RSSFeedView(FeedView, FolderView):
             return ''
 
 
-    def __call__(self):
+    def __call__(self, full=False):
 
         self.request.response.setHeader('Content-Type', 'application/atom+xml')
+
+        self.request.form['full'] = full
 
         return self.index()
 

@@ -140,7 +140,16 @@
 
                     <agsci:ispublication
                         tal:content="python: view.isPublication(brain)" />
-                
+
+                    <content:encoded 
+                        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+                        tal:condition="view/showFullText">
+                        <tal:opencdata tal:replace="structure python:'&lt;![CDATA['" />
+                        <tal:block tal:replace="structure python:view.getBodyText(obj_item)"/>
+                        <tal:closecdata tal:replace="structure python:']]&gt;'" />
+                    </content:encoded>
+
+
                   </item>
                 </tal:block>
             
