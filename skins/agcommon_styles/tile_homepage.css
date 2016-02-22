@@ -60,6 +60,15 @@ div.tilePortletManager {
   margin: 0 -2.30769%;
   padding: 0; }
 
+#portlets-header div.tilePortletManager {
+  width: 95%;
+  margin: 0;
+  padding: 0.875em 2.30769%;
+  border: 1px solid #575757;
+  background-color: #F6F6F6; }
+  #portlets-header div.tilePortletManager .portletWrapper {
+    margin-bottom: 0; }
+
 /* == Calculated rules == */
 /*
     block_klass is the integer percent of total width (e.g. '20')

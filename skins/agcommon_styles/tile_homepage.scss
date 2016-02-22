@@ -88,6 +88,18 @@ div.tilePortletManager {
     padding: 0;
 }
 
+#portlets-header div.tilePortletManager {
+    width: 100% - 200%*(($portlet_padding+$portlet_margin+1px)/$min_width);
+    margin: 0;
+    padding: 0.875em 100%*(($portlet_padding+$portlet_margin)/$min_width);
+    border: 1px solid #575757;
+    background-color: #F6F6F6;
+    
+    .portletWrapper {
+        margin-bottom: 0;
+    }
+}
+
 /* == Calculated rules == */
 @each $block_klass, $block_percent_width in $portlet_width_classes {
     

@@ -153,6 +153,24 @@
             margin-left: 0;
         }
 
+        .portletItemDetails.content {
+            color: #575757;
+            font-size: 1em;
+            line-height: 1.4375;
+
+            b,strong {
+                font-weight: 600;
+            }
+   
+            i, em {
+                color: #333333;
+                font-weight: normal;
+                font-size: 0.875em;
+                padding-top: 1em;
+                display: inline-block;
+            }
+        }
+
     }
 
     a.more {

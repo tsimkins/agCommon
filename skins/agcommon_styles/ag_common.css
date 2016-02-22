@@ -375,6 +375,7 @@ body {
 
 /* Show Statuses for Atlas Reviewed Content */
 body.icons-on #content a.state-atlas-archive:after,
+body.icons-on #content a.state-atlas-enhance:after,
 body.icons-on #content a.state-atlas-web-team-review:after,
 body.icons-on #content a.state-atlas-feedback:after,
 body.icons-on #content a.state-atlas-pending:after,
@@ -389,6 +390,8 @@ body.icons-on #content a.state-atlas-ready:after {
   font-weight: 600; }
 body.icons-on #content a.state-atlas-archive:after {
   content: "Atlas Archive"; }
+body.icons-on #content a.state-atlas-enhance:after {
+  content: "Atlas Enhance"; }
 body.icons-on #content a.state-atlas-web-team-review:after {
   content: "Atlas Web Team Review"; }
 body.icons-on #content a.state-atlas-feedback:after {
@@ -686,6 +689,18 @@ body.template-subfolder_view .two-column-right {
       width: auto;
       padding: 0;
       margin-left: 0; }
+    .portletWrapper .portletItem .portletItemDetails.content {
+      color: #575757;
+      font-size: 1em;
+      line-height: 1.4375; }
+      .portletWrapper .portletItem .portletItemDetails.content b, .portletWrapper .portletItem .portletItemDetails.content strong {
+        font-weight: 600; }
+      .portletWrapper .portletItem .portletItemDetails.content i, .portletWrapper .portletItem .portletItemDetails.content em {
+        color: #333333;
+        font-weight: normal;
+        font-size: 0.875em;
+        padding-top: 1em;
+        display: inline-block; }
   .portletWrapper a.more {
     display: block;
     font-size: 0.875em;
@@ -2308,6 +2323,7 @@ dl.person-connect img {
 
 /* Add colors for Atlas states */
 #plone-contentmenu-workflow .state-atlas-archive,
+#plone-contentmenu-workflow .state-atlas-enhance,
 #plone-contentmenu-workflow .state-atlas-web-team-review,
 #plone-contentmenu-workflow .state-atlas-feedback,
 #plone-contentmenu-workflow .state-atlas-pending,
