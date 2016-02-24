@@ -723,9 +723,10 @@ class RSSFeedView(FeedView, FolderView):
             return ''
 
 
-    def __call__(self, full=False):
+    def __call__(self, full=False, set_header=True):
 
-        self.request.response.setHeader('Content-Type', 'application/atom+xml')
+        if set_header:
+            self.request.response.setHeader('Content-Type', 'application/atom+xml')
 
         self.request.form['full'] = full
 
