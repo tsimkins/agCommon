@@ -88,15 +88,26 @@ div.tilePortletManager {
     padding: 0;
 }
 
-#portlets-header div.tilePortletManager {
-    width: 100% - 200%*(($portlet_padding+$portlet_margin+1px)/$min_width);
-    margin: 0;
-    padding: 0.875em 100%*(($portlet_padding+$portlet_margin)/$min_width);
-    border: 1px solid #575757;
-    background-color: #F6F6F6;
-    
-    .portletWrapper {
-        margin-bottom: 0;
+#portlets-above-footer {
+    margin: 1em auto;
+    max-width: $maxWidth;
+        
+    div.tilePortletManager {
+        padding: 1.25em;
+        margin: 0;
+        width: auto;
+        
+        .portletWrapper {
+            margin-bottom: 0;
+            
+            .portletHeader {
+                color: #1b1d1f;
+                border-color: #CCCCCC;
+            }
+            .portletItem .portletItemDetails.content {
+                color: #4b4b4b;
+            }
+        }
     }
 }
 

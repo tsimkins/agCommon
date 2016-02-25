@@ -293,7 +293,7 @@
 
     <browser:viewlet
         name="contentwellportlets.inheaderportlets"
-        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
         class=".PortletsHeaderViewlet"
         layer="..interfaces.IThemeSpecific"
         permission="zope2.View"

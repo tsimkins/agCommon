@@ -60,14 +60,20 @@ div.tilePortletManager {
   margin: 0 -2.30769%;
   padding: 0; }
 
-#portlets-header div.tilePortletManager {
-  width: 95%;
-  margin: 0;
-  padding: 0.875em 2.30769%;
-  border: 1px solid #575757;
-  background-color: #F6F6F6; }
-  #portlets-header div.tilePortletManager .portletWrapper {
-    margin-bottom: 0; }
+#portlets-above-footer {
+  margin: 1em auto;
+  max-width: 1000px; }
+  #portlets-above-footer div.tilePortletManager {
+    padding: 1.25em;
+    margin: 0;
+    width: auto; }
+    #portlets-above-footer div.tilePortletManager .portletWrapper {
+      margin-bottom: 0; }
+      #portlets-above-footer div.tilePortletManager .portletWrapper .portletHeader {
+        color: #1b1d1f;
+        border-color: #CCCCCC; }
+      #portlets-above-footer div.tilePortletManager .portletWrapper .portletItem .portletItemDetails.content {
+        color: #4b4b4b; }
 
 /* == Calculated rules == */
 /*
