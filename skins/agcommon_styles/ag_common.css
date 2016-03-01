@@ -373,34 +373,6 @@ body {
   border-top: none;
   padding-top: 0.5em; }
 
-/* Show Statuses for Atlas Reviewed Content */
-body.icons-on #content a.state-atlas-archive:after,
-body.icons-on #content a.state-atlas-enhance:after,
-body.icons-on #content a.state-atlas-web-team-review:after,
-body.icons-on #content a.state-atlas-feedback:after,
-body.icons-on #content a.state-atlas-pending:after,
-body.icons-on #content a.state-atlas-ready:after {
-  background-color: #9561AE;
-  color: #FFFFFF !important;
-  display: inline-block;
-  padding: 0.125em 0.5em;
-  text-transform: uppercase;
-  font-size: 0.75em;
-  margin-left: 0.5em;
-  font-weight: 600; }
-body.icons-on #content a.state-atlas-archive:after {
-  content: "Atlas Archive"; }
-body.icons-on #content a.state-atlas-enhance:after {
-  content: "Atlas Enhance"; }
-body.icons-on #content a.state-atlas-web-team-review:after {
-  content: "Atlas Web Team Review"; }
-body.icons-on #content a.state-atlas-feedback:after {
-  content: "Atlas Feedback"; }
-body.icons-on #content a.state-atlas-pending:after {
-  content: "Atlas Pending"; }
-body.icons-on #content a.state-atlas-ready:after {
-  content: "Atlas Ready"; }
-
 /* Tile folder view */
 body.tile-folder #content {
   /* 
@@ -2321,18 +2293,6 @@ dl.person-connect img {
 #formfolder-base-edit #archetypes-fieldname-folder_text {
   display: none; }
 
-/* Add colors for Atlas states */
-#plone-contentmenu-workflow .state-atlas-archive,
-#plone-contentmenu-workflow .state-atlas-enhance,
-#plone-contentmenu-workflow .state-atlas-web-team-review,
-#plone-contentmenu-workflow .state-atlas-feedback,
-#plone-contentmenu-workflow .state-atlas-pending,
-#plone-contentmenu-workflow .state-atlas-ready {
-  background-color: #9561AE;
-  border: 1px solid #9561AE;
-  border-radius: 0.375em;
-  padding: 0.125em 0.5em; }
-
 /* Resolve different treatment of icons in Add New dropdown */
 .actionMenu .actionMenuContent li a {
   padding: 0;
@@ -2739,6 +2699,91 @@ ul.kupu-tabs li {
           border-bottom-color: #003399; }
     #playlist-box .playlist-row .videoTime {
       text-align: center; }
+
+/* Show Statuses for Atlas Reviewed Content */
+body.icons-on #content a.state-atlas-archive:after,
+body.icons-on #content a.state-atlas-enhance:after,
+body.icons-on #content a.state-atlas-web-team-review:after,
+body.icons-on #content a.state-atlas-feedback:after,
+body.icons-on #content a.state-atlas-pending:after,
+body.icons-on #content a.state-atlas-ready:after {
+  background-color: #9561AE;
+  color: #FFFFFF !important;
+  display: inline-block;
+  padding: 0.125em 0.5em;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  margin-left: 0.5em;
+  font-weight: 600; }
+body.icons-on #content a.state-atlas-archive:after {
+  content: "Atlas Archive"; }
+body.icons-on #content a.state-atlas-enhance:after {
+  content: "Atlas Enhance"; }
+body.icons-on #content a.state-atlas-web-team-review:after {
+  content: "Atlas Web Team Review"; }
+body.icons-on #content a.state-atlas-feedback:after {
+  content: "Atlas Feedback"; }
+body.icons-on #content a.state-atlas-pending:after {
+  content: "Atlas Pending"; }
+body.icons-on #content a.state-atlas-ready:after {
+  content: "Atlas Ready"; }
+
+/* Add colors for Atlas states */
+#plone-contentmenu-workflow .state-atlas-archive,
+#plone-contentmenu-workflow .state-atlas-enhance,
+#plone-contentmenu-workflow .state-atlas-web-team-review,
+#plone-contentmenu-workflow .state-atlas-feedback,
+#plone-contentmenu-workflow .state-atlas-pending,
+#plone-contentmenu-workflow .state-atlas-ready, .atlas-workflow .state-atlas-archive,
+.atlas-workflow .state-atlas-enhance,
+.atlas-workflow .state-atlas-web-team-review,
+.atlas-workflow .state-atlas-feedback,
+.atlas-workflow .state-atlas-pending,
+.atlas-workflow .state-atlas-ready {
+  background-color: #9561AE;
+  border: 1px solid #9561AE;
+  border-radius: 0.375em;
+  padding: 0.125em 0.5em; }
+
+#content .atlas-workflow a {
+  color: #333333;
+  font-size: 0.875em;
+  background-color: #F6F6F6;
+  display: inline-block;
+  border: 1px solid #E6E6E6;
+  border-radius: 0.375em;
+  padding: 0.125em 0.5em; }
+#content .atlas-workflow a:hover {
+  color: #FFFFFF;
+  background-color: #9561AE;
+  border: 1px solid #9561AE; }
+
+/* Atlas Review Navigation */
+#content h2.atlas-queue {
+  margin-top: 0;
+  font-size: 1em;
+  border-bottom: none; }
+
+#atlas-review-nav {
+  margin-bottom: 1em;
+  font-size: 0.875em; }
+  #atlas-review-nav li {
+    display: inline-block;
+    padding: 0.25em 1em;
+    margin: 0.5em 0;
+    border-left: 1px solid #E6E6E6; }
+    #atlas-review-nav li a {
+      border-bottom: none !important; }
+    #atlas-review-nav li a:hover {
+      text-decoration: underline; }
+  #atlas-review-nav li:first-child {
+    border-left: none; }
+
+/* Content tree */
+.atlas-content-tree li {
+  margin-top: 0.5em; }
+  .atlas-content-tree li > div {
+    font-size: 0.875em; }
 
 /* PloneFormGen Fields */
 .template-fg_base_view_p3 textarea {

@@ -1,0 +1,121 @@
+/* Show Statuses for Atlas Reviewed Content */
+
+body.icons-on {
+    #content {
+        a.state-atlas-archive:after,
+        a.state-atlas-enhance:after,
+        a.state-atlas-web-team-review:after,
+        a.state-atlas-feedback:after,
+        a.state-atlas-pending:after,
+        a.state-atlas-ready:after {
+            background-color: $atlasBackgroundColor;
+            color: #FFFFFF !important;
+            display: inline-block;
+            padding: 0.125em 0.5em;
+            text-transform: uppercase;
+            font-size: 0.75em;
+            margin-left: 0.5em;
+            font-weight: 600;
+        }
+        
+        a.state-atlas-archive:after {
+            content: "Atlas Archive";
+        }
+        
+        a.state-atlas-enhance:after {
+            content: "Atlas Enhance";
+        }
+        
+        a.state-atlas-web-team-review:after {
+            content: "Atlas Web Team Review";
+        }
+        
+        a.state-atlas-feedback:after {
+            content: "Atlas Feedback";
+        }
+        
+        a.state-atlas-pending:after {
+            content: "Atlas Pending";
+        }
+        
+        a.state-atlas-ready:after {
+            content: "Atlas Ready";
+        }
+    }
+}
+
+/* Add colors for Atlas states */
+
+#plone-contentmenu-workflow, .atlas-workflow {
+    .state-atlas-archive,
+    .state-atlas-enhance,
+    .state-atlas-web-team-review,
+    .state-atlas-feedback,
+    .state-atlas-pending,
+    .state-atlas-ready {    
+        background-color: $atlasBackgroundColor;
+        border: 1px solid $atlasBackgroundColor;
+        border-radius: 0.375em;
+        padding: 0.125em 0.5em;
+    }
+}
+
+#content .atlas-workflow {
+    a {
+        color: #333333 ;
+        font-size: 0.875em;
+        background-color: $globalBackgroundColor;
+        display: inline-block;
+        border: 1px solid $globalBorderColor;
+        border-radius: 0.375em;
+        padding: 0.125em 0.5em;
+    }
+    a:hover {
+        color: #FFFFFF;
+        background-color: $atlasBackgroundColor;
+        border: 1px solid $atlasBackgroundColor;
+    }
+}
+
+/* Atlas Review Navigation */
+
+#content h2.atlas-queue {
+    margin-top: 0;
+    font-size: 1em;
+    border-bottom: none;
+}
+
+#atlas-review-nav {
+    
+    margin-bottom: 1em;
+    font-size: 0.875em;
+        
+    li {
+        display: inline-block;
+        padding: 0.25em 1em;
+        margin: 0.5em 0;
+        border-left: 1px solid $globalBorderColor;
+        
+        a {
+            border-bottom: none !important;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+    }
+    
+    li:first-child {
+        border-left: none;
+    }
+}
+
+/* Content tree */
+.atlas-content-tree li {
+    margin-top: 0.5em;
+    
+    > div {
+        font-size: 0.875em;
+    }
+}

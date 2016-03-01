@@ -24,22 +24,6 @@
     display: none;
 }
 
-/* Add colors for Atlas states */
-
-#plone-contentmenu-workflow {
-    .state-atlas-archive,
-    .state-atlas-enhance,
-    .state-atlas-web-team-review,
-    .state-atlas-feedback,
-    .state-atlas-pending,
-    .state-atlas-ready {
-        background-color: $atlasBackgroundColor;
-        border: 1px solid $atlasBackgroundColor;
-        border-radius: 0.375em;
-        padding: 0.125em 0.5em;
-    }
-}
-
 /* Resolve different treatment of icons in Add New dropdown */
 
 .actionMenu .actionMenuContent li {
