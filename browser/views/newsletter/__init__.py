@@ -1,4 +1,4 @@
-from utilities import AgCommonUtilities
+from ..utilities import AgCommonUtilities
 from AccessControl import ClassSecurityInfo
 from Acquisition import aq_acquire, aq_inner
 from BeautifulSoup import BeautifulSoup

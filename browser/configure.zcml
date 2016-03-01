@@ -73,4 +73,8 @@
           name="font-awesome"
           directory="resources/font-awesome" />
 
+      <browser:resourceDirectory
+          name="atlas-newsletter"
+          directory="resources/atlas-newsletter" />
+
 </configure>

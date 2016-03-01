@@ -323,6 +323,26 @@
         permission="zope2.View"
     />
 
+    <!-- Atlas Newsletter View -->
+    <browser:page
+        for="*"
+        name="atlas_newsletter"
+        class=".newsletter.atlas.NewsletterView"
+        template="templates/atlas_newsletter_view.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <!-- Newsletter Email View -->
+    <browser:page
+        for="*"
+        name="atlas_newsletter_email"
+        class=".newsletter.atlas.NewsletterEmail"
+        template="templates/atlas_newsletter_view.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
     <!-- Newsletter Print View -->
     <browser:page
         for="*"
