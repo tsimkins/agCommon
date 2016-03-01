@@ -383,6 +383,10 @@ class FolderView(BrowserView):
     def getCurrentUser(self):
         return self.portal_membership.getAuthenticatedMember()
 
+    def isDefaultPage(self):
+        return (self.context.getId() == self.context.aq_parent.getDefaultPage())
+
+
 class SearchView(FolderView):
 
     implements(ISearchView)
