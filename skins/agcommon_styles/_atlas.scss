@@ -60,62 +60,132 @@ body.icons-on {
     }
 }
 
-#content .atlas-workflow {
-    a {
-        color: #333333 ;
-        font-size: 0.875em;
-        background-color: $globalBackgroundColor;
-        display: inline-block;
-        border: 1px solid $globalBorderColor;
-        border-radius: 0.375em;
-        padding: 0.125em 0.5em;
-    }
-    a:hover {
-        color: #FFFFFF;
-        background-color: $atlasBackgroundColor;
-        border: 1px solid $atlasBackgroundColor;
-    }
-}
-
-/* Atlas Review Navigation */
-
-#content h2.atlas-queue {
-    margin-top: 0;
-    font-size: 1em;
-    border-bottom: none;
-}
-
-#atlas-review-nav {
+#content {
     
-    margin-bottom: 1em;
-    font-size: 0.875em;
-        
-    li {
-        display: inline-block;
-        padding: 0.25em 1em;
-        margin: 0.5em 0;
-        border-left: 1px solid $globalBorderColor;
+    /* Workflow states in body */
+    
+    .atlas-workflow {
+        span {
+            font-size: 0.875em;
+            font-weight: 600;
+        }
         
         a {
-            border-bottom: none !important;
+            color: #333333 ;
+            font-size: 0.875em;
+            background-color: $globalBackgroundColor;
+            display: inline-block;
+            border: 1px solid $globalBorderColor;
+            border-radius: 0.375em;
+            padding: 0.125em 0.5em;
         }
-
         a:hover {
-            text-decoration: underline;
+            color: #FFFFFF;
+            background-color: $atlasBackgroundColor;
+            border: 1px solid $atlasBackgroundColor;
+        }
+    }
+
+    /* Atlas Review Navigation */
+    
+    .atlas-review-nav {
+
+        background-color: $globalBackgroundColor;
+        margin-bottom: 1em;
+        border: 1px solid $globalBorderColor;
+
+        ul {
+
+            font-size: 0.875em;
+            margin-left: 0;
+            display: block;
+            
+            li {
+                display: inline-block;
+                float: left;
+                margin-bottom: 0;
+                
+                a {
+                    border-bottom: none !important;
+                    padding: 0.75em 0.875em;
+                    margin: 0;
+                    border-left: 1px solid $globalBorderColor;
+                    display: block;
+                    background-color: $globalBackgroundColor;
+                }
+        
+                a:hover {
+                    text-decoration: underline;
+                }
+    
+                a.selected {
+                    background-color: $topnavigationBackgroundColor;
+                    color: $topnavigationTextColor;
+                }
+            }
+        
+            li:first-child a {
+                border-left: none;
+            }
+        }
+    }
+    
+    /* Content tree */
+    .atlas-content-tree {
+        li {
+            margin-top: 0;
+            margin-bottom: 0;
+            
+            > div > div.description {
+                font-size: 0.875em;
+            }
+        
+            > div.atlas-item {
+                padding: 0.5em 0 0.5em 1em;;
+                border-left: 1px solid #F6F6F6;
+            }
         }
         
+        li:first-child {
+            margin-top: 0.25em;
+        }
     }
     
-    li:first-child {
-        border-left: none;
+    > .atlas-content-tree > li {
+    
+        > div.atlas-item {
+            padding-left: 0;
+            border-left: none;
+        }
     }
+    
+    form.atlas-filter {
+        
+        margin-bottom: 0.5em;
+        
+        label {
+            font-size: 0.875em;
+            line-height: 1;
+        }
+        
+        select {
+            margin: 0 0.5em;
+            vertical-align: middle;
+        }
+    }
+    
+    .atlas-controls {
+        border: 1px solid $globalBorderColor;
+        padding: 1em;
+        margin-bottom: 1em;
+        
+        h2 {
+            margin-top: 0;
+            font-size: 1em;
+            border-bottom: none;
+        }
+
+    }
+
 }
 
-/* Content tree */
-.atlas-content-tree li {
-    margin-top: 0.5em;
-    
-    > div {
-        font-size: 0.875em;
-    }
-}
