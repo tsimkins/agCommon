@@ -384,6 +384,9 @@ class FolderView(BrowserView):
         return self.portal_membership.getAuthenticatedMember()
 
     def isDefaultPage(self):
+        if not hasattr(self.context.aq_parent, 'getDefaultPage'):
+            return False
+
         return (self.context.getId() == self.context.aq_parent.getDefaultPage())
 
 
