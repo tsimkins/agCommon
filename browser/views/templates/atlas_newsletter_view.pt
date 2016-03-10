@@ -33,71 +33,6 @@
         line-height: inherit !important;
     }
 
-    /* MOBILE STYLES */
-    @media screen and (max-width: 525px) {
-
-        /* ALLOWS FOR FLUID TABLES */
-        .wrapper {
-          width: 100% !important;
-                max-width: 100% !important;
-        }
-
-        /* ADJUSTS LAYOUT OF LOGO IMAGE */
-        .logo img {
-          margin: 0 auto !important;
-        }
-
-        /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
-        .mobile-hide {
-          display: none !important;
-        }
-
-        .img-max {
-          max-width: 100% !important;
-          width: 100% !important;
-          height: auto !important;
-        }
-
-        /* FULL-WIDTH TABLES */
-        .responsive-table {
-          width: 100% !important;
-        }
-
-        /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
-        .padding {
-          padding: 10px 5% 15px 5% !important;
-        }
-
-        .padding-meta {
-          padding: 30px 5% 0px 5% !important;
-          text-align: center;
-        }
-
-        .no-padding {
-          padding: 0 !important;
-        }
-
-        .section-padding {
-          padding: 50px 15px 50px 15px !important;
-        }
-
-        /* ADJUST BUTTONS ON MOBILE */
-        .mobile-button-container {
-            margin: 0 auto;
-            width: 100% !important;
-        }
-
-        .mobile-button {
-            padding: 15px !important;
-            border: 0 !important;
-            font-size: 16px !important;
-            display: block !important;
-        }
-
-    }
-
-    /* ANDROID CENTER FIX */
-    div[style*="margin: 16px 0;"] { margin: 0 !important; }
   /*]]>*/
   </style>
 </head>
@@ -668,7 +603,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td style="font-size: 8px">
-                                                        &nbsp;
+                                                        <div style="visibility: hidden"> or </div>
                                                     </td>
                                                 </tr>
                                                 <tr>

@@ -187,6 +187,15 @@ table td {
     padding: 5px 15px;
 }
 
+table.leadimage-full td {
+    padding: 15px 0;
+    text-align: center;
+}
+
+table.leadimage-full td div.contentLeadImageContainer {
+    text-align: center;
+}
+
 table td.footer,
 table td.footer-address {
     text-align: center;
@@ -505,8 +514,8 @@ td#portal-column-content.newsletter_full_text h3.tileHeadline {
 
         <metal:view-online define-slot="view-online">
             <a class="view-online utm_newsletter_view_online"
-                tal:define="more_url view/getViewOnline|nothing;
-                            more_url context/more_url|more_url"
+                tal:define="more_url view/getViewOnline|nothing;"
+                tal:condition="more_url"
                 tal:attributes="href more_url">View
                     <span tal:replace="context/newsletter_title|context/Title" /> online</a>
             <tal:print condition="context/show_print_newsletter|nothing">
@@ -517,6 +526,12 @@ td#portal-column-content.newsletter_full_text h3.tileHeadline {
                         this newsletter</a>
             </tal:print>
         </metal:view-online>
+        
+        <tal:text
+            define="newsletter_text view/getText;"
+            condition="python: newsletter_text and listing_after_text"
+            tal:replace="structure newsletter_text" />
+        
     </div>
 
 </metal:subheader>
@@ -716,7 +731,9 @@ td#portal-column-content.newsletter_full_text h3.tileHeadline {
 
 <metal:footer fill-slot="footer">
 
-    <div class="about" metal:define-slot="about">
+    <div class="about" 
+        tal:condition="not: listing_after_text"
+        metal:define-slot="about">
 
         <hr size="1" />
 
@@ -870,12 +887,15 @@ td#portal-column-content.newsletter_full_text h3.tileHeadline {
                                         </metal:field>
                                     </div>
                                 </tal:fulltext>
-
-                                <br class="separator"
-                                    tal:condition="not: context/leadimage_full_width|nothing" >
-
-                                <hr class="separator"
-                                    tal:condition="context/leadimage_full_width|nothing" >
+                                <tal:not-last
+                                    condition="not: repeat/item/end">
+    
+                                    <br class="separator"
+                                        tal:condition="not: context/leadimage_full_width|nothing" >
+    
+                                    <hr class="separator"
+                                        tal:condition="context/leadimage_full_width|nothing" >
+                                </tal:not-last>
 
                                 </tal:item>
                             </metal:block>

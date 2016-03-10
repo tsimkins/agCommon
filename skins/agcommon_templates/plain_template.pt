@@ -22,7 +22,11 @@
                   ajax_load request/ajax_load | nothing;
                   is_extension python: 'extension' in context.absolute_url();
                   agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');
-                  leadimage_full_width context/leadimage_full_width|nothing;"
+                  leadimage_full_width context/leadimage_full_width|nothing;
+                  has_leadimage view/hasLeadImage;
+                  large_leadimage python: has_leadimage and leadimage_full_width;
+                  small_leadimage python: has_leadimage and not leadimage_full_width;
+                  listing_after_text context/listing_after_text|nothing;"
       tal:attributes="lang lang;
                       xml:lang lang">
 
@@ -103,16 +107,25 @@
                     </tr>
                     <tr>
                         <td class="header" colspan="2"
-                            align="left" width="600"
-                            tal:define="has_leadimage view/bodyTag|nothing">
+                            align="left" width="600">
                             
+                            <table class="leadimage-full" 
+                                width="600"
+                                tal:condition="large_leadimage">
+                                <tr>
+                                    <td align="center" valign="top">
+                                        <metal:leadimage define-slot="content-leadimage" />
+                                    </td>
+                                </tr>
+                            </table>
+
                             <hr size="1">
 
                             <table class="leadimage" 
                                 width="600"
-                                tal:omit-tag="not: has_leadimage">
-                                <tr tal:omit-tag="not: has_leadimage">
-                                    <td tal:omit-tag="not: has_leadimage"
+                                tal:omit-tag="not: small_leadimage">
+                                <tr tal:omit-tag="not: small_leadimage">
+                                    <td tal:omit-tag="not: small_leadimage"
                                          width="340" align="left" id="leadimage-left" valign="top">
                                         <metal:title define-slot="content-title">
                                             <metal:comment tal:content="nothing">
@@ -137,8 +150,8 @@
                                         <metal:subheader define-slot="content-date" />
 
                                     </td>
-                                    <td tal:omit-tag="not: has_leadimage" width="260" align="right" valign="top" id="leadimage-right">
-                                        <tal:block condition="has_leadimage">
+                                    <td tal:omit-tag="not: small_leadimage" width="260" align="right" valign="top" id="leadimage-right">
+                                        <tal:block condition="small_leadimage">
                                             <metal:leadimage define-slot="content-leadimage" />
                                         </tal:block>
                                     </td>
