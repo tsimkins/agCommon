@@ -75,7 +75,7 @@
                 </tr>
 
                 <tr 
-                    tal:define="tag python: view.bodyTag();
+                    tal:define="tag python: view.bodyTag(scale='full-width');
                                 show_leadimage_context context/show_leadimage_context|nothing"
                     tal:condition="python: show_leadimage_context and tag">
                     
