@@ -44,6 +44,9 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
         self.request = request
         self.currentDate = DateTime()
 
+    def hasLeadImage(self):
+        return not not self.bodyTag()
+
     @property
     def canEdit(self):
         return checkPermission('cmf.ModifyPortalContent', self.context)
@@ -206,11 +209,23 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
         return 'agsci.newsletter.uid_%s' % self.context.UID()
 
     def getViewOnline(self):
+    
+        more_url = getattr(self.context, 'more_url', None)
+
+        if more_url:
+            return more_url
+    
+        if getattr(self.context, 'hide_view_online', False):
+        
+            return None
+    
         parent = self.context.getParentNode()
+
         if parent.portal_type == 'Blog':
             return parent.absolute_url()
         else:
             return self.context.absolute_url()
+
 
     def getHTML(self, item):
     

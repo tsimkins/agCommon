@@ -33,71 +33,6 @@
         line-height: inherit !important;
     }
 
-    /* MOBILE STYLES */
-    @media screen and (max-width: 525px) {
-
-        /* ALLOWS FOR FLUID TABLES */
-        .wrapper {
-          width: 100% !important;
-                max-width: 100% !important;
-        }
-
-        /* ADJUSTS LAYOUT OF LOGO IMAGE */
-        .logo img {
-          margin: 0 auto !important;
-        }
-
-        /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
-        .mobile-hide {
-          display: none !important;
-        }
-
-        .img-max {
-          max-width: 100% !important;
-          width: 100% !important;
-          height: auto !important;
-        }
-
-        /* FULL-WIDTH TABLES */
-        .responsive-table {
-          width: 100% !important;
-        }
-
-        /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
-        .padding {
-          padding: 10px 5% 15px 5% !important;
-        }
-
-        .padding-meta {
-          padding: 30px 5% 0px 5% !important;
-          text-align: center;
-        }
-
-        .no-padding {
-          padding: 0 !important;
-        }
-
-        .section-padding {
-          padding: 50px 15px 50px 15px !important;
-        }
-
-        /* ADJUST BUTTONS ON MOBILE */
-        .mobile-button-container {
-            margin: 0 auto;
-            width: 100% !important;
-        }
-
-        .mobile-button {
-            padding: 15px !important;
-            border: 0 !important;
-            font-size: 16px !important;
-            display: block !important;
-        }
-
-    }
-
-    /* ANDROID CENTER FIX */
-    div[style*="margin: 16px 0;"] { margin: 0 !important; }
   /*]]>*/
   </style>
 </head>
@@ -140,7 +75,7 @@
                 </tr>
 
                 <tr 
-                    tal:define="tag python: view.bodyTag();
+                    tal:define="tag python: view.bodyTag(scale='full-width');
                                 show_leadimage_context context/show_leadimage_context|nothing"
                     tal:condition="python: show_leadimage_context and tag">
                     
@@ -192,7 +127,7 @@
                           "mobile-button-container">
                             <tr>
                               <td align="center" style="border-radius: 3px;" bgcolor=
-                              "#236792"><a tal:attributes="href view/getParentURL|nothing" target="_blank"
+                              "#236792"><a tal:attributes="href context/absolute_url|view/getParentURL|nothing" target="_blank"
                               style=
                               "font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #236792; display: inline-block;"
                               class="mobile-button">Learn More &#8594;</a></td>
@@ -668,7 +603,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td style="font-size: 8px">
-                                                        &nbsp;
+                                                        <div style="visibility: hidden"> or </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -709,5 +644,6 @@
           </tr>
 
   </table>
+  <img tal:attributes="src string:blank.gif?title=${context/Title}" alt="" width="1" height="1" />
 </body>
 </html>
