@@ -127,7 +127,7 @@
                           "mobile-button-container">
                             <tr>
                               <td align="center" style="border-radius: 3px;" bgcolor=
-                              "#236792"><a tal:attributes="href context/absolute_url|view/getParentURL|nothing" target="_blank"
+                              "#236792"><a tal:attributes="href view/getParentURL|nothing" target="_blank"
                               style=
                               "font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #236792; display: inline-block;"
                               class="mobile-button">Learn More &#8594;</a></td>
@@ -606,7 +606,7 @@
                                                         <div style="visibility: hidden"> or </div>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr tal:condition="python: item.portal_type == 'Event'">
                                                   <td align="center" style=
                                                   "border-radius: 3px;" bgcolor=
                                                   "#236792"><a tal:attributes="href string:${item/getURL}/ics_view"
