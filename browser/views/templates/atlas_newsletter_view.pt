@@ -64,6 +64,18 @@
               <!-- HERO IMAGE -->
 
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              
+                <tal:warning 
+                    define="isAnon context/@@plone_portal_state/anonymous;"
+                    condition="not: isAnon">
+                    <tr>
+                        <td align="left" valign="top">
+                            <p style="margin: 0 0 2em; border: 1px solid #000000; background-color: #FFF500; padding: 1em;">
+                            <strong>Warning:</strong> This is the logged-in view of the newsletter.  Go to the <a tal:attributes="href python:context.absolute_url().replace('https://', 'http://')">logged out view</a> before emailing.  Do not attempt to email this newsletter, or users will be asked to log in before viewing articles.
+                            </p>
+                        </td>
+                    </tr>
+                </tal:warning>
                 <tr>
                   <td class="padding" align="left">
                     <a href="http://extension.psu.edu">
