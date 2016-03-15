@@ -22,6 +22,7 @@ class PersonView(BaseView):
         data['office_city'] = self.context.getOfficeCity()
         data['office_state'] = self.context.getOfficeState()
         data['office_postal_code'] = self.context.getOfficePostalCode()
+        data['education'] = self.context.getEducation()
         data['department_research_areas'] = getattr(self.context, 'department_research_areas', [])
         data['extension_areas'] = getattr(self.context, 'extension_areas', [])
 
