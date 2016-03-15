@@ -562,16 +562,12 @@
 
                             <table border="0" cellspacing="0" cellpadding="0" width=
                             "100%">
-                              <tr>
+                              <tr tal:condition="python: item.portal_type == 'Event'">
                                 <td align="left" style=
                                 "padding: 0 0 5px 25px; font-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #666666;"
                                 class="padding-meta">
 
-                                    <tal:event condition="python: item.portal_type == 'Event'">
-                                        
-                                        <span tal:replace="python:toLocalizedTime(item_start,long_format=0)" />
-                                        
-                                    </tal:event>
+                                    <span tal:replace="python:toLocalizedTime(item_start,long_format=0)" />
 
                                 </td>
                               </tr>
@@ -613,12 +609,13 @@
                                                   class="mobile-button">Learn More 
                                                   &#8594;</a></td>
                                                 </tr>
+                                                <tal:event condition="python: item.portal_type == 'Event'">
                                                 <tr>
                                                     <td style="font-size: 8px">
                                                         <div style="visibility: hidden"> or </div>
                                                     </td>
                                                 </tr>
-                                                <tr tal:condition="python: item.portal_type == 'Event'">
+                                                <tr>
                                                   <td align="center" style=
                                                   "border-radius: 3px;" bgcolor=
                                                   "#236792"><a tal:attributes="href string:${item/getURL}/ics_view"
@@ -627,6 +624,7 @@
                                                   class="mobile-button">Add to Calendar 
                                                   &#8594;</a></td>
                                                 </tr>
+                                                </tal:event>
                                               </table>
                                             </td>
                                           </tr>
