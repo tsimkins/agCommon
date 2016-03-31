@@ -3,7 +3,6 @@
 
     <div 
         class="fb-like" 
-        data-width="auto" 
         data-layout="button_count" 
         data-action="recommend" 
         data-show-faces="false" 
