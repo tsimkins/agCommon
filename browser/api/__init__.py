@@ -4,7 +4,7 @@ from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
 from Products.agCommon import toISO
-from collective.contentleadimage.utils import getImageAndCaptionFieldNames
+from collective.contentleadimage.utils import getImageAndCaptionFieldNames, getImageAndCaptionFields
 import Missing
 import json
 import re
@@ -129,7 +129,10 @@ class BaseView(BrowserView):
         
         if data.get('hasContentLeadImage', False):
             img_field = getImageAndCaptionFieldNames(self.context)[0]
+            img_caption_field = getImageAndCaptionFields(self.context)[1]
+
             data['image_url'] = '%s/%s' % (data['url'], img_field)
+            data['image_caption'] = img_caption_field.get(self.context)
 
         # Get the html and text of the content if the 'full' parameter is used
         if self.request.form.get('full', None):
