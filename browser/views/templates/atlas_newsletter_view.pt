@@ -1,143 +1,157 @@
 <!DOCTYPE html PUBLIC
   "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml"
-    tal:define="portal_state context/@@plone_portal_state;
-                portal_url portal_state/portal_url;
-                toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
-<head>
-
-  <title tal:content="context/Title" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-  <style type="text/css">
-
-/*<![CDATA[*/
-    /* CLIENT-SPECIFIC STYLES */
-    table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */
-    img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
-
-    /* RESET STYLES */
-    img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}
-    table{border-collapse: collapse !important;}
-    body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
-
-  /*]]>*/
-  </style>
-</head>
-
-<body style="margin: 0 !important; padding: 0 !important;">
-  <!-- HIDDEN PREHEADER TEXT -->
-
-  <div style=
-  "display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-  <tal:hidden replace="context/Title" />:
-  <tal:hidden replace="context/Description" />
-  </div><!-- HEADER -->
-
-  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-
+  tal:define="portal_state context/@@plone_portal_state;
+  portal_url portal_state/portal_url;
+  toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
+  <head>
+    <title tal:content="context/Title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      /*<![CDATA[*/
+        /* CLIENT-SPECIFIC STYLES */
+        table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+        img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+        
+        /* RESET STYLES */
+        img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}
+        table{border-collapse: collapse !important;}
+        body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
+        
+        /*]]>*/
+    </style>
+  </head>
+  <body style="margin: 0 !important; padding: 0 !important;">
+    <!-- HIDDEN PREHEADER TEXT -->
+    <div style=
+      "display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+      <tal:hidden replace="context/Title" />
+      :
+      <tal:hidden replace="context/Description" />
+    </div>
+    <!-- HEADER -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
       <td bgcolor="#FFFFFF" align="center" style="padding: 35px 15px 35px 15px;" class=
-      "section-padding">
-        
-            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
-            <tr>
-            <td align="center" valign="top" width="500">
-            
-
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style=
-        "max-width: 500px;" class="responsive-table">
+        "section-padding">
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
           <tr>
-            <td>
-              <!-- HERO IMAGE -->
-
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              
-                <tal:warning 
-                    define="isAnon context/@@plone_portal_state/anonymous;"
-                    condition="not: isAnon">
-                    <tr>
-                        <td align="left" valign="top">
-                            <p style="margin: 0 0 2em; border: 1px solid #000000; background-color: #FFF500; padding: 1em;">
-                            <strong>Warning:</strong> This is the logged-in view of the newsletter.  Go to the <a tal:attributes="href python:context.absolute_url().replace('https://', 'http://')">logged out view</a> before emailing.  Do not attempt to email this newsletter, or users will be asked to log in before viewing articles.
-                            </p>
-                        </td>
-                    </tr>
-                </tal:warning>
-                <tr>
-                  <td class="padding" align="left">
-                    <a href="http://extension.psu.edu">
-                        <img tal:attributes="src string:${portal_url}/extension-newsletter-header.png"
-                                 style="width:500px; height: 50px;"
-                                 alt="Penn State Extension" 
-                                 width="500"
-                                 border="0"
-                                 height="50" /></a>
-                    </td>
-                </tr>
-
-                <tr 
-                    tal:define="tag python: view.bodyTag(scale='full-width');
-                                show_leadimage_context context/show_leadimage_context|nothing"
-                    tal:condition="python: show_leadimage_context and tag">
-                    
-                     <td class="padding" style="padding: 20px 0 0 0;" align="center">
-                        <img tal:replace="structure tag" src="" alt="" />
-                    </td>
-                </tr>
-
+            <td align="center" valign="top" width="500">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style=
+                "max-width: 500px;" class="responsive-table">
                 <tr>
                   <td>
-                    <!-- COPY -->
-
+                    <!-- HERO IMAGE -->
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tal:warning 
+                        define="isAnon context/@@plone_portal_state/anonymous;"
+                        condition="not: isAnon">
+                        <tr>
+                          <td align="left" valign="top">
+                            <p style="margin: 0 0 2em; border: 1px solid #000000; background-color: #FFF500; padding: 1em;">
+                              <strong>Warning:</strong> This is the logged-in view of the newsletter.  Go to the <a tal:attributes="href python:context.absolute_url().replace('https://', 'http://')">logged out view</a> before emailing.  Do not attempt to email this newsletter, or users will be asked to log in before viewing articles.
+                            </p>
+                          </td>
+                        </tr>
+                      </tal:warning>
                       <tr>
-                        <td align="left" style=
-                        "font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #236792; padding-top: 30px; font-weight: bold;"
-                        class="padding" tal:content="context/Title|nothing"> </td>
-                      </tr>
-
-                      <tr>
-                        <td align="left" style=
-                        "padding: 20px 0 0 0; font-size: 17px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666; font-weight: bold;"
-                        class="padding" tal:content="context/Description|nothing"> </td>
-                      </tr>
-                      
-                      <tr tal:condition="context/getText|nothing">
-                        <td align="left" style=
-                        "padding: 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;"
-                        class="padding">
-                            <metal:field 
-                                    use-macro="python:context.widget('text', mode='view')">
-                                Body text
-                            </metal:field>
+                        <td class="padding" align="left">
+                          <a href="http://extension.psu.edu">
+                          <img tal:attributes="src string:${portal_url}/extension-newsletter-header.png"
+                            style="width:500px; height: 50px;"
+                            alt="Penn State Extension" 
+                            width="500"
+                            border="0"
+                            height="50" /></a>
                         </td>
                       </tr>
-
-                    </table>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td align="center">
-                    <!-- BULLETPROOF BUTTON -->
-
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr 
+                        tal:define="tag python: view.bodyTag(scale='full-width');
+                        show_leadimage_context context/show_leadimage_context|nothing"
+                        tal:condition="python: show_leadimage_context and tag">
+                        <td class="padding" style="padding: 20px 0 0 0;" align="center">
+                          <img tal:replace="structure tag" src="" alt="" />
+                        </td>
+                      </tr>
                       <tr>
-                        <td align="center" style="padding-top: 25px;" class="padding">
-                          <table border="0" cellspacing="0" cellpadding="0" class=
-                          "mobile-button-container">
+                        <td>
+                          <!-- COPY -->
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                              <td align="center" style="border-radius: 3px;" bgcolor=
-                              "#236792"><a tal:attributes="href view/getParentURL|nothing" target="_blank"
-                              style=
-                              "font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #236792; display: inline-block;"
-                              class="mobile-button">Learn More &#8594;</a></td>
+                              <td align="left" style=
+                                "font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #236792; padding-top: 30px; font-weight: bold;"
+                                class="padding" tal:content="context/Title|nothing"> </td>
+                            </tr>
+                            <tr>
+                              <td align="left" style=
+                                "padding: 20px 0 0 0; font-size: 17px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666; font-weight: bold;"
+                                class="padding" tal:content="context/Description|nothing"> </td>
+                            </tr>
+                            <tr tal:condition="context/getText|nothing">
+                              <td align="left" style=
+                                "padding: 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;"
+                                class="padding">
+                                <metal:field 
+                                  use-macro="python:context.widget('text', mode='view')">
+                                  Body text
+                                </metal:field>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tal:event
+                        tal:condition="python: context.portal_type == 'Event'"
+                        tal:define="item_start context/start|context/StartDate|nothing;
+                                    location context/location|nothing;
+                                    map_link context/map_link|nothing;">
+                        <tr>
+                          <td align="left" 
+                              style="padding: 0 0 5px 0; font-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #666666;"
+                            class="padding-meta">
+                            <strong>When:</strong>
+                            <span tal:replace="python:toLocalizedTime(item_start,long_format=1)" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="left" 
+                              style="padding: 0 0 5px 0; font-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #666666;"
+                            class="padding-meta"
+                            tal:condition="location">
+                            <strong>Where:</strong>
+                            <a tal:omit-tag="not: map_link"
+                                tal:attributes="href map_link;">
+                              <span tal:replace="location" />
+                            </a>
+                          </td>
+                        </tr>
+                      </tal:event>
+                      <tr>
+                        <td align="center">
+                          <!-- BULLETPROOF BUTTON -->
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td align="center" style="padding-top: 25px;" class="padding">
+                                <table border="0" cellspacing="0" cellpadding="0" class=
+                                  "mobile-button-container"
+                                  tal:define="parent_url view/getParentURL|nothing;
+                                              context_url context/absolute_url;
+                                              portal_type context/portal_type;
+                                              learn_more_url python: portal_type =='Event' and context_url or parent_url"
+                                  tal:condition="learn_more_url">
+                                  <tr>
+                                    <td align="center" style="border-radius: 3px;" bgcolor=
+                                      "#236792"><a tal:attributes="href learn_more_url" target="_blank"
+                                      style=
+                                      "font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #236792; display: inline-block;"
+                                      class="mobile-button">Learn More &#8594;</a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
                             </tr>
                           </table>
                         </td>
@@ -149,173 +163,154 @@
             </td>
           </tr>
         </table>
-            </td>
-            </tr>
-            </table>
-            
       </td>
     </tr>
-
-    <tr>
+    <tr tal:define="items view/getAllItems|nothing"
+        tal:condition="items">
       <td bgcolor="#E6E9ED" align="center" style="padding: 70px 15px 70px 15px;" class=
-      "section-padding">
-        
-            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
-            <tr>
-            <td align="center" valign="top" width="500">
-            
-
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style=
-        "padding-bottom: 20px; max-width: 500px;" class="responsive-table">
-          <!-- TITLE -->
-
+        "section-padding">
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
           <tr>
-            <td align="left" style=
-            "padding: 0 0 10px 0; font-size: 25px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #236792;"
-            class="padding" colspan="2">Upcoming Events</td>
-          </tr>
-
-          <tr tal:repeat="item view/getAllItems">
-            <td 
-            tal:define="item_start item/start|item/StartDate|nothing;"
-            
-            align="center" height="100%" valign="top" width="100%" colspan="2">
-              
-                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
-                        <tr>
-                        <td align="center" valign="top" width="500">
-                        
-
-              <table align="center" border="0" cellpadding="0" cellspacing="0" width=
-              "100%" style="max-width:500;">
+            <td align="center" valign="top" width="500">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style=
+                "padding-bottom: 20px; max-width: 500px;" class="responsive-table">
+                <!-- TITLE -->
                 <tr>
-                  <td align="center" valign="top" style="font-size:0;">
-                    
-                                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
-                                    <tr>
+                  <td align="left" style=
+                    "padding: 0 0 10px 0; font-size: 25px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #236792;"
+                    class="padding" colspan="2">Upcoming Events</td>
+                </tr>
+                <tr tal:repeat="item items">
+                  <td 
+                    tal:define="item_start item/start|item/StartDate|nothing;"
+                    align="center" height="100%" valign="top" width="100%" colspan="2">
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                      <tr>
+                        <td align="center" valign="top" width="500">
+                          <table align="center" border="0" cellpadding="0" cellspacing="0" width=
+                            "100%" style="max-width:500;">
+                            <tr>
+                              <td align="center" valign="top" style="font-size:0;">
+                                <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                                  <tr>
                                     <td align="left" valign="top" width="115">
-                                    
-
-                    <div style=
-                    "display:inline-block; max-width:115px; vertical-align:top; width:100%;">
-                    <table align="left" border="0" cellpadding="0" cellspacing="0"
-                      width="115">
-                        <tr>
-                          <td valign="top" style="padding: 40px 0 0 0;" class=
-                          "mobile-hide">
-                            <img tal:attributes="src string:${portal_url}/++resource++atlas-newsletter/calendar.png"
-                          alt="Calendar" width=
-                          "105" height="105" border="0" style=
-                          "display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;" /></td>
-                        </tr>
-                      </table>
-                    </div>
+                                      <div style=
+                                        "display:inline-block; max-width:115px; vertical-align:top; width:100%;">
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0"
+                                          width="115">
+                                          <tr>
+                                            <td valign="top" style="padding: 40px 0 0 0;" class=
+                                              "mobile-hide">
+                                              <img tal:attributes="src string:${portal_url}/++resource++atlas-newsletter/calendar.png"
+                                                alt="Calendar" width=
+                                                "105" height="105" border="0" style=
+                                                "display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;" />
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </div>
                                     </td>
                                     <td align="left" valign="top" width="385">
-                                    
-
-                    <div style=
-                    "display:inline-block; max-width:385px; vertical-align:top; width:100%;">
-                    <table align="left" border="0" cellpadding="0" cellspacing="0"
-                      width="100%">
-                        <tr>
-                          <td style="padding: 40px 0 0 0;" class="no-padding">
-                            <!-- ARTICLE -->
-
-                            <table border="0" cellspacing="0" cellpadding="0" width=
-                            "100%">
-                              <tr tal:condition="python: item.portal_type == 'Event'">
-                                <td align="left" style=
-                                "padding: 0 0 5px 25px; font-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #666666;"
-                                class="padding-meta">
-
-                                    <span tal:replace="python:toLocalizedTime(item_start,long_format=0)" />
-
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td align="left" style=
-                                "padding: 0 0 5px 25px; font-size: 22px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;"
-                                class="padding" tal:content="item/Title"></td>
-                              </tr>
-
-                              <tr>
-                                <td align="left" style=
-                                "padding: 10px 0 15px 25px; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;"
-                                class="padding" tal:content="item/Description"></td>
-                              </tr>
-
-                              <tr>
-                                <td style="padding:0 0 45px 25px;" align="left" class=
-                                "padding">
-                                  <table border="0" cellspacing="0" cellpadding="0"
-                                  class="mobile-button-container">
-                                    <tr>
-                                      <td align="center">
-                                        <!-- BULLETPROOF BUTTON -->
-
-                                        <table width="100%" border="0" cellspacing="0"
-                                        cellpadding="0">
+                                      <div style=
+                                        "display:inline-block; max-width:385px; vertical-align:top; width:100%;">
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0"
+                                          width="100%">
                                           <tr>
-                                            <td align="left">
-                                              <table border="0" cellspacing="0"
-                                              cellpadding="0" class=
-                                              "mobile-button-container">
-                                                <tr>
-                                                  <td align="center" style=
-                                                  "border-radius: 3px;" bgcolor=
-                                                  "#236792"><a tal:attributes="href item/getURL"
-                                                  target="_blank" style=
-                                                  "font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 20px; border: 1px solid #236792; display: inline-block;"
-                                                  class="mobile-button">Learn More 
-                                                  &#8594;</a></td>
-                                                </tr>
-                                                <tal:event condition="python: item.portal_type == 'Event'">
-                                                <tr>
-                                                    <td style="font-size: 8px">
-                                                        <div style="visibility: hidden"> or </div>
-                                                    </td>
+                                            <td style="padding: 40px 0 0 0;" class="no-padding">
+                                              <!-- ARTICLE -->
+                                              <table border="0" cellspacing="0" cellpadding="0" width=
+                                                "100%">
+                                                <tr tal:condition="python: item.portal_type == 'Event'">
+                                                  <td align="left" style=
+                                                    "padding: 0 0 5px 25px; font-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #666666;"
+                                                    class="padding-meta">
+                                                    <span tal:replace="python:toLocalizedTime(item_start,long_format=0)" />
+                                                  </td>
                                                 </tr>
                                                 <tr>
-                                                  <td align="center" style=
-                                                  "border-radius: 3px;" bgcolor=
-                                                  "#236792"><a tal:attributes="href string:${item/getURL}/ics_view"
-                                                  target="_blank" style=
-                                                  "font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 20px; border: 1px solid #236792; display: inline-block;"
-                                                  class="mobile-button">Add to Calendar 
-                                                  &#8594;</a></td>
+                                                  <td align="left" style=
+                                                    "padding: 0 0 5px 25px; font-size: 22px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;"
+                                                    class="padding" tal:content="item/Title"></td>
                                                 </tr>
-                                                </tal:event>
+                                                <tr>
+                                                  <td align="left" style=
+                                                    "padding: 10px 0 15px 25px; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;"
+                                                    class="padding" tal:content="item/Description"></td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="padding:0 0 45px 25px;" align="left" class=
+                                                    "padding">
+                                                    <table border="0" cellspacing="0" cellpadding="0"
+                                                      class="mobile-button-container">
+                                                      <tr>
+                                                        <td align="center">
+                                                          <!-- BULLETPROOF BUTTON -->
+                                                          <table width="100%" border="0" cellspacing="0"
+                                                            cellpadding="0">
+                                                            <tr>
+                                                              <td align="left">
+                                                                <table border="0" cellspacing="0"
+                                                                  cellpadding="0" class=
+                                                                  "mobile-button-container">
+                                                                  <tr>
+                                                                    <td align="center" style=
+                                                                      "border-radius: 3px;" bgcolor=
+                                                                      "#236792"><a tal:attributes="href item/getURL"
+                                                                      target="_blank" style=
+                                                                      "font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 20px; border: 1px solid #236792; display: inline-block;"
+                                                                      class="mobile-button">Learn More 
+                                                                      &#8594;</a>
+                                                                    </td>
+                                                                  </tr>
+                                                                  <tal:event condition="python: item.portal_type == 'Event'">
+                                                                    <tr>
+                                                                      <td style="font-size: 8px">
+                                                                        <div style="visibility: hidden"> or </div>
+                                                                      </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <td align="center" style=
+                                                                        "border-radius: 3px;" bgcolor=
+                                                                        "#236792"><a tal:attributes="href string:${item/getURL}/ics_view"
+                                                                        target="_blank" style=
+                                                                        "font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 20px; border: 1px solid #236792; display: inline-block;"
+                                                                        class="mobile-button">Add to Calendar 
+                                                                        &#8594;</a>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tal:event>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+                                                  </td>
+                                                </tr>
                                               </table>
                                             </td>
                                           </tr>
                                         </table>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
+                                      </div>
                                     </td>
-                                    </tr>
-                                    </table>
-                                    
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
-                        </td>
-                        </tr>
-                        </table>
-                        
             </td>
           </tr>
-
+        </table>
+      </td>
+    </tr>
   </table>
   <img tal:attributes="src string:blank.gif?title=${context/Title}" alt="" width="1" height="1" />
-</body>
+  </body>
 </html>
