@@ -2563,10 +2563,15 @@ html body#content {
 #content ul.kupu-tabs li {
   display: inline; }
 
-.kupu-tb {
+div.kupu-tb,
+.kupu-tb#toolbar {
   border: none;
+  background-color: #cde2a7;
   border-bottom: 1px solid #74ae0b;
   width: auto; }
+  div.kupu-tb .kupu-tb-buttons button,
+  .kupu-tb#toolbar .kupu-tb-buttons button {
+    border-color: #cde2a7; }
 
 div.kupu-drawer,
 div div.kupu-panels,
