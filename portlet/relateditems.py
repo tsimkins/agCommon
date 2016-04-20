@@ -52,8 +52,10 @@ class Renderer(base.Renderer):
 
     @property
     def available(self):
-        return self.context.computeRelatedItems()
-
+        if hasattr(self.context, 'getRawRelatedItems'):
+            return len(self.context.getRawRelatedItems()) > 0
+        
+        return False
 
 class AddForm(base.AddForm):
     form_fields = form.Fields(IRelatedItems)

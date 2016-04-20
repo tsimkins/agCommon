@@ -8,7 +8,7 @@
 <div metal:define-macro="relatedItems"
     tal:define="getInfoFor python:view.wtool.getInfoFor;
                 normalizeString nocall: context/@@plone/normalizeString">
-        <tal:relatedItems tal:define="related python:here.computeRelatedItems();">
+        <tal:relatedItems tal:define="related context/getRelatedItems">
             <tal:block tal:condition="python:related">
                 <div class="visualClear" id="clear-space-before-relatedItemBox"><!-- --></div>
                 <tal:fieldset tal:define="related_content context/related_content|string:Related content">
