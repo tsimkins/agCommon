@@ -309,7 +309,7 @@ class AgCommonUtilities(BrowserView):
 
         # Tile folder view
         if hasattr(self.context, 'getLayout') and \
-           self.context.getLayout() in ['folder_summary_view'] and \
+           self.context.getLayout() in ['folder_summary_view', 'subfolder_view'] and \
            ITileFolder.providedBy(self.context):
                 body_classes.append('tile-folder')
 

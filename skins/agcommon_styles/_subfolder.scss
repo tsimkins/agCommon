@@ -35,7 +35,16 @@ body.template-subfolder_view {
             .tileSubItem {
                 margin-left: 1.5em;
                 margin-top: 0;
-                
+
+                .tileitem-width-100,
+                .tileitem-width-50,
+                .tileitem-width-33,
+                .tileitem-width-25,
+                .tileitem-width-20 {
+                    clear: both;
+                    width: auto;
+                }
+
                 .tileItem {
                     margin: 0.375em 0 1em;
                     padding: 0;

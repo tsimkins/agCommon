@@ -460,6 +460,13 @@ body.template-subfolder_view #content .tileItem > .tileItem .facultyStaffDirecto
 body.template-subfolder_view #content .tileItem .tileSubItem {
   margin-left: 1.5em;
   margin-top: 0; }
+  body.template-subfolder_view #content .tileItem .tileSubItem .tileitem-width-100,
+  body.template-subfolder_view #content .tileItem .tileSubItem .tileitem-width-50,
+  body.template-subfolder_view #content .tileItem .tileSubItem .tileitem-width-33,
+  body.template-subfolder_view #content .tileItem .tileSubItem .tileitem-width-25,
+  body.template-subfolder_view #content .tileItem .tileSubItem .tileitem-width-20 {
+    clear: both;
+    width: auto; }
   body.template-subfolder_view #content .tileItem .tileSubItem .tileItem {
     margin: 0.375em 0 1em;
     padding: 0; }

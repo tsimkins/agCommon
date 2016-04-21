@@ -411,6 +411,24 @@
     />
 
     <browser:page
+        for="Products.CMFCore.interfaces._content.IFolderish"
+        name="subfolder_view"      
+        class=".FolderView"
+        template="templates/subfolder_view.pt"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <browser:menuItem
+        for="Products.CMFCore.interfaces._content.IFolderish"
+        menu="plone_displayviews"
+        title="Tile Subfolder View"
+        action="@@subfolder_view"
+        layer="..interfaces.IThemeSpecific"
+        description="A tiled subfolder"
+    />
+
+    <browser:page
         for="agsci.UniversalExtender.interfaces.IFilePublicationExtender"
         name="file_view"
         class=".PublicationView"

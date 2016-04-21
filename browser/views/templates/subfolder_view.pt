@@ -41,7 +41,8 @@
                          repeat="subfolder_brain folderContents">
 
                 <div class="tileItem"
-                     tal:define="subfolder subfolder_brain/getObject">
+                     tal:define="subfolder subfolder_brain/getObject"
+                     tal:attributes="class python: view.getItemClass(subfolder, 'subfolder_view')">
 
                     <h2 class="tileHeadline">
                         <a 
