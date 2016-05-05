@@ -73,6 +73,7 @@ label {
     }
     
     .documentText {
+        
         ul {
             margin: 0.375em 0 1.125em 2.5em;
             list-style-image: url(bullet.png);
@@ -81,6 +82,11 @@ label {
 
         p {
             margin: 0.375em 0 1.125em 0;
+
+            img {
+                max-width: 100%;
+            }
+
         }
 
         dd {
