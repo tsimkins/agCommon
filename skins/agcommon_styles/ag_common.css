@@ -2718,6 +2718,7 @@ ul.kupu-tabs li {
 body.icons-on #content a.state-atlas-archive:after,
 body.icons-on #content a.state-atlas-enhance:after,
 body.icons-on #content a.state-atlas-web-team-review:after,
+body.icons-on #content a.state-atlas-on-hold:after,
 body.icons-on #content a.state-atlas-feedback:after,
 body.icons-on #content a.state-atlas-pending:after,
 body.icons-on #content a.state-atlas-ready:after {
@@ -2735,6 +2736,8 @@ body.icons-on #content a.state-atlas-enhance:after {
   content: "Atlas Enhance"; }
 body.icons-on #content a.state-atlas-web-team-review:after {
   content: "Atlas Web Team Review"; }
+body.icons-on #content a.state-atlas-on-hold:after {
+  content: "Atlas Web Team On Hold"; }
 body.icons-on #content a.state-atlas-feedback:after {
   content: "Atlas Feedback"; }
 body.icons-on #content a.state-atlas-pending:after {
@@ -2746,11 +2749,13 @@ body.icons-on #content a.state-atlas-ready:after {
 #plone-contentmenu-workflow .state-atlas-archive,
 #plone-contentmenu-workflow .state-atlas-enhance,
 #plone-contentmenu-workflow .state-atlas-web-team-review,
+#plone-contentmenu-workflow .state-atlas-on-hold,
 #plone-contentmenu-workflow .state-atlas-feedback,
 #plone-contentmenu-workflow .state-atlas-pending,
 #plone-contentmenu-workflow .state-atlas-ready, .atlas-workflow .state-atlas-archive,
 .atlas-workflow .state-atlas-enhance,
 .atlas-workflow .state-atlas-web-team-review,
+.atlas-workflow .state-atlas-on-hold,
 .atlas-workflow .state-atlas-feedback,
 .atlas-workflow .state-atlas-pending,
 .atlas-workflow .state-atlas-ready {

@@ -5,6 +5,7 @@ body.icons-on {
         a.state-atlas-archive:after,
         a.state-atlas-enhance:after,
         a.state-atlas-web-team-review:after,
+        a.state-atlas-on-hold:after,
         a.state-atlas-feedback:after,
         a.state-atlas-pending:after,
         a.state-atlas-ready:after {
@@ -29,6 +30,10 @@ body.icons-on {
         a.state-atlas-web-team-review:after {
             content: "Atlas Web Team Review";
         }
+
+        a.state-atlas-on-hold:after {
+            content: "Atlas Web Team On Hold";
+        }
         
         a.state-atlas-feedback:after {
             content: "Atlas Feedback";
@@ -50,6 +55,7 @@ body.icons-on {
     .state-atlas-archive,
     .state-atlas-enhance,
     .state-atlas-web-team-review,
+    .state-atlas-on-hold,
     .state-atlas-feedback,
     .state-atlas-pending,
     .state-atlas-ready {    
