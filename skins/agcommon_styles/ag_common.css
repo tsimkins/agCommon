@@ -2797,7 +2797,7 @@ body.icons-on #content a.state-atlas-ready:after {
         margin-bottom: 0; }
         #content .atlas-review-nav ul li a {
           border-bottom: none !important;
-          padding: 0.75em 0.75em;
+          padding: 0.75em 0.675em;
           margin: 0;
           border-left: 1px solid #E6E6E6;
           display: block;
