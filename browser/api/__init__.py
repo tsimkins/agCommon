@@ -175,13 +175,16 @@ class BaseView(BrowserView):
                         # include mime type
                         if field.type in ['blob', ]:
 
-                            if v.data:
+                            # Only include blob data if 'full' in URL parameters
+                            if self.request.form.get('full', None):
 
-                                data[field.getName()] = {
-                                                            'content_type' : v.getContentType(), 
-                                                            'data' : base64.b64encode(v.data),
-                                                            'filename' : v.getFilename(),
-                                }
+                                if v.data:
+    
+                                    data[field.getName()] = {
+                                                                'content_type' : v.getContentType(), 
+                                                                'data' : base64.b64encode(v.data),
+                                                                'filename' : v.getFilename(),
+                                    }
 
                         else:
                             # Set the value of the field in the return list
