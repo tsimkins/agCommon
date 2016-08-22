@@ -9,6 +9,7 @@ from Products.agCommon import toISO
 from collective.contentleadimage.utils import getImageAndCaptionFieldNames, getImageAndCaptionFields
 from zope.component import queryAdapter
 import Missing
+import base64
 import json
 import re
 import urllib2
@@ -155,27 +156,36 @@ class BaseView(BrowserView):
 
         for e in extenders:
             adapter = queryAdapter(self.context, ISchemaExtender, e)
-            
-            if adapter:
-            
-                for field in adapter.getFields():
 
-                    # Skip blob fields for now
-                    if field.type in ['blob', ]:
-                        continue
+            if adapter:
+
+                for field in adapter.getFields():
 
                     # Get the value of the field
                     v = field.get(self.context)
-                    
+
                     # if the field has a value
                     if v:
-                        
+
                         # Filter out blank list items
                         if isinstance(v, (list, tuple,)):
                             v = [x for x in v if x]
-    
-                        # Set the value of the field in the return list
-                        data[field.getName()] = v
+
+                        # If blob field type, encode binary data and
+                        # include mime type
+                        if field.type in ['blob', ]:
+
+                            if v.data:
+
+                                data[field.getName()] = {
+                                                            'content_type' : v.getContentType(), 
+                                                            'data' : base64.b64encode(v.data),
+                                                            'filename' : v.getFilename(),
+                                }
+
+                        else:
+                            # Set the value of the field in the return list
+                            data[field.getName()] = v
 
         return data
 
