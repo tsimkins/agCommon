@@ -1,4 +1,4 @@
-from .. import BaseView
+from . import BaseView
 from Products.CMFCore.utils import getToolByName
 
 class PloneSiteView(BaseView):

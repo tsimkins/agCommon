@@ -20,7 +20,7 @@
     <browser:page
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
         name="api-json"
-        class=".plone.PloneSiteView"
+        class=".plone_site.PloneSiteView"
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         />
@@ -55,7 +55,7 @@
     <browser:page
         for="Products.ATContentTypes.interfaces.topic.IATTopic"
         name="api-json"
-        class=".archetypes.topic.TopicView"
+        class=".at.topic.TopicView"
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         />
@@ -63,7 +63,7 @@
     <browser:page
         for="Products.ATContentTypes.interfaces.folder.IATFolder"
         name="api-json"
-        class=".archetypes.folder.FolderView"
+        class=".at.folder.FolderView"
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         />
