@@ -1,10 +1,13 @@
 from agsci.w3c.content import getText
+from archetypes.schemaextender.interfaces import ISchemaExtender
 from BeautifulSoup import BeautifulSoup
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
+from Products.Five.utilities.interfaces import IMarkerInterfaces
 from Products.agCommon import toISO
 from collective.contentleadimage.utils import getImageAndCaptionFieldNames, getImageAndCaptionFields
+from zope.component import queryAdapter
 import Missing
 import json
 import re
@@ -20,7 +23,7 @@ class BaseView(BrowserView):
     def format_key(self, name):
         s1 = first_cap_re.sub(r'\1_\2', name)
         return all_cap_re.sub(r'\1_\2', s1).lower()
-    
+
     @property
     def portal_catalog(self):
         return getToolByName(self.context, 'portal_catalog')
@@ -29,7 +32,7 @@ class BaseView(BrowserView):
         portal_transforms = getToolByName(self.context, 'portal_transforms')
         text = portal_transforms.convert('html_to_text', html).getData()
         return text
-        
+
 
     def getMetadata(self):
         m = self.portal_catalog.getMetadataForUID("/".join(self.context.getPhysicalPath()))
@@ -87,6 +90,8 @@ class BaseView(BrowserView):
             'SearchableText',
             'sortable_title',
             'total_comments',
+            'extension_publication_column_count',
+            'show_related_items',
         ]
 
     def filterData(self, data):
@@ -100,7 +105,7 @@ class BaseView(BrowserView):
                 continue
 
             v = data[i]
-            
+
             if isinstance(v, DateTime):
                 data[i] = toISO(data[i])
             elif i == 'getClassificationNames':
@@ -110,7 +115,7 @@ class BaseView(BrowserView):
                 data['creators'] = data[i]
                 del data[i]
 
-        # Second pass: Ensure keys are non-camel case lowercase                
+        # Second pass: Ensure keys are non-camel case lowercase
         for i in data.keys():
             formatted_key = self.format_key(i)
 
@@ -120,22 +125,80 @@ class BaseView(BrowserView):
 
         return data
 
+    def getExtenderData(self):
+
+        data = {}
+
+        extenders = [
+            'agsci.DepartmentExtender.extender.ResearchExtender',
+            'agsci.DepartmentExtender.extender.FSDPersonResearchExtender',
+            'agsci.ExtensionExtender.extender.ExtensionExtender',
+            'agsci.ExtensionExtender.extender.FSDExtensionExtender',
+            'agsci.ExtensionExtender.extender.ExtensionContentPublicationExtender',
+            'agsci.ExtensionExtender.extender.ExtensionFilePublicationExtender',
+            'agsci.ExtensionExtender.extender.ExtensionCountiesExtender',
+            'agsci.ExtensionExtender.extender.ExtensionEventExtender',
+            'agsci.ExtensionExtender.extender.TranslationExtender',
+            'agsci.ExtensionExtender.extender.CourseExtender',
+            'agsci.UniversalExtender.extender.FSDPersonExtender',
+            'agsci.UniversalExtender.extender.EventExtender',
+            'agsci.UniversalExtender.extender.NewsItemExtender',
+            'agsci.UniversalExtender.extender.TagExtender',
+            'agsci.UniversalExtender.extender.FolderExtender',
+            'agsci.UniversalExtender.extender.FolderTopicExtender',
+            'agsci.UniversalExtender.extender.TopicExtender',
+            'agsci.UniversalExtender.extender.AllContentTypesExtender',
+            'agsci.UniversalExtender.extender.FullWidthTableOfContentsExtender',
+            'agsci.UniversalExtender.extender.FilePublicationExtender',
+            'agsci.UniversalExtender.extender.ContentPublicationExtender',
+        ]
+
+        for e in extenders:
+            adapter = queryAdapter(self.context, ISchemaExtender, e)
+            
+            if adapter:
+            
+                for field in adapter.getFields():
+
+                    # Skip blob fields for now
+                    if field.type in ['blob', ]:
+                        continue
+
+                    # Get the value of the field
+                    v = field.get(self.context)
+                    
+                    # if the field has a value
+                    if v:
+                        
+                        # Filter out blank list items
+                        if isinstance(v, (list, tuple,)):
+                            v = [x for x in v if x]
+    
+                        # Set the value of the field in the return list
+                        data[field.getName()] = v
+
+        return data
+
     def getBaseData(self):
         data = self.getCatalogData()
 
         # Object URL
         url = self.context.absolute_url()
         data['url'] = url
-        
+
         if data.get('hasContentLeadImage', False):
             img_field = getImageAndCaptionFieldNames(self.context)[0]
             img_caption_field = getImageAndCaptionFields(self.context)[1]
 
-            if img_field: 
+            if img_field:
                 data['image_url'] = '%s/%s' % (data['url'], img_field)
-                
+
             if img_caption_field:
                 data['image_caption'] = img_caption_field.get(self.context)
+
+        # Additional Fields provided by custom extenders
+        extender_data = self.getExtenderData()
+        data.update(extender_data)
 
         # Get the html and text of the content if the 'full' parameter is used
         if self.request.form.get('full', None):
@@ -143,38 +206,38 @@ class BaseView(BrowserView):
                 html = getText(self.context)
             except:
                 pass
-            else:    
+            else:
                 if html:
                     soup = BeautifulSoup(html)
-                    
+
                     # Convert relative img src to full URL path
                     for img in soup.findAll('img'):
                         src = img.get('src')
                         if src and not src.startswith('http'):
                             img['src'] = urlparse.urljoin(url, src)
-                    
+
                     data['html'] = repr(soup)
                     data['text'] = self.html_to_text(html).strip()
 
         return data
-    
+
     def getData(self, recursive=True):
         return self.getBaseData()
 
     def getFilteredData(self, recursive=True):
         data = self.getData(recursive=recursive)
-        return self.filterData(data)        
+        return self.filterData(data)
 
     def getJSON(self):
         return json.dumps(self.getFilteredData(), indent=4)
-        
+
     def __call__(self):
         json = self.getJSON()
         self.request.response.setHeader('Content-Type', 'application/json')
         return json
 
 def getAPIData(object_url):
-        
+
     # Grab JSON data
     json_url = '%s/@@api-json' % object_url
 
