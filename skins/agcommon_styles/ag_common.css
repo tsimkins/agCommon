@@ -2721,7 +2721,9 @@ body.icons-on #content a.state-atlas-web-team-review:after,
 body.icons-on #content a.state-atlas-on-hold:after,
 body.icons-on #content a.state-atlas-feedback:after,
 body.icons-on #content a.state-atlas-pending:after,
-body.icons-on #content a.state-atlas-ready:after {
+body.icons-on #content a.state-atlas-ready:after,
+body.icons-on #content a.state-atlas-import-article:after,
+body.icons-on #content a.state-atlas-import-video:after {
   background-color: #9561AE;
   color: #FFFFFF !important;
   display: inline-block;
@@ -2744,6 +2746,9 @@ body.icons-on #content a.state-atlas-pending:after {
   content: "Atlas Pending"; }
 body.icons-on #content a.state-atlas-ready:after {
   content: "Atlas Ready"; }
+body.icons-on #content a.state-atlas-import-article:after,
+body.icons-on #content a.state-atlas-import-video:after {
+  content: "Atlas Imported"; }
 
 /* Add colors for Atlas states */
 #plone-contentmenu-workflow .state-atlas-archive,
@@ -2752,13 +2757,17 @@ body.icons-on #content a.state-atlas-ready:after {
 #plone-contentmenu-workflow .state-atlas-on-hold,
 #plone-contentmenu-workflow .state-atlas-feedback,
 #plone-contentmenu-workflow .state-atlas-pending,
-#plone-contentmenu-workflow .state-atlas-ready, .atlas-workflow .state-atlas-archive,
+#plone-contentmenu-workflow .state-atlas-ready,
+#plone-contentmenu-workflow .state-atlas-import-article,
+#plone-contentmenu-workflow .state-atlas-import-video, .atlas-workflow .state-atlas-archive,
 .atlas-workflow .state-atlas-enhance,
 .atlas-workflow .state-atlas-web-team-review,
 .atlas-workflow .state-atlas-on-hold,
 .atlas-workflow .state-atlas-feedback,
 .atlas-workflow .state-atlas-pending,
-.atlas-workflow .state-atlas-ready {
+.atlas-workflow .state-atlas-ready,
+.atlas-workflow .state-atlas-import-article,
+.atlas-workflow .state-atlas-import-video {
   background-color: #9561AE;
   border: 1px solid #9561AE;
   border-radius: 0.375em;
