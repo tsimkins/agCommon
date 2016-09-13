@@ -67,5 +67,21 @@
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         />
+
+    <browser:page
+        for="agsci.subsite.content.interfaces.ISection"
+        name="api-json"
+        class=".at.folder.FolderView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <browser:page
+        for="agsci.subsite.content.interfaces.ISubsite"
+        name="api-json"
+        class=".at.folder.FolderView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
         
 </configure>
