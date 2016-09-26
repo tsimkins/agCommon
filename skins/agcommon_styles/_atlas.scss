@@ -9,6 +9,7 @@ body.icons-on {
         a.state-atlas-feedback:after,
         a.state-atlas-pending:after,
         a.state-atlas-ready:after,
+        a.state-atlas-imported:after,
         a.state-atlas-import-article:after,
         a.state-atlas-import-video:after  {
             background-color: $atlasBackgroundColor;
@@ -49,6 +50,7 @@ body.icons-on {
             content: "Atlas Ready";
         }
 
+        a.state-atlas-imported:after,
         a.state-atlas-import-article:after,
         a.state-atlas-import-video:after {
             content: "Atlas Imported";
@@ -67,6 +69,7 @@ body.icons-on {
     .state-atlas-feedback,
     .state-atlas-pending,
     .state-atlas-ready,
+    .state-atlas-imported,
     .state-atlas-import-article,
     .state-atlas-import-video {    
         background-color: $atlasBackgroundColor;
