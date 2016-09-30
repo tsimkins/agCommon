@@ -327,10 +327,10 @@ class HomepageImageViewlet(AgCommonViewlet):
         return ([], [])
 
     def image_urls(self):
-        return " ".join(self.image_data()[0])
+        return ";".join(self.image_data()[0])
 
     def image_heights(self):
-        return " ".join(self.image_data()[1])
+        return ";".join(self.image_data()[1])
 
     @property
     def portal_catalog(self):
