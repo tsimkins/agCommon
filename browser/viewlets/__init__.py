@@ -1,7 +1,7 @@
 from AccessControl import getSecurityManager
 from Acquisition import aq_inner, aq_base, aq_chain
 from DateTime import DateTime
-from Products.agCommon import getSearchConfig, toISO
+from Products.agCommon import getSearchConfig, toISO, getBackgroundImages
 from Products.ATContentTypes.interfaces.event import IATEvent
 from Products.ATContentTypes.interfaces.news import IATNewsItem
 from Products.FacultyStaffDirectory.interfaces.person import IPerson
@@ -307,6 +307,21 @@ class HomepageTextViewlet(AgCommonViewlet):
 
 class HomepageImageViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/homepageimage.pt')
+    
+    @memoize
+    def image_data(self):
+        p = self.context.aq_parent
+
+        if 'background-images' in p.objectIds():
+            return getBackgroundImages(p['background-images'])
+            
+        return ([], [])
+
+    def image_urls(self):
+        return " ".join(self.image_data()[0])        
+
+    def image_heights(self):
+        return " ".join(self.image_data()[1])
 
     @property
     def portal_catalog(self):

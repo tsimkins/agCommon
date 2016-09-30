@@ -1,4 +1,9 @@
-<div id="homepageimage" tal:condition="not:view/slider_has_contents" tal:attributes="class python: view.hide_breadcrumbs and 'nobreadcrumbs' or ''"></div>
+<div id="homepageimage" 
+    tal:condition="not:view/slider_has_contents" 
+    tal:attributes="class python: view.hide_breadcrumbs and 'nobreadcrumbs' or '';
+                    data-image-urls view/image_urls|nothing;
+                    data-image-heights view/image_heights|nothing;
+                    "></div>
 
 <tal:tile_homepage_slider
      condition="python: view.isLayout(views=['tile_homepage_view']) and not view.slider_has_contents">
