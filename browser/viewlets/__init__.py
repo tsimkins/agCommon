@@ -1,7 +1,8 @@
 from AccessControl import getSecurityManager
 from Acquisition import aq_inner, aq_base, aq_chain
 from DateTime import DateTime
-from Products.agCommon import getSearchConfig, toISO, getBackgroundImages
+from Products.agCommon import getSearchConfig, toISO, getBackgroundImages, \
+                              MAX_HOMEPAGE_IMAGE_WIDTH, MAX_HOMEPAGE_IMAGE_HEIGHT
 from Products.ATContentTypes.interfaces.event import IATEvent
 from Products.ATContentTypes.interfaces.news import IATNewsItem
 from Products.FacultyStaffDirectory.interfaces.person import IPerson
@@ -78,9 +79,9 @@ class AgCommonViewlet(ViewletBase):
     @property
     def hide_breadcrumbs(self):
         # Determine if we should hide breadcrumbs
-        
+
         # The answer is now 'no.'
-        return False        
+        return False
 
 
     def isLayout(self, views=[]):
@@ -185,7 +186,7 @@ class AgCommonViewlet(ViewletBase):
     @memoize
     def getSection(self):
         return self.agcommon_utilities.getSection()
-        
+
     @property
     def portal_url(self):
         return self.context.portal_url()
@@ -272,19 +273,19 @@ class SectionTitleViewlet(AgCommonViewlet):
 
     def section_url(self):
         section = self.getSection()
-        
+
         if section:
             return section.absolute_url()
-        
+
         return None
 
-    
+
     def section_title(self):
         section = self.getSection()
-        
+
         if section:
             return section.Title()
-        
+
         return None
 
 
@@ -294,10 +295,10 @@ class HomepageColumnsViewlet(PortletViewlet):
 
 class HomepageTextViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/homepagetext.pt')
-    
+
     def showHomepageHeading(self):
         section = self.getSection()
-        
+
         if section:
             return (section.Title() == self.context.Title())
 
@@ -307,18 +308,26 @@ class HomepageTextViewlet(AgCommonViewlet):
 
 class HomepageImageViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/homepageimage.pt')
-    
+
     @memoize
     def image_data(self):
         p = self.context.aq_parent
 
         if 'background-images' in p.objectIds():
-            return getBackgroundImages(p['background-images'])
-            
+            max_height = self.get_agcommon_properties('max_homepage_image_width',
+                                                  MAX_HOMEPAGE_IMAGE_WIDTH)
+
+            max_width = self.get_agcommon_properties('max_homepage_image_height',
+                                                 MAX_HOMEPAGE_IMAGE_HEIGHT)
+
+            return getBackgroundImages(p['background-images'], 
+                                       maxWidth=max_height, 
+                                       maxHeight=max_width)
+
         return ([], [])
 
     def image_urls(self):
-        return " ".join(self.image_data()[0])        
+        return " ".join(self.image_data()[0])
 
     def image_heights(self):
         return " ".join(self.image_data()[1])
@@ -364,9 +373,9 @@ class HomepageImageViewlet(AgCommonViewlet):
     def showTitle(self):
         if self.slider_has_contents:
             return False
-        
+
         return not IPloneSiteRoot.providedBy(self.context.aq_parent)
-        
+
 
 class FlexsliderViewlet(HomepageImageViewlet, FolderView):
     index = ViewPageTemplateFile('templates/flexslider.pt')
@@ -959,35 +968,35 @@ class MultiSearchViewlet(AgCommonViewlet):
 
     def getSearchOptions(self):
 
-        return getSearchConfig(context=self.context, path=self.section_path, 
+        return getSearchConfig(context=self.context, path=self.section_path,
                                section_title=self.section_title,
                                site_title=self.site_title)
 
     @property
     def site_title(self):
         site = getSite()
-    
+
         if site:
             return site.Title()
-        
+
         return None
 
     @property
     def section_title(self):
         section = self.getSection()
-    
+
         if section:
             return section.Title()
-        
+
         return None
 
     @property
     def section_path(self):
         section = self.getSection()
-    
+
         if section:
             return '/'.join(section.getPhysicalPath())
-        
+
         return None
 
 
@@ -1029,10 +1038,10 @@ class LocalSearchViewlet(MultiSearchViewlet):
     @property
     def section_path(self):
         section = self.context
-        
+
         if self.isDefaultPage:
             section = self.context.aq_parent
-    
+
         return ['/'.join(section.getPhysicalPath()), ]
 
 class ContentRelatedItems(ContentRelatedItemsBase):
@@ -1054,12 +1063,12 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/google-structured-data.pt')
 
     def getImage(self):
-        # Check for item image   
+        # Check for item image
         context = self.context
-        
+
         (image_field, image_caption_field) = getImageAndCaptionFields(context)
         (image_field_name, image_caption_field_name) = getImageAndCaptionFieldNames(context)
-                         
+
         if image_field and \
             image_field.get(context) and \
             image_field.get(context).get_size():
@@ -1095,7 +1104,7 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
                     'telephone': '+1-814-865-7521',
                     'url': 'http://agsci.psu.edu'
                     }
-            
+
         elif IATEvent.providedBy(context):
 
             data = {
@@ -1127,7 +1136,7 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
         elif IPerson.providedBy(context):
 
             jobTitles = context.getJobTitles()
-            
+
             if jobTitles:
                 job_title = jobTitles[0]
             else:
@@ -1159,12 +1168,12 @@ class GoogleStructuredDataViewlet(AgCommonViewlet):
 
         if data:
             return json.dumps(data, indent=4)
-            
+
         return None
 
 # Google Tag Manager
-# Note: This is not called from configure.zcml like a standard viewlet.  Google 
-# documentation says to include it immediately after the body tag, so that's 
+# Note: This is not called from configure.zcml like a standard viewlet.  Google
+# documentation says to include it immediately after the body tag, so that's
 # what we're doing in this case.  This is called from main_template with:
 #
 #    <tal:googletagmanager
@@ -1199,7 +1208,7 @@ class LogoViewlet(AgCommonViewlet):
             return 'http://www.psu.edu'
 
         elif self.site_header() == 'extension':
-            return '//extension.psu.edu'        
+            return '//extension.psu.edu'
 
         return '//agsci.psu.edu'
 

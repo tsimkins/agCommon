@@ -31,6 +31,7 @@ from Products.Five.utilities.interfaces import IMarkerInterfaces
 from agsci.UniversalExtender.interfaces import IUniversalPublicationExtender, IFilePublicationExtender, ITileFolder, IVideoPage, IVideoPlaylist
 
 MAX_HOMEPAGE_IMAGE_WIDTH = 950.0
+MAX_HOMEPAGE_IMAGE_HEIGHT = 360.0
 
 ATTEMPTS = 100
 
@@ -265,13 +266,13 @@ def bodyBackground(context, request):
 # Given a context, gets a list of all images and returns a JavaScript snippet
 # that randomly picks one of them.
 
-def getHomepageImage(context):
+def getHomepageImage(context, maxWidth=MAX_HOMEPAGE_IMAGE_WIDTH, maxHeight=MAX_HOMEPAGE_IMAGE_HEIGHT):
 
     (backgrounds, backgroundHeights) = getBackgroundImages(context)
     
     if not len(backgrounds):
         backgrounds = ['homepage_placeholder.jpg']
-        backgroundHeights = ['360']
+        backgroundHeights = ['%d' % maxHeight]
     
     return """
 
@@ -323,7 +324,7 @@ def getHomepageImage(context):
         }
     );
 
-    """ % (MAX_HOMEPAGE_IMAGE_WIDTH, ";".join(backgrounds), ";".join(backgroundHeights))
+    """ % (maxWidth, ";".join(backgrounds), ";".join(backgroundHeights))
 
 def getPortletHomepageImage(context, homepage_type="portlet"):
     return getPanoramaHomepageImage(context, homepage_type="portlet")
@@ -376,7 +377,9 @@ def getSubsiteHomepageImage(context):
     return getHomepageImage(context)
 
 
-def getBackgroundImages(context, maxHeight=360):
+def getBackgroundImages(context, 
+                        maxWidth=MAX_HOMEPAGE_IMAGE_WIDTH, 
+                        maxHeight=MAX_HOMEPAGE_IMAGE_HEIGHT):
     backgrounds = []
     backgroundHeights = []
     
@@ -384,7 +387,7 @@ def getBackgroundImages(context, maxHeight=360):
         backgrounds.append(myImage.absolute_url())
 
         # Initial scale for image to fit.  Note this is opposite of the dynamic calculation    
-        ratio = MAX_HOMEPAGE_IMAGE_WIDTH/myImage.getWidth()  
+        ratio = maxWidth/myImage.getWidth()  
         
         imageHeight = myImage.getHeight()*ratio
         
