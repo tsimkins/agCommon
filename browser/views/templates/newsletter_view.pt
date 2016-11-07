@@ -34,6 +34,8 @@ body, li, p {
     background: #FFFFFF;
     padding: 0;
     margin: 18pt 12pt 6pt 12pt;
+    float: none;
+    clear: both;
 }
 
 h1, h2, h3, .portletHeader, .documentDescription {
