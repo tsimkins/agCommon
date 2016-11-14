@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from Products.CMFCore.utils import getToolByName
 from Products.agCommon.browser.api import getAPIData
 from Products.agCommon.person.ldap import ldapPersonLookup
 from HTMLParser import HTMLParseError
@@ -30,7 +31,20 @@ def createPerson(psu_id, profile_url = None):
         raise ValueError("%s already in directory." % psu_id)
 
     data = ldapPersonLookup(psu_id)
-
+    
+    # Set default to TinyMCE
+    default_editor = 'TinyMCE'
+    
+    # Figure out what editor from Portal Properties
+    portal_properties = getToolByName(site, 'portal_properties')
+    
+    try:
+        site_properties = portal_properties.site_properties
+    except AttributeError:
+        pass
+    else:
+        default_editor = site_properties.getProperty('default_editor')
+    
     person_id = context.invokeFactory(type_name="FSDPerson", id=data.get('psu_id'), 
                         firstName=data.get('first_name'), 
                         lastName=data.get('last_name'),
@@ -43,7 +57,7 @@ def createPerson(psu_id, profile_url = None):
                         faxNumber=data.get('faxNumber'), 
                         biography=data.get('biography'),
                         jobTitles=data.get('job_title'), 
-                        userpref_wysiwyg_editor='TinyMCE'
+                        userpref_wysiwyg_editor=default_editor,
                         )
 
     o = context[person_id]
