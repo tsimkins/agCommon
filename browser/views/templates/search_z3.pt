@@ -54,6 +54,7 @@
         <form name="searchform"
               action="search"
               class="searchPage"
+              method="GET"
               tal:define="portal_types python: request.form.get('portal_type');
                           subjects python: request.form.get('Subject');
                           review_states python: request.form.get('review_state');
