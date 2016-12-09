@@ -259,7 +259,7 @@ table td.footer p {
 }
 
 .this-issue li {
-    font-size: 8.5pt;
+    font-size: 9.5pt;
     margin-bottom: 4pt;
     text-indent: 0;
 }
