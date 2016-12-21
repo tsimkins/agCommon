@@ -1212,6 +1212,10 @@ body.template-subfolder_view .two-column-right {
       cursor: pointer;
       display: block;
       background-color: transparent !important; }
+    #content #addthis .addthis_toolbox a > span > svg {
+      display: none;
+      margin-left: -10000px !important;
+      position: absolute; }
     #content #addthis .addthis_toolbox a.addthis_button_email > span {
       background-position: 0 0;
       width: 16px;

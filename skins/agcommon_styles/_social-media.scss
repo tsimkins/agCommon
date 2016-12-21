@@ -66,6 +66,12 @@
             display: block;
             background-color: transparent !important;
         }
+
+        a > span > svg {
+            display: none;
+            margin-left: -10000px !important;
+            position: absolute;
+        }
         
         a.addthis_button_email > span {
             background-position: 0 0;
