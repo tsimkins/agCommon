@@ -1270,6 +1270,8 @@ body.template-subfolder_view .two-column-right {
 
 #addthis #___plusone_0 {
   margin: 0 !important; }
+#addthis .google_plusone_iframe_widget {
+  width: auto !important; }
 
 /* No idea what this fixes */
 .comment {
