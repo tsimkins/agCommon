@@ -723,8 +723,6 @@ body.template-subfolder_view .two-column-right {
 #portal-column-one .portletHeader a,
 #portal-column-one .portletHeader a:hover {
   color: #4B4B4B; }
-#portal-column-one .portletFooter {
-  display: none; }
 
 /* ================= Portlet Types =====================*/
 /* Portlet */
