@@ -50,7 +50,8 @@ Note: insert-before and -after accept the value "*" which means
 
     <order manager="plone.abovecontent" skinname="agCommon">
         <viewlet name="plone.path_bar" insert-before="*"/>
-        <viewlet name="agcommon.homepageimage" insert-after="plone.path_bar" />
+        <viewlet name="plone.section_title" insert-after="plone.path_bar" />
+        <viewlet name="agcommon.homepageimage" insert-after="agcommon.homepageimage" />
         <viewlet name="collective.contentleadimage.header" insert-after="agcommon.homepageimage" />
     </order>
     
