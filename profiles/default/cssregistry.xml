@@ -157,4 +157,12 @@
     media="all" rel="stylesheet"
     rendering="import"/>
 
+<!-- Font Awesome (for web font icons) -->
+
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="none" conditionalcomment="" cookable="False"
+    enabled="on" expression="" id="++resource++font-awesome/css/font-awesome.css" insert-after="*"
+    media="all" rel="stylesheet"
+    rendering="import"/>
+
 </object>
