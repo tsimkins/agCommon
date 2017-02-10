@@ -132,16 +132,20 @@ def syncPerson(o, force=False, full=False):
     o.setOfficeCity(data.get('office_city', ''))
     o.setOfficeState(data.get('officestate', ''))
     o.setOfficePostalCode(data.get('office_postal_code', ''))
+    o.department_research_areas = data.get('department_research_areas', [])
+    o.extension_areas = data.get('extension_areas', [])
+            
+    # Set modification date to source modification date
+    if force:
+        o.setModificationDate(modification_date)
 
     # If "full" (e.g. full sync of all fields) is specified.
-    # This prevents department-specific attributes (job title, areas of 
-    # expertise, and classifications) from being overridden unless explicitly
+    # This prevents department-specific attributes (job titles and
+    # classifications) from being overridden unless explicitly
     # requested.
     
     if full:
         o.setJobTitles(data.get('job_titles', []))
-        o.department_research_areas = data.get('department_research_areas', [])
-        o.extension_areas = data.get('extension_areas', [])
     
         # Classifications
         classification_names = data.get('directory_classifications', [])
