@@ -139,7 +139,7 @@
  <stylesheet title="" applyPrefix="False" authenticated="False"
     cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="on" expression="" id="responsive.css" insert-after="*"
-    media="all" rel="stylesheet"
+    media="" rel="stylesheet"
     rendering="import"/>
 
 <!-- Searchbox -->
