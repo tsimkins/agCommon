@@ -92,6 +92,9 @@
         }
 
         .contentLeadImageContainer {
+            margin-left: 0;
+            margin-right: 0;
+
             a,
             a:hover {
                 cursor: pointer;
@@ -160,7 +163,7 @@
         }
         
         .tileFooter {
-            margin-top: 0;
+            margin: 0;
             font-size: 0.9375em;
         
             p {

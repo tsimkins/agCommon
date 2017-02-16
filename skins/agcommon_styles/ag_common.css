@@ -312,13 +312,16 @@ body {
       margin: 0.25em 0 0.25em 0; }
   #content .tileItem .tileDescription.no-description {
     display: none; }
-  #content .tileItem .contentLeadImageContainer a,
-  #content .tileItem .contentLeadImageContainer a:hover {
-    cursor: pointer; }
-  #content .tileItem .contentLeadImageContainer a:hover {
-    color: #003399;
-    text-decoration: none;
-    border-bottom: 1px solid #265FCF; }
+  #content .tileItem .contentLeadImageContainer {
+    margin-left: 0;
+    margin-right: 0; }
+    #content .tileItem .contentLeadImageContainer a,
+    #content .tileItem .contentLeadImageContainer a:hover {
+      cursor: pointer; }
+    #content .tileItem .contentLeadImageContainer a:hover {
+      color: #003399;
+      text-decoration: none;
+      border-bottom: 1px solid #265FCF; }
   #content .tileItem .tileSummaryLeadImage {
     margin: 0.5em 0 0.5em 0;
     border-top: 1px dashed #E6E6E6;
@@ -358,7 +361,7 @@ body {
     #content .tileItem .tileBody p, #content .tileItem .tileText p {
       margin: 0 0 0.5em 0; }
   #content .tileItem .tileFooter {
-    margin-top: 0;
+    margin: 0;
     font-size: 0.9375em; }
     #content .tileItem .tileFooter p {
       margin: 0.25em 0; }
