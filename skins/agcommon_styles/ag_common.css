@@ -2731,7 +2731,15 @@ body.icons-on #content a.state-atlas-pending:after,
 body.icons-on #content a.state-atlas-ready:after,
 body.icons-on #content a.state-atlas-imported:after,
 body.icons-on #content a.state-atlas-import-article:after,
-body.icons-on #content a.state-atlas-import-video:after {
+body.icons-on #content a.state-atlas-import-video:after,
+body.icons-on #content a.state-atlas-import-workshop-group:after,
+body.icons-on #content a.state-atlas-import-smart-sheet:after,
+body.icons-on #content a.state-atlas-import-curriculum:after,
+body.icons-on #content a.state-atlas-import-online-course:after,
+body.icons-on #content a.state-atlas-import-webinar:after,
+body.icons-on #content a.state-atlas-import-workshop:after,
+body.icons-on #content a.state-atlas-import-news-item:after,
+body.icons-on #content a.state-atlas-import-publication:after {
   background-color: #9561AE;
   color: #FFFFFF !important;
   display: inline-block;
@@ -2756,7 +2764,15 @@ body.icons-on #content a.state-atlas-ready:after {
   content: "Atlas Ready"; }
 body.icons-on #content a.state-atlas-imported:after,
 body.icons-on #content a.state-atlas-import-article:after,
-body.icons-on #content a.state-atlas-import-video:after {
+body.icons-on #content a.state-atlas-import-video:after,
+body.icons-on #content a.state-atlas-import-workshop-group:after,
+body.icons-on #content a.state-atlas-import-smart-sheet:after,
+body.icons-on #content a.state-atlas-import-curriculum:after,
+body.icons-on #content a.state-atlas-import-online-course:after,
+body.icons-on #content a.state-atlas-import-webinar:after,
+body.icons-on #content a.state-atlas-import-workshop:after,
+body.icons-on #content a.state-atlas-import-news-item:after,
+body.icons-on #content a.state-atlas-import-publication:after {
   content: "Atlas Imported"; }
 
 /* Add colors for Atlas states */
@@ -2769,7 +2785,15 @@ body.icons-on #content a.state-atlas-import-video:after {
 #plone-contentmenu-workflow .state-atlas-ready,
 #plone-contentmenu-workflow .state-atlas-imported,
 #plone-contentmenu-workflow .state-atlas-import-article,
-#plone-contentmenu-workflow .state-atlas-import-video, .atlas-workflow .state-atlas-archive,
+#plone-contentmenu-workflow .state-atlas-import-video,
+#plone-contentmenu-workflow .state-atlas-import-workshop-group,
+#plone-contentmenu-workflow .state-atlas-import-smart-sheet,
+#plone-contentmenu-workflow .state-atlas-import-curriculum,
+#plone-contentmenu-workflow .state-atlas-import-online-course,
+#plone-contentmenu-workflow .state-atlas-import-webinar,
+#plone-contentmenu-workflow .state-atlas-import-workshop,
+#plone-contentmenu-workflow .state-atlas-import-news-item,
+#plone-contentmenu-workflow .state-atlas-import-publication, .atlas-workflow .state-atlas-archive,
 .atlas-workflow .state-atlas-enhance,
 .atlas-workflow .state-atlas-web-team-review,
 .atlas-workflow .state-atlas-on-hold,
@@ -2778,7 +2802,15 @@ body.icons-on #content a.state-atlas-import-video:after {
 .atlas-workflow .state-atlas-ready,
 .atlas-workflow .state-atlas-imported,
 .atlas-workflow .state-atlas-import-article,
-.atlas-workflow .state-atlas-import-video {
+.atlas-workflow .state-atlas-import-video,
+.atlas-workflow .state-atlas-import-workshop-group,
+.atlas-workflow .state-atlas-import-smart-sheet,
+.atlas-workflow .state-atlas-import-curriculum,
+.atlas-workflow .state-atlas-import-online-course,
+.atlas-workflow .state-atlas-import-webinar,
+.atlas-workflow .state-atlas-import-workshop,
+.atlas-workflow .state-atlas-import-news-item,
+.atlas-workflow .state-atlas-import-publication {
   background-color: #9561AE;
   border: 1px solid #9561AE;
   border-radius: 0.375em;

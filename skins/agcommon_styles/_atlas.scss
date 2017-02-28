@@ -11,7 +11,15 @@ body.icons-on {
         a.state-atlas-ready:after,
         a.state-atlas-imported:after,
         a.state-atlas-import-article:after,
-        a.state-atlas-import-video:after  {
+        a.state-atlas-import-video:after,
+        a.state-atlas-import-workshop-group:after,
+        a.state-atlas-import-smart-sheet:after,
+        a.state-atlas-import-curriculum:after,
+        a.state-atlas-import-online-course:after,
+        a.state-atlas-import-webinar:after,
+        a.state-atlas-import-workshop:after,
+        a.state-atlas-import-news-item:after,
+        a.state-atlas-import-publication:after {
             background-color: $atlasBackgroundColor;
             color: #FFFFFF !important;
             display: inline-block;
@@ -52,7 +60,15 @@ body.icons-on {
 
         a.state-atlas-imported:after,
         a.state-atlas-import-article:after,
-        a.state-atlas-import-video:after {
+        a.state-atlas-import-video:after,
+        a.state-atlas-import-workshop-group:after,
+        a.state-atlas-import-smart-sheet:after,
+        a.state-atlas-import-curriculum:after,
+        a.state-atlas-import-online-course:after,
+        a.state-atlas-import-webinar:after,
+        a.state-atlas-import-workshop:after,
+        a.state-atlas-import-news-item:after,
+        a.state-atlas-import-publication:after {
             content: "Atlas Imported";
         }
         
@@ -71,7 +87,15 @@ body.icons-on {
     .state-atlas-ready,
     .state-atlas-imported,
     .state-atlas-import-article,
-    .state-atlas-import-video {    
+    .state-atlas-import-video,
+    .state-atlas-import-workshop-group,
+    .state-atlas-import-smart-sheet,
+    .state-atlas-import-curriculum,
+    .state-atlas-import-online-course,
+    .state-atlas-import-webinar,
+    .state-atlas-import-workshop,
+    .state-atlas-import-news-item,
+    .state-atlas-import-publication {    
         background-color: $atlasBackgroundColor;
         border: 1px solid $atlasBackgroundColor;
         border-radius: 0.375em;
