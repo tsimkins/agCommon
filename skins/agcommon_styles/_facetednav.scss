@@ -1,0 +1,77 @@
+/* CSS for faceted navigation in Syllabi */
+
+#content-core {
+    #faceted-form {
+
+        padding-top: 0;
+
+        #center-content-area {
+            margin-right: 33%;
+            width: 66.6667%;
+        }
+
+        #faceted-results {
+            .tileItem:first-child {
+                margin-top: 0;
+                padding-top: 0;
+            }
+        }
+
+        #right-area {
+
+            width: 30%;
+            padding: 0 1.5%;
+
+            .widget-fieldset {
+                border: none;
+                padding: 0;
+                margin: 0 0 1.5em 0;
+
+                legend {
+                    font-weight: 600;
+                    padding: 0;
+                    font-size: 1em;
+                }
+
+                form {
+
+                    font-size: 0.875em;
+
+                    input[id="SearchableText"] {
+                        margin: 0 3%;
+                        font-size: 0.875em;
+                        padding: 0.25em 1%;
+                        width: 92%
+                    }
+
+                    input[id="SearchableText_button"] {
+                        display: block;
+                        width: 20%;
+                        margin: 0.375em 0 0 3%;
+                        float: none;
+                        font-size: 0.875em;
+                    }
+
+                    ul {
+                        margin: 0 0 0 0.75em;
+
+                        li {
+                            margin: 0 0 0.625em 0;
+                            padding-left: 18px;
+                            line-height: 1.25;
+
+                            input {
+                                margin-left: -18px;
+                                margin-top: 2px;
+                            }
+
+                            label {
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
