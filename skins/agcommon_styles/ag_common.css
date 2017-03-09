@@ -2904,38 +2904,45 @@ body.icons-on #content a.state-atlas-import-publication:after {
   #content-core #faceted-form #right-area {
     width: 30%;
     padding: 0 1.5%; }
-    #content-core #faceted-form #right-area .widget-fieldset {
-      border: none;
+  #content-core #faceted-form #center-content-area .faceted-criteria dl, #content-core #faceted-form #center-content-area .faceted-criteria .faceted-criteria-hide-show, #content-core #faceted-form #center-content-area .faceted-criteria .faceted-criteria-reset, #content-core #faceted-form #right-area .faceted-criteria dl, #content-core #faceted-form #right-area .faceted-criteria .faceted-criteria-hide-show, #content-core #faceted-form #right-area .faceted-criteria .faceted-criteria-reset {
+    font-size: 0.875em;
+    margin-left: 1em; }
+  #content-core #faceted-form #center-content-area .faceted-criteria dl dt span, #content-core #faceted-form #right-area .faceted-criteria dl dt span {
+    font-weight: 600; }
+  #content-core #faceted-form #center-content-area .faceted-criteria dl dd, #content-core #faceted-form #right-area .faceted-criteria dl dd {
+    margin-left: 1em; }
+  #content-core #faceted-form #center-content-area .widget-fieldset, #content-core #faceted-form #right-area .widget-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5em 0; }
+    #content-core #faceted-form #center-content-area .widget-fieldset legend, #content-core #faceted-form #right-area .widget-fieldset legend {
+      font-weight: 600;
       padding: 0;
-      margin: 0 0 1.5em 0; }
-      #content-core #faceted-form #right-area .widget-fieldset legend {
-        font-weight: 600;
-        padding: 0;
-        font-size: 1em; }
-      #content-core #faceted-form #right-area .widget-fieldset form {
+      font-size: 1em; }
+    #content-core #faceted-form #center-content-area .widget-fieldset form, #content-core #faceted-form #right-area .widget-fieldset form {
+      font-size: 0.875em; }
+      #content-core #faceted-form #center-content-area .widget-fieldset form input[id="SearchableText"], #content-core #faceted-form #right-area .widget-fieldset form input[id="SearchableText"] {
+        margin: 0 3%;
+        font-size: 0.875em;
+        padding: 0.25em 1%;
+        width: 92%; }
+      #content-core #faceted-form #center-content-area .widget-fieldset form input[id="SearchableText_button"], #content-core #faceted-form #right-area .widget-fieldset form input[id="SearchableText_button"] {
+        display: block;
+        width: 20%;
+        margin: 0.375em 0 0 3%;
+        float: none;
         font-size: 0.875em; }
-        #content-core #faceted-form #right-area .widget-fieldset form input[id="SearchableText"] {
-          margin: 0 3%;
-          font-size: 0.875em;
-          padding: 0.25em 1%;
-          width: 92%; }
-        #content-core #faceted-form #right-area .widget-fieldset form input[id="SearchableText_button"] {
-          display: block;
-          width: 20%;
-          margin: 0.375em 0 0 3%;
-          float: none;
-          font-size: 0.875em; }
-        #content-core #faceted-form #right-area .widget-fieldset form ul {
-          margin: 0 0 0 0.75em; }
-          #content-core #faceted-form #right-area .widget-fieldset form ul li {
-            margin: 0 0 0.625em 0;
-            padding-left: 18px;
-            line-height: 1.25; }
-            #content-core #faceted-form #right-area .widget-fieldset form ul li input {
-              margin-left: -18px;
-              margin-top: 2px; }
-            #content-core #faceted-form #right-area .widget-fieldset form ul li label {
-              padding-left: 0; }
+      #content-core #faceted-form #center-content-area .widget-fieldset form ul, #content-core #faceted-form #right-area .widget-fieldset form ul {
+        margin: 0 0 0 0.75em; }
+        #content-core #faceted-form #center-content-area .widget-fieldset form ul li, #content-core #faceted-form #right-area .widget-fieldset form ul li {
+          margin: 0 0 0.625em 0;
+          padding-left: 18px;
+          line-height: 1.25; }
+          #content-core #faceted-form #center-content-area .widget-fieldset form ul li input, #content-core #faceted-form #right-area .widget-fieldset form ul li input {
+            margin-left: -18px;
+            margin-top: 2px; }
+          #content-core #faceted-form #center-content-area .widget-fieldset form ul li label, #content-core #faceted-form #right-area .widget-fieldset form ul li label {
+            padding-left: 0; }
 
 /* PloneFormGen Fields */
 .template-fg_base_view_p3 textarea {

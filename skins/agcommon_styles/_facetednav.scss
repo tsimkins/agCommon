@@ -21,6 +21,27 @@
 
             width: 30%;
             padding: 0 1.5%;
+        }
+        
+        #center-content-area, #right-area {
+
+            .faceted-criteria {
+                dl, .faceted-criteria-hide-show, .faceted-criteria-reset {
+                    font-size: 0.875em;
+                    margin-left: 1em;
+                }
+                
+                dl {
+                    dt {
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+                    dd {
+                        margin-left: 1em;
+                    }
+                }
+            }
 
             .widget-fieldset {
                 border: none;
