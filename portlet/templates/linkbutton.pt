@@ -6,7 +6,7 @@
 <div class="portlet portletLinkButton" tal:condition="view/linkButtons">
         
     <div tal:repeat="lbutton view/linkButtons"
-        tal:attributes="id string:linkbutton-${lbutton/id};
+        tal:attributes="data-linkbutton lbutton/id;
                         class python: view.getClass(lbutton);">
         <tal:linkButton  
             tal:define="title lbutton/title;

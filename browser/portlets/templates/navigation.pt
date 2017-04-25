@@ -9,11 +9,14 @@
                 isLeftColumn view/isLeftColumn|nothing;">
 
     <div class="left-column-navigation" 
+                role="navigation"
+                aria-labelledby="left-column-navigation-header"
                 tal:omit-tag="not:isLeftColumn">
         
         <div class="hiddenStructure" tal:omit-tag="include_top">
             
-            <h2 class="portletHeader">
+            <h2 class="portletHeader"
+                tal:attributes="id python: isLeftColumn and 'left-column-navigation-header' or ''">
                 
                 <a tal:content="navigation_title"
                    tal:attributes="href root/absolute_url" />

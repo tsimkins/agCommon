@@ -190,7 +190,7 @@
                     </div>
 
                     <metal:slot define-slot="body">
-                    <div id="content">
+                    <div id="content" role="main">
                       <metal:header define-slot="header" tal:content="nothing">
                           Visual Header
                       </metal:header>

@@ -2,6 +2,7 @@
      tal:condition="context/localsearch|context/aq_base/localsearch_this|nothing">
 
     <div id="portal-localsearchbox"
+         role="search"
          i18n:domain="plone"
          tal:attributes="class python:has_extra_search_fields and 'extra_search_fields' or ''"
          tal:define="is_a_topic python:context.portal_type=='Topic';

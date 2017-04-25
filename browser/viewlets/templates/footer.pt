@@ -1,4 +1,4 @@
-<div id="portal-footer" i18n:domain="plone">
+<div id="portal-footer" i18n:domain="plone" role="contentinfo">
 	<p>
 		<abbr title="Copyright">&copy;</abbr>
 		<span tal:omit-tag=""

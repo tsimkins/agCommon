@@ -1022,18 +1022,20 @@ jq(document).ready(
 jq(document).ready(
 
     function() {
-        jq(".portletfeedmixer .portletItem").each( 
+        jq(".portletfeedmixer .portletItem img").each( 
             function () {
-                var portletItem = jq(this);
-                var img = portletItem.find(".rssImage img");
-                var title = portletItem.find("a.title");
+                var img = jq(this);
 
-                img.addClass("link");
-                
                 if (img.size())
                 {
-                    img.click(function () {
-                            window.location = title.attr('href');
+                    img.addClass("link"); // Style for this class adds cursor
+
+                    img.click(
+                        function () {
+                            // grab the data-href attribute on the image, and 
+                            // redirect the user there with JavaScript
+                            href = jq(this).attr('data-href');
+                            window.location = href;
                         }
                     );
                 }
