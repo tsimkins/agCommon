@@ -145,7 +145,7 @@ $searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth);
 
 
 
-/* = portal-top-navigation ================================= */
+/* = .top-navigation ================================= */
 
 .top-navigation {
     margin: 0 auto;
@@ -154,6 +154,12 @@ $searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth);
 
     .rmm-toggled {
         max-width: $maxWidth;
+    }
+
+    h2 {
+        // Setting the color does no good, since it's a .hiddenStructure as well.
+        // However, this appeases the accessibility check
+        color: $topnavigationTextColor;
     }
 
     ul {

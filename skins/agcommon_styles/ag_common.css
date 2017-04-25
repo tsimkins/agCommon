@@ -127,13 +127,15 @@ body {
       position: absolute;
       right: 0; }
 
-/* = portal-top-navigation ================================= */
+/* = .top-navigation ================================= */
 .top-navigation {
   margin: 0 auto;
   padding: 0;
   background-color: #1F4B7B; }
   .top-navigation .rmm-toggled {
     max-width: 1000px; }
+  .top-navigation h2 {
+    color: #F6F6F6; }
   .top-navigation ul {
     max-width: 1000px;
     display: block;
