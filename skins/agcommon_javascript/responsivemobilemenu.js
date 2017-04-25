@@ -90,6 +90,12 @@ jq(document).ready(function() {
         }
     );
     
+    // Remove duplicate portletwrapper ids
+    mobile_nav.find(".portletWrapper").each(
+        function () {
+            jq(this).removeAttr('id');
+        }
+    );
     
     if (mobile_nav.children().size()) {
         mobile_nav.appendTo('#portal-header');
