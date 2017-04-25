@@ -14,9 +14,9 @@
                          show_icon python: view.show_icon(licon)">
             <a tal:attributes="href licon/url;
                                title title;"
-                ><i 
+                ><em 
                     tal:attributes="class python:view.getClass(licon);"
-                    tal:condition="not:show_icon"></i><img tal:condition="show_icon" 
+                    tal:condition="not:show_icon"></em><img tal:condition="show_icon" 
                         tal:attributes="src icon;
                                         alt python:''" /><span tal:content="title">
                                     >Link</span>
