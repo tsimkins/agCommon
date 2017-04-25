@@ -1022,7 +1022,7 @@ jq(document).ready(
 jq(document).ready(
 
     function() {
-        jq(".portletfeedmixer .portletItem img").each( 
+        jq(".portletfeedmixer .portletItem img, .tileItem .contentLeadImageContainer img.tileImage").each( 
             function () {
                 var img = jq(this);
 
