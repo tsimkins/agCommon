@@ -315,7 +315,7 @@ body {
   #content .tileItem .tileDescription.no-description {
     display: none; }
   #content .tileItem .contentLeadImageContainer {
-    margin-left: 0;
+    margin-left: 0.5em;
     margin-right: 0; }
     #content .tileItem .contentLeadImageContainer a,
     #content .tileItem .contentLeadImageContainer a:hover {
@@ -357,6 +357,8 @@ body {
   #content .tileItem .tileImage {
     border: none;
     margin-top: 0; }
+  #content .tileItem img.link {
+    cursor: pointer; }
   #content .tileItem .tileBody, #content .tileItem .tileText {
     margin: 0 0 1em 0;
     font-size: 0.9375em; }

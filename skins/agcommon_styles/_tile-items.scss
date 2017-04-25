@@ -92,7 +92,7 @@
         }
 
         .contentLeadImageContainer {
-            margin-left: 0;
+            margin-left: 0.5em;
             margin-right: 0;
 
             a,
@@ -152,7 +152,11 @@
             border: none;
             margin-top: 0;
         }
-        
+
+        img.link {
+            cursor: pointer;
+        }
+
         .tileBody, .tileText {
             margin: 0 0 1em 0;
             font-size: 0.9375em;
