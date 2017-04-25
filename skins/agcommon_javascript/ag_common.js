@@ -1068,7 +1068,8 @@ jq(document).ready(
         jq("#portal-column-one").find('.portletWrapper').each(
             function () {
                 if ( ! (jq(this).find('.portletNavigationTree').size() || jq(this).hasClass('portlet-mobile-navigation'))) {
-                    jq(this).clone().appendTo(pcm);
+                    // Cloning element and removing id attribute for accessibility
+                    jq(this).clone().removeAttr('id').appendTo(pcm);
                 }
             }
         );
