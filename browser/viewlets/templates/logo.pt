@@ -5,39 +5,40 @@
     department_header view/department_header;
     site_header view/site_header;">
 
-    <a tal:attributes="href view/logo_url"
-       id="logo-site"
-       role="banner">
-       
-       <img tal:condition="python: site_header == 'penn_state'"
-            tal:attributes="src string:${navigation_root_url}/penn-state-logo.png" 
-            alt="Penn State University" />
+    <div role="banner">
 
-       <img tal:condition="python: site_header == 'college'"
-            tal:attributes="src string:${navigation_root_url}/penn-state-college-logo.png" 
-            alt="Penn State University College of Agricultural Sciences" />
-
-       <img tal:condition="python: site_header == 'extension'"
-            tal:attributes="src string:${navigation_root_url}/penn-state-extension-logo.png" 
-            alt="Penn State Extension" />
-            
-    </a>
-
-    <div id="logo-department" 
-         role="banner"
-         tal:condition="department_header">
-        
-        <a accesskey="1" 
-            tal:attributes="href navigation_root_url">
-            
-            <span 
-                tal:condition="python: department_header == 'department'">
-                Department of
-            </span>
-
-            <span tal:replace="portal_title" />
-            
+        <a tal:attributes="href view/logo_url"
+           id="logo-site">
+           
+           <img tal:condition="python: site_header == 'penn_state'"
+                tal:attributes="src string:${navigation_root_url}/penn-state-logo.png" 
+                alt="Penn State University" />
+    
+           <img tal:condition="python: site_header == 'college'"
+                tal:attributes="src string:${navigation_root_url}/penn-state-college-logo.png" 
+                alt="Penn State University College of Agricultural Sciences" />
+    
+           <img tal:condition="python: site_header == 'extension'"
+                tal:attributes="src string:${navigation_root_url}/penn-state-extension-logo.png" 
+                alt="Penn State Extension" />
+                
         </a>
+    
+        <div id="logo-department" 
+             tal:condition="department_header">
+            
+            <a accesskey="1" 
+                tal:attributes="href navigation_root_url">
+                
+                <span 
+                    tal:condition="python: department_header == 'department'">
+                    Department of
+                </span>
+    
+                <span tal:replace="portal_title" />
+                
+            </a>
+        </div>
 
     </div>
 
