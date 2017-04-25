@@ -158,8 +158,15 @@ class FolderView(BrowserView):
     def getImageFieldName(self, obj):
         return getImageAndCaptionFieldNames(obj)[0]
 
-    def tag(self, obj, css_class='tileImage', scale=None):
+    def tag(self, obj, css_class='tileImage', scale=None, href=None):
         context = aq_inner(obj)
+
+        kwargs = {}
+
+        # If the image should have a link, add it to kwargs
+        if href:
+            kwargs['data-href'] = href
+
 
         (field, titlef) = getImageAndCaptionFields(obj)
 
@@ -181,7 +188,7 @@ class FolderView(BrowserView):
                     else:
                         scale = self.prefs.desc_scale_name
 
-                return field.tag(context, scale=scale, css_class=css_class, title=title, alt=title)
+                return field.tag(context, scale=scale, css_class=css_class, title=title, alt=title, **kwargs)
 
         return ''
 
