@@ -103,7 +103,7 @@
                                                     img_href python: view.getItemURL(item);">
 
 
-                                    <img tal:replace="structure python:view.tag(item_object, css_class='tileImage')" />
+                                    <img tal:replace="structure python:view.tag(item_object, css_class='tileImage', href=img_href)" />
 
                                 </tal:leadimage>
 
