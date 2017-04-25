@@ -6,7 +6,8 @@
     site_header view/site_header;">
 
     <a tal:attributes="href view/logo_url"
-       id="logo-site">
+       id="logo-site"
+       role="banner">
        
        <img tal:condition="python: site_header == 'penn_state'"
             tal:attributes="src string:${navigation_root_url}/penn-state-logo.png" 
@@ -23,7 +24,8 @@
     </a>
 
     <div id="logo-department" 
-        tal:condition="department_header">
+         role="banner"
+         tal:condition="department_header">
         
         <a accesskey="1" 
             tal:attributes="href navigation_root_url">
