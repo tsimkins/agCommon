@@ -141,7 +141,7 @@
                             <p>
                                 <a tal:attributes="href python: view.getItemURL(item)"
                                    i18n:translate="read_more">
-                                Read More&hellip;
+                                Read More<span class="hiddenStructure" tal:content="string: about ${item_title_or_id}" />&hellip;
                                 </a>
                                 <span tal:condition="python:item_type !='FSDPerson'">&nbsp;</span>
                             </p>
