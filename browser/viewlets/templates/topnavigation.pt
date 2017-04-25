@@ -2,12 +2,11 @@
      id="portal-top-navigation"
      class="top-navigation">
 
-    <h2 id="site-navigation"
-        class="hiddenStructure">Site Navigation</h2>
+    <h2 class="hiddenStructure">Site Navigation</h2>
 
     <ul
         role="navigation"
-        aria-labelledby="site-navigation">
+        aria-label="Site Navigation">
         <tal:li repeat="saction view/topnavigation">
             <li tal:define="title saction/title;
                         id saction/id;
