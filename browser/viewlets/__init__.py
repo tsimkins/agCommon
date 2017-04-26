@@ -625,7 +625,7 @@ class FBMetadataViewlet(CustomTitleViewlet):
         self.link_metadata_image = self.fb_image
 
         # FB config
-        self.fbadmins = ['100001031380608','9370853','1485890864', '100003483428817']
+        self.fbadmins = ['100001031380608', '9370853', '100003483428817']
 
         self.fbadmins.extend(getContextConfig(self.context, 'fbadmins', []))
 
