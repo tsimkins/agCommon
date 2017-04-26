@@ -19,7 +19,6 @@
         tal:attributes="content string:${context/portal_url}/social-media-site-graphic.png"
         tal:condition="not: view/fb_image" />
     <meta property="og:url" tal:attributes="content view/fb_url"/>
-    <meta property="og:fbadmins" tal:attributes="content view/fbadmins"/>
     <meta tal:condition="context/Description" property="og:description" tal:attributes="content context/Description"/>    
 
     <link rel="image_src" 
