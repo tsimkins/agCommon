@@ -126,6 +126,34 @@ class BaseView(BrowserView):
 
         return data
 
+    # Get data from the Archetypes schema
+    def getSchemaData(self):
+
+        data = {}
+
+        # Additional fields to include (hardcoded)
+        include_fields = ['contactName', 'contactPhone', 'contactEmail']
+
+        try:
+            schema = self.context.Schema()
+        except:
+            pass
+        else:
+            fields = schema.fields()
+
+            for field in fields:
+                field_name = field.getName()
+                if field_name in include_fields:
+                    try:
+                        value = field.get(self.context)
+                    except:
+                        pass
+                    else:
+                        if value:
+                            data[field_name] = value
+
+        return data
+
     def getExtenderData(self):
 
         data = {}
@@ -179,9 +207,9 @@ class BaseView(BrowserView):
                             if self.request.form.get('full', None):
 
                                 if v.data:
-    
+
                                     data[field.getName()] = {
-                                                                'content_type' : v.getContentType(), 
+                                                                'content_type' : v.getContentType(),
                                                                 'data' : base64.b64encode(v.data),
                                                                 'filename' : v.getFilename(),
                                     }
@@ -208,6 +236,11 @@ class BaseView(BrowserView):
 
             if img_caption_field:
                 data['image_caption'] = img_caption_field.get(self.context)
+
+        # Schema data for explicitly included fields that are not part of the
+        # catalog, or provided by an extender
+        schema_data = self.getSchemaData()
+        data.update(schema_data)
 
         # Additional Fields provided by custom extenders
         extender_data = self.getExtenderData()
