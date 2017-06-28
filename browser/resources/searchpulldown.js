@@ -37,6 +37,16 @@ jQuery(document).ready(function($) {
 
     $('html').click(close_searchbox); // allow the user to click anywhere else and close the search selections
 
+    // Close the menu when someone tabs out of the searchbox
+
+    $('input#searchString').keydown(function(e) {
+        var code = e.keyCode ? e.keyCode : e.which;
+        if (code == 9) { // if the tab key is pressed, close the searchbox
+            close_searchbox();
+        }
+    });
+
+
     $('ul#menu').removeClass('show'); // prove they can do javascript.. if not let the css option takes over
     
     // FUNCTIONS   
