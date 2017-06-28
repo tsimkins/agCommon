@@ -34,19 +34,21 @@
                 text-decoration: none;
             }
 
-            a:hover {
+            a:hover, a:focus {
                 text-decoration: none;
                 color: $contentLinkHoverColor;
                 border-bottom: 1px solid $contentLinkColor;
             }
 
             a.state-private,
-            a.state-private:hover {
+            a.state-private:hover,
+            a.state-private:focus {
                 color: $statePrivateColor;
             }
 
             a.state-pending,           
-            a.state-pending:hover {
+            a.state-pending:hover,
+            a.state-pending:focus {
                 color: $statePendingColor;
             }
             
@@ -96,10 +98,11 @@
             margin-right: 0;
 
             a,
-            a:hover {
+            a:hover,
+            a:focus {
                 cursor: pointer;
             }
-            a:hover {
+            a:hover, a:focus {
                 color: $contentLinkHoverColor;
                 text-decoration: none;
                 border-bottom: 1px solid $contentLinkColor;

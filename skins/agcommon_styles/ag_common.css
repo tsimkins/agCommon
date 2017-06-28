@@ -56,6 +56,9 @@ body {
   #portal-header a {
     border-width: 0;
     text-decoration: none; }
+  #portal-header a:focus {
+    border-width: 1px;
+    border-style: dotted; }
 
 /* = logo-site ========================================== */
 #logo-site {
@@ -162,11 +165,12 @@ body {
         text-align: center;
         text-decoration: none;
         white-space: nowrap; }
-      .top-navigation ul li a:hover {
+      .top-navigation ul li a:hover, .top-navigation ul li a:focus {
         background-color: #1E407C;
         color: #FFFDF1; }
     .top-navigation ul li.alternate a,
-    .top-navigation ul li.alternate a:hover {
+    .top-navigation ul li.alternate a:hover,
+    .top-navigation ul li.alternate a:focus {
       background-color: #0075BD;
       color: #FFFFFF; }
     .top-navigation ul li:first-child a {
@@ -198,7 +202,7 @@ body {
   #portal-breadcrumbs a {
     color: #1B5597;
     font-weight: normal; }
-  #portal-breadcrumbs a:hover {
+  #portal-breadcrumbs a:hover, #portal-breadcrumbs a:focus {
     text-decoration: underline; }
 
 /* = section-title ========================================= */
@@ -211,7 +215,7 @@ body {
     color: #2F2F2F;
     padding-bottom: 0;
     border-bottom: 1px solid #999999; }
-  #section-title a:hover {
+  #section-title a:hover, #section-title a:focus {
     color: #1B5597;
     text-decoration: none; }
 
@@ -272,20 +276,25 @@ body {
       color: #265FCF;
       border-bottom: 1px solid #DDDDDD;
       text-decoration: none; }
-    #content .tileItem .tileHeadline a:hover,
-    #content .tileItem .tileTitle a:hover {
+    #content .tileItem .tileHeadline a:hover, #content .tileItem .tileHeadline a:focus,
+    #content .tileItem .tileTitle a:hover,
+    #content .tileItem .tileTitle a:focus {
       text-decoration: none;
       color: #003399;
       border-bottom: 1px solid #265FCF; }
     #content .tileItem .tileHeadline a.state-private,
     #content .tileItem .tileHeadline a.state-private:hover,
+    #content .tileItem .tileHeadline a.state-private:focus,
     #content .tileItem .tileTitle a.state-private,
-    #content .tileItem .tileTitle a.state-private:hover {
+    #content .tileItem .tileTitle a.state-private:hover,
+    #content .tileItem .tileTitle a.state-private:focus {
       color: #FF0000; }
     #content .tileItem .tileHeadline a.state-pending,
     #content .tileItem .tileHeadline a.state-pending:hover,
+    #content .tileItem .tileHeadline a.state-pending:focus,
     #content .tileItem .tileTitle a.state-pending,
-    #content .tileItem .tileTitle a.state-pending:hover {
+    #content .tileItem .tileTitle a.state-pending:hover,
+    #content .tileItem .tileTitle a.state-pending:focus {
       color: #FFA500; }
   #content .tileItem .tileHeadline,
   #content .tileItem h2.tileHeadline,
@@ -318,9 +327,10 @@ body {
     margin-left: 0;
     margin-right: 0; }
     #content .tileItem .contentLeadImageContainer a,
-    #content .tileItem .contentLeadImageContainer a:hover {
+    #content .tileItem .contentLeadImageContainer a:hover,
+    #content .tileItem .contentLeadImageContainer a:focus {
       cursor: pointer; }
-    #content .tileItem .contentLeadImageContainer a:hover {
+    #content .tileItem .contentLeadImageContainer a:hover, #content .tileItem .contentLeadImageContainer a:focus {
       color: #003399;
       text-decoration: none;
       border-bottom: 1px solid #265FCF; }
@@ -588,7 +598,8 @@ body.template-subfolder_view .two-column-right {
       border: none; }
     .portletWrapper .portletHeader span,
     .portletWrapper .portletHeader a,
-    .portletWrapper .portletHeader a:hover {
+    .portletWrapper .portletHeader a:hover,
+    .portletWrapper .portletHeader a:focus {
       color: #AC5209; }
   .portletWrapper .portlet {
     background-color: transparent;
@@ -619,8 +630,9 @@ body.template-subfolder_view .two-column-right {
     margin: 0;
     text-align: left;
     text-decoration: none; }
-  .portletWrapper .portletItem a:hover,
-  .portletWrapper .portletFooter a:hover {
+  .portletWrapper .portletItem a:hover, .portletWrapper .portletItem a:focus,
+  .portletWrapper .portletFooter a:hover,
+  .portletWrapper .portletFooter a:focus {
     color: #003FAC;
     background-color: transparent; }
   .portletWrapper .portletItem {
@@ -645,7 +657,7 @@ body.template-subfolder_view .two-column-right {
     .portletWrapper .portletItem p {
       padding: 0;
       margin: 0 0 1em 0; }
-    .portletWrapper .portletItem a:hover {
+    .portletWrapper .portletItem a:hover, .portletWrapper .portletItem a:focus {
       color: #003FAC;
       background-color: transparent;
       text-decoration: underline;
@@ -656,7 +668,8 @@ body.template-subfolder_view .two-column-right {
       border: none;
       display: block;
       line-height: 1.375; }
-    .portletWrapper .portletItem a.title:hover {
+    .portletWrapper .portletItem a.title:hover,
+    .portletWrapper .portletItem a.title:focus {
       text-decoration: underline; }
     .portletWrapper .portletItem .summary {
       color: #4B4B4B;
@@ -717,9 +730,9 @@ body.template-subfolder_view .two-column-right {
       color: #AC5209; }
   #content .portletWrapper .portlet a,
   #content .portletWrapper .portlet a:link,
-  #content .portletWrapper .portlet a:hover {
+  #content .portletWrapper .portlet a:hover, #content .portletWrapper .portlet a:focus {
     border-bottom: none; }
-  #content .portletWrapper .portlet a:hover {
+  #content .portletWrapper .portlet a:hover, #content .portletWrapper .portlet a:focus {
     text-decoration: underline; }
   #content .portletWrapper .portlet .portletItem a:visited {
     color: #265FCF; }
@@ -728,7 +741,8 @@ body.template-subfolder_view .two-column-right {
 #portal-column-one .portletHeader,
 #portal-column-one .portletHeader span,
 #portal-column-one .portletHeader a,
-#portal-column-one .portletHeader a:hover {
+#portal-column-one .portletHeader a:hover,
+#portal-column-one .portletHeader a:focus {
   color: #4B4B4B; }
 
 /* ================= Portlet Types =====================*/
@@ -821,7 +835,7 @@ body.template-subfolder_view .two-column-right {
       color: #2256BD;
       display: block;
       border-bottom: none; }
-    .imagePortlet .portletItem a:hover {
+    .imagePortlet .portletItem a:hover, .imagePortlet .portletItem a:focus {
       text-decoration: underline;
       color: #003FAC; }
     .imagePortlet .portletItem a.icon {
@@ -853,7 +867,8 @@ body.template-subfolder_view .two-column-right {
       display: block; }
     .portletLinkIcon .portletItem .fa-fw {
       width: 1.375em; }
-    .portletLinkIcon .portletItem a .fa:hover {
+    .portletLinkIcon .portletItem a .fa:hover,
+    .portletLinkIcon .portletItem a .fa:focus {
       text-decoration: none !important; }
     .portletLinkIcon .portletItem .fa-group:before,
     .portletLinkIcon .portletItem .fa-users:before,
@@ -866,7 +881,7 @@ body.template-subfolder_view .two-column-right {
     color: #2256BD;
     display: block;
     border: none; }
-  .portletLinkIcon a:hover span {
+  .portletLinkIcon a:hover span, .portletLinkIcon a:focus span {
     text-decoration: underline;
     color: #003FAC; }
   .portletLinkIcon span {
@@ -923,6 +938,7 @@ body.template-subfolder_view .two-column-right {
   padding: 0; }
   .portletLinkButton .portletItem a,
   .portletLinkButton .portletItem a:hover,
+  .portletLinkButton .portletItem a:focus,
   .portletLinkButton .portletItem a:link,
   .portletLinkButton .portletItem a:visited {
     -moz-border-radius: 4px;
@@ -942,11 +958,15 @@ body.template-subfolder_view .two-column-right {
     padding: 0.5em 5%;
     width: 90%;
     text-decoration: none; }
+  .portletLinkButton .portletItem a:focus {
+    color: #003FAC;
+    text-decoration: underline; }
   .portletLinkButton .portletItem img {
     width: 100%;
     display: block; }
   .portletLinkButton .alternate a,
   .portletLinkButton .alternate a:hover,
+  .portletLinkButton .alternate a:focus,
   .portletLinkButton .alternate a:link,
   .portletLinkButton .alternate a:visited {
     border: 1px solid #3F1E04;
@@ -974,7 +994,7 @@ body.template-subfolder_view .two-column-right {
     .portletPerson .portletItem div.fn a:visited {
       color: #2256BD;
       font-weight: 600; }
-    .portletPerson .portletItem div.fn a:hover {
+    .portletPerson .portletItem div.fn a:hover, .portletPerson .portletItem div.fn a:focus {
       color: #003FAC; }
   .portletPerson .portletItem .title {
     margin-bottom: 1em;
@@ -1009,7 +1029,8 @@ body.template-subfolder_view .two-column-right {
     /* Full image width in right column */ }
     #content #rightcolumn .portletLinkButton a,
     #content #rightcolumn .portletLinkButton a:link,
-    #content #rightcolumn .portletLinkButton a:hover {
+    #content #rightcolumn .portletLinkButton a:hover,
+    #content #rightcolumn .portletLinkButton a:focus {
       text-decoration: none;
       color: #333333;
       border-bottom: 1px solid #333333; }
@@ -1109,9 +1130,15 @@ body.template-subfolder_view .two-column-right {
     .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a.state-published {
       color: #4D4D4D; }
     .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a:hover,
-    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a.state-published:hover {
+    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a.state-published:hover,
+    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a:focus,
+    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a.state-published:focus {
       color: #003FAC;
       text-decoration: none; }
+    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a:focus,
+    .left-column-navigation .portletNavigationTree .portletItem .navTreeItem a.state-published:focus {
+      color: #003FAC;
+      text-decoration: underline; }
   .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 {
     margin: 0; }
     .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel0 > li {
@@ -1161,7 +1188,7 @@ body.template-subfolder_view .two-column-right {
     .left-column-navigation .portletNavigationTree .portletItem ul.navTreeLevel1 .navTreeCurrentItem {
       background-color: transparent; }
 
-#portal-column-one .left-column-navigation .portletHeader a:hover {
+#portal-column-one .left-column-navigation .portletHeader a:hover, #portal-column-one .left-column-navigation .portletHeader a:focus {
   color: #003FAC; }
 
 /* 
@@ -1196,7 +1223,7 @@ body.template-subfolder_view .two-column-right {
     display: inline-block;
     padding: 0;
     vertical-align: top; }
-  #content #addthis a:hover {
+  #content #addthis a:hover, #content #addthis a:focus {
     border-bottom: none; }
   #content #addthis div.pdf {
     margin: 0.5em 0 0.25em 0; }
@@ -1471,17 +1498,23 @@ label {
   /*###*/ }
   #content h1 a,
   #content h1 a:link,
-  #content h1 a:hover, #content h2 a,
+  #content h1 a:hover,
+  #content h1 a:focus, #content h2 a,
   #content h2 a:link,
-  #content h2 a:hover, #content h3 a,
+  #content h2 a:hover,
+  #content h2 a:focus, #content h3 a,
   #content h3 a:link,
-  #content h3 a:hover, #content h4 a,
+  #content h3 a:hover,
+  #content h3 a:focus, #content h4 a,
   #content h4 a:link,
-  #content h4 a:hover, #content h5 a,
+  #content h4 a:hover,
+  #content h4 a:focus, #content h5 a,
   #content h5 a:link,
-  #content h5 a:hover, #content h6 a,
+  #content h5 a:hover,
+  #content h5 a:focus, #content h6 a,
   #content h6 a:link,
-  #content h6 a:hover {
+  #content h6 a:hover,
+  #content h6 a:focus {
     text-decoration: none;
     color: #000000;
     border-bottom: none; }
@@ -1511,7 +1544,8 @@ label {
     border-bottom: 1px solid #DDDDDD;
     text-decoration: none; }
   #content .contentLeadImageContainer a,
-  #content .contentLeadImageContainer a:hover {
+  #content .contentLeadImageContainer a:hover,
+  #content .contentLeadImageContainer a:focus {
     border-bottom: none;
     cursor: zoom-in; }
   #content h1.noBreadcrumbs {
@@ -1718,16 +1752,19 @@ body.template-file_view #disclaimer {
   #content .eventSummary div {
     padding: 0.2em 0; }
   #content .eventSummary a,
-  #content .eventSummary a:hover {
+  #content .eventSummary a:hover,
+  #content .eventSummary a:focus {
     text-decoration: none; }
     #content .eventSummary a span,
-    #content .eventSummary a:hover span {
+    #content .eventSummary a:hover span,
+    #content .eventSummary a:focus span {
       text-decoration: none;
       border-bottom: 1px solid #DDDDDD; }
-  #content .eventSummary a:hover span {
+  #content .eventSummary a:hover span, #content .eventSummary a:focus span {
     border-bottom: 1px solid #265FCF; }
   #content .eventSummary .event_add_calendar a,
-  #content .eventSummary .event_add_calendar a:hover {
+  #content .eventSummary .event_add_calendar a:hover,
+  #content .eventSummary .event_add_calendar a:focus {
     border-bottom: none; }
   #content .eventSummary .event_add_calendar a.img {
     padding-right: 0.375em;
@@ -1943,7 +1980,7 @@ dl.person-connect img {
     height: auto; }
   .contentLeadImageContainer .crop-image {
     float: right; }
-    .contentLeadImageContainer .crop-image a:hover {
+    .contentLeadImageContainer .crop-image a:hover, .contentLeadImageContainer .crop-image a:focus {
       cursor: pointer; }
 
 .contentLeadImageContainerFullWidth,
@@ -1991,7 +2028,8 @@ dl.person-connect img {
   #content .listingBar a {
     border: none;
     padding: 0; }
-  #content .listingBar a:hover {
+  #content .listingBar a:hover,
+  #content .listingBar a:focus {
     background-color: transparent;
     text-decoration: underline; }
   #content .listingBar span.previous,
@@ -2104,7 +2142,7 @@ dl.person-connect img {
     margin: 0.375em 0; }
   #portal-footer a, #portal-footer a:visited {
     color: #9ACDFF; }
-  #portal-footer a:hover {
+  #portal-footer a:hover, #portal-footer a:focus {
     text-decoration: underline; }
 
 /* 
@@ -2157,13 +2195,14 @@ dl.person-connect img {
         margin: 0; }
         #portlets-footer .FooterPortletManager .portletWrapper .portletItem a,
         #portlets-footer .FooterPortletManager .portletWrapper .portletItem .state-published,
-        #portlets-footer .FooterPortletManager .portletWrapper .portletItem a:hover {
+        #portlets-footer .FooterPortletManager .portletWrapper .portletItem a:hover, #portlets-footer .FooterPortletManager .portletWrapper .portletItem a:focus {
           color: #e0e0e0;
           padding: 0.375em 0;
           display: block;
           border-bottom: none; }
         #portlets-footer .FooterPortletManager .portletWrapper .portletItem .state-published:hover,
-        #portlets-footer .FooterPortletManager .portletWrapper .portletItem a:hover {
+        #portlets-footer .FooterPortletManager .portletWrapper .portletItem .state-published:focus,
+        #portlets-footer .FooterPortletManager .portletWrapper .portletItem a:hover, #portlets-footer .FooterPortletManager .portletWrapper .portletItem a:focus {
           text-decoration: underline; }
       #portlets-footer .FooterPortletManager .portletWrapper .portletNavigationTree .portletItem {
         padding: 0; }
@@ -2198,8 +2237,9 @@ dl.person-connect img {
             padding: 0;
             background-color: transparent;
             vertical-align: middle; }
-          #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .icon a:hover,
-          #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .sprite a:hover {
+          #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .icon a:hover, #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .icon a:focus,
+          #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .sprite a:hover,
+          #portlets-footer .FooterPortletManager .portletWrapper .portletLinkIcon .sprite a:focus {
             text-decoration: underline; }
       #portlets-footer .FooterPortletManager .portletWrapper .portletFooter {
         text-align: left;
@@ -2340,7 +2380,7 @@ dl.person-connect img {
   padding: 0;
   display: block;
   margin: 0.1em 0.25em; }
-.actionMenu .actionMenuContent li a:hover {
+.actionMenu .actionMenuContent li a:hover, .actionMenu .actionMenuContent li a:focus {
   background-color: #74AE0B; }
 
 /* Personal Tools */
@@ -2546,7 +2586,8 @@ div.formControls {
   text-decoration: none;
   cursor: pointer; }
 
-.pfg-form div.formControls input[type="submit"]:hover {
+.pfg-form div.formControls input[type="submit"]:hover,
+.pfg-form div.formControls input[type="submit"]:focus {
   background: #2C658F;
   /* UI */
   text-decoration: none;
@@ -2663,7 +2704,7 @@ ul.kupu-tabs li {
         vertical-align: middle; }
       #playlist-box-wrapper #now-playing a span {
         vertical-align: middle; }
-    #playlist-box-wrapper #now-playing a:hover {
+    #playlist-box-wrapper #now-playing a:hover, #playlist-box-wrapper #now-playing a:focus {
       color: #5CB9FF; }
     #playlist-box-wrapper #now-playing a.prev {
       left: 2.5%;
@@ -2694,7 +2735,7 @@ ul.kupu-tabs li {
     .player-buttons a div {
       vertical-align: middle;
       text-align: center; }
-  .player-buttons a:hover .fa {
+  .player-buttons a:hover .fa, .player-buttons a:focus .fa {
     color: #458CC2 !important; }
 
 .player-buttons.active a .fa {
@@ -2740,9 +2781,9 @@ ul.kupu-tabs li {
         border-bottom: none; }
         #playlist-box .playlist-row .videoTitle a span {
           border-bottom: 1px solid #DDDDDD; }
-      #playlist-box .playlist-row .videoTitle a:hover {
+      #playlist-box .playlist-row .videoTitle a:hover, #playlist-box .playlist-row .videoTitle a:focus {
         color: #003399; }
-        #playlist-box .playlist-row .videoTitle a:hover span {
+        #playlist-box .playlist-row .videoTitle a:hover span, #playlist-box .playlist-row .videoTitle a:focus span {
           border-bottom-color: #003399; }
     #playlist-box .playlist-row .videoTime {
       text-align: center; }
@@ -2857,7 +2898,7 @@ body.icons-on #content a.state-atlas-import-publication:after {
     border: 1px solid #E6E6E6;
     border-radius: 0.375em;
     padding: 0.125em 0.5em; }
-  #content .atlas-workflow a:hover {
+  #content .atlas-workflow a:hover, #content .atlas-workflow a:focus {
     color: #FFFFFF;
     background-color: #9561AE;
     border: 1px solid #9561AE; }
@@ -2880,7 +2921,7 @@ body.icons-on #content a.state-atlas-import-publication:after {
           border-left: 1px solid #E6E6E6;
           display: block;
           background-color: #F6F6F6; }
-        #content .atlas-review-nav ul li a:hover {
+        #content .atlas-review-nav ul li a:hover, #content .atlas-review-nav ul li a:focus {
           text-decoration: underline; }
         #content .atlas-review-nav ul li a.selected {
           background-color: #1F4B7B;
@@ -3125,7 +3166,7 @@ body.template-by_county_summary_view #content .tileItemLeadImage,
 body.template-by_county_summary_view #content .tileSummaryLeadImage {
   border-top: none !important; }
 
-#content .portletFooter a:hover {
+#content .portletFooter a:hover, #content .portletFooter a:focus {
   border: none;
   text-decoration: underline; }
 
@@ -3187,7 +3228,8 @@ form.event-registration input[type="submit"] {
   white-space: normal;
   text-align: left; }
 
-form.event-registration input[type="submit"]:hover {
+form.event-registration input[type="submit"]:hover,
+form.event-registration input[type="submit"]:focus {
   color: #003399;
   text-decoration: none;
   border-bottom: 1px solid #265FCF; }

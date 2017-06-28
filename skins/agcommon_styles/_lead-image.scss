@@ -16,7 +16,7 @@
     .crop-image {
         float: right;
         
-        a:hover {
+        a:hover, a:focus {
             cursor: pointer;
         }
     

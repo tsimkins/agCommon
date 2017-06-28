@@ -187,7 +187,7 @@ html[xmlns] .slides {
   cursor: pointer;
   text-indent: -999em; }
 
-.flex-control-nav li a:hover {
+.flex-control-nav li a:hover, .flex-control-nav li a:focus {
   background-position: 0 -13px; }
 
 .flex-control-nav li a.active {

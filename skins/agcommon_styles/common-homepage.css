@@ -296,13 +296,15 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 #rightcolumn .portletItem a.title,
 #rightcolumn .portletItem li.navTreeItem {
   padding: 0; }
-
 #rightcolumn .portletItem li.navTreeItem a {
   margin: 0 0 1em 0;
   padding: 0; }
-
+#rightcolumn .navTreeItem a,
 #rightcolumn .navTreeItem a:hover,
-#rightcolumn .portletItem .navTreeItem a:hover {
+#rightcolumn .navTreeItem a:focus,
+#rightcolumn .portletItem .navTreeItem a,
+#rightcolumn .portletItem .navTreeItem a:hover,
+#rightcolumn .portletItem .navTreeItem a:focus {
   background-color: transparent; }
 
 /* Hide Homepage Image on edit screen */

@@ -122,7 +122,7 @@ body.icons-on {
             border-radius: 0.375em;
             padding: 0.125em 0.5em;
         }
-        a:hover {
+        a:hover, a:focus {
             color: #FFFFFF;
             background-color: $atlasBackgroundColor;
             border: 1px solid $atlasBackgroundColor;
@@ -157,7 +157,7 @@ body.icons-on {
                     background-color: $globalBackgroundColor;
                 }
         
-                a:hover {
+                a:hover, a:focus {
                     text-decoration: underline;
                 }
     

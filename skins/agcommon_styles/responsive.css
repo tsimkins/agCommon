@@ -91,11 +91,12 @@
         background-color: #45709F;
         border-color: #375A7F;
         color: #FFFFFF; }
-      body.department-site .top-navigation ul li a:hover {
+      body.department-site .top-navigation ul li a:hover, body.department-site .top-navigation ul li a:focus {
         background-color: #2C5C8F;
         color: #FFFDF1; }
       body.department-site .top-navigation ul li.alternate a,
-      body.department-site .top-navigation ul li.alternate a:hover {
+      body.department-site .top-navigation ul li.alternate a:hover,
+      body.department-site .top-navigation ul li.alternate a:focus {
         background-color: #4C5E6F;
         color: #FFFFFF; }
 
@@ -304,7 +305,7 @@
     padding: 0;
     background-color: #E6E6E6;
     margin: 0; }
-    #mobile-navigation .left-column-navigation h2.portletHeader a, #mobile-navigation .left-column-navigation h2.portletHeader a:hover {
+    #mobile-navigation .left-column-navigation h2.portletHeader a, #mobile-navigation .left-column-navigation h2.portletHeader a:hover, #mobile-navigation .left-column-navigation h2.portletHeader a:focus {
       display: block;
       font-size: 1em;
       font-weight: 600;
@@ -813,7 +814,7 @@
     margin-bottom: 0.5em;
     border-bottom: 1px solid #E6E6E6;
     font-size: 1.5em; }
-    #section-title a, #section-title a:hover {
+    #section-title a, #section-title a:hover, #section-title a:focus {
       border-bottom: none; }
 
   body.portaltype-homepage #section-title {
@@ -831,7 +832,7 @@
     padding: 0.5em 2% 0.375em;
     font-size: 1.25em;
     background-color: #E6E6E6; }
-    body.navigation-mobile #section-title a, body.navigation-mobile #section-title a:hover {
+    body.navigation-mobile #section-title a, body.navigation-mobile #section-title a:hover, body.navigation-mobile #section-title a:focus {
       border: none;
       color: #1E2D4C; }
   body.navigation-mobile .left-column-navigation {
@@ -1063,11 +1064,23 @@
     max-width: 100%; }
 
   #portal-column-one .portletLinkButton a,
-  #portal-column-two .portletLinkButton .portletItem a,
   #portal-column-one .portletLinkButton a:hover,
+  #portal-column-one .portletLinkButton a:focus,
+  #portal-column-one .portletLinkButton .portletItem a,
+  #portal-column-one .portletLinkButton .portletItem a:hover,
+  #portal-column-one .portletLinkButton .portletItem a,
+  #portal-column-two .portletLinkButton a,
+  #portal-column-two .portletLinkButton a:hover,
+  #portal-column-two .portletLinkButton a:focus,
+  #portal-column-two .portletLinkButton .portletItem a,
   #portal-column-two .portletLinkButton .portletItem a:hover,
+  #portal-column-two .portletLinkButton .portletItem a,
+  #rightcolumn .portletLinkButton a,
+  #rightcolumn .portletLinkButton a:hover,
+  #rightcolumn .portletLinkButton a:focus,
   #rightcolumn .portletLinkButton .portletItem a,
-  #rightcolumn .portletLinkButton .portletItem a:hover {
+  #rightcolumn .portletLinkButton .portletItem a:hover,
+  #rightcolumn .portletLinkButton .portletItem a {
     font-size: 1.0625em;
     padding: 0.5em 3.07692%;
     width: 93.84615%; }

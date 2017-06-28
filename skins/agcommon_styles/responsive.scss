@@ -64,7 +64,7 @@
                         color: $departmentTopnavigationTextColor;
                     }
                     
-                    a:hover {
+                    a:hover, a:focus {
                         background-color: $departmentTopnavigationBackgroundHoverColor;
                         color: $departmentTopnavigationTextHoverColor;
                     }
@@ -73,7 +73,8 @@
                 
                 li.alternate {
                     a,
-                    a:hover {
+                    a:hover,
+                    a:focus {
                         background-color: $departmentTopnavigationAlternateBackgroundColor;
                         color: $departmentTopnavigationAlternateTextColor;
                     }
@@ -396,7 +397,7 @@
                 background-color: $globalBorderColor;
                 margin: 0;
                 
-                a, a:hover {
+                a, a:hover, a:focus {
                     display: block;
                     font-size: 1em;
                     font-weight: 600;
@@ -1152,7 +1153,7 @@
         border-bottom: 1px solid $globalBorderColor;
         font-size: 1.5em;
         
-        a, a:hover {
+        a, a:hover, a:focus {
             border-bottom: none;
         }
     }
@@ -1180,7 +1181,7 @@
             font-size: 1.25em;
             background-color: $globalBorderColor;
             
-            a, a:hover {
+            a, a:hover, a:focus {
                 border: none;
                 color: $leftNavTitleColor;
             }
@@ -1507,15 +1508,21 @@
         max-width: 100%;
     }
     
-    #portal-column-one .portletLinkButton a,
-    #portal-column-two .portletLinkButton .portletItem a,
-    #portal-column-one .portletLinkButton a:hover,
-    #portal-column-two .portletLinkButton .portletItem a:hover,
-    #rightcolumn .portletLinkButton .portletItem a,
-    #rightcolumn .portletLinkButton .portletItem a:hover {
-        font-size: 1.0625em;
-        padding: 0.5em 100%*($column_padding/$maxWidth);
-        width: 100%*(($maxWidth - 2*$column_padding)/$maxWidth);
+    #portal-column-one,
+    #portal-column-two,
+    #rightcolumn {
+        .portletLinkButton {
+            a,
+            a:hover,
+            a:focus,
+            .portletItem a,
+            .portletItem a:hover,
+            .portletItem a {
+                font-size: 1.0625em;
+                padding: 0.5em 100%*($column_padding/$maxWidth);
+                width: 100%*(($maxWidth - 2*$column_padding)/$maxWidth);
+            }
+        }
     }
     
     #portal-column-content.sl #centercolumn .portletfeedmixerimageleft .portletItem .title,

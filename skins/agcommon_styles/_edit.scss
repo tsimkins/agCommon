@@ -34,7 +34,7 @@
         margin: 0.1em 0.25em;
     }
 
-    a:hover {
+    a:hover, a:focus {
         background-color: $contentViewBorderColor;
     }
 }
@@ -310,10 +310,13 @@ div.formControls {
     cursor: pointer;
 }
 
-.pfg-form div.formControls input[type="submit"]:hover {
-  background: #2C658F; /* UI */
-  text-decoration: none;
-  border-color: #337ACF; /* UI */
+.pfg-form div.formControls {
+    input[type="submit"]:hover,
+    input[type="submit"]:focus {
+        background: #2C658F; /* UI */
+        text-decoration: none;
+        border-color: #337ACF; /* UI */
+    }
 }
 
 input[type="submit"],

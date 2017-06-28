@@ -39,7 +39,7 @@ $now-playing-background-color: #2F2E33;
             }
         }
         
-        a:hover {
+        a:hover, a:focus {
         	color: $prev-next-hover-color;
         }
         
@@ -92,7 +92,7 @@ $now-playing-background-color: #2F2E33;
         }
     }
     
-    a:hover {
+    a:hover, a:focus {
         
         .fa {
             color: $player-button-hover-color !important;
@@ -167,7 +167,7 @@ $now-playing-background-color: #2F2E33;
                 }
             }
             
-            a:hover {
+            a:hover, a:focus {
                 color: $contentLinkHoverColor;
                 
                 span {

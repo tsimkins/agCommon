@@ -37,6 +37,11 @@ body {
         border-width: 0;
         text-decoration: none;
     }
+    
+    a:focus {
+        border-width: 1px;
+        border-style: dotted;
+    }
 }
 
 /* = logo-site ========================================== */
@@ -192,7 +197,7 @@ $searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth);
                 white-space: nowrap;
             }
             
-            a:hover {
+            a:hover, a:focus {
                 background-color: $topnavigationBackgroundHoverColor;
                 color: $topnavigationTextHoverColor;
             }
@@ -201,7 +206,8 @@ $searchBoxWidth: $maxWidth - ($logoWidth + $siteTitleWidth);
         
         li.alternate {
             a,
-            a:hover {
+            a:hover,
+            a:focus {
                 background-color: $topnavigationAlternateBackgroundColor;
                 color: $topnavigationAlternateTextColor;
             }

@@ -19,7 +19,7 @@
         color: $footerLinkColor;
     }
     
-    a:hover {
+    a:hover, a:focus {
         text-decoration: underline;
     }
 }
@@ -87,7 +87,7 @@
 
                 a, 
                 .state-published,
-                a:hover {
+                a:hover, a:focus {
                 	color: $sitemapLinkColor;
                 	padding: 0.375em 0;
                 	display: block;
@@ -95,7 +95,8 @@
                 }
 
                 .state-published:hover,
-                a:hover {
+                .state-published:focus,
+                a:hover, a:focus {
                 	text-decoration: underline;
                 }
 
@@ -166,7 +167,7 @@
                         vertical-align: middle;
                     }
             
-                    a:hover {
+                    a:hover, a:focus {
                     	text-decoration: underline;
                     }
                 }

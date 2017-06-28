@@ -43,13 +43,15 @@
   #content .portletItem .navTreeItem {
     padding: 0; }
     #content .portletItem .navTreeItem a,
-    #content .portletItem .navTreeItem a:hover {
+    #content .portletItem .navTreeItem a:hover,
+    #content .portletItem .navTreeItem a:focus {
       background-color: transparent;
       background-image: none;
       padding-left: 0 !important;
       padding: 0; }
       #content .portletItem .navTreeItem a img,
-      #content .portletItem .navTreeItem a:hover img {
+      #content .portletItem .navTreeItem a:hover img,
+      #content .portletItem .navTreeItem a:focus img {
         display: none; }
 
 /* == portlet and portletmanager Basic Rules == */

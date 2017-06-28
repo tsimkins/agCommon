@@ -384,29 +384,39 @@ http://www.mikepadgett.com/technology/technical/alternative-to-the-pie-clearfix-
 
 /* Hide managePortletsLink in homegrown portlets. */
 
-#rightcolumn .managePortletsLink,
-#homepageimage .managePortletsLink,
-#centercolumn .managePortletsLink {
-    display: none;
+#rightcolumn,
+#homepageimage,
+#centercolumn {
+    .managePortletsLink {
+        display: none;
+    }
 }
 
 #centercolumn .portletItem a.title {
     font-size: 1em;
 }
 
-#rightcolumn .portletItem a.title,
-#rightcolumn .portletItem li.navTreeItem {
-    padding: 0;
-}
+#rightcolumn {
 
-#rightcolumn .portletItem li.navTreeItem a {
-    margin: 0 0 1em 0;
-    padding: 0;
-}
+    .portletItem a.title,
+    .portletItem li.navTreeItem {
+        padding: 0;
+    }
+    
+    .portletItem li.navTreeItem a {
+        margin: 0 0 1em 0;
+        padding: 0;
+    }
 
-#rightcolumn .navTreeItem a:hover, 
-#rightcolumn .portletItem .navTreeItem a:hover {
-    background-color: transparent;
+
+    .navTreeItem, 
+    .portletItem .navTreeItem {
+        a,
+        a:hover,
+        a:focus {
+            background-color: transparent;
+        }
+    }
 }
 
 /* Hide Homepage Image on edit screen */

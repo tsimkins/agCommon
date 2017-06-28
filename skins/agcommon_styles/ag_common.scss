@@ -242,9 +242,11 @@ body.template-by_county_summary_view #content .tileSummaryLeadImage {
     border-top: none !important;
 }
 
-#content .portletFooter a:hover {
-    border: none;
-    text-decoration: underline;
+#content .portletFooter {
+    a:hover, a:focus {
+        border: none;
+        text-decoration: underline;
+    }
 }
 
 body.template-default_error_message {
@@ -319,7 +321,8 @@ form.event-registration input[type="submit"] {
     text-align: left;
 }
 
-form.event-registration input[type="submit"]:hover {
+form.event-registration input[type="submit"]:hover,
+form.event-registration input[type="submit"]:focus {
     color: $contentLinkHoverColor;
     text-decoration: none;
     border-bottom: 1px solid $contentLinkColor;

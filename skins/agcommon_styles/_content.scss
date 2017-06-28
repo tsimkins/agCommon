@@ -65,7 +65,8 @@ label {
     h1, h2, h3, h4, h5, h6 {
         a,
         a:link,
-        a:hover {
+        a:hover,
+        a:focus {
             text-decoration: none;
             color: $globalFontColor;
             border-bottom: none;
@@ -125,7 +126,8 @@ label {
 
     .contentLeadImageContainer {
         a,
-        a:hover {
+        a:hover,
+        a:focus {
             border-bottom: none;
             cursor: zoom-in;
         }
@@ -397,7 +399,8 @@ body.template-file_view {
     }
 
     a,
-    a:hover {
+    a:hover,
+    a:focus {
 
         text-decoration: none;
 
@@ -407,13 +410,16 @@ body.template-file_view {
         }
     }
 
-    a:hover span {
-        border-bottom: 1px solid $contentLinkColor;
+    a:hover, a:focus {
+        span {
+            border-bottom: 1px solid $contentLinkColor;
+        }
     }
 
     .event_add_calendar {
         a,
-        a:hover {
+        a:hover,
+        a:focus {
             border-bottom: none;
         }
     

@@ -46,9 +46,17 @@
                 }
                 
                 a:hover,
-                a.state-published:hover {
+                a.state-published:hover,
+                a:focus,
+                a.state-published:focus {
                     color: $leftNavTextHoverColor;
                     text-decoration: none;
+                }
+
+                a:focus,
+                a.state-published:focus {
+                    color: $leftNavTextHoverColor;
+                    text-decoration: underline;
                 }
 
             }
@@ -128,6 +136,8 @@
     }
 }
 
-#portal-column-one .left-column-navigation .portletHeader a:hover {
-    color: $leftNavTextHoverColor;
+#portal-column-one .left-column-navigation .portletHeader {
+    a:hover, a:focus {
+        color: $leftNavTextHoverColor;
+    }
 }
