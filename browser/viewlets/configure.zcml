@@ -456,6 +456,18 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <!-- Editor message -->
+    
+    <browser:viewlet
+        name="agcommon.editor_message"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".EditorMessageViewlet"
+        template="templates/editor_message.pt"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
     <!-- Portlet Managers -->
 
     <browser:viewlet

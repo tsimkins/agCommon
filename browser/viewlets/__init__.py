@@ -1219,6 +1219,19 @@ class LogoViewlet(AgCommonViewlet):
         return self.portal_state.navigation_root_url()
 
 
+class EditorMessageViewlet(AgCommonViewlet):
+    
+    @property
+    def message(self):
+        return self.get_agcommon_properties('editor_message', None)
+    
+    def show(self):
+
+        if not self.anonymous:
+            return not not self.message
+
+        return False
+
 # provideAdapter for viewlets to be registered in standalone mode
 
 provideAdapter(ContributorsViewlet, adapts=(Interface,IDefaultBrowserLayer,IBrowserView), provides=IContentProvider, name='agcommon.contributors')

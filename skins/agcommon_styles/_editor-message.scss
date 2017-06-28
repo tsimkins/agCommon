@@ -1,0 +1,33 @@
+.editor-message {
+    background-color: $notifyBackgroundColor;
+    border: 1px solid $notifyHeadingColor;
+    color: #00000;
+    padding: 1em 1.25em;
+    font-size: 0.875em;
+    
+    h2 {
+        background-color: $notifyHeadingColor;
+        color: $notifyBackgroundColor;
+        padding: 0.25em 0.5em;
+        margin: 0 -0.5em 0.5em;
+        color: #FFFFFF;
+    }
+    
+    table.listing, table.plain {
+        
+        margin-left: 1em;
+
+        tbody tr.even td {
+            background-color: #FFFFFF;
+        }
+    }
+    
+    table.right {
+        float: right;
+    }
+    
+    p {
+        margin-bottom: 0.75em;
+    }
+    
+}

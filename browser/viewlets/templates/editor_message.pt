@@ -1,0 +1,7 @@
+<tal:hideFromAnonymous
+     tal:condition="view/show">
+
+    <div class="editor-message"
+        tal:content="structure view/message" />
+
+</tal:hideFromAnonymous>

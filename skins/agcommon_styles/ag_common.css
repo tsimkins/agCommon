@@ -2224,6 +2224,27 @@ dl.person-connect img {
     border: none;
     margin-left: 88px; }
 
+.editor-message {
+  background-color: #FFCE7B;
+  border: 1px solid #C74606;
+  color: #00000;
+  padding: 1em 1.25em;
+  font-size: 0.875em; }
+  .editor-message h2 {
+    background-color: #C74606;
+    color: #FFCE7B;
+    padding: 0.25em 0.5em;
+    margin: 0 -0.5em 0.5em;
+    color: #FFFFFF; }
+  .editor-message table.listing, .editor-message table.plain {
+    margin-left: 1em; }
+    .editor-message table.listing tbody tr.even td, .editor-message table.plain tbody tr.even td {
+      background-color: #FFFFFF; }
+  .editor-message table.right {
+    float: right; }
+  .editor-message p {
+    margin-bottom: 0.75em; }
+
 /*
     Not SASS-ifying because this was copied from Plone. 
 */
