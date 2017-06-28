@@ -73,7 +73,7 @@ def getSearchConfig(context=None, path='', q='', section_title=None, site_title=
                     },
                     {
                         'key' : 'psu-web',
-                        'url' :  'http://search.psu.edu/?q=%s' % q,
+                        'url' :  'http://www.psu.edu/search/gss?query=%s' % q,
                         'description' : 'Search Penn State'
                     },
                     {
