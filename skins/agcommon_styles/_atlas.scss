@@ -10,6 +10,8 @@ body.icons-on {
         a.state-atlas-pending:after,
         a.state-atlas-ready:after,
         a.state-atlas-imported:after,
+        a.state-atlas-import-app:after,
+        a.state-atlas-import-webinar-recording:after,
         a.state-atlas-import-article:after,
         a.state-atlas-import-video:after,
         a.state-atlas-import-workshop-group:after,
@@ -59,6 +61,8 @@ body.icons-on {
         }
 
         a.state-atlas-imported:after,
+        a.state-atlas-import-app:after,
+        a.state-atlas-import-webinar-recording:after,
         a.state-atlas-import-article:after,
         a.state-atlas-import-video:after,
         a.state-atlas-import-workshop-group:after,
@@ -86,6 +90,8 @@ body.icons-on {
     .state-atlas-pending,
     .state-atlas-ready,
     .state-atlas-imported,
+    .state-atlas-import-app,
+    .state-atlas-import-webinar-recording,
     .state-atlas-import-article,
     .state-atlas-import-video,
     .state-atlas-import-workshop-group,
