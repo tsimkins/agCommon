@@ -15,7 +15,7 @@
                 <!-- Homepage JavaScript -->
                 <script async="async"
                     type="text/javascript" 
-                    src="background-images/getHomepageImage.js"></script>
+                    tal:attributes="src string:${context/aq_parent/absolute_url}/background-images/getHomepageImage.js"></script>
 
             </tal:background-images>
         </metal:js>
