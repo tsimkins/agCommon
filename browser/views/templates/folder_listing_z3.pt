@@ -34,7 +34,10 @@
                         limit_display python:limit_display and int(limit_display) or None;
                         more_url more_url|request/more_url|string:folder_contents;
                         is_a_topic python:context.portal_type=='Topic';
-                        folderContents folderContents|nothing; folderContents python:folderContents or is_a_topic and context.queryCatalog(batch=True, **contentFilter) or context.getFolderContents(contentFilter, batch=True, b_size=limit_display or 100);
+                        virtualFolderContents view/virtualFolderContents|nothing;
+                        folderContents folderContents|nothing;
+                        folderContents python: virtualFolderContents and virtualFolderContents or folderContents;
+                        folderContents python:folderContents or is_a_topic and context.queryCatalog(batch=True, **contentFilter) or context.getFolderContents(contentFilter, batch=True, b_size=limit_display or 100);
                         order_by_id here/order_by_id|nothing;
                         order_by_title here/order_by_title|nothing;
                         zip_code_input request/zip_code_input|nothing;
