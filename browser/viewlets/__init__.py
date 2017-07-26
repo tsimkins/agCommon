@@ -311,16 +311,29 @@ class HomepageImageViewlet(AgCommonViewlet):
 
     @memoize
     def image_data(self):
+    
+        background_images = None
+        
         p = self.context.aq_parent
 
         if 'background-images' in p.objectIds():
+            background_images = p['background-images']
+
+        elif getattr(self.context, 'acquire_background_images', False):
+            try:
+                background_images = self.context.restrictedTraverse('background-images')
+            except:
+                pass
+        
+        if background_images:
+        
             max_height = self.get_agcommon_properties('max_homepage_image_width',
                                                   MAX_HOMEPAGE_IMAGE_WIDTH)
 
             max_width = self.get_agcommon_properties('max_homepage_image_height',
                                                  MAX_HOMEPAGE_IMAGE_HEIGHT)
 
-            return getBackgroundImages(p['background-images'], 
+            return getBackgroundImages(background_images, 
                                        maxWidth=max_height, 
                                        maxHeight=max_width)
 
