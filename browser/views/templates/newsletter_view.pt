@@ -48,6 +48,7 @@ h1, h2, h3, .portletHeader, .documentDescription {
 h1 {
     font-size: 18pt;
     margin: 5pt 0 3pt 0;
+    line-height: 1.125;
 }
 
 h2 a, dt.portletHeader a {

@@ -93,7 +93,7 @@
                 <tal:warning condition="not: isAnon">
                     <tr>
                         <td tal:attributes="colspan python: sr and '2' or None" align="left" valign="top" bgcolor="#FFF500">
-                            <strong>Warning:</strong> This is the logged-in view of the newsletter.  Go to the <a tal:attributes="href python:context.absolute_url().replace('https://', 'http://')">logged out view</a> before emailing.  Do not attempt to email this newsletter, or users will be asked to log in before viewing articles.
+                            <strong>Warning:</strong> This is the logged-in view of the newsletter.  Go to the <a tal:attributes="href view/public_url">logged out view</a> before emailing.  Do not attempt to email this newsletter, or users will be asked to log in before viewing articles.
                         </td>
                     </tr>
                 </tal:warning>
