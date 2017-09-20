@@ -854,13 +854,13 @@ class ContributorsViewlet(AgCommonViewlet):
         job_titles = obj.getJobTitles()
 
         return {
-                    'name' : obj.pretty_title_or_id(),
-                    'title' : job_titles and job_titles[0] or '',
-                    'url' : obj.absolute_url(),
-                    'phone' : obj.getOfficePhone(),
-                    'email' : obj.getEmail(),
-                    'image' : getattr(obj, 'image_thumb', None),
-                    'tag' : getattr(obj, 'tag', None)
+            'name' : obj.pretty_title_or_id(),
+            'title' : job_titles and job_titles[0] or '',
+            'url' : obj.absolute_url(),
+            'phone' : obj.getOfficePhone(),
+            'email' : obj.getEmail(),
+            'image' : getattr(obj, 'image_thumb', None),
+            'tag' : getattr(obj, 'tag', None)
         }
 
     @property
