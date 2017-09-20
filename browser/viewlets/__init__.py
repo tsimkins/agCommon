@@ -845,6 +845,24 @@ class ContributorsViewlet(AgCommonViewlet):
     def showForContentTypes(self):
         return getContextConfig(self.context, 'person_portlet_types', default=['News Item'])
 
+    def getPeopleResults(self, peopleList):
+        portal_catalog = getToolByName(self.context, 'portal_catalog')
+        return portal_catalog.searchResults({'portal_type' : 'FSDPerson', 'id' : peopleList })
+
+    def getPersonInfo(self, brain):
+        obj = brain.getObject()
+        job_titles = obj.getJobTitles()
+
+        return {
+                    'name' : obj.pretty_title_or_id(),
+                    'title' : job_titles and job_titles[0] or '',
+                    'url' : obj.absolute_url(),
+                    'phone' : obj.getOfficePhone(),
+                    'email' : obj.getEmail(),
+                    'image' : getattr(obj, 'image_thumb', None),
+                    'tag' : getattr(obj, 'tag', None)
+        }
+
     @property
     def people(self):
 
@@ -860,27 +878,14 @@ class ContributorsViewlet(AgCommonViewlet):
             peopleList = [x.strip() for x in self.context.Contributors()]
 
         if peopleList:
-            portal_catalog = getToolByName(self.context, 'portal_catalog')
-            search_results = portal_catalog.searchResults({'portal_type' : 'FSDPerson', 'id' : peopleList })
+            search_results = self.getPeopleResults(peopleList)
 
             for id in peopleList:
                 found = False
 
                 for r in search_results:
                     if r.id == id:
-
-                        obj = r.getObject()
-                        job_titles = obj.getJobTitles()
-
-                        people.append({
-                                            'name' : obj.pretty_title_or_id(),
-                                            'title' : job_titles and job_titles[0] or '',
-                                            'url' : obj.absolute_url(),
-                                            'phone' : obj.getOfficePhone(),
-                                            'email' : obj.getEmail(),
-                                            'image' : getattr(obj, 'image_thumb', None),
-                                            'tag' : getattr(obj, 'tag', None)
-                                            })
+                        people.append(self.getPersonInfo(r))
                         found = True
 
                 if not found and not psuid_re.match(id):
