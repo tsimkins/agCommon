@@ -2128,6 +2128,9 @@ dl.person-connect img {
   #content .publication h3 {
     margin-top: 0; }
 
+#portal-column-content.s0 #content .documentContributors .contentLeadImageContainer {
+  height: 116px; }
+
 /* = portal-footer ========================================= */
 #portal-footer {
   margin: 0;
