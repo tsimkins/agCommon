@@ -29,6 +29,10 @@
     <interface
         interface=".interfaces.ISkipSection" />
 
+    <!-- IInspectletEnable - Explicitly declaring -->
+    <interface
+        interface=".interfaces.IInspectletEnabled" />
+
     <!-- Views and Viewlets -->
     <include package=".views" />
     <include package=".viewlets" />

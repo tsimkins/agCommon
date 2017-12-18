@@ -24,7 +24,6 @@
         layer="..interfaces.IThemeSpecific"
         />
 
-
     <!-- Google Plus metadata -->
     <browser:viewlet
         name="agcommon.htmlhead.googleplus"
@@ -52,6 +51,16 @@
         class=".FBMetadataViewlet"
         permission="zope2.View"
         template="templates/fbmetadata.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- Inspectlet JavaScript (conditional based on IInspectletEnable) -->
+    <browser:viewlet
+        name="agcommon.htmlhead.inspectly"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".InspectletViewlet"
+        permission="zope2.View"
+        template="templates/inspectlet.pt"
         layer="..interfaces.IThemeSpecific"
         />
 

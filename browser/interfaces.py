@@ -61,3 +61,7 @@ except ImportError:
 
     class ISyndicatable(Interface):
         pass
+
+# Sections of the site providing this interface have Inspectlet enabled.
+class IInspectletEnabled(Interface):
+    pass

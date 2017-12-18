@@ -18,7 +18,7 @@ from cgi import escape
 from collective.contentleadimage.utils import getImageAndCaptionFields, getImageAndCaptionFieldNames
 from collective.contentleadimage.browser.viewlets import LeadImageViewlet
 from hashlib import md5
-from ..interfaces import ICollegeHomepage
+from ..interfaces import ICollegeHomepage, IInspectletEnabled
 from plone.app.discussion.browser.comments import CommentsViewlet
 from plone.app.layout.nextprevious.view import NextPreviousView
 from plone.app.layout.viewlets.common import SearchBoxViewlet, TableOfContentsViewlet, ViewletBase
@@ -1249,6 +1249,28 @@ class EditorMessageViewlet(AgCommonViewlet):
             return not not self.message
 
         return False
+
+class InspectletViewlet(AgCommonViewlet):
+
+    def implements_interface(self):
+        
+        for i in aq_chain(self.context):
+
+            if IInspectletEnabled.providedBy(i):
+                return True
+
+            if IPloneSiteRoot.providedBy(i):
+                break
+
+        return False
+
+    def show(self):
+    
+        if not self.anonymous:
+            return not not self.implements_interface
+
+        return False
+
 
 # provideAdapter for viewlets to be registered in standalone mode
 
