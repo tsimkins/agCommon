@@ -1252,7 +1252,8 @@ class EditorMessageViewlet(AgCommonViewlet):
 
 class InspectletViewlet(AgCommonViewlet):
 
-    def implements_interface(self):
+    @property
+    def enabled(self):
         
         for i in aq_chain(self.context):
 
@@ -1262,14 +1263,10 @@ class InspectletViewlet(AgCommonViewlet):
             if IPloneSiteRoot.providedBy(i):
                 break
 
-        return False
-
     def show(self):
     
-        if not self.anonymous:
-            return not not self.implements_interface
-
-        return False
+        if self.anonymous:
+            return not not self.enabled
 
 
 # provideAdapter for viewlets to be registered in standalone mode

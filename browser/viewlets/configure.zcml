@@ -56,7 +56,7 @@
 
     <!-- Inspectlet JavaScript (conditional based on IInspectletEnable) -->
     <browser:viewlet
-        name="agcommon.htmlhead.inspectly"
+        name="agcommon.htmlhead.inspectlet"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class=".InspectletViewlet"
         permission="zope2.View"
