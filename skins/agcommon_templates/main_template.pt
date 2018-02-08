@@ -208,7 +208,10 @@
                                     Generic KSS Title. Is rendered with class="documentFirstHeading".
                                 </h1>
                             </metal:title>
-                            <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+                            <metal:belowtitle define-slot="below-content-title">                            
+                                <div tal:replace="structure provider:plone.belowcontenttitle" />
+                            </metal:belowtitle>
 
                             <metal:additional define-slot="content-additional">
                                 <metal:comment tal:content="nothing">
