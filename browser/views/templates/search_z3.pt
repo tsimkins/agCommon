@@ -240,11 +240,11 @@
                 tal:attributes="class python:'tileItem tileSummary contenttype-' + normalizeString(result.portal_type)">
                 <img tal:replace="structure item_icon/html_tag" />
                 <a href="#"
-                    tal:condition="exists:item_object/image_thumb"
+                    tal:condition="exists:item_object/image_preview"
                     tal:attributes="href url"
                     class="searchLeadImageContainer">
                     <img src="" alt=""
-                            tal:replace="structure python: path('nocall:item_object/tag')(scale='thumb', css_class='tileImage')" />
+                            tal:replace="structure python: path('nocall:item_object/tag')(scale='preview', css_class='tileImage')" />
                 </a>
                 <a href="#"
                     tal:attributes="href url;
