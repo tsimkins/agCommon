@@ -1,15 +1,11 @@
 <div id="portal-footer" i18n:domain="plone" role="contentinfo">
 	<p>
 		<abbr title="Copyright">&copy;</abbr>
-		<span tal:omit-tag=""
+		<span
 			tal:define="now modules/DateTime/DateTime" 
-			tal:content="now/year">[date last modified]</span>
+			tal:replace="now/year" />
 		
-	      <a tal:attributes="href view/footer_copyright_link" tal:content="view/footer_copyright" />
-          <tal:partner condition="python: view.footer_copyright_2 and view.footer_copyright_link_2">
-          /
-    	      <a tal:attributes="href view/footer_copyright_link_2" tal:content="view/footer_copyright_2" />
-    	  </tal:partner>
+	      The Pennsylvania State University
 		
 	</p>
 
