@@ -1,13 +1,20 @@
 from agsci.w3c.content import getText
-from archetypes.schemaextender.interfaces import ISchemaExtender
+from archetypes.schemaextender.interfaces import ISchemaExtender, ISchemaModifier
+from Acquisition import ImplicitAcquisitionWrapper
 from BeautifulSoup import BeautifulSoup
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
 from Products.Five.utilities.interfaces import IMarkerInterfaces
 from Products.agCommon import toISO
+from plone.app.blob.field import BlobWrapper
+from plone.portlets.interfaces import IPortletManager, IPortletAssignmentMapping,\
+    IPortletRenderer, IPortletAssignmentSettings
 from collective.contentleadimage.utils import getImageAndCaptionFieldNames, getImageAndCaptionFields
-from zope.component import queryAdapter
+from zope.component import queryAdapter, getAdapters, getUtilitiesFor, getMultiAdapter
+from zope.component.hooks import getSite
+from Products.Archetypes.Field import Image
+
 import Missing
 import base64
 import json
@@ -19,6 +26,10 @@ first_cap_re = re.compile('(.)([A-Z][a-z]+)')
 all_cap_re = re.compile('([a-z0-9])([A-Z])')
 
 class BaseView(BrowserView):
+
+    @property
+    def full(self):
+        return self.request.form.get('full', None)
 
     # http://stackoverflow.com/questions/1175208/elegant-python-function-to-convert-camelcase-to-camel-case
     def format_key(self, name):
@@ -204,7 +215,7 @@ class BaseView(BrowserView):
                         if field.type in ['blob', ]:
 
                             # Only include blob data if 'full' in URL parameters
-                            if self.request.form.get('full', None):
+                            if self.full:
 
                                 if v.data:
 
@@ -247,7 +258,7 @@ class BaseView(BrowserView):
         data.update(extender_data)
 
         # Get the html and text of the content if the 'full' parameter is used
-        if self.request.form.get('full', None):
+        if self.full:
             try:
                 html = getText(self.context)
             except:
@@ -281,6 +292,227 @@ class BaseView(BrowserView):
         json = self.getJSON()
         self.request.response.setHeader('Content-Type', 'application/json')
         return json
+
+class JSONDumpView(BaseView):
+
+    full = True
+
+    @property
+    def base_context(self):
+        return self.context.aq_base
+
+    # Get data from the Archetypes schema
+    @property
+    def schema_fields(self):
+
+        try:
+            schema = self.base_context.Schema()
+        except:
+            pass
+        else:
+            for field in schema.fields():
+                try:
+                    v = field.get(self.base_context)
+                except (TypeError, AttributeError):
+                    continue
+                else:
+                    yield field
+
+    @property
+    def extenders(self):
+
+        extenders = [x for x in getAdapters((self.base_context, ), ISchemaExtender)]
+        modifiers = [x for x in getAdapters((self.base_context, ), ISchemaModifier)]
+
+        extenders.extend(modifiers)
+
+        return extenders
+
+    @property
+    def extender_fields(self):
+
+        for (name, adapter) in self.extenders:
+
+            for field in adapter.getFields():
+
+                # Get the value of the field
+                try:
+                    v = field.get(self.base_context)
+                except (TypeError, AttributeError):
+                    continue
+                else:
+                    yield field
+
+    @property
+    def fields(self):
+        fields = []
+
+        fields.extend(self.schema_fields)
+        fields.extend(self.extender_fields)
+
+        return fields
+
+    def field_info(self, field):
+
+        extender_fields = [x.getName() for x in self.extender_fields]
+
+        return {
+            'id' : field.getName(),
+            'key' : self.format_key(field.getName()),
+            'extender_field' : field.getName() in extender_fields,
+            'label' : self.translate(field.widget.label),
+            'description' : self.translate(field.widget.description),
+            'type' : field.type,
+        }
+
+    @property
+    def data(self):
+
+        data = {
+            'uid' : {
+                'info' : {},
+                'value' : self.context.UID(),
+            },
+            'relative_path' : {
+                'info' : {},
+                'value' : self.relative_path,
+            },
+            'review_state' : {
+                'info' : {},
+                'value' : self.review_state,
+            },
+            'type' : {
+                'info' : {},
+                'value' : self.context.Type(),
+            },
+            'portlets' : {
+                'info' : {},
+                'value' : self.portlets,
+            },
+        }
+
+        for field in self.fields:
+            try:
+                v = field.get(self.base_context)
+            except AttributeError:
+                continue
+
+            if v is None:
+                continue
+
+            field_name = self.format_key(field.getName())
+            value = v
+
+            # If blob field type, encode binary data and
+            # include mime type
+            if isinstance(v, (BlobWrapper, Image, )):
+
+                blob_data = v.data
+
+                if isinstance(blob_data, ImplicitAcquisitionWrapper):
+                    blob_data = blob_data.data
+
+                if blob_data:
+
+                    value = {
+                        'content_type' : v.getContentType(),
+                        'data' : base64.b64encode(blob_data),
+                        'filename' : v.getFilename(),
+                    }
+
+                else:
+                    value = None
+
+            elif isinstance(v, DateTime):
+                value = toISO(v)
+
+            data[field_name] = {
+                'info' : self.field_info(field),
+                'value' : value,
+            }
+
+        return data
+
+    @property
+    def review_state(self):
+        try:
+            return self.portal_workflow.getInfoFor(self.context, 'review_state')
+        except:
+            return None
+
+    @property
+    def relative_path(self):
+
+        site = getSite()
+        site_path_length = len(site.virtual_url_path())
+
+        return self.context.virtual_url_path()[site_path_length+1:]
+
+    def getJSON(self):
+        return json.dumps(self.data, indent=4, sort_keys=True)
+
+    @property
+    def portal_workflow(self):
+        return getToolByName(self.context, "portal_workflow")
+
+    @property
+    def translation_service(self):
+        return getToolByName(self.context, 'translation_service')
+
+    def translate(self, v):
+        return self.translation_service.translate(v, target_language="en")
+
+    @property
+    def portlets(self):
+
+        data = {}
+
+        portlet_managers = getUtilitiesFor(IPortletManager, context=self.context)
+
+        for (name, manager) in portlet_managers:
+
+            mapping = getMultiAdapter((self.context, manager), IPortletAssignmentMapping)
+
+            for (id, assignment) in mapping.items():
+
+                renderer = getMultiAdapter(
+                    (
+                        self.context,
+                        self.request,
+                        self,
+                        manager,
+                        assignment
+                    ),
+                    IPortletRenderer
+                )
+
+                if renderer.__of__(self.context).available:
+
+                    try:
+                        settings = IPortletAssignmentSettings(assignment)
+                        visible = settings.get('visible', True)
+                    except TypeError:
+                        visible = False
+
+                    if visible:
+
+                        if not data.has_key(name):
+                            data[name] = []
+
+                        config = dict(assignment.__dict__)
+
+                        for k in config.keys():
+                            if k.startswith('__') or k in ('assignment_context_path',):
+                                del config[k]
+
+                        data[name].append({
+                            'id' : id,
+                            'klass' : assignment.__class__.__module__,
+                            'title' : assignment.title,
+                            'config' : config,
+                        })
+
+        return data
 
 def getAPIData(object_url):
 
