@@ -137,6 +137,8 @@ allow_module('urllib')
 allow_module('zope.component')
 allow_module('zope.component.getSiteManager')
 allow_module('csv')
+allow_module('requests')
+allow_module('json')
 
 allow_module('Products.ZCatalog.Lazy')
 allow_module('Products.GlobalModules')
