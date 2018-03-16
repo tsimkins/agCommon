@@ -44,12 +44,19 @@ class MagentoProductRedirectsView(BaseView):
         results = self.portal_catalog.searchResults({'UID' : uids})
 
         for r in results:
+
             url = r.getURL()[len(site.absolute_url()):]
             target = lookup.get(r.UID)
+
+            review_state = r.review_state
+            
+            if not review_state:
+                review_state = None
+            
             data.append({
                 'source' : url,
                 'target' : target,
-                'review_state' : r.review_state,
+                'review_state' : review_state,
             })
 
         return data
