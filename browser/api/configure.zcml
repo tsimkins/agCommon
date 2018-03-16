@@ -24,7 +24,15 @@
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         />
-        
+
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="magento-redirects"
+        class=".plone_site.MagentoProductRedirectsView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
     <!-- FacultyStaffDirectory -->
 
     <browser:page
