@@ -478,6 +478,23 @@
         position: absolute;
         margin-left: -10000px;
     }
+    
+    #content-core {
+        #faceted-form {
+            
+            #center-and-left-area, #center-area {
+                float: none;
+                margin-right: 0;
+                margin-left: 0;
+            }
+            
+            #right-area, #left-area {
+                width: 97%;
+                float: none;
+            }
+        }
+    }
+
 }
 
 /*------------------------ END large-site.css ----------------------------*/

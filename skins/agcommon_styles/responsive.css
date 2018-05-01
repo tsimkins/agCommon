@@ -352,7 +352,15 @@
 
   #now-playing a span {
     position: absolute;
-    margin-left: -10000px; } }
+    margin-left: -10000px; }
+
+  #content-core #faceted-form #center-and-left-area, #content-core #faceted-form #center-area {
+    float: none;
+    margin-right: 0;
+    margin-left: 0; }
+  #content-core #faceted-form #right-area, #content-core #faceted-form #left-area {
+    width: 97%;
+    float: none; } }
 /*------------------------ END large-site.css ----------------------------*/
 /*------------------------- resolution-1032px.css ------------------------------*/
 /* Full browser width */
