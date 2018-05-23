@@ -479,8 +479,10 @@ class AddThisViewlet(PublicationCodeViewlet):
 class FBLikeViewlet(AgCommonViewlet):
     index = ViewPageTemplateFile('templates/fblike.pt')
 
-    def update(self):
-        self.likeurl = escape(safe_unicode(self.context.absolute_url()))
+    @property
+    def likeurl(self):
+        _ = escape(safe_unicode(self.context.absolute_url()))
+        return _.replace('https://', 'http://') # So we don't lose the old like
 
     def show_fblike(self):
 
