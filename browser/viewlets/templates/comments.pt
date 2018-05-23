@@ -18,9 +18,9 @@
             <legend i18n:translate="label_add_comment">Comments</legend>
 
             <fb:comments 
-                tal:attributes="href context/absolute_url;
-                                url context/absolute_url;
-                                returnurl context/absolute_url;
+                tal:attributes="href view/url|nothing;
+                                url view/url|nothing;
+                                returnurl view/url|nothing;
                                 xid view/xid" 
                 canpost="true" 
                 publish_feed="true" 

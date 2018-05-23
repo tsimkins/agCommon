@@ -925,7 +925,13 @@ class CustomCommentsViewlet(CommentsViewlet):
         try:
             self.xid = md5(self.context.UID()).hexdigest()
         except AttributeError:
-            self.xid = md5(self.context.absolute_url()).hexdigest()
+            self.xid = md5(self.url).hexdigest()
+
+
+    @property
+    def url(self):
+        _ = self.context.absolute_url()
+        return _.replace('https://', 'http://') # So we don't lose old comments
 
 class _ContentWellPortletsViewlet(ContentWellPortletsViewlet, AgCommonViewlet):
 
