@@ -383,16 +383,19 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
     @property
     def public_url(self):
 
+        prefix = 'edit.'
+
         # Registry domain value
         domain = self.registry.get('agsci.newsletter.domain', None)
 
         # Calculated URL
-        url = self.context.absolute_url().replace('https://', 'http://')
+        url = self.context.absolute_url()
+        parsed_url = urlparse(url)
 
         if domain:
             # Parse URLs so we can interpolate
             parsed_domain = urlparse(domain)
-            parsed_url = urlparse(url)
+
 
             # Return interpolated value
             return urlunparse(
@@ -406,7 +409,28 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
                 ]
             )
 
-        return url
+        elif parsed_url.netloc.startswith(prefix):
+            return urlunparse(
+                [
+                    'https',
+                    parsed_url.netloc[len(prefix):],
+                    parsed_url.path,
+                    '',
+                    '',
+                    ''
+                ]
+            )
+
+        return urlunparse(
+            [
+                'http',
+                parsed_url.netloc,
+                parsed_url.path,
+                '',
+                '',
+                ''
+            ]
+        )
 
 class NewsletterModify(NewsletterView):
 
