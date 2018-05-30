@@ -409,7 +409,7 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
                     ''
                 ]
             )
-        
+
         # If we have an 'edit.' domain convention
         elif parsed_url.netloc.startswith(prefix):
             return urlunparse(
