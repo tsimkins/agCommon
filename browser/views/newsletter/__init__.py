@@ -414,7 +414,7 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
         elif parsed_url.netloc.startswith(prefix):
             return urlunparse(
                 [
-                    parsed_domain.scheme,
+                    parsed_url.scheme,
                     parsed_url.netloc[len(prefix):],
                     parsed_url.path,
                     '',
