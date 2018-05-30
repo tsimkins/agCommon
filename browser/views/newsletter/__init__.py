@@ -392,6 +392,7 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
         url = self.context.absolute_url()
         parsed_url = urlparse(url)
 
+        # Hardcoded domain
         if domain:
             # Parse URLs so we can interpolate
             parsed_domain = urlparse(domain)
@@ -408,11 +409,12 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
                     ''
                 ]
             )
-
+        
+        # If we have an 'edit.' domain convention
         elif parsed_url.netloc.startswith(prefix):
             return urlunparse(
                 [
-                    'https',
+                    parsed_domain.scheme,
                     parsed_url.netloc[len(prefix):],
                     parsed_url.path,
                     '',
@@ -421,6 +423,7 @@ class NewsletterView(AgCommonUtilities, LeadImageViewlet):
                 ]
             )
 
+        # Return the http version of the URL
         return urlunparse(
             [
                 'http',
