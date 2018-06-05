@@ -2974,6 +2974,35 @@ body.icons-on #content a.state-atlas-import-publication:after {
       border-bottom: none; }
 
 /* CSS for faceted navigation in Syllabi */
+body.portaltype-employer_container #ag-career-day-banner {
+  margin-bottom: 1em; }
+  body.portaltype-employer_container #ag-career-day-banner img {
+    width: 100%;
+    max-width: 100%; }
+body.portaltype-employer_container h1.documentFirstHeading,
+body.portaltype-employer_container #plone-document-byline {
+  margin: -1px 0 0 -1px !important;
+  padding: 0 !important;
+  position: absolute;
+  margin-left: -10000px !important; }
+body.portaltype-employer_container #content-core #faceted-form #center-content-area {
+  width: 100%;
+  margin-right: 0; }
+body.portaltype-employer_container #content .tileItem {
+  border-bottom: 1px solid #575757; }
+  body.portaltype-employer_container #content .tileItem .contentLeadImageContainer {
+    width: 33%;
+    float: right;
+    clear: none; }
+  body.portaltype-employer_container #content .tileItem h3 {
+    font-size: 1.5em;
+    margin-top: 0; }
+    body.portaltype-employer_container #content .tileItem h3 a {
+      color: #265FCF;
+      text-decoration: underline; }
+  body.portaltype-employer_container #content .tileItem h4 {
+    font-size: 1.0625em; }
+
 #content-core #faceted-form {
   padding-top: 0; }
   #content-core #faceted-form #center-content-area {
@@ -2985,45 +3014,84 @@ body.icons-on #content a.state-atlas-import-publication:after {
   #content-core #faceted-form #right-area {
     width: 30%;
     padding: 0 1.5%; }
-  #content-core #faceted-form #center-content-area .faceted-criteria dl, #content-core #faceted-form #center-content-area .faceted-criteria .faceted-criteria-hide-show, #content-core #faceted-form #center-content-area .faceted-criteria .faceted-criteria-reset, #content-core #faceted-form #right-area .faceted-criteria dl, #content-core #faceted-form #right-area .faceted-criteria .faceted-criteria-hide-show, #content-core #faceted-form #right-area .faceted-criteria .faceted-criteria-reset {
+  #content-core #faceted-form #faceted-top-column .faceted-criteria dl, #content-core #faceted-form #faceted-top-column .faceted-criteria .faceted-criteria-hide-show, #content-core #faceted-form #faceted-top-column .faceted-criteria .faceted-criteria-reset,
+  #content-core #faceted-form #center-content-area .faceted-criteria dl,
+  #content-core #faceted-form #center-content-area .faceted-criteria .faceted-criteria-hide-show,
+  #content-core #faceted-form #center-content-area .faceted-criteria .faceted-criteria-reset,
+  #content-core #faceted-form #right-area .faceted-criteria dl,
+  #content-core #faceted-form #right-area .faceted-criteria .faceted-criteria-hide-show,
+  #content-core #faceted-form #right-area .faceted-criteria .faceted-criteria-reset {
     font-size: 0.875em;
     margin-left: 1em; }
-  #content-core #faceted-form #center-content-area .faceted-criteria dl dt span, #content-core #faceted-form #right-area .faceted-criteria dl dt span {
+  #content-core #faceted-form #faceted-top-column .faceted-criteria dl dt span,
+  #content-core #faceted-form #center-content-area .faceted-criteria dl dt span,
+  #content-core #faceted-form #right-area .faceted-criteria dl dt span {
     font-weight: 600; }
-  #content-core #faceted-form #center-content-area .faceted-criteria dl dd, #content-core #faceted-form #right-area .faceted-criteria dl dd {
+  #content-core #faceted-form #faceted-top-column .faceted-criteria dl dd,
+  #content-core #faceted-form #center-content-area .faceted-criteria dl dd,
+  #content-core #faceted-form #right-area .faceted-criteria dl dd {
     margin-left: 1em; }
-  #content-core #faceted-form #center-content-area .widget-fieldset, #content-core #faceted-form #right-area .widget-fieldset {
+  #content-core #faceted-form #faceted-top-column .widget-fieldset,
+  #content-core #faceted-form #center-content-area .widget-fieldset,
+  #content-core #faceted-form #right-area .widget-fieldset {
     border: none;
     padding: 0;
     margin: 0 0 1.5em 0; }
-    #content-core #faceted-form #center-content-area .widget-fieldset legend, #content-core #faceted-form #right-area .widget-fieldset legend {
+    #content-core #faceted-form #faceted-top-column .widget-fieldset legend,
+    #content-core #faceted-form #center-content-area .widget-fieldset legend,
+    #content-core #faceted-form #right-area .widget-fieldset legend {
       font-weight: 600;
       padding: 0;
       font-size: 1em; }
-    #content-core #faceted-form #center-content-area .widget-fieldset form, #content-core #faceted-form #right-area .widget-fieldset form {
+    #content-core #faceted-form #faceted-top-column .widget-fieldset form,
+    #content-core #faceted-form #center-content-area .widget-fieldset form,
+    #content-core #faceted-form #right-area .widget-fieldset form {
       font-size: 0.875em; }
-      #content-core #faceted-form #center-content-area .widget-fieldset form input[id="SearchableText"], #content-core #faceted-form #right-area .widget-fieldset form input[id="SearchableText"] {
+      #content-core #faceted-form #faceted-top-column .widget-fieldset form input[id="SearchableText"],
+      #content-core #faceted-form #center-content-area .widget-fieldset form input[id="SearchableText"],
+      #content-core #faceted-form #right-area .widget-fieldset form input[id="SearchableText"] {
         margin: 0 3%;
         font-size: 0.875em;
         padding: 0.25em 1%;
         width: 92%; }
-      #content-core #faceted-form #center-content-area .widget-fieldset form input[id="SearchableText_button"], #content-core #faceted-form #right-area .widget-fieldset form input[id="SearchableText_button"] {
+      #content-core #faceted-form #faceted-top-column .widget-fieldset form input[id="SearchableText_button"],
+      #content-core #faceted-form #center-content-area .widget-fieldset form input[id="SearchableText_button"],
+      #content-core #faceted-form #right-area .widget-fieldset form input[id="SearchableText_button"] {
         display: block;
         width: 20%;
         margin: 0.375em 0 0 3%;
         float: none;
         font-size: 0.875em; }
-      #content-core #faceted-form #center-content-area .widget-fieldset form ul, #content-core #faceted-form #right-area .widget-fieldset form ul {
+      #content-core #faceted-form #faceted-top-column .widget-fieldset form ul,
+      #content-core #faceted-form #center-content-area .widget-fieldset form ul,
+      #content-core #faceted-form #right-area .widget-fieldset form ul {
         margin: 0 0 0 0.75em; }
-        #content-core #faceted-form #center-content-area .widget-fieldset form ul li, #content-core #faceted-form #right-area .widget-fieldset form ul li {
+        #content-core #faceted-form #faceted-top-column .widget-fieldset form ul li,
+        #content-core #faceted-form #center-content-area .widget-fieldset form ul li,
+        #content-core #faceted-form #right-area .widget-fieldset form ul li {
           margin: 0 0 0.625em 0;
           padding-left: 18px;
           line-height: 1.25; }
-          #content-core #faceted-form #center-content-area .widget-fieldset form ul li input, #content-core #faceted-form #right-area .widget-fieldset form ul li input {
+          #content-core #faceted-form #faceted-top-column .widget-fieldset form ul li input,
+          #content-core #faceted-form #center-content-area .widget-fieldset form ul li input,
+          #content-core #faceted-form #right-area .widget-fieldset form ul li input {
             margin-left: -18px;
             margin-top: 2px; }
-          #content-core #faceted-form #center-content-area .widget-fieldset form ul li label, #content-core #faceted-form #right-area .widget-fieldset form ul li label {
+          #content-core #faceted-form #faceted-top-column .widget-fieldset form ul li label,
+          #content-core #faceted-form #center-content-area .widget-fieldset form ul li label,
+          #content-core #faceted-form #right-area .widget-fieldset form ul li label {
             padding-left: 0; }
+  #content-core #faceted-form #faceted-top-column .widget-fieldset form input[id="SearchableText"] {
+    margin: 0;
+    font-size: 0.875em;
+    padding: 0.25em 0;
+    width: 100%; }
+  #content-core #faceted-form #faceted-top-column .widget-fieldset form input[id="SearchableText_button"] {
+    display: block;
+    width: 20%;
+    margin: 0.375em 0 0 0;
+    float: none;
+    font-size: 0.875em; }
 
 /* PloneFormGen Fields */
 .template-fg_base_view_p3 textarea {

@@ -1,5 +1,60 @@
 /* CSS for faceted navigation in Syllabi */
 
+body.portaltype-employer_container {
+
+    #ag-career-day-banner {
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        margin-bottom: 1em;
+    }
+
+    h1.documentFirstHeading,
+    #plone-document-byline {
+        margin: -1px 0 0 -1px !important;
+        padding: 0 !important;
+        position: absolute;
+        margin-left: -10000px !important;
+    }
+
+    #content-core {
+        #faceted-form {
+            #center-content-area {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+
+    #content {
+        .tileItem {
+            border-bottom: 1px solid #575757;
+
+            .contentLeadImageContainer {
+                width: 33%;
+                float: right;
+                clear: none;
+            }
+
+            h3 {
+                font-size: 1.5em;
+                margin-top: 0;
+
+                a {
+                    color: #265FCF;
+                    text-decoration: underline;
+                }
+            }
+
+            h4 {
+                font-size: 1.0625em;
+            }
+        }
+    }
+}
+
 #content-core {
     #faceted-form {
 
@@ -22,15 +77,17 @@
             width: 30%;
             padding: 0 1.5%;
         }
-        
-        #center-content-area, #right-area {
+
+        #faceted-top-column,
+        #center-content-area,
+        #right-area {
 
             .faceted-criteria {
                 dl, .faceted-criteria-hide-show, .faceted-criteria-reset {
                     font-size: 0.875em;
                     margin-left: 1em;
                 }
-                
+
                 dl {
                     dt {
                         span {
@@ -90,6 +147,30 @@
                                 padding-left: 0;
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        #faceted-top-column {
+
+            .widget-fieldset {
+
+                form {
+
+                    input[id="SearchableText"] {
+                        margin: 0;
+                        font-size: 0.875em;
+                        padding: 0.25em 0;
+                        width: 100%
+                    }
+
+                    input[id="SearchableText_button"] {
+                        display: block;
+                        width: 20%;
+                        margin: 0.375em 0 0 0;
+                        float: none;
+                        font-size: 0.875em;
                     }
                 }
             }
