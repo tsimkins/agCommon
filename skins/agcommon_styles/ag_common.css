@@ -2993,7 +2993,8 @@ body.portaltype-employer_container #content .tileItem {
   body.portaltype-employer_container #content .tileItem .contentLeadImageContainer {
     width: 33%;
     float: right;
-    clear: none; }
+    clear: none;
+    margin: 0 0 1em 1em; }
   body.portaltype-employer_container #content .tileItem h3 {
     font-size: 1.5em;
     margin-top: 0; }
