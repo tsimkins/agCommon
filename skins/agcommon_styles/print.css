@@ -325,4 +325,7 @@ a[href^="http"]:link:after, a[href^="http"]:visited:after {
 .contentLeadImageContainerFullWidth a {
   border-bottom: none !important; }
 
+.print-hidden {
+  display: none !important; }
+
 /*# sourceMappingURL=print.css.map */

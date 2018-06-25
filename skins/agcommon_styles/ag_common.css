@@ -2988,8 +2988,10 @@ body.portaltype-employer_container #plone-document-byline {
 body.portaltype-employer_container #content-core #faceted-form #center-content-area {
   width: 100%;
   margin-right: 0; }
+body.portaltype-employer_container #content .tileItem:first-child {
+  border-top: none; }
 body.portaltype-employer_container #content .tileItem {
-  border-bottom: 1px solid #575757; }
+  border-top: 1px solid #575757; }
   body.portaltype-employer_container #content .tileItem .contentLeadImageContainer {
     width: 33%;
     float: right;
@@ -3094,6 +3096,66 @@ body.portaltype-employer_container #content .tileItem {
     float: none;
     font-size: 0.875em; }
 
+@media print {
+  body.portaltype-employer_container #content .tileItem {
+    border-top: none;
+    clear: both !important;
+    overflow: visible;
+    display: block;
+    float: none !important;
+    visibility: visible;
+    page-break-inside: avoid; }
+    body.portaltype-employer_container #content .tileItem .contentLeadImageContainer {
+      clear: right; }
+    body.portaltype-employer_container #content .tileItem .website {
+      margin: 0.5em 0 1em;
+      font-size: 0.9375em; }
+      body.portaltype-employer_container #content .tileItem .website h4, body.portaltype-employer_container #content .tileItem .website p {
+        display: inline;
+        font-size: 1em !important; }
+      body.portaltype-employer_container #content .tileItem .website h4:after {
+        content: ":  "; }
+  body.portaltype-employer_container #content .tileItem:after {
+    content: "\25cb  \25cb  \25cb";
+    text-align: center;
+    clear: both;
+    display: block; }
+  body.portaltype-employer_container #content h1, body.portaltype-employer_container #content h2, body.portaltype-employer_container #content h3, body.portaltype-employer_container #content h4 {
+    margin-bottom: 0.375em; }
+  body.portaltype-employer_container #content h1, body.portaltype-employer_container #content h2 {
+    clear: both; }
+  body.portaltype-employer_container #content ul, body.portaltype-employer_container #content ol {
+    font-size: 0.9375em; }
+    body.portaltype-employer_container #content ul li, body.portaltype-employer_container #content ol li {
+      line-height: 1.25; }
+  body.portaltype-employer_container #content .print-col-3 {
+    clear: both;
+    border-top: 1px solid #F6F6F6; }
+    body.portaltype-employer_container #content .print-col-3 > div {
+      width: 33% !important;
+      float: left !important; }
+    body.portaltype-employer_container #content .print-col-3 > .visualClear {
+      clear: both !important; }
+  body.portaltype-employer_container #content .print-col-3:after {
+    clear: both;
+    width: 100%;
+    display: block; }
+  body.portaltype-employer_container #portal-header {
+    display: none; }
+  body.portaltype-employer_container #faceted-form .faceted-sections-buttons,
+  body.portaltype-employer_container #faceted-form .faceted-clear,
+  body.portaltype-employer_container #faceted-form #top-area,
+  body.portaltype-employer_container #faceted-form #right-area,
+  body.portaltype-employer_container #faceted-form #bottom-area {
+    display: none; } }
+@media screen and (max-width: 640px) {
+  body.portaltype-employer_container #content .tileItem .contentLeadImageContainer {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin: 1em 0;
+    padding: 0; } }
 /* PloneFormGen Fields */
 .template-fg_base_view_p3 textarea {
   width: 100%; }

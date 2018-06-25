@@ -29,8 +29,13 @@ body.portaltype-employer_container {
     }
 
     #content {
+
+        .tileItem:first-child {
+            border-top: none;
+        }
+
         .tileItem {
-            border-bottom: 1px solid #575757;
+            border-top: 1px solid #575757;
 
             .contentLeadImageContainer {
                 width: 33%;
@@ -173,6 +178,121 @@ body.portaltype-employer_container {
                         float: none;
                         font-size: 0.875em;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media print {
+    body.portaltype-employer_container {
+
+        #content {
+
+            .tileItem {
+                border-top: none;
+                clear: both !important;
+                overflow: visible;
+                display: block;
+                float: none !important;
+                visibility: visible;
+                page-break-inside: avoid;
+
+                .contentLeadImageContainer {
+                    clear: right;
+                }
+
+                .website {
+
+                    margin: 0.5em 0 1em;
+
+                    font-size: 0.9375em;
+
+                    h4, p {
+                        display: inline;
+                        font-size: 1em !important;
+                    }
+
+                    h4:after {
+                        content: ":  ";
+                    }
+                }
+
+            }
+
+            .tileItem:after {
+                content: "\25cb  \25cb  \25cb";
+                text-align: center;
+                clear: both;
+                display: block;
+            }
+
+            h1, h2, h3, h4 {
+                margin-bottom: 0.375em;
+            }
+
+            h1, h2 {
+                clear: both;
+            }
+
+            ul, ol {
+
+                font-size: 0.9375em;
+
+                li {
+                    line-height: 1.25;
+                }
+            }
+
+            .print-col-3 {
+
+                clear: both;
+                border-top: 1px solid #F6F6F6;
+
+                > div {
+                    width: 33% !important;
+                    float: left !important;
+                }
+
+                > .visualClear {
+                    clear: both !important;
+                }
+            }
+
+            .print-col-3:after {
+                clear: both;
+                width: 100%;
+                display: block;
+            }
+        }
+
+        #portal-header {
+            display: none;
+        }
+
+        #faceted-form {
+            .faceted-sections-buttons,
+            .faceted-clear,
+            #top-area,
+            #right-area,
+            #bottom-area {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    body.portaltype-employer_container {
+        #content {
+            .tileItem {
+                .contentLeadImageContainer {
+                    display: block;
+                    clear: both;
+                    float: none;
+                    width: 100%;
+                    margin: 1em 0;
+                    padding: 0;
                 }
             }
         }

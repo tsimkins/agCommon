@@ -427,3 +427,7 @@ a[href^="http"]:link:after, a[href^="http"]:visited:after {
         border-bottom: none !important;
     }
 }
+
+.print-hidden {
+    display: none !important;
+}
