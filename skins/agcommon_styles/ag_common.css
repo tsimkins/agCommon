@@ -3107,6 +3107,8 @@ body.portaltype-employer_container #content .tileItem {
   body.portaltype-employer_container #ag-career-day-banner a[href^="http"]:link:after,
   body.portaltype-employer_container #ag-career-day-banner a[href^="http"]:visited:after {
     content: none; }
+  body.portaltype-employer_container #content .documentDescription {
+    display: none !important; }
   body.portaltype-employer_container #content .tileItem {
     border-top: none;
     clear: both !important;

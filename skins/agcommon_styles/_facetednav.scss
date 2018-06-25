@@ -207,6 +207,10 @@ body.portaltype-employer_container {
 
         #content {
 
+            .documentDescription {
+                display: none !important;
+            }
+
             .tileItem {
                 border-top: none;
                 clear: both !important;
