@@ -2976,9 +2976,16 @@ body.icons-on #content a.state-atlas-import-publication:after {
 /* CSS for faceted navigation in Syllabi */
 body.portaltype-employer_container #ag-career-day-banner {
   margin-bottom: 1em; }
-  body.portaltype-employer_container #ag-career-day-banner img {
+  body.portaltype-employer_container #ag-career-day-banner a {
+    border-bottom: none !important;
+    display: block;
     width: 100%;
     max-width: 100%; }
+  body.portaltype-employer_container #ag-career-day-banner img {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    clear: both; }
 body.portaltype-employer_container h1.documentFirstHeading,
 body.portaltype-employer_container #plone-document-byline {
   margin: -1px 0 0 -1px !important;
@@ -3097,6 +3104,9 @@ body.portaltype-employer_container #content .tileItem {
     font-size: 0.875em; }
 
 @media print {
+  body.portaltype-employer_container #ag-career-day-banner a[href^="http"]:link:after,
+  body.portaltype-employer_container #ag-career-day-banner a[href^="http"]:visited:after {
+    content: none; }
   body.portaltype-employer_container #content .tileItem {
     border-top: none;
     clear: both !important;

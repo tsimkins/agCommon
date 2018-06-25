@@ -3,9 +3,19 @@
 body.portaltype-employer_container {
 
     #ag-career-day-banner {
+
+        a {
+            border-bottom: none !important;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+
         img {
             width: 100%;
             max-width: 100%;
+            display: block;
+            clear: both;
         }
 
         margin-bottom: 1em;
@@ -186,6 +196,14 @@ body.portaltype-employer_container {
 
 @media print {
     body.portaltype-employer_container {
+
+        #ag-career-day-banner{
+
+            a[href^="http"]:link:after,
+            a[href^="http"]:visited:after {
+                content: none;
+            }
+        }
 
         #content {
 
