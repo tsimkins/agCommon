@@ -32,10 +32,10 @@ class IContributors(Interface):
     """
 
 class IFSDShortBio(Interface):
-    """Invisible magic switch to turn on the FSDPerson short bio behavior for a 
-       folder. Doing an interface instead of a checkbox, since it only needs to 
+    """Invisible magic switch to turn on the FSDPerson short bio behavior for a
+       folder. Doing an interface instead of a checkbox, since it only needs to
        be used for half a dozen areas at most.
-       
+
     """
 
 class ICollegeHomepage(Interface):
@@ -49,8 +49,13 @@ class ISkipSection(Interface):
         Marker interface where we want to 'skip' this item in the traversal to
         determine the 'section'.  This is used in cases where "section C within
         section B within section A" needs to have a section title of A, not B.
-        
+
         Apply this interface to section B, and it will be skipped in the logic.
+    """
+
+class ISearchSection(Interface):
+    """
+        Specifies that this is the item to appear in the section search.
     """
 
 try:

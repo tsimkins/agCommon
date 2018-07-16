@@ -55,6 +55,8 @@ class EmptyViewlet(ViewletBase):
 
 class AgCommonViewlet(ViewletBase):
 
+    search_section = False
+
     def update(self):
         pass
 
@@ -185,7 +187,7 @@ class AgCommonViewlet(ViewletBase):
 
     @memoize
     def getSection(self):
-        return self.agcommon_utilities.getSection()
+        return self.agcommon_utilities.getSection(search=self.search_section)
 
     @property
     def portal_url(self):
@@ -311,9 +313,9 @@ class HomepageImageViewlet(AgCommonViewlet):
 
     @memoize
     def image_data(self):
-    
+
         background_images = None
-        
+
         p = self.context.aq_parent
 
         if 'background-images' in p.objectIds():
@@ -324,17 +326,17 @@ class HomepageImageViewlet(AgCommonViewlet):
                 background_images = self.context.restrictedTraverse('background-images')
             except:
                 pass
-        
+
         if background_images:
-        
+
             max_height = self.get_agcommon_properties('max_homepage_image_width',
                                                   MAX_HOMEPAGE_IMAGE_WIDTH)
 
             max_width = self.get_agcommon_properties('max_homepage_image_height',
                                                  MAX_HOMEPAGE_IMAGE_HEIGHT)
 
-            return getBackgroundImages(background_images, 
-                                       maxWidth=max_height, 
+            return getBackgroundImages(background_images,
+                                       maxWidth=max_height,
                                        maxHeight=max_width)
 
         return ([], [])
@@ -992,6 +994,8 @@ class FooterPortletsViewlet(_ContentWellPortletsViewlet):
 
 class MultiSearchViewlet(AgCommonViewlet):
 
+    search_section = True
+
     def getSearchOptions(self):
 
         return getSearchConfig(context=self.context, path=self.section_path,
@@ -1246,11 +1250,11 @@ class LogoViewlet(AgCommonViewlet):
 
 
 class EditorMessageViewlet(AgCommonViewlet):
-    
+
     @property
     def message(self):
         return self.get_agcommon_properties('editor_message', None)
-    
+
     def show(self):
 
         if not self.anonymous:
@@ -1262,7 +1266,7 @@ class InspectletViewlet(AgCommonViewlet):
 
     @property
     def enabled(self):
-        
+
         for i in aq_chain(self.context):
 
             if IInspectletEnabled.providedBy(i):
@@ -1272,7 +1276,7 @@ class InspectletViewlet(AgCommonViewlet):
                 break
 
     def show(self):
-    
+
         if self.anonymous:
             return not not self.enabled
 

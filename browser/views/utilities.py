@@ -7,7 +7,7 @@ from Products.ZCatalog.CatalogBrains import AbstractCatalogBrain
 from Products.agCommon import getContextConfig
 from Products.agCommon import increaseHeadingLevel as _increaseHeadingLevel
 from agsci.subsite.content.interfaces import ISection, ISubsite
-from ..interfaces import ISkipSection
+from ..interfaces import ISkipSection, ISearchSection
 from urllib import urlencode
 from zope.component import getMultiAdapter
 from zope.interface import implements, Interface
@@ -33,7 +33,7 @@ except ImportError:
     class IExtensionCourseExtender(Interface):
         """
             Placeholder interface
-        """ 
+        """
 
 
 class IAgCommonUtilities(Interface):
@@ -67,7 +67,7 @@ class IAgCommonUtilities(Interface):
 
     def getSiteHeader(self):
         pass
-        
+
     def getDepartmentHeader(self):
         pass
 
@@ -280,9 +280,9 @@ class AgCommonUtilities(BrowserView):
         if department_header:
             body_classes.append('department-site')
             body_classes.append('department-site-%s' % department_header)
-            
+
             department_name_style = self.getDepartmentNameStyle()
-            
+
             if department_name_style:
                 body_classes.append('department-name-style-%s' % department_name_style)
 
@@ -301,10 +301,10 @@ class AgCommonUtilities(BrowserView):
         # Contents below folder
         if getattr(context, "hide_breadcrumbs", False):
             body_classes.append('hide-breadcrumbs')
-        
+
         # Panorama Image
         if getattr(context, 'portal_type', '') in ['HomePage']:
-            portlet_format = getattr(context, "homepage_portlet_format", "standard")     
+            portlet_format = getattr(context, "homepage_portlet_format", "standard")
             body_classes.append('homepage-portlet-format-%s' % portlet_format)
 
         # Tile folder view
@@ -371,7 +371,7 @@ class AgCommonUtilities(BrowserView):
     def increaseHeadingLevel(self, text):
         return _increaseHeadingLevel(text)
 
-    def getSection(self):
+    def getSection(self, search=False):
 
         for i in aq_chain(self.context):
 
@@ -380,6 +380,11 @@ class AgCommonUtilities(BrowserView):
 
             if ISkipSection.providedBy(i):
                 continue
+
+            # Look for the ISearchSection interface only if being called from the
+            # search viewlet.
+            elif search and ISearchSection.providedBy(i):
+                return i
 
             elif ISection.providedBy(i) or ISubsite.providedBy(i):
                 return i
@@ -395,25 +400,25 @@ class AgCommonUtilities(BrowserView):
 
     def getSiteHeader(self):
         return self.get_agcommon_properties('site_header', 'college')
-        
+
     def getDepartmentHeader(self):
         z = self.get_agcommon_properties('department_header', None)
-        
+
         if z == 'none':
             return None
-        
+
         return z
 
     def getDepartmentNameStyle(self):
-    
+
         i = self.getDepartmentHeader()
-        
+
         if i:
             j = self.get_agcommon_properties('department_name_style', None)
-        
+
             if j == 'none':
                 return None
-            
+
             return j
 
         return None

@@ -29,6 +29,10 @@
     <interface
         interface=".interfaces.ISkipSection" />
 
+    <!-- ISearchSection - Explicitly declaring -->
+    <interface
+        interface=".interfaces.ISearchSection" />
+
     <!-- IInspectletEnable - Explicitly declaring -->
     <interface
         interface=".interfaces.IInspectletEnabled" />
@@ -36,10 +40,10 @@
     <!-- Views and Viewlets -->
     <include package=".views" />
     <include package=".viewlets" />
-    
+
     <!-- Portlets -->
     <include package=".portlets" />
-    
+
     <!-- API -->
     <include package=".api" />
 
@@ -47,28 +51,28 @@
 
     <browser:resource
         name="ad54elements-style.css"
-        file="resources/ad54elements-style.css" 
+        file="resources/ad54elements-style.css"
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
         />
 
     <browser:resource
         name="jquery.watermarkinput.js"
-        file="resources/jquery.watermarkinput.js" 
+        file="resources/jquery.watermarkinput.js"
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
         />
 
     <browser:resource
         name="searchpulldown.js"
-        file="resources/searchpulldown.js" 
+        file="resources/searchpulldown.js"
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
         />
 
     <browser:resource
         name="watermarksettings.js"
-        file="resources/watermarksettings.js" 
+        file="resources/watermarksettings.js"
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
         />
