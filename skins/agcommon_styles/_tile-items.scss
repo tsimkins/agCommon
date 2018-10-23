@@ -132,20 +132,6 @@
                 clear: none;
             }
 
-            .facultyStaffDirectory .short-bio {
-                margin-top: 0.25em;
-
-                h2, h3 {
-                    font-size: 1.125em;
-                    border-bottom: none;
-                    margin: 0.375em 0 0.25em 0;
-                }
-
-                h3 {
-                    font-size: 1em;
-                }
-            }
-
             .contentLeadImageContainer {
                 float: left;
                 margin: 0 0.5em 0 0;
@@ -158,6 +144,20 @@
                     padding: 0;
                     float: none;
                 }
+            }
+        }
+
+        .facultyStaffDirectory .short-bio {
+            margin-top: 0.25em;
+
+            h2, h3 {
+                font-size: 1.125em;
+                border-bottom: none;
+                margin: 0.375em 0 0.25em 0;
+            }
+
+            h3 {
+                font-size: 1em;
             }
         }
 

@@ -352,14 +352,6 @@ body {
       margin-left: 136px;
       margin-left: 8.5rem;
       clear: none; }
-    #content .tileItem .tileItemLeadImage .facultyStaffDirectory .short-bio {
-      margin-top: 0.25em; }
-      #content .tileItem .tileItemLeadImage .facultyStaffDirectory .short-bio h2, #content .tileItem .tileItemLeadImage .facultyStaffDirectory .short-bio h3 {
-        font-size: 1.125em;
-        border-bottom: none;
-        margin: 0.375em 0 0.25em 0; }
-      #content .tileItem .tileItemLeadImage .facultyStaffDirectory .short-bio h3 {
-        font-size: 1em; }
     #content .tileItem .tileItemLeadImage .contentLeadImageContainer {
       float: left;
       margin: 0 0.5em 0 0;
@@ -370,6 +362,14 @@ body {
         margin: 0;
         padding: 0;
         float: none; }
+  #content .tileItem .facultyStaffDirectory .short-bio {
+    margin-top: 0.25em; }
+    #content .tileItem .facultyStaffDirectory .short-bio h2, #content .tileItem .facultyStaffDirectory .short-bio h3 {
+      font-size: 1.125em;
+      border-bottom: none;
+      margin: 0.375em 0 0.25em 0; }
+    #content .tileItem .facultyStaffDirectory .short-bio h3 {
+      font-size: 1em; }
   #content .tileItem .tileImage {
     border: none;
     margin-top: 0; }
