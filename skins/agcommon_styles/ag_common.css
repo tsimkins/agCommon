@@ -354,6 +354,12 @@ body {
       clear: none; }
     #content .tileItem .tileItemLeadImage .facultyStaffDirectory .short-bio {
       margin-top: 0.25em; }
+      #content .tileItem .tileItemLeadImage .facultyStaffDirectory .short-bio h2, #content .tileItem .tileItemLeadImage .facultyStaffDirectory .short-bio h3 {
+        font-size: 1.125em;
+        border-bottom: none;
+        margin: 0.375em 0 0.25em 0; }
+      #content .tileItem .tileItemLeadImage .facultyStaffDirectory .short-bio h3 {
+        font-size: 1em; }
     #content .tileItem .tileItemLeadImage .contentLeadImageContainer {
       float: left;
       margin: 0 0.5em 0 0;
