@@ -4,6 +4,7 @@ from Acquisition import ImplicitAcquisitionWrapper
 from BeautifulSoup import BeautifulSoup
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.Five import BrowserView
 from Products.Five.utilities.interfaces import IMarkerInterfaces
 from Products.agCommon import toISO
@@ -441,12 +442,24 @@ class JSONDumpView(BaseView):
             return None
 
     @property
+    def site(self):
+        return getSite()
+
+    @property
+    def site_path(self):
+        return "/".join(self.site.getPhysicalPath())
+
+    @property
+    def context_path(self):
+        return "/".join(self.context.getPhysicalPath())
+
+    @property
     def relative_path(self):
+        return self.getRelativePath("/".join(self.context.getPhysicalPath()))
 
-        site = getSite()
-        site_path_length = len(site.virtual_url_path())
-
-        return self.context.virtual_url_path()[site_path_length+1:]
+    def getRelativePath(self, path):
+        site_path_length = len(self.site_path)
+        return path[site_path_length+1:]
 
     def getJSON(self):
         return json.dumps(self.data, indent=4, sort_keys=True)
@@ -513,6 +526,62 @@ class JSONDumpView(BaseView):
                         })
 
         return data
+
+class PloneSiteJSONDumpView(JSONDumpView):
+
+    excluded_types = [
+        u'Faculty/Staff Directory',
+        u'Relations Library',
+    ]
+
+    json_api_view = "@@dump-json"
+
+    @property
+    def data(self):
+
+        # Return value
+        data = []
+
+        # Get all child objects
+        results = self.portal_catalog.searchResults({
+            'path' : {
+                'query' : self.context_path,
+                'depth' : 1,
+            }
+        })
+
+        # Remove objects of types that are excluded
+        results = [x for x in results if x.Type not in self.excluded_types]
+
+        # Get the path of the remaining objects
+        paths = [x.getPath() for x in results]
+
+        # If the object on which the view is called is not a Plone site, include
+        # it as well.
+        if not IPloneSiteRoot.providedBy(self.context):
+            paths.append(self.context_path)
+
+        # Find everything inside these paths
+        results = self.portal_catalog.searchResults({
+            'path' : paths
+        })
+
+        # Create data structure of content
+        for r in results:
+
+            data.append({
+                'path' : self.getRelativePath(r.getPath()),
+                'getId' : r.getId,
+                'UID' : r.UID,
+                'Type' : r.Type,
+                'api_url' : '%s/%s' % (r.getURL(), self.json_api_view),
+            })
+
+        # Sort by the length of the path
+        data.sort(key=lambda x: (len(x['path']), x['getId']))
+
+        return data
+
 
 def getAPIData(object_url):
 

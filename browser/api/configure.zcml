@@ -23,6 +23,14 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <browser:page
+        for="*"
+        name="dump-json-index"
+        class=".PloneSiteJSONDumpView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
     <!-- Plone Site Root -->
 
     <browser:page
