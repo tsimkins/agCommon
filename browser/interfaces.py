@@ -70,3 +70,7 @@ except ImportError:
 # Sections of the site providing this interface have Inspectlet enabled.
 class IInspectletEnabled(Interface):
     pass
+
+# Marker interface to enable data table behavior.
+class IDataTables(Interface):
+    pass

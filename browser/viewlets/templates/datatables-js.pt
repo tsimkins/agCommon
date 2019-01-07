@@ -1,0 +1,12 @@
+<script type="text/javascript" src="++resource++datatables/datatables.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(
+    function () {
+        jq("#content table").DataTable({
+            "lengthMenu": [[50, 100, 500, -1], [50, 100, 500, "All"]]
+        });
+    }
+);
+
+</script>

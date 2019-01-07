@@ -1280,6 +1280,8 @@ class InspectletViewlet(AgCommonViewlet):
         if self.anonymous:
             return not not self.enabled
 
+class DataTablesViewlet(AgCommonViewlet):
+    pass
 
 # provideAdapter for viewlets to be registered in standalone mode
 

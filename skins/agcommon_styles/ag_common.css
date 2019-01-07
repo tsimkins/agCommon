@@ -1402,6 +1402,46 @@ table.events tr td:nth-child(3) {
   padding-left: 0;
   padding-bottom: 5px; }
 
+/* Data tables */
+#content .dataTables_wrapper .dataTables_length,
+#content .dataTables_wrapper .dataTables_filter {
+  margin: 1em 0; }
+  #content .dataTables_wrapper .dataTables_length select,
+  #content .dataTables_wrapper .dataTables_filter select {
+    vertical-align: middle; }
+  #content .dataTables_wrapper .dataTables_length input,
+  #content .dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #DDDDDD;
+    padding: 0.375em;
+    vertical-align: middle; }
+#content .dataTables_wrapper table.dataTable thead th,
+#content .dataTables_wrapper table.dataTable thead td,
+#content .dataTables_wrapper table.dataTable tbody th,
+#content .dataTables_wrapper table.dataTable tbody td {
+  padding: 0.25em 0.375em; }
+#content .dataTables_wrapper table.dataTable thead th,
+#content .dataTables_wrapper table.dataTable tbody th {
+  padding-right: 0.5em; }
+#content .dataTables_wrapper table.dataTable thead .sorting_asc,
+#content .dataTables_wrapper table.dataTable thead .sorting_desc,
+#content .dataTables_wrapper table.dataTable tbody .sorting_asc,
+#content .dataTables_wrapper table.dataTable tbody .sorting_desc {
+  background-image: none; }
+  #content .dataTables_wrapper table.dataTable thead .sorting_asc .sortdirection,
+  #content .dataTables_wrapper table.dataTable thead .sorting_desc .sortdirection,
+  #content .dataTables_wrapper table.dataTable tbody .sorting_asc .sortdirection,
+  #content .dataTables_wrapper table.dataTable tbody .sorting_desc .sortdirection {
+    float: right; }
+#content .dataTables_wrapper div.dataTables_paginate {
+  margin-bottom: 1em; }
+  #content .dataTables_wrapper div.dataTables_paginate a.paginate_button {
+    border-bottom: none; }
+  #content .dataTables_wrapper div.dataTables_paginate a.paginate_button.current {
+    border-bottom: 1px solid #9999; }
+#content .dataTables_wrapper div.dataTables_info,
+#content .dataTables_wrapper div.dataTables_paginate a {
+  font-size: 0.875em; }
+
 /* 
     Copying styles for #content-history, and making them apply to #content-core 
     [whatever] as well.  This styles the "History" view when presented inline.

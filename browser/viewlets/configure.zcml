@@ -71,7 +71,7 @@
         layer="..interfaces.IThemeSpecific"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
         view="plone.app.layout.globals.interfaces.IViewView"
-        class=".CustomCommentsViewlet"    
+        class=".CustomCommentsViewlet"
         template="templates/comments.pt"
         permission="zope2.View"
         />
@@ -81,7 +81,7 @@
     <browser:viewlet
         name="plone.skip_links"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-        permission="zope2.View" 
+        permission="zope2.View"
         class="plone.app.layout.viewlets.common.SkipLinksViewlet"
         layer="..interfaces.IThemeSpecific"
         template="templates/skip_links.pt"
@@ -92,7 +92,7 @@
     <browser:viewlet
         name="agcommon.links.RSS"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
-        permission="zope2.View" 
+        permission="zope2.View"
         class=".RSSViewlet"
         layer="..interfaces.IThemeSpecific"
         template="templates/rsslink.pt"
@@ -103,12 +103,12 @@
     <browser:viewlet
         name="agcommon.links.site_rss"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
-        permission="zope2.View" 
+        permission="zope2.View"
         class=".SiteRSSViewlet"
         layer="..interfaces.IThemeSpecific"
         template="templates/site_rss.pt"
         />
-   
+
     <!-- Render the keywords -->
     <browser:viewlet
         name="plone.belowcontenttitle.keywords"
@@ -217,7 +217,7 @@
         template="templates/flexslider.pt"
         for="agsci.subsite.content.interfaces.IHomePage"
         />
-        
+
     <browser:viewlet
         name="agcommon.centercolumn"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
@@ -238,7 +238,7 @@
         for="agsci.subsite.content.interfaces.IHomePage"
         />
 
-    <!-- The related items --> 
+    <!-- The related items -->
     <browser:viewlet
         name="plone.belowcontentbody.relateditems"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
@@ -249,7 +249,7 @@
         permission="zope2.View"
         />
 
-    <!-- Document actions --> 
+    <!-- Document actions -->
     <browser:viewlet
         name="plone.abovecontenttitle.documentactions"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
@@ -297,7 +297,7 @@
         layer="..interfaces.IThemeSpecific"
         permission="zope2.View"
         />
-        
+
     <!-- Content Well Portlet Relocation -->
 
     <browser:viewlet
@@ -397,16 +397,16 @@
         permission="zope2.View"
         />
     -->
-    
+
     <five:implements
         class="Products.ATContentTypes.content.document.ATDocument"
         interface="..interfaces.IContributors"
-    /> 
+    />
 
     <five:implements
         class="Products.ATContentTypes.content.newsitem.ATNewsItem"
         interface="..interfaces.IContributors"
-    /> 
+    />
 
     <!-- Table of Contents Viewlet -->
     <browser:viewlet
@@ -419,7 +419,7 @@
         template="templates/toc.pt"
         />
 
-    <browser:viewlet       
+    <browser:viewlet
         name="plone.tableofcontents"
         for="Products.ATContentTypes.interface.IATDocument"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
@@ -432,19 +432,20 @@
     <five:implements
         class="Products.ATContentTypes.content.newsitem.ATNewsItem"
         interface="..interfaces.ITableOfContents"
-    /> 
+    />
 
     <five:implements
         class="Products.ATContentTypes.content.event.ATEvent"
         interface="..interfaces.ITableOfContents"
-    /> 
+    />
 
     <five:implements
         class="Products.ATContentTypes.content.folder.ATFolder"
         interface="..interfaces.ITableOfContents"
-    /> 
+    />
 
     <!-- Publication Code -->
+
     <browser:viewlet
         name="agcommon.publicationcode"
         for="agsci.ExtensionExtender.interfaces.IExtensionPublicationExtender"
@@ -465,8 +466,30 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <!-- Data Tables -->
+
+    <browser:viewlet
+        name="agcommon.datatables.css"
+        for="..interfaces.IDataTables"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+        class=".DataTablesViewlet"
+        template="templates/datatables-css.pt"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <browser:viewlet
+        name="agcommon.datatables.js"
+        for="..interfaces.IDataTables"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".DataTablesViewlet"
+        template="templates/datatables-js.pt"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
     <!-- Editor message -->
-    
+
     <browser:viewlet
         name="agcommon.editor_message"
         for="*"

@@ -37,6 +37,10 @@
     <interface
         interface=".interfaces.IInspectletEnabled" />
 
+    <!-- IDataTables - Explicitly declaring -->
+    <interface
+        interface=".interfaces.IDataTables" />
+
     <!-- Views and Viewlets -->
     <include package=".views" />
     <include package=".viewlets" />
@@ -84,5 +88,10 @@
       <browser:resourceDirectory
           name="atlas-newsletter"
           directory="resources/atlas-newsletter" />
+
+      <browser:resourceDirectory
+          name="datatables"
+          directory="resources/datatables" />
+
 
 </configure>
