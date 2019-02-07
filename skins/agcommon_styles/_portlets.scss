@@ -381,6 +381,38 @@
                 cursor: pointer;
             }
         }
+        
+        .portletItemDetails.content-summary {
+            
+            .rendering {
+
+                em,
+                .date {
+                    font-size: 1em;
+                    color: #575757;
+                    display: inline;
+                }
+                
+                h2.title {
+                    a,
+                    a:link,
+                    a:hover {
+                        font-size: 1.0625rem;
+                        color: $rightPortletLinkColor !important;
+                        border-bottom: 1px solid #DDDDDD !important;
+                    }
+                    
+                    a:hover {
+                        border-bottom: 1px solid $rightPortletLinkColor !important;
+                        text-decoration: none !important;
+                    }
+                }
+                
+                p.type {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
