@@ -833,15 +833,19 @@ body.template-subfolder_view .two-column-right {
     font-size: 1em;
     color: #575757;
     display: inline; }
-  .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a,
-  .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a:link,
-  .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a:hover {
-    font-size: 1.0625rem;
-    color: #2256BD !important;
-    border-bottom: 1px solid #DDDDDD !important; }
-  .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a:hover {
-    border-bottom: 1px solid #2256BD !important;
-    text-decoration: none !important; }
+  .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0.125em; }
+    .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a,
+    .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a:link,
+    .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a:hover {
+      font-size: 1.0625rem;
+      color: #2256BD !important;
+      border-bottom: 1px solid #DDDDDD !important; }
+    .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a:hover {
+      border-bottom: 1px solid #2256BD !important;
+      text-decoration: none !important; }
   .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering p.type {
     display: none; }
 

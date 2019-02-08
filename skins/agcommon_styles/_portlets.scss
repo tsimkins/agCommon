@@ -394,6 +394,10 @@
                 }
                 
                 h2.title {
+                    border-bottom: none;
+                    padding-bottom: 0;
+                    margin-bottom: 0.125em;
+
                     a,
                     a:link,
                     a:hover {
