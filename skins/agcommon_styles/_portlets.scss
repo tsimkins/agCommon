@@ -394,9 +394,9 @@
                 }
                 
                 h2.title {
-                    border-bottom: none;
-                    padding-bottom: 0;
-                    margin-bottom: 0.125em;
+                    border-bottom: none !important;
+                    padding-bottom: 0 !important;
+                    margin-bottom: 0.125em !important;
 
                     a,
                     a:link,

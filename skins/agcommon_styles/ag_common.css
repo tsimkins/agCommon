@@ -834,9 +834,9 @@ body.template-subfolder_view .two-column-right {
     color: #575757;
     display: inline; }
   .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0.125em; }
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0.125em !important; }
     .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a,
     .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a:link,
     .portletfeedmixer .portletItem .portletItemDetails.content-summary .rendering h2.title a:hover {
