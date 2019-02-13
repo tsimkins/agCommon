@@ -9,10 +9,4 @@
         data-share="false"
         tal:attributes="data-href view/likeurl"></div>
 
-    <div id="googleplusone">
-        <g:plusone 
-            size="standard"
-            tal:attributes="href view/likeurl"></g:plusone>
-    </div>
-
 </div>

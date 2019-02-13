@@ -42,7 +42,6 @@
 		                                         tal:attributes="src string:${context/portal_url}/icons/vcard.png" /></a>
 		<a class="addthis_button_facebook" title="Share: Facebook"></a>
 		<a class="addthis_button_twitter" title="Share: Twitter"></a>
-		<a class="addthis_button_google_plusone" title="Share: Google Plus" g:plusone:count="false"></a>
 		<a class="addthis_button_email" title="Share: Email"></a>
 		<a tal:condition="view/isSyndicationAllowed" 
 		   title="RSS Feed"
