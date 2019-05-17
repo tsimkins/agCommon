@@ -313,7 +313,7 @@ class ATSelectionCriterionConverter(CriterionConverter):
 
 
 class ATListCriterionConverter(ATSelectionCriterionConverter):
-    pass
+    alt_operator_code = 'string.is'
 
 
 class ATReferenceCriterionConverter(ATSelectionCriterionConverter):
