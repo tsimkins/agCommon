@@ -30,6 +30,9 @@ from .topics import get_collection_critera
 first_cap_re = re.compile('(.)([A-Z][a-z]+)')
 all_cap_re = re.compile('([a-z0-9])([A-Z])')
 
+# Regular expression to validate UID
+uid_re = re.compile("^[0-9abcedf]{32}$", re.I|re.M)
+
 class BaseView(BrowserView):
 
     @property
@@ -514,9 +517,20 @@ class JSONDumpView(BaseView):
             # Post-patching the data for the portal_type criteria
 
             for __ in _:
+
                 if __.get('i', None) in ('portal_type',):
+
                     if __.get('o', None) in ('plone.app.querystring.operation.selection.is',):
                         __['o'] = 'plone.app.querystring.operation.selection.any'
+
+                if __.get('i', None) in ('path',):
+
+                    # UID to path
+                    if __.get('o', None) in ('plone.app.querystring.operation.string.path',):
+
+                        if uid_re.match(__.get('v', None)):
+                            __['o'] = 'plone.app.querystring.operation.string.absolutePath'
+                            __['v'] = '%s::-1' % __['v']
 
             return _
 
