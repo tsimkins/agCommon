@@ -15,6 +15,8 @@ from collective.contentleadimage.utils import getImageAndCaptionFieldNames, getI
 from zope.component import queryAdapter, getAdapters, getUtilitiesFor, getMultiAdapter
 from zope.component.hooks import getSite
 from Products.Archetypes.Field import Image
+from plone.registry.interfaces import IRegistry
+from zope.component import queryUtility
 
 import Missing
 import base64
@@ -22,6 +24,8 @@ import json
 import re
 import urllib2
 import urlparse
+
+from .topics import get_collection_critera
 
 first_cap_re = re.compile('(.)([A-Z][a-z]+)')
 all_cap_re = re.compile('([a-z0-9])([A-Z])')
@@ -390,6 +394,14 @@ class JSONDumpView(BaseView):
                 'info' : {},
                 'value' : self.portlets,
             },
+            'default_page' : {
+                'info' : {},
+                'value' : self.default_page,
+            },
+            'collection_criteria' : {
+                'info' : {},
+                'value' : self.collection_criteria,
+            },
         }
 
         for field in self.fields:
@@ -474,6 +486,20 @@ class JSONDumpView(BaseView):
 
     def translate(self, v):
         return self.translation_service.translate(v, target_language="en")
+
+    @property
+    def default_page(self):
+        if hasattr(self.context, 'getDefaultPage'):
+            return self.context.getDefaultPage()
+
+    @property
+    def registry(self):
+        return queryUtility(IRegistry)
+
+    @property
+    def collection_criteria(self):
+        if self.context.Type() in ['Collection', 'Newsletter']:
+            return get_collection_critera(self.context, self.registry)
 
     @property
     def portlets(self):
