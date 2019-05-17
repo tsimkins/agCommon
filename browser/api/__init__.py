@@ -373,6 +373,8 @@ class JSONDumpView(BaseView):
     @property
     def data(self):
 
+        (collection_sort_field, collection_sort_reversed) = self.collection_sort_info
+
         data = {
             'uid' : {
                 'info' : {},
@@ -401,6 +403,14 @@ class JSONDumpView(BaseView):
             'collection_criteria' : {
                 'info' : {},
                 'value' : self.collection_criteria,
+            },
+            'collection_sort_field' : {
+                'info' : {},
+                'value' : collection_sort_field,
+            },
+            'collection_sort_reversed' : {
+                'info' : {},
+                'value' : collection_sort_reversed,
             },
         }
 
@@ -500,6 +510,21 @@ class JSONDumpView(BaseView):
     def collection_criteria(self):
         if self.context.Type() in ['Collection', 'Newsletter']:
             return get_collection_critera(self.context, self.registry)
+
+    @property
+    def collection_sort_info(self):
+        if self.context.Type() in ['Collection', 'Newsletter']:
+
+            criteria = self.context.listCriteria()
+
+            for criterion in criteria:
+                type_ = criterion.__class__.__name__
+
+                if type_ == 'ATSortCriterion':
+                    # Sort order and direction are now stored in the Collection.
+                    return (criterion.Field(), criterion.getReversed())
+
+        return (None, None)
 
     @property
     def portlets(self):
