@@ -401,7 +401,8 @@ class ATDateRangeCriterionConverter(CriterionConverter):
 
 
 class ATPortalTypeCriterionConverter(CriterionConverter):
-    operator_code = 'selection.is'
+    operator_code = 'selection.any'
+    alt_operator_code = 'selection.is'
 
     def get_query_value(self, value, index, criterion):
         # Special handling for portal_type=Topic.

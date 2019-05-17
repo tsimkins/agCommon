@@ -509,7 +509,16 @@ class JSONDumpView(BaseView):
     @property
     def collection_criteria(self):
         if self.context.Type() in ['Collection', 'Newsletter']:
-            return get_collection_critera(self.context, self.registry)
+            _ = get_collection_critera(self.context, self.registry)
+
+            # Post-patching the data for the portal_type criteria
+
+            for __ in _:
+                if __.get('i', None) in ('portal_type',):
+                    if __.get('o', None) in ('plone.app.querystring.operation.selection.is',):
+                        __['o'] = 'plone.app.querystring.operation.selection.any'
+
+            return _
 
     @property
     def collection_sort_info(self):
