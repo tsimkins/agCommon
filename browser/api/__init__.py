@@ -403,6 +403,10 @@ class JSONDumpView(BaseView):
                 'info' : {},
                 'value' : self.default_page,
             },
+            'layout' : {
+                'info' : {},
+                'value' : self.layout,
+            },
             'collection_criteria' : {
                 'info' : {},
                 'value' : self.collection_criteria,
@@ -503,7 +507,15 @@ class JSONDumpView(BaseView):
     @property
     def default_page(self):
         if hasattr(self.context, 'getDefaultPage'):
-            return self.context.getDefaultPage()
+            _ =  self.context.getDefaultPage()
+            if _ in self.context.objectIds():
+                return _
+
+    @property
+    def layout(self):
+        if not self.default_page:
+            if hasattr(self.context, 'getLayout'):
+                return self.context.getLayout()
 
     @property
     def registry(self):
