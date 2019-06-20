@@ -1,4 +1,4 @@
-# Ripped directly from 
+# Ripped directly from
 # https://github.com/plone/plone.app.contenttypes/blob/master/plone/app/contenttypes/migration/topics.py
 # so I can fix issues fo rmigration
 # -*- coding: utf-8 -*-
@@ -35,6 +35,9 @@ INVALID_OPERATION = 'Invalid operation %s for criterion: %s'
 
 # Converters
 class CriterionConverter(object):
+
+    # Hardcoding because they're valid
+    valid_operations = []
 
     # Last part of the code for the dotted operation method,
     # e.g. 'string.contains'.
@@ -112,6 +115,9 @@ class CriterionConverter(object):
         return value
 
     def is_operation_valid(self, registry, operation):
+        # See if we're white-listed
+        if operation in self.valid_operations:
+            return True
         # Check that the operation exists.
         op_function_name = registry.get('%s.operation' % operation)
         if op_function_name is None:
@@ -127,8 +133,13 @@ class CriterionConverter(object):
 
     def get_valid_operation(self, registry, index, value, criterion):
         key = '%s.field.%s.operations' % (prefix, index)
-        operations = registry.get(key)
+        operations = list(registry.get(key))
+
+        # Hardcoding in some valid operations per class
+        operations.extend(self.valid_operations)
+
         operation = self.get_operation(value, index, criterion)
+
         if operation not in operations:
             operation = self.get_alt_operation(value, index, criterion)
             if operation not in operations:
@@ -285,6 +296,10 @@ class ATCurrentAuthorCriterionConverter(CriterionConverter):
 class ATSelectionCriterionConverter(CriterionConverter):
     operator_code = 'selection.is'
     # alt_operator_code = 'selection.any'
+
+    valid_operations = [
+        'plone.app.querystring.operation.selection.any',
+    ]
 
     def get_operation(self, value, index, criterion):
         # Get dotted operation method.  This may depend on value.
@@ -507,5 +522,5 @@ def get_collection_critera(context, registry):
         converter(formquery, criterion, registry)
 
     logger.debug("New query for %s: %r", path, formquery)
-    
+
     return formquery
