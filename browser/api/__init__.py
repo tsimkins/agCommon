@@ -14,7 +14,7 @@ from plone.portlets.interfaces import IPortletManager, IPortletAssignmentMapping
 from collective.contentleadimage.utils import getImageAndCaptionFieldNames, getImageAndCaptionFields
 from zope.component import queryAdapter, getAdapters, getUtilitiesFor, getMultiAdapter
 from zope.component.hooks import getSite
-from Products.Archetypes.Field import Image
+from Products.Archetypes.Field import File, Image
 from plone.registry.interfaces import IRegistry
 from zope.component import queryUtility
 
@@ -435,7 +435,7 @@ class JSONDumpView(BaseView):
 
             # If blob field type, encode binary data and
             # include mime type
-            if isinstance(v, (BlobWrapper, Image, )):
+            if isinstance(v, (BlobWrapper, File, Image, )):
 
                 blob_data = v.data
 

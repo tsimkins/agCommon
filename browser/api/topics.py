@@ -133,7 +133,11 @@ class CriterionConverter(object):
 
     def get_valid_operation(self, registry, index, value, criterion):
         key = '%s.field.%s.operations' % (prefix, index)
-        operations = list(registry.get(key))
+
+        try:
+            operations = list(registry.get(key))
+        except TypeError:
+            operations = []
 
         # Hardcoding in some valid operations per class
         operations.extend(self.valid_operations)
