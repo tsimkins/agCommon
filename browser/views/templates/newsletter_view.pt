@@ -163,6 +163,11 @@ p {
     font-size: 8.5pt;
 }
 
+#portal-column-content,
+#portal-column-two {
+    vertical-align: top;
+}
+
 #portal-column-two {
     background: #f5f5f5;
 }
