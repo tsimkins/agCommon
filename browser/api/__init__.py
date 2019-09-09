@@ -3,6 +3,7 @@ from archetypes.schemaextender.interfaces import ISchemaExtender, ISchemaModifie
 from Acquisition import ImplicitAcquisitionWrapper
 from BeautifulSoup import BeautifulSoup
 from DateTime import DateTime
+from OFS.Image import Pdata
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.Five import BrowserView
@@ -439,7 +440,24 @@ class JSONDumpView(BaseView):
 
                 blob_data = v.data
 
-                if isinstance(blob_data, ImplicitAcquisitionWrapper):
+                if isinstance(blob_data, Pdata):
+
+                    _data = []
+
+                    chunk = blob_data
+
+                    _data.append(chunk.data)
+
+                    if hasattr(chunk, 'next'):
+
+                        while chunk.next is not None:
+                            chunk = chunk.next
+                            _data.append(chunk.data)
+
+                    blob_data = "".join(_data)
+
+                elif isinstance(blob_data, ImplicitAcquisitionWrapper):
+
                     blob_data = blob_data.data
 
                 if blob_data:
