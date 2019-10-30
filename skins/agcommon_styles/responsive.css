@@ -197,8 +197,8 @@
 
   #logo-department {
     position: static;
-    padding: 1em 2.17391%;
-    margin: 1em -2.17391% 0; }
+    padding: 1em 2.1739130435%;
+    margin: 1em -2.1739130435% 0; }
 
   #portal-top,
   #document-toc {
@@ -210,10 +210,10 @@
     #document-toc #portal-searchbox.rmm {
       margin: 1em 0 0;
       border: 1px solid #999999;
-      width: 71.33152%; }
+      width: 71.3315217391%; }
     #portal-top #portal-searchbox.rmm,
     #document-toc #portal-searchbox.rmm {
-      width: 25.95109%; }
+      width: 25.9510869565%; }
       #portal-top #portal-searchbox.rmm .rmm-main-list,
       #document-toc #portal-searchbox.rmm .rmm-main-list {
         padding: 0.25em 1.25em 1.5em;
@@ -426,7 +426,7 @@
 
   #portal-header {
     margin: 0;
-    padding: 1em 2.08333%; }
+    padding: 1em 2.0833333333%; }
 
   #logo-site {
     width: 100%; }
@@ -494,15 +494,15 @@
   #portal-column-content.sr,
   #portal-column-content.sl.sr {
     float: left;
-    margin: 0 3.07692%;
-    width: 93.84615%;
+    margin: 0 3.0769230769%;
+    width: 93.8461538462%;
     padding: 0;
     display: block;
     background-color: transparent; }
 
   #portal-column-content.s0 {
-    margin: 0 2.27273%;
-    width: 95.45455%; }
+    margin: 0 2.2727272727%;
+    width: 95.4545454545%; }
 
   #portal-column-two .portletFooter {
     background-color: transparent; }
@@ -528,7 +528,7 @@
   #portlets-footer .FooterPortletManager {
     width: 43.75%;
     float: left;
-    padding: 0.5em 2.08333%; }
+    padding: 0.5em 2.0833333333%; }
 
   #portlets-footer > div:nth-child(2n + 1) {
     clear: left; }
@@ -584,7 +584,7 @@
     width: auto; }
 
   #visual-portal-wrapper {
-    margin: 0 2.08333%;
+    margin: 0 2.0833333333%;
     padding: 0; }
 
   #centercolumn .portletWrapper {
@@ -618,7 +618,7 @@
       max-width: 100%; }
       #viewlet-above-content .flexslider .contentLeadImageContainer img {
         float: none;
-        max-height: 394.70442px; }
+        max-height: 394.7044247788px; }
     #viewlet-above-content .flexslider .slides {
       padding-bottom: 0.5em; }
     #viewlet-above-content .flexslider .flex-control-nav {
@@ -635,11 +635,11 @@
     #viewlet-above-content .flexslider .tileFooter {
       margin-bottom: 0.5em; }
     #viewlet-above-content .flexslider .flex-direction-nav li a {
-      top: 31.2502%; }
+      top: 31.2501992953%; }
     #viewlet-above-content .flexslider .flex-direction-nav li .next {
-      right: 1.04167%; }
+      right: 1.0416666667%; }
     #viewlet-above-content .flexslider .flex-direction-nav li .prev {
-      left: 1.04167%; }
+      left: 1.0416666667%; }
 
   #content .searchResults .contenttype-fsdperson .searchLeadImageContainer .tileImage {
     width: 100%;
@@ -672,8 +672,8 @@
   /* - Thumbnail Count - */
   /* - Photo Album (Thumbnails) - */
   #content .photoAlbumEntry {
-    margin: 0 2.27273%;
-    width: 28.78788%; } }
+    margin: 0 2.2727272727%;
+    width: 28.7878787879%; } }
 /*------------------------ END resolution-768.css ----------------------------*/
 /*------------------------- resolution-520-portrait.css ------------------------------*/
 @media handheld, screen and (max-width: 520px) and (orientation: portrait) {
@@ -967,8 +967,8 @@
 
   #portal-footer {
     text-align: left;
-    padding: 0.5em 3.07692%;
-    width: 93.84615%; }
+    padding: 0.5em 3.0769230769%;
+    width: 93.8461538462%; }
     #portal-footer p {
       padding: 0; }
     #portal-footer .footerLinks a {
@@ -1090,8 +1090,8 @@
   #rightcolumn .portletLinkButton .portletItem a:hover,
   #rightcolumn .portletLinkButton .portletItem a {
     font-size: 1.0625em;
-    padding: 0.5em 3.07692%;
-    width: 93.84615%; }
+    padding: 0.5em 3.0769230769%;
+    width: 93.8461538462%; }
 
   #portal-column-content.sl #centercolumn .portletfeedmixerimageleft .portletItem .title,
   #portal-column-content.sl #centercolumn .portletfeedmixerimageleft .portletItem .date,
@@ -1215,9 +1215,9 @@
 /*------------------------- resolution-480.css ------------------------------*/
 @media handheld, screen and (max-width: 480px) {
   #portlets-footer .FooterPortletManager {
-    width: 93.33333%;
+    width: 93.3333333333%;
     float: left;
-    padding: 0.5em 3.33333%; }
+    padding: 0.5em 3.3333333333%; }
 
   #content .contentLeadImageContainer {
     margin-left: 0;
@@ -1267,7 +1267,7 @@
 
   /* Flexslider */
   #viewlet-above-content .flexslider .flex-direction-nav li a {
-    top: 26.89176%; } }
+    top: 26.8917576961%; } }
 /*------------------------ END resolution-480.css ----------------------------*/
 /*------------------------- resolution-360.css ------------------------------*/
 @media handheld, screen and (max-width: 360px) {
@@ -1297,13 +1297,13 @@
     width: auto; }
 
   #viewlet-above-content .flexslider .flex-direction-nav li a {
-    top: 23.714%; }
+    top: 23.7140019861%; }
 
   /* - Thumbnail Count - */
   /* - Photo Album (Thumbnails) - */
   #content .photoAlbumEntry {
-    margin: 0 1.68067%;
-    width: 46.63866%; } }
+    margin: 0 1.6806722689%;
+    width: 46.6386554622%; } }
 /*------------------------ END resolution-360.css ----------------------------*/
 /*------------------------- resolution-320.css ------------------------------*/
 @media handheld, screen and (max-width: 320px) {

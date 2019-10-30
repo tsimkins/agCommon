@@ -39,6 +39,12 @@ class ILinkButton(IPortletDataProvider):
         required=True,
         default=False)
 
+    cta = schema.Bool(
+        title=_(u"Call to Action?"),
+        description=_(u"Use a Call to Action treatment from the new site."),
+        required=True,
+        default=False)
+
 class Assignment(base.Assignment):
 
     implements(ILinkButton)
@@ -47,13 +53,16 @@ class Assignment(base.Assignment):
     show_header = ""
     items = ""
     hide = False
+    cta = False
 
-    def __init__(self, header=u"", show_header=u"", items=items, hide=False, *args, **kwargs):
+    def __init__(self, header=u"", show_header=u"", items=items, hide=False, cta=False,
+                 *args, **kwargs):
         base.Assignment.__init__(self, *args, **kwargs)
         self.header = header
         self.show_header = show_header
         self.items = items
         self.hide = hide
+        self.cta = cta
         
     @property
     def title(self):
@@ -64,7 +73,13 @@ class Assignment(base.Assignment):
 
 
 class Renderer(base.Renderer):
-    _template = ViewPageTemplateFile('templates/linkbutton.pt')
+
+    @property
+    def cta(self):
+        try:
+            return not not self.data.cta
+        except:
+            return False
 
     def __init__(self, *args):
         base.Renderer.__init__(self, *args)
@@ -91,7 +106,13 @@ class Renderer(base.Renderer):
         return " ".join(klass)
 
     def render(self):
-        return xhtml_compress(self._template())
+    
+        _template = ViewPageTemplateFile('templates/linkbutton.pt')
+        
+        if self.cta:
+            _template = ViewPageTemplateFile('templates/linkbutton-cta.pt')
+
+        return xhtml_compress(_template(self))
 
     @property
     def available(self):

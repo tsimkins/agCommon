@@ -1,0 +1,38 @@
+<tal:block condition="view/available"
+           i18n:domain="linkbutton">
+
+<h2 class="portletHeader" tal:condition="view/data/show_header" tal:content="view/data/header" />
+
+<div class="portlet portletLinkButtonCTA future" tal:condition="view/linkButtons">
+        
+    <div tal:repeat="lbutton view/linkButtons"
+        tal:attributes="data-linkbutton lbutton/id;
+                        class python: view.getClass(lbutton);">
+        <tal:linkButton  
+            tal:define="title lbutton/title;
+                        id lbutton/id;
+                        url lbutton/url;
+                        description lbutton/description|nothing;
+                        color python: lbutton.get('color') or 'purple';">
+
+
+                <a tal:attributes="href lbutton/url;
+                                    class string:card card-cta bg-dark-${color} px-0 reveal text-center">
+                
+                    <div class="card-body text-white">
+
+                        <h2 class="h4 mt-0" 
+                            tal:condition="description"
+                            tal:content="description" />
+
+                        <div class="btn point-at-me-sm" 
+                                tal:content="title" />
+                    </div>
+                </a>
+
+        </tal:linkButton>
+            
+    </div>
+
+</div>
+</tal:block>
