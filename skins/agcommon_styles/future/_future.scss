@@ -1,4 +1,4 @@
-.future {
+.future, #content .future {
 
     .card-deck {
         display : flex;
@@ -74,11 +74,11 @@
     }
 
     .card.card-cta.bg-dark-green .card-body {
-        background : #b16300;
+        background : #5c7a00;
     }
 
     .card.card-cta.bg-dark-purple .card-body {
-        background : #5c7a00;
+        background : #491d70;
     }
 
     .card.card-cta .card-body {

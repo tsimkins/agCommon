@@ -3224,37 +3224,37 @@ body.portaltype-employer_container #content .tileItem {
     width: 100%;
     margin: 1em 0;
     padding: 0; } }
-.future .card-deck {
+.future .card-deck, #content .future .card-deck {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
   flex-flow: row wrap;
   margin-right: -1rem;
   margin-left: -1rem; }
-.future .card-deck.card-deck-1up .card {
+.future .card-deck.card-deck-1up .card, #content .future .card-deck.card-deck-1up .card {
   flex: 0 0 calc(100% - 2rem); }
-.future .card.card-cta {
+.future .card.card-cta, #content .future .card.card-cta {
   margin-bottom: 0.5rem; }
-.future .card-deck .card {
+.future .card-deck .card, #content .future .card-deck .card {
   display: flex;
   flex: 1 0 0%;
   flex-direction: column;
   margin-right: 1rem;
   margin-left: 1rem;
   margin-bottom: 1rem; }
-.future .bg-dark-orange {
+.future .bg-dark-orange, #content .future .bg-dark-orange {
   background: #b16300; }
-.future .text-center {
+.future .text-center, #content .future .text-center {
   text-align: center !important; }
-.future .pl-0, .future .px-0 {
+.future .pl-0, .future .px-0, #content .future .pl-0, #content .future .px-0 {
   padding-left: 0 !important; }
-.future .pr-0, .future .px-0 {
+.future .pr-0, .future .px-0, #content .future .pr-0, #content .future .px-0 {
   padding-right: 0 !important; }
-.future .mb-3, .future .my-3 {
+.future .mb-3, .future .my-3, #content .future .mb-3, #content .future .my-3 {
   margin-bottom: 1rem !important; }
-.future .mt-3, .future .my-3 {
+.future .mt-3, .future .my-3, #content .future .mt-3, #content .future .my-3 {
   margin-top: 1rem !important; }
-.future .card {
+.future .card, #content .future .card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3266,76 +3266,76 @@ body.portaltype-employer_container #content .tileItem {
   border-radius: 0;
   overflow: hidden;
   text-decoration: none !important; }
-.future a, .future a:hover {
+.future a, .future a:hover, #content .future a, #content .future a:hover {
   color: #231e20;
   text-decoration: none;
   background-color: transparent; }
-.future .card.card-cta.bg-dark-orange .card-body {
+.future .card.card-cta.bg-dark-orange .card-body, #content .future .card.card-cta.bg-dark-orange .card-body {
   background: #b16300; }
-.future .card.card-cta.bg-dark-green .card-body {
-  background: #b16300; }
-.future .card.card-cta.bg-dark-purple .card-body {
+.future .card.card-cta.bg-dark-green .card-body, #content .future .card.card-cta.bg-dark-green .card-body {
   background: #5c7a00; }
-.future .card.card-cta .card-body {
+.future .card.card-cta.bg-dark-purple .card-body, #content .future .card.card-cta.bg-dark-purple .card-body {
+  background: #491d70; }
+.future .card.card-cta .card-body, #content .future .card.card-cta .card-body {
   position: relative;
   padding: 3rem 1.25rem;
   background: transparent; }
-.future .card-body {
+.future .card-body, #content .future .card-body {
   background: #ffffff; }
-.future .text-white {
+.future .text-white, #content .future .text-white {
   color: #fff !important; }
-.future .align-items-center {
+.future .align-items-center, #content .future .align-items-center {
   align-items: center !important; }
-.future .justify-content-center {
+.future .justify-content-center, #content .future .justify-content-center {
   justify-content: center !important; }
-.future .flex-column {
+.future .flex-column, #content .future .flex-column {
   flex-direction: column !important; }
-.future .d-flex {
+.future .d-flex, #content .future .d-flex {
   display: flex !important; }
-.future .card-body {
+.future .card-body, #content .future .card-body {
   flex: 1 1 auto;
   padding: 1.25rem; }
-.future *, .future ::before, .future ::after {
+.future *, .future ::before, .future ::after, #content .future *, #content .future ::before, #content .future ::after {
   box-sizing: border-box; }
-.future element {
+.future element, #content .future element {
   visibility: visible; }
-.future .card.card-cta .card-body p, .future .card.card-cta .card-body h2.h4, .future .card.card-cta .card-body h3.h4 {
+.future .card.card-cta .card-body p, .future .card.card-cta .card-body h2.h4, .future .card.card-cta .card-body h3.h4, #content .future .card.card-cta .card-body p, #content .future .card.card-cta .card-body h2.h4, #content .future .card.card-cta .card-body h3.h4 {
   margin-bottom: 1rem;
   padding: 0.5rem;
   border: transparent;
   font-size: 1.1rem;
   line-height: 1.2; }
-.future .card h3 {
+.future .card h3, #content .future .card h3 {
   margin-top: 0;
   margin-bottom: 0.5rem; }
-.future .mt-0, .future .my-0 {
+.future .mt-0, .future .my-0, #content .future .mt-0, #content .future .my-0 {
   margin-top: 0 !important; }
-.future h4, .future .h4 {
+.future h4, .future .h4, #content .future h4, #content .future .h4 {
   font-size: 1.1rem; }
-.future h1, .future h2, .future h3, .future h4, .future h5, .future h6, .future .h1, .future .h2, .future .h3, .future .h4, .future .h5, .future .h6 {
+.future h1, .future h2, .future h3, .future h4, .future h5, .future h6, .future .h1, .future .h2, .future .h3, .future .h4, .future .h5, .future .h6, #content .future h1, #content .future h2, #content .future h3, #content .future h4, #content .future h5, #content .future h6, #content .future .h1, #content .future .h2, #content .future .h3, #content .future .h4, #content .future .h5, #content .future .h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
   color: inherit; }
-.future h3, .future .h3 {
+.future h3, .future .h3, #content .future h3, #content .future .h3 {
   margin: 1.5rem 0 0.5rem 0;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   letter-spacing: -0.005em;
   font-weight: 600;
   line-height: 1.2; }
-.future h3, .future .h3 {
+.future h3, .future .h3, #content .future h3, #content .future .h3 {
   font-size: 1.25rem; }
-.future .card.card-cta .card-body .btn {
+.future .card.card-cta .card-body .btn, #content .future .card.card-cta .card-body .btn {
   position: relative;
   padding: 0.5rem 1rem;
   background: transparent;
   border: #ffffff solid 1px;
   color: #ffffff; }
-.future .btn:not(:disabled):not(.disabled) {
+.future .btn:not(:disabled):not(.disabled), #content .future .btn:not(:disabled):not(.disabled) {
   cursor: pointer; }
-.future .btn {
+.future .btn, #content .future .btn {
   white-space: normal;
   position: relative;
   border: transparent;
