@@ -69,7 +69,7 @@
         <link href="//fonts.googleapis.com/css?family=Open%20Sans:600&subset=latin" rel="stylesheet" type="text/css" />
 
         <link href="//fonts.googleapis.com/css?family=Open%20Sans:800&subset=latin" rel="stylesheet" type="text/css" />
-        
+
         <!-- Disable IE6 image toolbar -->
         <meta http-equiv="imagetoolbar" content="no" />
 
@@ -105,7 +105,7 @@
         <script src="https://apis.google.com/js/platform.js" async="async" defer="defer"></script>
 
         <div id="fb-root"></div>
-    
+
         <tal:block tal:replace="structure string:&lt;script type='text/javascript'&gt;" />
           window.fbAsyncInit = function() {
             FB.init({
@@ -115,10 +115,10 @@
               cookie     : true, // enable cookies to allow the server to access the session
               xfbml      : true  // parse XFBML
             });
-    
+
             // Additional initialization code here
           };
-        
+
           // Load the Facebook SDK Asynchronously
           (function(d){
              var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
@@ -130,7 +130,7 @@
 
 
             /* Twitter Feed JavaScript Code */
-            
+
             (function(d,s,id){
                 var js,fjs=d.getElementsByTagName(s)[0];
                 if(!d.getElementById(id))
@@ -145,14 +145,14 @@
         <tal:block tal:replace="structure string:&lt;/script&gt;" />
     </tal:fbjs>
 
-        <a 
-            href="https://agsci.psu.edu/coronavirus" 
+        <a
+            href="https://sites.psu.edu/virusinfo/"
             class="alert-bar">
-        	<div class="alert-bar-content-wrap">
-        	   <i class="fa fas fa-exclamation-triangle"></i>
-            	<p class="alert-bar-title">Coronavirus Information</p>
-            	<p class="alert-bar-text">Penn State classes online throughout spring semester</p>
-        	</div>
+            <div class="alert-bar-content-wrap">
+               <i class="fa fas fa-exclamation-triangle"></i>
+                <p class="alert-bar-title">Coronavirus Information</p>
+                <p class="alert-bar-text">Information, resources, and updates for the Penn State community.</p>
+            </div>
         </a>
 
     <div id="portal-top" i18n:domain="plone">
@@ -166,7 +166,7 @@
         <metal:header define-slot="printheader" tal:content="nothing">
             Visual Header
         </metal:header>
-                      
+
       <div id="portal-columns" metal:define-slot="portal-columns" role="presentation">
 
             <tal:notajax tal:condition="not:ajax_load">
@@ -204,7 +204,7 @@
                       <metal:header define-slot="header" tal:content="nothing">
                           Visual Header
                       </metal:header>
-        
+
                       <metal:bodytext define-slot="main">
 
                         <metal:main define-macro="main">
@@ -219,13 +219,13 @@
                                 </h1>
                             </metal:title>
 
-                            <metal:belowtitle define-slot="below-content-title">                            
+                            <metal:belowtitle define-slot="below-content-title">
                                 <div tal:replace="structure provider:plone.belowcontenttitle" />
                             </metal:belowtitle>
 
                             <metal:additional define-slot="content-additional">
                                 <metal:comment tal:content="nothing">
-                                    Allows us to put information such as posted date 
+                                    Allows us to put information such as posted date
                                     and contributors between the title and description.
                                 </metal:comment>
                             </metal:additional>
@@ -235,10 +235,10 @@
                                     If you write a custom description always use
                                     <div class="documentDescription"></div> for it.
                                 </metal:comment>
-                                <tal:markdown 
+                                <tal:markdown
                                     define="agcommon_utilities python: context.restrictedTraverse('@@agcommon_utilities');"
                                     condition="here/render_description_as_markdown|nothing">
-                                    <div class="documentDescription markdownDescription" 
+                                    <div class="documentDescription markdownDescription"
                                         tal:define="markdown python: agcommon_utilities.toMarkdown(context.Description())"
                                         tal:content="structure markdown" />
                                 </tal:markdown>
@@ -314,13 +314,13 @@
 
 
     <div class="visualClear" id="clear-space-before-footer"><!-- --></div>
-    
+
         <metal:block i18n:domain="plone" tal:condition="not:ajax_load">
-        
+
             <div tal:replace="structure provider:plone.portalfooter" />
-        
+
         </metal:block>
-    
+
     <div class="visualClear"><!-- --></div>
 
 </body>
